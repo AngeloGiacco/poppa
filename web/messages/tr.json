@@ -1,0 +1,241 @@
+{
+  "HomePage": {
+    "navigation": {
+      "pricing": "Fiyatlandırma",
+      "howItWorks": "Nasıl çalışır",
+      "login": "Giriş yap",
+      "getStarted": "Başla"
+    },
+    "announcement": {
+      "live": "✨ Yayındayız!",
+      "founderMessage": "Kurucumuzun mesajını oku →"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "title": "Dilleri doğal yollarla öğren",
+      "subtitle": "poppa, sadece sesli öğretim ile yeni bir dil öğrenmenizde size adım adım rehberlik eder"
+    },
+    "languagesSection": {
+      "title": "Konuştuğumuz diller"
+    },
+    "whyPoppa": {
+      "title": "Neden Poppa?",
+      "features": {
+        "tutoring": {
+          "title": "Sıfırdan öğretim",
+          "description": "Bu sadece rol yapma değil, ana dilinizde yeni bir dilde nasıl düşüneceğinizi öğretiyoruz.",
+          "learnMore": "Daha fazla bilgi →"
+        },
+        "personalized": {
+          "title": "Kişiselleştirilmiş Öğrenme",
+          "description": "Zamanla gelişmenize yardımcı olmak için hızınıza ve ilgi alanlarınıza uyum sağlıyoruz."
+        },
+        "freeStart": {
+          "title": "Ücretsiz Başlayın",
+          "description": "Poppa'yı denemek için 20 dakika ücretsiz kredi alın. Dil öğrenme yolculuğunuza başlamak için kredi kartı gerekmez."
+        }
+      },
+      "tryButton": "20 dakika ücretsiz deneyin"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Naxos Labs tarafından özenle hazırlanmıştır."
+    }
+  },
+  "PricingPage": {
+    "navigation": {
+      "home": "Ana Sayfa",
+      "howItWorks": "Nasıl çalışır",
+      "login": "Giriş yap",
+      "getStarted": "Başla"
+    },
+    "hero": {
+      "title": "Basit, şeffaf fiyatlandırma",
+      "subtitle": "20 dakika ücretsiz başlayın. Sonra kullandıkça ödeyin."
+    },
+    "features": {
+      "aiTutor": "Kişiselleştirilmiş yapay zeka dil öğretmeni",
+      "availability": "7/24 kullanılabilirlik",
+      "adaptiveLearning": "Uyarlanabilir öğrenme teknolojisi",
+      "progressTracking": "İlerleme takibi",
+      "conversation": "Konuşma pratiği",
+      "exercises": "Dilbilgisi ve kelime alıştırmaları"
+    },
+    "pricing": {
+      "perHour": "saatlik öğretim ücreti"
+    },
+    "calculator": {
+      "title": "Geleneksel öğretmenlerle karşılaştırın",
+      "hoursPerMonth": "Aylık saat",
+      "poppaAI": "Poppa AI",
+      "traditionalTutor": "Geleneksel Öğretmen"
+    },
+    "cta": {
+      "startFree": "20 dakika ücretsiz başlayın",
+      "noCard": "Kredi kartı gerekmez"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Naxos Labs tarafından özenle hazırlanmıştır."
+    }
+  },
+  "HowItWorksPage": {
+    "navigation": {
+      "backToHome": "← Ana Sayfaya Dön"
+    },
+    "header": {
+      "openSource": {
+        "badge": "🌟 Açık kaynaklıyız!",
+        "link": "GitHub'da bizi inceleyin →"
+      },
+      "title": "Poppa nasıl çalışır"
+    },
+    "sections": {
+      "thinkingMethod": {
+        "title": "Düşünme Metodu",
+        "description1": "Poppa, dilleri doğal ve etkili bir şekilde öğrenmenize yardımcı olmak için \"Düşünme Metodu\" adı verilen benzersiz bir yaklaşım kullanır. Kelime listeleri veya dilbilgisi kurallarını ezberlemek yerine, en başından hedef dilde düşünmeyi öğreneceksiniz.",
+        "description2": "Bu metot, dilin yapısını anlamaya, bağlantılar kurmaya ve sezgisel olarak cümle kurma yeteneğinizi geliştirmeye odaklanır. Dilleri doğal olarak edinme şeklimizi taklit eden nazik ama güçlü bir yaklaşımdır."
+      },
+      "tech": {
+        "title": "Teknoloji",
+        "description1": "Sesinize gerçek zamanlı yanıt veren bir yapay zeka öğretmeni ile konuşma pratiği yapmanıza yardımcı olmak için, söylediklerinizi anlamak ve yanıtlamak için OpenAI'nin modellerini kullanıyor, tam konuşma geçmişlerini bulutta saklıyor ve ürünümüzle düşük gecikmeli iletişim sunmak için küresel olarak dağıtılmış sunucular kullanıyoruz.",
+        "description2": "🌟 Açık kaynağa inanıyoruz. Poppa tamamen açık kaynaklıdır, bu yüzden bize bir kuruş ödemek istemiyorsanız ödemek zorunda değilsiniz. Bunun yerine, düşük gecikmeli ses iletişimi için sunucuları yönetme zahmetine girmek istemiyorsanız, bu web sitesi üzerinden ücretli bir hizmet sunuyoruz. GitHub'da bizi inceleyin."
+      },
+      "personalizedLearning": {
+        "title": "Sonuç: Kişiselleştirilmiş Öğrenme",
+        "description1": "Poppa ile yaptığınız her ders yazıya dökülür ve saklanır, böylece öğrenme yolculuğunuzun kapsamlı bir kaydı oluşturulur. Bu bize şunları yapma imkanı verir:",
+        "benefits": [
+          "İlerlemenizi takip etmek ve gelecekteki dersleri ihtiyaçlarınıza göre uyarlamak",
+          "Öğrendiklerinizi pekiştirmek için aralıklı tekrar uygulamak",
+          "Dil hakimiyeti için size adım adım bir yol sunmak"
+        ],
+        "description2": "Kişiselleştirilmiş öğrenme yolunuz sizinle birlikte gelişir, her zaman doğru seviyede zorlanmanızı ve önemli kavramları kalıcılık için optimal aralıklarla tekrar etmenizi sağlar."
+      }
+    }
+  },
+  "LoginPage": {
+    "navigation": {
+      "backToHome": "Ana Sayfaya Dön",
+      "signup": "Kayıt Ol"
+    },
+    "logo": {
+      "alt": "Poppa logosu"
+    },
+    "title": "Tekrar Hoş Geldiniz",
+    "subtitle": "Dil öğrenme yolculuğunuza devam etmek için giriş yapın!"
+  },
+  "FounderMessagePage": {
+    "navigation": {
+      "backToHome": "← Ana Sayfaya Dön"
+    },
+    "header": {
+      "subtitle": "Kurucudan bir mesaj"
+    },
+    "content": {
+      "greeting": "Merhaba 👋",
+      "welcome": "Poppa'ya hoş geldiniz. Birebir dil öğretimini herkes için erişilebilir kılmak istiyoruz.",
+      "background": "Koşullarım (Budapeşte'de yaşamak ve sonra İngiltere'de harika bir okula gitmek) sayesinde Çince ve Rusça'da birebir dil eğitimi alma şansına sahip oldum. Bu dilleri öğrenmek hayatımın gidişatını birçok yönden değiştirdi.",
+      "philosophy": "Dil öğrenimi uygun fiyatlı ve esnek olmalıdır, bu yüzden kendi hızınızda ve bütçenizde öğrenmenizi sağlayan bir kredi bazlı sistem uyguladık. İster 5 dakikanız ister 5 saatiniz olsun, Poppa dil öğrenme yolculuğunuzda yanınızda.",
+      "approach": "Kelimeleri yazdırmıyor veya gereksiz dilbilgisi kurallarını ya da kalıpları ezberletmiyoruz. Başka bir dilde düşünmenize yardımcı olacağız. Lütfen deneyin. Beğeneceğinizi düşünüyorum ve ilk ders zaten bizden.",
+      "story": "Mandarince'yi, poppa diye hitap ettiğim büyükbabam yıllarca Pekin'de çalıştığı ve bana öğreneceğime söz verdirdiği için öğrendim. Bu hayatımda büyük bir etki yarattı ve umarım poppa sizin üzerinizde de bir etki yaratabilir :)",
+      "closing": "İyi öğrenmeler!",
+      "signature": "Angelo"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Naxos Labs tarafından özenle hazırlanmıştır."
+    }
+  },
+  "SignupPage": {
+    "navigation": {
+      "backToHome": "Ana Sayfaya Dön"
+    },
+    "logo": {
+      "alt": "Poppa logosu"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "subtitle": "Dil öğrenme yolculuğunuza bugün başlayın!"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Naxos Labs tarafından özenle hazırlanmıştır."
+    }
+  },
+  "LoginForm": {
+    "email": "E-posta",
+    "password": "Şifre",
+    "loginButton": "Giriş Yap",
+    "forgotPassword": "Şifremi unuttum?",
+    "loading": "Giriş yapılıyor...",
+    "success": {
+      "title": "Giriş Başarılı",
+      "description": "Tekrar hoş geldiniz!"
+    },
+    "error": {
+      "title": "Giriş Başarısız"
+    }
+  },
+  "SignupForm": {
+    "firstName": "Ad",
+    "lastName": "Soyad",
+    "email": "E-posta",
+    "password": "Şifre",
+    "confirmPassword": "Şifreyi Onayla",
+    "nativeLanguage": "Ana Dil",
+    "dateOfBirth": "Doğum Tarihi",
+    "day": "Gün",
+    "month": "Ay",
+    "year": "Yıl",
+    "signupButton": "Kayıt Ol",
+    "loading": "Kayıt olunuyor...",
+    "languageTooltip": "Dilinizi bulamıyor musunuz? Poppa şu an için sadece bu dillerde desteklenmektedir. Yardım için bizimle iletişime geçin.",
+    "errors": {
+      "passwordMatch": "Şifreler eşleşmiyor",
+      "generic": "Kayıt sırasında bir hata oluştu. Lütfen tekrar deneyin."
+    }
+  },
+  "ProfilePage": {
+    "navigation": {
+      "backToDashboard": "Panele Dön"
+    },
+    "header": {
+      "title": "Profil"
+    },
+    "accountDetails": {
+      "title": "Hesap Detayları",
+      "joined": "Katılım",
+      "credits": "Krediler"
+    }
+  },
+  "DashboardPage": {
+    "navigation": {
+      "profile": "Profil",
+      "logout": "Çıkış Yap",
+      "buyCredits": "Kredi Satın Al"
+    },
+    "languages": {
+      "title": "Dilleriniz",
+      "addLanguage": "Dil Ekle",
+      "dialog": {
+        "title": "Yeni Dil Ekle",
+        "description": "Öğrenmek istediğiniz bir dil seçin",
+        "selectPlaceholder": "Bir dil seçin"
+      },
+      "startLearning": {
+        "title": "Şimdi Öğrenmeye Başlayalım mı?",
+        "description": "{language} dilinde ilk dersinize şimdi başlamak ister misiniz?",
+        "later": "Daha Sonra",
+        "startNow": "Şimdi Başla"
+      },
+      "card": {
+        "level": "Orta Seviye",
+        "viewHistory": "Geçmişi Görüntüle",
+        "continueButton": "Öğrenmeye Devam Et",
+        "customButton": "Özel Ders"
+      },
+      "customLesson": {
+        "title": "Özel Ders - {language}",
+        "description": "{language} dilinde ne öğrenmek istediğinizi girin.\nDersin seviyenize uygun olmasını sağlayacağız.",
+        "placeholder": "örn., restoranda yemek sipariş etme",
+        "startButton": "Derse Başla"
+      }
+    }
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "HomePage": {
+    "navigation": {
+      "pricing": "Cijene",
+      "howItWorks": "Kako radi",
+      "login": "Prijava",
+      "getStarted": "Započnite"
+    },
+    "announcement": {
+      "live": "✨ Aktivni smo!",
+      "founderMessage": "Pročitajte poruku našeg osnivača →"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "title": "Učite jezike prirodno",
+      "subtitle": "poppa vas vodi korak po korak kroz učenje novog jezika s podučavanjem samo glasom"
+    },
+    "languagesSection": {
+      "title": "Jezici koje govorimo"
+    },
+    "whyPoppa": {
+      "title": "Zašto Poppa?",
+      "features": {
+        "tutoring": {
+          "title": "Podučavanje od nule",
+          "description": "Ovo nisu samo igre uloga, učimo vas na vašem materinjem jeziku kako razmišljati na bilo kojem novom jeziku.",
+          "learnMore": "Saznajte više →"
+        },
+        "personalized": {
+          "title": "Personalizirano učenje",
+          "description": "Prilagođavamo se vašem tempu i interesima kako bismo vam pomogli da napredujete tijekom vremena."
+        },
+        "freeStart": {
+          "title": "Počnite besplatno",
+          "description": "Dobijte 20 minuta besplatnih kredita za isprobavanje Poppe. Nije potrebna kreditna kartica za početak vašeg putovanja učenja jezika."
+        }
+      },
+      "tryButton": "Isprobajte 20 minuta besplatno"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Pažljivo izrađeno u Naxos Labs."
+    }
+  },
+  "PricingPage": {
+    "navigation": {
+      "home": "Početna",
+      "howItWorks": "Kako radi",
+      "login": "Prijava",
+      "getStarted": "Započnite"
+    },
+    "hero": {
+      "title": "Jednostavno, transparentno određivanje cijena",
+      "subtitle": "Započnite s 20 besplatnih minuta. Zatim plaćajte kako koristite."
+    },
+    "features": {
+      "aiTutor": "Personalizirani AI jezični tutor",
+      "availability": "Dostupnost 24/7",
+      "adaptiveLearning": "Tehnologija adaptivnog učenja",
+      "progressTracking": "Praćenje napretka",
+      "conversation": "Vježbanje razgovora",
+      "exercises": "Vježbe gramatike i vokabulara"
+    },
+    "pricing": {
+      "perHour": "po satu podučavanja"
+    },
+    "calculator": {
+      "title": "Usporedite s tradicionalnim podučavanjem",
+      "hoursPerMonth": "Sati mjesečno",
+      "poppaAI": "Poppa AI",
+      "traditionalTutor": "Tradicionalni tutor"
+    },
+    "cta": {
+      "startFree": "Započnite s 20 besplatnih minuta",
+      "noCard": "Nije potrebna kreditna kartica"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Pažljivo izrađeno u Naxos Labs."
+    }
+  },
+  "HowItWorksPage": {
+    "navigation": {
+      "backToHome": "← Natrag na početnu"
+    },
+    "header": {
+      "openSource": {
+        "badge": "🌟 Mi smo open source!",
+        "link": "Pogledajte nas na GitHubu →"
+      },
+      "title": "Kako poppa radi"
+    },
+    "sections": {
+      "thinkingMethod": {
+        "title": "Metoda razmišljanja",
+        "description1": "Poppa koristi jedinstveni pristup nazvan \"Metoda razmišljanja\" kako bi vam pomogla da učite jezike prirodno i učinkovito. Umjesto memoriranja lista riječi ili gramatičkih pravila, učit ćete razmišljati na ciljnom jeziku od samog početka.",
+        "description2": "Ova metoda se fokusira na razumijevanje strukture jezika, stvaranje veza i izgradnju vaše sposobnosti da intuitivno konstruirate rečenice. To je blag, ali moćan pristup koji oponaša kako prirodno usvajamo jezike."
+      },
+      "tech": {
+        "title": "Tehnologija",
+        "description1": "Kako bismo vam pomogli vježbati razgovore s AI tutorom koji odgovara na vaš glas u stvarnom vremenu, koristimo OpenAI modele za razumijevanje i odgovaranje na ono što kažete, pohranjujemo potpune povijesti razgovora u oblaku i imamo servere distribuirane globalno kako bismo ponudili komunikaciju s niskom latencijom s našim proizvodom.",
+        "description2": "🌟 Vjerujemo u open source. Poppa je potpuno open source pa ako nam ne želite platiti ni centa, ne morate. Ako pak ne želite imati problema s upravljanjem serverima za glasovne komunikacije s niskom latencijom, nudimo plaćenu uslugu putem ove web stranice. Pogledajte nas na githubu."
+      },
+      "personalizedLearning": {
+        "title": "Krajnji rezultat: Personalizirano učenje",
+        "description1": "Svaka lekcija koju uzmete s Poppom se transkribira i pohranjuje, stvarajući sveobuhvatan zapis vašeg putovanja učenja. To nam omogućuje da:",
+        "benefits": [
+          "Pratimo vaš napredak i prilagođavamo buduće lekcije vašim potrebama",
+          "Implementiramo razmaknutu ponavljanje za pojačavanje naučenog",
+          "Pružimo vam korak po korak put do jezičnog majstorstva"
+        ],
+        "description2": "Vaš personalizirani put učenja razvija se s vama, osiguravajući da ste uvijek izazvani na pravoj razini i da se vraćate važnim konceptima u optimalnim intervalima za zadržavanje."
+      }
+    }
+  },
+  "LoginPage": {
+    "navigation": {
+      "backToHome": "Natrag na početnu",
+      "signup": "Registracija"
+    },
+    "logo": {
+      "alt": "Poppa logo"
+    },
+    "title": "Dobrodošli natrag",
+    "subtitle": "Prijavite se da nastavite svoje putovanje učenja jezika!"
+  },
+  "FounderMessagePage": {
+    "navigation": {
+      "backToHome": "← Natrag na početnu"
+    },
+    "header": {
+      "subtitle": "Poruka osnivača"
+    },
+    "content": {
+      "greeting": "Bok 👋",
+      "welcome": "Dobrodošli u Poppu. Želimo učiniti 1-na-1 jezično podučavanje dostupnim svima.",
+      "background": "Bio sam iznimno sretan što su mi okolnosti (život u Budimpešti, a zatim odlazak u odličnu školu u UK) omogućile da dobijem 1-na-1 podučavanje kineskog i ruskog jezika. Učenje ovih jezika je na mnogo načina promijenilo putanju mog života.",
+      "philosophy": "Učenje jezika treba biti pristupačno i fleksibilno, zbog čega smo implementirali sustav temeljen na kreditima koji vam omogućuje da učite svojim tempom i prema svom budžetu. Bez obzira imate li 5 minuta ili 5 sati, Poppa je tu da podrži vaše putovanje učenja jezika.",
+      "approach": "Ne tražimo od vas da ispisujete riječi ili memorirate beskorisna gramatička pravila ili fraze. Pomoći ćemo vam da razmišljate na drugom jeziku. Molimo vas da isprobate. Mislim da će vam se svidjeti, a prva lekcija je ionako na naš račun.",
+      "story": "Naučio sam mandarinski jer je moj djed, kojeg sam zvao poppa, radio u Pekingu mnogo godina i natjerao me da mu obećam da ću ga naučiti. To je imalo ogroman utjecaj na moj život i nadam se da poppa može imati utjecaj i na vas :)",
+      "closing": "Sretno učenje!",
+      "signature": "Angelo"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Pažljivo izrađeno u Naxos Labs."
+    }
+  },
+  "SignupPage": {
+    "navigation": {
+      "backToHome": "Natrag na početnu"
+    },
+    "logo": {
+      "alt": "Poppa logo"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "subtitle": "Započnite svoje putovanje učenja jezika danas!"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Pažljivo izrađeno u Naxos Labs."
+    }
+  },
+  "LoginForm": {
+    "email": "Email",
+    "password": "Lozinka",
+    "loginButton": "Prijava",
+    "forgotPassword": "Zaboravili ste lozinku?",
+    "loading": "Prijava u tijeku...",
+    "success": {
+      "title": "Prijava uspješna",
+      "description": "Dobrodošli natrag!"
+    },
+    "error": {
+      "title": "Prijava nije uspjela"
+    }
+  },
+  "SignupForm": {
+    "firstName": "Ime",
+    "lastName": "Prezime",
+    "email": "Email",
+    "password": "Lozinka",
+    "confirmPassword": "Potvrdite lozinku",
+    "nativeLanguage": "Materinski jezik",
+    "dateOfBirth": "Datum rođenja",
+    "day": "Dan",
+    "month": "Mjesec",
+    "year": "Godina",
+    "signupButton": "Registracija",
+    "loading": "Registracija u tijeku...",
+    "languageTooltip": "Ne možete pronaći svoj jezik? Poppa je trenutno podržana samo na ovim jezicima. Kontaktirajte nas za pomoć.",
+    "errors": {
+      "passwordMatch": "Lozinke se ne podudaraju",
+      "generic": "Došlo je do pogreške tijekom registracije. Molimo pokušajte ponovno."
+    }
+  },
+  "ProfilePage": {
+    "navigation": {
+      "backToDashboard": "Natrag na nadzornu ploču"
+    },
+    "header": {
+      "title": "Profil"
+    },
+    "accountDetails": {
+      "title": "Detalji računa",
+      "joined": "Pridružen",
+      "credits": "Krediti"
+    }
+  },
+  "DashboardPage": {
+    "navigation": {
+      "profile": "Profil",
+      "logout": "Odjava",
+      "buyCredits": "Kupi kredite"
+    },
+    "languages": {
+      "title": "Vaši jezici",
+      "addLanguage": "Dodaj jezik",
+      "dialog": {
+        "title": "Dodaj novi jezik",
+        "description": "Odaberite jezik koji želite učiti",
+        "selectPlaceholder": "Odaberite jezik"
+      },
+      "startLearning": {
+        "title": "Započeti učenje sada?",
+        "description": "Želite li započeti svoju prvu lekciju na {language} sada?",
+        "later": "Kasnije",
+        "startNow": "Započni sada"
+      },
+      "card": {
+        "level": "Srednja razina",
+        "viewHistory": "Pregledaj povijest",
+        "continueButton": "Nastavi učenje",
+        "customButton": "Prilagođena lekcija"
+      },
+      "customLesson": {
+        "title": "Prilagođena lekcija - {language}",
+        "description": "Unesite što biste željeli naučiti na {language}.\nPobrinut ćemo se da lekcija odgovara vašoj razini.",
+        "placeholder": "npr., naručivanje hrane u restoranu",
+        "startButton": "Započni lekciju"
+      }
+    }
+  }
+}

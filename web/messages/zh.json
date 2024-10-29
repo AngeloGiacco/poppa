@@ -1,0 +1,241 @@
+{
+  "HomePage": {
+    "navigation": {
+      "pricing": "价格",
+      "howItWorks": "使用方法",
+      "login": "登录",
+      "getStarted": "开始使用"
+    },
+    "announcement": {
+      "live": "✨ 我们上线啦！",
+      "founderMessage": "阅读创始人寄语 →"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "title": "自然地学习语言",
+      "subtitle": "poppa通过纯语音辅导,一步步引导您学习新语言"
+    },
+    "languagesSection": {
+      "title": "可学习的语言"
+    },
+    "whyPoppa": {
+      "title": "为什么选择Poppa?",
+      "features": {
+        "tutoring": {
+          "title": "从零开始辅导",
+          "description": "这不仅仅是角色扮演,我们用您的母语教您如何用新语言思考。",
+          "learnMore": "了解更多 →"
+        },
+        "personalized": {
+          "title": "个性化学习",
+          "description": "我们根据您的进度和兴趣来帮助您逐步提高。"
+        },
+        "freeStart": {
+          "title": "免费开始",
+          "description": "获得20分钟免费学习时长来体验Poppa。开始语言学习之旅无需信用卡。"
+        }
+      },
+      "tryButton": "免费试用20分钟"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. 由Naxos Labs精心打造。"
+    }
+  },
+  "PricingPage": {
+    "navigation": {
+      "home": "首页",
+      "howItWorks": "使用方法",
+      "login": "登录",
+      "getStarted": "开始使用"
+    },
+    "hero": {
+      "title": "简单透明的价格",
+      "subtitle": "从20分钟免费开始。之后按使用付费。"
+    },
+    "features": {
+      "aiTutor": "个性化AI语言导师",
+      "availability": "24/7全天候服务",
+      "adaptiveLearning": "自适应学习技术",
+      "progressTracking": "进度追踪",
+      "conversation": "对话练习",
+      "exercises": "语法和词汇练习"
+    },
+    "pricing": {
+      "perHour": "每小时辅导费用"
+    },
+    "calculator": {
+      "title": "与传统辅导对比",
+      "hoursPerMonth": "每月学习小时数",
+      "poppaAI": "Poppa AI",
+      "traditionalTutor": "传统家教"
+    },
+    "cta": {
+      "startFree": "免费体验20分钟",
+      "noCard": "无需信用卡"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. 由Naxos Labs精心打造。"
+    }
+  },
+  "HowItWorksPage": {
+    "navigation": {
+      "backToHome": "← 返回首页"
+    },
+    "header": {
+      "openSource": {
+        "badge": "🌟 我们是开源的！",
+        "link": "在GitHub上查看我们 →"
+      },
+      "title": "Poppa如何运作"
+    },
+    "sections": {
+      "thinkingMethod": {
+        "title": "思维方法",
+        "description1": "Poppa使用独特的'思维方法'来帮助您自然有效地学习语言。我们不是让您死记硬背词汇表或语法规则,而是从一开始就帮助您用目标语言思考。",
+        "description2": "这种方法注重理解语言结构,建立联系,培养您直觉性地构造句子的能力。这是一种温和而有力的方法,模仿我们自然获取语言的方式。"
+      },
+      "tech": {
+        "title": "技术",
+        "description1": "为了帮助您与AI导师进行实时语音对话练习,我们使用OpenAI的模型来理解和回应您的话语,在云端存储完整的对话历史,并在全球部署服务器以提供低延迟的通信服务。",
+        "description2": "🌟 我们信奉开源。Poppa完全开源,如果您不想支付任何费用,您可以自己部署。如果您不想为低延迟语音通信管理服务器,我们也通过本网站提供付费服务。欢迎在github上查看我们的项目。"
+      },
+      "personalizedLearning": {
+        "title": "最终成果：个性化学习",
+        "description1": "您在Poppa上的每节课都会被记录和存储,创建完整的学习历程记录。这使我们能够：",
+        "benefits": [
+          "追踪您的进度并根据需求调整未来的课程",
+          "实施间隔重复来巩固所学内容",
+          "为您提供通往语言掌握的逐步路径"
+        ],
+        "description2": "您的个性化学习路径会随您发展而演变,确保您始终保持适当的挑战水平,并在最佳时间间隔复习重要概念。"
+      }
+    }
+  },
+  "LoginPage": {
+    "navigation": {
+      "backToHome": "返回首页",
+      "signup": "注册"
+    },
+    "logo": {
+      "alt": "Poppa标志"
+    },
+    "title": "欢迎回来",
+    "subtitle": "登录以继续您的语言学习之旅！"
+  },
+  "FounderMessagePage": {
+    "navigation": {
+      "backToHome": "← 返回首页"
+    },
+    "header": {
+      "subtitle": "创始人寄语"
+    },
+    "content": {
+      "greeting": "你好 👋",
+      "welcome": "欢迎来到Poppa。我们希望让一对一语言辅导变得人人可及。",
+      "background": "我非常幸运,我的环境（在布达佩斯生活,然后在英国的一所优秀学校就读）让我有机会接受中文和俄语的一对一辅导。学习这些语言在很多方面改变了我的人生轨迹。",
+      "philosophy": "语言学习应该是负担得起且灵活的,这就是为什么我们实施了基于学分的系统,让您可以按照自己的节奏和预算学习。无论您有5分钟还是5小时,Poppa都在这里支持您的语言学习之旅。",
+      "approach": "我们不会让您写单词,或记忆无用的语法规则或短语。我们会帮助您用另一种语言思考。请试一试。我相信您会喜欢的,而且第一课我们请客。",
+      "story": "我学习普通话是因为我的祖父,我叫他poppa,他在北京工作多年,他让我答应他要学习这门语言。这对我的生活产生了巨大的影响,我希望poppa也能对您产生影响 :)",
+      "closing": "祝学习愉快！",
+      "signature": "Angelo"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. 由Naxos Labs精心打造。"
+    }
+  },
+  "SignupPage": {
+    "navigation": {
+      "backToHome": "返回首页"
+    },
+    "logo": {
+      "alt": "Poppa标志"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "subtitle": "今天就开始您的语言学习之旅！"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. 由Naxos Labs精心打造。"
+    }
+  },
+  "LoginForm": {
+    "email": "邮箱",
+    "password": "密码",
+    "loginButton": "登录",
+    "forgotPassword": "忘记密码?",
+    "loading": "登录中...",
+    "success": {
+      "title": "登录成功",
+      "description": "欢迎回来！"
+    },
+    "error": {
+      "title": "登录失败"
+    }
+  },
+  "SignupForm": {
+    "firstName": "名",
+    "lastName": "姓",
+    "email": "邮箱",
+    "password": "密码",
+    "confirmPassword": "确认密码",
+    "nativeLanguage": "母语",
+    "dateOfBirth": "出生日期",
+    "day": "日",
+    "month": "月",
+    "year": "年",
+    "signupButton": "注册",
+    "loading": "注册中...",
+    "languageTooltip": "找不到您的语言? Poppa目前仅支持这些语言。如需帮助请联系我们。",
+    "errors": {
+      "passwordMatch": "密码不匹配",
+      "generic": "注册过程中出现错误。请重试。"
+    }
+  },
+  "ProfilePage": {
+    "navigation": {
+      "backToDashboard": "返回控制台"
+    },
+    "header": {
+      "title": "个人资料"
+    },
+    "accountDetails": {
+      "title": "账户详情",
+      "joined": "加入时间",
+      "credits": "学分"
+    }
+  },
+  "DashboardPage": {
+    "navigation": {
+      "profile": "个人资料",
+      "logout": "退出登录",
+      "buyCredits": "购买学分"
+    },
+    "languages": {
+      "title": "您的语言",
+      "addLanguage": "添加语言",
+      "dialog": {
+        "title": "添加新语言",
+        "description": "选择您想学习的语言",
+        "selectPlaceholder": "选择语言"
+      },
+      "startLearning": {
+        "title": "现在开始学习?",
+        "description": "您想现在开始第一节{language}课程吗?",
+        "later": "稍后",
+        "startNow": "现在开始"
+      },
+      "card": {
+        "level": "中级水平",
+        "viewHistory": "查看历史",
+        "continueButton": "继续学习",
+        "customButton": "自定义课程"
+      },
+      "customLesson": {
+        "title": "自定义课程 - {language}",
+        "description": "输入您想学习的{language}内容。\n我们会确保课程符合您的水平。",
+        "placeholder": "例如：在餐厅点餐",
+        "startButton": "开始课程"
+      }
+    }
+  }
+}

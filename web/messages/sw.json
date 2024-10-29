@@ -1,0 +1,241 @@
+{
+  "HomePage": {
+    "navigation": {
+      "pricing": "Bei",
+      "howItWorks": "Jinsi inavyofanya kazi",
+      "login": "Ingia",
+      "getStarted": "Anza"
+    },
+    "announcement": {
+      "live": "✨ Tupo hewani!",
+      "founderMessage": "Soma ujumbe wa mwanzilishi →"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "title": "Jifunze lugha kwa njia ya asili",
+      "subtitle": "poppa inakuongoza hatua kwa hatua katika kujifunza lugha mpya kwa kutumia mafunzo ya sauti pekee"
+    },
+    "languagesSection": {
+      "title": "Lugha tunazozungumza"
+    },
+    "whyPoppa": {
+      "title": "Kwa nini Poppa?",
+      "features": {
+        "tutoring": {
+          "title": "Mafunzo kutoka sifuri",
+          "description": "Hii sio mchezo wa kuigiza tu, tunakufundisha kwa lugha yako ya asili jinsi ya kufikiri katika lugha yoyote mpya.",
+          "learnMore": "Jifunze zaidi →"
+        },
+        "personalized": {
+          "title": "Masomo Binafsi",
+          "description": "Tunaendana na kasi yako na maslahi yako ili kukusaidia kuendelea."
+        },
+        "freeStart": {
+          "title": "Anza Bure",
+          "description": "Pata dakika 20 za mikopo ya bure kujaribu Poppa. Hakuna kadi ya mkopo inayohitajika kuanza safari yako ya kujifunza lugha."
+        }
+      },
+      "tryButton": "Jaribu dakika 20 bure"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Imetengenezwa kwa uangalifu na Naxos Labs."
+    }
+  },
+  "PricingPage": {
+    "navigation": {
+      "home": "Nyumbani",
+      "howItWorks": "Jinsi inavyofanya kazi",
+      "login": "Ingia",
+      "getStarted": "Anza"
+    },
+    "hero": {
+      "title": "Bei rahisi na wazi",
+      "subtitle": "Anza na dakika 20 za bure. Kisha lipa unapotumia."
+    },
+    "features": {
+      "aiTutor": "Mwalimu binafsi wa AI wa lugha",
+      "availability": "Inapatikana saa 24/7",
+      "adaptiveLearning": "Teknolojia ya kujifunza inayobadilika",
+      "progressTracking": "Ufuatiliaji wa maendeleo",
+      "conversation": "Mazoezi ya mazungumzo",
+      "exercises": "Mazoezi ya sarufi na msamiati"
+    },
+    "pricing": {
+      "perHour": "kwa saa ya mafunzo"
+    },
+    "calculator": {
+      "title": "Linganisha na mafunzo ya kawaida",
+      "hoursPerMonth": "Masaa kwa mwezi",
+      "poppaAI": "Poppa AI",
+      "traditionalTutor": "Mwalimu wa Kawaida"
+    },
+    "cta": {
+      "startFree": "Anza na dakika 20 za bure",
+      "noCard": "Hakuna kadi ya mkopo inayohitajika"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Imetengenezwa kwa uangalifu na Naxos Labs."
+    }
+  },
+  "HowItWorksPage": {
+    "navigation": {
+      "backToHome": "← Rudi Nyumbani"
+    },
+    "header": {
+      "openSource": {
+        "badge": "🌟 Sisi ni chanzo huria!",
+        "link": "Tutembelee kwenye GitHub →"
+      },
+      "title": "Jinsi poppa inavyofanya kazi"
+    },
+    "sections": {
+      "thinkingMethod": {
+        "title": "Mbinu ya Kufikiri",
+        "description1": "Poppa inatumia mbinu ya kipekee inayoitwa \"Mbinu ya Kufikiri\" ili kukusaidia kujifunza lugha kwa njia ya asili na yenye ufanisi. Badala ya kuhifadhi orodha za maneno au kanuni za sarufi, utajifunza kufikiri katika lugha unayotaka kujifunza tangu mwanzo.",
+        "description2": "Mbinu hii inazingatia kuelewa muundo wa lugha, kutengeneza uhusiano, na kujenga uwezo wako wa kuunda sentensi kwa njia ya asili. Ni mbinu laini lakini yenye nguvu inayoiga jinsi tunavyopata lugha kwa njia ya asili."
+      },
+      "tech": {
+        "title": "Teknolojia",
+        "description1": "Ili kukusaidia kufanya mazoezi ya mazungumzo na mwalimu wa AI anayejibu sauti yako moja kwa moja, tunatumia modeli za OpenAI kuelewa na kujibu unachosema, kuhifadhi historia kamili ya mazungumzo kwenye wingu, na tuna seva zilizosambazwa duniani kote kutoa mawasiliano ya kasi ya chini na bidhaa yetu.",
+        "description2": "🌟 Tunaamini katika chanzo huria. Poppa ni chanzo huria kikamilifu kwa hivyo ikiwa hutaki kutulipa senti huna haja. Ikiwa badala yake, hutaki usumbufu wa kusimamia seva kwa mawasiliano ya sauti ya kasi ya chini, tunatoa huduma ya malipo kupitia tovuti hii. Tutembelee kwenye github."
+      },
+      "personalizedLearning": {
+        "title": "Matokeo ya Mwisho: Masomo Binafsi",
+        "description1": "Kila somo unalochukua na Poppa linaandikwa na kuhifadhiwa, kutengeneza rekodi kamili ya safari yako ya kujifunza. Hii inatuwezesha:",
+        "benefits": [
+          "Kufuatilia maendeleo yako na kubadilisha masomo ya baadaye kulingana na mahitaji yako",
+          "Kutekeleza kurudia kwa nafasi ili kuimarisha uliyojifunza",
+          "Kukupa njia ya hatua kwa hatua ya kufikia umahiri wa lugha"
+        ],
+        "description2": "Njia yako ya kujifunza binafsi inabadilika pamoja nawe, kuhakikisha kuwa unapata changamoto katika kiwango sahihi na kurudia dhana muhimu katika vipindi bora vya kuhifadhi."
+      }
+    }
+  },
+  "LoginPage": {
+    "navigation": {
+      "backToHome": "Rudi Nyumbani",
+      "signup": "Jisajili"
+    },
+    "logo": {
+      "alt": "Nembo ya Poppa"
+    },
+    "title": "Karibu Tena",
+    "subtitle": "Ingia ili kuendelea na safari yako ya kujifunza lugha!"
+  },
+  "FounderMessagePage": {
+    "navigation": {
+      "backToHome": "← Rudi Nyumbani"
+    },
+    "header": {
+      "subtitle": "Ujumbe kutoka kwa mwanzilishi"
+    },
+    "content": {
+      "greeting": "Habari 👋",
+      "welcome": "Karibu Poppa. Tunataka kufanya mafunzo ya lugha ya mtu mmoja mmoja yafikiwe na kila mtu.",
+      "background": "Nilikuwa na bahati sana kwamba mazingira yangu (kuishi Budapest, na kisha kwenda shule nzuri Uingereza) yaliniwezesha kupata mafunzo ya lugha ya mtu mmoja mmoja katika Kichina na Kirusi. Kujifunza lugha hizi kwa njia nyingi kumebadilisha mwelekeo wa maisha yangu.",
+      "philosophy": "Kujifunza lugha kunapaswa kuwa nafuu na rahisi kubadilika, ndio maana tumeanzisha mfumo wa mikopo unaoruhusu ujifunze kwa kasi yako na bajeti yako. Iwe una dakika 5 au masaa 5, Poppa ipo hapa kukusaidia katika safari yako ya kujifunza lugha.",
+      "approach": "Hatukufanyi uandike maneno, au kuhifadhi kanuni za sarufi zisizo na maana au misemo. Tutakusaidia kufikiri katika lugha nyingine. Tafadhali jaribu. Nafikiri utapenda na somo la kwanza ni bure.",
+      "story": "Nilijifunza Kimandarin kwa sababu babu yangu, niliyemwita poppa, alifanya kazi Beijing kwa miaka mingi na alinifanya nimuahidi kuwa nitajifunza. Hilo limekuwa na athari kubwa katika maisha yangu na natumai poppa inaweza kuwa na athari kwako pia :)",
+      "closing": "Ujifunze kwa furaha!",
+      "signature": "Angelo"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Imetengenezwa kwa uangalifu na Naxos Labs."
+    }
+  },
+  "SignupPage": {
+    "navigation": {
+      "backToHome": "Rudi Nyumbani"
+    },
+    "logo": {
+      "alt": "Nembo ya Poppa"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "subtitle": "Anza safari yako ya kujifunza lugha leo!"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Imetengenezwa kwa uangalifu na Naxos Labs."
+    }
+  },
+  "LoginForm": {
+    "email": "Barua pepe",
+    "password": "Nywila",
+    "loginButton": "Ingia",
+    "forgotPassword": "Umesahau nywila?",
+    "loading": "Inaingia...",
+    "success": {
+      "title": "Umeingia kwa Mafanikio",
+      "description": "Karibu tena!"
+    },
+    "error": {
+      "title": "Kuingia Kumeshindikana"
+    }
+  },
+  "SignupForm": {
+    "firstName": "Jina la Kwanza",
+    "lastName": "Jina la Mwisho",
+    "email": "Barua pepe",
+    "password": "Nywila",
+    "confirmPassword": "Thibitisha Nywila",
+    "nativeLanguage": "Lugha ya Asili",
+    "dateOfBirth": "Tarehe ya Kuzaliwa",
+    "day": "Siku",
+    "month": "Mwezi",
+    "year": "Mwaka",
+    "signupButton": "Jisajili",
+    "loading": "Inajisajili...",
+    "languageTooltip": "Hupati lugha yako? Poppa inapatikana katika lugha hizi tu kwa sasa. Wasiliana nasi kwa usaidizi.",
+    "errors": {
+      "passwordMatch": "Nywila hazifanani",
+      "generic": "Kuna hitilafu imetokea wakati wa kujisajili. Tafadhali jaribu tena."
+    }
+  },
+  "ProfilePage": {
+    "navigation": {
+      "backToDashboard": "Rudi kwenye Dashibodi"
+    },
+    "header": {
+      "title": "Wasifu"
+    },
+    "accountDetails": {
+      "title": "Maelezo ya Akaunti",
+      "joined": "Ulijiunga",
+      "credits": "Mikopo"
+    }
+  },
+  "DashboardPage": {
+    "navigation": {
+      "profile": "Wasifu",
+      "logout": "Toka",
+      "buyCredits": "Nunua Mikopo"
+    },
+    "languages": {
+      "title": "Lugha Zako",
+      "addLanguage": "Ongeza Lugha",
+      "dialog": {
+        "title": "Ongeza Lugha Mpya",
+        "description": "Chagua lugha ungependa kujifunza",
+        "selectPlaceholder": "Chagua lugha"
+      },
+      "startLearning": {
+        "title": "Anza Kujifunza Sasa?",
+        "description": "Ungependa kuanza somo lako la kwanza katika {language} sasa?",
+        "later": "Baadaye",
+        "startNow": "Anza Sasa"
+      },
+      "card": {
+        "level": "Kiwango cha Kati",
+        "viewHistory": "Tazama Historia",
+        "continueButton": "Endelea Kujifunza",
+        "customButton": "Somo la Kibinafsi"
+      },
+      "customLesson": {
+        "title": "Somo la Kibinafsi - {language}",
+        "description": "Ingiza unachotaka kujifunza katika {language}.\nTutahakikisha somo linafaa kiwango chako.",
+        "placeholder": "mfano, kuagiza chakula mkahawani",
+        "startButton": "Anza Somo"
+      }
+    }
+  }
+}

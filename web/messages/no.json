@@ -1,0 +1,241 @@
+{
+  "HomePage": {
+    "navigation": {
+      "pricing": "Priser",
+      "howItWorks": "Hvordan det fungerer",
+      "login": "Logg inn",
+      "getStarted": "Kom i gang"
+    },
+    "announcement": {
+      "live": "✨ Vi er live!",
+      "founderMessage": "Les grunnleggerens melding →"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "title": "Lær språk naturlig",
+      "subtitle": "poppa veileder deg trinn for trinn gjennom å lære et nytt språk med kun stemmebasert veiledning"
+    },
+    "languagesSection": {
+      "title": "Språk vi snakker"
+    },
+    "whyPoppa": {
+      "title": "Hvorfor Poppa?",
+      "features": {
+        "tutoring": {
+          "title": "Veiledning fra null",
+          "description": "Dette er ikke bare rollespill, vi lærer deg på ditt morsmål hvordan du tenker på et nytt språk.",
+          "learnMore": "Lær mer →"
+        },
+        "personalized": {
+          "title": "Personlig læring",
+          "description": "Vi tilpasser oss ditt tempo og interesser for å hjelpe deg med å forbedre deg over tid."
+        },
+        "freeStart": {
+          "title": "Start gratis",
+          "description": "Få 20 minutter med gratis kreditt for å prøve Poppa. Ingen kredittkort kreves for å begynne din språklæringsreise."
+        }
+      },
+      "tryButton": "Prøv 20 minutter gratis"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Laget med omhu av Naxos Labs."
+    }
+  },
+  "PricingPage": {
+    "navigation": {
+      "home": "Hjem",
+      "howItWorks": "Hvordan det fungerer",
+      "login": "Logg inn",
+      "getStarted": "Kom i gang"
+    },
+    "hero": {
+      "title": "Enkel, transparent prising",
+      "subtitle": "Start med 20 gratis minutter. Betal deretter etter bruk."
+    },
+    "features": {
+      "aiTutor": "Personlig AI-språklærer",
+      "availability": "Tilgjengelig 24/7",
+      "adaptiveLearning": "Adaptiv læringsteknologi",
+      "progressTracking": "Fremgangssporing",
+      "conversation": "Samtaleøvelser",
+      "exercises": "Grammatikk- og ordforrådsøvelser"
+    },
+    "pricing": {
+      "perHour": "per time med veiledning"
+    },
+    "calculator": {
+      "title": "Sammenlign med tradisjonell veiledning",
+      "hoursPerMonth": "Timer per måned",
+      "poppaAI": "Poppa AI",
+      "traditionalTutor": "Tradisjonell lærer"
+    },
+    "cta": {
+      "startFree": "Start med 20 gratis minutter",
+      "noCard": "Ingen kredittkort kreves"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Laget med omhu av Naxos Labs."
+    }
+  },
+  "HowItWorksPage": {
+    "navigation": {
+      "backToHome": "← Tilbake til hjemmesiden"
+    },
+    "header": {
+      "openSource": {
+        "badge": "🌟 Vi er åpen kildekode!",
+        "link": "Sjekk oss ut på GitHub →"
+      },
+      "title": "Hvordan poppa fungerer"
+    },
+    "sections": {
+      "thinkingMethod": {
+        "title": "Tankemetoden",
+        "description1": "Poppa bruker en unik tilnærming kalt \"Tankemetoden\" for å hjelpe deg med å lære språk naturlig og effektivt. I stedet for å memorere ordlister eller grammatikkregler, vil du lære å tenke på målspråket fra begynnelsen av.",
+        "description2": "Denne metoden fokuserer på å forstå språkets struktur, skape forbindelser og bygge din evne til å konstruere setninger intuitivt. Det er en skånsom men kraftig tilnærming som etterligner hvordan vi naturlig tilegner oss språk."
+      },
+      "tech": {
+        "title": "Teknologien",
+        "description1": "For å hjelpe deg med å øve på samtaler med en AI-lærer som svarer på stemmen din i sanntid, bruker vi OpenAIs modeller for å forstå og svare på det du sier, lagrer fullstendige samtalehistorikker i skyen, og har servere distribuert globalt for å tilby kommunikasjon med lav latens med vårt produkt.",
+        "description2": "🌟 Vi tror på åpen kildekode. Poppa er helt åpen kildekode, så hvis du ikke vil betale oss en krone trenger du ikke det. Hvis du derimot ikke vil ha bryet med å administrere servere for stemmekommunkasjon med lav latens, tilbyr vi en betalt tjeneste gjennom denne nettsiden. Sjekk oss ut på github."
+      },
+      "personalizedLearning": {
+        "title": "Sluttresultatet: Personlig læring",
+        "description1": "Hver leksjon du tar med Poppa blir transkribert og lagret, og skaper en omfattende oversikt over din læringsprosess. Dette gjør at vi kan:",
+        "benefits": [
+          "Spore fremgangen din og tilpasse fremtidige leksjoner til dine behov",
+          "Implementere spredt repetisjon for å forsterke det du har lært",
+          "Gi deg en trinnvis vei til språkmestring"
+        ],
+        "description2": "Din personlige læringsvei utvikler seg med deg, og sikrer at du alltid blir utfordret på riktig nivå og repeterer viktige konsepter i optimale intervaller for retensjon."
+      }
+    }
+  },
+  "LoginPage": {
+    "navigation": {
+      "backToHome": "Tilbake til hjemmesiden",
+      "signup": "Registrer deg"
+    },
+    "logo": {
+      "alt": "Poppa logo"
+    },
+    "title": "Velkommen tilbake",
+    "subtitle": "Logg inn for å fortsette din språklæringsreise!"
+  },
+  "FounderMessagePage": {
+    "navigation": {
+      "backToHome": "← Tilbake til hjemmesiden"
+    },
+    "header": {
+      "subtitle": "En melding fra grunnleggeren"
+    },
+    "content": {
+      "greeting": "Hei 👋",
+      "welcome": "Velkommen til Poppa. Vi ønsker å gjøre 1-til-1 språkopplæring tilgjengelig for alle.",
+      "background": "Jeg var utrolig heldig som på grunn av mine omstendigheter (å bo i Budapest, og deretter gå på en flott skole i Storbritannia) fikk muligheten til å få 1-til-1 språkopplæring i kinesisk og russisk. Å lære disse språkene har på mange måter endret livets mitt.",
+      "philosophy": "Språklæring bør være rimelig og fleksibelt, derfor har vi implementert et kredittbasert system som lar deg lære i ditt eget tempo og budsjett. Enten du har 5 minutter eller 5 timer, er Poppa her for å støtte din språklæringsreise.",
+      "approach": "Vi får deg ikke til å skrive ut ord eller memorere unyttige grammatikkregler eller fraser. Vi vil hjelpe deg med å tenke på et annet språk. Vennligst prøv det ut. Jeg tror du vil like det, og den første leksjonen er uansett på oss.",
+      "story": "Jeg lærte mandarin fordi bestefaren min, som jeg kalte poppa, jobbet i Beijing i mange år og fikk meg til å love at jeg skulle lære det. Det har hatt en enorm innvirkning på livet mitt, og jeg håper poppa kan ha en innvirkning på deg også :)",
+      "closing": "God læring!",
+      "signature": "Angelo"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Laget med omhu av Naxos Labs."
+    }
+  },
+  "SignupPage": {
+    "navigation": {
+      "backToHome": "Tilbake til hjemmesiden"
+    },
+    "logo": {
+      "alt": "Poppa logo"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "subtitle": "Start din språklæringsreise i dag!"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Laget med omhu av Naxos Labs."
+    }
+  },
+  "LoginForm": {
+    "email": "E-post",
+    "password": "Passord",
+    "loginButton": "Logg inn",
+    "forgotPassword": "Glemt passord?",
+    "loading": "Logger inn...",
+    "success": {
+      "title": "Innlogging vellykket",
+      "description": "Velkommen tilbake!"
+    },
+    "error": {
+      "title": "Innlogging mislyktes"
+    }
+  },
+  "SignupForm": {
+    "firstName": "Fornavn",
+    "lastName": "Etternavn",
+    "email": "E-post",
+    "password": "Passord",
+    "confirmPassword": "Bekreft passord",
+    "nativeLanguage": "Morsmål",
+    "dateOfBirth": "Fødselsdato",
+    "day": "Dag",
+    "month": "Måned",
+    "year": "År",
+    "signupButton": "Registrer deg",
+    "loading": "Registrerer...",
+    "languageTooltip": "Finner du ikke ditt språk? Poppa støtter foreløpig bare disse språkene. Kontakt oss for assistanse.",
+    "errors": {
+      "passwordMatch": "Passordene stemmer ikke overens",
+      "generic": "Det oppstod en feil under registrering. Vennligst prøv igjen."
+    }
+  },
+  "ProfilePage": {
+    "navigation": {
+      "backToDashboard": "Tilbake til dashbordet"
+    },
+    "header": {
+      "title": "Profil"
+    },
+    "accountDetails": {
+      "title": "Kontodetaljer",
+      "joined": "Medlem siden",
+      "credits": "Kreditter"
+    }
+  },
+  "DashboardPage": {
+    "navigation": {
+      "profile": "Profil",
+      "logout": "Logg ut",
+      "buyCredits": "Kjøp kreditter"
+    },
+    "languages": {
+      "title": "Dine språk",
+      "addLanguage": "Legg til språk",
+      "dialog": {
+        "title": "Legg til et nytt språk",
+        "description": "Velg et språk du vil lære",
+        "selectPlaceholder": "Velg et språk"
+      },
+      "startLearning": {
+        "title": "Start læringen nå?",
+        "description": "Vil du starte din første leksjon i {language} nå?",
+        "later": "Senere",
+        "startNow": "Start nå"
+      },
+      "card": {
+        "level": "Mellomnivå",
+        "viewHistory": "Se historikk",
+        "continueButton": "Fortsett læringen",
+        "customButton": "Tilpasset leksjon"
+      },
+      "customLesson": {
+        "title": "Tilpasset leksjon - {language}",
+        "description": "Skriv inn hva du vil lære om på {language}.\nVi vil sørge for at leksjonen passer ditt nivå.",
+        "placeholder": "f.eks., bestille mat på restaurant",
+        "startButton": "Start leksjon"
+      }
+    }
+  }
+}

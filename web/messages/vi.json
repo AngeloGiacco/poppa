@@ -1,0 +1,241 @@
+{
+  "HomePage": {
+    "navigation": {
+      "pricing": "Giá",
+      "howItWorks": "Cách hoạt động",
+      "login": "Đăng nhập",
+      "getStarted": "Bắt đầu"
+    },
+    "announcement": {
+      "live": "✨ Chúng tôi đã hoạt động!",
+      "founderMessage": "Đọc thông điệp từ người sáng lập →"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "title": "Học ngôn ngữ một cách tự nhiên",
+      "subtitle": "poppa hướng dẫn bạn từng bước học ngôn ngữ mới thông qua gia sư chỉ bằng giọng nói"
+    },
+    "languagesSection": {
+      "title": "Các ngôn ngữ chúng tôi nói"
+    },
+    "whyPoppa": {
+      "title": "Tại sao chọn Poppa?",
+      "features": {
+        "tutoring": {
+          "title": "Dạy từ con số 0",
+          "description": "Không chỉ là đóng vai, chúng tôi dạy bạn bằng tiếng mẹ đẻ cách suy nghĩ trong bất kỳ ngôn ngữ mới nào.",
+          "learnMore": "Tìm hiểu thêm →"
+        },
+        "personalized": {
+          "title": "Học tập cá nhân hóa",
+          "description": "Chúng tôi phù hợp với tốc độ và sở thích của bạn để giúp bạn tiến bộ theo thời gian."
+        },
+        "freeStart": {
+          "title": "Bắt đầu miễn phí",
+          "description": "Nhận 20 phút tín dụng miễn phí để thử Poppa. Không cần thẻ tín dụng để bắt đầu hành trình học ngôn ngữ của bạn."
+        }
+      },
+      "tryButton": "Dùng thử 20 phút miễn phí"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Được tạo ra với sự tận tâm bởi Naxos Labs."
+    }
+  },
+  "PricingPage": {
+    "navigation": {
+      "home": "Trang chủ",
+      "howItWorks": "Cách hoạt động",
+      "login": "Đăng nhập",
+      "getStarted": "Bắt đầu"
+    },
+    "hero": {
+      "title": "Giá cả đơn giản, minh bạch",
+      "subtitle": "Bắt đầu với 20 phút miễn phí. Sau đó thanh toán khi sử dụng."
+    },
+    "features": {
+      "aiTutor": "Gia sư ngôn ngữ AI cá nhân hóa",
+      "availability": "Khả dụng 24/7",
+      "adaptiveLearning": "Công nghệ học tập thích ứng",
+      "progressTracking": "Theo dõi tiến độ",
+      "conversation": "Luyện tập hội thoại",
+      "exercises": "Bài tập ngữ pháp và từ vựng"
+    },
+    "pricing": {
+      "perHour": "mỗi giờ dạy"
+    },
+    "calculator": {
+      "title": "So sánh với gia sư truyền thống",
+      "hoursPerMonth": "Số giờ mỗi tháng",
+      "poppaAI": "Poppa AI",
+      "traditionalTutor": "Gia sư truyền thống"
+    },
+    "cta": {
+      "startFree": "Bắt đầu với 20 phút miễn phí",
+      "noCard": "Không cần thẻ tín dụng"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Được tạo ra với sự tận tâm bởi Naxos Labs."
+    }
+  },
+  "HowItWorksPage": {
+    "navigation": {
+      "backToHome": "← Quay lại Trang chủ"
+    },
+    "header": {
+      "openSource": {
+        "badge": "🌟 Chúng tôi là mã nguồn mở!",
+        "link": "Xem chúng tôi trên GitHub →"
+      },
+      "title": "Cách poppa hoạt động"
+    },
+    "sections": {
+      "thinkingMethod": {
+        "title": "Phương pháp Tư duy",
+        "description1": "Poppa sử dụng một cách tiếp cận độc đáo gọi là \"Phương pháp Tư duy\" để giúp bạn học ngôn ngữ một cách tự nhiên và hiệu quả. Thay vì ghi nhớ danh sách từ vựng hoặc quy tắc ngữ pháp, bạn sẽ học cách suy nghĩ bằng ngôn ngữ mục tiêu ngay từ đầu.",
+        "description2": "Phương pháp này tập trung vào việc hiểu cấu trúc của ngôn ngữ, tạo kết nối và xây dựng khả năng tạo câu một cách trực quan. Đây là một cách tiếp cận nhẹ nhàng nhưng mạnh mẽ bắt chước cách chúng ta tự nhiên tiếp thu ngôn ngữ."
+      },
+      "tech": {
+        "title": "Công nghệ",
+        "description1": "Để giúp bạn thực hành hội thoại với gia sư AI phản hồi giọng nói của bạn trong thời gian thực, chúng tôi sử dụng các mô hình của OpenAI để hiểu và phản hồi những gì bạn nói, lưu trữ toàn bộ lịch sử hội thoại trên đám mây và có các máy chủ phân phối toàn cầu để cung cấp giao tiếp độ trễ thấp với sản phẩm của chúng tôi.",
+        "description2": "🌟 Chúng tôi tin tưởng vào mã nguồn mở. Poppa hoàn toàn là mã nguồn mở nên nếu bạn không muốn trả chúng tôi một xu, bạn không cần phải làm vậy. Nếu thay vào đó, bạn không muốn gặp rắc rối trong việc quản lý máy chủ cho giao tiếp giọng nói độ trễ thấp, chúng tôi cung cấp dịch vụ trả phí thông qua trang web này. Xem chúng tôi trên github."
+      },
+      "personalizedLearning": {
+        "title": "Kết quả cuối cùng: Học tập cá nhân hóa",
+        "description1": "Mỗi bài học bạn học với Poppa được ghi lại và lưu trữ, tạo ra một hồ sơ toàn diện về hành trình học tập của bạn. Điều này cho phép chúng tôi:",
+        "benefits": [
+          "Theo dõi tiến độ của bạn và điều chỉnh các bài học tương lai theo nhu cầu của bạn",
+          "Thực hiện lặp lại theo khoảng thời gian để củng cố những gì bạn đã học",
+          "Cung cấp cho bạn một lộ trình từng bước để thành thạo ngôn ngữ"
+        ],
+        "description2": "Lộ trình học tập cá nhân hóa của bạn phát triển cùng với bạn, đảm bảo rằng bạn luôn được thách thức ở mức độ phù hợp và ôn lại các khái niệm quan trọng trong khoảng thời gian tối ưu để ghi nhớ."
+      }
+    }
+  },
+  "LoginPage": {
+    "navigation": {
+      "backToHome": "Quay lại Trang chủ",
+      "signup": "Đăng ký"
+    },
+    "logo": {
+      "alt": "Logo Poppa"
+    },
+    "title": "Chào mừng trở lại",
+    "subtitle": "Đăng nhập để tiếp tục hành trình học ngôn ngữ của bạn!"
+  },
+  "FounderMessagePage": {
+    "navigation": {
+      "backToHome": "← Quay lại Trang chủ"
+    },
+    "header": {
+      "subtitle": "Thông điệp từ người sáng lập"
+    },
+    "content": {
+      "greeting": "Xin chào 👋",
+      "welcome": "Chào mừng đến với Poppa. Chúng tôi muốn làm cho việc dạy kèm ngôn ngữ 1-1 trở nên dễ tiếp cận với mọi người.",
+      "background": "Tôi vô cùng may mắn khi hoàn cảnh của mình (sống ở Budapest, và sau đó học tại một trường tuyệt vời ở Anh) cho phép tôi được dạy kèm 1-1 tiếng Trung và tiếng Nga. Việc học những ngôn ngữ này đã thay đổi quỹ đạo cuộc đời tôi theo nhiều cách.",
+      "philosophy": "Việc học ngôn ngữ nên có giá phải chăng và linh hoạt, đó là lý do tại sao chúng tôi đã triển khai hệ thống dựa trên tín dụng cho phép bạn học theo tốc độ và ngân sách của mình. Dù bạn có 5 phút hay 5 giờ, Poppa luôn sẵn sàng hỗ trợ hành trình học ngôn ngữ của bạn.",
+      "approach": "Chúng tôi không bắt bạn viết ra từ, hoặc ghi nhớ các quy tắc ngữ pháp hay cụm từ vô ích. Chúng tôi sẽ giúp bạn suy nghĩ bằng một ngôn ngữ khác. Hãy thử nó. Tôi nghĩ bạn sẽ thích nó và dù sao bài học đầu tiên cũng miễn phí.",
+      "story": "Tôi học tiếng Trung vì ông nội của tôi, người mà tôi gọi là poppa, đã làm việc ở Bắc Kinh nhiều năm và ông ấy đã bắt tôi hứa rằng tôi sẽ học nó. Điều đó đã có tác động lớn đến cuộc đời tôi và tôi hy vọng poppa cũng sẽ có tác động đến bạn :)",
+      "closing": "Chúc học tập vui vẻ!",
+      "signature": "Angelo"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Được tạo ra với sự tận tâm bởi Naxos Labs."
+    }
+  },
+  "SignupPage": {
+    "navigation": {
+      "backToHome": "Quay lại Trang chủ"
+    },
+    "logo": {
+      "alt": "Logo Poppa"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "subtitle": "Bắt đầu hành trình học ngôn ngữ của bạn ngay hôm nay!"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Được tạo ra với sự tận tâm bởi Naxos Labs."
+    }
+  },
+  "LoginForm": {
+    "email": "Email",
+    "password": "Mật khẩu",
+    "loginButton": "Đăng nhập",
+    "forgotPassword": "Quên mật khẩu?",
+    "loading": "Đang đăng nhập...",
+    "success": {
+      "title": "Đăng nhập thành công",
+      "description": "Chào mừng trở lại!"
+    },
+    "error": {
+      "title": "Đăng nhập thất bại"
+    }
+  },
+  "SignupForm": {
+    "firstName": "Tên",
+    "lastName": "Họ",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "nativeLanguage": "Ngôn ngữ mẹ đẻ",
+    "dateOfBirth": "Ngày sinh",
+    "day": "Ngày",
+    "month": "Tháng",
+    "year": "Năm",
+    "signupButton": "Đăng ký",
+    "loading": "Đang đăng ký...",
+    "languageTooltip": "Không tìm thấy ngôn ngữ của bạn? Poppa hiện chỉ hỗ trợ các ngôn ngữ này. Liên hệ với chúng tôi để được hỗ trợ.",
+    "errors": {
+      "passwordMatch": "Mật khẩu không khớp",
+      "generic": "Đã xảy ra lỗi trong quá trình đăng ký. Vui lòng thử lại."
+    }
+  },
+  "ProfilePage": {
+    "navigation": {
+      "backToDashboard": "Quay lại Bảng điều khiển"
+    },
+    "header": {
+      "title": "Hồ sơ"
+    },
+    "accountDetails": {
+      "title": "Chi tiết tài khoản",
+      "joined": "Đã tham gia",
+      "credits": "Tín dụng"
+    }
+  },
+  "DashboardPage": {
+    "navigation": {
+      "profile": "Hồ sơ",
+      "logout": "Đăng xuất",
+      "buyCredits": "Mua tín dụng"
+    },
+    "languages": {
+      "title": "Ngôn ngữ của bạn",
+      "addLanguage": "Thêm ngôn ngữ",
+      "dialog": {
+        "title": "Thêm ngôn ngữ mới",
+        "description": "Chọn ngôn ngữ bạn muốn học",
+        "selectPlaceholder": "Chọn một ngôn ngữ"
+      },
+      "startLearning": {
+        "title": "Bắt đầu học ngay?",
+        "description": "Bạn có muốn bắt đầu bài học {language} đầu tiên ngay bây giờ không?",
+        "later": "Để sau",
+        "startNow": "Bắt đầu ngay"
+      },
+      "card": {
+        "level": "Trình độ trung cấp",
+        "viewHistory": "Xem lịch sử",
+        "continueButton": "Tiếp tục học",
+        "customButton": "Bài học tùy chỉnh"
+      },
+      "customLesson": {
+        "title": "Bài học tùy chỉnh - {language}",
+        "description": "Nhập những gì bạn muốn học về {language}.\nChúng tôi sẽ đảm bảo bài học phù hợp với trình độ của bạn.",
+        "placeholder": "ví dụ: gọi món ăn tại nhà hàng",
+        "startButton": "Bắt đầu bài học"
+      }
+    }
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "HomePage": {
+    "navigation": {
+      "pricing": "Presyo",
+      "howItWorks": "Paano ito gumagana",
+      "login": "Mag-login",
+      "getStarted": "Magsimula"
+    },
+    "announcement": {
+      "live": "✨ Kami ay live na!",
+      "founderMessage": "Basahin ang mensahe ng aming tagapagtatag →"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "title": "Matuto ng wika nang natural",
+      "subtitle": "Gabayan ka ng poppa sa pag-aaral ng bagong wika gamit ang voice-only tutoring"
+    },
+    "languagesSection": {
+      "title": "Mga wikang aming sinasalita"
+    },
+    "whyPoppa": {
+      "title": "Bakit Poppa?",
+      "features": {
+        "tutoring": {
+          "title": "Pagtuturo mula sa simula",
+          "description": "Hindi lang ito roleplays, tinuturuan ka namin sa iyong katutubong wika kung paano mag-isip sa anumang bagong wika.",
+          "learnMore": "Matuto pa →"
+        },
+        "personalized": {
+          "title": "Personalized na Pag-aaral",
+          "description": "Sinusunod namin ang iyong bilis at interes upang matulungan kang umunlad sa paglipas ng panahon."
+        },
+        "freeStart": {
+          "title": "Magsimula nang Libre",
+          "description": "Kumuha ng 20 minutong libreng credits para subukan ang Poppa. Hindi kailangan ng credit card para simulan ang iyong paglalakbay sa pag-aaral ng wika."
+        }
+      },
+      "tryButton": "Subukan ng 20 minutong libre"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Ginawa nang may pag-aalaga ng Naxos Labs."
+    }
+  },
+  "PricingPage": {
+    "navigation": {
+      "home": "Home",
+      "howItWorks": "Paano ito gumagana",
+      "login": "Mag-login",
+      "getStarted": "Magsimula"
+    },
+    "hero": {
+      "title": "Simple, malinaw na presyo",
+      "subtitle": "Magsimula sa 20 minutong libre. Pagkatapos ay bayaran habang ginagamit."
+    },
+    "features": {
+      "aiTutor": "Personalized na AI language tutor",
+      "availability": "24/7 na availability",
+      "adaptiveLearning": "Adaptive learning technology",
+      "progressTracking": "Pagsubaybay ng progreso",
+      "conversation": "Pagsasanay sa pag-uusap",
+      "exercises": "Mga pagsasanay sa grammar at vocabulary"
+    },
+    "pricing": {
+      "perHour": "kada oras ng pagtuturo"
+    },
+    "calculator": {
+      "title": "Ihambing sa tradisyonal na pagtuturo",
+      "hoursPerMonth": "Oras kada buwan",
+      "poppaAI": "Poppa AI",
+      "traditionalTutor": "Tradisyonal na Tutor"
+    },
+    "cta": {
+      "startFree": "Magsimula sa 20 minutong libre",
+      "noCard": "Hindi kailangan ng credit card"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Ginawa nang may pag-aalaga ng Naxos Labs."
+    }
+  },
+  "HowItWorksPage": {
+    "navigation": {
+      "backToHome": "← Bumalik sa Home"
+    },
+    "header": {
+      "openSource": {
+        "badge": "🌟 Kami ay open source!",
+        "link": "Tingnan kami sa GitHub →"
+      },
+      "title": "Paano gumagana ang poppa"
+    },
+    "sections": {
+      "thinkingMethod": {
+        "title": "Ang Thinking Method",
+        "description1": "Gumagamit ang Poppa ng natatanging paraan na tinatawag na \"Thinking Method\" upang tulungan kang matuto ng wika nang natural at epektibo. Sa halip na memoryahin ang mga listahan ng vocabulary o mga patakaran ng grammar, matututunan mong mag-isip sa iyong target na wika mula sa simula.",
+        "description2": "Ang pamamaraang ito ay nakatuon sa pag-unawa sa istraktura ng wika, paggawa ng mga koneksyon, at pagbuo ng iyong kakayahang bumuo ng mga pangungusap nang natural. Ito ay isang malumanay ngunit malakas na paraan na sumusunod sa natural na pagkatuto ng wika."
+      },
+      "tech": {
+        "title": "Ang Tech",
+        "description1": "Para tulungan kang magsanay ng mga pag-uusap sa isang AI tutor na tumutugon sa iyong boses sa real-time, gumagamit kami ng mga modelo ng OpenAI para maunawaan at tumugon sa iyong sinasabi, nag-iimbak ng kumpletong kasaysayan ng pag-uusap sa cloud, at may mga server na nakakalat sa buong mundo para mag-alok ng mababang latency na komunikasyon sa aming produkto.",
+        "description2": "🌟 Naniniwala kami sa open source. Ang Poppa ay ganap na open source kaya kung ayaw mong magbayad ng kahit isang sentimo, hindi mo kailangang gawin. Kung sa halip, ayaw mong magkaroon ng abala sa pamamahala ng mga server para sa mababang latency na voice communications, nag-aalok kami ng paid service sa website na ito. Tingnan kami sa github."
+      },
+      "personalizedLearning": {
+        "title": "Ang Huling Resulta: Personalized na Pag-aaral",
+        "description1": "Bawat aralin na ginagawa mo sa Poppa ay natatranscribe at naiimbak, na lumilikha ng komprehensibong tala ng iyong paglalakbay sa pag-aaral. Ito ay nagbibigay-daan sa amin na:",
+        "benefits": [
+          "Subaybayan ang iyong progreso at i-customize ang mga susunod na aralin ayon sa iyong mga pangangailangan",
+          "Ipatupad ang spaced repetition para palakasin ang iyong natutunan",
+          "Magbigay sa iyo ng hakbang-hakbang na landas patungo sa kahusayan sa wika"
+        ],
+        "description2": "Ang iyong personalized na landas ng pag-aaral ay umuunlad kasama mo, tinitiyak na palagi kang hinihamon sa tamang antas at muling binibisita ang mahahalagang konsepto sa tamang pagitan para sa retensyon."
+      }
+    }
+  },
+  "LoginPage": {
+    "navigation": {
+      "backToHome": "Bumalik sa Home",
+      "signup": "Mag-sign Up"
+    },
+    "logo": {
+      "alt": "Logo ng Poppa"
+    },
+    "title": "Maligayang Pagbabalik",
+    "subtitle": "Mag-login para ipagpatuloy ang iyong paglalakbay sa pag-aaral ng wika!"
+  },
+  "FounderMessagePage": {
+    "navigation": {
+      "backToHome": "← Bumalik sa Home"
+    },
+    "header": {
+      "subtitle": "Isang mensahe mula sa tagapagtatag"
+    },
+    "content": {
+      "greeting": "Hi 👋",
+      "welcome": "Maligayang pagdating sa Poppa. Nais naming gawing accessible sa lahat ang 1-on-1 na pagtuturo ng wika.",
+      "background": "Napakasuwerte ko na ang aking mga kalagayan (nakatira sa Budapest, at pagkatapos ay pumasok sa isang magandang paaralan sa UK) ay nagbigay-daan sa akin na makakuha ng 1-1 na pagtuturo ng wika sa Chinese at Russian. Ang pag-aaral ng mga wikang ito ay sa maraming paraan ay nagbago ng direksyon ng aking buhay.",
+      "philosophy": "Ang pag-aaral ng wika ay dapat abot-kaya at flexible, kaya namin ipinatupad ang credit-based system na nagbibigay-daan sa iyo na matuto sa iyong sariling bilis at badyet. Maging 5 minuto o 5 oras man, nandito ang Poppa para suportahan ang iyong paglalakbay sa pag-aaral ng wika.",
+      "approach": "Hindi ka namin pipilitin na magsulat ng mga salita, o memoryahin ang mga walang kwentang patakaran ng grammar o mga parirala. Tutulungan ka naming mag-isip sa ibang wika. Pakisubukan. Sa tingin ko magugustuhan mo ito at libre naman ang unang aralin.",
+      "story": "Nag-aral ako ng Mandarin dahil ang aking lolo, na tinawag kong poppa, ay nagtrabaho sa Beijing ng maraming taon at ipinangako niya sa akin na matututunan ko ito. Malaki ang naging epekto nito sa aking buhay at umaasa akong magkakaroon din ng epekto sa iyo ang poppa :)",
+      "closing": "Masayang pag-aaral!",
+      "signature": "Angelo"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Ginawa nang may pag-aalaga ng Naxos Labs."
+    }
+  },
+  "SignupPage": {
+    "navigation": {
+      "backToHome": "Bumalik sa Home"
+    },
+    "logo": {
+      "alt": "Logo ng Poppa"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "subtitle": "Simulan ang iyong paglalakbay sa pag-aaral ng wika ngayon!"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Ginawa nang may pag-aalaga ng Naxos Labs."
+    }
+  },
+  "LoginForm": {
+    "email": "Email",
+    "password": "Password",
+    "loginButton": "Mag-login",
+    "forgotPassword": "Nakalimutan ang password?",
+    "loading": "Nagla-login...",
+    "success": {
+      "title": "Matagumpay ang Login",
+      "description": "Maligayang pagbabalik!"
+    },
+    "error": {
+      "title": "Hindi Matagumpay ang Login"
+    }
+  },
+  "SignupForm": {
+    "firstName": "Pangalan",
+    "lastName": "Apelyido",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Kumpirmahin ang Password",
+    "nativeLanguage": "Katutubong Wika",
+    "dateOfBirth": "Petsa ng Kapanganakan",
+    "day": "Araw",
+    "month": "Buwan",
+    "year": "Taon",
+    "signupButton": "Mag-sign Up",
+    "loading": "Nagsa-sign Up...",
+    "languageTooltip": "Hindi mahanap ang iyong wika? Ang Poppa ay suportado lamang sa mga wikang ito sa ngayon. Makipag-ugnayan sa amin para sa tulong.",
+    "errors": {
+      "passwordMatch": "Hindi magkatugma ang mga password",
+      "generic": "May naganap na error sa pag-sign up. Pakisubukan muli."
+    }
+  },
+  "ProfilePage": {
+    "navigation": {
+      "backToDashboard": "Bumalik sa Dashboard"
+    },
+    "header": {
+      "title": "Profile"
+    },
+    "accountDetails": {
+      "title": "Mga Detalye ng Account",
+      "joined": "Sumali",
+      "credits": "Credits"
+    }
+  },
+  "DashboardPage": {
+    "navigation": {
+      "profile": "Profile",
+      "logout": "Mag-logout",
+      "buyCredits": "Bumili ng Credits"
+    },
+    "languages": {
+      "title": "Iyong mga Wika",
+      "addLanguage": "Magdagdag ng Wika",
+      "dialog": {
+        "title": "Magdagdag ng Bagong Wika",
+        "description": "Pumili ng wikang nais mong pag-aralan",
+        "selectPlaceholder": "Pumili ng wika"
+      },
+      "startLearning": {
+        "title": "Magsimula ng Pag-aaral Ngayon?",
+        "description": "Nais mo bang simulan ang iyong unang aralin sa {language} ngayon?",
+        "later": "Mamaya",
+        "startNow": "Simulan Ngayon"
+      },
+      "card": {
+        "level": "Intermediate Level",
+        "viewHistory": "Tingnan ang Kasaysayan",
+        "continueButton": "Ipagpatuloy ang Pag-aaral",
+        "customButton": "Custom na Aralin"
+      },
+      "customLesson": {
+        "title": "Custom na Aralin - {language}",
+        "description": "Ilagay kung ano ang nais mong pag-aralan sa {language}.\nTitiyakin naming angkop ang aralin sa iyong antas.",
+        "placeholder": "hal., pag-order ng pagkain sa restaurant",
+        "startButton": "Simulan ang Aralin"
+      }
+    }
+  }
+}

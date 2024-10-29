@@ -1,0 +1,241 @@
+{
+  "HomePage": {
+    "navigation": {
+      "pricing": "Harga",
+      "howItWorks": "Cara kerja",
+      "login": "Masuk",
+      "getStarted": "Mulai"
+    },
+    "announcement": {
+      "live": "✨ Kami sudah aktif!",
+      "founderMessage": "Baca pesan dari pendiri kami →"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "title": "Belajar bahasa secara alami",
+      "subtitle": "poppa membimbing Anda langkah demi langkah dalam mempelajari bahasa baru dengan tutorial suara saja"
+    },
+    "languagesSection": {
+      "title": "Bahasa yang kami gunakan"
+    },
+    "whyPoppa": {
+      "title": "Mengapa Poppa?",
+      "features": {
+        "tutoring": {
+          "title": "Tutorial dari nol",
+          "description": "Ini bukan sekedar bermain peran, kami mengajarkan Anda dalam bahasa ibu Anda bagaimana berpikir dalam bahasa baru.",
+          "learnMore": "Pelajari lebih lanjut →"
+        },
+        "personalized": {
+          "title": "Pembelajaran Personal",
+          "description": "Kami menyesuaikan dengan kecepatan dan minat Anda untuk membantu Anda berkembang seiring waktu."
+        },
+        "freeStart": {
+          "title": "Mulai Gratis",
+          "description": "Dapatkan 20 menit kredit gratis untuk mencoba Poppa. Tidak perlu kartu kredit untuk memulai perjalanan belajar bahasa Anda."
+        }
+      },
+      "tryButton": "Coba 20 menit gratis"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Dibuat dengan penuh perhatian oleh Naxos Labs."
+    }
+  },
+  "PricingPage": {
+    "navigation": {
+      "home": "Beranda",
+      "howItWorks": "Cara kerja",
+      "login": "Masuk",
+      "getStarted": "Mulai"
+    },
+    "hero": {
+      "title": "Harga sederhana dan transparan",
+      "subtitle": "Mulai dengan 20 menit gratis. Kemudian bayar sesuai penggunaan."
+    },
+    "features": {
+      "aiTutor": "Tutor bahasa AI personal",
+      "availability": "Tersedia 24/7",
+      "adaptiveLearning": "Teknologi pembelajaran adaptif",
+      "progressTracking": "Pelacakan kemajuan",
+      "conversation": "Latihan percakapan",
+      "exercises": "Latihan tata bahasa dan kosakata"
+    },
+    "pricing": {
+      "perHour": "per jam tutorial"
+    },
+    "calculator": {
+      "title": "Bandingkan dengan tutorial tradisional",
+      "hoursPerMonth": "Jam per bulan",
+      "poppaAI": "Poppa AI",
+      "traditionalTutor": "Tutor Tradisional"
+    },
+    "cta": {
+      "startFree": "Mulai dengan 20 menit gratis",
+      "noCard": "Tidak perlu kartu kredit"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Dibuat dengan penuh perhatian oleh Naxos Labs."
+    }
+  },
+  "HowItWorksPage": {
+    "navigation": {
+      "backToHome": "← Kembali ke Beranda"
+    },
+    "header": {
+      "openSource": {
+        "badge": "🌟 Kami open source!",
+        "link": "Lihat kami di GitHub →"
+      },
+      "title": "Bagaimana poppa bekerja"
+    },
+    "sections": {
+      "thinkingMethod": {
+        "title": "Metode Berpikir",
+        "description1": "Poppa menggunakan pendekatan unik yang disebut \"Metode Berpikir\" untuk membantu Anda belajar bahasa secara alami dan efektif. Alih-alih menghafal daftar kosakata atau aturan tata bahasa, Anda akan belajar berpikir dalam bahasa target sejak awal.",
+        "description2": "Metode ini berfokus pada pemahaman struktur bahasa, membuat koneksi, dan membangun kemampuan Anda untuk menyusun kalimat secara intuitif. Ini adalah pendekatan yang lembut namun kuat yang meniru bagaimana kita secara alami memperoleh bahasa."
+      },
+      "tech": {
+        "title": "Teknologi",
+        "description1": "Untuk membantu Anda berlatih percakapan dengan tutor AI yang merespons suara Anda secara real-time, kami menggunakan model OpenAI untuk memahami dan merespons apa yang Anda katakan, menyimpan riwayat percakapan lengkap di cloud, dan memiliki server yang tersebar secara global untuk menawarkan komunikasi dengan latensi rendah dengan produk kami.",
+        "description2": "🌟 Kami percaya pada open source. Poppa sepenuhnya open source sehingga jika Anda tidak ingin membayar kami satu sen pun, Anda tidak perlu. Jika sebaliknya, Anda tidak ingin repot mengelola server untuk komunikasi suara dengan latensi rendah, kami menawarkan layanan berbayar melalui situs web ini. Kunjungi kami di github."
+      },
+      "personalizedLearning": {
+        "title": "Hasil Akhir: Pembelajaran Personal",
+        "description1": "Setiap pelajaran yang Anda ambil dengan Poppa ditranskripsikan dan disimpan, menciptakan catatan komprehensif tentang perjalanan belajar Anda. Ini memungkinkan kami untuk:",
+        "benefits": [
+          "Melacak kemajuan Anda dan menyesuaikan pelajaran masa depan dengan kebutuhan Anda",
+          "Menerapkan pengulangan berjarak untuk memperkuat apa yang telah Anda pelajari",
+          "Memberikan Anda jalur langkah demi langkah menuju penguasaan bahasa"
+        ],
+        "description2": "Jalur pembelajaran personal Anda berkembang bersama Anda, memastikan bahwa Anda selalu tertantang pada level yang tepat dan mengulang konsep penting pada interval optimal untuk retensi."
+      }
+    }
+  },
+  "LoginPage": {
+    "navigation": {
+      "backToHome": "Kembali ke Beranda",
+      "signup": "Daftar"
+    },
+    "logo": {
+      "alt": "Logo Poppa"
+    },
+    "title": "Selamat Datang Kembali",
+    "subtitle": "Masuk untuk melanjutkan perjalanan belajar bahasa Anda!"
+  },
+  "FounderMessagePage": {
+    "navigation": {
+      "backToHome": "← Kembali ke Beranda"
+    },
+    "header": {
+      "subtitle": "Pesan dari pendiri"
+    },
+    "content": {
+      "greeting": "Hai 👋",
+      "welcome": "Selamat datang di Poppa. Kami ingin membuat tutorial bahasa 1-lawan-1 dapat diakses oleh semua orang.",
+      "background": "Saya sangat beruntung bahwa keadaan saya (tinggal di Budapest, dan kemudian pergi ke sekolah bagus di Inggris) memungkinkan saya mendapatkan tutorial bahasa 1-1 dalam bahasa Mandarin dan Rusia. Belajar bahasa-bahasa ini dalam banyak hal telah mengubah arah hidup saya.",
+      "philosophy": "Belajar bahasa harus terjangkau dan fleksibel, itulah mengapa kami menerapkan sistem berbasis kredit yang memungkinkan Anda belajar sesuai kecepatan dan anggaran Anda. Baik Anda punya waktu 5 menit atau 5 jam, Poppa ada di sini untuk mendukung perjalanan belajar bahasa Anda.",
+      "approach": "Kami tidak membuat Anda menulis kata-kata, atau menghafal aturan tata bahasa atau frasa yang tidak berguna. Kami akan membantu Anda untuk berpikir dalam bahasa lain. Silakan coba. Saya pikir Anda akan menyukainya dan pelajaran pertama gratis.",
+      "story": "Saya belajar bahasa Mandarin karena kakek saya, yang saya panggil poppa, bekerja di Beijing selama bertahun-tahun dan dia membuat saya berjanji padanya bahwa saya akan mempelajarinya. Itu memiliki dampak besar pada hidup saya dan saya berharap poppa juga dapat berdampak pada Anda :)",
+      "closing": "Selamat belajar!",
+      "signature": "Angelo"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Dibuat dengan penuh perhatian oleh Naxos Labs."
+    }
+  },
+  "SignupPage": {
+    "navigation": {
+      "backToHome": "Kembali ke Beranda"
+    },
+    "logo": {
+      "alt": "Logo Poppa"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "subtitle": "Mulai perjalanan belajar bahasa Anda hari ini!"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Dibuat dengan penuh perhatian oleh Naxos Labs."
+    }
+  },
+  "LoginForm": {
+    "email": "Email",
+    "password": "Kata Sandi",
+    "loginButton": "Masuk",
+    "forgotPassword": "Lupa kata sandi?",
+    "loading": "Sedang masuk...",
+    "success": {
+      "title": "Berhasil Masuk",
+      "description": "Selamat datang kembali!"
+    },
+    "error": {
+      "title": "Gagal Masuk"
+    }
+  },
+  "SignupForm": {
+    "firstName": "Nama Depan",
+    "lastName": "Nama Belakang",
+    "email": "Email",
+    "password": "Kata Sandi",
+    "confirmPassword": "Konfirmasi Kata Sandi",
+    "nativeLanguage": "Bahasa Ibu",
+    "dateOfBirth": "Tanggal Lahir",
+    "day": "Hari",
+    "month": "Bulan",
+    "year": "Tahun",
+    "signupButton": "Daftar",
+    "loading": "Sedang mendaftar...",
+    "languageTooltip": "Tidak menemukan bahasa Anda? Poppa hanya tersedia dalam bahasa-bahasa ini untuk saat ini. Hubungi kami untuk bantuan.",
+    "errors": {
+      "passwordMatch": "Kata sandi tidak cocok",
+      "generic": "Terjadi kesalahan saat pendaftaran. Silakan coba lagi."
+    }
+  },
+  "ProfilePage": {
+    "navigation": {
+      "backToDashboard": "Kembali ke Dasbor"
+    },
+    "header": {
+      "title": "Profil"
+    },
+    "accountDetails": {
+      "title": "Detail Akun",
+      "joined": "Bergabung",
+      "credits": "Kredit"
+    }
+  },
+  "DashboardPage": {
+    "navigation": {
+      "profile": "Profil",
+      "logout": "Keluar",
+      "buyCredits": "Beli Kredit"
+    },
+    "languages": {
+      "title": "Bahasa Anda",
+      "addLanguage": "Tambah Bahasa",
+      "dialog": {
+        "title": "Tambah Bahasa Baru",
+        "description": "Pilih bahasa yang ingin Anda pelajari",
+        "selectPlaceholder": "Pilih bahasa"
+      },
+      "startLearning": {
+        "title": "Mulai Belajar Sekarang?",
+        "description": "Apakah Anda ingin memulai pelajaran pertama Anda dalam bahasa {language} sekarang?",
+        "later": "Nanti",
+        "startNow": "Mulai Sekarang"
+      },
+      "card": {
+        "level": "Level Menengah",
+        "viewHistory": "Lihat Riwayat",
+        "continueButton": "Lanjutkan Belajar",
+        "customButton": "Pelajaran Kustom"
+      },
+      "customLesson": {
+        "title": "Pelajaran Kustom - {language}",
+        "description": "Masukkan apa yang ingin Anda pelajari dalam bahasa {language}.\nKami akan memastikan pelajaran sesuai dengan level Anda.",
+        "placeholder": "contoh: memesan makanan di restoran",
+        "startButton": "Mulai Pelajaran"
+      }
+    }
+  }
+}

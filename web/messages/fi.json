@@ -1,0 +1,215 @@
+{
+  "HomePage": {
+    "navigation": {
+      "pricing": "Hinnoittelu",
+      "howItWorks": "Miten se toimii",
+      "login": "Kirjaudu",
+      "getStarted": "Aloita"
+    },
+    "announcement": {
+      "live": "✨ Olemme nyt avoinna!",
+      "founderMessage": "Lue perustajan viesti →"
+    },
+    "hero": {
+      "brandName": "poppa", 
+      "title": "Opi kieliä luonnollisesti",
+      "subtitle": "poppa ohjaa sinua askel askeleelta uuden kielen oppimisessa ääniohjauksella"
+    },
+    "languagesSection": {
+      "title": "Kielet joita puhumme"
+    },
+    "whyPoppa": {
+      "title": "Miksi Poppa?",
+      "features": {
+        "tutoring": {
+          "title": "Opetusta alusta alkaen"
+        }
+      }
+    },
+    "features": {
+      "aiTutor": "Henkilökohtainen AI-kieliopettaja",
+      "availability": "Käytettävissä 24/7",
+      "adaptiveLearning": "Mukautuva oppimistekniikka",
+      "progressTracking": "Edistymisen seuranta",
+      "conversation": "Keskusteluharjoittelu",
+      "exercises": "Kielioppi- ja sanastoharjoitukset"
+    },
+    "pricing": {
+      "perHour": "per opetustunti"
+    },
+    "calculator": {
+      "title": "Vertaa perinteiseen opetukseen",
+      "hoursPerMonth": "tuntia kuukaudessa",
+      "poppaAI": "Poppa AI",
+      "traditionalTutor": "Perinteinen opettaja"
+    },
+    "cta": {
+      "startFree": "Aloita 20 ilmaisella minuutilla",
+      "noCard": "Luottokorttia ei tarvita"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Huolella tehty Naxos Labsissa."
+    }
+  },
+  "HowItWorksPage": {
+    "navigation": {
+      "backToHome": "← Takaisin etusivulle"
+    },
+    "header": {
+      "openSource": {
+        "badge": "🌟 Olemme avointa lähdekoodia!",
+        "link": "Tutustu meihin GitHubissa ←"
+      },
+      "title": "Miten poppa toimii"
+    },
+    "sections": {
+      "thinkingMethod": {
+        "title": "Ajattelumenetelmä",
+        "description1": "Poppa käyttää ainutlaatuista \"Ajattelumenetelmää\" auttaakseen sinua oppimaan kieliä luonnollisesti ja tehokkaasti. Sen sijaan että opettelisit sanalistoja tai kielioppisääntöjä ulkoa, opit ajattelemaan kohdekielellä alusta alkaen.",
+        "description2": "Tämä menetelmä keskittyy kielen rakenteen ymmärtämiseen, yhteyksien luomiseen ja intuitiivisen lauseenmuodostuskyvyn rakentamiseen. Se on lempeä mutta tehokas lähestymistapa, joka jäljittelee luonnollista kielen omaksumista."
+      },
+      "tech": {
+        "title": "Teknologia",
+        "description1": "Auttaaksemme sinua harjoittelemaan keskusteluja AI-opettajan kanssa, joka reagoi ääneesi reaaliajassa, käytämme OpenAI:n malleja ymmärtämään ja vastaamaan siihen mitä sanot, tallennamme täydelliset keskusteluhistoriat pilveen ja meillä on maailmanlaajuisesti hajautetut palvelimet tarjoamaan matalan latenssin yhteyden tuotteeseemme.",
+        "description2": "🌟 Uskomme avoimeen lähdekoodiin. Poppa on täysin avointa lähdekoodia, joten jos et halua maksaa meille senttiäkään, sinun ei tarvitse. Jos et halua vaivautua hallinnoimaan palvelimia matalan latenssin äänikommunikaatiota varten, tarjoamme maksullisen palvelun tämän sivuston kautta. Tutustu meihin githubissa."
+      },
+      "personalizedLearning": {
+        "title": "Lopputulos: Henkilökohtainen oppiminen",
+        "description1": "Jokainen Poppan kanssa ottamasi oppitunti kirjoitetaan muistiin ja tallennetaan, luoden kattavan tallenteen oppimismatkastasi. Tämä mahdollistaa:",
+        "benefits": [
+          "Edistymisesi seurannan ja tulevien oppituntien räätälöinnin tarpeidesi mukaan",
+          "Hajautetun kertauksen toteuttamisen opitun vahvistamiseksi",
+          "Askel askeleelta etenevän polun tarjoamisen kielen hallintaan"
+        ],
+        "description2": "Henkilökohtainen oppimispolkusi kehittyy kanssasi, varmistaen että kohtaat aina sopivan tasoisia haasteita ja kertaat tärkeitä konsepteja optimaalisin väliajoin muistamisen kannalta."
+      }
+    }
+  },
+  "LoginPage": {
+    "navigation": {
+      "backToHome": "Takaisin etusivulle",
+      "signup": "Rekisteröidy"
+    },
+    "logo": {
+      "alt": "Poppa Logo"
+    },
+    "title": "Tervetuloa takaisin",
+    "subtitle": "Kirjaudu sisään jatkaaksesi kielimatkaa!"
+  },
+  "FounderMessagePage": {
+    "navigation": {
+      "backToHome": "← Takaisin etusivulle"
+    },
+    "header": {
+      "subtitle": "Viesti perustajalta"
+    },
+    "content": {
+      "greeting": "Hei 👋",
+      "welcome": "Tervetuloa Poppaan. Haluamme tehdä henkilökohtaisesta kielenopetuksesta saavutettavaa kaikille.",
+      "background": "Olin erittäin onnekas, että olosuhteeni (asuminen Budapestissa ja sitten loistavaan kouluun pääsy Isossa-Britanniassa) mahdollistivat minulle henkilökohtaisen kielenopetuksen kiinassa ja venäjässä. Näiden kielten oppiminen muutti elämäni suuntaa monin tavoin.",
+      "philosophy": "Kielenoppimisen tulisi olla edullista ja joustavaa, siksi olemme ottaneet käyttöön krediittipohjaisen järjestelmän, joka mahdollistaa oppimisen omaan tahtiin ja budjetin mukaan. Oli sinulla sitten 5 minuuttia tai 5 tuntia, Poppa on täällä tukemassa kielimatkasi.",
+      "approach": "Emme pakota sinua kirjoittamaan sanoja tai opettelemaan ulkoa hyödyttömiä kielioppisääntöjä tai fraaseja. Autamme sinua ajattelemaan toisella kielellä. Kokeile ihmeessä. Luulen että pidät siitä ja ensimmäinen oppitunti on joka tapauksessa meidän piikkiin.",
+      "story": "Opin mandariinikiinaa koska isoisäni, jota kutsuin nimellä poppa, työskenteli Pekingissä monta vuotta ja sai minut lupaamaan että oppisin sen. Sillä oli valtava vaikutus elämääni ja toivon että poppa voi vaikuttaa sinuunkin :)",
+      "closing": "Hauskaa oppimista!",
+      "signature": "Angelo"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Huolella tehty Naxos Labsissa."
+    }
+  },
+  "SignupPage": {
+    "navigation": {
+      "backToHome": "Takaisin etusivulle"
+    },
+    "logo": {
+      "alt": "Poppa Logo"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "subtitle": "Aloita kielimatkasi tänään!"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Huolella tehty Naxos Labsissa."
+    }
+  },
+  "LoginForm": {
+    "email": "Sähköposti",
+    "password": "Salasana",
+    "loginButton": "Kirjaudu",
+    "forgotPassword": "Unohditko salasanan?",
+    "loading": "Kirjaudutaan...",
+    "success": {
+      "title": "Kirjautuminen onnistui",
+      "description": "Tervetuloa takaisin!"
+    },
+    "error": {
+      "title": "Kirjautuminen epäonnistui"
+    }
+  },
+  "SignupForm": {
+    "firstName": "Etunimi",
+    "lastName": "Sukunimi",
+    "email": "Sähköposti",
+    "password": "Salasana",
+    "confirmPassword": "Vahvista salasana",
+    "nativeLanguage": "Äidinkieli",
+    "dateOfBirth": "Syntymäaika",
+    "day": "Päivä",
+    "month": "Kuukausi",
+    "year": "Vuosi",
+    "signupButton": "Rekisteröidy",
+    "loading": "Rekisteröidytään...",
+    "languageTooltip": "Etkö löydä kieltäsi? Poppa tukee toistaiseksi vain näitä kieliä. Ota yhteyttä saadaksesi apua.",
+    "errors": {
+      "passwordMatch": "Salasanat eivät täsmää",
+      "generic": "Rekisteröitymisessä tapahtui virhe. Yritä uudelleen."
+    }
+  },
+  "ProfilePage": {
+    "navigation": {
+      "backToDashboard": "Takaisin kojelaudalle"
+    },
+    "header": {
+      "title": "Profiili"
+    },
+    "accountDetails": {
+      "title": "Tilin tiedot",
+      "joined": "Liittynyt",
+      "credits": "Krediitit"
+    }
+  },
+  "DashboardPage": {
+    "navigation": {
+      "profile": "Profiili",
+      "logout": "Kirjaudu ulos",
+      "buyCredits": "Osta krediittejä"
+    },
+    "languages": {
+      "title": "Kielesi",
+      "addLanguage": "Lisää kieli",
+      "dialog": {
+        "title": "Lisää uusi kieli",
+        "description": "Valitse kieli jonka haluat oppia",
+        "selectPlaceholder": "Valitse kieli"
+      },
+      "startLearning": {
+        "title": "Aloitetaanko oppiminen nyt?",
+        "description": "Haluatko aloittaa ensimmäisen {language} oppituntisi nyt?",
+        "later": "Myöhemmin",
+        "startNow": "Aloita nyt"
+      },
+      "card": {
+        "level": "Keskitaso",
+        "viewHistory": "Näytä historia",
+        "continueButton": "Jatka oppimista",
+        "customButton": "Mukautettu oppitunti"
+      },
+      "customLesson": {
+        "title": "Mukautettu oppitunti - {language}",
+        "description": "Syötä mitä haluat oppia {language} kielellä.\nVarmistamme että oppitunti vastaa tasoasi.",
+        "placeholder": "esim. ruoan tilaaminen ravintolassa",
+        "startButton": "Aloita oppitunti"
+      }
+    }
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "HomePage": {
+    "navigation": {
+      "pricing": "Precios",
+      "howItWorks": "Cómo funciona", 
+      "login": "Iniciar sesión",
+      "getStarted": "Empezar"
+    },
+    "announcement": {
+      "live": "✨ ¡Ya estamos en vivo!",
+      "founderMessage": "Lee el mensaje de nuestro fundador →"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "title": "Aprende idiomas naturalmente",
+      "subtitle": "Poppa te guía paso a paso para aprender un nuevo idioma con enseñanza exclusivamente por voz"
+    },
+    "languagesSection": {
+      "title": "Idiomas que hablamos"
+    },
+    "whyPoppa": {
+      "title": "¿Por qué Poppa?",
+      "features": {
+        "tutoring": {
+          "title": "Tutoría desde cero"
+        }
+      }
+    },
+    "features": {
+      "aiTutor": "Tutor de idiomas de IA personalizado",
+      "availability": "Disponible 24/7",
+      "adaptiveLearning": "Tecnología de aprendizaje adaptativo",
+      "progressTracking": "Seguimiento del progreso",
+      "conversation": "Práctica de conversación",
+      "exercises": "Ejercicios de gramática y vocabulario"
+    },
+    "pricing": {
+      "perHour": "por hora de tutoría"
+    },
+    "calculator": {
+      "title": "Compara con la tutoría tradicional",
+      "hoursPerMonth": "horas por mes",
+      "poppaAI": "Poppa AI",
+      "traditionalTutor": "Tutor tradicional"
+    },
+    "cta": {
+      "startFree": "Comienza con 20 minutos gratis",
+      "noCard": "No se requiere tarjeta de crédito"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Hecho con cariño por Naxos Labs."
+    }
+  },
+  "HowItWorksPage": {
+    "navigation": {
+      "backToHome": "← Volver al inicio"
+    },
+    "header": {
+      "openSource": {
+        "badge": "🌟 ¡Somos código abierto!",
+        "link": "Visítanos en GitHub ←"
+      },
+      "title": "Cómo funciona poppa"
+    },
+    "sections": {
+      "thinkingMethod": {
+        "title": "El método de pensamiento",
+        "description1": "Poppa utiliza un enfoque único llamado \"método de pensamiento\" para ayudarte a aprender idiomas de forma natural y efectiva. En lugar de memorizar listas de vocabulario o reglas gramaticales, aprenderás a pensar en tu idioma objetivo desde el principio.",
+        "description2": "Este método se centra en comprender la estructura del idioma, crear conexiones y desarrollar la capacidad de formar oraciones de manera intuitiva. Es un enfoque suave pero poderoso que imita cómo adquirimos los idiomas naturalmente."
+      },
+      "tech": {
+        "title": "La tecnología",
+        "description1": "Para ayudarte a practicar conversaciones con un tutor de IA que responde a tu voz en tiempo real, utilizamos modelos de OpenAI para entender y responder a lo que dices, almacenamos historiales completos de conversaciones en la nube, y tenemos servidores distribuidos globalmente para proporcionar una conexión de baja latencia con nuestro producto.",
+        "description2": "🌟 Creemos en el código abierto. Poppa es completamente de código abierto, así que si no quieres pagarnos ni un centavo, no tienes que hacerlo. Si no quieres la molestia de administrar servidores para comunicaciones de voz de baja latencia, ofrecemos un servicio pago a través de este sitio web. Visítanos en github."
+      },
+      "personalizedLearning": {
+        "title": "El resultado final: Aprendizaje personalizado",
+        "description1": "Cada lección que tomas con Poppa se transcribe y almacena, creando un registro completo de tu viaje de aprendizaje. Esto nos permite:",
+        "benefits": [
+          "Rastrear tu progreso y personalizar futuras lecciones a tus necesidades",
+          "Implementar repetición espaciada para reforzar lo que has aprendido",
+          "Proporcionarte un camino paso a paso hacia el dominio del idioma"
+        ],
+        "description2": "Tu camino de aprendizaje personalizado evoluciona contigo, asegurando que siempre estés desafiado al nivel adecuado y repasando conceptos importantes en intervalos óptimos para la retención."
+      }
+    }
+  },
+  "LoginPage": {
+    "navigation": {
+      "backToHome": "Volver al inicio",
+      "signup": "Registrarse"
+    },
+    "logo": {
+      "alt": "Logo de Poppa"
+    },
+    "title": "Bienvenido de nuevo",
+    "subtitle": "¡Inicia sesión para continuar tu viaje de aprendizaje de idiomas!"
+  },
+  "FounderMessagePage": {
+    "navigation": {
+      "backToHome": "← Volver al inicio"
+    },
+    "header": {
+      "subtitle": "Mensaje del fundador"
+    },
+    "content": {
+      "greeting": "Hola 👋",
+      "welcome": "Bienvenido a Poppa. Queremos hacer que la tutoría individual de idiomas sea accesible para todos.",
+      "background": "Fui increíblemente afortunado de que mis circunstancias (vivir en Budapest y luego ir a una gran escuela en el Reino Unido) me permitieran recibir tutoría individual en chino y ruso. Aprender estos idiomas cambió la trayectoria de mi vida de muchas maneras.",
+      "philosophy": "El aprendizaje de idiomas debería ser asequible y flexible, por eso hemos implementado un sistema basado en créditos que te permite aprender a tu propio ritmo y presupuesto. Ya sea que tengas 5 minutos o 5 horas, Poppa está aquí para apoyar tu viaje de aprendizaje de idiomas.",
+      "approach": "No te hacemos escribir palabras, o memorizar reglas gramaticales o frases inútiles. Te ayudaremos a pensar en otro idioma. Por favor, pruébalo. Creo que te gustará y la primera lección es gratis de todos modos.",
+      "story": "Aprendí mandarín porque mi abuelo, a quien llamaba poppa, trabajó en Beijing durante muchos años y me hizo prometerle que lo aprendería. Eso tuvo un gran impacto en mi vida y espero que poppa pueda tener un impacto en ti también :)",
+      "closing": "¡Feliz aprendizaje!",
+      "signature": "Angelo"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Hecho con cariño por Naxos Labs."
+    }
+  },
+  "SignupPage": {
+    "navigation": {
+      "backToHome": "Volver al inicio"
+    },
+    "logo": {
+      "alt": "Logo de Poppa"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "subtitle": "¡Comienza tu viaje de aprendizaje de idiomas hoy!"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Hecho con cariño por Naxos Labs."
+    }
+  },
+  "LoginForm": {
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "loginButton": "Iniciar sesión",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "loading": "Iniciando sesión...",
+    "success": {
+      "title": "Inicio de sesión exitoso",
+      "description": "¡Bienvenido de nuevo!"
+    },
+    "error": {
+      "title": "Error al iniciar sesión"
+    }
+  },
+  "SignupForm": {
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "nativeLanguage": "Idioma nativo",
+    "dateOfBirth": "Fecha de nacimiento",
+    "day": "Día",
+    "month": "Mes",
+    "year": "Año",
+    "signupButton": "Registrarse",
+    "loading": "Registrando...",
+    "languageTooltip": "¿No encuentras tu idioma? Poppa solo está soportado en estos idiomas por ahora. Contáctanos para obtener ayuda.",
+    "errors": {
+      "passwordMatch": "Las contraseñas no coinciden",
+      "generic": "Ocurrió un error durante el registro. Por favor, inténtalo de nuevo."
+    }
+  },
+  "ProfilePage": {
+    "navigation": {
+      "backToDashboard": "Volver al panel"
+    },
+    "header": {
+      "title": "Perfil"
+    },
+    "accountDetails": {
+      "title": "Detalles de la cuenta",
+      "joined": "Se unió",
+      "credits": "Créditos"
+    }
+  },
+  "DashboardPage": {
+    "navigation": {
+      "profile": "Perfil",
+      "logout": "Cerrar sesión",
+      "buyCredits": "Comprar créditos"
+    },
+    "languages": {
+      "title": "Tus idiomas",
+      "addLanguage": "Agregar idioma",
+      "dialog": {
+        "title": "Agregar nuevo idioma",
+        "description": "Elige un idioma que quieras aprender",
+        "selectPlaceholder": "Selecciona un idioma"
+      },
+      "startLearning": {
+        "title": "¿Comenzar a aprender ahora?",
+        "description": "¿Quieres comenzar tu primera lección en {language} ahora?",
+        "later": "Más tarde",
+        "startNow": "Comenzar ahora"
+      },
+      "card": {
+        "level": "Nivel intermedio",
+        "viewHistory": "Ver historial",
+        "continueButton": "Continuar aprendiendo",
+        "customButton": "Lección personalizada"
+      },
+      "customLesson": {
+        "title": "Lección personalizada - {language}",
+        "description": "Ingresa lo que quieres aprender en {language}.\nNos aseguraremos de que la lección se ajuste a tu nivel.",
+        "placeholder": "ej., pedir comida en un restaurante",
+        "startButton": "Comenzar lección"
+      }
+    }
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "HomePage": {
+    "navigation": {
+      "pricing": "Iye",
+      "howItWorks": "Bí ó ṣe ń ṣiṣẹ́",
+      "login": "Wọlé",
+      "getStarted": "Bẹ̀rẹ̀"
+    },
+    "announcement": {
+      "live": "✨ A ti bẹ̀rẹ̀!",
+      "founderMessage": "Ka ọ̀rọ̀ olùdásílẹ̀ wa →"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "title": "Kọ́ èdè ní ọ̀nà àdájọ́",
+      "subtitle": "poppa yóò máa tọ́ ọ sọ́nà láti kọ́ èdè tuntun pẹ̀lú ẹ̀kọ́ ohùn nìkan"
+    },
+    "languagesSection": {
+      "title": "Àwọn èdè tí a ń sọ"
+    },
+    "whyPoppa": {
+      "title": "Kí ló dé tí Poppa?",
+      "features": {
+        "tutoring": {
+          "title": "Ẹ̀kọ́ láti ìbẹ̀rẹ̀",
+          "description": "Kìí ṣe eré ìdárayá nìkan, a ń kọ́ ọ ní èdè abínibí rẹ bí o ṣe lè ronú ní èdè tuntun.",
+          "learnMore": "Kẹ́kọ̀ọ́ síi →"
+        },
+        "personalized": {
+          "title": "Ẹ̀kọ́ Ọ̀kọ̀ọ̀kan",
+          "description": "A ń tẹ̀lé ìlọsíwájú àti ohun tó ń fẹ́ láti ràn ọ́ lọ́wọ́ láti tún dára si."
+        },
+        "freeStart": {
+          "title": "Bẹ̀rẹ̀ Lọ́fẹ̀ẹ́",
+          "description": "Gba ìṣẹ́jú ogún lọ́fẹ̀ẹ́ láti dán Poppa wò. Kò nílò káàdì ìsanwó láti bẹ̀rẹ̀ ìrìn-àjò ẹ̀kọ́ èdè rẹ."
+        }
+      },
+      "tryButton": "Dán ìṣẹ́jú 20 lọ́fẹ̀ẹ́ wò"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Ṣe pẹ̀lú ìtọ́jú látọwọ́ Naxos Labs."
+    }
+  },
+  "PricingPage": {
+    "navigation": {
+      "home": "Ilé",
+      "howItWorks": "Bí ó ṣe ń ṣiṣẹ́",
+      "login": "Wọlé",
+      "getStarted": "Bẹ̀rẹ̀"
+    },
+    "hero": {
+      "title": "Ìdíyelé rọrùn, ó hàn gbangba",
+      "subtitle": "Bẹ̀rẹ̀ pẹ̀lú ìṣẹ́jú 20 lọ́fẹ̀ẹ́. Lẹ́yìn náà san bí o ṣe ń lọ."
+    },
+    "features": {
+      "aiTutor": "Olùkọ́ èdè AI ọ̀kọ̀ọ̀kan",
+      "availability": "Wà níbẹ̀ 24/7",
+      "adaptiveLearning": "Ìmọ̀-ẹ̀rọ ẹ̀kọ́ tó ń ṣàyẹ̀wò",
+      "progressTracking": "Ìtẹ̀lé ìlọsíwájú",
+      "conversation": "Ìdánilẹ́kọ̀ọ́ ọ̀rọ̀ sísọ",
+      "exercises": "Ìdánwò gírámà àti ọ̀rọ̀"
+    },
+    "pricing": {
+      "perHour": "fún wákàtí ẹ̀kọ́ kan"
+    },
+    "calculator": {
+      "title": "Fi wé ẹ̀kọ́ àtẹ̀yìnwá",
+      "hoursPerMonth": "Wákàtí lóṣooṣù",
+      "poppaAI": "Poppa AI",
+      "traditionalTutor": "Olùkọ́ Àtẹ̀yìnwá"
+    },
+    "cta": {
+      "startFree": "Bẹ̀rẹ̀ pẹ̀lú ìṣẹ́jú 20 lọ́fẹ̀ẹ́",
+      "noCard": "Kò nílò káàdì ìsanwó"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Ṣe pẹ̀lú ìtọ́jú látọwọ́ Naxos Labs."
+    }
+  },
+  "HowItWorksPage": {
+    "navigation": {
+      "backToHome": "← Padà sí Ilé"
+    },
+    "header": {
+      "openSource": {
+        "badge": "🌟 A jẹ́ open source!",
+        "link": "Ṣàyẹ̀wò wa lórí GitHub →"
+      },
+      "title": "Bí poppa ṣe ń ṣiṣẹ́"
+    },
+    "sections": {
+      "thinkingMethod": {
+        "title": "Ọ̀nà Ìrònú",
+        "description1": "Poppa ń lo ọ̀nà àrà tí a pè ní \"Ọ̀nà Ìrònú\" láti ràn ọ́ lọ́wọ́ láti kọ́ èdè ní ọ̀nà àdájọ́ tó sì múnádóko. Dípò kí o máa rántí àwọn ọ̀rọ̀ tàbí òfin gírámà, ìwọ yóò kọ́ bí a ṣe ń ronú ní èdè tí o fẹ́ kọ́ láti ìbẹ̀rẹ̀.",
+        "description2": "Ọ̀nà yìí dojú kọ ní oye nípa ìlànà èdè náà, ṣíṣe àjọṣe, àti kíkọ́ agbára rẹ láti ṣe gbólóhùn ní ọ̀nà tó rọrùn. Ó jẹ́ ọ̀nà tó rọrùn ṣùgbọ́n ó ní agbára tó ń ṣe àfarawé bí a ṣe ń gba èdè ní ọ̀nà àdájọ́."
+      },
+      "tech": {
+        "title": "Ìmọ̀-ẹ̀rọ",
+        "description1": "Láti ràn ọ́ lọ́wọ́ láti máa sọ̀rọ̀ pẹ̀lú olùkọ́ AI tí ń dáhùn sí ohùn rẹ lẹ́sẹ̀kẹsẹ̀, a ń lo àwọn ọ̀nà OpenAI láti gbọ́ àti dáhùn sí ohun tí o sọ, tọ́jú ìtàn ọ̀rọ̀ ní ojú ọ̀run, a sì ní àwọn ẹ̀rọ káàkiri àgbáyé láti pèsè ìbánisọ̀rọ̀ tó yára pẹ̀lú ọjà wa.",
+        "description2": "🌟 A gbàgbọ́ nínú open source. Poppa jẹ́ open source ní kíkún nítorí náà tí o kò bá fẹ́ san owó kan fún wa, kò sòro. Tí o kò bá fẹ́ wahala ìṣàkóso ẹ̀rọ fún ìbánisọ̀rọ̀ ohùn tó yára, a ń pèsè iṣẹ́ tí a ń sanwó fún lórí ààyè yìí. Ṣàyẹ̀wò wa lórí github."
+      },
+      "personalizedLearning": {
+        "title": "Àbájáde Ìkẹyìn: Ẹ̀kọ́ Ọ̀kọ̀ọ̀kan",
+        "description1": "Gbogbo ẹ̀kọ́ tí o bá kọ́ pẹ̀lú Poppa ni a kọ sílẹ̀, a sì tọ́jú rẹ̀, èyí ń ṣẹ̀dá àkọsílẹ̀ kíkún nípa ìrìn-àjò ẹ̀kọ́ rẹ. Èyí fún wa láàyè láti:",
+        "benefits": [
+          "Tẹ̀lé ìlọsíwájú rẹ kí a sì ṣe àwọn ẹ̀kọ́ tó bá ìnílò rẹ mu",
+          "Lo ìgbìyànjú ọ̀pọ̀lọpọ̀ láti fi ìmọ̀ tí o ti kọ́ múlẹ̀",
+          "Pèsè ọ̀nà tó péye fún ọ láti mọ èdè dáadáa"
+        ],
+        "description2": "Ọ̀nà ẹ̀kọ́ ọ̀kọ̀ọ̀kan rẹ ń yí padà pẹ̀lú rẹ, ó ń ríi dájú pé ìpèníjà tó tọ́ wà fún ọ nígbà gbogbo, ó sì ń tún wo àwọn ìmọ̀ pàtàkì ní àkókò tó dára fún ìrántí."
+      }
+    }
+  },
+  "LoginPage": {
+    "navigation": {
+      "backToHome": "Padà sí Ilé",
+      "signup": "Forúkọsílẹ̀"
+    },
+    "logo": {
+      "alt": "Àmì Poppa"
+    },
+    "title": "Ẹ kú àbọ̀",
+    "subtitle": "Wọlé láti tẹ̀síwájú pẹ̀lú ìrìn-àjò ẹ̀kọ́ èdè rẹ!"
+  },
+  "FounderMessagePage": {
+    "navigation": {
+      "backToHome": "← Padà sí Ilé"
+    },
+    "header": {
+      "subtitle": "Ọ̀rọ̀ láti ọ̀dọ̀ olùdásílẹ̀"
+    },
+    "content": {
+      "greeting": "Báwo 👋",
+      "welcome": "Ẹ kú àbọ̀ sí Poppa. A fẹ́ jẹ́ kí ẹ̀kọ́ èdè ẹnìkọ̀ọ̀kan wà fún gbogbo ènìyàn.",
+      "background": "Mo ní orí rere púpọ̀ pé ipò mi (gbígbé ní Budapest, lẹ́yìn náà lílọ sí ilé-ẹ̀kọ́ tó dára ní UK) fún mi láàyè láti gba ẹ̀kọ́ èdè ẹnìkọ̀ọ̀kan ní èdè Ṣáínà àti Rọ́ṣíà. Kíkọ́ àwọn èdè wọ̀nyí ti yí ọ̀pọ̀lọpọ̀ nǹkan padà ní ìgbésí ayé mi.",
+      "philosophy": "Ẹ̀kọ́ èdè yẹ kó jẹ́ ohun tí ènìyàn lè sanwó fún tí kò sì nílò ìfìyàjẹni, ìdí nìyí tí a fi ṣe ètò ìsanwó tó dá lórí credit tí ó fún ọ láàyè láti kọ́ ní ọ̀nà tó bá ìṣúra àti àkókò rẹ mu. Bóyá o ní ìṣẹ́jú márùn-ún tàbí wákàtí márùn-ún, Poppa wà níbí láti ṣe àtìlẹ́yìn fún ìrìn-àjò ẹ̀kọ́ èdè rẹ.",
+      "approach": "A kò ní mú ọ kọ ọ̀rọ̀ sílẹ̀, tàbí kí o rántí àwọn òfin gírámà tàbí gbólóhùn tí kò wúlò. A óò ràn ọ́ lọ́wọ́ láti ronú ní èdè mìíràn. Jọ̀wọ́ gbìyànjú rẹ̀. Mo rò pé yóò wù ọ́, ẹ̀kọ́ àkọ́kọ́ sì jẹ́ ọ̀fẹ́.",
+      "story": "Mo kọ́ èdè Mandarin nítorí bàbá baba mi, tí mo ń pè ní poppa, ṣiṣẹ́ ní Beijing fún ọ̀pọ̀lọpọ̀ ọdún ó sì mú mi ṣèlérí pé n ó kọ́ ọ. Èyí ní ipa tó tóbi lórí ìgbésí ayé mi, mo sì ní ìrètí pé poppa yóò ní ipa lórí tìrẹ bákannáà :)",
+      "closing": "Kí ẹ̀kọ́ dùn mọ́ ọ!",
+      "signature": "Angelo"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Ṣe pẹ̀lú ìtọ́jú látọwọ́ Naxos Labs."
+    }
+  },
+  "SignupPage": {
+    "navigation": {
+      "backToHome": "Padà sí Ilé"
+    },
+    "logo": {
+      "alt": "Àmì Poppa"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "subtitle": "Bẹ̀rẹ̀ ìrìn-àjò ẹ̀kọ́ èdè rẹ lónìí!"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Ṣe pẹ̀lú ìtọ́jú látọwọ́ Naxos Labs."
+    }
+  },
+  "LoginForm": {
+    "email": "Ímeèlì",
+    "password": "Ọ̀rọ̀ìpamọ́",
+    "loginButton": "Wọlé",
+    "forgotPassword": "Gbàgbé ọ̀rọ̀ìpamọ́?",
+    "loading": "Ń wọlé...",
+    "success": {
+      "title": "Ìwọlé Yọrísírere",
+      "description": "Ẹ kú àbọ̀!"
+    },
+    "error": {
+      "title": "Ìwọlé Kùnà"
+    }
+  },
+  "SignupForm": {
+    "firstName": "Orúkọ Àkọ́kọ́",
+    "lastName": "Orúkọ Ìkẹyìn",
+    "email": "Ímeèlì",
+    "password": "Ọ̀rọ̀ìpamọ́",
+    "confirmPassword": "Ṣe Ìmúdájú Ọ̀rọ̀ìpamọ́",
+    "nativeLanguage": "Èdè Abínibí",
+    "dateOfBirth": "Ọjọ́ Ìbí",
+    "day": "Ọjọ́",
+    "month": "Oṣù",
+    "year": "Ọdún",
+    "signupButton": "Forúkọsílẹ̀",
+    "loading": "Ń Forúkọsílẹ̀...",
+    "languageTooltip": "Kò rí èdè rẹ? Poppa wà fún àwọn èdè wọ̀nyí nìkan lọ́wọ́lọ́wọ́. Kan sí wa fún ìrànlọ́wọ́.",
+    "errors": {
+      "passwordMatch": "Àwọn ọ̀rọ̀ìpamọ́ kò bára wọn mu",
+      "generic": "Àṣìṣe kan ṣẹlẹ̀ nígbà ìforúkọsílẹ̀. Jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan síi."
+    }
+  },
+  "ProfilePage": {
+    "navigation": {
+      "backToDashboard": "Padà sí Páànẹ́ẹ̀lì"
+    },
+    "header": {
+      "title": "Pìrófáìlì"
+    },
+    "accountDetails": {
+      "title": "Àlàyé Àkáǹtì",
+      "joined": "Dàpọ̀",
+      "credits": "Àwọn Credit"
+    }
+  },
+  "DashboardPage": {
+    "navigation": {
+      "profile": "Pìrófáìlì",
+      "logout": "Jáde",
+      "buyCredits": "Ra Credits"
+    },
+    "languages": {
+      "title": "Àwọn Èdè Rẹ",
+      "addLanguage": "Fi Èdè Kún",
+      "dialog": {
+        "title": "Fi Èdè Tuntun Kún",
+        "description": "Yan èdè tí o fẹ́ kọ́",
+        "selectPlaceholder": "Yan èdè kan"
+      },
+      "startLearning": {
+        "title": "Bẹ̀rẹ̀ Ẹ̀kọ́ Báyìí?",
+        "description": "Ṣé o fẹ́ bẹ̀rẹ̀ ẹ̀kọ́ àkọ́kọ́ rẹ ní {language} báyìí?",
+        "later": "Lẹ́yìn",
+        "startNow": "Bẹ̀rẹ̀ Báyìí"
+      },
+      "card": {
+        "level": "Ipò Àárín",
+        "viewHistory": "Wo Ìtàn",
+        "continueButton": "Tẹ̀síwájú pẹ̀lú Ẹ̀kọ́",
+        "customButton": "Ẹ̀kọ́ Pàtàkì"
+      },
+      "customLesson": {
+        "title": "Ẹ̀kọ́ Pàtàkì - {language}",
+        "description": "Tẹ ohun tí o fẹ́ kọ́ nípa {language} sílẹ̀.\nA óò ríi dájú pé ẹ̀kọ́ náà bá ipò rẹ mu.",
+        "placeholder": "fún àpẹẹrẹ, bíbéèrè oúnjẹ ní ilé oúnjẹ",
+        "startButton": "Bẹ̀rẹ̀ Ẹ̀kọ́"
+      }
+    }
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "HomePage": {
+    "navigation": {
+      "pricing": "Cenník",
+      "howItWorks": "Ako to funguje",
+      "login": "Prihlásiť sa",
+      "getStarted": "Začať"
+    },
+    "announcement": {
+      "live": "✨ Sme online!",
+      "founderMessage": "Prečítajte si správu zakladateľa →"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "title": "Učte sa jazyky prirodzene",
+      "subtitle": "poppa vás krok za krokom prevedie učením nového jazyka pomocou hlasového doučovania"
+    },
+    "languagesSection": {
+      "title": "Jazyky, ktorými hovoríme"
+    },
+    "whyPoppa": {
+      "title": "Prečo Poppa?",
+      "features": {
+        "tutoring": {
+          "title": "Doučovanie od nuly",
+          "description": "Nejde len o hranie rolí, učíme vás vo vašom rodnom jazyku, ako myslieť v akomkoľvek novom jazyku.",
+          "learnMore": "Dozvedieť sa viac →"
+        },
+        "personalized": {
+          "title": "Personalizované učenie",
+          "description": "Prispôsobujeme sa vášmu tempu a záujmom, aby sme vám pomohli zlepšovať sa."
+        },
+        "freeStart": {
+          "title": "Začnite zadarmo",
+          "description": "Získajte 20 minút bezplatných kreditov na vyskúšanie Poppa. Na začatie vašej cesty učenia sa jazyka nie je potrebná kreditná karta."
+        }
+      },
+      "tryButton": "Vyskúšajte 20 minút zadarmo"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. S láskou vytvorené Naxos Labs."
+    }
+  },
+  "PricingPage": {
+    "navigation": {
+      "home": "Domov",
+      "howItWorks": "Ako to funguje",
+      "login": "Prihlásiť sa",
+      "getStarted": "Začať"
+    },
+    "hero": {
+      "title": "Jednoduché, transparentné ceny",
+      "subtitle": "Začnite s 20 minútami zadarmo. Potom plaťte podľa použitia."
+    },
+    "features": {
+      "aiTutor": "Personalizovaný AI jazykový lektor",
+      "availability": "Dostupnosť 24/7",
+      "adaptiveLearning": "Adaptívna technológia učenia",
+      "progressTracking": "Sledovanie pokroku",
+      "conversation": "Konverzačná prax",
+      "exercises": "Gramatické a slovné cvičenia"
+    },
+    "pricing": {
+      "perHour": "za hodinu doučovania"
+    },
+    "calculator": {
+      "title": "Porovnajte s tradičným doučovaním",
+      "hoursPerMonth": "Hodiny za mesiac",
+      "poppaAI": "Poppa AI",
+      "traditionalTutor": "Tradičný lektor"
+    },
+    "cta": {
+      "startFree": "Začnite s 20 minútami zadarmo",
+      "noCard": "Nie je potrebná kreditná karta"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. S láskou vytvorené Naxos Labs."
+    }
+  },
+  "HowItWorksPage": {
+    "navigation": {
+      "backToHome": "← Späť na Domov"
+    },
+    "header": {
+      "openSource": {
+        "badge": "🌟 Sme open source!",
+        "link": "Pozrite si nás na GitHube →"
+      },
+      "title": "Ako poppa funguje"
+    },
+    "sections": {
+      "thinkingMethod": {
+        "title": "Metóda myslenia",
+        "description1": "Poppa používa jedinečný prístup nazývaný \"Metóda myslenia\", ktorý vám pomáha učiť sa jazyky prirodzene a efektívne. Namiesto memorovania slovnej zásoby alebo gramatických pravidiel sa naučíte myslieť v cieľovom jazyku od samého začiatku.",
+        "description2": "Táto metóda sa zameriava na pochopenie štruktúry jazyka, vytváranie spojení a budovanie schopnosti intuitívne tvoriť vety. Je to jemný, ale účinný prístup, ktorý napodobňuje prirodzené osvojovanie jazykov."
+      },
+      "tech": {
+        "title": "Technológia",
+        "description1": "Na precvičovanie konverzácií s AI lektorom, ktorý reaguje na váš hlas v reálnom čase, používame modely OpenAI na porozumenie a odpovede na to, čo hovoríte, ukladáme kompletné histórie konverzácií v cloude a máme servery distribuované globálne pre komunikáciu s nízkym oneskorením s naším produktom.",
+        "description2": "🌟 Veríme v open source. Poppa je plne open source, takže ak nám nechcete platiť ani cent, nemusíte. Ak naopak nechcete mať starosti so správou serverov pre hlasovú komunikáciu s nízkym oneskorením, ponúkame platenú službu prostredníctvom tejto webstránky. Pozrite si nás na githube."
+      },
+      "personalizedLearning": {
+        "title": "Konečný výsledok: Personalizované učenie",
+        "description1": "Každá lekcia, ktorú absolvujete s Poppa, je prepísaná a uložená, čím sa vytvára komplexný záznam vašej učebnej cesty. To nám umožňuje:",
+        "benefits": [
+          "Sledovať váš pokrok a prispôsobovať budúce lekcie vašim potrebám",
+          "Implementovať rozložené opakovanie na upevnenie toho, čo ste sa naučili",
+          "Poskytnúť vám postupnú cestu k zvládnutiu jazyka"
+        ],
+        "description2": "Vaša personalizovaná učebná cesta sa vyvíja spolu s vami, zabezpečujúc, že ste vždy vyzývaní na správnej úrovni a opakujete dôležité koncepty v optimálnych intervaloch pre zapamätanie."
+      }
+    }
+  },
+  "LoginPage": {
+    "navigation": {
+      "backToHome": "Späť na Domov",
+      "signup": "Registrovať sa"
+    },
+    "logo": {
+      "alt": "Poppa logo"
+    },
+    "title": "Vitajte späť",
+    "subtitle": "Prihláste sa a pokračujte vo svojej ceste učenia sa jazyka!"
+  },
+  "FounderMessagePage": {
+    "navigation": {
+      "backToHome": "← Späť na Domov"
+    },
+    "header": {
+      "subtitle": "Správa od zakladateľa"
+    },
+    "content": {
+      "greeting": "Ahoj 👋",
+      "welcome": "Vitajte v Poppa. Chceme sprístupniť individuálne jazykové doučovanie každému.",
+      "background": "Mal som obrovské šťastie, že mi moje okolnosti (život v Budapešti a následne štúdium na skvelej škole v UK) umožnili získať individuálne doučovanie čínštiny a ruštiny. Učenie sa týchto jazykov mnohými spôsobmi zmenilo trajektóriu môjho života.",
+      "philosophy": "Učenie sa jazyka by malo byť cenovo dostupné a flexibilné, preto sme zaviedli kreditný systém, ktorý vám umožňuje učiť sa vlastným tempom a podľa vlastného rozpočtu. Či už máte 5 minút alebo 5 hodín, Poppa je tu, aby podporila vašu cestu učenia sa jazyka.",
+      "approach": "Nenútime vás písať slová alebo memorovať zbytočné gramatické pravidlá či frázy. Pomôžeme vám myslieť v inom jazyku. Prosím, vyskúšajte to. Myslím, že sa vám to bude páčiť a prvá lekcia je aj tak na nás.",
+      "story": "Naučil som sa mandarínčinu, pretože môj starý otec, ktorého som volal poppa, pracoval mnoho rokov v Pekingu a prinútil ma sľúbiť mu, že sa ju naučím. To malo obrovský vplyv na môj život a dúfam, že poppa môže mať vplyv aj na vás :)",
+      "closing": "Príjemné učenie!",
+      "signature": "Angelo"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. S láskou vytvorené Naxos Labs."
+    }
+  },
+  "SignupPage": {
+    "navigation": {
+      "backToHome": "Späť na Domov"
+    },
+    "logo": {
+      "alt": "Poppa logo"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "subtitle": "Začnite svoju cestu učenia sa jazyka dnes!"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. S láskou vytvorené Naxos Labs."
+    }
+  },
+  "LoginForm": {
+    "email": "Email",
+    "password": "Heslo",
+    "loginButton": "Prihlásiť sa",
+    "forgotPassword": "Zabudli ste heslo?",
+    "loading": "Prihlasovanie...",
+    "success": {
+      "title": "Prihlásenie úspešné",
+      "description": "Vitajte späť!"
+    },
+    "error": {
+      "title": "Prihlásenie zlyhalo"
+    }
+  },
+  "SignupForm": {
+    "firstName": "Meno",
+    "lastName": "Priezvisko",
+    "email": "Email",
+    "password": "Heslo",
+    "confirmPassword": "Potvrďte heslo",
+    "nativeLanguage": "Rodný jazyk",
+    "dateOfBirth": "Dátum narodenia",
+    "day": "Deň",
+    "month": "Mesiac",
+    "year": "Rok",
+    "signupButton": "Registrovať sa",
+    "loading": "Registrácia...",
+    "languageTooltip": "Neviete nájsť svoj jazyk? Poppa je zatiaľ podporovaná len v týchto jazykoch. Kontaktujte nás pre pomoc.",
+    "errors": {
+      "passwordMatch": "Heslá sa nezhodujú",
+      "generic": "Počas registrácie sa vyskytla chyba. Skúste to prosím znova."
+    }
+  },
+  "ProfilePage": {
+    "navigation": {
+      "backToDashboard": "Späť na Dashboard"
+    },
+    "header": {
+      "title": "Profil"
+    },
+    "accountDetails": {
+      "title": "Detaily účtu",
+      "joined": "Pripojený",
+      "credits": "Kredity"
+    }
+  },
+  "DashboardPage": {
+    "navigation": {
+      "profile": "Profil",
+      "logout": "Odhlásiť sa",
+      "buyCredits": "Kúpiť kredity"
+    },
+    "languages": {
+      "title": "Vaše jazyky",
+      "addLanguage": "Pridať jazyk",
+      "dialog": {
+        "title": "Pridať nový jazyk",
+        "description": "Vyberte jazyk, ktorý by ste sa chceli naučiť",
+        "selectPlaceholder": "Vyberte jazyk"
+      },
+      "startLearning": {
+        "title": "Začať učiť sa teraz?",
+        "description": "Chceli by ste začať svoju prvú lekciu v jazyku {language} teraz?",
+        "later": "Neskôr",
+        "startNow": "Začať teraz"
+      },
+      "card": {
+        "level": "Stredne pokročilá úroveň",
+        "viewHistory": "Zobraziť históriu",
+        "continueButton": "Pokračovať v učení",
+        "customButton": "Vlastná lekcia"
+      },
+      "customLesson": {
+        "title": "Vlastná lekcia - {language}",
+        "description": "Zadajte, čo by ste sa chceli naučiť v jazyku {language}.\nZabezpečíme, aby lekcia zodpovedala vašej úrovni.",
+        "placeholder": "napr. objednávanie jedla v reštaurácii",
+        "startButton": "Začať lekciu"
+      }
+    }
+  }
+}

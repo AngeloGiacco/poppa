@@ -1,0 +1,241 @@
+{
+  "HomePage": {
+    "navigation": {
+      "pricing": "Árak",
+      "howItWorks": "Hogyan működik",
+      "login": "Bejelentkezés",
+      "getStarted": "Kezdés"
+    },
+    "announcement": {
+      "live": "✨ Elindultunk!",
+      "founderMessage": "Olvasd el az alapítónk üzenetét →"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "title": "Tanulj nyelveket természetesen",
+      "subtitle": "A poppa lépésről lépésre vezet végig egy új nyelv elsajátításán, kizárólag hangalapú oktatással"
+    },
+    "languagesSection": {
+      "title": "Nyelvek, amelyeken beszélünk"
+    },
+    "whyPoppa": {
+      "title": "Miért a Poppa?",
+      "features": {
+        "tutoring": {
+          "title": "Oktatás nulláról",
+          "description": "Ez nem csak szerepjáték, az anyanyelvedben tanítjuk meg, hogyan gondolkodj bármely új nyelven.",
+          "learnMore": "Tudj meg többet →"
+        },
+        "personalized": {
+          "title": "Személyre szabott tanulás",
+          "description": "Alkalmazkodunk a tempódhoz és érdeklődési körödhöz, hogy idővel fejlődhess."
+        },
+        "freeStart": {
+          "title": "Kezdj ingyen",
+          "description": "Kapsz 20 perc ingyenes kreditet a Poppa kipróbálásához. Nem szükséges bankkártya a nyelvtanulási utad megkezdéséhez."
+        }
+      },
+      "tryButton": "Próbáld ki 20 percig ingyen"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Gondosan készítette a Naxos Labs."
+    }
+  },
+  "PricingPage": {
+    "navigation": {
+      "home": "Kezdőlap",
+      "howItWorks": "Hogyan működik",
+      "login": "Bejelentkezés",
+      "getStarted": "Kezdés"
+    },
+    "hero": {
+      "title": "Egyszerű, átlátható árazás",
+      "subtitle": "Kezdj 20 ingyenes perccel. Aztán fizess használat szerint."
+    },
+    "features": {
+      "aiTutor": "Személyre szabott AI nyelvtanár",
+      "availability": "24/7 elérhetőség",
+      "adaptiveLearning": "Adaptív tanulási technológia",
+      "progressTracking": "Fejlődés követése",
+      "conversation": "Beszédgyakorlat",
+      "exercises": "Nyelvtani és szókincsfejlesztő gyakorlatok"
+    },
+    "pricing": {
+      "perHour": "óránként az oktatásért"
+    },
+    "calculator": {
+      "title": "Hasonlítsd össze a hagyományos oktatással",
+      "hoursPerMonth": "Óra havonta",
+      "poppaAI": "Poppa AI",
+      "traditionalTutor": "Hagyományos tanár"
+    },
+    "cta": {
+      "startFree": "Kezdj 20 ingyenes perccel",
+      "noCard": "Nem szükséges bankkártya"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Gondosan készítette a Naxos Labs."
+    }
+  },
+  "HowItWorksPage": {
+    "navigation": {
+      "backToHome": "← Vissza a kezdőlapra"
+    },
+    "header": {
+      "openSource": {
+        "badge": "🌟 Nyílt forráskódúak vagyunk!",
+        "link": "Nézz meg minket GitHubon →"
+      },
+      "title": "Hogyan működik a poppa"
+    },
+    "sections": {
+      "thinkingMethod": {
+        "title": "A Gondolkodási Módszer",
+        "description1": "A Poppa egy egyedi megközelítést, a \"Gondolkodási Módszert\" használja, hogy természetesen és hatékonyan tanulj nyelveket. Ahelyett, hogy szólistákat vagy nyelvtani szabályokat memorizálnál, már a kezdetektől megtanulsz gondolkodni a célnyelven.",
+        "description2": "Ez a módszer a nyelv szerkezetének megértésére, kapcsolatok kialakítására és az intuitív mondatalkotási képesség fejlesztésére összpontosít. Ez egy gyengéd, mégis hatékony megközelítés, amely utánozza a nyelvek természetes elsajátítását."
+      },
+      "tech": {
+        "title": "A Technológia",
+        "description1": "Hogy segítsünk gyakorolni a beszélgetéseket egy AI oktatóval, aki valós időben reagál a hangodra, az OpenAI modelljeit használjuk a mondanivalód megértéséhez és a válaszadáshoz, a teljes beszélgetési előzményeket a felhőben tároljuk, és globálisan elosztott szerverekkel rendelkezünk az alacsony késleltetésű kommunikáció biztosításához.",
+        "description2": "🌟 Hiszünk a nyílt forráskódban. A Poppa teljesen nyílt forráskódú, így ha nem akarsz nekünk egy fillért sem fizetni, nem kell. Ha viszont nem szeretnél bajlódni az alacsony késleltetésű hangkommunikációhoz szükséges szerverek kezelésével, fizetős szolgáltatást kínálunk ezen a weboldalon keresztül. Nézz meg minket GitHubon."
+      },
+      "personalizedLearning": {
+        "title": "A Végeredmény: Személyre Szabott Tanulás",
+        "description1": "Minden Poppával tartott órádat leírjuk és tároljuk, így átfogó nyilvántartást vezetünk a tanulási utadról. Ez lehetővé teszi számunkra, hogy:",
+        "benefits": [
+          "Kövessük a fejlődésedet és a jövőbeli órákat az igényeidhez igazítsuk",
+          "Időzített ismétlést alkalmazzunk a tanultak megerősítésére",
+          "Lépésről lépésre vezető utat biztosítsunk a nyelv elsajátításához"
+        ],
+        "description2": "A személyre szabott tanulási utad veled együtt fejlődik, biztosítva, hogy mindig a megfelelő szinten legyél kihívás elé állítva, és optimális időközönként térj vissza a fontos koncepciókhoz a hatékony megjegyzés érdekében."
+      }
+    }
+  },
+  "LoginPage": {
+    "navigation": {
+      "backToHome": "Vissza a kezdőlapra",
+      "signup": "Regisztráció"
+    },
+    "logo": {
+      "alt": "Poppa logó"
+    },
+    "title": "Üdvözlünk újra",
+    "subtitle": "Jelentkezz be a nyelvtanulási utad folytatásához!"
+  },
+  "FounderMessagePage": {
+    "navigation": {
+      "backToHome": "← Vissza a kezdőlapra"
+    },
+    "header": {
+      "subtitle": "Üzenet az alapítótól"
+    },
+    "content": {
+      "greeting": "Szia 👋",
+      "welcome": "Üdvözöllek a Poppánál. Szeretnénk mindenki számára elérhetővé tenni az egyéni nyelvoktatást.",
+      "background": "Rendkívül szerencsés voltam, hogy a körülményeim (Budapesten éltem, majd egy kiváló iskolába jártam az Egyesült Királyságban) lehetővé tették számomra az egyéni nyelvoktatást kínaiban és oroszban. Ezeknek a nyelveknek a tanulása sok szempontból megváltoztatta az életem pályáját.",
+      "philosophy": "A nyelvtanulásnak megfizethetőnek és rugalmasnak kell lennie, ezért vezettük be a kredit alapú rendszert, amely lehetővé teszi, hogy saját tempódban és költségvetésed szerint tanulj. Akár 5 perced van, akár 5 órád, a Poppa itt van, hogy támogassa a nyelvtanulási utadat.",
+      "approach": "Nem kérjük, hogy írd le a szavakat, vagy memorizálj felesleges nyelvtani szabályokat vagy kifejezéseket. Segítünk, hogy egy másik nyelven gondolkodj. Kérlek, próbáld ki. Azt hiszem, tetszeni fog, és az első óra amúgy is a mi ajándékunk.",
+      "story": "A mandarint azért tanultam meg, mert a nagyapám, akit poppának hívtam, sok évig dolgozott Pekingben, és megígértetett velem, hogy megtanulom. Ez hatalmas hatással volt az életemre, és remélem, hogy a poppa rád is hasonló hatással lehet :)",
+      "closing": "Jó tanulást!",
+      "signature": "Angelo"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Gondosan készítette a Naxos Labs."
+    }
+  },
+  "SignupPage": {
+    "navigation": {
+      "backToHome": "Vissza a kezdőlapra"
+    },
+    "logo": {
+      "alt": "Poppa logó"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "subtitle": "Kezdd el ma a nyelvtanulási utadat!"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Gondosan készítette a Naxos Labs."
+    }
+  },
+  "LoginForm": {
+    "email": "Email",
+    "password": "Jelszó",
+    "loginButton": "Bejelentkezés",
+    "forgotPassword": "Elfelejtett jelszó?",
+    "loading": "Bejelentkezés...",
+    "success": {
+      "title": "Sikeres bejelentkezés",
+      "description": "Üdvözlünk újra!"
+    },
+    "error": {
+      "title": "Sikertelen bejelentkezés"
+    }
+  },
+  "SignupForm": {
+    "firstName": "Keresztnév",
+    "lastName": "Vezetéknév",
+    "email": "Email",
+    "password": "Jelszó",
+    "confirmPassword": "Jelszó megerősítése",
+    "nativeLanguage": "Anyanyelv",
+    "dateOfBirth": "Születési dátum",
+    "day": "Nap",
+    "month": "Hónap",
+    "year": "Év",
+    "signupButton": "Regisztráció",
+    "loading": "Regisztráció...",
+    "languageTooltip": "Nem találod a nyelvedet? A Poppa egyelőre csak ezeken a nyelveken érhető el. Segítségért vedd fel velünk a kapcsolatot.",
+    "errors": {
+      "passwordMatch": "A jelszavak nem egyeznek",
+      "generic": "Hiba történt a regisztráció során. Kérjük, próbáld újra."
+    }
+  },
+  "ProfilePage": {
+    "navigation": {
+      "backToDashboard": "Vissza az irányítópultra"
+    },
+    "header": {
+      "title": "Profil"
+    },
+    "accountDetails": {
+      "title": "Fiók adatok",
+      "joined": "Csatlakozott",
+      "credits": "Kreditek"
+    }
+  },
+  "DashboardPage": {
+    "navigation": {
+      "profile": "Profil",
+      "logout": "Kijelentkezés",
+      "buyCredits": "Kreditek vásárlása"
+    },
+    "languages": {
+      "title": "Nyelveid",
+      "addLanguage": "Nyelv hozzáadása",
+      "dialog": {
+        "title": "Új nyelv hozzáadása",
+        "description": "Válassz egy nyelvet, amit szeretnél megtanulni",
+        "selectPlaceholder": "Válassz nyelvet"
+      },
+      "startLearning": {
+        "title": "Kezdjük a tanulást most?",
+        "description": "Szeretnéd most elkezdeni az első {language} órádat?",
+        "later": "Később",
+        "startNow": "Kezdés most"
+      },
+      "card": {
+        "level": "Középhaladó szint",
+        "viewHistory": "Előzmények megtekintése",
+        "continueButton": "Tanulás folytatása",
+        "customButton": "Egyéni óra"
+      },
+      "customLesson": {
+        "title": "Egyéni óra - {language}",
+        "description": "Írd be, mit szeretnél tanulni {language} nyelven.\nBiztosítjuk, hogy az óra illeszkedjen a szintedhez.",
+        "placeholder": "pl. ételrendelés étteremben",
+        "startButton": "Óra kezdése"
+      }
+    }
+  }
+}

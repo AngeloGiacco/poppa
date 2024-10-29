@@ -1,0 +1,244 @@
+{
+  "HomePage": {
+    "navigation": {
+      "pricing": "料金",
+      "howItWorks": "使い方",
+      "login": "ログイン",
+      "getStarted": "始める"
+    },
+    "announcement": {
+      "live": "✨ サービス開始！",
+      "founderMessage": "創設者からのメッセージ →"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "title": "自然に言語を学ぼう",
+      "subtitle": "音声のみのチュータリングで、新しい言語を段階的に学べます"
+    },
+    "languagesSection": {
+      "title": "対応言語"
+    },
+    "whyPoppa": {
+      "title": "なぜPoppaなのか？",
+      "features": {
+        "tutoring": {
+          "title": "ゼロからのチュートリアル",
+          "description": "ただのロールプレイではありません。母国語で新しい言語の考え方を教えます。",
+          "learnMore": "詳しく見る →"
+        },
+        "personalized": {
+          "title": "パーソナライズド学習",
+          "description": "あなたのペースと興味に合わせて、着実に上達をサポートします。"
+        },
+        "freeStart": {
+          "title": "無料で始められる",
+          "description": "20分の無料クレジットでPoppaを試せます。クレジットカード登録不要で語学学習を始められます。"
+        }
+      },
+      "tryButton": "20分無料で試す"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Naxos Labsが心を込めて制作"
+    }
+  },
+  "PricingPage": {
+    "navigation": {
+      "home": "ホーム",
+      "howItWorks": "使い方",
+      "login": "ログイン",
+      "getStarted": "始める"
+    },
+    "hero": {
+      "title": "シンプルで透明な料金体系",
+      "subtitle": "20分の無料体験から。その後は使った分だけ支払い。"
+    },
+    "features": {
+      "aiTutor": "パーソナライズドAI言語チューター",
+      "availability": "24時間365日利用可能",
+      "adaptiveLearning": "適応型学習テクノロジー",
+      "progressTracking": "進捗管理",
+      "conversation": "会話練習",
+      "exercises": "文法と語彙の練習"
+    },
+    "pricing": {
+      "perHour": "チュータリング1時間あたり"
+    },
+    "calculator": {
+      "title": "従来のチュータリングと比較",
+      "hoursPerMonth": "月間学習時間",
+      "poppaAI": "Poppa AI",
+      "traditionalTutor": "従来のチューター"
+    },
+    "cta": {
+      "startFree": "20分無料で始める",
+      "noCard": "クレジットカード登録不要"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Naxos Labsが心を込めて制作"
+    }
+  },
+  "HowItWorksPage": {
+    "navigation": {
+      "backToHome": "← ホームに戻る"
+    },
+    "header": {
+      "openSource": {
+        "badge": "🌟 オープンソースです！",
+        "link": "GitHubをチェック →"
+      },
+      "title": "Poppaの仕組み"
+    },
+    "sections": {
+      "thinkingMethod": {
+        "title": "思考メソッド",
+        "description1": "Poppaは「思考メソッド」と呼ばれるユニークなアプローチを使用して、自然かつ効果的に言語を学ぶお手伝いをします。単語リストや文法規則を暗記する代わりに、最初から目標言語で考えることを学びます。",
+        "description2": "このメソッドは、言語の構造を理解し、つながりを見つけ、直感的に文章を組み立てる能力を養うことに重点を置いています。これは私たちが自然に言語を習得する方法を模倣した、優しくも強力なアプローチです。"
+      },
+      "tech": {
+        "title": "テクノロジー",
+        "description1": "リアルタイムで音声に応答するAIチューターとの会話練習をサポートするため、OpenAIのモデルを使用して発言を理解・応答し、完全な会話履歴をクラウドに保存し、グローバルに分散したサーバーで低遅延の通信を実現しています。",
+        "description2": "🌟 私たちはオープンソースを信念としています。Poppaは完全にオープンソースなので、一銭も支払わずに使用することができます。ただし、低遅延の音声通信のためのサーバー管理の手間を省きたい場合は、このウェブサイトを通じて有料サービスを提供しています。GitHubでチェックしてください。"
+      },
+      "personalizedLearning": {
+        "title": "最終結果：パーソナライズド学習",
+        "description1": "Poppaで受けるすべてのレッスンは文字起こしされ保存され、学習の軌跡を包括的に記録します。これにより以下が可能になります：",
+        "benefits": [
+          "進捗を追跡し、今後のレッスンをニーズに合わせて調整",
+          "学習した内容を強化するための間隔反復学習の実施",
+          "言語習得へのステップバイステップのパスを提供"
+        ],
+        "description2": "あなたのパーソナライズされた学習パスは進化し続け、常に適切なレベルでチャレンジし、重要な概念を最適なタイミングで復習できるようにします。"
+      }
+    }
+  },
+  "LoginPage": {
+    "navigation": {
+      "backToHome": "ホームに戻る",
+      "signup": "新規登録"
+    },
+    "logo": {
+      "alt": "Poppaロゴ"
+    },
+    "title": "おかえりなさい",
+    "subtitle": "ログインして語学学習を続けましょう！"
+  },
+  "FounderMessagePage": {
+    "navigation": {
+      "backToHome": "← ホームに戻る"
+    },
+    "header": {
+      "subtitle": "創設者からのメッセージ"
+    },
+    "content": {
+      "greeting": "こんにちは 👋",
+      "welcome": "Poppaへようこそ。私たちは1対1の語学チュータリングをすべての人にアクセス可能にしたいと考えています。",
+      "background": "私は非常に恵まれた環境（ブダペストでの生活、その後イギリスの素晴らしい学校への進学）で、中国語とロシア語の1対1チュータリングを受けることができました。これらの言語を学ぶことは、多くの面で私の人生の軌道を変えました。",
+      "philosophy": "語学学習は手頃な価格で柔軟であるべきです。そのため、私たちはクレジットベースのシステムを導入し、自分のペースと予算で学習できるようにしました。5分でも5時間でも、Poppaはあなたの語学学習をサポートします。",
+      "approach": "私たちは単語を書かせたり、無意味な文法規則やフレーズを暗記させたりしません。別の言語で考えることをお手伝いします。ぜひ試してみてください。きっと気に入っていただけると思います。最初のレッスンは私たちが提供します。",
+      "story": "私が中国語を学んだのは、私の祖父（私はpoppaと呼んでいました）が長年北京で働いており、中国語を学ぶことを約束させたからです。それは私の人生に大きな影響を与え、poppaもあなたに影響を与えることができれば幸いです :)",
+      "closing": "楽しい学習を！",
+      "signature": "アンジェロ"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Naxos Labsが心を込めて制作"
+    }
+  },
+  "SignupPage": {
+    "navigation": {
+      "backToHome": "ホームに戻る"
+    },
+    "logo": {
+      "alt": "Poppaロゴ"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "subtitle": "今日から語学学習を始めましょう！"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Naxos Labsが心を込めて制作"
+    }
+  },
+  "LoginForm": {
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "loginButton": "ログイン",
+    "forgotPassword": "パスワードをお忘れですか？",
+    "loading": "ログイン中...",
+    "success": {
+      "title": "ログイン成功",
+      "description": "おかえりなさい！"
+    },
+    "error": {
+      "title": "ログイン失敗"
+    }
+  },
+  "SignupForm": {
+    "firstName": "名",
+    "lastName": "姓",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "confirmPassword": "パスワード（確認）",
+    "nativeLanguage": "母国語",
+    "dateOfBirth": "生年月日",
+    "day": "日",
+    "month": "月",
+    "year": "年",
+    "signupButton": "新規登録",
+    "loading": "登録中...",
+    "languageTooltip": "お探しの言語が見つかりませんか？現在、Poppaはこれらの言語のみ対応しています。サポートが必要な場合はお問い合わせください。",
+    "errors": {
+      "passwordMatch": "パスワードが一致しません",
+      "generic": "登録中にエラーが発生しました。もう一度お試しください。"
+    }
+  },
+  "ProfilePage": {
+    "navigation": {
+      "backToDashboard": "ダッシュボードに戻る"
+    },
+    "header": {
+      "title": "プロフィール"
+    },
+    "accountDetails": {
+      "title": "アカウント詳細",
+      "joined": "登録日",
+      "credits": "クレジット"
+    }
+  },
+  "DashboardPage": {
+    "navigation": {
+      "profile": "プロフィール",
+      "logout": "ログアウト",
+      "buyCredits": "クレジットを購入"
+    },
+    "languages": {
+      "title": "学習中の言語",
+      "addLanguage": "言語を追加",
+      "dialog": {
+        "title": "新しい言語を追加",
+        "description": "学びたい言語を選択してください",
+        "selectPlaceholder": "言語を選択"
+      },
+      "startLearning": {
+        "title": "今すぐ学習を始めますか？",
+        "description": "{language}の最初のレッスンを今すぐ始めますか？",
+        "later": "後で",
+        "startNow": "今すぐ始める"
+      },
+      "card": {
+        "level": "中級レベル",
+        "viewHistory": "履歴を見る",
+        "continueButton": "学習を続ける",
+        "customButton": "カスタムレッスン"
+      },
+      "customLesson": {
+        "title": "カスタムレッスン - {language}",
+        "description": "{language}で学びたいことを入力してください。\nあなたのレベルに合わせてレッスンを調整します。",
+        "placeholder": "例：レストランでの注文",
+        "startButton": "レッスンを始める"
+      }
+    }
+  }
+}
+
+
+

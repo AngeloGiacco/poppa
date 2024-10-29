@@ -1,0 +1,241 @@
+{
+  "HomePage": {
+    "navigation": {
+      "pricing": "Cennik",
+      "howItWorks": "Jak to działa",
+      "login": "Zaloguj się",
+      "getStarted": "Rozpocznij"
+    },
+    "announcement": {
+      "live": "✨ Jesteśmy online!",
+      "founderMessage": "Wiadomość od założyciela →"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "title": "Ucz się języków naturalnie",
+      "subtitle": "poppa prowadzi Cię krok po kroku w nauce nowego języka poprzez samą konwersację"
+    },
+    "languagesSection": {
+      "title": "Języki, które mówimy"
+    },
+    "whyPoppa": {
+      "title": "Dlaczego Poppa?",
+      "features": {
+        "tutoring": {
+          "title": "Nauka od podstaw",
+          "description": "To nie tylko odgrywanie ról - uczymy Cię w Twoim ojczystym języku, jak myśleć w nowym języku.",
+          "learnMore": "Dowiedz się więcej →"
+        },
+        "personalized": {
+          "title": "Spersonalizowana nauka",
+          "description": "Dostosowujemy się do Twojego tempa i zainteresowań, aby pomóc Ci się rozwijać."
+        },
+        "freeStart": {
+          "title": "Zacznij za darmo",
+          "description": "Wypróbuj Poppa z 20 minutami darmowych kredytów. Rozpocznij naukę języka bez podawania karty kredytowej."
+        }
+      },
+      "tryButton": "Wypróbuj za darmo przez 20 minut"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Stworzone z sercem przez Naxos Labs"
+    }
+  },
+  "PricingPage": {
+    "navigation": {
+      "home": "Strona główna",
+      "howItWorks": "Jak to działa",
+      "login": "Zaloguj się",
+      "getStarted": "Rozpocznij"
+    },
+    "hero": {
+      "title": "Proste i przejrzyste ceny",
+      "subtitle": "Zacznij od 20 darmowych minut. Potem płać tylko za to, czego używasz."
+    },
+    "features": {
+      "aiTutor": "Spersonalizowany AI tutor językowy",
+      "availability": "Dostępność 24/7",
+      "adaptiveLearning": "Adaptacyjna technologia uczenia",
+      "progressTracking": "Śledzenie postępów",
+      "conversation": "Praktyka konwersacji",
+      "exercises": "Ćwiczenia gramatyczne i słownictwa"
+    },
+    "pricing": {
+      "perHour": "za godzinę nauki"
+    },
+    "calculator": {
+      "title": "Porównaj z tradycyjnym nauczaniem",
+      "hoursPerMonth": "Godziny miesięcznie",
+      "poppaAI": "Poppa AI",
+      "traditionalTutor": "Tradycyjny Tutor"
+    },
+    "cta": {
+      "startFree": "Zacznij z 20 darmowymi minutami",
+      "noCard": "Nie wymagamy karty kredytowej"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Stworzone z sercem przez Naxos Labs"
+    }
+  },
+  "HowItWorksPage": {
+    "navigation": {
+      "backToHome": "← Powrót do strony głównej"
+    },
+    "header": {
+      "openSource": {
+        "badge": "🌟 Jesteśmy open source!",
+        "link": "Zobacz nas na GitHubie →"
+      },
+      "title": "Jak działa poppa"
+    },
+    "sections": {
+      "thinkingMethod": {
+        "title": "Metoda Myślenia",
+        "description1": "Poppa wykorzystuje unikalną metodę zwaną \"Metodą Myślenia\", aby pomóc Ci uczyć się języka w naturalny i efektywny sposób. Zamiast zapamiętywać listy słówek czy reguły gramatyczne, uczysz się myśleć w docelowym języku od samego początku.",
+        "description2": "Metoda ta koncentruje się na zrozumieniu struktury języka, tworzeniu połączeń i budowaniu intuicyjnej zdolności do tworzenia zdań. To łagodne, ale potężne podejście naśladuje naturalny sposób przyswajania języka."
+      },
+      "tech": {
+        "title": "Technologia",
+        "description1": "Aby pomóc Ci ćwiczyć konwersację z AI tutorem, który reaguje na Twój głos w czasie rzeczywistym, używamy modeli OpenAI do zrozumienia i odpowiadania na to, co mówisz, przechowujemy pełną historię konwersacji w chmurze i mamy globalnie rozproszone serwery, aby oferować komunikację o niskim opóźnieniu z naszym produktem.",
+        "description2": "🌟 Wierzymy w open source. Poppa jest w pełni open source, więc jeśli nie chcesz nam płacić ani grosza, nie musisz. Jeśli jednak nie chcesz zajmować się zarządzaniem serwerami do komunikacji głosowej o niskim opóźnieniu, oferujemy płatną usługę przez tę stronę. Odwiedź nas na GitHubie."
+      },
+      "personalizedLearning": {
+        "title": "Efekt końcowy: Spersonalizowana nauka",
+        "description1": "Każda lekcja, którą odbywasz z Poppa, jest transkrybowana i zapisywana, tworząc kompleksowy zapis Twojej podróży edukacyjnej. Pozwala nam to:",
+        "benefits": [
+          "Śledzić Twoje postępy i dostosowywać przyszłe lekcje do Twoich potrzeb",
+          "Wdrażać powtórki w odstępach czasu, aby wzmocnić to, czego się nauczyłeś",
+          "Zapewnić Ci krok po kroku ścieżkę do biegłości językowej"
+        ],
+        "description2": "Twoja spersonalizowana ścieżka nauki rozwija się wraz z Tobą, zapewniając, że zawsze jesteś odpowiednio wyzwany i powtarzasz kluczowe koncepcje w optymalnych odstępach czasu dla lepszego zapamiętywania."
+      }
+    }
+  },
+  "LoginPage": {
+    "navigation": {
+      "backToHome": "Powrót do strony głównej",
+      "signup": "Zarejestruj się"
+    },
+    "logo": {
+      "alt": "Logo Poppa"
+    },
+    "title": "Witaj z powrotem",
+    "subtitle": "Zaloguj się, aby kontynuować swoją podróż w nauce języka!"
+  },
+  "FounderMessagePage": {
+    "navigation": {
+      "backToHome": "← Powrót do strony głównej"
+    },
+    "header": {
+      "subtitle": "Wiadomość od założyciela"
+    },
+    "content": {
+      "greeting": "Cześć 👋",
+      "welcome": "Witaj w Poppa. Chcemy uczynić indywidualne nauczanie języków dostępnym dla wszystkich.",
+      "background": "Miałem ogromne szczęście, że moje okoliczności (mieszkanie w Budapeszcie, a później uczęszczanie do dobrej szkoły w Anglii) pozwoliły mi na indywidualne lekcje chińskiego i rosyjskiego. Nauka tych języków pod wieloma względami zmieniła kierunek mojego życia.",
+      "philosophy": "Nauka języków powinna być przystępna cenowo i elastyczna, dlatego wprowadziliśmy system oparty na kredytach, który pozwala Ci uczyć się w swoim tempie i zgodnie z budżetem. Niezależnie od tego, czy masz 5 minut czy 5 godzin, Poppa jest tu, aby wspierać Twoją podróż językową.",
+      "approach": "Nie każemy Ci zapisywać słów ani zapamiętywać bezużytecznych reguł gramatycznych czy fraz. Pomożemy Ci myśleć w innym języku. Spróbuj. Myślę, że Ci się spodoba, a pierwsza lekcja jest darmowa.",
+      "story": "Nauczyłem się chińskiego ze względu na mojego dziadka, którego nazywałem poppa, który pracował w Pekinie przez wiele lat i kazał mi obiecać, że się go nauczę. Miało to ogromny wpływ na moje życie i mam nadzieję, że poppa może mieć taki sam wpływ na Ciebie :)",
+      "closing": "Powodzenia w nauce!",
+      "signature": "Angelo"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Stworzone z sercem przez Naxos Labs"
+    }
+  },
+  "SignupPage": {
+    "navigation": {
+      "backToHome": "Powrót do strony głównej"
+    },
+    "logo": {
+      "alt": "Logo Poppa"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "subtitle": "Rozpocznij swoją podróż w nauce języka już dziś!"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Stworzone z sercem przez Naxos Labs"
+    }
+  },
+  "LoginForm": {
+    "email": "Email",
+    "password": "Hasło",
+    "loginButton": "Zaloguj się",
+    "forgotPassword": "Zapomniałeś hasła?",
+    "loading": "Logowanie...",
+    "success": {
+      "title": "Zalogowano pomyślnie",
+      "description": "Witaj z powrotem!"
+    },
+    "error": {
+      "title": "Błąd logowania"
+    }
+  },
+  "SignupForm": {
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "email": "Email",
+    "password": "Hasło",
+    "confirmPassword": "Potwierdź hasło",
+    "nativeLanguage": "Język ojczysty",
+    "dateOfBirth": "Data urodzenia",
+    "day": "Dzień",
+    "month": "Miesiąc",
+    "year": "Rok",
+    "signupButton": "Zarejestruj się",
+    "loading": "Rejestracja...",
+    "languageTooltip": "Nie widzisz swojego języka? Poppa obecnie wspiera tylko te języki. Skontaktuj się z nami po pomoc.",
+    "errors": {
+      "passwordMatch": "Hasła nie są zgodne",
+      "generic": "Wystąpił błąd podczas rejestracji. Spróbuj ponownie."
+    }
+  },
+  "ProfilePage": {
+    "navigation": {
+      "backToDashboard": "Powrót do panelu"
+    },
+    "header": {
+      "title": "Profil"
+    },
+    "accountDetails": {
+      "title": "Szczegóły konta",
+      "joined": "Dołączono",
+      "credits": "Kredyty"
+    }
+  },
+  "DashboardPage": {
+    "navigation": {
+      "profile": "Profil",
+      "logout": "Wyloguj się",
+      "buyCredits": "Kup kredyty"
+    },
+    "languages": {
+      "title": "Twoje języki",
+      "addLanguage": "Dodaj język",
+      "dialog": {
+        "title": "Dodaj nowy język",
+        "description": "Wybierz język, którego chcesz się nauczyć",
+        "selectPlaceholder": "Wybierz język"
+      },
+      "startLearning": {
+        "title": "Rozpocząć naukę teraz?",
+        "description": "Czy chcesz rozpocząć swoją pierwszą lekcję w języku {language} teraz?",
+        "later": "Później",
+        "startNow": "Rozpocznij teraz"
+      },
+      "card": {
+        "level": "Poziom średniozaawansowany",
+        "viewHistory": "Zobacz historię",
+        "continueButton": "Kontynuuj naukę",
+        "customButton": "Spersonalizowana lekcja"
+      },
+      "customLesson": {
+        "title": "Spersonalizowana lekcja - {language}",
+        "description": "Wpisz, czego chcesz się nauczyć w języku {language}.\nUpewnimy się, że lekcja będzie dostosowana do Twojego poziomu.",
+        "placeholder": "np. zamawianie w restauracji",
+        "startButton": "Rozpocznij lekcję"
+      }
+    }
+  }
+}

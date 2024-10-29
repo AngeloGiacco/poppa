@@ -13,11 +13,14 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { InfoCircledIcon } from "@radix-ui/react-icons";
 import { languages } from '@/lib/supportedLanguages';
 import { supabaseBrowserClient } from '@/lib/supabase-browser';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function SignUp() {
+  const t = useTranslations('SignupForm');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -31,11 +34,19 @@ export default function SignUp() {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+  const locale = useLocale();
+
+  useEffect(() => {
+    const currentLang = languages.find(lang => lang.locale === locale);
+    if (currentLang) {
+      setNativeLanguage(currentLang.code);
+    }
+  }, [locale]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      setPasswordError("Passwords don't match");
+      setPasswordError(t('errors.passwordMatch'));
       return;
     }
     setPasswordError('');
@@ -75,7 +86,7 @@ export default function SignUp() {
       // Redirect to a success page or dashboard
       router.push('/signup-success');
     } catch (err) {
-      setError('An error occurred during sign up. Please try again.');
+      setError(t('errors.generic'));
       console.error('Sign up error:', err);
     } finally {
       setIsLoading(false);
@@ -86,7 +97,7 @@ export default function SignUp() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="firstName" className="text-[#8B4513]">First Name</Label>
+          <Label htmlFor="firstName" className="text-[#8B4513]">{t('firstName')}</Label>
           <Input
             id="firstName"
             value={firstName}
@@ -96,7 +107,7 @@ export default function SignUp() {
           />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="lastName" className="text-[#8B4513]">Last Name</Label>
+          <Label htmlFor="lastName" className="text-[#8B4513]">{t('lastName')}</Label>
           <Input
             id="lastName"
             value={lastName}
@@ -108,7 +119,7 @@ export default function SignUp() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="email" className="text-[#8B4513]">Email</Label>
+        <Label htmlFor="email" className="text-[#8B4513]">{t('email')}</Label>
         <Input
           id="email"
           type="email"
@@ -120,7 +131,7 @@ export default function SignUp() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="password" className="text-[#8B4513]">Password</Label>
+        <Label htmlFor="password" className="text-[#8B4513]">{t('password')}</Label>
         <Input
           id="password"
           type="password"
@@ -132,7 +143,7 @@ export default function SignUp() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="confirmPassword" className="text-[#8B4513]">Confirm Password</Label>
+        <Label htmlFor="confirmPassword" className="text-[#8B4513]">{t('confirmPassword')}</Label>
         <Input
           id="confirmPassword"
           type="password"
@@ -146,7 +157,7 @@ export default function SignUp() {
 
       <div className="space-y-2">
         <div className="flex items-center justify-between">
-          <Label htmlFor="nativeLanguage" className="text-[#8B4513]">Native Language</Label>
+          <Label htmlFor="nativeLanguage" className="text-[#8B4513]">{t('nativeLanguage')}</Label>
           <TooltipProvider delayDuration={0}>
             <Tooltip>
               <TooltipTrigger asChild>
@@ -155,7 +166,7 @@ export default function SignUp() {
                 </Button>
               </TooltipTrigger>
               <TooltipContent sideOffset={5} className="bg-white p-2 text-sm text-[#8B4513] border border-[#8B4513] shadow-md">
-                Can't find your language? Poppa is only supported in these languages for now. Contact us for assistance.
+                {t('languageTooltip')}
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
@@ -165,7 +176,7 @@ export default function SignUp() {
             <SelectValue placeholder="Select your native language" />
           </SelectTrigger>
           <SelectContent className="bg-white">
-            {languages.sort((a, b) => a.name.localeCompare(b.name)).map((lang) => (
+            {languages.sort((a, b) => t(`languages.${a.code}`).localeCompare(t(`languages.${b.code}`))).map((lang) => (
               <SelectItem 
                 key={lang.code} 
                 value={lang.code}
@@ -173,7 +184,7 @@ export default function SignUp() {
               >
                 <div className="flex items-center">
                   <lang.icon className="w-5 h-5 mr-2" />
-                  {lang.name}
+                  {t(`languages.${lang.code}`)}
                 </div>
               </SelectItem>
             ))}
@@ -182,11 +193,11 @@ export default function SignUp() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="birthDate" className="text-[#8B4513]">Date of Birth</Label>
+        <Label htmlFor="birthDate" className="text-[#8B4513]">{t('dateOfBirth')}</Label>
         <div className="grid grid-cols-3 gap-2">
           <Select onValueChange={setBirthDay}>
             <SelectTrigger className="bg-white border-[#8B4513] focus:ring-[#8B4513]">
-              <SelectValue placeholder="Day" />
+              <SelectValue placeholder={t('day')} />
             </SelectTrigger>
             <SelectContent className="bg-white">
               {Array.from({ length: 31 }, (_, i) => i + 1).map((day) => (
@@ -198,19 +209,19 @@ export default function SignUp() {
           </Select>
           <Select onValueChange={setBirthMonth}>
             <SelectTrigger className="bg-white border-[#8B4513] focus:ring-[#8B4513]">
-              <SelectValue placeholder="Month" />
+              <SelectValue placeholder={t('month')} />
             </SelectTrigger>
             <SelectContent className="bg-white">
-              {['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'].map((month, index) => (
-                <SelectItem key={month} value={(index + 1).toString()}>
-                  {month}
+              {Array.from({ length: 12 }, (_, i) => i + 1).map((monthNum) => (
+                <SelectItem key={monthNum} value={monthNum.toString()}>
+                  {t(`months.${monthNum}`)}
                 </SelectItem>
               ))}
             </SelectContent>
           </Select>
           <Select onValueChange={setBirthYear}>
             <SelectTrigger className="bg-white border-[#8B4513] focus:ring-[#8B4513]">
-              <SelectValue placeholder="Year" />
+              <SelectValue placeholder={t('year')} />
             </SelectTrigger>
             <SelectContent className="bg-white">
               {Array.from({ length: new Date().getFullYear() - 1939 }, (_, i) => new Date().getFullYear() - i).map((year) => (
@@ -228,7 +239,7 @@ export default function SignUp() {
         className="w-full bg-[#8B4513] hover:bg-[#A0522D] text-white"
         disabled={isLoading}
       >
-        {isLoading ? "Signing Up..." : "Sign Up"}
+        {isLoading ? t('loading') : t('signupButton')}
       </Button>
 
       {error && <p className="text-red-500 text-sm mt-2">{error}</p>}

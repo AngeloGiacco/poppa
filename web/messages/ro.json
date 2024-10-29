@@ -1,0 +1,241 @@
+{
+  "HomePage": {
+    "navigation": {
+      "pricing": "Prețuri",
+      "howItWorks": "Cum funcționează",
+      "login": "Autentificare",
+      "getStarted": "Începe"
+    },
+    "announcement": {
+      "live": "✨ Suntem live!",
+      "founderMessage": "Citește mesajul fondatorului →"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "title": "Învață limbi străine în mod natural",
+      "subtitle": "poppa te ghidează pas cu pas în învățarea unei noi limbi cu tutoriat exclusiv vocal"
+    },
+    "languagesSection": {
+      "title": "Limbile pe care le vorbim"
+    },
+    "whyPoppa": {
+      "title": "De ce Poppa?",
+      "features": {
+        "tutoring": {
+          "title": "Tutoriat de la zero",
+          "description": "Nu sunt doar jocuri de rol, te învățăm în limba ta maternă cum să gândești în orice limbă nouă.",
+          "learnMore": "Află mai multe →"
+        },
+        "personalized": {
+          "title": "Învățare Personalizată",
+          "description": "Ne adaptăm la ritmul și interesele tale pentru a te ajuta să te îmbunătățești în timp."
+        },
+        "freeStart": {
+          "title": "Începe Gratuit",
+          "description": "Primești 20 de minute de credite gratuite pentru a încerca Poppa. Nu este necesară introducerea cardului pentru a începe călătoria ta de învățare a limbilor străine."
+        }
+      },
+      "tryButton": "Încearcă 20 de minute gratuit"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Creat cu grijă de Naxos Labs."
+    }
+  },
+  "PricingPage": {
+    "navigation": {
+      "home": "Acasă",
+      "howItWorks": "Cum funcționează",
+      "login": "Autentificare",
+      "getStarted": "Începe"
+    },
+    "hero": {
+      "title": "Prețuri simple și transparente",
+      "subtitle": "Începe cu 20 de minute gratuite. Apoi plătești pe măsură ce folosești."
+    },
+    "features": {
+      "aiTutor": "Tutor AI personalizat pentru limbi străine",
+      "availability": "Disponibilitate 24/7",
+      "adaptiveLearning": "Tehnologie de învățare adaptivă",
+      "progressTracking": "Urmărirea progresului",
+      "conversation": "Practică conversațională",
+      "exercises": "Exerciții de gramatică și vocabular"
+    },
+    "pricing": {
+      "perHour": "pe oră de tutoriat"
+    },
+    "calculator": {
+      "title": "Compară cu tutoriatul tradițional",
+      "hoursPerMonth": "Ore pe lună",
+      "poppaAI": "Poppa AI",
+      "traditionalTutor": "Tutor Tradițional"
+    },
+    "cta": {
+      "startFree": "Începe cu 20 de minute gratuite",
+      "noCard": "Nu este necesar cardul de credit"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Creat cu grijă de Naxos Labs."
+    }
+  },
+  "HowItWorksPage": {
+    "navigation": {
+      "backToHome": "← Înapoi la Pagina Principală"
+    },
+    "header": {
+      "openSource": {
+        "badge": "🌟 Suntem open source!",
+        "link": "Vezi-ne pe GitHub →"
+      },
+      "title": "Cum funcționează poppa"
+    },
+    "sections": {
+      "thinkingMethod": {
+        "title": "Metoda de Gândire",
+        "description1": "Poppa folosește o abordare unică numită \"Metoda de Gândire\" pentru a te ajuta să înveți limbi străine în mod natural și eficient. În loc să memorezi liste de vocabular sau reguli gramaticale, vei învăța să gândești în limba țintă chiar de la început.",
+        "description2": "Această metodă se concentrează pe înțelegerea structurii limbii, crearea de conexiuni și dezvoltarea abilității de a construi propoziții în mod intuitiv. Este o abordare blândă dar puternică care imită modul în care dobândim în mod natural limbile."
+      },
+      "tech": {
+        "title": "Tehnologia",
+        "description1": "Pentru a te ajuta să practici conversații cu un tutor AI care răspunde la vocea ta în timp real, folosim modelele OpenAI pentru a înțelege și a răspunde la ceea ce spui, stocăm istoricul complet al conversațiilor în cloud și avem servere distribuite global pentru a oferi comunicare cu latență redusă cu produsul nostru.",
+        "description2": "🌟 Credem în open source. Poppa este complet open source, așa că dacă nu vrei să ne plătești niciun ban, nu trebuie. Dacă, în schimb, nu vrei să ai bătăi de cap cu gestionarea serverelor pentru comunicații vocale cu latență redusă, oferim un serviciu plătit prin acest site web. Vezi-ne pe github."
+      },
+      "personalizedLearning": {
+        "title": "Rezultatul Final: Învățare Personalizată",
+        "description1": "Fiecare lecție pe care o faci cu Poppa este transcrisă și stocată, creând o înregistrare completă a călătoriei tale de învățare. Acest lucru ne permite să:",
+        "benefits": [
+          "Urmărim progresul tău și să adaptăm lecțiile viitoare la nevoile tale",
+          "Implementăm repetiția spațiată pentru a consolida ceea ce ai învățat",
+          "Îți oferim o cale pas cu pas către stăpânirea limbii"
+        ],
+        "description2": "Calea ta personalizată de învățare evoluează odată cu tine, asigurându-ne că ești mereu provocat la nivelul potrivit și că revizitezi conceptele importante la intervale optime pentru reținere."
+      }
+    }
+  },
+  "LoginPage": {
+    "navigation": {
+      "backToHome": "Înapoi la Pagina Principală",
+      "signup": "Înregistrare"
+    },
+    "logo": {
+      "alt": "Logo Poppa"
+    },
+    "title": "Bine ai revenit",
+    "subtitle": "Autentifică-te pentru a-ți continua călătoria de învățare a limbilor străine!"
+  },
+  "FounderMessagePage": {
+    "navigation": {
+      "backToHome": "← Înapoi la Pagina Principală"
+    },
+    "header": {
+      "subtitle": "Un mesaj de la fondator"
+    },
+    "content": {
+      "greeting": "Bună 👋",
+      "welcome": "Bine ai venit la Poppa. Dorim să facem tutoriatul individual de limbi străine accesibil tuturor.",
+      "background": "Am fost extrem de norocos că circumstanțele mele (locuind în Budapesta și apoi mergând la o școală excelentă în UK) mi-au permis să primesc tutoriat individual în chineză și rusă. Învățarea acestor limbi mi-a schimbat în multe feluri traiectoria vieții.",
+      "philosophy": "Învățarea limbilor străine ar trebui să fie accesibilă și flexibilă, motiv pentru care am implementat un sistem bazat pe credite care îți permite să înveți în ritmul și bugetul tău. Fie că ai 5 minute sau 5 ore, Poppa este aici pentru a-ți susține călătoria de învățare a limbilor străine.",
+      "approach": "Nu te punem să scrii cuvinte sau să memorezi reguli gramaticale sau fraze inutile. Te vom ajuta să gândești în altă limbă. Te rugăm să încerci. Cred că îți va plăcea și oricum prima lecție este din partea noastră.",
+      "story": "Am învățat mandarină pentru că bunicul meu, căruia îi spuneam poppa, a lucrat în Beijing mulți ani și m-a făcut să-i promit că o voi învăța. Asta a avut un impact uriaș asupra vieții mele și sper că poppa poate avea un impact și asupra ta :)",
+      "closing": "Învățare plăcută!",
+      "signature": "Angelo"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Creat cu grijă de Naxos Labs."
+    }
+  },
+  "SignupPage": {
+    "navigation": {
+      "backToHome": "Înapoi la Pagina Principală"
+    },
+    "logo": {
+      "alt": "Logo Poppa"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "subtitle": "Începe-ți călătoria de învățare a limbilor străine astăzi!"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Creat cu grijă de Naxos Labs."
+    }
+  },
+  "LoginForm": {
+    "email": "Email",
+    "password": "Parolă",
+    "loginButton": "Autentificare",
+    "forgotPassword": "Ai uitat parola?",
+    "loading": "Se autentifică...",
+    "success": {
+      "title": "Autentificare Reușită",
+      "description": "Bine ai revenit!"
+    },
+    "error": {
+      "title": "Autentificare Eșuată"
+    }
+  },
+  "SignupForm": {
+    "firstName": "Prenume",
+    "lastName": "Nume",
+    "email": "Email",
+    "password": "Parolă",
+    "confirmPassword": "Confirmă Parola",
+    "nativeLanguage": "Limba Maternă",
+    "dateOfBirth": "Data Nașterii",
+    "day": "Zi",
+    "month": "Lună",
+    "year": "An",
+    "signupButton": "Înregistrare",
+    "loading": "Se înregistrează...",
+    "languageTooltip": "Nu-ți găsești limba? Poppa este disponibil doar în aceste limbi deocamdată. Contactează-ne pentru asistență.",
+    "errors": {
+      "passwordMatch": "Parolele nu se potrivesc",
+      "generic": "A apărut o eroare în timpul înregistrării. Te rugăm să încerci din nou."
+    }
+  },
+  "ProfilePage": {
+    "navigation": {
+      "backToDashboard": "Înapoi la Tabloul de Bord"
+    },
+    "header": {
+      "title": "Profil"
+    },
+    "accountDetails": {
+      "title": "Detalii Cont",
+      "joined": "Membru din",
+      "credits": "Credite"
+    }
+  },
+  "DashboardPage": {
+    "navigation": {
+      "profile": "Profil",
+      "logout": "Deconectare",
+      "buyCredits": "Cumpără Credite"
+    },
+    "languages": {
+      "title": "Limbile Tale",
+      "addLanguage": "Adaugă Limbă",
+      "dialog": {
+        "title": "Adaugă o Limbă Nouă",
+        "description": "Alege o limbă pe care ai dori să o înveți",
+        "selectPlaceholder": "Selectează o limbă"
+      },
+      "startLearning": {
+        "title": "Începi să Înveți Acum?",
+        "description": "Dorești să începi prima ta lecție în {language} acum?",
+        "later": "Mai târziu",
+        "startNow": "Începe Acum"
+      },
+      "card": {
+        "level": "Nivel Intermediar",
+        "viewHistory": "Vezi Istoricul",
+        "continueButton": "Continuă Învățarea",
+        "customButton": "Lecție Personalizată"
+      },
+      "customLesson": {
+        "title": "Lecție Personalizată - {language}",
+        "description": "Introdu ce ai dori să înveți în {language}.\nNe vom asigura că lecția se potrivește nivelului tău.",
+        "placeholder": "ex., comandarea mâncării la restaurant",
+        "startButton": "Începe Lecția"
+      }
+    }
+  }
+}
