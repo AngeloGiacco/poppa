@@ -1,44 +1,44 @@
 {
-    "common": {
-      "languages": {
-        "GB": "Englanti",
-        "CN": "Kiina", 
-        "JP": "Japani",
-        "KR": "Korea",
-        "IN": "Hindi",
-        "ID": "Bahasa",
-        "TH": "Thai",
-        "VN": "Vietnam",
-        "NG": "Yoruba",
-        "KE": "Swahili",
-        "ES": "Espanja",
-        "FR": "Ranska",
-        "DE": "Saksa",
-        "IT": "Italia",
-        "PT": "Portugali",
-        "TR": "Turkki",
-        "SA": "Arabia",
-        "GR": "Kreikka", 
-        "RU": "Venäjä",
-        "NL": "Hollanti",
-        "PL": "Puola",
-        "SE": "Ruotsi",
-        "IL": "Heprea",
-        "RO": "Romania",
-        "HU": "Unkari",
-        "CZ": "Tšekki",
-        "DK": "Tanska",
-        "FI": "Suomi",
-        "NO": "Norja",
-        "HR": "Kroatia",
-        "BG": "Bulgaria",
-        "SK": "Slovakia",
-        "UA": "Ukraina",
-        "IR": "Persia",
-        "PH": "Tagalog",
-        "PK": "Urdu"
-      }
-    },
+  "common": {
+    "languages": {
+      "GB": "Englanti",
+      "CN": "Kiina",
+      "JP": "Japani",
+      "KR": "Korea",
+      "IN": "Hindi",
+      "ID": "Bahasa",
+      "TH": "Thai",
+      "VN": "Vietnam",
+      "NG": "Yoruba",
+      "KE": "Swahili",
+      "ES": "Espanja",
+      "FR": "Ranska",
+      "DE": "Saksa",
+      "IT": "Italia",
+      "PT": "Portugali",
+      "TR": "Turkki",
+      "SA": "Arabia",
+      "GR": "Kreikka",
+      "RU": "Venäjä",
+      "NL": "Hollanti",
+      "PL": "Puola",
+      "SE": "Ruotsi",
+      "IL": "Heprea",
+      "RO": "Romania",
+      "HU": "Unkari",
+      "CZ": "Tšekki",
+      "DK": "Tanska",
+      "FI": "Suomi",
+      "NO": "Norja",
+      "HR": "Kroatia",
+      "BG": "Bulgaria",
+      "SK": "Slovakia",
+      "UA": "Ukraina",
+      "IR": "Persia",
+      "PH": "Tagalog",
+      "PK": "Urdu"
+    }
+  },
   "HomePage": {
     "navigation": {
       "pricing": "Hinnoittelu",
@@ -51,7 +51,7 @@
       "founderMessage": "Lue perustajan viesti →"
     },
     "hero": {
-      "brandName": "poppa", 
+      "brandName": "poppa",
       "title": "Opi kieliä luonnollisesti",
       "subtitle": "poppa ohjaa sinua askel askeleelta uuden kielen oppimisessa ääniohjauksella"
     },
@@ -181,20 +181,6 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Huolella tehty Naxos Labsissa."
-    },
-    "months": {
-      "1": "Tammikuu",
-      "2": "Helmikuu",
-      "3": "Maaliskuu", 
-      "4": "Huhtikuu",
-      "5": "Toukokuu",
-      "6": "Kesäkuu",
-      "7": "Heinäkuu",
-      "8": "Elokuu",
-      "9": "Syyskuu",
-      "10": "Lokakuu",
-      "11": "Marraskuu",
-      "12": "Joulukuu"
     }
   },
   "LoginForm": {
@@ -229,7 +215,21 @@
       "passwordMatch": "Salasanat eivät täsmää",
       "generic": "Rekisteröitymisessä tapahtui virhe. Yritä uudelleen."
     },
-    "selectLanguage": "Valitse äidinkielesi"
+    "selectLanguage": "Valitse äidinkielesi",
+    "months": {
+      "1": "Tammikuu",
+      "2": "Helmikuu",
+      "3": "Maaliskuu",
+      "4": "Huhtikuu",
+      "5": "Toukokuu",
+      "6": "Kesäkuu",
+      "7": "Heinäkuu",
+      "8": "Elokuu",
+      "9": "Syyskuu",
+      "10": "Lokakuu",
+      "11": "Marraskuu",
+      "12": "Joulukuu"
+    }
   },
   "ProfilePage": {
     "navigation": {
@@ -279,10 +279,10 @@
     }
   },
   "LessonPage": {
-      "backToDashboard": "Takaisin kojelaudalle",
-      "footer": {
-          "builtWith": "Tehnyt Naxos Labs",
-          "viewSource": "Katso lähdekoodi GitHubissa"
-      }
+    "backToDashboard": "Takaisin kojelaudalle",
+    "footer": {
+      "builtWith": "Tehnyt Naxos Labs",
+      "viewSource": "Katso lähdekoodi GitHubissa"
+    }
   }
 }

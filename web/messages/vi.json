@@ -1,44 +1,44 @@
 {
-    "common": {
-      "languages": {
-        "GB": "Tiếng Anh",
-        "CN": "Tiếng Trung",
-        "JP": "Tiếng Nhật",
-        "KR": "Tiếng Hàn",
-        "IN": "Tiếng Hindi", 
-        "ID": "Tiếng Indonesia",
-        "TH": "Tiếng Thái",
-        "VN": "Tiếng Việt",
-        "NG": "Tiếng Yoruba",
-        "KE": "Tiếng Swahili",
-        "ES": "Tiếng Tây Ban Nha",
-        "FR": "Tiếng Pháp",
-        "DE": "Tiếng Đức",
-        "IT": "Tiếng Ý",
-        "PT": "Tiếng Bồ Đào Nha",
-        "TR": "Tiếng Thổ Nhĩ Kỳ",
-        "SA": "Tiếng Ả Rập",
-        "GR": "Tiếng Hy Lạp",
-        "RU": "Tiếng Nga",
-        "NL": "Tiếng Hà Lan",
-        "PL": "Tiếng Ba Lan",
-        "SE": "Tiếng Thụy Điển",
-        "IL": "Tiếng Do Thái",
-        "RO": "Tiếng Romania",
-        "HU": "Tiếng Hungary",
-        "CZ": "Tiếng Séc",
-        "DK": "Tiếng Đan Mạch",
-        "FI": "Tiếng Phần Lan",
-        "NO": "Tiếng Na Uy",
-        "HR": "Tiếng Croatia",
-        "BG": "Tiếng Bulgaria",
-        "SK": "Tiếng Slovakia",
-        "UA": "Tiếng Ukraine",
-        "IR": "Tiếng Ba Tư",
-        "PH": "Tiếng Tagalog",
-        "PK": "Tiếng Urdu"
-      }
-    },
+  "common": {
+    "languages": {
+      "GB": "Tiếng Anh",
+      "CN": "Tiếng Trung",
+      "JP": "Tiếng Nhật",
+      "KR": "Tiếng Hàn",
+      "IN": "Tiếng Hindi",
+      "ID": "Tiếng Indonesia",
+      "TH": "Tiếng Thái",
+      "VN": "Tiếng Việt",
+      "NG": "Tiếng Yoruba",
+      "KE": "Tiếng Swahili",
+      "ES": "Tiếng Tây Ban Nha",
+      "FR": "Tiếng Pháp",
+      "DE": "Tiếng Đức",
+      "IT": "Tiếng Ý",
+      "PT": "Tiếng Bồ Đào Nha",
+      "TR": "Tiếng Thổ Nhĩ Kỳ",
+      "SA": "Tiếng Ả Rập",
+      "GR": "Tiếng Hy Lạp",
+      "RU": "Tiếng Nga",
+      "NL": "Tiếng Hà Lan",
+      "PL": "Tiếng Ba Lan",
+      "SE": "Tiếng Thụy Điển",
+      "IL": "Tiếng Do Thái",
+      "RO": "Tiếng Romania",
+      "HU": "Tiếng Hungary",
+      "CZ": "Tiếng Séc",
+      "DK": "Tiếng Đan Mạch",
+      "FI": "Tiếng Phần Lan",
+      "NO": "Tiếng Na Uy",
+      "HR": "Tiếng Croatia",
+      "BG": "Tiếng Bulgaria",
+      "SK": "Tiếng Slovakia",
+      "UA": "Tiếng Ukraine",
+      "IR": "Tiếng Ba Tư",
+      "PH": "Tiếng Tagalog",
+      "PK": "Tiếng Urdu"
+    }
+  },
   "HomePage": {
     "navigation": {
       "pricing": "Giá",
@@ -196,20 +196,6 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Được tạo ra với sự tận tâm bởi Naxos Labs."
-    },
-    "months": {
-      "1": "Tháng 1",
-      "2": "Tháng 2",
-      "3": "Tháng 3",
-      "4": "Tháng 4",
-      "5": "Tháng 5",
-      "6": "Tháng 6",
-      "7": "Tháng 7",
-      "8": "Tháng 8",
-      "9": "Tháng 9",
-      "10": "Tháng 10",
-      "11": "Tháng 11",
-      "12": "Tháng 12"
     }
   },
   "LoginForm": {
@@ -244,7 +230,21 @@
       "passwordMatch": "Mật khẩu không khớp",
       "generic": "Đã xảy ra lỗi trong quá trình đăng ký. Vui lòng thử lại."
     },
-    "selectLanguage": "Chọn ngôn ngữ mẹ đẻ của bạn"
+    "selectLanguage": "Chọn ngôn ngữ mẹ đẻ của bạn",
+    "months": {
+      "1": "Tháng 1",
+      "2": "Tháng 2",
+      "3": "Tháng 3",
+      "4": "Tháng 4",
+      "5": "Tháng 5",
+      "6": "Tháng 6",
+      "7": "Tháng 7",
+      "8": "Tháng 8",
+      "9": "Tháng 9",
+      "10": "Tháng 10",
+      "11": "Tháng 11",
+      "12": "Tháng 12"
+    }
   },
   "ProfilePage": {
     "navigation": {

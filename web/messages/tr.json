@@ -1,44 +1,44 @@
 {
-    "common": {
-      "languages": {
-        "GB": "İngilizce",
-        "CN": "Çince",
-        "JP": "Japonca",
-        "KR": "Korece",
-        "IN": "Hintçe",
-        "ID": "Endonezce",
-        "TH": "Tayca",
-        "VN": "Vietnamca",
-        "NG": "Yorubaca",
-        "KE": "Svahili",
-        "ES": "İspanyolca",
-        "FR": "Fransızca", 
-        "DE": "Almanca",
-        "IT": "İtalyanca",
-        "PT": "Portekizce",
-        "TR": "Türkçe",
-        "SA": "Arapça",
-        "GR": "Yunanca",
-        "RU": "Rusça",
-        "NL": "Hollandaca",
-        "PL": "Lehçe",
-        "SE": "İsveççe",
-        "IL": "İbranice",
-        "RO": "Romence",
-        "HU": "Macarca",
-        "CZ": "Çekçe",
-        "DK": "Danca",
-        "FI": "Fince",
-        "NO": "Norveççe",
-        "HR": "Hırvatça",
-        "BG": "Bulgarca",
-        "SK": "Slovakça",
-        "UA": "Ukraynaca",
-        "IR": "Farsça",
-        "PH": "Tagalogca",
-        "PK": "Urduca"
-      }
-    },
+  "common": {
+    "languages": {
+      "GB": "İngilizce",
+      "CN": "Çince",
+      "JP": "Japonca",
+      "KR": "Korece",
+      "IN": "Hintçe",
+      "ID": "Endonezce",
+      "TH": "Tayca",
+      "VN": "Vietnamca",
+      "NG": "Yorubaca",
+      "KE": "Svahili",
+      "ES": "İspanyolca",
+      "FR": "Fransızca",
+      "DE": "Almanca",
+      "IT": "İtalyanca",
+      "PT": "Portekizce",
+      "TR": "Türkçe",
+      "SA": "Arapça",
+      "GR": "Yunanca",
+      "RU": "Rusça",
+      "NL": "Hollandaca",
+      "PL": "Lehçe",
+      "SE": "İsveççe",
+      "IL": "İbranice",
+      "RO": "Romence",
+      "HU": "Macarca",
+      "CZ": "Çekçe",
+      "DK": "Danca",
+      "FI": "Fince",
+      "NO": "Norveççe",
+      "HR": "Hırvatça",
+      "BG": "Bulgarca",
+      "SK": "Slovakça",
+      "UA": "Ukraynaca",
+      "IR": "Farsça",
+      "PH": "Tagalogca",
+      "PK": "Urduca"
+    }
+  },
   "HomePage": {
     "navigation": {
       "pricing": "Fiyatlandırma",
@@ -196,20 +196,6 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Naxos Labs tarafından özenle hazırlanmıştır."
-    },
-    "months": {
-      "1": "Ocak",
-      "2": "Şubat",
-      "3": "Mart",
-      "4": "Nisan",
-      "5": "Mayıs",
-      "6": "Haziran",
-      "7": "Temmuz",
-      "8": "Ağustos",
-      "9": "Eylül",
-      "10": "Ekim",
-      "11": "Kasım",
-      "12": "Aralık"
     }
   },
   "LoginForm": {
@@ -244,7 +230,21 @@
       "passwordMatch": "Şifreler eşleşmiyor",
       "generic": "Kayıt sırasında bir hata oluştu. Lütfen tekrar deneyin."
     },
-    "selectLanguage": "Ana dilinizi seçin"
+    "selectLanguage": "Ana dilinizi seçin",
+    "months": {
+      "1": "Ocak",
+      "2": "Şubat",
+      "3": "Mart",
+      "4": "Nisan",
+      "5": "Mayıs",
+      "6": "Haziran",
+      "7": "Temmuz",
+      "8": "Ağustos",
+      "9": "Eylül",
+      "10": "Ekim",
+      "11": "Kasım",
+      "12": "Aralık"
+    }
   },
   "ProfilePage": {
     "navigation": {

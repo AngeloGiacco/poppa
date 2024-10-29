@@ -1,49 +1,49 @@
 {
-    "common": {
-      "languages": {
-        "GB": "Anglais",
-        "CN": "Chinois",
-        "JP": "Japonais",
-        "KR": "Coréen",
-        "IN": "Hindi",
-        "ID": "Bahasa",
-        "TH": "Thaï",
-        "VN": "Vietnamien",
-        "NG": "Yoruba", 
-        "KE": "Swahili",
-        "ES": "Espagnol",
-        "FR": "Français",
-        "DE": "Allemand",
-        "IT": "Italien",
-        "PT": "Portugais",
-        "TR": "Turc",
-        "SA": "Arabe",
-        "GR": "Grec",
-        "RU": "Russe",
-        "NL": "Néerlandais",
-        "PL": "Polonais",
-        "SE": "Suédois",
-        "IL": "Hébreu",
-        "RO": "Roumain",
-        "HU": "Hongrois",
-        "CZ": "Tchèque",
-        "DK": "Danois",
-        "FI": "Finnois",
-        "NO": "Norvégien",
-        "HR": "Croate",
-        "BG": "Bulgare",
-        "SK": "Slovaque",
-        "UA": "Ukrainien",
-        "IR": "Persan",
-        "PH": "Tagalog",
-        "PK": "Urdu"
-      }
-    },
+  "common": {
+    "languages": {
+      "GB": "Anglais",
+      "CN": "Chinois",
+      "JP": "Japonais",
+      "KR": "Coréen",
+      "IN": "Hindi",
+      "ID": "Bahasa",
+      "TH": "Thaï",
+      "VN": "Vietnamien",
+      "NG": "Yoruba",
+      "KE": "Swahili",
+      "ES": "Espagnol",
+      "FR": "Français",
+      "DE": "Allemand",
+      "IT": "Italien",
+      "PT": "Portugais",
+      "TR": "Turc",
+      "SA": "Arabe",
+      "GR": "Grec",
+      "RU": "Russe",
+      "NL": "Néerlandais",
+      "PL": "Polonais",
+      "SE": "Suédois",
+      "IL": "Hébreu",
+      "RO": "Roumain",
+      "HU": "Hongrois",
+      "CZ": "Tchèque",
+      "DK": "Danois",
+      "FI": "Finnois",
+      "NO": "Norvégien",
+      "HR": "Croate",
+      "BG": "Bulgare",
+      "SK": "Slovaque",
+      "UA": "Ukrainien",
+      "IR": "Persan",
+      "PH": "Tagalog",
+      "PK": "Urdu"
+    }
+  },
   "HomePage": {
     "navigation": {
       "pricing": "Tarifs",
       "howItWorks": "Comment ça marche",
-      "login": "Connexion", 
+      "login": "Connexion",
       "getStarted": "Commencer"
     },
     "announcement": {
@@ -196,20 +196,6 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Créé avec soin par Naxos Labs."
-    },
-    "months": {
-      "1": "Janvier",
-      "2": "Février",
-      "3": "Mars",
-      "4": "Avril",
-      "5": "Mai",
-      "6": "Juin",
-      "7": "Juillet",
-      "8": "Août",
-      "9": "Septembre",
-      "10": "Octobre",
-      "11": "Novembre",
-      "12": "Décembre"
     }
   },
   "LoginForm": {
@@ -244,7 +230,21 @@
       "passwordMatch": "Les mots de passe ne correspondent pas",
       "generic": "Une erreur s'est produite lors de l'inscription. Veuillez réessayer."
     },
-    "selectLanguage": "Sélectionnez votre langue maternelle"
+    "selectLanguage": "Sélectionnez votre langue maternelle",
+    "months": {
+      "1": "Janvier",
+      "2": "Février",
+      "3": "Mars",
+      "4": "Avril",
+      "5": "Mai",
+      "6": "Juin",
+      "7": "Juillet",
+      "8": "Août",
+      "9": "Septembre",
+      "10": "Octobre",
+      "11": "Novembre",
+      "12": "Décembre"
+    }
   },
   "ProfilePage": {
     "navigation": {

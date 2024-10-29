@@ -196,20 +196,6 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Met zorg gemaakt door Naxos Labs."
-    },
-    "months": {
-      "1": "Januari",
-      "2": "Februari",
-      "3": "Maart",
-      "4": "April",
-      "5": "Mei",
-      "6": "Juni",
-      "7": "Juli",
-      "8": "Augustus",
-      "9": "September",
-      "10": "Oktober",
-      "11": "November",
-      "12": "December"
     }
   },
   "LoginForm": {
@@ -244,7 +230,21 @@
       "passwordMatch": "Wachtwoorden komen niet overeen",
       "generic": "Er is een fout opgetreden bij het registreren. Probeer het opnieuw."
     },
-    "selectLanguage": "Selecteer je moedertaal"
+    "selectLanguage": "Selecteer je moedertaal",
+    "months": {
+      "1": "Januari",
+      "2": "Februari",
+      "3": "Maart",
+      "4": "April",
+      "5": "Mei",
+      "6": "Juni",
+      "7": "Juli",
+      "8": "Augustus",
+      "9": "September",
+      "10": "Oktober",
+      "11": "November",
+      "12": "December"
+    }
   },
   "ProfilePage": {
     "navigation": {

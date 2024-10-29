@@ -1,44 +1,44 @@
 {
-    "common": {
-      "languages": {
-        "GB": "Angol",
-        "CN": "Kínai",
-        "JP": "Japán",
-        "KR": "Koreai",
-        "IN": "Hindi",
-        "ID": "Bahasa",
-        "TH": "Thai",
-        "VN": "Vietnámi",
-        "NG": "Yoruba",
-        "KE": "Szuahéli",
-        "ES": "Spanyol",
-        "FR": "Francia",
-        "DE": "Német",
-        "IT": "Olasz", 
-        "PT": "Portugál",
-        "TR": "Török",
-        "SA": "Arab",
-        "GR": "Görög",
-        "RU": "Orosz",
-        "NL": "Holland",
-        "PL": "Lengyel",
-        "SE": "Svéd",
-        "IL": "Héber",
-        "RO": "Román",
-        "HU": "Magyar",
-        "CZ": "Cseh",
-        "DK": "Dán",
-        "FI": "Finn",
-        "NO": "Norvég",
-        "HR": "Horvát",
-        "BG": "Bolgár",
-        "SK": "Szlovák", 
-        "UA": "Ukrán",
-        "IR": "Perzsa",
-        "PH": "Tagalog",
-        "PK": "Urdu"
-      }
-    },
+  "common": {
+    "languages": {
+      "GB": "Angol",
+      "CN": "Kínai",
+      "JP": "Japán",
+      "KR": "Koreai",
+      "IN": "Hindi",
+      "ID": "Bahasa",
+      "TH": "Thai",
+      "VN": "Vietnámi",
+      "NG": "Yoruba",
+      "KE": "Szuahéli",
+      "ES": "Spanyol",
+      "FR": "Francia",
+      "DE": "Német",
+      "IT": "Olasz",
+      "PT": "Portugál",
+      "TR": "Török",
+      "SA": "Arab",
+      "GR": "Görög",
+      "RU": "Orosz",
+      "NL": "Holland",
+      "PL": "Lengyel",
+      "SE": "Svéd",
+      "IL": "Héber",
+      "RO": "Román",
+      "HU": "Magyar",
+      "CZ": "Cseh",
+      "DK": "Dán",
+      "FI": "Finn",
+      "NO": "Norvég",
+      "HR": "Horvát",
+      "BG": "Bolgár",
+      "SK": "Szlovák",
+      "UA": "Ukrán",
+      "IR": "Perzsa",
+      "PH": "Tagalog",
+      "PK": "Urdu"
+    }
+  },
   "HomePage": {
     "navigation": {
       "pricing": "Árak",
@@ -196,20 +196,6 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Gondosan készítette a Naxos Labs."
-    },
-    "months": {
-      "1": "Január",
-      "2": "Február",
-      "3": "Március",
-      "4": "Április",
-      "5": "Május",
-      "6": "Június",
-      "7": "Július",
-      "8": "Augusztus",
-      "9": "Szeptember",
-      "10": "Október",
-      "11": "November",
-      "12": "December"
     }
   },
   "LoginForm": {
@@ -244,7 +230,21 @@
       "passwordMatch": "A jelszavak nem egyeznek",
       "generic": "Hiba történt a regisztráció során. Kérjük, próbáld újra."
     },
-    "selectLanguage": "Válassza ki az anyanyelvét"
+    "selectLanguage": "Válassza ki az anyanyelvét",
+    "months": {
+      "1": "Január",
+      "2": "Február",
+      "3": "Március",
+      "4": "Április",
+      "5": "Május",
+      "6": "Június",
+      "7": "Július",
+      "8": "Augusztus",
+      "9": "Szeptember",
+      "10": "Október",
+      "11": "November",
+      "12": "December"
+    }
   },
   "ProfilePage": {
     "navigation": {
@@ -294,10 +294,10 @@
     }
   },
   "LessonPage": {
-      "backToDashboard": "Vissza az irányítópultra",
-      "footer": {
-          "builtWith": "Készítette: Naxos Labs",
-          "viewSource": "Forráskód megtekintése GitHubon"
-      }
+    "backToDashboard": "Vissza az irányítópultra",
+    "footer": {
+      "builtWith": "Készítette: Naxos Labs",
+      "viewSource": "Forráskód megtekintése GitHubon"
+    }
   }
 }

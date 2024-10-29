@@ -4,7 +4,7 @@
       "GB": "Englisch",
       "CN": "Chinesisch",
       "JP": "Japanisch",
-      "KR": "Koreanisch", 
+      "KR": "Koreanisch",
       "IN": "Hindi",
       "ID": "Bahasa",
       "TH": "Thailändisch",
@@ -196,20 +196,6 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Mit Sorgfalt erstellt von Naxos Labs."
-    },
-    "months": {
-      "1": "Januar",
-      "2": "Februar",
-      "3": "März",
-      "4": "April", 
-      "5": "Mai",
-      "6": "Juni",
-      "7": "Juli",
-      "8": "August",
-      "9": "September",
-      "10": "Oktober",
-      "11": "November",
-      "12": "Dezember"
     }
   },
   "LoginForm": {
@@ -244,7 +230,21 @@
       "passwordMatch": "Passwörter stimmen nicht überein",
       "generic": "Bei der Registrierung ist ein Fehler aufgetreten. Bitte versuche es erneut."
     },
-    "selectLanguage": "Wählen Sie Ihre Muttersprache"
+    "selectLanguage": "Wählen Sie Ihre Muttersprache",
+    "months": {
+      "1": "Januar",
+      "2": "Februar",
+      "3": "März",
+      "4": "April",
+      "5": "Mai",
+      "6": "Juni",
+      "7": "Juli",
+      "8": "August",
+      "9": "September",
+      "10": "Oktober",
+      "11": "November",
+      "12": "Dezember"
+    }
   },
   "ProfilePage": {
     "navigation": {

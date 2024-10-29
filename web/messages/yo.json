@@ -230,7 +230,21 @@
       "passwordMatch": "Àwọn ọ̀rọ̀ìpamọ́ kò bára wọn mu",
       "generic": "Àṣìṣe kan ṣẹlẹ̀ nígbà ìforúkọsílẹ̀. Jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan síi."
     },
-    "selectLanguage": "Yan èdè abínibí rẹ"
+    "selectLanguage": "Yan èdè abínibí rẹ",
+    "months": {
+      "1": "Oṣù Kínní",
+      "2": "Oṣù Kejì",
+      "3": "Oṣù Kẹta",
+      "4": "Oṣù Kẹrin",
+      "5": "Oṣù Kàrún",
+      "6": "Oṣù Kẹfà",
+      "7": "Oṣù Keje",
+      "8": "Oṣù Kẹjọ",
+      "9": "Oṣù Kẹsán",
+      "10": "Oṣù Kẹwá",
+      "11": "Oṣù Kọkànlá",
+      "12": "Oṣù Kejìlá"
+    }
   },
   "ProfilePage": {
     "navigation": {

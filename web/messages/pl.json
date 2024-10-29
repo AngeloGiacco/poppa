@@ -1,44 +1,44 @@
 {
-    "common": {
-      "languages": {
-        "GB": "Angielski",
-        "CN": "Chiński",
-        "JP": "Japoński",
-        "KR": "Koreański",
-        "IN": "Hindi",
-        "ID": "Bahasa",
-        "TH": "Tajski",
-        "VN": "Wietnamski",
-        "NG": "Joruba",
-        "KE": "Suahili",
-        "ES": "Hiszpański",
-        "FR": "Francuski",
-        "DE": "Niemiecki", 
-        "IT": "Włoski",
-        "PT": "Portugalski",
-        "TR": "Turecki",
-        "SA": "Arabski",
-        "GR": "Grecki",
-        "RU": "Rosyjski",
-        "NL": "Niderlandzki",
-        "PL": "Polski",
-        "SE": "Szwedzki",
-        "IL": "Hebrajski",
-        "RO": "Rumuński",
-        "HU": "Węgierski",
-        "CZ": "Czeski",
-        "DK": "Duński",
-        "FI": "Fiński",
-        "NO": "Norweski",
-        "HR": "Chorwacki",
-        "BG": "Bułgarski",
-        "SK": "Słowacki",
-        "UA": "Ukraiński",
-        "IR": "Perski",
-        "PH": "Tagalski",
-        "PK": "Urdu"
-      }
-    },
+  "common": {
+    "languages": {
+      "GB": "Angielski",
+      "CN": "Chiński",
+      "JP": "Japoński",
+      "KR": "Koreański",
+      "IN": "Hindi",
+      "ID": "Bahasa",
+      "TH": "Tajski",
+      "VN": "Wietnamski",
+      "NG": "Joruba",
+      "KE": "Suahili",
+      "ES": "Hiszpański",
+      "FR": "Francuski",
+      "DE": "Niemiecki",
+      "IT": "Włoski",
+      "PT": "Portugalski",
+      "TR": "Turecki",
+      "SA": "Arabski",
+      "GR": "Grecki",
+      "RU": "Rosyjski",
+      "NL": "Niderlandzki",
+      "PL": "Polski",
+      "SE": "Szwedzki",
+      "IL": "Hebrajski",
+      "RO": "Rumuński",
+      "HU": "Węgierski",
+      "CZ": "Czeski",
+      "DK": "Duński",
+      "FI": "Fiński",
+      "NO": "Norweski",
+      "HR": "Chorwacki",
+      "BG": "Bułgarski",
+      "SK": "Słowacki",
+      "UA": "Ukraiński",
+      "IR": "Perski",
+      "PH": "Tagalski",
+      "PK": "Urdu"
+    }
+  },
   "HomePage": {
     "navigation": {
       "pricing": "Cennik",
@@ -196,20 +196,6 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Stworzone z sercem przez Naxos Labs"
-    },
-    "months": {
-      "1": "Styczeń",
-      "2": "Luty",
-      "3": "Marzec",
-      "4": "Kwiecień",
-      "5": "Maj",
-      "6": "Czerwiec",
-      "7": "Lipiec",
-      "8": "Sierpień",
-      "9": "Wrzesień",
-      "10": "Październik",
-      "11": "Listopad",
-      "12": "Grudzień"
     }
   },
   "LoginForm": {
@@ -244,7 +230,21 @@
       "passwordMatch": "Hasła nie są zgodne",
       "generic": "Wystąpił błąd podczas rejestracji. Spróbuj ponownie."
     },
-    "selectLanguage": "Wybierz swój język ojczysty"
+    "selectLanguage": "Wybierz swój język ojczysty",
+    "months": {
+      "1": "Styczeń",
+      "2": "Luty",
+      "3": "Marzec",
+      "4": "Kwiecień",
+      "5": "Maj",
+      "6": "Czerwiec",
+      "7": "Lipiec",
+      "8": "Sierpień",
+      "9": "Wrzesień",
+      "10": "Październik",
+      "11": "Listopad",
+      "12": "Grudzień"
+    }
   },
   "ProfilePage": {
     "navigation": {
@@ -294,10 +294,10 @@
     }
   },
   "LessonPage": {
-      "backToDashboard": "Powrót do panelu",
-      "footer": {
-          "builtWith": "Stworzone przez Naxos Labs",
-          "viewSource": "Zobacz kod źródłowy na GitHub"
-      }
+    "backToDashboard": "Powrót do panelu",
+    "footer": {
+      "builtWith": "Stworzone przez Naxos Labs",
+      "viewSource": "Zobacz kod źródłowy na GitHub"
+    }
   }
 }

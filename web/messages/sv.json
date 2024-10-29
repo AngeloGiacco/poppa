@@ -1,44 +1,44 @@
 {
-    "common": {
-      "languages": {
-        "GB": "Engelska",
-        "CN": "Kinesiska",
-        "JP": "Japanska",
-        "KR": "Koreanska",
-        "IN": "Hindi", 
-        "ID": "Bahasa",
-        "TH": "Thailändska",
-        "VN": "Vietnamesiska",
-        "NG": "Yoruba",
-        "KE": "Swahili",
-        "ES": "Spanska",
-        "FR": "Franska", 
-        "DE": "Tyska",
-        "IT": "Italienska",
-        "PT": "Portugisiska",
-        "TR": "Turkiska",
-        "SA": "Arabiska",
-        "GR": "Grekiska",
-        "RU": "Ryska",
-        "NL": "Nederländska",
-        "PL": "Polska",
-        "SE": "Svenska",
-        "IL": "Hebreiska",
-        "RO": "Rumänska",
-        "HU": "Ungerska",
-        "CZ": "Tjeckiska",
-        "DK": "Danska",
-        "FI": "Finska",
-        "NO": "Norska",
-        "HR": "Kroatiska",
-        "BG": "Bulgariska", 
-        "SK": "Slovakiska",
-        "UA": "Ukrainska",
-        "IR": "Persiska",
-        "PH": "Tagalog",
-        "PK": "Urdu"
-      }
-    },
+  "common": {
+    "languages": {
+      "GB": "Engelska",
+      "CN": "Kinesiska",
+      "JP": "Japanska",
+      "KR": "Koreanska",
+      "IN": "Hindi",
+      "ID": "Bahasa",
+      "TH": "Thailändska",
+      "VN": "Vietnamesiska",
+      "NG": "Yoruba",
+      "KE": "Swahili",
+      "ES": "Spanska",
+      "FR": "Franska",
+      "DE": "Tyska",
+      "IT": "Italienska",
+      "PT": "Portugisiska",
+      "TR": "Turkiska",
+      "SA": "Arabiska",
+      "GR": "Grekiska",
+      "RU": "Ryska",
+      "NL": "Nederländska",
+      "PL": "Polska",
+      "SE": "Svenska",
+      "IL": "Hebreiska",
+      "RO": "Rumänska",
+      "HU": "Ungerska",
+      "CZ": "Tjeckiska",
+      "DK": "Danska",
+      "FI": "Finska",
+      "NO": "Norska",
+      "HR": "Kroatiska",
+      "BG": "Bulgariska",
+      "SK": "Slovakiska",
+      "UA": "Ukrainska",
+      "IR": "Persiska",
+      "PH": "Tagalog",
+      "PK": "Urdu"
+    }
+  },
   "HomePage": {
     "navigation": {
       "pricing": "Priser",
@@ -51,7 +51,7 @@
       "founderMessage": "Läs vårt grundarmeddelande →"
     },
     "hero": {
-      "brandName": "poppa", 
+      "brandName": "poppa",
       "title": "Lär dig språk naturligt",
       "subtitle": "poppa guidar dig steg för steg genom att lära dig ett nytt språk med röstbaserad undervisning"
     },
@@ -196,20 +196,6 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Skapat med omsorg av Naxos Labs."
-    },
-    "months": {
-      "1": "Januari",
-      "2": "Februari", 
-      "3": "Mars",
-      "4": "April",
-      "5": "Maj",
-      "6": "Juni",
-      "7": "Juli",
-      "8": "Augusti",
-      "9": "September",
-      "10": "Oktober",
-      "11": "November",
-      "12": "December"
     }
   },
   "LoginForm": {
@@ -244,7 +230,21 @@
       "passwordMatch": "Lösenorden matchar inte",
       "generic": "Ett fel uppstod vid registreringen. Försök igen."
     },
-    "selectLanguage": "Välj ditt modersmål"
+    "selectLanguage": "Välj ditt modersmål",
+    "months": {
+      "1": "Januari",
+      "2": "Februari",
+      "3": "Mars",
+      "4": "April",
+      "5": "Maj",
+      "6": "Juni",
+      "7": "Juli",
+      "8": "Augusti",
+      "9": "September",
+      "10": "Oktober",
+      "11": "November",
+      "12": "December"
+    }
   },
   "ProfilePage": {
     "navigation": {
@@ -296,7 +296,7 @@
   "LessonPage": {
     "backToDashboard": "Tillbaka till översikten",
     "footer": {
-      "builtWith": "Utvecklat av Naxos Labs", 
+      "builtWith": "Utvecklat av Naxos Labs",
       "viewSource": "Visa källkod på GitHub"
     }
   }

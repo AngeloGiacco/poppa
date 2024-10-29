@@ -230,7 +230,21 @@
       "passwordMatch": "Hindi magkatugma ang mga password",
       "generic": "May naganap na error sa pag-sign up. Pakisubukan muli."
     },
-    "selectLanguage": "Piliin ang iyong katutubong wika"
+    "selectLanguage": "Piliin ang iyong katutubong wika",
+    "months": {
+      "1": "Enero",
+      "2": "Pebrero", 
+      "3": "Marso",
+      "4": "Abril",
+      "5": "Mayo",
+      "6": "Hunyo",
+      "7": "Hulyo",
+      "8": "Agosto",
+      "9": "Setyembre",
+      "10": "Oktubre",
+      "11": "Nobyembre",
+      "12": "Disyembre"
+    }
   },
   "ProfilePage": {
     "navigation": {

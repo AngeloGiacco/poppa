@@ -1,44 +1,44 @@
 {
-    "common": {
-      "languages": {
-        "GB": "Inglese",
-        "CN": "Cinese",
-        "JP": "Giapponese",
-        "KR": "Coreano",
-        "IN": "Hindi", 
-        "ID": "Bahasa",
-        "TH": "Tailandese",
-        "VN": "Vietnamita",
-        "NG": "Yoruba",
-        "KE": "Swahili",
-        "ES": "Spagnolo",
-        "FR": "Francese", 
-        "DE": "Tedesco",
-        "IT": "Italiano",
-        "PT": "Portoghese",
-        "TR": "Turco",
-        "SA": "Arabo",
-        "GR": "Greco",
-        "RU": "Russo",
-        "NL": "Olandese",
-        "PL": "Polacco",
-        "SE": "Svedese",
-        "IL": "Ebraico",
-        "RO": "Rumeno",
-        "HU": "Ungherese",
-        "CZ": "Ceco",
-        "DK": "Danese",
-        "FI": "Finlandese",
-        "NO": "Norvegese",
-        "HR": "Croato",
-        "BG": "Bulgaro",
-        "SK": "Slovacco",
-        "UA": "Ucraino",
-        "IR": "Persiano",
-        "PH": "Tagalog",
-        "PK": "Urdu"
-      }
-    },
+  "common": {
+    "languages": {
+      "GB": "Inglese",
+      "CN": "Cinese",
+      "JP": "Giapponese",
+      "KR": "Coreano",
+      "IN": "Hindi",
+      "ID": "Bahasa",
+      "TH": "Tailandese",
+      "VN": "Vietnamita",
+      "NG": "Yoruba",
+      "KE": "Swahili",
+      "ES": "Spagnolo",
+      "FR": "Francese",
+      "DE": "Tedesco",
+      "IT": "Italiano",
+      "PT": "Portoghese",
+      "TR": "Turco",
+      "SA": "Arabo",
+      "GR": "Greco",
+      "RU": "Russo",
+      "NL": "Olandese",
+      "PL": "Polacco",
+      "SE": "Svedese",
+      "IL": "Ebraico",
+      "RO": "Rumeno",
+      "HU": "Ungherese",
+      "CZ": "Ceco",
+      "DK": "Danese",
+      "FI": "Finlandese",
+      "NO": "Norvegese",
+      "HR": "Croato",
+      "BG": "Bulgaro",
+      "SK": "Slovacco",
+      "UA": "Ucraino",
+      "IR": "Persiano",
+      "PH": "Tagalog",
+      "PK": "Urdu"
+    }
+  },
   "HomePage": {
     "navigation": {
       "pricing": "Prezzi",
@@ -85,7 +85,7 @@
     "navigation": {
       "home": "Home",
       "howItWorks": "Come funziona",
-      "login": "Accedi", 
+      "login": "Accedi",
       "getStarted": "Inizia ora"
     },
     "hero": {
@@ -182,50 +182,37 @@
     "footer": {
       "copyright": "© {year} Poppa. Creato con cura da Naxos Labs."
     }
-  }, "SignupPage": {
+  },
+  "SignupPage": {
     "navigation": {
-    "backToHome": "Torna alla Home"
+      "backToHome": "Torna alla Home"
     },
     "logo": {
-    "alt": "Logo Poppa"
+      "alt": "Logo Poppa"
     },
     "hero": {
-    "brandName": "poppa", 
-    "subtitle": "Inizia oggi il tuo percorso di apprendimento linguistico!"
+      "brandName": "poppa",
+      "subtitle": "Inizia oggi il tuo percorso di apprendimento linguistico!"
     },
     "footer": {
-    "copyright": "© {year} Poppa. Creato con cura da Naxos Labs."
-    },
-    "months": {
-      "1": "Gennaio",
-      "2": "Febbraio",
-      "3": "Marzo",
-      "4": "Aprile",
-      "5": "Maggio",
-      "6": "Giugno",
-      "7": "Luglio",
-      "8": "Agosto",
-      "9": "Settembre",
-      "10": "Ottobre",
-      "11": "Novembre",
-      "12": "Dicembre"
+      "copyright": "© {year} Poppa. Creato con cura da Naxos Labs."
     }
-},
-    "LoginForm": {
+  },
+  "LoginForm": {
     "email": "Email",
     "password": "Password",
     "loginButton": "Accedi",
     "forgotPassword": "Password dimenticata?",
     "loading": "Accesso in corso...",
     "success": {
-        "title": "Accesso Riuscito",
-        "description": "Bentornato!"
+      "title": "Accesso Riuscito",
+      "description": "Bentornato!"
     },
     "error": {
-        "title": "Accesso Fallito"
+      "title": "Accesso Fallito"
     }
-    },
-    "SignupForm": {
+  },
+  "SignupForm": {
     "firstName": "Nome",
     "lastName": "Cognome",
     "email": "Email",
@@ -240,62 +227,77 @@
     "loading": "Registrazione in corso...",
     "languageTooltip": "Non trovi la tua lingua? Poppa è supportato solo in queste lingue per ora. Contattaci per assistenza.",
     "errors": {
-        "passwordMatch": "Le password non coincidono",
-        "generic": "Si è verificato un errore durante la registrazione. Riprova."
+      "passwordMatch": "Le password non coincidono",
+      "generic": "Si è verificato un errore durante la registrazione. Riprova."
     },
-    "selectLanguage": "Seleziona la tua lingua madre"
-    }, "ProfilePage": {
+    "selectLanguage": "Seleziona la tua lingua madre",
+    "months": {
+      "1": "Gennaio",
+      "2": "Febbraio",
+      "3": "Marzo",
+      "4": "Aprile",
+      "5": "Maggio",
+      "6": "Giugno",
+      "7": "Luglio",
+      "8": "Agosto",
+      "9": "Settembre",
+      "10": "Ottobre",
+      "11": "Novembre",
+      "12": "Dicembre"
+    }
+  },
+  "ProfilePage": {
     "navigation": {
-        "backToDashboard": "Torna alla Dashboard"
+      "backToDashboard": "Torna alla Dashboard"
     },
     "header": {
-        "title": "Profilo"
+      "title": "Profilo"
     },
     "accountDetails": {
-        "title": "Dettagli Account",
-        "joined": "Iscritto dal",
-        "credits": "Crediti"
+      "title": "Dettagli Account",
+      "joined": "Iscritto dal",
+      "credits": "Crediti"
     }
-    },
-    "DashboardPage": {
+  },
+  "DashboardPage": {
     "navigation": {
-        "profile": "Profilo",
-        "logout": "Esci",
-        "buyCredits": "Acquista Crediti"
+      "profile": "Profilo",
+      "logout": "Esci",
+      "buyCredits": "Acquista Crediti"
     },
     "languages": {
-        "title": "Le tue Lingue",
-        "addLanguage": "Aggiungi Lingua",
-        "dialog": {
+      "title": "Le tue Lingue",
+      "addLanguage": "Aggiungi Lingua",
+      "dialog": {
         "title": "Aggiungi una Nuova Lingua",
         "description": "Scegli una lingua che vorresti imparare",
         "selectPlaceholder": "Seleziona una lingua"
-        },
-        "startLearning": {
+      },
+      "startLearning": {
         "title": "Iniziare ad Imparare Ora?",
         "description": "Vuoi iniziare la tua prima lezione in {language} adesso?",
         "later": "Più tardi",
         "startNow": "Inizia Ora"
-        },
-        "card": {
+      },
+      "card": {
         "level": "Livello Intermedio",
         "viewHistory": "Visualizza Cronologia",
         "continueButton": "Continua ad Imparare",
         "customButton": "Lezione Personalizzata"
-        },
-        "customLesson": {
+      },
+      "customLesson": {
         "title": "Lezione Personalizzata - {language}",
         "description": "Inserisci cosa vorresti imparare in {language}.\nCi assicureremo che la lezione sia adatta al tuo livello.",
         "placeholder": "es., ordinare al ristorante",
         "startButton": "Inizia Lezione"
-        }
+      }
     }
-    },
-    "LessonPage": {
-        "backToDashboard": "Torna alla Dashboard",
-        "footer": {
-        "builtWith": "Realizzato da Naxos Labs",
-        "viewSource": "Visualizza il codice sorgente su GitHub"
-        }
+  },
+  "LessonPage": {
+    "backToDashboard": "Torna alla Dashboard",
+    "footer": {
+      "builtWith": "Realizzato da Naxos Labs",
+      "viewSource": "Visualizza il codice sorgente su GitHub"
     }
+  }
 }

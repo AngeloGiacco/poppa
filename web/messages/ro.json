@@ -1,44 +1,44 @@
 {
-    "common": {
-      "languages": {
-        "GB": "Engleză",
-        "CN": "Chineză",
-        "JP": "Japoneză", 
-        "KR": "Coreeană",
-        "IN": "Hindi",
-        "ID": "Bahasa",
-        "TH": "Thailandeză",
-        "VN": "Vietnameză",
-        "NG": "Yoruba",
-        "KE": "Swahili", 
-        "ES": "Spaniolă",
-        "FR": "Franceză",
-        "DE": "Germană",
-        "IT": "Italiană",
-        "PT": "Portugheză",
-        "TR": "Turcă",
-        "SA": "Arabă",
-        "GR": "Greacă",
-        "RU": "Rusă",
-        "NL": "Olandeză",
-        "PL": "Poloneză",
-        "SE": "Suedeză",
-        "IL": "Ebraică",
-        "RO": "Română",
-        "HU": "Maghiară",
-        "CZ": "Cehă",
-        "DK": "Daneză",
-        "FI": "Finlandeză",
-        "NO": "Norvegiană",
-        "HR": "Croată",
-        "BG": "Bulgară",
-        "SK": "Slovacă",
-        "UA": "Ucraineană",
-        "IR": "Persană",
-        "PH": "Tagalog",
-        "PK": "Urdu"
-      }
-    },
+  "common": {
+    "languages": {
+      "GB": "Engleză",
+      "CN": "Chineză",
+      "JP": "Japoneză",
+      "KR": "Coreeană",
+      "IN": "Hindi",
+      "ID": "Bahasa",
+      "TH": "Thailandeză",
+      "VN": "Vietnameză",
+      "NG": "Yoruba",
+      "KE": "Swahili",
+      "ES": "Spaniolă",
+      "FR": "Franceză",
+      "DE": "Germană",
+      "IT": "Italiană",
+      "PT": "Portugheză",
+      "TR": "Turcă",
+      "SA": "Arabă",
+      "GR": "Greacă",
+      "RU": "Rusă",
+      "NL": "Olandeză",
+      "PL": "Poloneză",
+      "SE": "Suedeză",
+      "IL": "Ebraică",
+      "RO": "Română",
+      "HU": "Maghiară",
+      "CZ": "Cehă",
+      "DK": "Daneză",
+      "FI": "Finlandeză",
+      "NO": "Norvegiană",
+      "HR": "Croată",
+      "BG": "Bulgară",
+      "SK": "Slovacă",
+      "UA": "Ucraineană",
+      "IR": "Persană",
+      "PH": "Tagalog",
+      "PK": "Urdu"
+    }
+  },
   "HomePage": {
     "navigation": {
       "pricing": "Prețuri",
@@ -196,20 +196,6 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Creat cu grijă de Naxos Labs."
-    },
-    "months": {
-      "1": "Ianuarie",
-      "2": "Februarie",
-      "3": "Martie",
-      "4": "Aprilie",
-      "5": "Mai",
-      "6": "Iunie",
-      "7": "Iulie",
-      "8": "August",
-      "9": "Septembrie",
-      "10": "Octombrie",
-      "11": "Noiembrie",
-      "12": "Decembrie"
     }
   },
   "LoginForm": {
@@ -244,7 +230,21 @@
       "passwordMatch": "Parolele nu se potrivesc",
       "generic": "A apărut o eroare în timpul înregistrării. Te rugăm să încerci din nou."
     },
-    "selectLanguage": "Selectează limba ta maternă"
+    "selectLanguage": "Selectează limba ta maternă",
+    "months": {
+      "1": "Ianuarie",
+      "2": "Februarie",
+      "3": "Martie",
+      "4": "Aprilie",
+      "5": "Mai",
+      "6": "Iunie",
+      "7": "Iulie",
+      "8": "August",
+      "9": "Septembrie",
+      "10": "Octombrie",
+      "11": "Noiembrie",
+      "12": "Decembrie"
+    }
   },
   "ProfilePage": {
     "navigation": {

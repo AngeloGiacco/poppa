@@ -1,44 +1,44 @@
 {
-    "common": {
-      "languages": {
-        "GB": "Engelsk",
-        "CN": "Kinesisk",
-        "JP": "Japansk",
-        "KR": "Koreansk",
-        "IN": "Hindi",
-        "ID": "Indonesisk",
-        "TH": "Thai",
-        "VN": "Vietnamesisk",
-        "NG": "Yoruba", 
-        "KE": "Swahili",
-        "ES": "Spansk",
-        "FR": "Fransk",
-        "DE": "Tysk",
-        "IT": "Italiensk",
-        "PT": "Portugisisk",
-        "TR": "Tyrkisk",
-        "SA": "Arabisk",
-        "GR": "Græsk",
-        "RU": "Russisk",
-        "NL": "Hollandsk",
-        "PL": "Polsk",
-        "SE": "Svensk",
-        "IL": "Hebraisk",
-        "RO": "Rumænsk",
-        "HU": "Ungarsk",
-        "CZ": "Tjekkisk",
-        "DK": "Dansk",
-        "FI": "Finsk",
-        "NO": "Norsk",
-        "HR": "Kroatisk",
-        "BG": "Bulgarsk",
-        "SK": "Slovakisk",
-        "UA": "Ukrainsk",
-        "IR": "Persisk",
-        "PH": "Tagalog",
-        "PK": "Urdu"
-      }
-    },
+  "common": {
+    "languages": {
+      "GB": "Engelsk",
+      "CN": "Kinesisk",
+      "JP": "Japansk",
+      "KR": "Koreansk",
+      "IN": "Hindi",
+      "ID": "Indonesisk",
+      "TH": "Thai",
+      "VN": "Vietnamesisk",
+      "NG": "Yoruba",
+      "KE": "Swahili",
+      "ES": "Spansk",
+      "FR": "Fransk",
+      "DE": "Tysk",
+      "IT": "Italiensk",
+      "PT": "Portugisisk",
+      "TR": "Tyrkisk",
+      "SA": "Arabisk",
+      "GR": "Græsk",
+      "RU": "Russisk",
+      "NL": "Hollandsk",
+      "PL": "Polsk",
+      "SE": "Svensk",
+      "IL": "Hebraisk",
+      "RO": "Rumænsk",
+      "HU": "Ungarsk",
+      "CZ": "Tjekkisk",
+      "DK": "Dansk",
+      "FI": "Finsk",
+      "NO": "Norsk",
+      "HR": "Kroatisk",
+      "BG": "Bulgarsk",
+      "SK": "Slovakisk",
+      "UA": "Ukrainsk",
+      "IR": "Persisk",
+      "PH": "Tagalog",
+      "PK": "Urdu"
+    }
+  },
   "HomePage": {
     "navigation": {
       "pricing": "Priser",
@@ -196,20 +196,6 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Skabt med omhu af Naxos Labs."
-    },
-    "months": {
-      "1": "Januar",
-      "2": "Februar",
-      "3": "Marts",
-      "4": "April", 
-      "5": "Maj",
-      "6": "Juni",
-      "7": "Juli",
-      "8": "August",
-      "9": "September",
-      "10": "Oktober",
-      "11": "November",
-      "12": "December"
     }
   },
   "LoginForm": {
@@ -244,7 +230,21 @@
       "passwordMatch": "Adgangskoderne matcher ikke",
       "generic": "Der opstod en fejl under tilmeldingen. Prøv venligst igen."
     },
-    "selectLanguage": "Vælg dit modersmål"
+    "selectLanguage": "Vælg dit modersmål",
+    "months": {
+      "1": "Januar",
+      "2": "Februar",
+      "3": "Marts",
+      "4": "April",
+      "5": "Maj",
+      "6": "Juni",
+      "7": "Juli",
+      "8": "August",
+      "9": "September",
+      "10": "Oktober",
+      "11": "November",
+      "12": "December"
+    }
   },
   "ProfilePage": {
     "navigation": {

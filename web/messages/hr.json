@@ -1,44 +1,44 @@
 {
-    "common": {
-      "languages": {
-        "GB": "Engleski",
-        "CN": "Kineski",
-        "JP": "Japanski",
-        "KR": "Korejski",
-        "IN": "Hindi",
-        "ID": "Bahasa",
-        "TH": "Tajlandski",
-        "VN": "Vijetnamski",
-        "NG": "Yoruba",
-        "KE": "Swahili",
-        "ES": "Španjolski",
-        "FR": "Francuski",
-        "DE": "Njemački",
-        "IT": "Talijanski",
-        "PT": "Portugalski",
-        "TR": "Turski",
-        "SA": "Arapski",
-        "GR": "Grčki",
-        "RU": "Ruski",
-        "NL": "Nizozemski",
-        "PL": "Poljski",
-        "SE": "Švedski",
-        "IL": "Hebrejski",
-        "RO": "Rumunjski",
-        "HU": "Mađarski",
-        "CZ": "Češki",
-        "DK": "Danski",
-        "FI": "Finski",
-        "NO": "Norveški",
-        "HR": "Hrvatski",
-        "BG": "Bugarski",
-        "SK": "Slovački",
-        "UA": "Ukrajinski",
-        "IR": "Perzijski",
-        "PH": "Tagalog",
-        "PK": "Urdu"
-      }
-    },
+  "common": {
+    "languages": {
+      "GB": "Engleski",
+      "CN": "Kineski",
+      "JP": "Japanski",
+      "KR": "Korejski",
+      "IN": "Hindi",
+      "ID": "Bahasa",
+      "TH": "Tajlandski",
+      "VN": "Vijetnamski",
+      "NG": "Yoruba",
+      "KE": "Swahili",
+      "ES": "Španjolski",
+      "FR": "Francuski",
+      "DE": "Njemački",
+      "IT": "Talijanski",
+      "PT": "Portugalski",
+      "TR": "Turski",
+      "SA": "Arapski",
+      "GR": "Grčki",
+      "RU": "Ruski",
+      "NL": "Nizozemski",
+      "PL": "Poljski",
+      "SE": "Švedski",
+      "IL": "Hebrejski",
+      "RO": "Rumunjski",
+      "HU": "Mađarski",
+      "CZ": "Češki",
+      "DK": "Danski",
+      "FI": "Finski",
+      "NO": "Norveški",
+      "HR": "Hrvatski",
+      "BG": "Bugarski",
+      "SK": "Slovački",
+      "UA": "Ukrajinski",
+      "IR": "Perzijski",
+      "PH": "Tagalog",
+      "PK": "Urdu"
+    }
+  },
   "HomePage": {
     "navigation": {
       "pricing": "Cijene",
@@ -196,20 +196,6 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Pažljivo izrađeno u Naxos Labs."
-    },
-    "months": {
-      "1": "Siječanj",
-      "2": "Veljača",
-      "3": "Ožujak",
-      "4": "Travanj",
-      "5": "Svibanj",
-      "6": "Lipanj",
-      "7": "Srpanj",
-      "8": "Kolovoz",
-      "9": "Rujan",
-      "10": "Listopad",
-      "11": "Studeni",
-      "12": "Prosinac"
     }
   },
   "LoginForm": {
@@ -244,7 +230,21 @@
       "passwordMatch": "Lozinke se ne podudaraju",
       "generic": "Došlo je do pogreške tijekom registracije. Molimo pokušajte ponovno."
     },
-    "selectLanguage": "Odaberite svoj materinski jezik"
+    "selectLanguage": "Odaberite svoj materinski jezik",
+    "months": {
+      "1": "Siječanj",
+      "2": "Veljača",
+      "3": "Ožujak",
+      "4": "Travanj",
+      "5": "Svibanj",
+      "6": "Lipanj",
+      "7": "Srpanj",
+      "8": "Kolovoz",
+      "9": "Rujan",
+      "10": "Listopad",
+      "11": "Studeni",
+      "12": "Prosinac"
+    }
   },
   "ProfilePage": {
     "navigation": {

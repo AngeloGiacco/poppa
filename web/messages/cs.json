@@ -1,44 +1,44 @@
 {
-    "common": {
-      "languages": {
-        "GB": "Angličtina",
-        "CN": "Čínština",
-        "JP": "Japonština",
-        "KR": "Korejština",
-        "IN": "Hindština",
-        "ID": "Indonéština",
-        "TH": "Thajština", 
-        "VN": "Vietnamština",
-        "NG": "Jorubština",
-        "KE": "Svahilština",
-        "ES": "Španělština",
-        "FR": "Francouzština",
-        "DE": "Němčina",
-        "IT": "Italština",
-        "PT": "Portugalština",
-        "TR": "Turečtina",
-        "SA": "Arabština",
-        "GR": "Řečtina",
-        "RU": "Ruština",
-        "NL": "Nizozemština",
-        "PL": "Polština",
-        "SE": "Švédština",
-        "IL": "Hebrejština",
-        "RO": "Rumunština",
-        "HU": "Maďarština",
-        "CZ": "Čeština",
-        "DK": "Dánština",
-        "FI": "Finština",
-        "NO": "Norština",
-        "HR": "Chorvatština",
-        "BG": "Bulharština",
-        "SK": "Slovenština",
-        "UA": "Ukrajinština",
-        "IR": "Perština",
-        "PH": "Tagalog",
-        "PK": "Urdština"
-      }
-    },
+  "common": {
+    "languages": {
+      "GB": "Angličtina",
+      "CN": "Čínština",
+      "JP": "Japonština",
+      "KR": "Korejština",
+      "IN": "Hindština",
+      "ID": "Indonéština",
+      "TH": "Thajština",
+      "VN": "Vietnamština",
+      "NG": "Jorubština",
+      "KE": "Svahilština",
+      "ES": "Španělština",
+      "FR": "Francouzština",
+      "DE": "Němčina",
+      "IT": "Italština",
+      "PT": "Portugalština",
+      "TR": "Turečtina",
+      "SA": "Arabština",
+      "GR": "Řečtina",
+      "RU": "Ruština",
+      "NL": "Nizozemština",
+      "PL": "Polština",
+      "SE": "Švédština",
+      "IL": "Hebrejština",
+      "RO": "Rumunština",
+      "HU": "Maďarština",
+      "CZ": "Čeština",
+      "DK": "Dánština",
+      "FI": "Finština",
+      "NO": "Norština",
+      "HR": "Chorvatština",
+      "BG": "Bulharština",
+      "SK": "Slovenština",
+      "UA": "Ukrajinština",
+      "IR": "Perština",
+      "PH": "Tagalog",
+      "PK": "Urdština"
+    }
+  },
   "HomePage": {
     "navigation": {
       "pricing": "Ceník",
@@ -51,7 +51,7 @@
       "founderMessage": "Přečtěte si zprávu našeho zakladatele →"
     },
     "hero": {
-      "brandName": "poppa", 
+      "brandName": "poppa",
       "title": "Učte se jazyky přirozeně",
       "subtitle": "poppa vás krok za krokem provede učením nového jazyka pomocí pouze hlasového doučování"
     },
@@ -196,20 +196,6 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. S péčí vytvořeno Naxos Labs."
-    },
-    "months": {
-      "1": "Leden",
-      "2": "Únor",
-      "3": "Březen",
-      "4": "Duben",
-      "5": "Květen",
-      "6": "Červen",
-      "7": "Červenec",
-      "8": "Srpen",
-      "9": "Září",
-      "10": "Říjen",
-      "11": "Listopad",
-      "12": "Prosinec"
     }
   },
   "LoginForm": {
@@ -244,7 +230,21 @@
       "passwordMatch": "Hesla se neshodují",
       "generic": "Při registraci došlo k chybě. Zkuste to prosím znovu."
     },
-    "selectLanguage": "Vyberte svůj mateřský jazyk"
+    "selectLanguage": "Vyberte svůj mateřský jazyk",
+    "months": {
+      "1": "Leden",
+      "2": "Únor",
+      "3": "Březen",
+      "4": "Duben",
+      "5": "Květen",
+      "6": "Červen",
+      "7": "Červenec",
+      "8": "Srpen",
+      "9": "Září",
+      "10": "Říjen",
+      "11": "Listopad",
+      "12": "Prosinec"
+    }
   },
   "ProfilePage": {
     "navigation": {
@@ -294,10 +294,10 @@
     }
   },
   "LessonPage": {
-      "backToDashboard": "Zpět na nástěnku",
-      "footer": {
-        "builtWith": "Vytvořeno s láskou od Naxos Labs",
-        "viewSource": "Zobrazit zdrojový kód na GitHubu"
-      }
+    "backToDashboard": "Zpět na nástěnku",
+    "footer": {
+      "builtWith": "Vytvořeno s láskou od Naxos Labs",
+      "viewSource": "Zobrazit zdrojový kód na GitHubu"
+    }
   }
 }
