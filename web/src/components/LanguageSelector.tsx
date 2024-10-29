@@ -28,7 +28,7 @@ export function LanguageSelector() {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="sm" className="flex items-center gap-2">
           {currentLang && <LanguageFlag code={currentLang.code} className="w-4 h-3" />}
-          <span className="text-sm">{currentLang?.name}</span>
+          <span className="text-sm">{currentLang?.native_name}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent 
@@ -42,7 +42,7 @@ export function LanguageSelector() {
             className="flex items-center gap-2"
           >
             <LanguageFlag code={lang.code} className="w-4 h-3" />
-            <span className="text-sm">{lang.name}</span>
+            <span className="text-sm">{lang.native_name}</span>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
