@@ -188,7 +188,7 @@ export default function SignUp() {
             <SelectTrigger className="bg-white border-[#8B4513] focus:ring-[#8B4513]">
               <SelectValue placeholder="Day" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white">
               {Array.from({ length: 31 }, (_, i) => i + 1).map((day) => (
                 <SelectItem key={day} value={day.toString()}>
                   {day}
@@ -200,7 +200,7 @@ export default function SignUp() {
             <SelectTrigger className="bg-white border-[#8B4513] focus:ring-[#8B4513]">
               <SelectValue placeholder="Month" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white">
               {['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'].map((month, index) => (
                 <SelectItem key={month} value={(index + 1).toString()}>
                   {month}
@@ -212,7 +212,7 @@ export default function SignUp() {
             <SelectTrigger className="bg-white border-[#8B4513] focus:ring-[#8B4513]">
               <SelectValue placeholder="Year" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white">
               {Array.from({ length: new Date().getFullYear() - 1939 }, (_, i) => new Date().getFullYear() - i).map((year) => (
                 <SelectItem key={year} value={year.toString()}>
                   {year}
