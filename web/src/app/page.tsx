@@ -112,8 +112,8 @@ export default function Home() {
                         <span className="text-[#8B4513]">🎓</span>
                       </div>
                       <div>
-                        <h3 className="font-medium text-[#8B4513] mb-1">Tutoring from zero</h3>
-                        <p className="text-[#5D4037]/80">This isn't just roleplays, we teach you in your native language how to think in any new language.</p>
+                          <h3 className="font-medium text-[#8B4513] mb-1 group-hover:underline">Tutoring from zero</h3>
+                          <p className="text-[#5D4037]/80">This isn't just roleplays, we teach you in your native language how to think in any new language. <Link href="/how-it-works" className="text-[#8B4513] hover:underline">Learn more →</Link></p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">
@@ -122,7 +122,7 @@ export default function Home() {
                       </div>
                       <div>
                         <h3 className="font-medium text-[#8B4513] mb-1">Personalized Learning</h3>
-                        <p className="text-[#5D4037]/80">The conversations match your pace and interests to help you improve over time.</p>
+                        <p className="text-[#5D4037]/80">We match your pace and interests to help you improve over time.</p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">

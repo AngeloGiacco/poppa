@@ -30,7 +30,7 @@ export default function HowItWorks() {
         {/* Enhanced header with announcement banner */}
         <motion.header className="text-center max-w-3xl mx-auto mb-20">
           <motion.div className="mb-8">
-            <Link href="/github" 
+            <Link href="https://github.com/AngeloGiacco/poppa" 
               className="inline-flex items-center space-x-2 bg-[#8B4513]/10 text-[#8B4513] px-4 py-2 rounded-full text-sm hover:bg-[#8B4513]/15 transition-colors duration-300">
               <span>🌟 We're open source!</span>
               <span className="font-medium">Check us out on GitHub →</span>

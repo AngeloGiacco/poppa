@@ -164,9 +164,13 @@ export default function SignUp() {
           <SelectTrigger className="bg-white border-[#8B4513] focus:ring-[#8B4513]">
             <SelectValue placeholder="Select your native language" />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent className="bg-white">
             {languages.sort((a, b) => a.name.localeCompare(b.name)).map((lang) => (
-              <SelectItem key={lang.code} value={lang.code}>
+              <SelectItem 
+                key={lang.code} 
+                value={lang.code}
+                className="hover:bg-[#8B4513]/10 transition-colors duration-200 cursor-pointer"
+              >
                 <div className="flex items-center">
                   <lang.icon className="w-5 h-5 mr-2" />
                   {lang.name}

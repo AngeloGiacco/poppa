@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { Inter } from 'next/font/google';
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -29,7 +29,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Slider } from "@/components/ui/slider";
 import { Input } from "@/components/ui/input";
 import {
   AlertDialog,
@@ -53,7 +52,7 @@ export default function Dashboard() {
   const { user } = useAuth();
   const router = useRouter();
 
-  // Move all useState declarations to the top
+  // State declarations
   const [selectedCredits, setSelectedCredits] = useState(1);
   const [isLanguageSelectOpen, setIsLanguageSelectOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("");
@@ -66,19 +65,8 @@ export default function Dashboard() {
     Object.fromEntries(userLanguages.map(lang => [lang.code, false]))
   );
 
-  useEffect(() => {
-    if (!user) {
-      router.push('/login');
-    }
-  }, [user, router]);
-
-  useEffect(() => {
-    if (user) {
-      fetchUserData();
-    }
-  }, [user]);
-
-  const fetchUserData = async () => {
+  // Define fetchUserData first
+  const fetchUserData = useCallback(async () => {
     if (user) {
       const { data, error } = await supabaseBrowserClient
         .from('users')
@@ -92,9 +80,49 @@ export default function Dashboard() {
         setUserData(data);
       }
     }
-  };
+  }, [user]);
 
-  if (!user || !userData) return null; // or a loading spinner
+  // Now we can use fetchUserData in addLanguageToProfile
+  const addLanguageToProfile = useCallback(async (startLesson: boolean) => {
+    if (!user || !selectedLanguage) return;
+    
+    try {
+      const response = await fetch('/api/language/add', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          languageCode: selectedLanguage,
+          userId: user.id,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to add language');
+      }
+
+      await fetchUserData();
+
+      if (startLesson) {
+        router.push(`/lesson/${selectedLanguage.toLowerCase()}`);
+      }
+    } catch (error) {
+      console.error('Error adding language:', error);
+    }
+  }, [user, selectedLanguage, router, fetchUserData]);
+
+  useEffect(() => {
+    if (!user) {
+      router.push('/login');
+    }
+  }, [user, router]);
+
+  useEffect(() => {
+    if (user) {
+      fetchUserData();
+    }
+  }, [user]);
 
   const toggleCustomLesson = (langCode: string) => {
     setOpenCustomLessons(prev => ({
@@ -113,26 +141,13 @@ export default function Dashboard() {
   const handleLanguageSelection = async (selectedLang: string) => {
     setSelectedLanguage(selectedLang);
     setIsLanguageDialogOpen(false);
+  };
 
-    // Show confirmation dialog
-    const selectedLangDetails = availableLanguages.find(lang => lang.code === selectedLang);
-    if (!selectedLangDetails) return;
-
-    // TODO: Add API call to save new language to user's profile
-    const addLanguageToProfile = async (startLesson: boolean) => {
-      try {
-        // Add language to user's profile in database
-        console.log(`Adding ${selectedLang} to user's profile`);
-        
-        if (startLesson) {
-          router.push(`/lesson/${selectedLang}/introduction`);
-        }
-        // Refresh dashboard data
-        await fetchUserData();
-      } catch (error) {
-        console.error('Error adding language:', error);
-      }
-    };
+  const handleAlertDialogAction = async (startLesson: boolean) => {
+    if (!selectedLanguage) return;
+    
+    await addLanguageToProfile(startLesson);
+    setSelectedLanguage(""); // Clear the selected language to close the dialog
   };
 
   const handleBuyCredits = () => {
@@ -229,60 +244,64 @@ export default function Dashboard() {
               >
                 Add Language
               </Button>
-
-              <Dialog open={isLanguageDialogOpen} onOpenChange={setIsLanguageDialogOpen}>
-                <DialogContent className="sm:max-w-[425px]">
-                  <DialogHeader>
-                    <DialogTitle>Add a New Language</DialogTitle>
-                    <DialogDescription>
-                      Choose a language you'd like to learn
-                    </DialogDescription>
-                  </DialogHeader>
-                  <Select onValueChange={handleLanguageSelection}>
-                    <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Select a language" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {availableLanguages
-                        .filter(lang => !userLanguages.some(userLang => userLang.code === lang.code))
-                        .map((lang) => (
-                          <SelectItem key={lang.code} value={lang.code}>
-                            <div className="flex items-center">
-                              <lang.icon className="w-5 h-5 mr-2" />
-                              {lang.name}
-                            </div>
-                          </SelectItem>
-                        ))}
-                    </SelectContent>
-                  </Select>
-                </DialogContent>
-              </Dialog>
-
-              <AlertDialog open={!!selectedLanguage}>
-                <AlertDialogContent>
-                  <AlertDialogHeader>
-                    <AlertDialogTitle>Start Learning Now?</AlertDialogTitle>
-                    <AlertDialogDescription>
-                      Would you like to start your first lesson in {availableLanguages.find(lang => lang.code === selectedLanguage)?.name} now?
-                    </AlertDialogDescription>
-                  </AlertDialogHeader>
-                  <AlertDialogFooter>
-                    <AlertDialogCancel onClick={() => {
-                      addLanguageToProfile(false);
-                      setSelectedLanguage("");
-                    }}>
-                      Later
-                    </AlertDialogCancel>
-                    <AlertDialogAction onClick={() => {
-                      addLanguageToProfile(true);
-                      setSelectedLanguage("");
-                    }}>
-                      Start Now
-                    </AlertDialogAction>
-                  </AlertDialogFooter>
-                </AlertDialogContent>
-              </AlertDialog>
             </div>
+
+            <Dialog open={isLanguageDialogOpen} onOpenChange={setIsLanguageDialogOpen}>
+              <DialogContent className="dialog-content">
+                <DialogHeader className="dialog-header">
+                  <DialogTitle className="dialog-title">Add a New Language</DialogTitle>
+                  <DialogDescription className="dialog-description">
+                    Choose a language you'd like to learn
+                  </DialogDescription>
+                </DialogHeader>
+                <Select onValueChange={handleLanguageSelection}>
+                  <SelectTrigger className="w-full bg-white/70 border-[#8B4513]/20 text-[#8B4513] hover:border-[#8B4513]/40 focus:ring-[#8B4513]/20">
+                    <SelectValue placeholder="Select a language" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white/95 border-[#8B4513]/20 shadow-lg">
+                    {availableLanguages
+                      .filter(lang => !userLanguages.some(userLang => userLang.code === lang.code))
+                      .map((lang) => (
+                        <SelectItem 
+                          key={lang.code} 
+                          value={lang.code}
+                          className="cursor-pointer hover:bg-[#8B4513]/5 text-[#8B4513] focus:bg-[#8B4513]/10 focus:text-[#8B4513]"
+                        >
+                          <div className="flex items-center">
+                            <lang.icon className="w-5 h-5 mr-2" />
+                            {lang.name}
+                          </div>
+                        </SelectItem>
+                      ))}
+                  </SelectContent>
+                </Select>
+              </DialogContent>
+            </Dialog>
+
+            <AlertDialog open={!!selectedLanguage}>
+              <AlertDialogContent className="bg-white/95 border border-[#8B4513]/20 shadow-lg">
+                <AlertDialogHeader>
+                  <AlertDialogTitle className="text-[#8B4513] text-xl">
+                    Start Learning Now?
+                  </AlertDialogTitle>
+                  <AlertDialogDescription className="text-[#8B4513]/70">
+                    Would you like to start your first lesson in {availableLanguages.find(lang => lang.code === selectedLanguage)?.name} now?
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel 
+                    onClick={() => handleAlertDialogAction(false)}
+                    className="border-[#8B4513]/20 text-[#8B4513] hover:bg-[#8B4513]/5 hover:border-[#8B4513]/30">
+                    Later
+                  </AlertDialogCancel>
+                  <AlertDialogAction 
+                    onClick={() => handleAlertDialogAction(true)}
+                    className="bg-[#8B4513] text-white hover:bg-[#6D3611]">
+                    Start Now
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {userLanguages.map((lang) => (
