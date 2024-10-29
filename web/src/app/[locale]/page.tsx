@@ -16,6 +16,7 @@ import { LanguageSelector } from '@/components/LanguageSelector';
 export default function Home() {
   const [showAnnouncement, setShowAnnouncement] = useState(true);
   const t = useTranslations('HomePage');
+  const tCommon = useTranslations('common');
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -95,7 +96,7 @@ export default function Home() {
                       <div key={lang.code} className="flex items-center space-x-3 group">
                         <FlagIcon className="w-6 h-4 transition-transform duration-300 group-hover:scale-110" />
                         <span className="text-[#5D4037]/80 group-hover:text-[#8B4513] transition-colors duration-300">
-                          {lang.name}
+                          {tCommon(`languages.${lang.code}`)}
                         </span>
                       </div>
                     );

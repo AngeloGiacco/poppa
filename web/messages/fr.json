@@ -1,4 +1,44 @@
 {
+    "common": {
+      "languages": {
+        "GB": "Anglais",
+        "CN": "Chinois",
+        "JP": "Japonais",
+        "KR": "Coréen",
+        "IN": "Hindi",
+        "ID": "Bahasa",
+        "TH": "Thaï",
+        "VN": "Vietnamien",
+        "NG": "Yoruba", 
+        "KE": "Swahili",
+        "ES": "Espagnol",
+        "FR": "Français",
+        "DE": "Allemand",
+        "IT": "Italien",
+        "PT": "Portugais",
+        "TR": "Turc",
+        "SA": "Arabe",
+        "GR": "Grec",
+        "RU": "Russe",
+        "NL": "Néerlandais",
+        "PL": "Polonais",
+        "SE": "Suédois",
+        "IL": "Hébreu",
+        "RO": "Roumain",
+        "HU": "Hongrois",
+        "CZ": "Tchèque",
+        "DK": "Danois",
+        "FI": "Finnois",
+        "NO": "Norvégien",
+        "HR": "Croate",
+        "BG": "Bulgare",
+        "SK": "Slovaque",
+        "UA": "Ukrainien",
+        "IR": "Persan",
+        "PH": "Tagalog",
+        "PK": "Urdu"
+      }
+    },
   "HomePage": {
     "navigation": {
       "pricing": "Tarifs",
@@ -132,7 +172,7 @@
     "content": {
       "greeting": "Bonjour 👋",
       "welcome": "Bienvenue sur Poppa. Nous voulons rendre le tutorat linguistique individuel accessible à tous.",
-      "background": "J'ai eu l'immense chance que mes circonstances (vivant à Budapest, puis allant dans une excellente école au Royaume-Uni) m'aient permis d'avoir un tutorat individuel en chinois et en russe. L'apprentissage de ces langues a, à bien des égards, changé la trajectoire de ma vie.",
+      "background": "J'ai eu l'immense chance que mes circonstances (vivant à Budapest, puis allant dans une excellente école au Royaume-Uni) m'aient permis d'avoir un tutorat individuel en chinois et en russe. L'apprentissage de ces langues a, à bien des ��gards, changé la trajectoire de ma vie.",
       "philosophy": "L'apprentissage des langues devrait être abordable et flexible, c'est pourquoi nous avons mis en place un système basé sur les crédits qui vous permet d'apprendre à votre propre rythme et selon votre budget. Que vous ayez 5 minutes ou 5 heures, Poppa est là pour soutenir votre parcours d'apprentissage des langues.",
       "approach": "Nous ne vous faisons pas écrire des mots, ou mémoriser des règles de grammaire ou des phrases inutiles. Nous vous aiderons à penser dans une autre langue. Essayez-le. Je pense que vous aimerez et la première leçon est de toute façon gratuite.",
       "story": "J'ai appris le mandarin parce que mon grand-père, que j'appelais poppa, a travaillé à Pékin pendant de nombreuses années et m'a fait promettre que je l'apprendrais. Cela a eu un énorme impact sur ma vie et j'espère que poppa pourra aussi avoir un impact sur vous :)",
@@ -156,6 +196,20 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Créé avec soin par Naxos Labs."
+    },
+    "months": {
+      "1": "Janvier",
+      "2": "Février",
+      "3": "Mars",
+      "4": "Avril",
+      "5": "Mai",
+      "6": "Juin",
+      "7": "Juillet",
+      "8": "Août",
+      "9": "Septembre",
+      "10": "Octobre",
+      "11": "Novembre",
+      "12": "Décembre"
     }
   },
   "LoginForm": {
@@ -189,7 +243,8 @@
     "errors": {
       "passwordMatch": "Les mots de passe ne correspondent pas",
       "generic": "Une erreur s'est produite lors de l'inscription. Veuillez réessayer."
-    }
+    },
+    "selectLanguage": "Sélectionnez votre langue maternelle"
   },
   "ProfilePage": {
     "navigation": {
@@ -236,6 +291,13 @@
         "placeholder": "ex., commander de la nourriture au restaurant",
         "startButton": "Commencer la leçon"
       }
+    }
+  },
+  "LessonPage": {
+    "backToDashboard": "Retour au tableau de bord",
+    "footer": {
+      "builtWith": "Créé par Naxos Labs",
+      "viewSource": "Voir le code source sur GitHub"
     }
   }
 }

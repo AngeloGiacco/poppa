@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from 'react';
-import { Inter } from 'next/font/google';
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -17,15 +16,17 @@ import { useRouter } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
 
-const inter = Inter({ subsets: ['latin'] });
-
 export default function SignUp() {
+  const locale = useLocale();
   const t = useTranslations('SignupForm');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [nativeLanguage, setNativeLanguage] = useState('');
+  const [nativeLanguage, setNativeLanguage] = useState(() => {
+    const currentLang = languages.find(lang => lang.locale === locale);
+    return currentLang?.code || '';
+  });
   const [birthDay, setBirthDay] = useState('');
   const [birthMonth, setBirthMonth] = useState('');
   const [birthYear, setBirthYear] = useState('');
@@ -34,14 +35,6 @@ export default function SignUp() {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-  const locale = useLocale();
-
-  useEffect(() => {
-    const currentLang = languages.find(lang => lang.locale === locale);
-    if (currentLang) {
-      setNativeLanguage(currentLang.code);
-    }
-  }, [locale]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -171,12 +164,12 @@ export default function SignUp() {
             </Tooltip>
           </TooltipProvider>
         </div>
-        <Select onValueChange={setNativeLanguage}>
+        <Select value={nativeLanguage} onValueChange={setNativeLanguage}>
           <SelectTrigger className="bg-white border-[#8B4513] focus:ring-[#8B4513]">
-            <SelectValue placeholder="Select your native language" />
+            <SelectValue placeholder={t('selectLanguage')} />
           </SelectTrigger>
           <SelectContent className="bg-white">
-            {languages.sort((a, b) => t(`languages.${a.code}`).localeCompare(t(`languages.${b.code}`))).map((lang) => (
+            {languages.sort((a, b) => a.native_name.localeCompare(b.native_name)).map((lang) => (
               <SelectItem 
                 key={lang.code} 
                 value={lang.code}
@@ -184,7 +177,7 @@ export default function SignUp() {
               >
                 <div className="flex items-center">
                   <lang.icon className="w-5 h-5 mr-2" />
-                  {t(`languages.${lang.code}`)}
+                  {lang.native_name}
                 </div>
               </SelectItem>
             ))}
@@ -246,3 +239,4 @@ export default function SignUp() {
     </form>
   );
 }
+

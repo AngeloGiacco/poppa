@@ -6,12 +6,26 @@ import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button";
 import { useTranslations } from 'next-intl';
-
+import { useEffect } from 'react';
+import { useAuth } from '@/context/AuthContext';
+import { useRouter } from '@/i18n/routing';
 
 const LoginForm = dynamic(() => import('@/components/LoginForm'), { ssr: false });
 
 export default function Login() {
+  const { user, isLoading } = useAuth();
+  const router = useRouter();
   const t = useTranslations('LoginPage');
+
+  useEffect(() => {
+    if (user && !isLoading) {
+      router.push('/dashboard');
+    }
+  }, [user, isLoading, router]);
+
+  if (isLoading) {
+    return <div>Loading...</div>; // Replace with your loading component
+  }
 
   return (
     // Replace basic background with gradient

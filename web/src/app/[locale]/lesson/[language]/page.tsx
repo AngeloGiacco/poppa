@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Link } from '@/i18n/routing';
 import { languages } from "@/lib/supportedLanguages";
 import { notFound } from "next/navigation";
+import { useTranslations } from 'next-intl';
 
 // Add type for page props
 interface LessonPageProps {
@@ -16,6 +17,7 @@ interface LessonPageProps {
 }
 
 export default function LessonPage({ params }: LessonPageProps) {
+  const t = useTranslations();
   const language = languages.find(lang => lang.code.toLowerCase() === params.language.toLowerCase());
   
   if (!language) {
@@ -29,14 +31,14 @@ export default function LessonPage({ params }: LessonPageProps) {
           <Image
             className="w-8 h-8 rounded-2xl shadow-lg"
             src="/logo.svg"
-            alt="Poppa logo"
+            alt={t('LoginPage.logo.alt')}
             width={32}
             height={32}
           />
-          <span className="text-xl font-bold text-[#8B4513]">poppa</span>
+          <span className="text-xl font-bold text-[#8B4513]">{t('HomePage.hero.brandName')}</span>
         </div>
         <Link href="/dashboard" className="text-sm text-[#8B4513] hover:text-[#6D3611] hover:underline">
-          Back to Dashboard
+          {t('LessonPage.backToDashboard')}
         </Link>
       </header>
       <main className="flex flex-col flex-grow overflow-hidden p-0 md:p-2 md:pt-0 w-full md:mx-auto">
@@ -44,17 +46,14 @@ export default function LessonPage({ params }: LessonPageProps) {
         <RoomComponent />
       </main>
       <footer className="hidden md:flex md:items-center md:gap-2 md:justify-end font-mono uppercase text-right pt-1 pb-2 px-8 text-xs text-gray-600 w-full md:mx-auto">
-        Built with
-        <Heart />
-        by
         <Link
           href="https://www.linkedin.com/in/angelogiacco"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline"
+          className="underline inline-flex items-center gap-1"
         >
-          Naxos Labs
-        </Link>{" "}
+      {t('LessonPage.footer.builtWith')}
+      </Link>{" "}
         •
         <Link
           href="/github"
@@ -63,9 +62,9 @@ export default function LessonPage({ params }: LessonPageProps) {
           className="underline inline-flex items-center gap-1"
         >
           <GitHubLogoIcon className="h-4 w-4" />
-          View source on GitHub
+          {t('LessonPage.footer.viewSource')}
         </Link>
-        • © 2024 Poppa
+        • © 2024 Naxos Labs
       </footer>
     </div>
   );

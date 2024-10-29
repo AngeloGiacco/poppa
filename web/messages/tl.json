@@ -1,4 +1,44 @@
 {
+    "common": {
+      "languages": {
+        "GB": "Ingles",
+        "CN": "Tsino",
+        "JP": "Hapon",
+        "KR": "Koreano",
+        "IN": "Hindi",
+        "ID": "Bahasa",
+        "TH": "Thai",
+        "VN": "Vietnamese",
+        "NG": "Yoruba", 
+        "KE": "Swahili",
+        "ES": "Espanyol",
+        "FR": "Pranses",
+        "DE": "Aleman",
+        "IT": "Italyano",
+        "PT": "Portuges",
+        "TR": "Turko",
+        "SA": "Arabe",
+        "GR": "Griyego",
+        "RU": "Ruso",
+        "NL": "Dutch",
+        "PL": "Polish",
+        "SE": "Swedish",
+        "IL": "Hebrew",
+        "RO": "Romanian",
+        "HU": "Hungarian",
+        "CZ": "Czech",
+        "DK": "Danish",
+        "FI": "Finnish",
+        "NO": "Norwegian",
+        "HR": "Croatian",
+        "BG": "Bulgarian",
+        "SK": "Slovak",
+        "UA": "Ukrainian",
+        "IR": "Persian",
+        "PH": "Tagalog",
+        "PK": "Urdu"
+      }
+    },
   "HomePage": {
     "navigation": {
       "pricing": "Presyo",
@@ -189,7 +229,8 @@
     "errors": {
       "passwordMatch": "Hindi magkatugma ang mga password",
       "generic": "May naganap na error sa pag-sign up. Pakisubukan muli."
-    }
+    },
+    "selectLanguage": "Piliin ang iyong katutubong wika"
   },
   "ProfilePage": {
     "navigation": {
@@ -236,6 +277,13 @@
         "placeholder": "hal., pag-order ng pagkain sa restaurant",
         "startButton": "Simulan ang Aralin"
       }
+    }
+  },
+  "LessonPage": {
+    "backToDashboard": "Bumalik sa Dashboard",
+    "footer": {
+      "builtWith": "Ginawa ng Naxos Labs",
+      "viewSource": "Tingnan ang source code sa GitHub"
     }
   }
 }

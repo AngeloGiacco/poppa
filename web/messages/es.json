@@ -1,4 +1,44 @@
 {
+    "common": {
+      "languages": {
+        "GB": "Inglés",
+        "CN": "Chino",
+        "JP": "Japonés",
+        "KR": "Coreano",
+        "IN": "Hindi", 
+        "ID": "Indonesio",
+        "TH": "Tailandés",
+        "VN": "Vietnamita",
+        "NG": "Yoruba",
+        "KE": "Suajili",
+        "ES": "Español",
+        "FR": "Francés",
+        "DE": "Alemán",
+        "IT": "Italiano", 
+        "PT": "Portugués",
+        "TR": "Turco",
+        "SA": "Árabe",
+        "GR": "Griego",
+        "RU": "Ruso",
+        "NL": "Neerlandés",
+        "PL": "Polaco",
+        "SE": "Sueco",
+        "IL": "Hebreo",
+        "RO": "Rumano",
+        "HU": "Húngaro",
+        "CZ": "Checo",
+        "DK": "Danés",
+        "FI": "Finlandés",
+        "NO": "Noruego",
+        "HR": "Croata",
+        "BG": "Búlgaro",
+        "SK": "Eslovaco",
+        "UA": "Ucraniano",
+        "IR": "Persa",
+        "PH": "Tagalo",
+        "PK": "Urdu"
+      }
+    },
   "HomePage": {
     "navigation": {
       "pricing": "Precios",
@@ -130,6 +170,20 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Hecho con cariño por Naxos Labs."
+    },
+    "months": {
+      "1": "Enero",
+      "2": "Febrero",
+      "3": "Marzo",
+      "4": "Abril",
+      "5": "Mayo",
+      "6": "Junio",
+      "7": "Julio",
+      "8": "Agosto",
+      "9": "Septiembre",
+      "10": "Octubre",
+      "11": "Noviembre",
+      "12": "Diciembre"
     }
   },
   "LoginForm": {
@@ -163,7 +217,8 @@
     "errors": {
       "passwordMatch": "Las contraseñas no coinciden",
       "generic": "Ocurrió un error durante el registro. Por favor, inténtalo de nuevo."
-    }
+    },
+    "selectLanguage": "Seleccione su idioma nativo"
   },
   "ProfilePage": {
     "navigation": {
@@ -211,5 +266,12 @@
         "startButton": "Comenzar lección"
       }
     }
-  }
+  },
+    "LessonPage": {
+        "backToDashboard": "Volver al panel",
+        "footer": {
+            "builtWith": "Creado por Naxos Labs",
+            "viewSource": "Ver código fuente en GitHub"
+        }
+    }
 }

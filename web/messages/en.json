@@ -1,4 +1,44 @@
 {
+    "common": {
+      "languages": {
+        "GB": "English",
+        "CN": "Chinese",
+        "JP": "Japanese", 
+        "KR": "Korean",
+        "IN": "Hindi",
+        "ID": "Bahasa",
+        "TH": "Thai",
+        "VN": "Vietnamese",
+        "NG": "Yoruba",
+        "KE": "Swahili",
+        "ES": "Spanish",
+        "FR": "French",
+        "DE": "German",
+        "IT": "Italian",
+        "PT": "Portuguese",
+        "TR": "Turkish",
+        "SA": "Arabic",
+        "GR": "Greek",
+        "RU": "Russian",
+        "NL": "Dutch",
+        "PL": "Polish",
+        "SE": "Swedish",
+        "IL": "Hebrew",
+        "RO": "Romanian",
+        "HU": "Hungarian",
+        "CZ": "Czech",
+        "DK": "Danish",
+        "FI": "Finnish",
+        "NO": "Norwegian",
+        "HR": "Croatian",
+        "BG": "Bulgarian",
+        "SK": "Slovak",
+        "UA": "Ukrainian",
+        "IR": "Persian",
+        "PH": "Tagalog",
+        "PK": "Urdu"
+      }
+    },
   "HomePage": {
     "navigation": {
       "pricing": "Pricing",
@@ -204,44 +244,7 @@
       "11": "November",
       "12": "December"
     },
-    "languages": {
-      "GB": "English",
-      "CN": "Chinese",
-      "JP": "Japanese", 
-      "KR": "Korean",
-      "IN": "Hindi",
-      "ID": "Bahasa",
-      "TH": "Thai",
-      "VN": "Vietnamese",
-      "NG": "Yoruba",
-      "KE": "Swahili",
-      "ES": "Spanish",
-      "FR": "French",
-      "DE": "German",
-      "IT": "Italian",
-      "PT": "Portuguese",
-      "TR": "Turkish",
-      "SA": "Arabic",
-      "GR": "Greek",
-      "RU": "Russian",
-      "NL": "Dutch",
-      "PL": "Polish",
-      "SE": "Swedish",
-      "IL": "Hebrew",
-      "RO": "Romanian",
-      "HU": "Hungarian",
-      "CZ": "Czech",
-      "DK": "Danish",
-      "FI": "Finnish",
-      "NO": "Norwegian",
-      "HR": "Croatian",
-      "BG": "Bulgarian",
-      "SK": "Slovak",
-      "UA": "Ukrainian",
-      "IR": "Farsi",
-      "PH": "Tagalog",
-      "PK": "Urdu"
-    }
+    "selectLanguage": "Select your native language"
     },
     "ProfilePage": {
     "navigation": {
@@ -288,6 +291,13 @@
         "placeholder": "e.g., ordering food at a restaurant",
         "startButton": "Start Lesson"
         }
+    }
+    },
+    "LessonPage": {
+      "backToDashboard": "Back to Dashboard",
+      "footer": {
+        "builtWith": "Built with care by",
+        "viewSource": "View source on GitHub"
     }
     }
 }

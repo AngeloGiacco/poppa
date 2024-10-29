@@ -1,4 +1,44 @@
 {
+  "common": {
+    "languages": {
+      "GB": "Englisch",
+      "CN": "Chinesisch",
+      "JP": "Japanisch",
+      "KR": "Koreanisch", 
+      "IN": "Hindi",
+      "ID": "Bahasa",
+      "TH": "Thailändisch",
+      "VN": "Vietnamesisch",
+      "NG": "Yoruba",
+      "KE": "Swahili",
+      "ES": "Spanisch",
+      "FR": "Französisch",
+      "DE": "Deutsch",
+      "IT": "Italienisch",
+      "PT": "Portugiesisch",
+      "TR": "Türkisch",
+      "SA": "Arabisch",
+      "GR": "Griechisch",
+      "RU": "Russisch",
+      "NL": "Niederländisch",
+      "PL": "Polnisch",
+      "SE": "Schwedisch",
+      "IL": "Hebräisch",
+      "RO": "Rumänisch",
+      "HU": "Ungarisch",
+      "CZ": "Tschechisch",
+      "DK": "Dänisch",
+      "FI": "Finnisch",
+      "NO": "Norwegisch",
+      "HR": "Kroatisch",
+      "BG": "Bulgarisch",
+      "SK": "Slowakisch",
+      "UA": "Ukrainisch",
+      "IR": "Persisch",
+      "PH": "Tagalog",
+      "PK": "Urdu"
+    }
+  },
   "HomePage": {
     "navigation": {
       "pricing": "Preise",
@@ -170,44 +210,6 @@
       "10": "Oktober",
       "11": "November",
       "12": "Dezember"
-    },
-    "languages": {
-      "GB": "Englisch",
-      "CN": "Chinesisch",
-      "JP": "Japanisch",
-      "KR": "Koreanisch", 
-      "IN": "Hindi",
-      "ID": "Bahasa",
-      "TH": "Thailändisch",
-      "VN": "Vietnamesisch",
-      "NG": "Yoruba",
-      "KE": "Swahili",
-      "ES": "Spanisch",
-      "FR": "Französisch",
-      "DE": "Deutsch",
-      "IT": "Italienisch",
-      "PT": "Portugiesisch",
-      "TR": "Türkisch",
-      "SA": "Arabisch",
-      "GR": "Griechisch",
-      "RU": "Russisch",
-      "NL": "Niederländisch",
-      "PL": "Polnisch",
-      "SE": "Schwedisch",
-      "IL": "Hebräisch",
-      "RO": "Rumänisch",
-      "HU": "Ungarisch",
-      "CZ": "Tschechisch",
-      "DK": "Dänisch",
-      "FI": "Finnisch",
-      "NO": "Norwegisch",
-      "HR": "Kroatisch",
-      "BG": "Bulgarisch",
-      "SK": "Slowakisch",
-      "UA": "Ukrainisch",
-      "IR": "Persisch",
-      "PH": "Tagalog",
-      "PK": "Urdu"
     }
   },
   "LoginForm": {
@@ -241,7 +243,8 @@
     "errors": {
       "passwordMatch": "Passwörter stimmen nicht überein",
       "generic": "Bei der Registrierung ist ein Fehler aufgetreten. Bitte versuche es erneut."
-    }
+    },
+    "selectLanguage": "Wählen Sie Ihre Muttersprache"
   },
   "ProfilePage": {
     "navigation": {
@@ -288,6 +291,13 @@
         "placeholder": "z.B. Essen in einem Restaurant bestellen",
         "startButton": "Lektion starten"
       }
+    }
+  },
+  "LessonPage": {
+    "backToDashboard": "Zurück zum Dashboard",
+    "footer": {
+      "builtWith": "Entwickelt von Naxos Labs",
+      "viewSource": "Quellcode auf GitHub ansehen"
     }
   }
 }

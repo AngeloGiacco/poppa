@@ -1,4 +1,44 @@
 {
+    "common": {
+      "languages": {
+        "GB": "אנגלית",
+        "CN": "סינית",
+        "JP": "יפנית",
+        "KR": "קוריאנית",
+        "IN": "הינדי",
+        "ID": "באהסה",
+        "TH": "תאית",
+        "VN": "וייטנאמית", 
+        "NG": "יורובה",
+        "KE": "סוואהילי",
+        "ES": "ספרדית",
+        "FR": "צרפתית",
+        "DE": "גרמנית",
+        "IT": "איטלקית",
+        "PT": "פורטוגזית",
+        "TR": "טורקית",
+        "SA": "ערבית",
+        "GR": "יוונית",
+        "RU": "רוסית",
+        "NL": "הולנדית",
+        "PL": "פולנית", 
+        "SE": "שוודית",
+        "IL": "עברית",
+        "RO": "רומנית",
+        "HU": "הונגרית",
+        "CZ": "צ'כית",
+        "DK": "דנית",
+        "FI": "פינית",
+        "NO": "נורווגית",
+        "HR": "קרואטית",
+        "BG": "בולגרית",
+        "SK": "סלובקית",
+        "UA": "אוקראינית",
+        "IR": "פרסית",
+        "PH": "טגלוג",
+        "PK": "אורדו"
+      }
+    },
   "HomePage": {
     "navigation": {
       "pricing": "תמחור",
@@ -97,7 +137,7 @@
       "tech": {
         "title": "הטכנולוגיה",
         "description1": "כדי לעזור לך לתרגל שיחות עם מורה AI המגיב לקולך בזמן אמת, אנו משתמשים במודלים של OpenAI להבנה ותגובה למה שאתה אומר, מאחסנים היסטוריית שיחות מלאה בענן, ויש לנו שרתים מבוזרים גלובלית כדי להציע תקשורת בעיכוב נמוך עם המוצר שלנו.",
-        "description2": "🌟 אנחנו מאמינים בקוד פתוח. Poppa היא קוד פתוח לחלוטין, כך שאם אתה לא רוצה לשלם לנו אגורה אתה לא חייב. אם במקום זאת, אתה לא רוצה להתמודד עם הטרחה של ניהול שרתים לתקשורת קולית בעיכוב נמוך, אנחנו מציעים שירות בתשלום דרך האתר הזה. בקר אותנו ב-github."
+        "description2": "🌟 אנחנו מאמינים בקוד פתוח. Poppa היא קוד פתוח לחלוטין, כך שאם אתה לא רוצה לשלם לנו אגורה אתה לא חייב. אם במקום זאת, אתה לא רוצה להתמודד עם הטרחה של ניהול שרתים תקשורת קולית עיכוב נמוך, אנחנו מציעים שירות בתשלום דרך האתר הזה. בקר אותנו ב-github."
       },
       "personalizedLearning": {
         "title": "התוצאה הסופית: למידה מותאמת אישית",
@@ -156,6 +196,20 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. נוצר בקפידה על ידי Naxos Labs."
+    },
+    "months": {
+      "1": "ינואר",
+      "2": "פברואר",
+      "3": "מרץ",
+      "4": "אפריל",
+      "5": "מאי",
+      "6": "יוני",
+      "7": "יולי",
+      "8": "אוגוסט",
+      "9": "ספטמבר",
+      "10": "אוקטובר",
+      "11": "נובמבר",
+      "12": "דצמבר"
     }
   },
   "LoginForm": {
@@ -189,7 +243,8 @@
     "errors": {
       "passwordMatch": "הסיסמאות אינן תואמות",
       "generic": "אירעה שגיאה במהלך ההרשמה. אנא נסה שוב."
-    }
+    },
+    "selectLanguage": "בחר את שפת האם שלך"
   },
   "ProfilePage": {
     "navigation": {
@@ -237,5 +292,12 @@
         "startButton": "התחל שיעור"
       }
     }
+  },
+  "LessonPage": {
+      "backToDashboard": "חזרה ללוח הבקרה",
+      "footer": {
+      "builtWith": "נבנה על ידי Naxos Labs",
+      "viewSource": "צפה בקוד המקור ב-GitHub"
+      }
   }
 }

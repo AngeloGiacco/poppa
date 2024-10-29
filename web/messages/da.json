@@ -1,4 +1,44 @@
 {
+    "common": {
+      "languages": {
+        "GB": "Engelsk",
+        "CN": "Kinesisk",
+        "JP": "Japansk",
+        "KR": "Koreansk",
+        "IN": "Hindi",
+        "ID": "Indonesisk",
+        "TH": "Thai",
+        "VN": "Vietnamesisk",
+        "NG": "Yoruba", 
+        "KE": "Swahili",
+        "ES": "Spansk",
+        "FR": "Fransk",
+        "DE": "Tysk",
+        "IT": "Italiensk",
+        "PT": "Portugisisk",
+        "TR": "Tyrkisk",
+        "SA": "Arabisk",
+        "GR": "Græsk",
+        "RU": "Russisk",
+        "NL": "Hollandsk",
+        "PL": "Polsk",
+        "SE": "Svensk",
+        "IL": "Hebraisk",
+        "RO": "Rumænsk",
+        "HU": "Ungarsk",
+        "CZ": "Tjekkisk",
+        "DK": "Dansk",
+        "FI": "Finsk",
+        "NO": "Norsk",
+        "HR": "Kroatisk",
+        "BG": "Bulgarsk",
+        "SK": "Slovakisk",
+        "UA": "Ukrainsk",
+        "IR": "Persisk",
+        "PH": "Tagalog",
+        "PK": "Urdu"
+      }
+    },
   "HomePage": {
     "navigation": {
       "pricing": "Priser",
@@ -170,44 +210,6 @@
       "10": "Oktober",
       "11": "November",
       "12": "December"
-    },
-    "languages": {
-      "GB": "Engelsk",
-      "CN": "Kinesisk",
-      "JP": "Japansk",
-      "KR": "Koreansk", 
-      "IN": "Hindi",
-      "ID": "Bahasa",
-      "TH": "Thai",
-      "VN": "Vietnamesisk",
-      "NG": "Yoruba",
-      "KE": "Swahili",
-      "ES": "Spansk",
-      "FR": "Fransk",
-      "DE": "Tysk",
-      "IT": "Italiensk",
-      "PT": "Portugisisk",
-      "TR": "Tyrkisk",
-      "SA": "Arabisk",
-      "GR": "Græsk",
-      "RU": "Russisk",
-      "NL": "Hollandsk",
-      "PL": "Polsk",
-      "SE": "Svensk",
-      "IL": "Hebraisk",
-      "RO": "Rumænsk",
-      "HU": "Ungarsk",
-      "CZ": "Tjekkisk",
-      "DK": "Dansk",
-      "FI": "Finsk",
-      "NO": "Norsk",
-      "HR": "Kroatisk",
-      "BG": "Bulgarsk",
-      "SK": "Slovakisk",
-      "UA": "Ukrainsk",
-      "IR": "Farsi",
-      "PH": "Tagalog",
-      "PK": "Urdu"
     }
   },
   "LoginForm": {
@@ -241,7 +243,8 @@
     "errors": {
       "passwordMatch": "Adgangskoderne matcher ikke",
       "generic": "Der opstod en fejl under tilmeldingen. Prøv venligst igen."
-    }
+    },
+    "selectLanguage": "Vælg dit modersmål"
   },
   "ProfilePage": {
     "navigation": {
@@ -288,6 +291,13 @@
         "placeholder": "f.eks. bestille mad på en restaurant",
         "startButton": "Start lektion"
       }
+    }
+  },
+  "LessonPage": {
+    "backToDashboard": "Tilbage til dashboard",
+    "footer": {
+      "builtWith": "Bygget af Naxos Labs",
+      "viewSource": "Se kildekode på GitHub"
     }
   }
 }

@@ -1,4 +1,44 @@
 {
+    "common": {
+      "languages": {
+        "GB": "Englanti",
+        "CN": "Kiina", 
+        "JP": "Japani",
+        "KR": "Korea",
+        "IN": "Hindi",
+        "ID": "Bahasa",
+        "TH": "Thai",
+        "VN": "Vietnam",
+        "NG": "Yoruba",
+        "KE": "Swahili",
+        "ES": "Espanja",
+        "FR": "Ranska",
+        "DE": "Saksa",
+        "IT": "Italia",
+        "PT": "Portugali",
+        "TR": "Turkki",
+        "SA": "Arabia",
+        "GR": "Kreikka", 
+        "RU": "Venäjä",
+        "NL": "Hollanti",
+        "PL": "Puola",
+        "SE": "Ruotsi",
+        "IL": "Heprea",
+        "RO": "Romania",
+        "HU": "Unkari",
+        "CZ": "Tšekki",
+        "DK": "Tanska",
+        "FI": "Suomi",
+        "NO": "Norja",
+        "HR": "Kroatia",
+        "BG": "Bulgaria",
+        "SK": "Slovakia",
+        "UA": "Ukraina",
+        "IR": "Persia",
+        "PH": "Tagalog",
+        "PK": "Urdu"
+      }
+    },
   "HomePage": {
     "navigation": {
       "pricing": "Hinnoittelu",
@@ -22,9 +62,20 @@
       "title": "Miksi Poppa?",
       "features": {
         "tutoring": {
-          "title": "Opetusta alusta alkaen"
+          "title": "Opetusta alusta alkaen",
+          "description": "Tämä ei ole vain roolipelejä, opetamme sinulle äidinkielelläsi kuinka ajatella millä tahansa uudella kielellä.",
+          "learnMore": "Lue lisää →"
+        },
+        "personalized": {
+          "title": "Henkilökohtainen oppiminen",
+          "description": "Mukautamme tahdin ja kiinnostuksen kohteesi auttaaksemme sinua kehittymään ajan myötä."
+        },
+        "freeStart": {
+          "title": "Aloita ilmaiseksi",
+          "description": "Saat 20 minuuttia ilmaista aikaa kokeillaksesi Poppaa. Luottokorttia ei tarvita kieltenopiskelun aloittamiseen."
         }
-      }
+      },
+      "tryButton": "Kokeile 20 minuuttia ilmaiseksi"
     },
     "features": {
       "aiTutor": "Henkilökohtainen AI-kieliopettaja",
@@ -130,6 +181,20 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Huolella tehty Naxos Labsissa."
+    },
+    "months": {
+      "1": "Tammikuu",
+      "2": "Helmikuu",
+      "3": "Maaliskuu", 
+      "4": "Huhtikuu",
+      "5": "Toukokuu",
+      "6": "Kesäkuu",
+      "7": "Heinäkuu",
+      "8": "Elokuu",
+      "9": "Syyskuu",
+      "10": "Lokakuu",
+      "11": "Marraskuu",
+      "12": "Joulukuu"
     }
   },
   "LoginForm": {
@@ -163,7 +228,8 @@
     "errors": {
       "passwordMatch": "Salasanat eivät täsmää",
       "generic": "Rekisteröitymisessä tapahtui virhe. Yritä uudelleen."
-    }
+    },
+    "selectLanguage": "Valitse äidinkielesi"
   },
   "ProfilePage": {
     "navigation": {
@@ -211,5 +277,12 @@
         "startButton": "Aloita oppitunti"
       }
     }
+  },
+  "LessonPage": {
+      "backToDashboard": "Takaisin kojelaudalle",
+      "footer": {
+          "builtWith": "Tehnyt Naxos Labs",
+          "viewSource": "Katso lähdekoodi GitHubissa"
+      }
   }
 }

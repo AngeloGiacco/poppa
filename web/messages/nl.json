@@ -1,0 +1,303 @@
+{
+  "common": {
+    "languages": {
+      "GB": "Engels",
+      "CN": "Chinees",
+      "JP": "Japans",
+      "KR": "Koreaans",
+      "IN": "Hindi",
+      "ID": "Bahasa",
+      "TH": "Thais",
+      "VN": "Vietnamees",
+      "NG": "Yoruba",
+      "KE": "Swahili",
+      "ES": "Spaans",
+      "FR": "Frans",
+      "DE": "Duits",
+      "IT": "Italiaans",
+      "PT": "Portugees",
+      "TR": "Turks",
+      "SA": "Arabisch",
+      "GR": "Grieks",
+      "RU": "Russisch",
+      "NL": "Nederlands",
+      "PL": "Pools",
+      "SE": "Zweeds",
+      "IL": "Hebreeuws",
+      "RO": "Roemeens",
+      "HU": "Hongaars",
+      "CZ": "Tsjechisch",
+      "DK": "Deens",
+      "FI": "Fins",
+      "NO": "Noors",
+      "HR": "Kroatisch",
+      "BG": "Bulgaars",
+      "SK": "Slowaaks",
+      "UA": "Oekraïens",
+      "IR": "Perzisch",
+      "PH": "Tagalog",
+      "PK": "Urdu"
+    }
+  },
+  "HomePage": {
+    "navigation": {
+      "pricing": "Prijzen",
+      "howItWorks": "Hoe het werkt",
+      "login": "Inloggen",
+      "getStarted": "Aan de slag"
+    },
+    "announcement": {
+      "live": "✨ We zijn live!",
+      "founderMessage": "Lees het bericht van onze oprichter →"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "title": "Natuurlijk talen leren",
+      "subtitle": "poppa begeleidt je stap voor stap bij het leren van een nieuwe taal met pure taallessen"
+    },
+    "languagesSection": {
+      "title": "Talen die we spreken"
+    },
+    "whyPoppa": {
+      "title": "Waarom Poppa?",
+      "features": {
+        "tutoring": {
+          "title": "Les vanaf de basis",
+          "description": "Dit zijn niet zomaar rollenspellen, we leren je in je moedertaal hoe je in elke nieuwe taal kunt denken.",
+          "learnMore": "Meer informatie →"
+        },
+        "personalized": {
+          "title": "Gepersonaliseerd leren",
+          "description": "We passen ons aan jouw tempo en interesses aan om je te helpen mettertijd te verbeteren."
+        },
+        "freeStart": {
+          "title": "Gratis beginnen",
+          "description": "Ontvang 20 minuten gratis credits om Poppa uit te proberen. Geen creditcard nodig om je taalreis te beginnen."
+        }
+      },
+      "tryButton": "20 minuten gratis proberen"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Met zorg gemaakt door Naxos Labs."
+    }
+  },
+  "PricingPage": {
+    "navigation": {
+      "home": "Home",
+      "howItWorks": "Hoe het werkt",
+      "login": "Inloggen",
+      "getStarted": "Aan de slag"
+    },
+    "hero": {
+      "title": "Eenvoudige, transparante prijzen",
+      "subtitle": "Begin met 20 gratis minuten. Daarna betaal je naar gebruik."
+    },
+    "features": {
+      "aiTutor": "Gepersonaliseerde AI-taalleraar",
+      "availability": "24/7 beschikbaarheid",
+      "adaptiveLearning": "Adaptieve leertechnologie",
+      "progressTracking": "Voortgangsregistratie",
+      "conversation": "Conversatieoefeningen",
+      "exercises": "Grammatica- en vocabulaireoefeningen"
+    },
+    "pricing": {
+      "perHour": "per lesuur"
+    },
+    "calculator": {
+      "title": "Vergelijking met traditioneel onderwijs",
+      "hoursPerMonth": "Uren per maand",
+      "poppaAI": "Poppa AI",
+      "traditionalTutor": "Traditionele leraar"
+    },
+    "cta": {
+      "startFree": "Begin met 20 gratis minuten",
+      "noCard": "Geen creditcard vereist"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Met zorg gemaakt door Naxos Labs."
+    }
+  },
+  "HowItWorksPage": {
+    "navigation": {
+      "backToHome": "← Terug naar home"
+    },
+    "header": {
+      "openSource": {
+        "badge": "🌟 We zijn Open Source!",
+        "link": "Bezoek ons op GitHub →"
+      },
+      "title": "Hoe poppa werkt"
+    },
+    "sections": {
+      "thinkingMethod": {
+        "title": "De denkmethode",
+        "description1": "Poppa gebruikt een unieke aanpak, de \"denkmethode\", om je te helpen talen natuurlijk en effectief te leren. In plaats van woordenlijsten of grammaticaregels uit het hoofd te leren, leer je vanaf het begin te denken in je doeltaal.",
+        "description2": "Deze methode richt zich op het begrijpen van de taalstructuur, het leggen van verbanden en het opbouwen van je vermogen om intuïtief zinnen te maken. Het is een zachte maar krachtige aanpak die nabootst hoe we talen natuurlijk verwerven."
+      },
+      "tech": {
+        "title": "De technologie",
+        "description1": "Om je te helpen gesprekken te oefenen met een AI-tutor die in realtime op je stem reageert, gebruiken we OpenAI-modellen voor begrip en antwoorden, slaan we volledige gespreksgeschiedenissen op in de cloud en hebben we wereldwijd verspreide servers voor communicatie met lage latentie met ons product.",
+        "description2": "🌟 We geloven in Open Source. Poppa is volledig Open Source, dus je hoeft ons geen cent te betalen als je dat niet wilt. Als je in plaats daarvan het gedoe van serverbeheer voor communicatie met lage latentie wilt vermijden, bieden we een betaalde service aan via deze website. Bezoek ons op GitHub."
+      },
+      "personalizedLearning": {
+        "title": "Het eindresultaat: Gepersonaliseerd leren",
+        "description1": "Elke les die je met Poppa doet, wordt getranscribeerd en opgeslagen, waardoor een uitgebreide registratie van je leerreis ontstaat. Dit stelt ons in staat om:",
+        "benefits": [
+          "Je voortgang bij te houden en toekomstige lessen aan te passen aan je behoeften",
+          "Herhalingen op optimale intervallen in te bouwen om het geleerde te versterken",
+          "Je een stapsgewijs pad naar taalbeheersing te bieden"
+        ],
+        "description2": "Je gepersonaliseerde leerpad evolueert met je mee, zodat je altijd op het juiste niveau wordt uitgedaagd en belangrijke concepten op optimale intervallen herhaalt."
+      }
+    }
+  },
+  "LoginPage": {
+    "navigation": {
+      "backToHome": "Terug naar home",
+      "signup": "Registreren"
+    },
+    "logo": {
+      "alt": "Poppa Logo"
+    },
+    "title": "Welkom terug",
+    "subtitle": "Log in om je taalreis voort te zetten!"
+  },
+  "FounderMessagePage": {
+    "navigation": {
+      "backToHome": "← Terug naar home"
+    },
+    "header": {
+      "subtitle": "Een bericht van de oprichter"
+    },
+    "content": {
+      "greeting": "Hallo 👋",
+      "welcome": "Welkom bij Poppa. We willen individueel taalonderwijs toegankelijk maken voor iedereen.",
+      "background": "Ik had het grote geluk dat mijn omstandigheden (wonen in Boedapest en later naar een geweldige school in Groot-Brittannië gaan) het mogelijk maakten om privéles in Chinees en Russisch te nemen. Het leren van deze talen heeft de loop van mijn leven op vele manieren veranderd.",
+      "philosophy": "Talen leren moet betaalbaar en flexibel zijn, daarom hebben we een op credits gebaseerd systeem geïntroduceerd waarmee je in je eigen tempo en budget kunt leren. Of je nu 5 minuten of 5 uur hebt, Poppa is er om je taalreis te ondersteunen.",
+      "approach": "We laten je geen woorden opschrijven of nutteloze grammaticaregels en zinnen uit je hoofd leren. We helpen je denken in een andere taal. Probeer het uit. Ik denk dat je het leuk zult vinden, en de eerste les is sowieso van ons.",
+      "story": "Ik leerde Mandarijn omdat mijn grootvader, die ik poppa noemde, vele jaren in Peking werkte en me liet beloven dat ik het zou leren. Dat heeft een grote invloed gehad op mijn leven, en ik hoop dat poppa ook invloed op jou kan hebben :)",
+      "closing": "Veel plezier met leren!",
+      "signature": "Angelo"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Met zorg gemaakt door Naxos Labs."
+    }
+  },
+  "SignupPage": {
+    "navigation": {
+      "backToHome": "Terug naar home"
+    },
+    "logo": {
+      "alt": "Poppa Logo"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "subtitle": "Begin vandaag nog aan je taalreis!"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Met zorg gemaakt door Naxos Labs."
+    },
+    "months": {
+      "1": "Januari",
+      "2": "Februari",
+      "3": "Maart",
+      "4": "April",
+      "5": "Mei",
+      "6": "Juni",
+      "7": "Juli",
+      "8": "Augustus",
+      "9": "September",
+      "10": "Oktober",
+      "11": "November",
+      "12": "December"
+    }
+  },
+  "LoginForm": {
+    "email": "E-mail",
+    "password": "Wachtwoord",
+    "loginButton": "Inloggen",
+    "forgotPassword": "Wachtwoord vergeten?",
+    "loading": "Inloggen...",
+    "success": {
+      "title": "Succesvol ingelogd",
+      "description": "Welkom terug!"
+    },
+    "error": {
+      "title": "Inloggen mislukt"
+    }
+  },
+  "SignupForm": {
+    "firstName": "Voornaam",
+    "lastName": "Achternaam",
+    "email": "E-mail",
+    "password": "Wachtwoord",
+    "confirmPassword": "Wachtwoord bevestigen",
+    "nativeLanguage": "Moedertaal",
+    "dateOfBirth": "Geboortedatum",
+    "day": "Dag",
+    "month": "Maand",
+    "year": "Jaar",
+    "signupButton": "Registreren",
+    "loading": "Registreren...",
+    "languageTooltip": "Je taal niet gevonden? Poppa wordt momenteel alleen in deze talen ondersteund. Neem contact met ons op voor ondersteuning.",
+    "errors": {
+      "passwordMatch": "Wachtwoorden komen niet overeen",
+      "generic": "Er is een fout opgetreden bij het registreren. Probeer het opnieuw."
+    },
+    "selectLanguage": "Selecteer je moedertaal"
+  },
+  "ProfilePage": {
+    "navigation": {
+      "backToDashboard": "Terug naar dashboard"
+    },
+    "header": {
+      "title": "Profiel"
+    },
+    "accountDetails": {
+      "title": "Accountgegevens",
+      "joined": "Lid geworden",
+      "credits": "Credits"
+    }
+  },
+  "DashboardPage": {
+    "navigation": {
+      "profile": "Profiel",
+      "logout": "Uitloggen",
+      "buyCredits": "Credits kopen"
+    },
+    "languages": {
+      "title": "Jouw talen",
+      "addLanguage": "Taal toevoegen",
+      "dialog": {
+        "title": "Nieuwe taal toevoegen",
+        "description": "Kies een taal die je wilt leren",
+        "selectPlaceholder": "Taal selecteren"
+      },
+      "startLearning": {
+        "title": "Nu beginnen met leren?",
+        "description": "Wil je nu beginnen met je eerste les in {language}?",
+        "later": "Later",
+        "startNow": "Nu beginnen"
+      },
+      "card": {
+        "level": "Gemiddeld niveau",
+        "viewHistory": "Geschiedenis bekijken",
+        "continueButton": "Verder leren",
+        "customButton": "Aangepaste les"
+      },
+      "customLesson": {
+        "title": "Aangepaste les - {language}",
+        "description": "Voer in wat je wilt leren in {language}.\nWij zorgen ervoor dat de les bij jouw niveau past.",
+        "placeholder": "bijv. Eten bestellen in een restaurant",
+        "startButton": "Les starten"
+      }
+    }
+  },
+  "LessonPage": {
+    "backToDashboard": "Terug naar dashboard",
+    "footer": {
+      "builtWith": "Gebouwd door Naxos Labs",
+      "viewSource": "Bekijk broncode op GitHub"
+    }
+  }
+}

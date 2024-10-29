@@ -1,4 +1,44 @@
 {
+    "common": {
+      "languages": {
+        "GB": "Angličtina",
+        "CN": "Čínština",
+        "JP": "Japončina",
+        "KR": "Kórejčina",
+        "IN": "Hindi",
+        "ID": "Bahasa",
+        "TH": "Thajčina", 
+        "VN": "Vietnamčina",
+        "NG": "Yoruba",
+        "KE": "Swahili",
+        "ES": "Španielčina",
+        "FR": "Francúzština",
+        "DE": "Nemčina",
+        "IT": "Taliančina",
+        "PT": "Portugalčina",
+        "TR": "Turečtina",
+        "SA": "Arabčina",
+        "GR": "Gréčtina",
+        "RU": "Ruština",
+        "NL": "Holandčina",
+        "PL": "Poľština",
+        "SE": "Švédčina",
+        "IL": "Hebrejčina",
+        "RO": "Rumunčina",
+        "HU": "Maďarčina",
+        "CZ": "Čeština",
+        "DK": "Dánčina",
+        "FI": "Fínčina",
+        "NO": "Nórčina",
+        "HR": "Chorvátčina",
+        "BG": "Bulharčina",
+        "SK": "Slovenčina",
+        "UA": "Ukrajinčina",
+        "IR": "Perzština",
+        "PH": "Tagalčina",
+        "PK": "Urdčina"
+      }
+    },
   "HomePage": {
     "navigation": {
       "pricing": "Cenník",
@@ -71,7 +111,7 @@
     },
     "cta": {
       "startFree": "Začnite s 20 minútami zadarmo",
-      "noCard": "Nie je potrebná kreditná karta"
+      "noCard": "Nie je potrebná kreditn karta"
     },
     "footer": {
       "copyright": "© {year} Poppa. S láskou vytvorené Naxos Labs."
@@ -156,6 +196,20 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. S láskou vytvorené Naxos Labs."
+    },
+    "months": {
+      "1": "Január",
+      "2": "Február",
+      "3": "Marec",
+      "4": "Apríl",
+      "5": "Máj",
+      "6": "Jún",
+      "7": "Júl",
+      "8": "August",
+      "9": "September",
+      "10": "Október",
+      "11": "November", 
+      "12": "December"
     }
   },
   "LoginForm": {
@@ -189,7 +243,8 @@
     "errors": {
       "passwordMatch": "Heslá sa nezhodujú",
       "generic": "Počas registrácie sa vyskytla chyba. Skúste to prosím znova."
-    }
+    },
+    "selectLanguage": "Vyberte svoj materinský jazyk"
   },
   "ProfilePage": {
     "navigation": {
@@ -236,6 +291,13 @@
         "placeholder": "napr. objednávanie jedla v reštaurácii",
         "startButton": "Začať lekciu"
       }
+    }
+  },
+  "LessonPage": {
+    "backToDashboard": "Späť na Dashboard",
+    "footer": {
+      "builtWith": "Vytvorené v Naxos Labs",
+      "viewSource": "Zobraziť zdrojový kód na GitHube"
     }
   }
 }

@@ -40,6 +40,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
 import { useTranslations } from 'next-intl';
+import { type Tables } from '@/types/database.types';
 
 // Updated mock data for user's languages
 const userLanguages = [
@@ -47,9 +48,10 @@ const userLanguages = [
 ];
 
 export default function Dashboard() {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
   const router = useRouter();
   const t = useTranslations('DashboardPage');
+  const tCommon = useTranslations('common');
 
   // State declarations
   const [selectedCredits, setSelectedCredits] = useState(1);
@@ -170,27 +172,27 @@ export default function Dashboard() {
     setIsLanguageDialogOpen(true);
   };
 
+  const handleLogout = async () => {
+    await logout();
+    router.push('/');
+  };
+
   return (
     <div className={`min-h-screen bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]`}>
       {/* Floating Navigation Bar */}
       <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-5xl">
-        <div className="backdrop-blur-md bg-white/70 rounded-2xl shadow-lg p-4">
+        <div className="backdrop-blur-md rounded-2xl">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-4">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="relative"
-              >
-                <Image
-                  className="rounded-xl shadow-md"
+              <Image
+                  className="rounded-xl"
                   src="/logo.svg"
                   alt="Poppa logo"
-                  width={40}
-                  height={40}
+                  width={80}
+                  height={80}
                   priority
                 />
-              </motion.div>
-              <h1 className="text-xl font-bold bg-gradient-to-r from-[#8B4513] to-[#6D3611] bg-clip-text text-transparent">
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-[#8B4513] to-[#6D3611] bg-clip-text text-transparent">
                 poppa
               </h1>
             </div>
@@ -205,20 +207,25 @@ export default function Dashboard() {
               
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button className="bg-gradient-to-r from-[#8B4513] to-[#6D3611] text-white hover:opacity-90 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+                  <Button className="bg-gradient-to-r from-[#8B4513] to-[#6D3611] text-white hover:opacity-90 shadow-md hover:shadow-lg transition-all duration-300">
                     {t('navigation.buyCredits')}
                   </Button>
                 </DialogTrigger>
                 {/* ... dialog content ... */}
               </Dialog>
               
-              <div className="flex items-center gap-2 bg-white/50 rounded-xl p-1">
+              <div className="flex items-center gap-2">
                 <Link href="/profile">
-                  <Button variant="ghost" size="sm" className="text-[#8B4513] hover:bg-[#8B4513]/5 rounded-lg">
+                  <Button variant="ghost" size="sm" className="text-[#8B4513] hover:bg-[#8B4513]/5">
                     {t('navigation.profile')}
                   </Button>
                 </Link>
-                <Button size="sm" variant="ghost" className="text-[#8B4513] hover:bg-[#8B4513]/5 rounded-lg">
+                <Button 
+                  size="sm" 
+                  variant="ghost" 
+                  className="text-[#8B4513] hover:bg-[#8B4513]/5"
+                  onClick={handleLogout}
+                >
                   {t('navigation.logout')}
                 </Button>
               </div>
@@ -268,7 +275,7 @@ export default function Dashboard() {
                         >
                           <div className="flex items-center">
                             <lang.icon className="w-5 h-5 mr-2" />
-                            {lang.name}
+                            {tCommon(`languages.${lang.code}`)}
                           </div>
                         </SelectItem>
                       ))}
@@ -347,7 +354,7 @@ export default function Dashboard() {
                               {t('languages.card.customButton')}
                             </Button>
                           </DialogTrigger>
-                          <DialogContent className="sm:max-w-[425px]">
+                          <DialogContent className="sm:max-w-[425px] bg-white">
                             <DialogHeader>
                               <DialogTitle>
                                 {t('languages.customLesson.title', { language: lang.name })}

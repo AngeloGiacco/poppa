@@ -1,4 +1,44 @@
 {
+    "common": {
+      "languages": {
+        "GB": "Inggris",
+        "CN": "Mandarin",
+        "JP": "Jepang",
+        "KR": "Korea",
+        "IN": "Hindi",
+        "ID": "Bahasa",
+        "TH": "Thai",
+        "VN": "Vietnam",
+        "NG": "Yoruba",
+        "KE": "Swahili", 
+        "ES": "Spanyol",
+        "FR": "Prancis",
+        "DE": "Jerman",
+        "IT": "Italia",
+        "PT": "Portugis",
+        "TR": "Turki",
+        "SA": "Arab",
+        "GR": "Yunani",
+        "RU": "Rusia",
+        "NL": "Belanda",
+        "PL": "Polandia",
+        "SE": "Swedia",
+        "IL": "Ibrani",
+        "RO": "Rumania",
+        "HU": "Hungaria",
+        "CZ": "Ceko",
+        "DK": "Denmark",
+        "FI": "Finlandia",
+        "NO": "Norwegia",
+        "HR": "Kroasia",
+        "BG": "Bulgaria",
+        "SK": "Slovakia",
+        "UA": "Ukraina",
+        "IR": "Persia",
+        "PH": "Tagalog",
+        "PK": "Urdu"
+      }
+    },
   "HomePage": {
     "navigation": {
       "pricing": "Harga",
@@ -156,6 +196,20 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Dibuat dengan penuh perhatian oleh Naxos Labs."
+    },
+    "months": {
+      "1": "Januari",
+      "2": "Februari",
+      "3": "Maret",
+      "4": "April",
+      "5": "Mei",
+      "6": "Juni",
+      "7": "Juli",
+      "8": "Agustus",
+      "9": "September",
+      "10": "Oktober",
+      "11": "November",
+      "12": "Desember"
     }
   },
   "LoginForm": {
@@ -189,7 +243,8 @@
     "errors": {
       "passwordMatch": "Kata sandi tidak cocok",
       "generic": "Terjadi kesalahan saat pendaftaran. Silakan coba lagi."
-    }
+    },
+    "selectLanguage": "Pilih bahasa ibu Anda"
   },
   "ProfilePage": {
     "navigation": {
@@ -236,6 +291,13 @@
         "placeholder": "contoh: memesan makanan di restoran",
         "startButton": "Mulai Pelajaran"
       }
+    }
+  },
+  "LessonPage": {
+    "backToDashboard": "Kembali ke Dasbor",
+    "footer": {
+      "builtWith": "Dibuat oleh Naxos Labs",
+      "viewSource": "Lihat kode sumber di GitHub"
     }
   }
 }

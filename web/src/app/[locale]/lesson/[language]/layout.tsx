@@ -5,6 +5,7 @@ import { ConnectionProvider } from "@/hooks/use-connection";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
 import { Public_Sans } from "next/font/google";
+import ProtectedRoute from '@/components/ProtectedRoute';
 
 // Configure the Public Sans font
 const publicSans = Public_Sans({
@@ -29,14 +30,16 @@ export default function LessonLayout({
   return (
     <html lang="en">
       <body className={publicSans.className}>
-        <PlaygroundStateProvider>
-          <ConnectionProvider>
-            <TooltipProvider>
-              {children}
-              <Toaster />
-            </TooltipProvider>
-          </ConnectionProvider>
-        </PlaygroundStateProvider>
+        <ProtectedRoute>
+          <PlaygroundStateProvider>
+            <ConnectionProvider>
+              <TooltipProvider>
+                {children}
+                <Toaster />
+              </TooltipProvider>
+            </ConnectionProvider>
+          </PlaygroundStateProvider>
+        </ProtectedRoute>
       </body>
     </html>
   );

@@ -1,4 +1,44 @@
 {
+    "common": {
+      "languages": {
+        "GB": "Inglês",
+        "CN": "Chinês", 
+        "JP": "Japonês",
+        "KR": "Coreano",
+        "IN": "Hindi",
+        "ID": "Bahasa",
+        "TH": "Tailandês",
+        "VN": "Vietnamita",
+        "NG": "Yoruba",
+        "KE": "Swahili", 
+        "ES": "Espanhol",
+        "FR": "Francês",
+        "DE": "Alemão",
+        "IT": "Italiano",
+        "PT": "Português",
+        "TR": "Turco",
+        "SA": "Árabe",
+        "GR": "Grego",
+        "RU": "Russo",
+        "NL": "Holandês",
+        "PL": "Polonês",
+        "SE": "Sueco",
+        "IL": "Hebraico",
+        "RO": "Romeno", 
+        "HU": "Húngaro",
+        "CZ": "Tcheco",
+        "DK": "Dinamarquês",
+        "FI": "Finlandês",
+        "NO": "Norueguês",
+        "HR": "Croata",
+        "BG": "Búlgaro",
+        "SK": "Eslovaco",
+        "UA": "Ucraniano",
+        "IR": "Persa",
+        "PH": "Tagalo",
+        "PK": "Urdu"
+      }
+    },
   "HomePage": {
     "navigation": {
       "pricing": "Preços",
@@ -156,6 +196,20 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Criado com carinho pela Naxos Labs."
+    },
+    "months": {
+      "1": "Janeiro",
+      "2": "Fevereiro",
+      "3": "Março",
+      "4": "Abril",
+      "5": "Maio",
+      "6": "Junho",
+      "7": "Julho",
+      "8": "Agosto",
+      "9": "Setembro",
+      "10": "Outubro",
+      "11": "Novembro",
+      "12": "Dezembro"
     }
   },
   "LoginForm": {
@@ -189,7 +243,8 @@
     "errors": {
       "passwordMatch": "As senhas não coincidem",
       "generic": "Ocorreu um erro durante o cadastro. Por favor, tente novamente."
-    }
+    },
+    "selectLanguage": "Selecione seu idioma nativo"
   },
   "ProfilePage": {
     "navigation": {
@@ -236,6 +291,13 @@
         "placeholder": "ex., fazer pedidos em um restaurante",
         "startButton": "Começar Aula"
       }
+    }
+  },
+  "LessonPage": {
+    "backToDashboard": "Voltar para o Painel",
+    "footer": {
+      "builtWith": "Desenvolvido por Naxos Labs",
+      "viewSource": "Ver código fonte no GitHub"
     }
   }
 }
