@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "קנה קרדיטים",
+      "oneMinuteReminder": "כל קרדיט שווה לדקה אחת של זמן שיעור.",
+      "credits": "קרדיטים",
+      "estimatedTime": "זה ייתן לך בערך {minutes} דקות של זמן שיעור.",
+      "proceed": "המשך"
+    },
     "navigation": {
       "profile": "פרופיל",
       "logout": "התנתקות",

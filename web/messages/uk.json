@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "Купити кредити",
+      "oneMinuteReminder": "Кожен кредит дорівнює одній хвилині уроку.",
+      "credits": "кредити",
+      "estimatedTime": "Це дасть вам приблизно {minutes} хвилин навчального часу.",
+      "proceed": "Продовжити"
+    },
     "navigation": {
       "profile": "Профіль",
       "logout": "Вийти",

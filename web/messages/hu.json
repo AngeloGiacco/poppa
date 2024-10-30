@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "Kreditek vásárlása",
+      "oneMinuteReminder": "Minden kredit egy perc tanulási időt jelent.",
+      "credits": "kredit",
+      "estimatedTime": "Ez körülbelül {minutes} perc tanulási időt biztosít.",
+      "proceed": "Tovább"
+    },
     "navigation": {
       "profile": "Profil",
       "logout": "Kijelentkezés",

@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "شراء رصيد",
+      "oneMinuteReminder": "رصيد واحد يساوي دقيقة واحدة من وقت الدرس.",
+      "credits": "رصيد",
+      "estimatedTime": "هذا سيمنحك حوالي {minutes} دقيقة من وقت الدرس.",
+      "proceed": "متابعة"
+    },
     "navigation": {
       "profile": "الملف الشخصي",
       "logout": "تسجيل الخروج",

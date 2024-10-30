@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "Mua tín dụng",
+      "oneMinuteReminder": "Mỗi tín dụng tương đương với một phút thời gian học.",
+      "credits": "tín dụng",
+      "estimatedTime": "Điều này sẽ cho bạn khoảng {minutes} phút thời gian học.",
+      "proceed": "Tiếp tục"
+    },
     "navigation": {
       "profile": "Hồ sơ",
       "logout": "Đăng xuất",

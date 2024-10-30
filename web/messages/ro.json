@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "Cumpără Credite",
+      "oneMinuteReminder": "Fiecare credit este egal cu un minut de timp de lecție.",
+      "credits": "credite",
+      "estimatedTime": "Acest lucru îți va oferi aproximativ {minutes} minute de timp de lecție.",
+      "proceed": "Continuă"
+    },
     "navigation": {
       "profile": "Profil",
       "logout": "Deconectare",

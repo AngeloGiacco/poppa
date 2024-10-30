@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "Comprar Créditos",
+      "oneMinuteReminder": "Cada crédito equivale a um minuto de aula.",
+      "credits": "créditos",
+      "estimatedTime": "Isso te dará aproximadamente {minutes} minutos de aula.",
+      "proceed": "Continuar"
+    },
     "navigation": {
       "profile": "Perfil",
       "logout": "Sair",

@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "Kup kredyty",
+      "oneMinuteReminder": "Każdy kredyt równa się jednej minucie lekcji.",
+      "credits": "kredyty",
+      "estimatedTime": "To da ci około {minutes} minut czasu lekcji.",
+      "proceed": "Kontynuuj"
+    },
     "navigation": {
       "profile": "Profil",
       "logout": "Wyloguj się",

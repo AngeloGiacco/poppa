@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "ซื้อเครดิต",
+      "oneMinuteReminder": "เครดิตหนึ่งหน่วยเท่ากับเวลาเรียนหนึ่งนาที",
+      "credits": "เครดิต",
+      "estimatedTime": "นี่จะให้เวลาเรียนประมาณ {minutes} นาที",
+      "proceed": "ดำเนินการต่อ"
+    },
     "navigation": {
       "profile": "โปรไฟล์",
       "logout": "ออกจากระบบ",

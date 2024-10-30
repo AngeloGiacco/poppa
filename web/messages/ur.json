@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "کریڈٹس خریدیں",
+      "oneMinuteReminder": "ہر کریڈٹ سبق کے ایک منٹ کے برابر ہے۔",
+      "credits": "کریڈٹس",
+      "estimatedTime": "اس سے آپ کو تقریباً {minutes} منٹ کا سبق کا وقت ملے گا۔",
+      "proceed": "آگے بڑھیں"
+    },
     "navigation": {
       "profile": "پروفائل",
       "logout": "لاگ آؤٹ",

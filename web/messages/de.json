@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "Credits kaufen",
+      "oneMinuteReminder": "Ein Credit entspricht einer Minute Unterrichtszeit.",
+      "credits": "Credits",
+      "estimatedTime": "Dies gibt dir ungefähr {minutes} Minuten Unterrichtszeit.",
+      "proceed": "Weiter"
+    },
     "navigation": {
       "profile": "Profil",
       "logout": "Abmelden",

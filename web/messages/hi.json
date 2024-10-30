@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "क्रेडिट खरीदें",
+      "oneMinuteReminder": "प्रत्येक क्रेडिट एक मिनट के पाठ के समय के बराबर है।",
+      "credits": "क्रेडिट",
+      "estimatedTime": "यह आपको लगभग {minutes} मिनट का पाठ समय देगा।",
+      "proceed": "आगे बढ़ें"
+    },
     "navigation": {
       "profile": "प्रोफ़ाइल",
       "logout": "लॉग आउट",

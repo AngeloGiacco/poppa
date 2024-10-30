@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "Ra Credits",
+      "oneMinuteReminder": "Credit kọ̀ọ̀kan jẹ́ ìṣẹ́jú kan fún àkókò ẹ̀kọ́.",
+      "credits": "credits",
+      "estimatedTime": "Èyí yóò fún ọ ní bíi ìṣẹ́jú {minutes} fún àkókò ẹ̀kọ́.",
+      "proceed": "Tẹ̀síwájú"
+    },
     "navigation": {
       "profile": "Pìrófáìlì",
       "logout": "Jáde",

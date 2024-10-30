@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "购买学分",
+      "oneMinuteReminder": "每个学分等于一分钟的课程时间。",
+      "credits": "学分",
+      "estimatedTime": "这将给您大约{minutes}分钟的课程时间。",
+      "proceed": "继续"
+    },
     "navigation": {
       "profile": "个人资料",
       "logout": "退出登录",

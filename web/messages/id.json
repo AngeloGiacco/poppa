@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "Beli Kredit",
+      "oneMinuteReminder": "Setiap kredit setara dengan satu menit waktu pelajaran.",
+      "credits": "kredit",
+      "estimatedTime": "Ini akan memberi Anda sekitar {minutes} menit waktu pelajaran.",
+      "proceed": "Lanjutkan"
+    },
     "navigation": {
       "profile": "Profil",
       "logout": "Keluar",

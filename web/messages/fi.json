@@ -245,6 +245,13 @@
     }
   },
   "DashboardPage": {
+   "credits": {
+      "buyCredits": "Osta krediittejä",
+      "oneMinuteReminder": "Yksi krediitti vastaa yhtä minuuttia oppituntiaikaa.",
+      "credits": "krediittiä",
+      "estimatedTime": "Tämä antaa sinulle noin {minutes} minuuttia oppituntiaikaa.",
+      "proceed": "Jatka"
+    },
     "navigation": {
       "profile": "Profiili",
       "logout": "Kirjaudu ulos",

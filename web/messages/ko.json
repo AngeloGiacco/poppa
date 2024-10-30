@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "크레딧 구매",
+      "oneMinuteReminder": "1크레딧은 1분의 수업 시간과 동일합니다.",
+      "credits": "크레딧",
+      "estimatedTime": "약 {minutes}분의 수업 시간이 제공됩니다.",
+      "proceed": "계속하기"
+    },
     "navigation": {
       "profile": "프로필",
       "logout": "로그아웃",

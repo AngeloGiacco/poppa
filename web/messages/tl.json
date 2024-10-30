@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "Bumili ng Credits",
+      "oneMinuteReminder": "Ang bawat credit ay katumbas ng isang minutong oras ng aralin.",
+      "credits": "credits",
+      "estimatedTime": "Ito ay magbibigay sa iyo ng humigit-kumulang {minutes} minutong oras ng aralin.",
+      "proceed": "Magpatuloy"
+    },
     "navigation": {
       "profile": "Profile",
       "logout": "Mag-logout",

@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "خرید اعتبار",
+      "oneMinuteReminder": "هر اعتبار معادل یک دقیقه زمان درس است.",
+      "credits": "اعتبار",
+      "estimatedTime": "این به شما حدود {minutes} دقیقه زمان درس می‌دهد.",
+      "proceed": "ادامه"
+    },
     "navigation": {
       "profile": "پروفایل",
       "logout": "خروج",

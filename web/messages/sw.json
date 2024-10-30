@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "Nunua Mikopo",
+      "oneMinuteReminder": "Kila mkopo ni sawa na dakika moja ya muda wa somo.",
+      "credits": "mikopo",
+      "estimatedTime": "Hii itakupa takriban dakika {minutes} za muda wa somo.",
+      "proceed": "Endelea"
+    },
     "navigation": {
       "profile": "Wasifu",
       "logout": "Toka",

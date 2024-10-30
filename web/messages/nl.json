@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "Credits kopen",
+      "oneMinuteReminder": "Elk credit staat gelijk aan één minuut lestijd.",
+      "credits": "credits",
+      "estimatedTime": "Dit geeft je ongeveer {minutes} minuten lestijd.",
+      "proceed": "Doorgaan"
+    },
     "navigation": {
       "profile": "Profiel",
       "logout": "Uitloggen",

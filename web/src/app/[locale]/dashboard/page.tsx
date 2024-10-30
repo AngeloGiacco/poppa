@@ -27,6 +27,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogFooter,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import {
@@ -54,7 +55,7 @@ export default function Dashboard() {
   const tCommon = useTranslations('common');
 
   // State declarations
-  const [selectedCredits, setSelectedCredits] = useState(1);
+  const [selectedCredits, setSelectedCredits] = useState(60);
   const [isLanguageSelectOpen, setIsLanguageSelectOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const [isLanguageDialogOpen, setIsLanguageDialogOpen] = useState(false);
@@ -211,7 +212,47 @@ export default function Dashboard() {
                     {t('navigation.buyCredits')}
                   </Button>
                 </DialogTrigger>
-                {/* ... dialog content ... */}
+                <DialogContent className="bg-white/95 border-[#8B4513]/20 shadow-lg">
+                  <DialogHeader>
+                    <DialogTitle className="text-[#8B4513] text-xl">
+                      {t('credits.buyCredits')}
+                    </DialogTitle>
+                    <DialogDescription className="text-[#8B4513]/70">
+                      {t('credits.oneMinuteReminder')}
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="py-4">
+                    <div className="flex items-center gap-4">
+                      <Input
+                        type="number"
+                        value={selectedCredits}
+                        onChange={(e) => {
+                          const value = parseInt(e.target.value);
+                          if (!isNaN(value)) {
+                            setSelectedCredits(Math.max(1, value));
+                          }
+                        }}
+                        className="w-24 bg-white/70 border-[#8B4513]/20 text-[#8B4513]"
+                        min="1"
+                      />
+                      <span className="text-[#8B4513]">{t('credits.credits')}</span>
+                    </div>
+                    <p className="mt-2 text-sm text-[#8B4513]/70">
+                      {t('credits.estimatedTime', { minutes: selectedCredits })}
+                    </p>
+                    <p className="mt-1 text-base text-[#8B4513]/70">
+                      Cost: ${(selectedCredits * 0.15).toFixed(2)}
+                    </p>
+                  </div>
+                  <DialogFooter>
+                    <Button
+                      onClick={handleBuyCredits}
+                      className="bg-[#8B4513] text-white hover:bg-[#6D3611]"
+                    >
+                      {t('credits.proceed')}
+                    </Button>
+                  </DialogFooter>
+                </DialogContent>
               </Dialog>
               
               <div className="flex items-center gap-2">
@@ -326,7 +367,7 @@ export default function Dashboard() {
                             <lang.icon className="w-8 h-8" />
                           </div>
                           <div>
-                            <h3 className="text-xl font-semibold text-[#8B4513]">{lang.name}</h3>
+                            <h3 className="text-xl font-semibold text-[#8B4513]">{tCommon(`languages.${lang.code}`)}</h3>
                             <p className="text-sm text-[#8B4513]/70">{t('languages.card.level')}</p>
                           </div>
                         </div>

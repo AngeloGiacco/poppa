@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "Kjøp kreditter",
+      "oneMinuteReminder": "Hver kreditt tilsvarer ett minutt med leksjonstid.",
+      "credits": "kreditter",
+      "estimatedTime": "Dette vil gi deg omtrent {minutes} minutter med leksjonstid.",
+      "proceed": "Fortsett"
+    },
     "navigation": {
       "profile": "Profil",
       "logout": "Logg ut",

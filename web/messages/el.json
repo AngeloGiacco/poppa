@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "Αγορά Πιστώσεων",
+      "oneMinuteReminder": "Μία πίστωση αντιστοιχεί σε ένα λεπτό χρόνου μαθήματος.",
+      "credits": "πιστώσεις",
+      "estimatedTime": "Αυτό θα σας δώσει περίπου {minutes} λεπτά χρόνου μαθήματος.",
+      "proceed": "Συνέχεια"
+    },
     "navigation": {
       "profile": "Προφίλ",
       "logout": "Αποσύνδεση",

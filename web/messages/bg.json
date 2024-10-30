@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "Купете кредити",
+      "oneMinuteReminder": "Един кредит съответства на една минута време за урок.",
+      "credits": "кредита",
+      "estimatedTime": "Това ще ви даде около {minutes} минути време за урок.",
+      "proceed": "Продължете"
+    },
     "navigation": {
       "profile": "Профил",
       "logout": "Изход",

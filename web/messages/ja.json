@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "クレジットを購入",
+      "oneMinuteReminder": "1クレジットは1分のレッスン時間に相当します。",
+      "credits": "クレジット",
+      "estimatedTime": "約{minutes}分のレッスン時間になります。",
+      "proceed": "続ける"
+    },
     "navigation": {
       "profile": "プロフィール",
       "logout": "ログアウト",

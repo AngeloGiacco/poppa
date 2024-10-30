@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "Kredi Satın Al",
+      "oneMinuteReminder": "Her kredi bir dakikalık ders süresine eşittir.",
+      "credits": "kredi",
+      "estimatedTime": "Bu size yaklaşık {minutes} dakikalık ders süresi verecektir.",
+      "proceed": "Devam Et"
+    },
     "navigation": {
       "profile": "Profil",
       "logout": "Çıkış Yap",

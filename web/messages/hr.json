@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "Kupi kredite",
+      "oneMinuteReminder": "Svaki kredit vrijedi jednu minutu vremena lekcije.",
+      "credits": "krediti",
+      "estimatedTime": "Ovo će vam dati približno {minutes} minuta vremena lekcije.", 
+      "proceed": "Nastavi"
+    },
     "navigation": {
       "profile": "Profil",
       "logout": "Odjava",

@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "Купить кредиты",
+      "oneMinuteReminder": "Каждый кредит равен одной минуте урока.",
+      "credits": "кредитов",
+      "estimatedTime": "Это даст вам примерно {minutes} минут времени урока.",
+      "proceed": "Продолжить"
+    },
     "navigation": {
       "profile": "Профиль",
       "logout": "Выйти",

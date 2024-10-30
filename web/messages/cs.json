@@ -260,6 +260,13 @@
     }
   },
   "DashboardPage": {
+    "credits": {
+      "buyCredits": "Koupit kredity",
+      "oneMinuteReminder": "Jeden kredit odpovídá jedné minutě výukového času.",
+      "credits": "kreditů",
+      "estimatedTime": "Toto vám dá přibližně {minutes} minut výukového času.",
+      "proceed": "Pokračovat"
+    },
     "navigation": {
       "profile": "Profil",
       "logout": "Odhlásit se",
