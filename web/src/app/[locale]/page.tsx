@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import * as CountryFlags from 'country-flag-icons/react/3x2'
 import {languages} from '@/lib/supportedLanguages';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { LanguageSelector } from '@/components/LanguageSelector';
@@ -17,11 +17,8 @@ export default function Home() {
   const [showAnnouncement, setShowAnnouncement] = useState(true);
   const t = useTranslations('HomePage');
   const tCommon = useTranslations('common');
-  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const year = new Date().getFullYear();
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]">
@@ -158,11 +155,9 @@ export default function Home() {
       {/* Refined footer */}
       <motion.footer className="border-t border-[#8B4513]/10 bg-white/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-6 py-4 text-center text-[#5D4037]/60">
-          {mounted && (
-            <p className="text-sm">
-              {t('footer.copyright', { year: new Date().getFullYear() })}
-            </p>
-          )}
+          <p className="text-sm">
+            {t('footer.copyright', { year })}
+          </p>
         </div>
       </motion.footer>
     </div>
