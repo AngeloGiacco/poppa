@@ -37,6 +37,9 @@
       "IR": "Persană",
       "PH": "Tagalog",
       "PK": "Urdu"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Creat cu grijă de Naxos Labs."
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "Încearcă 20 de minute gratuit"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. Creat cu grijă de Naxos Labs."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Creat cu grijă de Naxos Labs."
+    },
+    "login": {
+      "link": "Autentificare"
     }
   },
   "LoginForm": {

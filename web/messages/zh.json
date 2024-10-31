@@ -37,6 +37,9 @@
       "IR": "波斯语",
       "PH": "他加禄语",
       "PK": "乌尔都语"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. 由Naxos Labs精心打造。"
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "免费试用20分钟"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. 由Naxos Labs精心打造。"
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. 由Naxos Labs精心打造。"
+    },
+    "login": {
+      "link": "登录"
     }
   },
   "LoginForm": {

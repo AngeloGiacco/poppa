@@ -37,6 +37,9 @@
       "IR": "Persisch",
       "PH": "Tagalog",
       "PK": "Urdu"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Mit Sorgfalt erstellt von Naxos Labs."
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "20 Minuten kostenlos testen"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. Mit Sorgfalt erstellt von Naxos Labs."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Mit Sorgfalt erstellt von Naxos Labs."
+    },
+    "login": {
+      "link": "Anmelden"
     }
   },
   "LoginForm": {

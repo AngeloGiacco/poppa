@@ -37,6 +37,9 @@
       "IR": "פרסית",
       "PH": "טגלוג",
       "PK": "אורדו"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. נוצר בקפידה על ידי Naxos Labs."
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "נסה 20 דקות בחינם"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. נוצר בקפידה על ידי Naxos Labs."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. נוצר בקפידה על ידי Naxos Labs."
+    },
+    "login": {
+      "link": "התחברות"
     }
   },
   "LoginForm": {

@@ -1,44 +1,47 @@
 {
-    "common": {
-      "languages": {
-        "GB": "Gẹ̀ẹ́sì",
-        "CN": "Ṣáínà",
-        "JP": "Jápánù",
-        "KR": "Kóríà", 
-        "IN": "Hindi",
-        "ID": "Indonéṣíà",
-        "TH": "Tháì",
-        "VN": "Viẹtnámù",
-        "NG": "Yorùbá",
-        "KE": "Swahili",
-        "ES": "Spáníṣì",
-        "FR": "Faransé",
-        "DE": "Jámánì",
-        "IT": "Ítálì",
-        "PT": "Pọtugí",
-        "TR": "Tọ́kì",
-        "SA": "Lárúbáwá",
-        "GR": "Gíríkì",
-        "RU": "Rọ́ṣíà",
-        "NL": "Dọ́ṣì",
-        "PL": "Póláǹdì",
-        "SE": "Súwídìn",
-        "IL": "Hébérù",
-        "RO": "Románíà",
-        "HU": "Húngárì",
-        "CZ": "Ṣẹ́ẹ̀kì",
-        "DK": "Dáníṣì",
-        "FI": "Fíníṣì",
-        "NO": "Nọ́wè",
-        "HR": "Kroatíà",
-        "BG": "Bọ́gáríà",
-        "SK": "Sílófákì",
-        "UA": "Ukréníà",
-        "IR": "Pẹ́ṣíà",
-        "PH": "Tagalog",
-        "PK": "Úrúdù"
-      }
+  "common": {
+    "languages": {
+      "GB": "Gẹ̀ẹ́sì",
+      "CN": "Ṣáínà",
+      "JP": "Jápánù",
+      "KR": "Kóríà",
+      "IN": "Hindi",
+      "ID": "Indonéṣíà",
+      "TH": "Tháì",
+      "VN": "Viẹtnámù",
+      "NG": "Yorùbá",
+      "KE": "Swahili",
+      "ES": "Spáníṣì",
+      "FR": "Faransé",
+      "DE": "Jámánì",
+      "IT": "Ítálì",
+      "PT": "Pọtugí",
+      "TR": "Tọ́kì",
+      "SA": "Lárúbáwá",
+      "GR": "Gíríkì",
+      "RU": "Rọ́ṣíà",
+      "NL": "Dọ́ṣì",
+      "PL": "Póláǹdì",
+      "SE": "Súwídìn",
+      "IL": "Hébérù",
+      "RO": "Románíà",
+      "HU": "Húngárì",
+      "CZ": "Ṣẹ́ẹ̀kì",
+      "DK": "Dáníṣì",
+      "FI": "Fíníṣì",
+      "NO": "Nọ́wè",
+      "HR": "Kroatíà",
+      "BG": "Bọ́gáríà",
+      "SK": "Sílófákì",
+      "UA": "Ukréníà",
+      "IR": "Pẹ́ṣíà",
+      "PH": "Tagalog",
+      "PK": "Úrúdù"
     },
+    "footer": {
+      "copyright": "© {year} Poppa. Ṣe pẹ̀lú ìtọ́jú látọwọ́ Naxos Labs."
+    }
+  },
   "HomePage": {
     "navigation": {
       "pricing": "Iye",
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "Dán ìṣẹ́jú 20 lọ́fẹ̀ẹ́ wò"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. Ṣe pẹ̀lú ìtọ́jú látọwọ́ Naxos Labs."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Ṣe pẹ̀lú ìtọ́jú látọwọ́ Naxos Labs."
+    },
+    "login": {
+      "link": "Wọlé"
     }
   },
   "LoginForm": {

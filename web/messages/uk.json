@@ -37,6 +37,9 @@
       "IR": "Перська",
       "PH": "Тагальська",
       "PK": "Урду"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Створено з турботою Naxos Labs."
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "Спробуйте 20 хвилин безкоштовно"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. Створено з турботою Naxos Labs."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Створено з турботою Naxos Labs."
+    },
+    "login": {
+      "link": "Увійти"
     }
   },
   "LoginForm": {

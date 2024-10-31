@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Link } from '@/i18n/routing';
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { Footer } from "@/components/Footer"
 import { Card, CardContent } from "@/components/ui/card";
 import * as CountryFlags from 'country-flag-icons/react/3x2'
 import {languages} from '@/lib/supportedLanguages';
@@ -18,7 +19,7 @@ export default function Home() {
   const t = useTranslations('HomePage');
   const tCommon = useTranslations('common');
 
-  const year = new Date().getFullYear();
+  const year = 2024;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]">
@@ -152,14 +153,7 @@ export default function Home() {
         </div>
       </motion.div>
 
-      {/* Refined footer */}
-      <motion.footer className="border-t border-[#8B4513]/10 bg-white/50 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-6 py-4 text-center text-[#5D4037]/60">
-          <p className="text-sm">
-            {t('footer.copyright', { year })}
-          </p>
-        </div>
-      </motion.footer>
+      <Footer />
     </div>
   );
 }

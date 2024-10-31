@@ -37,6 +37,9 @@
       "IR": "Perzisch",
       "PH": "Tagalog",
       "PK": "Urdu"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Met zorg gemaakt door Naxos Labs."
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "20 minuten gratis proberen"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. Met zorg gemaakt door Naxos Labs."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Met zorg gemaakt door Naxos Labs."
+    },
+    "login": {
+      "link": "Inloggen"
     }
   },
   "LoginForm": {

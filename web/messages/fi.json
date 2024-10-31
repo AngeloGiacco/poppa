@@ -37,6 +37,9 @@
       "IR": "Persia",
       "PH": "Tagalog",
       "PK": "Urdu"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Huolella tehty Naxos Labsissa."
     }
   },
   "HomePage": {
@@ -97,9 +100,6 @@
     "cta": {
       "startFree": "Aloita 20 ilmaisella minuutilla",
       "noCard": "Luottokorttia ei tarvita"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. Huolella tehty Naxos Labsissa."
     }
   },
   "HowItWorksPage": {
@@ -181,6 +181,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Huolella tehty Naxos Labsissa."
+    },
+    "login": {
+      "link": "Kirjaudu"
     }
   },
   "LoginForm": {
@@ -245,7 +248,7 @@
     }
   },
   "DashboardPage": {
-   "credits": {
+    "credits": {
       "buyCredits": "Osta krediittejä",
       "oneMinuteReminder": "Yksi krediitti vastaa yhtä minuuttia oppituntiaikaa.",
       "credits": "krediittiä",

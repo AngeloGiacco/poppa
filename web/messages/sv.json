@@ -37,6 +37,9 @@
       "IR": "Persiska",
       "PH": "Tagalog",
       "PK": "Urdu"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Skapat med omsorg av Naxos Labs."
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "Prova 20 minuter gratis"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. Skapat med omsorg av Naxos Labs."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Skapat med omsorg av Naxos Labs."
+    },
+    "login": {
+      "link": "Logga in"
     }
   },
   "LoginForm": {
@@ -263,7 +266,7 @@
     "credits": {
       "buyCredits": "Köp krediter",
       "oneMinuteReminder": "Varje kredit motsvarar en minuts lektionstid.",
-      "credits": "krediter", 
+      "credits": "krediter",
       "estimatedTime": "Detta ger dig ungefär {minutes} minuters lektionstid.",
       "proceed": "Fortsätt"
     },

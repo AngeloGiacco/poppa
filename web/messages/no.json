@@ -1,44 +1,47 @@
 {
-    "common": {
-      "languages": {
-        "GB": "Engelsk",
-        "CN": "Kinesisk",
-        "JP": "Japansk",
-        "KR": "Koreansk",
-        "IN": "Hindi",
-        "ID": "Bahasa",
-        "TH": "Thai",
-        "VN": "Vietnamesisk",
-        "NG": "Yoruba", 
-        "KE": "Swahili",
-        "ES": "Spansk",
-        "FR": "Fransk",
-        "DE": "Tysk",
-        "IT": "Italiensk",
-        "PT": "Portugisisk",
-        "TR": "Tyrkisk",
-        "SA": "Arabisk",
-        "GR": "Gresk",
-        "RU": "Russisk",
-        "NL": "Nederlandsk",
-        "PL": "Polsk",
-        "SE": "Svensk",
-        "IL": "Hebraisk",
-        "RO": "Rumensk",
-        "HU": "Ungarsk",
-        "CZ": "Tsjekkisk",
-        "DK": "Dansk",
-        "FI": "Finsk",
-        "NO": "Norsk",
-        "HR": "Kroatisk",
-        "BG": "Bulgarsk",
-        "SK": "Slovakisk",
-        "UA": "Ukrainsk",
-        "IR": "Persisk",
-        "PH": "Tagalog",
-        "PK": "Urdu"
-      }
+  "common": {
+    "languages": {
+      "GB": "Engelsk",
+      "CN": "Kinesisk",
+      "JP": "Japansk",
+      "KR": "Koreansk",
+      "IN": "Hindi",
+      "ID": "Bahasa",
+      "TH": "Thai",
+      "VN": "Vietnamesisk",
+      "NG": "Yoruba",
+      "KE": "Swahili",
+      "ES": "Spansk",
+      "FR": "Fransk",
+      "DE": "Tysk",
+      "IT": "Italiensk",
+      "PT": "Portugisisk",
+      "TR": "Tyrkisk",
+      "SA": "Arabisk",
+      "GR": "Gresk",
+      "RU": "Russisk",
+      "NL": "Nederlandsk",
+      "PL": "Polsk",
+      "SE": "Svensk",
+      "IL": "Hebraisk",
+      "RO": "Rumensk",
+      "HU": "Ungarsk",
+      "CZ": "Tsjekkisk",
+      "DK": "Dansk",
+      "FI": "Finsk",
+      "NO": "Norsk",
+      "HR": "Kroatisk",
+      "BG": "Bulgarsk",
+      "SK": "Slovakisk",
+      "UA": "Ukrainsk",
+      "IR": "Persisk",
+      "PH": "Tagalog",
+      "PK": "Urdu"
     },
+    "footer": {
+      "copyright": "© {year} Poppa. Laget med omhu av Naxos Labs."
+    }
+  },
   "HomePage": {
     "navigation": {
       "pricing": "Priser",
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "Prøv 20 minutter gratis"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. Laget med omhu av Naxos Labs."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Laget med omhu av Naxos Labs."
+    },
+    "login": {
+      "link": "Logg inn"
     }
   },
   "LoginForm": {
@@ -233,7 +236,7 @@
     "selectLanguage": "Velg ditt morsmål",
     "months": {
       "1": "Januar",
-      "2": "Februar", 
+      "2": "Februar",
       "3": "Mars",
       "4": "April",
       "5": "Mai",

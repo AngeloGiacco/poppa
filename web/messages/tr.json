@@ -37,6 +37,9 @@
       "IR": "Farsça",
       "PH": "Tagalogca",
       "PK": "Urduca"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Naxos Labs tarafından özenle hazırlanmıştır."
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "20 dakika ücretsiz deneyin"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. Naxos Labs tarafından özenle hazırlanmıştır."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Naxos Labs tarafından özenle hazırlanmıştır."
+    },
+    "login": {
+      "link": "Giriş yap"
     }
   },
   "LoginForm": {

@@ -37,6 +37,9 @@
       "IR": "Perzijski",
       "PH": "Tagalog",
       "PK": "Urdu"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Pažljivo izrađeno u Naxos Labs."
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "Isprobajte 20 minuta besplatno"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. Pažljivo izrađeno u Naxos Labs."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Pažljivo izrađeno u Naxos Labs."
+    },
+    "login": {
+      "link": "Prijava"
     }
   },
   "LoginForm": {
@@ -264,7 +267,7 @@
       "buyCredits": "Kupi kredite",
       "oneMinuteReminder": "Svaki kredit vrijedi jednu minutu vremena lekcije.",
       "credits": "krediti",
-      "estimatedTime": "Ovo će vam dati približno {minutes} minuta vremena lekcije.", 
+      "estimatedTime": "Ovo će vam dati približno {minutes} minuta vremena lekcije.",
       "proceed": "Nastavi"
     },
     "navigation": {

@@ -37,6 +37,9 @@
       "IR": "الفارسية",
       "PH": "التاغالوغية",
       "PK": "الأوردية"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. صنع بعناية بواسطة Naxos Labs."
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "جرب 20 دقيقة مجاناً"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. صنع بعناية بواسطة Naxos Labs."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. صنع بعناية بواسطة Naxos Labs."
+    },
+    "login": {
+      "link": "تسجيل الدخول"
     }
   },
   "LoginForm": {

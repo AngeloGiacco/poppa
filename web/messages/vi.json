@@ -37,6 +37,9 @@
       "IR": "Tiếng Ba Tư",
       "PH": "Tiếng Tagalog",
       "PK": "Tiếng Urdu"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Được tạo ra với sự tận tâm bởi Naxos Labs."
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "Dùng thử 20 phút miễn phí"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. Được tạo ra với sự tận tâm bởi Naxos Labs."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Được tạo ra với sự tận tâm bởi Naxos Labs."
+    },
+    "login": {
+      "link": "Đăng nhập"
     }
   },
   "LoginForm": {

@@ -37,6 +37,9 @@
       "IR": "Perzsa",
       "PH": "Tagalog",
       "PK": "Urdu"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Gondosan készítette a Naxos Labs."
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "Próbáld ki 20 percig ingyen"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. Gondosan készítette a Naxos Labs."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Gondosan készítette a Naxos Labs."
+    },
+    "login": {
+      "link": "Bejelentkezés"
     }
   },
   "LoginForm": {

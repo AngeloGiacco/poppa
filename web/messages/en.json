@@ -1,48 +1,51 @@
 {
-    "common": {
-      "languages": {
-        "GB": "English",
-        "CN": "Chinese",
-        "JP": "Japanese", 
-        "KR": "Korean",
-        "IN": "Hindi",
-        "ID": "Bahasa",
-        "TH": "Thai",
-        "VN": "Vietnamese",
-        "NG": "Yoruba",
-        "KE": "Swahili",
-        "ES": "Spanish",
-        "FR": "French",
-        "DE": "German",
-        "IT": "Italian",
-        "PT": "Portuguese",
-        "TR": "Turkish",
-        "SA": "Arabic",
-        "GR": "Greek",
-        "RU": "Russian",
-        "NL": "Dutch",
-        "PL": "Polish",
-        "SE": "Swedish",
-        "IL": "Hebrew",
-        "RO": "Romanian",
-        "HU": "Hungarian",
-        "CZ": "Czech",
-        "DK": "Danish",
-        "FI": "Finnish",
-        "NO": "Norwegian",
-        "HR": "Croatian",
-        "BG": "Bulgarian",
-        "SK": "Slovak",
-        "UA": "Ukrainian",
-        "IR": "Persian",
-        "PH": "Tagalog",
-        "PK": "Urdu"
-      }
+  "common": {
+    "footer": {
+      "copyright": "© {year} Poppa. Crafted with care by Naxos Labs."
     },
+    "languages": {
+      "GB": "English",
+      "CN": "Chinese",
+      "JP": "Japanese",
+      "KR": "Korean",
+      "IN": "Hindi",
+      "ID": "Bahasa",
+      "TH": "Thai",
+      "VN": "Vietnamese",
+      "NG": "Yoruba",
+      "KE": "Swahili",
+      "ES": "Spanish",
+      "FR": "French",
+      "DE": "German",
+      "IT": "Italian",
+      "PT": "Portuguese",
+      "TR": "Turkish",
+      "SA": "Arabic",
+      "GR": "Greek",
+      "RU": "Russian",
+      "NL": "Dutch",
+      "PL": "Polish",
+      "SE": "Swedish",
+      "IL": "Hebrew",
+      "RO": "Romanian",
+      "HU": "Hungarian",
+      "CZ": "Czech",
+      "DK": "Danish",
+      "FI": "Finnish",
+      "NO": "Norwegian",
+      "HR": "Croatian",
+      "BG": "Bulgarian",
+      "SK": "Slovak",
+      "UA": "Ukrainian",
+      "IR": "Persian",
+      "PH": "Tagalog",
+      "PK": "Urdu"
+    }
+  },
   "HomePage": {
     "navigation": {
       "pricing": "Pricing",
-      "howItWorks": "How it works", 
+      "howItWorks": "How it works",
       "login": "Log in",
       "getStarted": "Get started"
     },
@@ -76,20 +79,17 @@
         }
       },
       "tryButton": "Try 20 minutes free"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. Crafted with care by Naxos Labs."
     }
   },
   "PricingPage": {
     "navigation": {
       "home": "Home",
       "howItWorks": "How it works",
-      "login": "Log in", 
+      "login": "Log in",
       "getStarted": "Get started"
     },
     "hero": {
-      "title": "Simple, transparent pricing",
+      "title": "Simple, affordable pricing",
       "subtitle": "Start with 20 free minutes. Then pay as you go."
     },
     "features": {
@@ -171,48 +171,48 @@
     },
     "content": {
       "greeting": "Hi 👋",
-      "welcome": "Welcome to Poppa. We want to make 1-on-1 language tutoring accessible to everyone.",
+      "welcome": "Welcome to Poppa. We want to make 1-on-1 tutoring accessible to everyone.",
       "background": "I was immensely lucky that my circumstances (living in Budapest, and then going to a great school in the UK) allowed me to get 1-1 language tutoring in Chinese and Russian. Learning these languages has in many ways changed the trajectory of my life.",
-      "philosophy": "Language learning should be affordable and flexible, which is why we've implemented a credit-based system that lets you learn at your own pace and budget. Whether you have 5 minutes or 5 hours, Poppa is here to support your language learning journey.",
-      "approach": "We don't make you write out words, or memorise useless grammar rules or phrases. We'll help you to think in another language. Please try it out. I think you'll like it and the first lesson is on us anyway.",
+      "philosophy": "Tutoring should be affordable and flexible, which is why we've implemented a credit-based system that lets you learn at your own pace and budget. Whether you have 5 minutes or 5 hours, Poppa is here to support your learning journey.",
+      "approach": "We're starting with teaching languages. We don't make you write out words, or memorise useless grammar rules or phrases. We'll help you to think in another language. Please try it out. I think you'll like it and the first lesson is on us anyway.",
       "story": "I learnt Mandarin because my grandfather, who I called poppa, worked in Beijing for many years and he made me promise him that I'd learn it. That's had a huge impact on my life and I hope poppa can have an impact on you too :)",
       "closing": "Happy learning!",
       "signature": "Angelo"
+    }
+  },
+  "SignupPage": {
+    "navigation": {
+      "backToHome": "Back to Home"
+    },
+    "logo": {
+      "alt": "Poppa logo"
+    },
+    "hero": {
+      "brandName": "poppa",
+      "subtitle": "Start your language learning journey today!"
     },
     "footer": {
       "copyright": "© {year} Poppa. Crafted with care by Naxos Labs."
+    },
+    "login": {
+      "link": "Log in"
     }
   },
-    "SignupPage": {
-        "navigation": {
-        "backToHome": "Back to Home"
-        },
-        "logo": {
-        "alt": "Poppa logo"
-        },
-        "hero": {
-        "brandName": "poppa",
-        "subtitle": "Start your language learning journey today!"
-        },
-        "footer": {
-        "copyright": "© {year} Poppa. Crafted with care by Naxos Labs."
-        }
-    },
-    "LoginForm": {
+  "LoginForm": {
     "email": "Email",
     "password": "Password",
     "loginButton": "Log In",
     "forgotPassword": "Forgot password?",
     "loading": "Logging in...",
     "success": {
-        "title": "Login Successful",
-        "description": "Welcome back!"
+      "title": "Login Successful",
+      "description": "Welcome back!"
     },
     "error": {
-        "title": "Login Failed"
+      "title": "Login Failed"
     }
-    },
-    "SignupForm": {
+  },
+  "SignupForm": {
     "firstName": "First Name",
     "lastName": "Last Name",
     "email": "Email",
@@ -227,8 +227,8 @@
     "loading": "Signing Up...",
     "languageTooltip": "Can't find your language? Poppa is only supported in these languages for now. Contact us for assistance.",
     "errors": {
-        "passwordMatch": "Passwords don't match",
-        "generic": "An error occurred during sign up. Please try again."
+      "passwordMatch": "Passwords don't match",
+      "generic": "An error occurred during sign up. Please try again."
     },
     "months": {
       "1": "January",
@@ -245,21 +245,21 @@
       "12": "December"
     },
     "selectLanguage": "Select your native language"
-    },
-    "ProfilePage": {
+  },
+  "ProfilePage": {
     "navigation": {
-        "backToDashboard": "Back to Dashboard"
+      "backToDashboard": "Back to Dashboard"
     },
     "header": {
-        "title": "Profile"
+      "title": "Profile"
     },
     "accountDetails": {
-        "title": "Account Details",
-        "joined": "Joined",
-        "credits": "Credits"
+      "title": "Account Details",
+      "joined": "Joined",
+      "credits": "Credits"
     }
-    },
-    "DashboardPage": {
+  },
+  "DashboardPage": {
     "credits": {
       "buyCredits": "Buy Credits",
       "oneMinuteReminder": "Each credit equals one minute of lesson time.",
@@ -268,43 +268,43 @@
       "proceed": "Proceed"
     },
     "navigation": {
-        "profile": "Profile",
-        "logout": "Log Out",
-        "buyCredits": "Buy Credits"
+      "profile": "Profile",
+      "logout": "Log Out",
+      "buyCredits": "Buy Credits"
     },
     "languages": {
-        "title": "Your Languages",
-        "addLanguage": "Add Language",
-        "dialog": {
+      "title": "Your Languages",
+      "addLanguage": "Add Language",
+      "dialog": {
         "title": "Add a New Language",
         "description": "Choose a language you'd like to learn",
         "selectPlaceholder": "Select a language"
-        },
-        "startLearning": {
+      },
+      "startLearning": {
         "title": "Start Learning Now?",
         "description": "Would you like to start your first lesson in {language} now?",
         "later": "Later",
         "startNow": "Start Now"
-        },
-        "card": {
+      },
+      "card": {
         "level": "Intermediate Level",
         "viewHistory": "View History",
         "continueButton": "Continue Learning",
         "customButton": "Custom Lesson"
-        },
-        "customLesson": {
+      },
+      "customLesson": {
         "title": "Custom Lesson - {language}",
         "description": "Enter what you'd like to learn about in {language}.\nWe'll make sure the lesson fits your level.",
         "placeholder": "e.g., ordering food at a restaurant",
         "startButton": "Start Lesson"
-        }
+      }
     }
-    },
-    "LessonPage": {
-      "backToDashboard": "Back to Dashboard",
-      "footer": {
-        "builtWith": "Built with care by",
-        "viewSource": "View source on GitHub"
+  },
+  "LessonPage": {
+    "backToDashboard": "Back to Dashboard",
+    "footer": {
+      "builtWith": "Built with care by",
+      "viewSource": "View source on GitHub"
     }
-}
+  }
 }

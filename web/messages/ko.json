@@ -37,6 +37,9 @@
       "IR": "페르시아어",
       "PH": "타갈로그어",
       "PK": "우르두어"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Naxos Labs가 정성껏 만들었습니다."
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "20분 무료 체험하기"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. Naxos Labs가 정성껏 만들었습니다."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Naxos Labs가 정성껏 만들었습니다."
+    },
+    "login": {
+      "link": "로그인"
     }
   },
   "LoginForm": {

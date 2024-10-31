@@ -37,6 +37,9 @@
       "IR": "Kiajemi",
       "PH": "Kitagalogi",
       "PK": "Kiurdu"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Imetengenezwa kwa uangalifu na Naxos Labs."
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "Jaribu dakika 20 bure"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. Imetengenezwa kwa uangalifu na Naxos Labs."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Imetengenezwa kwa uangalifu na Naxos Labs."
+    },
+    "login": {
+      "link": "Ingia"
     }
   },
   "LoginForm": {

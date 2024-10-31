@@ -4,7 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from '@/i18n/routing';
-import { useState } from 'react';
+import { Footer } from "@/components/Footer"
+
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useTranslations } from 'next-intl';
@@ -12,6 +14,7 @@ import { useTranslations } from 'next-intl';
 export default function Pricing() {
   const t = useTranslations('PricingPage');
   const [hoursPerMonth, setHoursPerMonth] = useState(10);
+  const [currentYear, setCurrentYear] = useState(2024);
   const poppaPrice = 15;
   const humanTutorPrice = 50;
 
@@ -156,12 +159,7 @@ export default function Pricing() {
         </motion.div>
       </div>
 
-      {/* Footer */}
-      <motion.footer className="border-t border-[#8B4513]/10 bg-white/50 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-6 py-4 text-center text-[#5D4037]/60">
-          <p className="text-sm">{t('footer.copyright', { year: new Date().getFullYear() })}</p>
-        </div>
-      </motion.footer>
+      <Footer />
     </div>
   );
 }

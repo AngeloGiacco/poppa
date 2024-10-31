@@ -37,6 +37,9 @@
       "IR": "ペルシャ語",
       "PH": "タガログ語",
       "PK": "ウルドゥー語"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Naxos Labsが心を込めて制作"
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "20分無料で試す"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. Naxos Labsが心を込めて制作"
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Naxos Labsが心を込めて制作"
+    },
+    "login": {
+      "link": "ログイン"
     }
   },
   "LoginForm": {

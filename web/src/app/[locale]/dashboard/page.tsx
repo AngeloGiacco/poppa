@@ -186,13 +186,13 @@ export default function Dashboard() {
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-4">
               <Image
-                  className="rounded-xl"
-                  src="/logo.svg"
-                  alt="Poppa logo"
-                  width={80}
-                  height={80}
-                  priority
-                />
+                className="w-16 h-16 rounded-2xl shadow-lg"
+                src="/logo.svg"
+                alt={t('logo.alt')}
+                width={64}
+                height={64}
+                priority
+              />
               <h1 className="text-2xl font-bold bg-gradient-to-r from-[#8B4513] to-[#6D3611] bg-clip-text text-transparent">
                 poppa
               </h1>

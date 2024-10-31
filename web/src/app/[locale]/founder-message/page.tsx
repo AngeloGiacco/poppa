@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useTranslations } from 'next-intl';
+import { Footer } from '@/components/Footer';
 
 
 export default function FounderMessage() {
@@ -73,15 +74,7 @@ export default function FounderMessage() {
           </Card>
         </motion.div>
 
-        {/* Footer */}
-        <motion.footer 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mt-8 text-center text-[#5D4037]/60"
-        >
-          <p className="text-sm">{t('footer.copyright', { year: new Date().getFullYear() })}</p>
-        </motion.footer>
+        <Footer className="mt-8" />
       </motion.div>
     </div>
   );

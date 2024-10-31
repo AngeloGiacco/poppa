@@ -37,6 +37,9 @@
       "IR": "Perzština",
       "PH": "Tagalčina",
       "PK": "Urdčina"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. S láskou vytvorené Naxos Labs."
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "Vyskúšajte 20 minút zadarmo"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. S láskou vytvorené Naxos Labs."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. S láskou vytvorené Naxos Labs."
+    },
+    "login": {
+      "link": "Prihlásiť sa"
     }
   },
   "LoginForm": {

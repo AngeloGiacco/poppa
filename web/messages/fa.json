@@ -37,6 +37,9 @@
       "IR": "فارسی",
       "PH": "تاگالوگ",
       "PK": "اردو"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. با دقت ساخته شده توسط Naxos Labs."
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "۲۰ دقیقه رایگان امتحان کنید"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. با دقت ساخته شده توسط Naxos Labs."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. با دقت ساخته شده توسط Naxos Labs."
+    },
+    "login": {
+      "link": "ورود"
     }
   },
   "LoginForm": {

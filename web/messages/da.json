@@ -37,6 +37,9 @@
       "IR": "Persisk",
       "PH": "Tagalog",
       "PK": "Urdu"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Skabt med omhu af Naxos Labs."
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "Prøv 20 minutter gratis"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. Skabt med omhu af Naxos Labs."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Skabt med omhu af Naxos Labs."
+    },
+    "login": {
+      "link": "Log ind"
     }
   },
   "LoginForm": {

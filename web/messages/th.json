@@ -37,6 +37,9 @@
       "IR": "เปอร์เซีย",
       "PH": "ตากาล็อก",
       "PK": "อูรดู"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. สร้างสรรค์ด้วยความใส่ใจโดย Naxos Labs"
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "ทดลองใช้ฟรี 20 นาที"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. สร้างสรรค์ด้วยความใส่ใจโดย Naxos Labs"
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. สร้างสรรค์ด้วยความใส่ใจโดย Naxos Labs"
+    },
+    "login": {
+      "link": "เข้าสู่ระบบ"
     }
   },
   "LoginForm": {

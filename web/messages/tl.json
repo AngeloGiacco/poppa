@@ -1,44 +1,47 @@
 {
-    "common": {
-      "languages": {
-        "GB": "Ingles",
-        "CN": "Tsino",
-        "JP": "Hapon",
-        "KR": "Koreano",
-        "IN": "Hindi",
-        "ID": "Bahasa",
-        "TH": "Thai",
-        "VN": "Vietnamese",
-        "NG": "Yoruba", 
-        "KE": "Swahili",
-        "ES": "Espanyol",
-        "FR": "Pranses",
-        "DE": "Aleman",
-        "IT": "Italyano",
-        "PT": "Portuges",
-        "TR": "Turko",
-        "SA": "Arabe",
-        "GR": "Griyego",
-        "RU": "Ruso",
-        "NL": "Dutch",
-        "PL": "Polish",
-        "SE": "Swedish",
-        "IL": "Hebrew",
-        "RO": "Romanian",
-        "HU": "Hungarian",
-        "CZ": "Czech",
-        "DK": "Danish",
-        "FI": "Finnish",
-        "NO": "Norwegian",
-        "HR": "Croatian",
-        "BG": "Bulgarian",
-        "SK": "Slovak",
-        "UA": "Ukrainian",
-        "IR": "Persian",
-        "PH": "Tagalog",
-        "PK": "Urdu"
-      }
+  "common": {
+    "languages": {
+      "GB": "Ingles",
+      "CN": "Tsino",
+      "JP": "Hapon",
+      "KR": "Koreano",
+      "IN": "Hindi",
+      "ID": "Bahasa",
+      "TH": "Thai",
+      "VN": "Vietnamese",
+      "NG": "Yoruba",
+      "KE": "Swahili",
+      "ES": "Espanyol",
+      "FR": "Pranses",
+      "DE": "Aleman",
+      "IT": "Italyano",
+      "PT": "Portuges",
+      "TR": "Turko",
+      "SA": "Arabe",
+      "GR": "Griyego",
+      "RU": "Ruso",
+      "NL": "Dutch",
+      "PL": "Polish",
+      "SE": "Swedish",
+      "IL": "Hebrew",
+      "RO": "Romanian",
+      "HU": "Hungarian",
+      "CZ": "Czech",
+      "DK": "Danish",
+      "FI": "Finnish",
+      "NO": "Norwegian",
+      "HR": "Croatian",
+      "BG": "Bulgarian",
+      "SK": "Slovak",
+      "UA": "Ukrainian",
+      "IR": "Persian",
+      "PH": "Tagalog",
+      "PK": "Urdu"
     },
+    "footer": {
+      "copyright": "© {year} Poppa. Ginawa nang may pag-aalaga ng Naxos Labs."
+    }
+  },
   "HomePage": {
     "navigation": {
       "pricing": "Presyo",
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "Subukan ng 20 minutong libre"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. Ginawa nang may pag-aalaga ng Naxos Labs."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Ginawa nang may pag-aalaga ng Naxos Labs."
+    },
+    "login": {
+      "link": "Mag-login"
     }
   },
   "LoginForm": {
@@ -233,7 +236,7 @@
     "selectLanguage": "Piliin ang iyong katutubong wika",
     "months": {
       "1": "Enero",
-      "2": "Pebrero", 
+      "2": "Pebrero",
       "3": "Marso",
       "4": "Abril",
       "5": "Mayo",

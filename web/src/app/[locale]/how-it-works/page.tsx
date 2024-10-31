@@ -2,6 +2,7 @@
 
 import { Inter } from 'next/font/google';
 import { Link } from '@/i18n/routing';
+import { Footer } from '@/components/Footer';
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -107,12 +108,7 @@ export default function HowItWorks() {
         </div>
       </motion.div>
 
-      {/* Footer remains the same */}
-      <motion.footer className="border-t border-[#8B4513]/10 bg-white/50 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-6 py-4 text-center text-[#5D4037]/60">
-          <p className="text-sm">© {new Date().getFullYear()} Poppa. Crafted with care by Naxos Labs.</p>
-        </div>
-      </motion.footer>
+      <Footer />
     </div>
   );
 }

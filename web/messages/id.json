@@ -37,6 +37,9 @@
       "IR": "Persia",
       "PH": "Tagalog",
       "PK": "Urdu"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Dibuat dengan penuh perhatian oleh Naxos Labs."
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "Coba 20 menit gratis"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. Dibuat dengan penuh perhatian oleh Naxos Labs."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Dibuat dengan penuh perhatian oleh Naxos Labs."
+    },
+    "login": {
+      "link": "Masuk"
     }
   },
   "LoginForm": {

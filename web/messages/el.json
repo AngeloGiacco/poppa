@@ -37,6 +37,9 @@
       "IR": "Περσικά",
       "PH": "Ταγκαλόγκ",
       "PK": "Ούρντου"
+    },
+    "footer": {
+      "copyright": "© {year} Poppa. Δημιουργήθηκε με φροντίδα από τη Naxos Labs."
     }
   },
   "HomePage": {
@@ -76,9 +79,6 @@
         }
       },
       "tryButton": "Δοκιμάστε 20 λεπτά δωρεάν"
-    },
-    "footer": {
-      "copyright": "© {year} Poppa. Δημιουργήθηκε με φροντίδα από τη Naxos Labs."
     }
   },
   "PricingPage": {
@@ -196,6 +196,9 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Δημιουργήθηκε με φροντίδα από τη Naxos Labs."
+    },
+    "login": {
+      "link": "Σύνδεση"
     }
   },
   "LoginForm": {

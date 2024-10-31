@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import SignupForm from '@/components/SignupForm';
 import { useTranslations } from 'next-intl';
+import { Footer } from '@/components/Footer';
 
 export default function SignUp() {
   const t = useTranslations('SignupPage');
@@ -13,9 +14,12 @@ export default function SignUp() {
     <div className={`min-h-screen bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0] relative`}>
       {/* Refined navigation */}
       <div className="absolute top-0 left-0 right-0 px-6 py-4 backdrop-blur-sm bg-[#FFF8E1]/50">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link href="/" className="text-[#8B4513] hover:text-[#6D3611] transition-colors duration-300 flex items-center gap-2">
             <span>←</span> {t('navigation.backToHome')}
+          </Link>
+          <Link href="/login" className="text-[#8B4513] hover:text-[#6D3611] transition-colors duration-300 font-medium">
+            {t('login.link')}
           </Link>
         </div>
       </div>
@@ -52,12 +56,7 @@ export default function SignUp() {
         </motion.div>
       </div>
 
-      {/* Matching footer */}
-      <motion.footer className="border-t border-[#8B4513]/10 bg-white/50 backdrop-blur-sm absolute bottom-0 w-full">
-        <div className="max-w-7xl mx-auto px-6 py-4 text-center text-[#5D4037]/60">
-          <p className="text-sm">{t('footer.copyright', { year: new Date().getFullYear() })}</p>
-        </div>
-      </motion.footer>
+      <Footer className="absolute bottom-0 w-full" />
     </div>
   );
 }
