@@ -1,8 +1,6 @@
-# LiveKit + OpenAI Realtime Playground
+# Poppa
 
-This project is an interactive playground that demonstrates the capabilities of OpenAI's Realtime API, allowing users to experiment with the API directly in their browser. It's built on top of LiveKit Agents.
-
-See it in action at [realtime-playground.livekit.io](https://realtime-playground.livekit.io)
+Poppa is a conversational AI platform for tutoring with the thinking method. We use livekit and the openai realtime api.
 
 ## Repository Structure
 
@@ -74,6 +72,17 @@ Ensure the following:
 - Both web and agent are running
 - Environment variables are set up correctly
 - Correct versions of Node.js, pnpm, and Python are installed
+
+## Contributing
+
+We welcome contributions to improve Poppa. To contribute, please follow these guidelines:
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature-branch`)
+3. Make your changes
+4. Commit your changes (`git commit -m 'Add some feature'`)
+5. Push to the branch (`git push origin feature-branch`)
+6. Open a pull request
 
 ## Additional Resources
 
