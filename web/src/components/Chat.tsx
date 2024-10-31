@@ -14,6 +14,7 @@ import { ChatControls } from "@/components/chat-controls";
 import { useAgent } from "@/hooks/use-agent";
 import { useConnection } from "@/hooks/use-connection";
 import { toast } from "@/hooks/use-toast";
+import { useTranslations } from "next-intl";
 
 export function Chat() {
   const connectionState = useConnectionState();
@@ -22,6 +23,8 @@ export function Chat() {
   const { agent } = useAgent();
   const { disconnect } = useConnection();
   const [hasSeenAgent, setHasSeenAgent] = useState(false);
+  const [isEditingInstructions, setIsEditingInstructions] = useState(false);
+  const t = useTranslations("Chat");
 
   useEffect(() => {
     let disconnectTimer: NodeJS.Timeout | undefined;
@@ -33,9 +36,8 @@ export function Chat() {
         setHasSeenAgent(false);
 
         toast({
-          title: "Agent Unavailable",
-          description:
-            "Unable to connect to an agent right now. Please try again later.",
+          title: t("errors.agentUnavailable.title"),
+          description: t("errors.agentUnavailable.description"),
           variant: "destructive",
         });
       }, 5000);
@@ -57,9 +59,8 @@ export function Chat() {
         }
 
         toast({
-          title: "Agent Disconnected",
-          description:
-            "The AI agent has unexpectedly left the conversation. Please try again.",
+          title: t("errors.agentDisconnected.title"),
+          description: t("errors.agentDisconnected.description"),
           variant: "destructive",
         });
       }, 5000);
@@ -73,7 +74,7 @@ export function Chat() {
       if (disconnectTimer) clearTimeout(disconnectTimer);
       if (appearanceTimer) clearTimeout(appearanceTimer);
     };
-  }, [connectionState, agent, disconnect, hasSeenAgent]);
+  }, [connectionState, agent, disconnect, hasSeenAgent, t]);
 
   const renderVisualizer = () => (
     <div className="flex w-full items-center">
@@ -102,10 +103,18 @@ export function Chat() {
     </AnimatePresence>
   );
 
+  const handleToggleEdit = () => {
+    setIsEditingInstructions(!isEditingInstructions);
+  };
+
   return (
     <div className="flex flex-col h-full overflow-hidden p-2 lg:p-4">
-      <ChatControls showEditButton={isChatRunning} />
-      <div className="flex flex-col flex-grow items-center lg:justify-between mt-12 lg:mt-0">
+      <ChatControls 
+        showEditButton={isChatRunning}
+        isEditingInstructions={isEditingInstructions}
+        onToggleEdit={handleToggleEdit}
+      />
+      <div className="flex flex-col flex-grow items-center justify-center">
         <div className="w-full h-full flex flex-col">
           <div className="flex items-center justify-center w-full">
             <div className="lg:hidden w-full">
@@ -119,7 +128,7 @@ export function Chat() {
           </div>
         </div>
 
-        <div className="md:mt-2 md:pt-2 md:mb-12 max-md:fixed max-md:bottom-12 max-md:left-1/2 max-md:-translate-x-1/2 max-md:z-50 xl:fixed xl:bottom-12 xl:left-1/2 xl:-translate-x-1/2 xl:z-50">
+        <div className="absolute-center">
           {renderConnectionControl()}
         </div>
       </div>

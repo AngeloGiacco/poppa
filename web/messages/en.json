@@ -40,6 +40,9 @@
       "IR": "Persian",
       "PH": "Tagalog",
       "PK": "Urdu"
+    },
+    "header": {
+      "lessonTitle": "{language} lesson"
     }
   },
   "HomePage": {
@@ -265,7 +268,8 @@
       "oneMinuteReminder": "Each credit equals one minute of lesson time.",
       "credits": "credits",
       "estimatedTime": "This will give you approximately {minutes} minutes of lesson time.",
-      "proceed": "Proceed"
+      "proceed": "Proceed",
+      "cost": "Cost: ${cost}"
     },
     "navigation": {
       "profile": "Profile",
@@ -303,8 +307,28 @@
   "LessonPage": {
     "backToDashboard": "Back to Dashboard",
     "footer": {
-      "builtWith": "Built with care by",
+      "builtWith": "Built with care by Naxos Labs",
       "viewSource": "View source on GitHub"
+    }
+  },
+  "Chat": {
+    "ConnectButton": {
+      "connect": "Connect",
+      "connecting": "Connecting"
+    },
+    "Transcript": {
+      "title": "Transcript",
+      "emptyState": "Get talking to start the conversation!"
+    },
+    "errors": {
+      "agentUnavailable": {
+        "title": "Agent Unavailable",
+        "description": "Unable to connect to an agent right now. Please try again later."
+      },
+      "agentDisconnected": {
+        "title": "Agent Disconnected",
+        "description": "The AI agent has unexpectedly left the conversation. Please try again."
+      }
     }
   }
 }

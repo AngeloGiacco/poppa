@@ -1,14 +1,12 @@
 "use client"
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from '@/i18n/routing';
 import { Footer } from "@/components/Footer"
 
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
 export default function Pricing() {

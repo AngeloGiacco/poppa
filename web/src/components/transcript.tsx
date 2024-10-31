@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { useAgent } from "@/hooks/use-agent";
-import { useEffect, useRef, RefObject, useState } from "react";
+import { useEffect, useRef, RefObject, useState, useCallback } from "react";
+import { useTranslations } from "next-intl";
 
 export function Transcript({
   scrollContainerRef,
@@ -12,38 +13,32 @@ export function Transcript({
   const { displayTranscriptions } = useAgent();
   const transcriptEndRef = useRef<HTMLDivElement>(null);
   const [showScrollButton, setShowScrollButton] = useState(false);
-  const calculateDistanceFromBottom = (container: HTMLElement) => {
+  const calculateDistanceFromBottom = useCallback((container: HTMLElement) => {
     const { scrollHeight, scrollTop, clientHeight } = container;
     return scrollHeight - scrollTop - clientHeight;
-  };
-
-  const handleScrollVisibility = (
-    container: HTMLElement,
-    scrollButton: HTMLButtonElement,
-  ) => {
-    const distanceFromBottom = calculateDistanceFromBottom(container);
-    const shouldShowButton = distanceFromBottom > 100;
-    setShowScrollButton(shouldShowButton);
-    scrollButton.style.display = shouldShowButton ? "flex" : "none";
-  };
+  }, []);
 
   useEffect(() => {
     const container = scrollContainerRef.current;
     const scrollButton = scrollButtonRef.current;
     if (container && scrollButton) {
-      const handleScroll = () =>
-        handleScrollVisibility(container, scrollButton);
+      const handleScrollVisibility = (
+        container: HTMLElement,
+        scrollButton: HTMLButtonElement,
+      ) => {
+        const distanceFromBottom = calculateDistanceFromBottom(container);
+        const shouldShowButton = distanceFromBottom > 100;
+        setShowScrollButton(shouldShowButton);
+        scrollButton.style.display = shouldShowButton ? "flex" : "none";
+      };
+
+      const handleScroll = () => handleScrollVisibility(container, scrollButton);
 
       handleScroll(); // Check initial state
       container.addEventListener("scroll", handleScroll);
       return () => container.removeEventListener("scroll", handleScroll);
     }
-  }, [
-    scrollContainerRef,
-    scrollButtonRef,
-    displayTranscriptions,
-    handleScrollVisibility,
-  ]);
+  }, [scrollContainerRef, scrollButtonRef, displayTranscriptions, calculateDistanceFromBottom]);
 
   useEffect(() => {
     const container = scrollContainerRef.current;
@@ -69,15 +64,17 @@ export function Transcript({
     }
   }, [scrollButtonRef]);
 
+  const t = useTranslations("Chat.Transcript");
+
   return (
     <>
-      <div className="flex items-center text-xs font-semibold uppercase tracking-widest sticky top-0 left-0 bg-[#FFF8E1]/50 backdrop-blur-sm w-full p-4 text-[#8B4513] border-b border-[#8B4513]/10">
-        Transcript
+      <div className="flex items-center text-xs font-semibold uppercase tracking-widest sticky top-0 left-0 right-0 bg-[#FFF8E1]/50 backdrop-blur-sm w-full p-4 text-[#8B4513] border-b border-[#8B4513]/10">
+        {t("title")}
       </div>
       <div className="p-4 min-h-[300px] relative">
         {displayTranscriptions.length === 0 ? (
           <div className="flex items-center justify-center h-full text-[#5D4037]/60 text-sm">
-            Get talking to start the conversation!
+            {t("emptyState")}
           </div>
         ) : (
           <div className="space-y-4">

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from '@/i18n/routing';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { GB, ES, FR, DE, IT, PT, RU, KE, CN, JP, KR, NL, PL, SE, TR, SA, IN, TH, VN, GR, RO, HU, CZ, DK, FI, NO, HR, BG, SK } from 'country-flag-icons/react/3x2';
+import * as CountryFlags from 'country-flag-icons/react/3x2';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from '@/i18n/routing';
 import { useEffect } from 'react';
@@ -42,10 +42,11 @@ import {
 } from "@/components/ui/alert-dialog"
 import { useTranslations } from 'next-intl';
 import { type Tables } from '@/types/database.types';
+import { LoadingSpinner } from '@/components/loading';
 
 // Updated mock data for user's languages
 const userLanguages = [
-  { code: 'KE', name: 'Swahili', icon: KE },
+  { code: 'KE', name: 'Swahili', icon: CountryFlags.KE },
 ];
 
 export default function Dashboard() {
@@ -66,6 +67,13 @@ export default function Dashboard() {
   const [openCustomLessons, setOpenCustomLessons] = useState(
     Object.fromEntries(userLanguages.map(lang => [lang.code, false]))
   );
+
+  // Add mounting state to prevent hydration mismatch
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Define fetchUserData first
   const fetchUserData = useCallback(async () => {
@@ -124,7 +132,7 @@ export default function Dashboard() {
     if (user) {
       fetchUserData();
     }
-  }, [user]);
+  }, [user, fetchUserData]);
 
   const toggleCustomLesson = (langCode: string) => {
     setOpenCustomLessons(prev => ({
@@ -157,12 +165,12 @@ export default function Dashboard() {
     console.log("Initiate Stripe checkout session");
   };
 
+
   const startCustomLesson = (langCode: string) => {
     const topic = customTopics[langCode];
     if (!topic) return;
     
     // TODO: Navigate to lesson page with custom topic
-    console.log(`Starting custom lesson for ${langCode} about: ${topic}`);
     setOpenCustomLessons(prev => ({
       ...prev,
       [langCode]: false
@@ -178,24 +186,29 @@ export default function Dashboard() {
     router.push('/');
   };
 
+  // Modify the return statement to handle mounting state
+  if (!isMounted) {
+    return <LoadingSpinner />;
+  }
+
   return (
     <div className={`min-h-screen bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]`}>
-      {/* Floating Navigation Bar */}
+      {/* Fixed Navigation Bar */}
       <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-5xl">
-        <div className="backdrop-blur-md rounded-2xl">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center gap-4">
+        <div className="bg-white/70 rounded-full shadow-md">
+          <div className="flex justify-between items-center px-6 py-3">
+            <div className="flex items-center gap-3">
               <Image
-                className="w-16 h-16 rounded-2xl shadow-lg"
+                className="w-10 h-10 rounded-full"
                 src="/logo.svg"
                 alt={t('logo.alt')}
-                width={64}
-                height={64}
+                width={40}
+                height={40}
                 priority
               />
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-[#8B4513] to-[#6D3611] bg-clip-text text-transparent">
+              <span className="text-xl font-semibold text-[#8B4513]">
                 poppa
-              </h1>
+              </span>
             </div>
             
             <div className="flex items-center gap-4">
@@ -208,7 +221,7 @@ export default function Dashboard() {
               
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button className="bg-gradient-to-r from-[#8B4513] to-[#6D3611] text-white hover:opacity-90 shadow-md hover:shadow-lg transition-all duration-300">
+                  <Button className="bg-[#8B4513] text-white px-4 py-2 rounded-full hover:bg-[#6D3611] transition-colors duration-300">
                     {t('navigation.buyCredits')}
                   </Button>
                 </DialogTrigger>
@@ -240,14 +253,16 @@ export default function Dashboard() {
                     <p className="mt-2 text-sm text-[#8B4513]/70">
                       {t('credits.estimatedTime', { minutes: selectedCredits })}
                     </p>
-                    <p className="mt-1 text-base text-[#8B4513]/70">
-                      Cost: ${(selectedCredits * 0.15).toFixed(2)}
-                    </p>
                   </div>
-                  <DialogFooter>
+                  <DialogFooter className="flex items-center justify-between gap-4 sm:justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="text-base font-medium text-[#8B4513]">
+                        {t('credits.cost', { cost: (selectedCredits * 0.15).toFixed(2) })}
+                      </span>
+                    </div>
                     <Button
                       onClick={handleBuyCredits}
-                      className="bg-[#8B4513] text-white hover:bg-[#6D3611]"
+                      className="min-w-[120px] bg-[#8B4513] text-white hover:bg-[#6D3611] transition-colors duration-200"
                     >
                       {t('credits.proceed')}
                     </Button>
@@ -257,14 +272,14 @@ export default function Dashboard() {
               
               <div className="flex items-center gap-2">
                 <Link href="/profile">
-                  <Button variant="ghost" size="sm" className="text-[#8B4513] hover:bg-[#8B4513]/5">
+                  <Button variant="ghost" size="sm" className="text-[#8B4513] hover:bg-[#8B4513]/10 rounded-full">
                     {t('navigation.profile')}
                   </Button>
                 </Link>
                 <Button 
                   size="sm" 
                   variant="ghost" 
-                  className="text-[#8B4513] hover:bg-[#8B4513]/5"
+                  className="text-[#8B4513] hover:bg-[#8B4513]/10 rounded-full"
                   onClick={handleLogout}
                 >
                   {t('navigation.logout')}

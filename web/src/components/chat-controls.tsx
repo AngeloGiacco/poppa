@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Edit, Settings, MessageSquareQuote, AudioLines } from "lucide-react";
+import { MessageSquareQuote } from "lucide-react";
 import { TranscriptDrawer } from "@/components/transcript-drawer";
 
 interface ChatControlsProps {

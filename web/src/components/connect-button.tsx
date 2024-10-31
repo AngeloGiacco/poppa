@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useConnection } from "@/hooks/use-connection";
 import { Loader2, Mic } from "lucide-react";
 import { usePlaygroundState } from "@/hooks/use-playground-state";
+import { useTranslations } from "next-intl";
 
 export function ConnectButton() {
   const { connect, disconnect, shouldConnect } = useConnection();
@@ -12,6 +13,7 @@ export function ConnectButton() {
   const { pgState } = usePlaygroundState();
   const [showAuthDialog, setShowAuthDialog] = useState(false);
   const [initiateConnectionFlag, setInitiateConnectionFlag] = useState(false);
+  const t = useTranslations("Chat.ConnectButton");
 
   const handleConnectionToggle = async () => {
     if (shouldConnect) {
@@ -53,17 +55,17 @@ export function ConnectButton() {
       <Button
         onClick={handleConnectionToggle}
         disabled={connecting || shouldConnect}
-        className="text-sm font-semibold bg-[#8B4513] hover:bg-[#6D3611] text-white rounded-full transition-colors duration-300"
+        className="text-sm font-semibold bg-[#8B4513] hover:bg-[#6D3611] text-white rounded-full transition-colors duration-300 px-6 py-2"
       >
         {connecting || shouldConnect ? (
           <>
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            Connecting
+            {t("connecting")}
           </>
         ) : (
           <>
             <Mic className="mr-2 h-4 w-4" />
-            Connect
+            {t("connect")}
           </>
         )}
       </Button>

@@ -10,7 +10,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import * as CountryFlags from 'country-flag-icons/react/3x2'
 import {languages} from '@/lib/supportedLanguages';
 import { useState } from 'react';
-import { X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { LanguageSelector } from '@/components/LanguageSelector';
 

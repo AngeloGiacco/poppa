@@ -5,11 +5,11 @@ import dynamic from 'next/dynamic';
 import { Link } from '@/i18n/routing';
 import { Footer } from "@/components/Footer";
 import Image from 'next/image';
-import { Button } from "@/components/ui/button";
 import { useTranslations } from 'next-intl';
 import { useEffect } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from '@/i18n/routing';
+import { LoadingSpinner } from "@/components/loading";
 
 const LoginForm = dynamic(() => import('@/components/LoginForm'), { ssr: false });
 
@@ -25,7 +25,7 @@ export default function Login() {
   }, [user, isLoading, router]);
 
   if (isLoading) {
-    return <div>Loading...</div>; // Replace with your loading component
+    return <LoadingSpinner />;
   }
 
   return (

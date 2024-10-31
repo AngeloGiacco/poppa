@@ -1,6 +1,5 @@
 "use client"
 
-import { Inter } from 'next/font/google';
 import { Link } from '@/i18n/routing';
 import { Footer } from '@/components/Footer';
 import Image from "next/image";

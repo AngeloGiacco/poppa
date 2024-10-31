@@ -5,7 +5,7 @@ import {
   RoomAudioRenderer,
   StartAudio,
 } from "@livekit/components-react";
-import { Chat } from "@/components/chat";
+import { Chat } from "@/components/Chat";
 import { Transcript } from "@/components/transcript";
 import { useConnection } from "@/hooks/use-connection";
 import { AgentProvider } from "@/hooks/use-agent";
@@ -22,11 +22,11 @@ export function RoomComponent() {
       token={token}
       connect={shouldConnect}
       audio={true}
-      className="flex flex-col md:grid md:grid-cols-[1fr_360px] lg:grid-cols-[300px_1fr_300px] xl:grid-cols-[360px_1fr_360px] flex-grow overflow-hidden border-l border-r border-b rounded-b-md"
+      className="flex flex-col md:grid md:grid-cols-2 flex-grow overflow-hidden border-l border-r border-b rounded-b-md"
       style={{ "--lk-bg": "white" } as React.CSSProperties}
     >
       <AgentProvider>
-        <div className="flex flex-col justify-center w-full max-w-3xl mx-auto">
+        <div className="flex flex-col justify-center w-full relative">
           <Chat />
         </div>
         <div className="hidden md:flex flex-col h-full overflow-y-hidden border-l relative">
