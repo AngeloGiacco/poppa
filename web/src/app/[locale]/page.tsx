@@ -21,7 +21,7 @@ export default function Home() {
   const year = 2024;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]">
       {/* Navigation - Mobile improvements */}
       <div className="absolute top-0 left-0 right-0 px-4 sm:px-6 py-4 backdrop-blur-sm bg-[#FFF8E1]/50">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
@@ -47,7 +47,7 @@ export default function Home() {
       </div>
 
       {/* Main content - Mobile improvements */}
-      <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 pt-40 sm:pt-32 pb-16">
+      <motion.div className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 pt-40 sm:pt-32 pb-16">
         <motion.header className="text-center max-w-3xl mx-auto mb-12 sm:mb-20">
           {showAnnouncement && (
             <motion.div className="mb-8">

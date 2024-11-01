@@ -13,7 +13,7 @@ export default function FounderMessage() {
   const t = useTranslations('FounderMessagePage');
 
   return (
-    <div className={`min-h-screen flex flex-col bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]`}>
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]">
       {/* Navigation */}
       <div className="absolute top-0 left-0 right-0 px-6 py-4 backdrop-blur-sm bg-[#FFF8E1]/50">
         <Button variant="ghost" asChild className="text-[#8B4513] hover:bg-transparent hover:text-[#6D3611] transition-colors duration-300">

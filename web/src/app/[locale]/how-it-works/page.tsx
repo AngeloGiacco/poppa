@@ -12,7 +12,7 @@ export default function HowItWorks() {
   const t = useTranslations('HowItWorksPage');
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]">
       {/* Navigation */}
       <div className="absolute top-0 left-0 right-0 px-6 py-4 backdrop-blur-sm bg-[#FFF8E1]/50 z-50">
         <div className="max-w-7xl mx-auto">
@@ -26,7 +26,7 @@ export default function HowItWorks() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="max-w-7xl mx-auto px-6 pt-32 pb-16"
+        className="flex-grow max-w-7xl mx-auto px-6 pt-32 pb-16"
       >
         {/* Header */}
         <motion.header className="text-center max-w-3xl mx-auto mb-20">
