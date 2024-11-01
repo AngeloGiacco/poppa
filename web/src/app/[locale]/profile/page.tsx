@@ -2,7 +2,7 @@
 
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from '@/i18n/routing';
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import { supabaseBrowserClient } from '@/lib/supabase-browser';
 import { Tables } from '@/types/database.types';
 import { motion } from "framer-motion";
@@ -15,7 +15,15 @@ export default function Profile() {
   const [userData, setUserData] = useState<Tables<'users'> | null>(null);
   const t = useTranslations('ProfilePage');
 
-  const fetchUserData = useCallback(async () => {
+  useEffect(() => {
+    if (!user) {
+      router.push('/login');
+    } else {
+      fetchUserData();
+    }
+  }, [user, router]);
+
+  const fetchUserData = async () => {
     if (user) {
       const { data, error } = await supabaseBrowserClient
         .from('users')
@@ -29,15 +37,7 @@ export default function Profile() {
         setUserData(data);
       }
     }
-  }, [user]);
-
-  useEffect(() => {
-    if (!user) {
-      router.push('/login');
-    } else {
-      fetchUserData();
-    }
-  }, [user, router, fetchUserData]);
+  };
 
   if (!user || !userData) return null;
 

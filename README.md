@@ -47,7 +47,7 @@ This directory houses the web frontend, built with Next.js.
 1. Install dependencies: `pnpm install`
 2. Load the environment variables:
    - On macOS and Linux: `source .env.local`
-   - On Windows: `set -a; . .env.local; set +a`
+   - On Windows: `set -a; . .env.local; set +a` or `Get-Content .env.local | ForEach-Object { if ($_ -match '^([^=]+)=(.*)$') { [System.Environment]::SetEnvironmentVariable($Matches[1], $Matches[2]) } }`
 3. Run the agent in development mode: `pnpm dev`
 
 ### Web Frontend Setup

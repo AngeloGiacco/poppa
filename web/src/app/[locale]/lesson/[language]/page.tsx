@@ -9,7 +9,6 @@ import { Link } from '@/i18n/routing';
 import { languages } from "@/lib/supportedLanguages";
 import { notFound } from "next/navigation";
 import { useTranslations } from 'next-intl';
-import { useRouter } from '@/i18n/routing';
 import { useState, useEffect } from 'react';
 
 // Add type for page props
@@ -21,7 +20,6 @@ interface LessonPageProps {
 
 export default function LessonPage({ params }: LessonPageProps) {
   const t = useTranslations();
-  const router = useRouter();
   const [isClient, setIsClient] = useState(false);
   const language = languages.find(lang => lang.code.toLowerCase() === params.language.toLowerCase());
   
@@ -32,10 +30,6 @@ export default function LessonPage({ params }: LessonPageProps) {
   if (!language) {
     notFound();
   }
-
-  const handleBackToDashboard = () => {
-    router.push('/dashboard');
-  };
 
   if (!isClient) {
     return null;
@@ -59,12 +53,12 @@ export default function LessonPage({ params }: LessonPageProps) {
                 {t('HomePage.hero.brandName')}
               </span>
             </div>
-            <button 
-              onClick={handleBackToDashboard}
+            <Link 
+              href="/dashboard"
               className="text-sm bg-[#8B4513] text-white px-4 py-2 rounded-full hover:bg-[#6D3611] transition-colors duration-300"
             >
               {t('LessonPage.backToDashboard')}
-            </button>
+            </Link>
           </div>
         </div>
       </nav>
