@@ -22,33 +22,33 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]">
-      {/* Navigation */}
-      <div className="absolute top-0 left-0 right-0 px-6 py-4 backdrop-blur-sm bg-[#FFF8E1]/50">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <motion.nav className="flex space-x-6">
-            <Button variant="ghost" asChild className="text-[#8B4513] hover:bg-transparent hover:text-[#6D3611] transition-colors duration-300">
+      {/* Navigation - Mobile improvements */}
+      <div className="absolute top-0 left-0 right-0 px-4 sm:px-6 py-4 backdrop-blur-sm bg-[#FFF8E1]/50">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
+          <motion.nav className="flex space-x-4 sm:space-x-6">
+            <Button variant="ghost" asChild className="text-sm sm:text-base text-[#8B4513] hover:bg-transparent hover:text-[#6D3611] transition-colors duration-300">
               <Link href="/pricing">{t('navigation.pricing')}</Link>
             </Button>
-            <Button variant="ghost" asChild className="text-[#8B4513] hover:bg-transparent hover:text-[#6D3611] transition-colors duration-300">
+            <Button variant="ghost" asChild className="text-sm sm:text-base text-[#8B4513] hover:bg-transparent hover:text-[#6D3611] transition-colors duration-300">
               <Link href="/how-it-works">{t('navigation.howItWorks')}</Link>
             </Button>
           </motion.nav>
           
-          <motion.nav className="flex items-center space-x-4">
+          <motion.nav className="flex items-center space-x-2 sm:space-x-4">
             <LanguageSelector />
-            <Button variant="ghost" asChild className="text-[#8B4513] hover:bg-transparent hover:text-[#6D3611]">
+            <Button variant="ghost" asChild className="text-sm sm:text-base text-[#8B4513] hover:bg-transparent hover:text-[#6D3611]">
               <Link href="/login">{t('navigation.login')}</Link>
             </Button>
-            <Button asChild className="bg-[#8B4513] text-white hover:bg-[#6D3611] rounded-full px-6">
+            <Button asChild className="text-sm sm:text-base bg-[#8B4513] text-white hover:bg-[#6D3611] rounded-full px-4 sm:px-6">
               <Link href="/signup">{t('navigation.getStarted')}</Link>
             </Button>
           </motion.nav>
         </div>
       </div>
 
-      {/* Main content */}
-      <motion.div className="max-w-7xl mx-auto px-6 pt-32 pb-16">
-        <motion.header className="text-center max-w-3xl mx-auto mb-20">
+      {/* Main content - Mobile improvements */}
+      <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 pt-40 sm:pt-32 pb-16">
+        <motion.header className="text-center max-w-3xl mx-auto mb-12 sm:mb-20">
           {showAnnouncement && (
             <motion.div className="mb-8">
               <Link href="/founder-message" 
@@ -59,29 +59,29 @@ export default function Home() {
             </motion.div>
           )}
           
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="flex items-center gap-3">
+          <div className="flex items-center justify-center gap-3 sm:gap-4 mb-6">
+            <div className="flex items-center gap-2 sm:gap-3">
               <Image
-                className="w-16 h-16 rounded-2xl shadow-lg"
+                className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl shadow-lg"
                 src="/logo.svg"
                 alt="Poppa logo"
                 width={64}
                 height={64}
                 priority
               />
-              <span className="text-3xl font-bold text-[#8B4513]">{t('hero.brandName')}</span>
+              <span className="text-2xl sm:text-3xl font-bold text-[#8B4513]">{t('hero.brandName')}</span>
             </div>
           </div>
-          <h1 className="text-5xl sm:text-6xl font-bold text-[#8B4513] tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#8B4513] tracking-tight mb-4 sm:mb-6">
             {t('hero.title')}
           </h1>
-          <p className="text-xl text-[#5D4037]/80 leading-relaxed">
+          <p className="text-lg sm:text-xl text-[#5D4037]/80 leading-relaxed px-4 sm:px-0">
             {t('hero.subtitle')}
           </p>
         </motion.header>
 
-        {/* Refined cards layout */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        {/* Cards layout - Mobile improvements */}
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start">
           <motion.div className="space-y-6">
             <Card className="bg-white/50 backdrop-blur-sm shadow-sm border-0 rounded-2xl overflow-hidden">
               <CardContent className="p-8">

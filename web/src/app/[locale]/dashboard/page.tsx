@@ -194,34 +194,35 @@ export default function Dashboard() {
   return (
     <div className={`min-h-screen bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]`}>
       {/* Fixed Navigation Bar */}
-      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-5xl">
+      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-5xl">
         <div className="bg-white/70 rounded-full shadow-md">
-          <div className="flex justify-between items-center px-6 py-3">
-            <div className="flex items-center gap-3">
+          <div className="flex justify-between items-center px-3 sm:px-6 py-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <Image
-                className="w-10 h-10 rounded-full"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full"
                 src="/logo.svg"
                 alt={t('logo.alt')}
                 width={40}
                 height={40}
                 priority
               />
-              <span className="text-xl font-semibold text-[#8B4513]">
+              <span className="text-lg sm:text-xl font-semibold text-[#8B4513]">
                 poppa
               </span>
             </div>
             
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 sm:gap-4">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
+                className="hidden sm:block"
               >
                 <CreditsBanner userData={userData} />
               </motion.div>
               
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button className="bg-[#8B4513] text-white px-4 py-2 rounded-full hover:bg-[#6D3611] transition-colors duration-300">
+                  <Button className="bg-[#8B4513] text-white px-3 sm:px-4 py-2 rounded-full hover:bg-[#6D3611] transition-colors duration-300 text-sm sm:text-base">
                     {t('navigation.buyCredits')}
                   </Button>
                 </DialogTrigger>
@@ -270,19 +271,25 @@ export default function Dashboard() {
                 </DialogContent>
               </Dialog>
               
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1 sm:gap-2">
                 <Link href="/profile">
-                  <Button variant="ghost" size="sm" className="text-[#8B4513] hover:bg-[#8B4513]/10 rounded-full">
-                    {t('navigation.profile')}
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className="text-[#8B4513] hover:bg-[#8B4513]/10 rounded-full px-2 sm:px-4"
+                  >
+                    <span className="hidden sm:inline">{t('navigation.profile')}</span>
+                    <span className="sm:hidden">👤</span>
                   </Button>
                 </Link>
                 <Button 
                   size="sm" 
                   variant="ghost" 
-                  className="text-[#8B4513] hover:bg-[#8B4513]/10 rounded-full"
+                  className="text-[#8B4513] hover:bg-[#8B4513]/10 rounded-full px-2 sm:px-4"
                   onClick={handleLogout}
                 >
-                  {t('navigation.logout')}
+                  <span className="hidden sm:inline">{t('navigation.logout')}</span>
+                  <span className="sm:hidden">↪️</span>
                 </Button>
               </div>
             </div>
@@ -291,7 +298,7 @@ export default function Dashboard() {
       </nav>
 
       {/* Main Content */}
-      <main className="pt-32 px-6 pb-24 max-w-7xl mx-auto">
+      <main className="pt-24 sm:pt-32 px-3 sm:px-6 pb-24 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -367,7 +374,7 @@ export default function Dashboard() {
               </AlertDialogContent>
             </AlertDialog>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
               {userLanguages.map((lang) => (
                 <motion.div
                   whileHover={{ scale: 1.01 }}
@@ -375,8 +382,8 @@ export default function Dashboard() {
                   key={lang.code}
                 >
                   <Card className="bg-white/70 backdrop-blur-sm shadow-md">
-                    <CardContent className="p-6">
-                      <div className="flex items-center justify-between mb-6">
+                    <CardContent className="p-4 sm:p-6">
+                      <div className="flex items-center justify-between mb-4 sm:mb-6">
                         <div className="flex items-center gap-3">
                           <div className="p-2 bg-[#8B4513]/5 rounded-xl">
                             <lang.icon className="w-8 h-8" />
@@ -395,9 +402,9 @@ export default function Dashboard() {
                         </Button>
                       </div>
 
-                      <div className="flex gap-3">
-                        <Link href={`/lesson/${lang.code.toLowerCase()}`}>
-                          <Button className="flex-1 bg-[#8B4513] text-white hover:bg-[#6D3611]">
+                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+                        <Link href={`/lesson/${lang.code.toLowerCase()}`} className="w-full sm:w-auto">
+                          <Button className="w-full bg-[#8B4513] text-white hover:bg-[#6D3611]">
                             {t('languages.card.continueButton')}
                           </Button>
                         </Link>
@@ -405,7 +412,7 @@ export default function Dashboard() {
                           <DialogTrigger asChild>
                             <Button
                               variant="outline"
-                              className="flex-1 border-[#8B4513] text-[#8B4513] hover:bg-[#8B4513]/5"
+                              className="w-full sm:w-auto border-[#8B4513] text-[#8B4513] hover:bg-[#8B4513]/5"
                             >
                               {t('languages.card.customButton')}
                             </Button>
