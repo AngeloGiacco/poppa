@@ -8,7 +8,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
 import { languages } from '@/lib/supportedLanguages';
-import { supabaseBrowserClient } from '@/lib/supabase-browser';
 import { useRouter } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
@@ -61,19 +60,22 @@ export default function SignUp() {
         },
       };
 
-      // Console log the data being sent
-      console.log('Data being sent:', signUpData);
+      // Send the request to our API route instead of using supabase browser client
+      const response = await fetch('/api/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(signUpData),
+      });
 
-      // Start a Supabase transaction
-      
-      const { data, error } = await supabaseBrowserClient.auth.signUp(signUpData);
+      const result = await response.json();
 
-      // Console log the response
-      console.log('Supabase response:', { data, error });
+      if (!response.ok) {
+        throw new Error(result.error || 'Signup failed');
+      }
 
-      if (error) throw error;
-
-      // Redirect to a success page or dashboard
+      // Redirect to success page
       router.push('/signup-success');
     } catch (err) {
       setError(t('errors.generic'));
