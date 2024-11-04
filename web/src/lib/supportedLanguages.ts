@@ -1,7 +1,7 @@
 import { GB, ES, FR, DE, IT, PT, RU, CN, JP, KR, NL, PL, SE, TR, SA, IN, TH, VN, GR, RO, HU, CZ, DK, FI, NO, HR, BG, SK, ID, NG, KE, IL, UA, IR, PH, PK } from 'country-flag-icons/react/3x2';
 
-export const languages = [
-  { code: 'GB', name: 'English', native_name: 'English', icon: GB, locale: 'en' },
+export const interface_locales = [
+  { code: 'GB', name: 'English', native_name: 'English (UK)', icon: GB, locale: 'en' },
   { code: 'CN', name: 'Chinese', native_name: '中文', icon: CN, locale: 'zh' },
   { code: 'JP', name: 'Japanese', native_name: '日本語', icon: JP, locale: 'ja' },
   { code: 'KR', name: 'Korean', native_name: '한국어', icon: KR, locale: 'ko' },
@@ -37,4 +37,43 @@ export const languages = [
   { code: 'IR', name: 'Farsi', native_name: 'فارسی', icon: IR, locale: 'fa' },
   { code: 'PH', name: 'Tagalog', native_name: 'Tagalog', icon: PH, locale: 'tl' },
   { code: 'PK', name: 'Urdu', native_name: 'اردو', icon: PK, locale: 'ur' }
+];
+
+export const learnable_languages = [
+  { code: 'GB', name: 'English', native_name: 'English', icon: GB, iso639: 'eng' },
+  { code: 'CN', name: 'Chinese', native_name: '中文', icon: CN, iso639: 'zho' },
+  { code: 'JP', name: 'Japanese', native_name: '日本語', icon: JP, iso639: 'jpn' },
+  { code: 'KR', name: 'Korean', native_name: '한국어', icon: KR, iso639: 'kor' },
+  { code: 'IN', name: 'Hindi', native_name: 'हिन्दी', icon: IN, iso639: 'hin' },
+  { code: 'ID', name: 'Bahasa', native_name: 'Bahasa Indonesia', icon: ID, iso639: 'ind' },
+  { code: 'TH', name: 'Thai', native_name: 'ไทย', icon: TH, iso639: 'tha' },
+  { code: 'VN', name: 'Vietnamese', native_name: 'Tiếng Việt', icon: VN, iso639: 'vie' },
+  { code: 'NG', name: 'Yoruba', native_name: 'Yorùbá', icon: NG, iso639: 'yor' },
+  { code: 'KE', name: 'Swahili', native_name: 'Kiswahili', icon: KE, iso639: 'swa' },
+  { code: 'ES', name: 'Spanish', native_name: 'Español', icon: ES, iso639: 'spa' },
+  { code: 'FR', name: 'French', native_name: 'Français', icon: FR, iso639: 'fra' },
+  { code: 'DE', name: 'German', native_name: 'Deutsch', icon: DE, iso639: 'deu' },
+  { code: 'IT', name: 'Italian', native_name: 'Italiano', icon: IT, iso639: 'ita' },
+  { code: 'PT', name: 'Portuguese', native_name: 'Português', icon: PT, iso639: 'por' },
+  { code: 'TR', name: 'Turkish', native_name: 'Türkçe', icon: TR, iso639: 'tur' },
+  { code: 'SA', name: 'Arabic', native_name: 'العربية', icon: SA, iso639: 'ara' },
+  { code: 'GR', name: 'Greek', native_name: 'Ελληνικά', icon: GR, iso639: 'ell' },
+  { code: 'RU', name: 'Russian', native_name: 'Русский', icon: RU, iso639: 'rus' },
+  { code: 'NL', name: 'Dutch', native_name: 'Nederlands', icon: NL, iso639: 'nld' },
+  { code: 'PL', name: 'Polish', native_name: 'Polski', icon: PL, iso639: 'pol' },
+  { code: 'SE', name: 'Swedish', native_name: 'Svenska', icon: SE, iso639: 'swe' },
+  { code: 'IL', name: 'Hebrew', native_name: 'עברית', icon: IL, iso639: 'heb' },
+  { code: 'RO', name: 'Romanian', native_name: 'Română', icon: RO, iso639: 'ron' },
+  { code: 'HU', name: 'Hungarian', native_name: 'Magyar', icon: HU, iso639: 'hun' },
+  { code: 'CZ', name: 'Czech', native_name: 'Čeština', icon: CZ, iso639: 'ces' },
+  { code: 'DK', name: 'Danish', native_name: 'Dansk', icon: DK, iso639: 'dan' },
+  { code: 'FI', name: 'Finnish', native_name: 'Suomi', icon: FI, iso639: 'fin' },
+  { code: 'NO', name: 'Norwegian', native_name: 'Norsk', icon: NO, iso639: 'nor' },
+  { code: 'HR', name: 'Croatian', native_name: 'Hrvatski', icon: HR, iso639: 'hrv' },
+  { code: 'BG', name: 'Bulgarian', native_name: 'Български', icon: BG, iso639: 'bul' },
+  { code: 'SK', name: 'Slovak', native_name: 'Slovenčina', icon: SK, iso639: 'slk' },
+  { code: 'UA', name: 'Ukrainian', native_name: 'Українська', icon: UA, iso639: 'ukr' },
+  { code: 'IR', name: 'Farsi', native_name: 'فارسی', icon: IR, iso639: 'fas' },
+  { code: 'PH', name: 'Tagalog', native_name: 'Tagalog', icon: PH, iso639: 'tgl' },
+  { code: 'PK', name: 'Urdu', native_name: 'اردو', icon: PK, iso639: 'urd' }
 ];

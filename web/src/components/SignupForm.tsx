@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
-import { languages } from '@/lib/supportedLanguages';
+import { interface_locales } from '@/lib/supportedLanguages';
 import { useRouter } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import { useLocale } from 'next-intl';
@@ -20,7 +20,7 @@ export default function SignUp() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [nativeLanguage, setNativeLanguage] = useState(() => {
-    const currentLang = languages.find(lang => lang.locale === locale);
+    const currentLang = interface_locales.find(lang => lang.locale === locale);
     return currentLang?.code || '';
   });
   const [birthDay, setBirthDay] = useState('');
@@ -168,7 +168,7 @@ export default function SignUp() {
             <SelectValue placeholder={t('selectLanguage')} />
           </SelectTrigger>
           <SelectContent className="bg-white">
-            {languages.sort((a, b) => a.native_name.localeCompare(b.native_name)).map((lang) => (
+            {interface_locales.sort((a, b) => a.native_name.localeCompare(b.native_name)).map((lang) => (
               <SelectItem 
                 key={lang.code} 
                 value={lang.code}

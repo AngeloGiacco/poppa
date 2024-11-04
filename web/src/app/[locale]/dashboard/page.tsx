@@ -9,7 +9,7 @@ import * as CountryFlags from 'country-flag-icons/react/3x2';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from '@/i18n/routing';
 import { useEffect } from 'react';
-import { languages as availableLanguages } from '@/lib/supportedLanguages';
+import { learnable_languages } from '@/lib/supportedLanguages';
 import Image from 'next/image';
 import {
   Select,
@@ -328,7 +328,7 @@ export default function Dashboard() {
                     <SelectValue placeholder={t('languages.dialog.selectPlaceholder')} />
                   </SelectTrigger>
                   <SelectContent className="bg-white/95 border-[#8B4513]/20 shadow-lg">
-                    {availableLanguages
+                    {learnable_languages
                       .filter(lang => !userLanguages.some(userLang => userLang.code === lang.code))
                       .map((lang) => (
                         <SelectItem 
@@ -355,7 +355,7 @@ export default function Dashboard() {
                   </AlertDialogTitle>
                   <AlertDialogDescription className="text-[#8B4513]/70">
                     {t('languages.startLearning.description', {
-                      language: availableLanguages.find(lang => lang.code === selectedLanguage)?.name
+                      language: learnable_languages.find(lang => lang.code === selectedLanguage)?.name
                     })}
                   </AlertDialogDescription>
                 </AlertDialogHeader>

@@ -6,7 +6,7 @@ import { RoomComponent } from "@/components/room-component";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import { Link } from '@/i18n/routing';
-import { languages } from "@/lib/supportedLanguages";
+import { learnable_languages } from "@/lib/supportedLanguages";
 import { notFound } from "next/navigation";
 import { useTranslations } from 'next-intl';
 import { useState, useEffect } from 'react';
@@ -21,7 +21,7 @@ interface LessonPageProps {
 export default function LessonPage({ params }: LessonPageProps) {
   const t = useTranslations();
   const [isClient, setIsClient] = useState(false);
-  const language = languages.find(lang => lang.code.toLowerCase() === params.language.toLowerCase());
+  const language = learnable_languages.find(lang => lang.code.toLowerCase() === params.language.toLowerCase());
   
   useEffect(() => {
     setIsClient(true);

@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/Footer"
 import { Card, CardContent } from "@/components/ui/card";
 import * as CountryFlags from 'country-flag-icons/react/3x2'
-import {languages} from '@/lib/supportedLanguages';
+import { learnable_languages } from '@/lib/supportedLanguages';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { LanguageSelector } from '@/components/LanguageSelector';
@@ -87,13 +87,13 @@ export default function Home() {
               <CardContent className="p-8">
                 <h2 className="text-2xl font-semibold text-[#8B4513] mb-4">{t('languagesSection.title')}</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                  {languages.map((lang) => {
-                    const FlagIcon = CountryFlags[lang.code as keyof typeof CountryFlags];
+                  {learnable_languages.map((lang) => {
+                    const FlagIcon = lang.icon;
                     return (
-                      <div key={lang.code} className="flex items-center space-x-3 group">
+                      <div key={lang.name} className="flex items-center space-x-3 group">
                         <FlagIcon className="w-6 h-4 transition-transform duration-300 group-hover:scale-110" />
                         <span className="text-[#5D4037]/80 group-hover:text-[#8B4513] transition-colors duration-300">
-                          {tCommon(`languages.${lang.code}`)}
+                          {tCommon(`languages.${lang.iso639}`)}
                         </span>
                       </div>
                     );

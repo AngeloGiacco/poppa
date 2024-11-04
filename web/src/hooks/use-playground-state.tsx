@@ -16,7 +16,7 @@ import {
 } from "@/data/playground-state";
 import { playgroundStateHelpers } from "@/lib/playground-state-helpers";
 
-import { Preset, defaultPresets } from "@/data/presets";
+import { Preset, defaultPresets, PresetGroup } from "@/data/presets";
 
 const LS_OPENAI_API_KEY_NAME = "OPENAI_API_KEY";
 const LS_USER_PRESETS_KEY = "PG_USER_PRESETS";
@@ -187,7 +187,30 @@ export const PlaygroundStateProvider = ({
 
     dispatch({ type: "SET_USER_PRESETS", payload: userPresets });
 
-    // Read the URL
+    // Extract preset ID from URL path
+    const pathParts = window.location.pathname.split('/');
+    const presetId = pathParts[pathParts.length - 1];
+
+    if (presetId) {
+      // Check if it's a default preset
+      const defaultPreset = playgroundStateHelpers
+        .getDefaultPresets()
+        .find((preset) => preset.id === presetId);
+
+      if (defaultPreset) {
+        dispatch({ type: "SET_SELECTED_PRESET_ID", payload: defaultPreset.id });
+        return;
+      }
+
+      // Check if it's a user preset
+      const userPreset = userPresets.find((preset : Preset) => preset.id === presetId);
+      if (userPreset) {
+        dispatch({ type: "SET_SELECTED_PRESET_ID", payload: userPreset.id });
+        return;
+      }
+    }
+
+    // Fallback to URL params if no preset found in path
     const urlData = playgroundStateHelpers.decodeFromURLParams(
       window.location.search,
     );
@@ -222,6 +245,46 @@ export const PlaygroundStateProvider = ({
 
       // Clear the URL for non-default presets
       window.history.replaceState({}, document.title, window.location.pathname);
+    }
+
+    // Extract language and native language from URL
+    const params = new URLSearchParams(window.location.search);
+    const nativeLanguage = params.get('native') || 'en';
+    const targetLanguage = window.location.pathname.split('/').pop()?.toUpperCase() || '';
+
+    if (targetLanguage) {
+      // Create language-specific instructions
+      const languageInstructions = defaultPresets
+        .find(preset => preset.id === 'ke')?.instructions
+        .replace('[Target Language]', targetLanguage)
+        .replace('[Base Language]', nativeLanguage);
+
+      if (languageInstructions) {
+        dispatch({ 
+          type: "SET_INSTRUCTIONS", 
+          payload: languageInstructions 
+        });
+
+        // Create a custom preset for this language session
+        const languagePreset: Preset = {
+          id: `language-${targetLanguage.toLowerCase()}`,
+          name: `${targetLanguage} Tutor`,
+          description: `A language tutor who teaches ${targetLanguage} using the thinking method.`,
+          instructions: languageInstructions,
+          sessionConfig: defaultSessionConfig,
+          defaultGroup: PresetGroup.FUNCTIONALITY,
+        };
+
+        dispatch({ 
+          type: "SAVE_USER_PRESET", 
+          payload: languagePreset 
+        });
+
+        dispatch({ 
+          type: "SET_SELECTED_PRESET_ID", 
+          payload: languagePreset.id 
+        });
+      }
     }
   }, []);
 

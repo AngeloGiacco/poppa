@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { languages } from '@/lib/supportedLanguages'
+import { interface_locales } from '@/lib/supportedLanguages'
 import { usePathname } from '@/i18n/routing'
 import * as CountryFlags from 'country-flag-icons/react/3x2'
 import { useLocale } from 'next-intl'
@@ -17,7 +17,7 @@ export function LanguageSelector() {
   const pathname = usePathname()
   const router = useRouter()
   const locale = useLocale()
-  const currentLang = languages.find(lang => lang.locale === locale)
+  const currentLang = interface_locales.find(lang => lang.locale === locale)
 
   const handleLanguageChange = (newLocale: string) => {
     router.replace(pathname, { locale: newLocale })
@@ -35,7 +35,7 @@ export function LanguageSelector() {
         align="end" 
         className="max-h-[400px] overflow-y-auto w-[250px]"
       >
-        {[...languages].sort((a, b) => a.name.localeCompare(b.name)).map((lang) => (
+        {[...interface_locales].sort((a, b) => a.name.localeCompare(b.name)).map((lang) => (
           <DropdownMenuItem
             key={lang.locale}
             onClick={() => handleLanguageChange(lang.locale)}
