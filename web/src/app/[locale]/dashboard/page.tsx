@@ -50,7 +50,7 @@ const userLanguages = [
 ];
 
 export default function Dashboard() {
-  const { user, logout } = useAuth();
+  const { user, logout, userProfile } = useAuth();
   const router = useRouter();
   const t = useTranslations('DashboardPage');
   const tCommon = useTranslations('common');
@@ -403,7 +403,10 @@ export default function Dashboard() {
                       </div>
 
                       <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-                        <Link href={`/lesson/${lang.code.toLowerCase()}`} className="w-full sm:w-auto">
+                        <Link 
+                          href={`/lesson/${lang.code.toLowerCase()}?native=${encodeURIComponent(userProfile?.native_language || 'en')}`} 
+                          className="w-full sm:w-auto"
+                        >
                           <Button className="w-full bg-[#8B4513] text-white hover:bg-[#6D3611]">
                             {t('languages.card.continueButton')}
                           </Button>
