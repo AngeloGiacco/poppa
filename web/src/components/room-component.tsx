@@ -9,13 +9,24 @@ import { Chat } from "@/components/Chat";
 import { Transcript } from "@/components/transcript";
 import { useConnection } from "@/hooks/use-connection";
 import { AgentProvider } from "@/hooks/use-agent";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
+import { usePlaygroundState } from "@/hooks/use-playground-state";
 
-export function RoomComponent() {
+interface RoomComponentProps {
+  instruction: string;
+}
+
+export function RoomComponent({ instruction }: RoomComponentProps) {
   const { shouldConnect, wsUrl, token } = useConnection();
+  const { dispatch } = usePlaygroundState();
   const transcriptContainerRef = useRef<HTMLDivElement>(null);
   const scrollButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    dispatch({ type: "SET_INSTRUCTIONS", payload: instruction });
+  }, [instruction, dispatch]);
+
   return (
     <LiveKitRoom
       serverUrl={wsUrl}
@@ -31,7 +42,7 @@ export function RoomComponent() {
         </div>
         <div className="hidden md:flex flex-col h-full overflow-y-hidden border-l relative">
           <div
-            className="flex-grow overflow-y-auto"
+            className="h-full overflow-y-auto"
             ref={transcriptContainerRef}
           >
             <Transcript

@@ -366,5 +366,10 @@
         "description": "The AI agent has unexpectedly left the conversation. Please try again."
       }
     }
+  },
+  "SignupSuccess": {
+    "title": "Check your email",
+    "description": "We've sent you an email with a verification link. Please verify your email address to complete your registration.",
+    "backToLogin": "Back to Login"
   }
 }

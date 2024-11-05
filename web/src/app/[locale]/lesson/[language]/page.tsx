@@ -3,37 +3,55 @@
 import "./style.css";
 import { Header } from "@/components/header";
 import { RoomComponent } from "@/components/room-component";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import { Link } from '@/i18n/routing';
 import { learnable_languages } from "@/lib/supportedLanguages";
-import { notFound } from "next/navigation";
 import { useTranslations } from 'next-intl';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
+import { useRouter } from '@/i18n/routing';
+import { LoadingSpinner } from "@/components/loading";
+import { default_instruction } from '@/app/api/generate-lesson/route';
+import { useSearchParams } from 'next/navigation';
 
-// Add type for page props
 interface LessonPageProps {
-  params: {
+  params: Promise<{
     language: string;
-  }
+  }>;
 }
 
 export default function LessonPage({ params }: LessonPageProps) {
   const t = useTranslations();
-  const [isClient, setIsClient] = useState(false);
-  const language = learnable_languages.find(lang => lang.code.toLowerCase() === params.language.toLowerCase());
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(true);
+  const searchParams = useSearchParams();
   
+  const unwrappedParams = use(params);
+  
+  const language = learnable_languages.find(
+    lang => lang.code.toLowerCase() === unwrappedParams.language.toLowerCase()
+  );
+
   useEffect(() => {
-    setIsClient(true);
+    setIsLoading(false);
   }, []);
 
-  if (!language) {
-    notFound();
+  if (!language || isLoading) {
+    return <LoadingSpinner />;
   }
 
-  if (!isClient) {
-    return null;
-  }
+  const customTopic = searchParams.get('topic');
+
+  const instruction = default_instruction + 
+    `\n\nThe student is learning Swahili and speaks English. You should talk to them in English and introduce vocab and phrases in Swahili.` +
+    (customTopic ? `\n\nThe student has requested to learn about: ${customTopic}` : '') +
+    `\n\nThe student has previously learned:
+    - Verbs start with ku- (like kulala - to sleep, kula - to eat, kucheka - to laugh, kutaka - to want)
+    - Present tense formation with ni- (I) + na- (present) + verb stem
+    - Examples: ninalala (I sleep), ninacheka (I laugh), ninataka (I want)
+    - Word sasa (now)
+    - Can combine verbs like ninataka kulala (I want to sleep)`;
+
+  console.log('Instruction:', instruction);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]">
@@ -67,7 +85,7 @@ export default function LessonPage({ params }: LessonPageProps) {
       <main className="pt-32 px-6 pb-24 max-w-7xl mx-auto">
         <div className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-md overflow-hidden">
           <Header language={language.name} />
-          <RoomComponent />
+          <RoomComponent instruction={instruction} />
         </div>
       </main>
 
@@ -90,7 +108,6 @@ export default function LessonPage({ params }: LessonPageProps) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 hover:text-[#8B4513] transition-colors duration-300"
             >
-              <GitHubLogoIcon className="h-4 w-4" />
               {t('LessonPage.footer.viewSource')}
             </Link>
             <span>•</span>

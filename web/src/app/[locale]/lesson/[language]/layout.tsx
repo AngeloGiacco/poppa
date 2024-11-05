@@ -28,19 +28,17 @@ export default function LessonLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={publicSans.className}>
-        <ProtectedRoute>
-          <PlaygroundStateProvider>
-            <ConnectionProvider>
-              <TooltipProvider>
-                {children}
-                <Toaster />
-              </TooltipProvider>
-            </ConnectionProvider>
-          </PlaygroundStateProvider>
-        </ProtectedRoute>
-      </body>
-    </html>
+    <div className={publicSans.className}>
+      <ProtectedRoute>
+        <PlaygroundStateProvider>
+          <ConnectionProvider>
+            <TooltipProvider>
+              {children}
+              <Toaster />
+            </TooltipProvider>
+          </ConnectionProvider>
+        </PlaygroundStateProvider>
+      </ProtectedRoute>
+    </div>
   );
 }

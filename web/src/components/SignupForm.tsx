@@ -21,7 +21,7 @@ export default function SignUp() {
   const [password, setPassword] = useState('');
   const [nativeLanguage, setNativeLanguage] = useState(() => {
     const currentLang = interface_locales.find(lang => lang.locale === locale);
-    return currentLang?.code || '';
+    return currentLang?.native_name || '';
   });
   const [birthDay, setBirthDay] = useState('');
   const [birthMonth, setBirthMonth] = useState('');
@@ -171,7 +171,7 @@ export default function SignUp() {
             {interface_locales.sort((a, b) => a.native_name.localeCompare(b.native_name)).map((lang) => (
               <SelectItem 
                 key={lang.code} 
-                value={lang.code}
+                value={lang.native_name}
                 className="hover:bg-[#8B4513]/10 transition-colors duration-200 cursor-pointer"
               >
                 <div className="flex items-center">

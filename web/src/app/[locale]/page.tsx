@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/Footer"
 import { Card, CardContent } from "@/components/ui/card";
-import * as CountryFlags from 'country-flag-icons/react/3x2'
 import { learnable_languages } from '@/lib/supportedLanguages';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
@@ -26,17 +25,17 @@ export default function Home() {
       <div className="absolute top-0 left-0 right-0 px-4 sm:px-6 py-4 backdrop-blur-sm bg-[#FFF8E1]/50">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
           <motion.nav className="flex space-x-4 sm:space-x-6">
-            <Button variant="ghost" asChild className="text-sm sm:text-base text-[#8B4513] hover:bg-transparent hover:text-[#6D3611] transition-colors duration-300">
+            <Button asChild variant="ghost" className="text-sm sm:text-base text-[#8B4513] hover:bg-transparent hover:text-[#6D3611] transition-colors duration-300">
               <Link href="/pricing">{t('navigation.pricing')}</Link>
             </Button>
-            <Button variant="ghost" asChild className="text-sm sm:text-base text-[#8B4513] hover:bg-transparent hover:text-[#6D3611] transition-colors duration-300">
+            <Button asChild variant="ghost" className="text-sm sm:text-base text-[#8B4513] hover:bg-transparent hover:text-[#6D3611] transition-colors duration-300">
               <Link href="/how-it-works">{t('navigation.howItWorks')}</Link>
             </Button>
           </motion.nav>
           
           <motion.nav className="flex items-center space-x-2 sm:space-x-4">
             <LanguageSelector />
-            <Button variant="ghost" asChild className="text-sm sm:text-base text-[#8B4513] hover:bg-transparent hover:text-[#6D3611]">
+            <Button asChild variant="ghost" className="text-sm sm:text-base text-[#8B4513] hover:bg-transparent hover:text-[#6D3611]">
               <Link href="/login">{t('navigation.login')}</Link>
             </Button>
             <Button asChild className="text-sm sm:text-base bg-[#8B4513] text-white hover:bg-[#6D3611] rounded-full px-4 sm:px-6">
@@ -140,7 +139,7 @@ export default function Home() {
                   </div>
                   
                   <div className="mt-8">
-                    <Button asChild size="lg" 
+                    <Button asChild
                       className="w-full bg-[#8B4513] hover:bg-[#6D3611] text-white rounded-full px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300">
                       <Link href="/signup">{t('whyPoppa.tryButton')}</Link>
                     </Button>

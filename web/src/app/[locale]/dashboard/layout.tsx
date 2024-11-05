@@ -1,5 +1,5 @@
 import ProtectedRoute from '@/components/ProtectedRoute';
-import '@/app/globals.css';
+import '@/app/[locale]/globals.css';
 
 export default function DashboardLayout({
   children,

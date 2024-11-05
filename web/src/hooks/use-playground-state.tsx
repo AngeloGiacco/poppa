@@ -16,22 +16,11 @@ import {
 } from "@/data/playground-state";
 import { playgroundStateHelpers } from "@/lib/playground-state-helpers";
 
-import { Preset, defaultPresets, PresetGroup } from "@/data/presets";
-import { generateInstruction } from "@/data/instruction";
-import { learnable_languages } from "@/lib/supportedLanguages";
+import { Preset, defaultPresets } from "@/data/presets";
 
 const LS_OPENAI_API_KEY_NAME = "OPENAI_API_KEY";
 const LS_USER_PRESETS_KEY = "PG_USER_PRESETS";
 const LS_SELECTED_PRESET_ID_KEY = "PG_SELECTED_PRESET_ID";
-
-const getNativeLanguage = (param: string | null): string => {
-  const languageMap: { [key: string]: string } = {
-    '1': 'english',
-    '2': 'spanish',
-    //TODO: add more mappings
-  };
-  return languageMap[param || ''] || 'english';
-};
 
 const presetStorageHelper = {
   getStoredPresets: (): Preset[] => {
@@ -177,7 +166,6 @@ interface PlaygroundStateProviderProps {
 export const PlaygroundStateProvider = ({
   children,
 }: PlaygroundStateProviderProps) => {
-  const [isInitialized, setIsInitialized] = useState(false);
   const [state, dispatch] = useReducer(
     playgroundStateReducer,
     defaultPlaygroundState,
@@ -185,60 +173,57 @@ export const PlaygroundStateProvider = ({
   const [showAuthDialog, setShowAuthDialog] = useState(false);
 
   useEffect(() => {
-    const initializeState = async () => {
-      // Load API key
-      const storedKey = localStorage.getItem(LS_OPENAI_API_KEY_NAME);
-      if (storedKey && storedKey.length >= 1) {
-        dispatch({ type: "SET_API_KEY", payload: storedKey });
-      } else {
-        dispatch({ type: "SET_API_KEY", payload: null });
-        setShowAuthDialog(true);
+    const storedKey = localStorage.getItem(LS_OPENAI_API_KEY_NAME);
+    if (storedKey && storedKey.length >= 1) {
+      dispatch({ type: "SET_API_KEY", payload: storedKey });
+    } else {
+      dispatch({ type: "SET_API_KEY", payload: null });
+      setShowAuthDialog(true);
+    }
+
+    // Load presets from localStorage
+    const storedPresets = localStorage.getItem(LS_USER_PRESETS_KEY);
+    const userPresets = storedPresets ? JSON.parse(storedPresets) : [];
+
+    dispatch({ type: "SET_USER_PRESETS", payload: userPresets });
+
+    // Read the URL
+    const urlData = playgroundStateHelpers.decodeFromURLParams(
+      window.location.search,
+    );
+
+    if (urlData.state.selectedPresetId) {
+      const defaultPreset = playgroundStateHelpers
+        .getDefaultPresets()
+        .find((preset) => preset.id === urlData.state.selectedPresetId);
+
+      if (defaultPreset) {
+        dispatch({ type: "SET_SELECTED_PRESET_ID", payload: defaultPreset.id });
+        // Don't clear the URL for default presets
+        return;
       }
 
-      // Load presets from localStorage
-      const storedPresets = presetStorageHelper.getStoredPresets();
-      dispatch({ type: "SET_USER_PRESETS", payload: storedPresets });
+      // Handle non-default preset from URL
+      if (urlData.preset && urlData.preset.name) {
+        const newPreset: Preset = {
+          id: urlData.state.selectedPresetId,
+          name: urlData.preset.name || "Shared Preset",
+          description: urlData.preset.description,
+          instructions: urlData.state.instructions || "",
+          sessionConfig: urlData.state.sessionConfig || defaultSessionConfig,
+          defaultGroup: undefined,
+        };
 
-      // Handle URL-based configuration
-      if (typeof window !== 'undefined') {
-        const pathParts = window.location.pathname.split('/');
-        const params = new URLSearchParams(window.location.search);
-        const nativeLanguageParam = params.get('native');
-        const targetLanguage = pathParts[pathParts.length - 1]?.toLowerCase() || '';
-
-        if (targetLanguage && targetLanguage.length === 2) {
-          const nativeLanguage = getNativeLanguage(nativeLanguageParam);
-          const languageName = getLanguageNameFromCode(targetLanguage);
-          
-          if (languageName) {
-            const languageInstructions = generateInstruction(languageName, nativeLanguage);
-            const languagePreset: Preset = {
-              id: `language-${targetLanguage}`,
-              name: `${languageName} Tutor`,
-              description: `A language tutor who teaches ${languageName} using the thinking method.`,
-              instructions: languageInstructions,
-              sessionConfig: defaultSessionConfig,
-              defaultGroup: PresetGroup.FUNCTIONALITY,
-            };
-
-            await Promise.all([
-              dispatch({ type: "SET_INSTRUCTIONS", payload: languageInstructions }),
-              dispatch({ type: "SAVE_USER_PRESET", payload: languagePreset }),
-              dispatch({ type: "SET_SELECTED_PRESET_ID", payload: languagePreset.id })
-            ]);
-          }
-        }
+        const updatedUserPresets = [...userPresets, newPreset];
+        presetStorageHelper.setStoredPresets(updatedUserPresets);
+        dispatch({ type: "SET_USER_PRESETS", payload: updatedUserPresets });
+        dispatch({ type: "SET_SELECTED_PRESET_ID", payload: newPreset.id });
       }
 
-      setIsInitialized(true);
-    };
-
-    initializeState();
+      // Clear the URL for non-default presets
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
   }, []);
-
-  if (!isInitialized) {
-    return null; // Or a loading spinner
-  }
 
   return (
     <PlaygroundStateContext.Provider
@@ -253,12 +238,4 @@ export const PlaygroundStateProvider = ({
       {children}
     </PlaygroundStateContext.Provider>
   );
-};
-
-const getLanguageNameFromCode = (code: string): string => {
-  const language = learnable_languages.find(
-    lang => lang.code.toLowerCase() === code.toLowerCase() || 
-            lang.iso639.toLowerCase() === code.toLowerCase()
-  );
-  return language?.name || code;
 };

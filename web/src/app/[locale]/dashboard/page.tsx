@@ -43,37 +43,36 @@ import {
 import { useTranslations } from 'next-intl';
 import { type Tables } from '@/types/database.types';
 import { LoadingSpinner } from '@/components/loading';
-
-// Updated mock data for user's languages
-const userLanguages = [
-  { code: 'KE', name: 'Swahili', icon: CountryFlags.KE },
-];
+import { History } from 'lucide-react';
+import { useToast } from "@/hooks/use-toast";
 
 export default function Dashboard() {
   const { user, logout, userProfile } = useAuth();
   const router = useRouter();
   const t = useTranslations('DashboardPage');
   const tCommon = useTranslations('common');
+  const { toast } = useToast();
 
   // State declarations
   const [selectedCredits, setSelectedCredits] = useState(60);
   const [isLanguageSelectOpen, setIsLanguageSelectOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const [isLanguageDialogOpen, setIsLanguageDialogOpen] = useState(false);
+  const [isAlertDialogOpen, setIsAlertDialogOpen] = useState(false);
   const [userData, setUserData] = useState<Tables<'users'> | null>(null);
-  const [customTopics, setCustomTopics] = useState(
-    Object.fromEntries(userLanguages.map(lang => [lang.code, '']))
-  );
-  const [openCustomLessons, setOpenCustomLessons] = useState(
-    Object.fromEntries(userLanguages.map(lang => [lang.code, false]))
-  );
+  const [customTopics, setCustomTopics] = useState<Record<string, string>>({});
+  const [openCustomLessons, setOpenCustomLessons] = useState<Record<string, boolean>>({});
 
   // Add mounting state to prevent hydration mismatch
   const [isMounted, setIsMounted] = useState(false);
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  // Add new state for user languages
+  const [userLanguages, setUserLanguages] = useState<Array<{
+    code: string;
+    name: string;
+    icon: any;
+  }>>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Define fetchUserData first
   const fetchUserData = useCallback(async () => {
@@ -128,11 +127,54 @@ export default function Dashboard() {
     }
   }, [user, router]);
 
-  useEffect(() => {
-    if (user) {
-      fetchUserData();
+  // Fetch user languages
+  const fetchUserLanguages = useCallback(async () => {
+    if (!user) return;
+
+    try {
+      // First get the user's language relationships
+      const { data: userLearns, error: userLearnsError } = await supabaseBrowserClient
+        .from('user_learns')
+        .select(`
+          language_id,
+          languages (
+            code,
+            name
+          )
+        `)
+        .eq('user_id', user.id);
+
+      if (userLearnsError) throw userLearnsError;
+
+      // Transform the data into the required format
+      const languages = userLearns.map((learn: { 
+        languages: { 
+          code: string; 
+          name: string; 
+        } 
+      }) => {
+        const lang = learn.languages;
+        return {
+          code: lang.code,
+          name: lang.name,
+          // @ts-ignore - CountryFlags has dynamic keys
+          icon: CountryFlags[lang.code]
+        };
+      });
+
+      setUserLanguages(languages);
+    } catch (error) {
+      console.error('Error fetching user languages:', error);
+    } finally {
+      setIsLoading(false);
     }
-  }, [user, fetchUserData]);
+  }, [user]);
+
+  // Update the custom topics and lessons state initialization
+  useEffect(() => {
+    setCustomTopics(Object.fromEntries(userLanguages.map(lang => [lang.code, ''])));
+    setOpenCustomLessons(Object.fromEntries(userLanguages.map(lang => [lang.code, false])));
+  }, [userLanguages]);
 
   const toggleCustomLesson = (langCode: string) => {
     setOpenCustomLessons(prev => ({
@@ -151,13 +193,15 @@ export default function Dashboard() {
   const handleLanguageSelection = async (selectedLang: string) => {
     setSelectedLanguage(selectedLang);
     setIsLanguageDialogOpen(false);
+    setIsAlertDialogOpen(true);
   };
 
   const handleAlertDialogAction = async (startLesson: boolean) => {
     if (!selectedLanguage) return;
     
     await addLanguageToProfile(startLesson);
-    setSelectedLanguage(""); // Clear the selected language to close the dialog
+    setIsAlertDialogOpen(false);
+    setSelectedLanguage("");
   };
 
   const handleBuyCredits = () => {
@@ -165,12 +209,19 @@ export default function Dashboard() {
     console.log("Initiate Stripe checkout session");
   };
 
+  const handleGenerateLesson = async (language: string) => {
+    router.push(`/lesson/${language.toLowerCase()}`);
+  };
+
+  const handleContinueLearning = (langCode: string) => {
+    handleGenerateLesson(langCode);
+  };
 
   const startCustomLesson = (langCode: string) => {
     const topic = customTopics[langCode];
     if (!topic) return;
     
-    // TODO: Navigate to lesson page with custom topic
+    router.push(`/lesson/${langCode.toLowerCase()}?native=${encodeURIComponent(userProfile?.native_language || 'en')}&topic=${encodeURIComponent(topic)}`);
     setOpenCustomLessons(prev => ({
       ...prev,
       [langCode]: false
@@ -186,9 +237,51 @@ export default function Dashboard() {
     router.push('/');
   };
 
-  // Modify the return statement to handle mounting state
-  if (!isMounted) {
-    return <LoadingSpinner />;
+  // Combine mounting and initial data load
+  useEffect(() => {
+    let mounted = true;
+    
+    const loadData = async () => {
+      if (!user) {
+        setIsLoading(false);
+        router.push('/login');
+        return;
+      }
+
+      try {
+        await Promise.all([
+          fetchUserData(),
+          fetchUserLanguages()
+        ]);
+      } catch (error) {
+        console.error('Error loading dashboard data:', error);
+        if (mounted) {
+          toast({
+            title: "Error",
+            description: "Failed to load dashboard data. Please refresh the page.",
+            variant: "destructive",
+          });
+        }
+      } finally {
+        if (mounted) {
+          setIsLoading(false);
+        }
+      }
+    };
+
+    setIsMounted(true);
+    loadData();
+
+    return () => {
+      mounted = false;
+    };
+  }, [user, router, fetchUserData, fetchUserLanguages, toast]);
+
+  // Update loading check
+  if (!isMounted || isLoading) {
+    return (
+        <LoadingSpinner />
+    );
   }
 
   return (
@@ -201,7 +294,7 @@ export default function Dashboard() {
               <Image
                 className="w-8 h-8 sm:w-10 sm:h-10 rounded-full"
                 src="/logo.svg"
-                alt={t('logo.alt')}
+                alt="the poppa logo"
                 width={40}
                 height={40}
                 priority
@@ -307,12 +400,21 @@ export default function Dashboard() {
           <section>
             <div className="flex items-center justify-between mb-8">
               <h2 className="text-2xl font-bold text-[#8B4513]">{t('languages.title')}</h2>
-              <Button
-                onClick={handleAddLanguage}
-                className="bg-[#8B4513] text-white hover:bg-[#6D3611]"
-              >
-                {t('languages.addLanguage')}
-              </Button>
+              <div className="flex items-center gap-4">
+                <Link
+                  href="/dashboard/history"
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
+                >
+                  <History className="w-4 h-4" />
+                  View History
+                </Link>
+                <Button
+                  onClick={handleAddLanguage}
+                  className="bg-[#8B4513] text-white hover:bg-[#6D3611]"
+                >
+                  {t('languages.addLanguage')}
+                </Button>
+              </div>
             </div>
 
             <Dialog open={isLanguageDialogOpen} onOpenChange={setIsLanguageDialogOpen}>
@@ -347,7 +449,7 @@ export default function Dashboard() {
               </DialogContent>
             </Dialog>
 
-            <AlertDialog open={!!selectedLanguage}>
+            <AlertDialog open={isAlertDialogOpen} onOpenChange={setIsAlertDialogOpen}>
               <AlertDialogContent className="bg-white/95 border border-[#8B4513]/20 shadow-lg">
                 <AlertDialogHeader>
                   <AlertDialogTitle className="text-[#8B4513] text-xl">
@@ -393,11 +495,14 @@ export default function Dashboard() {
                             <p className="text-sm text-[#8B4513]/70">{t('languages.card.level')}</p>
                           </div>
                         </div>
+
                         <Button
                           variant="ghost"
                           size="sm"
                           className="text-[#8B4513] hover:bg-[#8B4513]/5"
+                          onClick={() => router.push(`/dashboard/history?language=${lang.code}`)}
                         >
+                          <History className="w-4 h-4" />
                           {t('languages.card.viewHistory')}
                         </Button>
                       </div>
@@ -411,7 +516,7 @@ export default function Dashboard() {
                             {t('languages.card.continueButton')}
                           </Button>
                         </Link>
-                        <Dialog open={openCustomLessons[lang.code]} onOpenChange={(open) => toggleCustomLesson(lang.code)}>
+                        <Dialog open={openCustomLessons[lang.code]} onOpenChange={() => toggleCustomLesson(lang.code)}>
                           <DialogTrigger asChild>
                             <Button
                               variant="outline"

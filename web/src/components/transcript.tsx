@@ -68,12 +68,12 @@ export function Transcript({
 
   return (
     <>
-      <div className="sticky top-0 left-0 right-0 bg-[#FFF8E1]/50 backdrop-blur-sm w-full p-4 text-[#8B4513] border-b border-[#8B4513]/10">
+      <div className="sticky top-0 z-10 left-0 right-0 bg-[#FFF8E1]/50 backdrop-blur-sm w-full p-4 text-[#8B4513] border-b border-[#8B4513]/10">
         <div className="text-xs font-semibold uppercase tracking-widest">
           {t("title")}
         </div>
       </div>
-      <div className="p-4">
+      <div className="p-4 relative">
         {displayTranscriptions.length === 0 ? (
           <div className="flex items-center justify-center h-32 text-[#5D4037]/60 text-sm">
             {t("emptyState")}
