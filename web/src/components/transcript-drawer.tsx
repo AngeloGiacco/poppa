@@ -13,15 +13,18 @@ export function TranscriptDrawer({ children }: TranscriptDrawerProps) {
   return (
     <Drawer>
       <DrawerTrigger asChild>{children}</DrawerTrigger>
-      <DrawerContent>
+      <DrawerContent className="max-h-[70vh]">
         <div className="flex flex-col h-[70vh]">
-          <div className="flex-grow overflow-y-auto" ref={scrollContainerRef}>
+          <div 
+            className="flex-grow overflow-y-auto relative" 
+            ref={scrollContainerRef}
+          >
             <Transcript
               scrollContainerRef={scrollContainerRef}
               scrollButtonRef={scrollButtonRef}
             />
           </div>
-          <div className="absolute bottom-0 left-0 right-0 p-4">
+          <div className="sticky bottom-0 left-0 right-0 p-4 bg-white">
             <button
               ref={scrollButtonRef}
               className="p-2 bg-white text-gray-500 rounded-full hover:bg-gray-100 transition-colors absolute right-4 bottom-4 shadow-md flex items-center"
