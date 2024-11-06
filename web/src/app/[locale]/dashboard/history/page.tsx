@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/dialog"
 import { learnable_languages } from '@/lib/supportedLanguages'
 import { useSearchParams } from 'next/navigation'
+import { useAuth } from '@/context/AuthContext'
 
 type Lesson = Database['public']['Tables']['lesson']['Row'] & {
   languages: Pick<Database['public']['Tables']['languages']['Row'], 'name' | 'code'> | null
@@ -32,14 +33,13 @@ export default function HistoryPage() {
   const searchParams = useSearchParams()
   const languageCode = searchParams.get('language')
   const selectedLanguage = learnable_languages.find(lang => lang.code === languageCode)
+  const { user } = useAuth()
 
   useEffect(() => {
     let mounted = true;
 
     async function fetchLessons() {
       try {
-        const { data: { user } } = await supabaseBrowserClient.auth.getUser()
-        
         if (!user) {
           if (mounted) {
             setLessons([]);
@@ -48,21 +48,26 @@ export default function HistoryPage() {
           return;
         }
 
-        const { data } = await supabaseBrowserClient
+        const query = supabaseBrowserClient
           .from('lesson')
           .select(`
             id,
             created_at,
             transcript,
             subject,
-            languages (
+            languages!inner (
               name,
               code
             )
           `)
           .eq('user', user.id)
           .order('created_at', { ascending: false })
-          .eq(languageCode ? 'languages.code' : '', languageCode || '')
+
+        if (languageCode) {
+          query.eq('languages.code', languageCode)
+        }
+
+        const { data } = await query
 
         if (mounted) {
           setLessons(data as Lesson[]);
@@ -84,7 +89,7 @@ export default function HistoryPage() {
     return () => {
       mounted = false;
     };
-  }, [languageCode]);
+  }, [languageCode, user]);
 
   if (isLoading || !isMounted) {
     return <LoadingSpinner />;
