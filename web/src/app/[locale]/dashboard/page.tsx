@@ -147,20 +147,21 @@ export default function Dashboard() {
       if (userLearnsError) throw userLearnsError;
 
       // Transform the data into the required format
-      const languages = userLearns.map((learn: { 
-        languages: { 
-          code: string; 
-          name: string; 
-        } 
-      }) => {
-        const lang = learn.languages;
-        return {
-          code: lang.code,
-          name: lang.name,
-          // @ts-ignore - CountryFlags has dynamic keys
-          icon: CountryFlags[lang.code]
-        };
-      });
+      const languages = (userLearns || []).reduce<Array<{
+        code: string;
+        name: string;
+        icon: any;
+      }>>((acc, learn) => {
+        if (learn.languages) {
+          acc.push({
+            code: learn.languages.code,
+            name: learn.languages.name,
+            // @ts-ignore - CountryFlags has dynamic keys
+            icon: CountryFlags[learn.languages.code]
+          });
+        }
+        return acc;
+      }, []);
 
       setUserLanguages(languages);
     } catch (error) {

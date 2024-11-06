@@ -1,11 +1,13 @@
 import ProtectedRoute from '@/components/ProtectedRoute';
 import '@/app/[locale]/globals.css';
 
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
 export default function DashboardLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: LayoutProps) {
   return (
     <ProtectedRoute>
       <div className="min-h-screen">

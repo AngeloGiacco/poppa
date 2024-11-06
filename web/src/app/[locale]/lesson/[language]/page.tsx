@@ -10,7 +10,7 @@ import { useTranslations } from 'next-intl';
 import { useState, useEffect, use } from 'react';
 import { useRouter } from '@/i18n/routing';
 import { LoadingSpinner } from "@/components/loading";
-import { default_instruction } from '@/app/api/generate-lesson/route';
+import { generateInstruction } from '@/lib/lesson-utils';
 import { useSearchParams } from 'next/navigation';
 
 interface LessonPageProps {
@@ -41,8 +41,7 @@ export default function LessonPage({ params }: LessonPageProps) {
 
   const customTopic = searchParams.get('topic');
 
-  const instruction = default_instruction + 
-    `\n\nThe student is learning Swahili and speaks English. You should talk to them in English and introduce vocab and phrases in Swahili.` +
+  const instruction = generateInstruction(language.name, 'English') +
     (customTopic ? `\n\nThe student has requested to learn about: ${customTopic}` : '') +
     `\n\nThe student has previously learned:
     - Verbs start with ku- (like kulala - to sleep, kula - to eat, kucheka - to laugh, kutaka - to want)

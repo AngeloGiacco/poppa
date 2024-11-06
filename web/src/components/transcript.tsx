@@ -50,7 +50,7 @@ export function Transcript({
         transcriptEndRef.current?.scrollIntoView({ behavior: "smooth" });
       }
     }
-  }, [displayTranscriptions, scrollContainerRef, transcriptEndRef]);
+  }, [displayTranscriptions, scrollContainerRef, transcriptEndRef, calculateDistanceFromBottom]);
 
   const scrollToBottom = () => {
     transcriptEndRef.current?.scrollIntoView({ behavior: "smooth" });

@@ -15,13 +15,12 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogDescription,
 } from "@/components/ui/dialog"
 import { learnable_languages } from '@/lib/supportedLanguages'
 import { useSearchParams } from 'next/navigation'
 
 type Lesson = Database['public']['Tables']['lesson']['Row'] & {
-  languages: Database['public']['Tables']['languages']['Row'] | null
+  languages: Pick<Database['public']['Tables']['languages']['Row'], 'name' | 'code'> | null
 }
 
 export default function HistoryPage() {
@@ -39,26 +38,28 @@ export default function HistoryPage() {
       try {
         const { data: { user } } = await supabaseBrowserClient.auth.getUser()
         
-        const query = supabaseBrowserClient
+        if (!user) {
+          setLessons([])
+          return
+        }
+
+        const { data } = await supabaseBrowserClient
           .from('lesson')
           .select(`
             id,
             created_at,
             transcript,
             subject,
-            languages!inner (
+            languages (
               name,
               code
             )
           `)
-          .eq('user', user?.id)
+          .eq('user', user.id)
+          .order('created_at', { ascending: false })
+          .eq(languageCode ? 'languages.code' : '', languageCode || '')
 
-        if (languageCode) {
-          query.eq('languages.code', languageCode)
-        }
-
-        const { data } = await query.order('created_at', { ascending: false })
-        setLessons(data)
+        setLessons(data as Lesson[])
       } catch (error) {
         console.error('Error fetching lessons:', error)
       } finally {
