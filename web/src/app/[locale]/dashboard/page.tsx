@@ -245,7 +245,9 @@ export default function Dashboard() {
     const loadData = async () => {
       if (!user) {
         setIsLoading(false);
-        router.push('/login');
+        if (mounted) {
+          router.push('/login');
+        }
         return;
       }
 
@@ -266,11 +268,11 @@ export default function Dashboard() {
       } finally {
         if (mounted) {
           setIsLoading(false);
+          setIsMounted(true);
         }
       }
     };
 
-    setIsMounted(true);
     loadData();
 
     return () => {
@@ -278,11 +280,20 @@ export default function Dashboard() {
     };
   }, [user, router, fetchUserData, fetchUserLanguages, toast]);
 
-  // Update loading check
-  if (!isMounted || isLoading) {
-    return (
-        <LoadingSpinner />
-    );
+  // Separate useEffect for handling unauthorized access
+  useEffect(() => {
+    if (!isLoading && !user) {
+      router.push('/login');
+    }
+  }, [isLoading, user, router]);
+
+  // Update loading check to be more specific
+  if (isLoading || !isMounted) {
+    return <LoadingSpinner />;
+  }
+
+  if (!user) {
+    return null; // Return null while redirecting
   }
 
   return (

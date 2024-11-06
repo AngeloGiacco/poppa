@@ -7,11 +7,21 @@ export async function POST(req: Request) {
   try {
     const { languageCode, nativeLanguage, customTopic } = await req.json();
 
-    // Fetch lesson history
+    // First, get the language ID from the languages table
+    const { data: languageData, error: languageError } = await supabaseBrowserClient
+      .from('languages')
+      .select('id')
+      .eq('code', languageCode)
+      .single();
+
+    if (languageError) throw languageError;
+    if (!languageData) throw new Error('Language not found');
+
+    // Now use the language ID to fetch lesson history
     const { data: lessonHistory, error } = await supabaseBrowserClient
       .from('lesson')
       .select('*')
-      .eq('subject', languageCode)
+      .eq('subject', languageData.id)
       .order('created_at', { ascending: true });
 
     if (error) throw error;

@@ -342,6 +342,7 @@
   },
   "LessonPage": {
     "backToDashboard": "Back to Dashboard",
+    "generatingLesson": "Crafting a personalized lesson for you...",
     "footer": {
       "builtWith": "Built with care by Naxos Labs",
       "viewSource": "View source on GitHub"

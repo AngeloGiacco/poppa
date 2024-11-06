@@ -10,7 +10,6 @@ import { useTranslations } from 'next-intl';
 import { useState, useEffect, use } from 'react';
 import { useRouter } from '@/i18n/routing';
 import { LoadingSpinner } from "@/components/loading";
-import { generateInstruction } from '@/lib/lesson-utils';
 import { useSearchParams } from 'next/navigation';
 
 interface LessonPageProps {
@@ -23,6 +22,8 @@ export default function LessonPage({ params }: LessonPageProps) {
   const t = useTranslations();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
+  const [instruction, setInstruction] = useState<string>('');
+  const [isGeneratingLesson, setIsGeneratingLesson] = useState(true);
   const searchParams = useSearchParams();
   
   const unwrappedParams = use(params);
@@ -32,25 +33,58 @@ export default function LessonPage({ params }: LessonPageProps) {
   );
 
   useEffect(() => {
+    const generateLesson = async () => {
+      if (!language) return;
+      
+      try {
+        const customTopic = searchParams.get('topic');
+        const response = await fetch('/api/generate-lesson', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            languageCode: language.code,
+            nativeLanguage: 'English',
+            customTopic
+          }),
+        });
+
+        const data = await response.json();
+        setInstruction(data.instruction);
+      } catch (error) {
+        console.error('Error generating lesson:', error);
+      } finally {
+        setIsGeneratingLesson(false);
+      }
+    };
+
+    generateLesson();
     setIsLoading(false);
-  }, []);
+  }, [language, searchParams]);
 
   if (!language || isLoading) {
     return <LoadingSpinner />;
   }
 
-  const customTopic = searchParams.get('topic');
-
-  const instruction = generateInstruction(language.name, 'English') +
-    (customTopic ? `\n\nThe student has requested to learn about: ${customTopic}` : '') +
-    `\n\nThe student has previously learned:
-    - Verbs start with ku- (like kulala - to sleep, kula - to eat, kucheka - to laugh, kutaka - to want)
-    - Present tense formation with ni- (I) + na- (present) + verb stem
-    - Examples: ninalala (I sleep), ninacheka (I laugh), ninataka (I want)
-    - Word sasa (now)
-    - Can combine verbs like ninataka kulala (I want to sleep)`;
-
-  console.log('Instruction:', instruction);
+  if (isGeneratingLesson) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]">
+        <div className="animate-bounce">
+          <Image
+            src="/logo.svg"
+            alt="Logo"
+            width={120}
+            height={120}
+            className="animate-pulse"
+          />
+        </div>
+        <h2 className="mt-6 text-xl font-semibold text-[#8B4513]">
+          {t('LessonPage.generatingLesson')}
+        </h2>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]">

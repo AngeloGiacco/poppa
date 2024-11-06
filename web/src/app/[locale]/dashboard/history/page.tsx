@@ -26,6 +26,7 @@ type Lesson = Database['public']['Tables']['lesson']['Row'] & {
 export default function HistoryPage() {
   const [lessons, setLessons] = useState<Lesson[] | null>(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [isMounted, setIsMounted] = useState(false)
   const [selectedTranscript, setSelectedTranscript] = useState<string | null>(null)
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const searchParams = useSearchParams()
@@ -33,14 +34,18 @@ export default function HistoryPage() {
   const selectedLanguage = learnable_languages.find(lang => lang.code === languageCode)
 
   useEffect(() => {
+    let mounted = true;
+
     async function fetchLessons() {
-      setIsLoading(true)
       try {
         const { data: { user } } = await supabaseBrowserClient.auth.getUser()
         
         if (!user) {
-          setLessons([])
-          return
+          if (mounted) {
+            setLessons([]);
+            setIsLoading(false);
+          }
+          return;
         }
 
         const { data } = await supabaseBrowserClient
@@ -59,19 +64,30 @@ export default function HistoryPage() {
           .order('created_at', { ascending: false })
           .eq(languageCode ? 'languages.code' : '', languageCode || '')
 
-        setLessons(data as Lesson[])
+        if (mounted) {
+          setLessons(data as Lesson[]);
+          setIsLoading(false);
+          setIsMounted(true);
+        }
       } catch (error) {
         console.error('Error fetching lessons:', error)
-      } finally {
-        setIsLoading(false)
+        if (mounted) {
+          setIsLoading(false);
+          setIsMounted(true);
+        }
       }
     }
 
-    fetchLessons()
-  }, [languageCode])
+    setIsLoading(true);
+    fetchLessons();
 
-  if (isLoading) {
-    return <LoadingSpinner />
+    return () => {
+      mounted = false;
+    };
+  }, [languageCode]);
+
+  if (isLoading || !isMounted) {
+    return <LoadingSpinner />;
   }
 
   return (
