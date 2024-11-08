@@ -17,12 +17,12 @@ export const metadata: Metadata = {
 
 export default async function LocaleLayout({
   children,
-  params,
+  params
 }: {
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  const locale = (await Promise.resolve(params)).locale;
+  const locale = (await params).locale;
 
   if (!routing.locales.includes(locale as any)) {
     notFound();

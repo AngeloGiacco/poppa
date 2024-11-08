@@ -13,8 +13,8 @@ if (!supabaseUrl || !supabaseKey) {
   throw new Error('SUPABASE_URL and SUPABASE_KEY must be set in environment variables');
 }
 
-const supabase = createClient<Database>(supabaseUrl, supabaseKey, {
+const supabaseClient = createClient<Database>(supabaseUrl, supabaseKey, {
   db: { schema: 'public' },
 });
 
-export default supabase;
+export default supabaseClient;

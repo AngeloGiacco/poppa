@@ -24,7 +24,12 @@ import { useConnection } from "@/hooks/use-connection";
 import { useMultibandTrackVolume } from "@/hooks/use-multiband-track-volume";
 import { MultibandAudioVisualizer } from "./agent/visualizers/multiband-bar-visualizer";
 
-export function SessionControls() {
+// Add handleSessionEnd as a prop
+interface SessionControlsProps {
+  onDisconnect: () => Promise<void>;
+}
+
+export function SessionControls({ onDisconnect }: SessionControlsProps) {
   const localParticipant = useLocalParticipant();
   const deviceSelect = useMediaDeviceSelect({ kind: "audioinput" });
   const { disconnect } = useConnection();
@@ -115,7 +120,7 @@ export function SessionControls() {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <Button variant="destructive" onClick={disconnect}>
+      <Button variant="destructive" onClick={onDisconnect}>
         Disconnect
       </Button>
     </div>

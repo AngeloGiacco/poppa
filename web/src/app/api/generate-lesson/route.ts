@@ -1,7 +1,7 @@
-import { supabaseBrowserClient } from '@/lib/supabase-browser';
+import supabaseClient from '@/lib/supabase';
 import { Tables } from '@/types/database.types';
 import { generateThinkingMethodInstruction } from '@/lib/lesson-utils';
-import { Anthropic } from "anthropic";
+import { Anthropic } from "@anthropic-ai/sdk";
 
 
 export async function POST(req: Request) {
@@ -9,7 +9,7 @@ export async function POST(req: Request) {
     const { languageCode, nativeLanguage, customTopic } = await req.json();
 
     // First, get the language ID from the languages table
-    const { data: languageData, error: languageError } = await supabaseBrowserClient
+    const { data: languageData, error: languageError } = await supabaseClient
       .from('languages')
       .select('id')
       .eq('code', languageCode)
@@ -19,7 +19,7 @@ export async function POST(req: Request) {
     if (!languageData) throw new Error('Language not found');
 
     // Now use the language ID to fetch lesson history
-    const { data: lessonHistory, error } = await supabaseBrowserClient
+    const { data: lessonHistory, error } = await supabaseClient
       .from('lesson')
       .select('*')
       .eq('subject', languageData.id)
@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     if (error) throw error;
 
     // Generate base instruction
-    let transcriptGenerationInstruction = `You are a world class language teacher that uses the thinking method to teach. You will receive some information about the thinking method and transcripts of the learning history with the student for a particular subject. The student wants to start a new lesson. Your job is to create a transcript of that lesson that another agent will guide the student through. Remember that you teach students internationally so you may not be teaching them in English. Please just provide the transcript of the lesson. I will remind the next agent which language to speak, the thinking method rules etc. Please do not output anything else as I will send all text you output to the next agent. Here is an example of your output for a swahili lesson in English. 
+    let transcriptGenerationInstruction = `You are a world class language teacher that uses the thinking method to teach. You will receive some information about the thinking method and transcripts of the learning history with the student for a particular subject. The student wants to start a new lesson. Your job is to create a transcript of that lesson that another agent will guide the student through. Remember that you teach students internationally so you may not be teaching them in English. Please just provide the transcript of the lesson. I will remind the next agent which language to speak, the thinking method rules etc. Please do not output anything else as I will send all text you output to the next agent. Please keep the content simple. You must keep the content simple. When asking the user a question in the thinking method style never say things like 'can you say ninataka?' instead say 'how would you say i want in swahili'. whenever you introduce a new word that means x, immediately ask the user 'what was x in [target language]?' to confirm they've understood it. Make sure the transcript contains about five minutes of spoken lesson. Here is an example of your output for a swahili lesson in English. 
 
     <output>Teacher: We're going to break down Swahili and language generally to see how we use it to express
   ideas. How we convert ideas into language. So, the first thing we can say about languages
@@ -87,11 +87,16 @@ Student: Kulala</output>`;
       ],
     });
 
-    const transcript = response.content[0].text;
+    const contentBlock = response.content[0];
+    if (contentBlock.type !== 'text') {
+      throw new Error('Something went wrong generating the lesson :( - content block is not text');
+    }
+    
+    const transcript = contentBlock.text;
 
-    const lessonInstruction = "You are a world class, patient teacher using the thinking method to teach a language. You will now receive some information about the thinking method and a transcript of a lesson. We would like you to guide the student through the lesson. This is a hypothetical run through. The student may make mistakes, and if that is the case you should take the time to work through the question the student got incorrect until they are comfortable to move back through the lesson according to the transcript we provided. These instructions are in English but remember that the user may not speak english. Make sure you talk to them in their language. That is crucial.  "
+    const lessonInstruction = "You are a world class, patient teacher using the thinking method to teach a language. You will now receive some information about the thinking method and a transcript of a lesson. We would like you to guide the student through the lesson. This is a hypothetical run through. The student may make mistakes, and if that is the case you should take the time to work through the question the student got incorrect until they are comfortable to move back through the lesson according to the transcript we provided. These instructions are in English but remember that the user may not speak english. Make sure you talk to them in their language. That is crucial. When asking the user a question in the thinking method style never say things like 'can you say ninataka?' instead say 'how would you say i want in swahili'. whenever you introduce a new word that means x, immediately ask the user 'what was x in [target language]?' to confirm they've understood it. The run through you will now receive includes Teacher: and Student: tags. They are just indicators to help you understand this best-case scenario of the lesson. Do not include them in your output. "
 
-    const instruction = lessonInstruction + thinkingMethodInstruction + transcript;
+    const instruction = lessonInstruction + transcript;
 
     return Response.json({ instruction: instruction });
   } catch (error) {

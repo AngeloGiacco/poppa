@@ -1,6 +1,5 @@
 "use client"
 
-import './globals.css';
 import Image from "next/image";
 import { Link } from '@/i18n/routing';
 import { motion } from "framer-motion";

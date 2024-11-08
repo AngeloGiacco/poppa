@@ -372,5 +372,11 @@
     "title": "Check your email",
     "description": "We've sent you an email with a verification link. Please verify your email address to complete your registration.",
     "backToLogin": "Back to Login"
+  },
+  "errors": {
+    "sessionSave": {
+      "title": "Failed to save session",
+      "description": "There was an error saving your lesson data. Please try again later."
+    }
   }
 }

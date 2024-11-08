@@ -129,7 +129,7 @@ export default function HistoryPage() {
           </h1>
 
           <div className="grid gap-4 max-w-3xl mx-auto">
-            {lessons?.map((lesson: Lesson) => (
+            {lessons?.map((lesson: Lesson, index: number) => (
               <motion.div
                 key={lesson.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -148,7 +148,7 @@ export default function HistoryPage() {
                     <div className="flex justify-between items-start">
                       <div>
                         <h3 className="text-xl font-semibold text-[#8B4513] mb-1">
-                          {lesson.subject || lesson.languages?.name}
+                          {lesson.languages?.name} Lesson {lessons.length - index}
                         </h3>
                         <p className="text-sm text-[#8B4513]/70">
                           {formatDistance(new Date(lesson.created_at), new Date(), { addSuffix: true })}

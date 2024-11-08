@@ -12,6 +12,7 @@
     "format:write": "prettier --write \"**/*.{ts,tsx,md,json}\""
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
     "@hookform/resolvers": "^3.9.0",
     "@livekit/components-react": "^2.6.4",
     "@livekit/components-styles": "^1.1.2",
