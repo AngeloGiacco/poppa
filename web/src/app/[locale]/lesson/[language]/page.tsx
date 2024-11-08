@@ -11,6 +11,8 @@ import { useState, useEffect, use } from 'react';
 import { useRouter } from '@/i18n/routing';
 import { LoadingSpinner } from "@/components/loading";
 import { useSearchParams } from 'next/navigation';
+import { useLesson } from '@/hooks/useLesson';
+import { InsufficientCredits } from "@/components/lesson/InsufficientCredits";
 
 interface LessonPageProps {
   params: Promise<{
@@ -31,6 +33,8 @@ export default function LessonPage({ params }: LessonPageProps) {
   const language = learnable_languages.find(
     lang => lang.code.toLowerCase() === unwrappedParams.language.toLowerCase()
   );
+
+  const { isLoading: lessonLoading, hasInsufficientCredits } = useLesson();
 
   useEffect(() => {
     const generateLesson = async () => {
@@ -63,8 +67,17 @@ export default function LessonPage({ params }: LessonPageProps) {
     setIsLoading(false);
   }, [language, searchParams]);
 
-  if (!language || isLoading) {
+  if (!language) {
+    router.push('/dashboard');
+    return null;
+  }
+
+  if (lessonLoading || isLoading) {
     return <LoadingSpinner />;
+  }
+
+  if (hasInsufficientCredits) {
+    return <InsufficientCredits />;
   }
 
   if (isGeneratingLesson) {

@@ -46,6 +46,49 @@ import { LoadingSpinner } from '@/components/loading';
 import { History } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 
+const InsufficientCreditsDialog = ({ 
+  open, 
+  onOpenChange,
+  t,
+  setBuyCreditsDialogOpen
+}: { 
+  open: boolean, 
+  onOpenChange: (open: boolean) => void,
+  t: (key: string) => string,
+  setBuyCreditsDialogOpen: (open: boolean) => void
+}) => (
+  <Dialog open={open} onOpenChange={onOpenChange}>
+    <DialogContent className="bg-white/95 border-[#8B4513]/20 shadow-lg">
+      <DialogHeader>
+        <DialogTitle className="text-[#8B4513] text-xl">
+          {t('credits.insufficient.title')}
+        </DialogTitle>
+        <DialogDescription className="text-[#8B4513]/70">
+          {t('credits.insufficient.description')}
+        </DialogDescription>
+      </DialogHeader>
+      <DialogFooter>
+        <Button
+          onClick={() => onOpenChange(false)}
+          variant="outline"
+          className="border-[#8B4513]/20 text-[#8B4513] hover:bg-[#8B4513]/5"
+        >
+          {t('credits.insufficient.cancel')}
+        </Button>
+        <Button
+          onClick={() => {
+            onOpenChange(false);
+            setBuyCreditsDialogOpen(true);
+          }}
+          className="bg-[#8B4513] text-white hover:bg-[#6D3611]"
+        >
+          {t('credits.insufficient.buyCredits')}
+        </Button>
+      </DialogFooter>
+    </DialogContent>
+  </Dialog>
+);
+
 export default function Dashboard() {
   const { user, logout, userProfile } = useAuth();
   const router = useRouter();
@@ -73,6 +116,12 @@ export default function Dashboard() {
     icon: any;
   }>>([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  // Add new state for insufficient credits dialog
+  const [showInsufficientCreditsDialog, setShowInsufficientCreditsDialog] = useState(false);
+
+  // Add new state for buy credits dialog
+  const [isBuyCreditsDialogOpen, setIsBuyCreditsDialogOpen] = useState(false);
 
   // Define fetchUserData first
   const fetchUserData = useCallback(async () => {
@@ -215,12 +264,21 @@ export default function Dashboard() {
   };
 
   const handleContinueLearning = (langCode: string) => {
+    if (!userData || userData.credits <= 0) {
+      setShowInsufficientCreditsDialog(true);
+      return;
+    }
     handleGenerateLesson(langCode);
   };
 
   const startCustomLesson = (langCode: string) => {
     const topic = customTopics[langCode];
     if (!topic) return;
+    
+    if (!userData || userData.credits <= 0) {
+      setShowInsufficientCreditsDialog(true);
+      return;
+    }
     
     router.push(`/lesson/${langCode.toLowerCase()}?native=${encodeURIComponent(userProfile?.native_language || 'en')}&topic=${encodeURIComponent(topic)}`);
     setOpenCustomLessons(prev => ({
@@ -298,6 +356,61 @@ export default function Dashboard() {
 
   return (
     <div className={`min-h-screen bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]`}>
+      {/* Update InsufficientCreditsDialog */}
+      <InsufficientCreditsDialog 
+        open={showInsufficientCreditsDialog} 
+        onOpenChange={setShowInsufficientCreditsDialog}
+        t={t}
+        setBuyCreditsDialogOpen={setIsBuyCreditsDialogOpen}
+      />
+
+      {/* Update the Buy Credits Dialog to use the new state */}
+      <Dialog open={isBuyCreditsDialogOpen} onOpenChange={setIsBuyCreditsDialogOpen}>
+        <DialogContent className="bg-white/95 border-[#8B4513]/20 shadow-lg">
+          <DialogHeader>
+            <DialogTitle className="text-[#8B4513] text-xl">
+              {t('credits.buyCredits')}
+            </DialogTitle>
+            <DialogDescription className="text-[#8B4513]/70">
+              {t('credits.oneMinuteReminder')}
+            </DialogDescription>
+          </DialogHeader>
+          <div className="py-4">
+            <div className="flex items-center gap-4">
+              <Input
+                type="number"
+                value={selectedCredits}
+                onChange={(e) => {
+                  const value = parseInt(e.target.value);
+                  if (!isNaN(value)) {
+                    setSelectedCredits(Math.max(1, value));
+                  }
+                }}
+                className="w-24 bg-white/70 border-[#8B4513]/20 text-[#8B4513]"
+                min="1"
+              />
+              <span className="text-[#8B4513]">{t('credits.credits')}</span>
+            </div>
+            <p className="mt-2 text-sm text-[#8B4513]/70">
+              {t('credits.estimatedTime', { minutes: selectedCredits })}
+            </p>
+          </div>
+          <DialogFooter className="flex items-center justify-between gap-4 sm:justify-between">
+            <div className="flex items-center gap-2">
+              <span className="text-base font-medium text-[#8B4513]">
+                {t('credits.cost', { cost: (selectedCredits * 0.15).toFixed(2) })}
+              </span>
+            </div>
+            <Button
+              onClick={handleBuyCredits}
+              className="min-w-[120px] bg-[#8B4513] text-white hover:bg-[#6D3611] transition-colors duration-200"
+            >
+              {t('credits.proceed')}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
       {/* Fixed Navigation Bar */}
       <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-5xl">
         <div className="bg-white/70 rounded-full shadow-md">
@@ -523,9 +636,15 @@ export default function Dashboard() {
                         <Link 
                           href={`/lesson/${lang.code.toLowerCase()}?native=${encodeURIComponent(userProfile?.native_language || 'en')}`} 
                           className="w-full sm:w-auto"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleContinueLearning(lang.code);
+                          }}
                         >
                           <Button className="w-full bg-[#8B4513] text-white hover:bg-[#6D3611]">
-                            {t('languages.card.continueButton')}
+                            <span className="flex items-center gap-2">
+                              {t('languages.card.continueButton')}
+                            </span>
                           </Button>
                         </Link>
                         <Dialog open={openCustomLessons[lang.code]} onOpenChange={() => toggleCustomLesson(lang.code)}>

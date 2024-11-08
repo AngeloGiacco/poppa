@@ -305,7 +305,14 @@
       "credits": "credits",
       "estimatedTime": "This will give you approximately {minutes} minutes of lesson time.",
       "proceed": "Proceed",
-      "cost": "Cost: ${cost}"
+      "cost": "Cost: ${cost}",
+      "insufficient": {
+        "title": "Insufficient Credits",
+        "description": "You don't have enough credits for this lesson. Would you like to purchase more credits?",
+        "cancel": "Cancel",
+        "buyCredits": "Buy Credits",
+        "backToDashboard": "Back to Dashboard"
+      }
     },
     "navigation": {
       "profile": "Profile",
