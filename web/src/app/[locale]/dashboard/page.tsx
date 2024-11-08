@@ -140,6 +140,57 @@ export default function Dashboard() {
     }
   }, [user]);
 
+  // Move fetchUserLanguages before addLanguageToProfile
+  const fetchUserLanguages = useCallback(async () => {
+    if (!user) return;
+
+    try {
+      const { data: userLearns, error: userLearnsError } = await supabaseBrowserClient
+        .from('user_learns')
+        .select(`
+          language_id,
+          languages!inner (
+            code,
+            name
+          )
+        `)
+        .eq('user_id', user.id);
+
+      if (userLearnsError) throw userLearnsError;
+
+      const languages = (userLearns || []).reduce<Array<{
+        code: string;
+        name: string;
+        icon: any;
+      }>>((acc, learn) => {
+        if (learn.languages) {
+          const langCode = learn.languages.code.toUpperCase();
+          // @ts-ignore - CountryFlags has dynamic keys
+          if (CountryFlags[langCode]) {
+            acc.push({
+              code: learn.languages.code,
+              name: learn.languages.name,
+              // @ts-ignore - CountryFlags has dynamic keys
+              icon: CountryFlags[langCode]
+            });
+          }
+        }
+        return acc;
+      }, []);
+
+      setUserLanguages(languages);
+    } catch (error) {
+      console.error('Error fetching user languages:', error);
+      toast({
+        title: "Error",
+        description: "Failed to fetch languages. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  }, [user, toast]);
+
   // Now we can use fetchUserData in addLanguageToProfile
   const addLanguageToProfile = useCallback(async (startLesson: boolean) => {
     if (!user || !selectedLanguage) return;
@@ -160,65 +211,29 @@ export default function Dashboard() {
         throw new Error('Failed to add language');
       }
 
-      await fetchUserData();
+      await Promise.all([
+        fetchUserData(),
+        fetchUserLanguages()
+      ]);
 
       if (startLesson) {
         router.push(`/lesson/${selectedLanguage.toLowerCase()}`);
       }
     } catch (error) {
       console.error('Error adding language:', error);
+      toast({
+        title: "Error",
+        description: "Failed to add language. Please try again.",
+        variant: "destructive",
+      });
     }
-  }, [user, selectedLanguage, router, fetchUserData]);
+  }, [user, selectedLanguage, router, fetchUserData, fetchUserLanguages, toast]);
 
   useEffect(() => {
     if (!user) {
       router.push('/login');
     }
   }, [user, router]);
-
-  // Fetch user languages
-  const fetchUserLanguages = useCallback(async () => {
-    if (!user) return;
-
-    try {
-      // First get the user's language relationships
-      const { data: userLearns, error: userLearnsError } = await supabaseBrowserClient
-        .from('user_learns')
-        .select(`
-          language_id,
-          languages (
-            code,
-            name
-          )
-        `)
-        .eq('user_id', user.id);
-
-      if (userLearnsError) throw userLearnsError;
-
-      // Transform the data into the required format
-      const languages = (userLearns || []).reduce<Array<{
-        code: string;
-        name: string;
-        icon: any;
-      }>>((acc, learn) => {
-        if (learn.languages) {
-          acc.push({
-            code: learn.languages.code,
-            name: learn.languages.name,
-            // @ts-ignore - CountryFlags has dynamic keys
-            icon: CountryFlags[learn.languages.code]
-          });
-        }
-        return acc;
-      }, []);
-
-      setUserLanguages(languages);
-    } catch (error) {
-      console.error('Error fetching user languages:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  }, [user]);
 
   // Update the custom topics and lessons state initialization
   useEffect(() => {
@@ -356,6 +371,9 @@ export default function Dashboard() {
 
   return (
     <div className={`min-h-screen bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]`}>
+      {/* Add overlay gradient that extends behind navbar */}
+      <div className="fixed top-0 left-0 right-0 h-24 sm:h-32 bg-gradient-to-b from-[#FFF8E1] via-[#FFF8E1] to-transparent z-40 pointer-events-none" />
+
       {/* Update InsufficientCreditsDialog */}
       <InsufficientCreditsDialog 
         open={showInsufficientCreditsDialog} 
@@ -412,7 +430,7 @@ export default function Dashboard() {
       </Dialog>
 
       {/* Fixed Navigation Bar */}
-      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-5xl">
+      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-45 w-[95%] max-w-5xl">
         <div className="bg-white/70 rounded-full shadow-md">
           <div className="flex justify-between items-center px-3 sm:px-6 py-3">
             <div className="flex items-center gap-2 sm:gap-3">
