@@ -15,7 +15,6 @@ import { useAgent } from "@/hooks/use-agent";
 import { useConnection } from "@/hooks/use-connection";
 import { toast } from "@/hooks/use-toast";
 import { useTranslations } from "next-intl";
-import  supabaseClient  from "@/lib/supabase";
 import { supabaseBrowserClient } from "@/lib/supabase-browser";
 import { useAuth } from "@/context/AuthContext";
 
@@ -139,7 +138,7 @@ export function Chat() {
       if (disconnectTimer) clearTimeout(disconnectTimer);
       if (appearanceTimer) clearTimeout(appearanceTimer);
     };
-  }, [connectionState, agent, disconnect, hasSeenAgent, t, handleSessionEnd]);
+  }, [connectionState, agent, disconnect, hasSeenAgent, t, handleSessionEnd, sessionStartTime]);
 
   const renderVisualizer = () => (
     <div className="flex w-full items-center">
