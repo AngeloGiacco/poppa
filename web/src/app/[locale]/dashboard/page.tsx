@@ -430,7 +430,7 @@ export default function Dashboard() {
       </Dialog>
 
       {/* Fixed Navigation Bar */}
-      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-45 w-[95%] max-w-5xl">
+      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-5xl">
         <div className="bg-white/70 rounded-full shadow-md">
           <div className="flex justify-between items-center px-3 sm:px-6 py-3">
             <div className="flex items-center gap-2 sm:gap-3">
