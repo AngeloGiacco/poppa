@@ -64,10 +64,10 @@ export default function HowItWorks() {
                 <div className="w-10 h-10 rounded-full bg-[#8B4513]/10 flex items-center justify-center flex-shrink-0">
                   <span className="text-2xl">🧠</span>
                 </div>
-                <h2 className="text-2xl font-semibold text-[#8B4513]">{t('sections.thinkingMethod.title')}</h2>
+                <h2 className="text-2xl font-semibold text-[#8B4513]">{t('sections.socraticMethod.title')}</h2>
               </div>
-              <p className="text-[#5D4037] mb-4">{t('sections.thinkingMethod.description1')}</p>
-              <p className="text-[#5D4037]">{t('sections.thinkingMethod.description2')}</p>
+              <p className="text-[#5D4037] mb-4">{t('sections.socraticMethod.description1')}</p>
+              <p className="text-[#5D4037]">{t('sections.socraticMethod.description2')}</p>
             </CardContent>
           </Card>
 
