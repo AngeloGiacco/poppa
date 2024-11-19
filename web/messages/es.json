@@ -1,349 +1,349 @@
 {
   "common": {
     "languages": {
-      "GB": "英语",
-      "CN": "中文",
-      "JP": "日语",
-      "KR": "韩语",
-      "IN": "印地语",
-      "ID": "印尼语",
-      "TH": "泰语",
-      "VN": "越南语",
-      "NG": "约鲁巴语",
-      "KE": "斯瓦希里语",
-      "ES": "西班牙语",
-      "FR": "法语",
-      "DE": "德语",
-      "IT": "意大利语",
-      "PT": "葡萄牙语",
-      "TR": "土耳其语",
-      "SA": "阿拉伯语",
-      "GR": "希腊语",
-      "RU": "俄语",
-      "NL": "荷兰语",
-      "PL": "波兰语",
-      "SE": "瑞典语",
-      "IL": "希伯来语",
-      "RO": "罗马尼亚语",
-      "HU": "匈牙利语",
-      "CZ": "捷克语",
-      "DK": "丹麦语",
-      "FI": "芬兰语",
-      "NO": "挪威语",
-      "HR": "克罗地亚语",
-      "BG": "保加利亚语",
-      "SK": "斯洛伐克语",
-      "UA": "乌克兰语",
-      "IR": "波斯语",
-      "PH": "他加禄语",
-      "PK": "乌尔都语",
-      "eng": "英语",
-      "zho": "中文",
-      "jpn": "日语",
-      "kor": "韩语",
-      "hin": "印地语",
-      "ind": "印尼语",
-      "tha": "泰语",
-      "vie": "越南语",
-      "yor": "约鲁巴语",
-      "swa": "斯瓦希里语",
-      "spa": "西班牙语",
-      "fra": "法语",
-      "deu": "德语",
-      "ita": "意大利语",
-      "por": "葡萄牙语",
-      "tur": "土耳其语",
-      "ara": "阿拉伯语",
-      "ell": "希腊语",
-      "rus": "俄语",
-      "nld": "荷兰语",
-      "pol": "波兰语",
-      "swe": "瑞典语",
-      "heb": "希伯来语",
-      "ron": "罗马尼亚语",
-      "hun": "匈牙利语",
-      "ces": "捷克语",
-      "dan": "丹麦语",
-      "fin": "芬兰语",
-      "nor": "挪威语",
-      "hrv": "克罗地亚语",
-      "bul": "保加利亚语",
-      "slk": "斯洛伐克语",
-      "ukr": "乌克兰语",
-      "fas": "波斯语",
-      "tgl": "他加禄语",
-      "urd": "乌尔都语"
+      "GB": "Inglés",
+      "CN": "Chino",
+      "JP": "Japonés",
+      "KR": "Coreano",
+      "IN": "Hindi",
+      "ID": "Bahasa",
+      "TH": "Tailandés",
+      "VN": "Vietnamita",
+      "NG": "Yoruba",
+      "KE": "Suajili",
+      "ES": "Español",
+      "FR": "Francés",
+      "DE": "Alemán",
+      "IT": "Italiano",
+      "PT": "Portugués",
+      "TR": "Turco",
+      "SA": "Árabe",
+      "GR": "Griego",
+      "RU": "Ruso",
+      "NL": "Holandés",
+      "PL": "Polaco",
+      "SE": "Sueco",
+      "IL": "Hebreo",
+      "RO": "Rumano",
+      "HU": "Húngaro",
+      "CZ": "Checo",
+      "DK": "Danés",
+      "FI": "Finlandés",
+      "NO": "Noruego",
+      "HR": "Croata",
+      "BG": "Búlgaro",
+      "SK": "Eslovaco",
+      "UA": "Ucraniano",
+      "IR": "Persa",
+      "PH": "Tagalo",
+      "PK": "Urdu",
+      "eng": "Inglés",
+      "zho": "Chino",
+      "jpn": "Japonés",
+      "kor": "Coreano",
+      "hin": "Hindi",
+      "ind": "Bahasa",
+      "tha": "Tailandés",
+      "vie": "Vietnamita",
+      "yor": "Yoruba",
+      "swa": "Suajili",
+      "spa": "Español",
+      "fra": "Francés",
+      "deu": "Alemán",
+      "ita": "Italiano",
+      "por": "Portugués",
+      "tur": "Turco",
+      "ara": "Árabe",
+      "ell": "Griego",
+      "rus": "Ruso",
+      "nld": "Holandés",
+      "pol": "Polaco",
+      "swe": "Sueco",
+      "heb": "Hebreo",
+      "ron": "Rumano",
+      "hun": "Húngaro",
+      "ces": "Checo",
+      "dan": "Danés",
+      "fin": "Finlandés",
+      "nor": "Noruego",
+      "hrv": "Croata",
+      "bul": "Búlgaro",
+      "slk": "Eslovaco",
+      "ukr": "Ucraniano",
+      "fas": "Persa",
+      "tgl": "Tagalo",
+      "urd": "Urdu"
     },
     "footer": {
-      "copyright": "© {year} Poppa. 由Naxos Labs精心打造。"
+      "copyright": "© {year} Poppa. Elaborado con cuidado por Naxos Labs."
     }
   },
   "HomePage": {
     "navigation": {
-      "pricing": "价格",
-      "howItWorks": "使用方法",
-      "login": "登录",
-      "getStarted": "开始使用"
+      "pricing": "Precios",
+      "howItWorks": "Cómo funciona",
+      "login": "Iniciar sesión",
+      "getStarted": "Comenzar"
     },
     "announcement": {
-      "live": "✨ 我们上线啦！",
-      "founderMessage": "阅读创始人寄语 →"
+      "live": "✨ ¡Estamos en vivo!",
+      "founderMessage": "Lee el mensaje del fundador →"
     },
     "hero": {
       "brandName": "poppa",
-      "title": "自然地学习语言",
-      "subtitle": "poppa通过纯语音辅导,一步步引导您学习新语言"
+      "title": "Aprende idiomas de forma natural",
+      "subtitle": "poppa te guía paso a paso en el aprendizaje de un nuevo idioma con tutoría solo de voz"
     },
     "languagesSection": {
-      "title": "可学习的语言"
+      "title": "Idiomas disponibles"
     },
     "whyPoppa": {
-      "title": "为什么选择Poppa?",
+      "title": "¿Por qué elegir Poppa?",
       "features": {
         "tutoring": {
-          "title": "从零开始辅导",
-          "description": "这不仅仅是角色扮演,我们用您的母语教您如何用新语言思考。",
-          "learnMore": "了解更多 →"
+          "title": "Tutoría desde cero",
+          "description": "No es solo un juego de roles, te enseñamos a pensar en el nuevo idioma usando tu lengua materna.",
+          "learnMore": "Aprende más →"
         },
         "personalized": {
-          "title": "个性化学习",
-          "description": "我们根据您的进度和兴趣来帮助您逐步提高。"
+          "title": "Aprendizaje personalizado",
+          "description": "Te ayudamos a mejorar gradualmente según tu progreso e intereses."
         },
         "freeStart": {
-          "title": "免费开始",
-          "description": "获得20分钟免费学习时长来体验Poppa。开始语言学习之旅无需用卡。"
+          "title": "Comienza gratis",
+          "description": "Obtén 20 minutos de aprendizaje gratis para probar Poppa. No se requiere tarjeta."
         }
       },
-      "tryButton": "免费试用20分钟"
+      "tryButton": "Prueba 20 minutos gratis"
     }
   },
   "PricingPage": {
     "navigation": {
-      "home": "首页",
-      "howItWorks": "使用方法",
-      "login": "登录",
-      "getStarted": "开始使用"
+      "home": "Inicio",
+      "howItWorks": "Cómo funciona",
+      "login": "Iniciar sesión",
+      "getStarted": "Comenzar"
     },
     "hero": {
-      "title": "简单透明的价格",
-      "subtitle": "从20分钟免费开始。之后按使用付费。"
+      "title": "Precios simples y transparentes",
+      "subtitle": "Comienza con 20 minutos gratis. Luego paga por uso."
     },
     "features": {
-      "aiTutor": "个性化AI语言导师",
-      "availability": "24/7全天候服务",
-      "adaptiveLearning": "自适应学习技术",
-      "progressTracking": "进度追踪",
-      "conversation": "对话练习",
-      "exercises": "语法和词汇练习"
+      "aiTutor": "Tutor de idiomas AI personalizado",
+      "availability": "Disponible 24/7",
+      "adaptiveLearning": "Tecnología de aprendizaje adaptativo",
+      "progressTracking": "Seguimiento de progreso",
+      "conversation": "Práctica de conversación",
+      "exercises": "Ejercicios de gramática y vocabulario"
     },
     "pricing": {
-      "perHour": "每小时辅导费用"
+      "perHour": "Costo por hora de tutoría"
     },
     "calculator": {
-      "title": "与传统辅导对比",
-      "hoursPerMonth": "每月学习小时数",
+      "title": "Comparación con tutoría tradicional",
+      "hoursPerMonth": "Horas de estudio por mes",
       "poppaAI": "Poppa AI",
-      "traditionalTutor": "传统家教"
+      "traditionalTutor": "Tutor tradicional"
     },
     "cta": {
-      "startFree": "免费体验20分钟",
-      "noCard": "无需信用卡"
+      "startFree": "Prueba 20 minutos gratis",
+      "noCard": "No se requiere tarjeta de crédito"
     },
     "footer": {
-      "copyright": "© {year} Poppa. 由Naxos Labs精心打造。"
+      "copyright": "© {year} Poppa. Elaborado con cuidado por Naxos Labs."
     }
   },
   "HowItWorksPage": {
     "navigation": {
-      "backToHome": "← 返回首页"
+      "backToHome": "← Volver a Inicio"
     },
     "header": {
       "openSource": {
-        "badge": "🌟 我们是开源的！",
-        "link": "在GitHub上查看我们 →"
+        "badge": "🌟 ¡Somos de código abierto!",
+        "link": "Visítanos en GitHub →"
       },
-      "title": "Poppa如何运作"
+      "title": "Cómo funciona Poppa"
     },
     "sections": {
       "thinkingMethod": {
-        "title": "思维方法",
-        "description1": "Poppa使用独特的'思维方法'来帮助您自然有效地学习语言。我们不是让您死记硬背词汇表或语法规则,而是从一开始就帮助您用目标语言思考。",
-        "description2": "这种方法注重理解语言结构,建立联系,培养您直觉性地构造句子的能力。这是一种温和而有力的方法,模仿我们自然获取语言的方式。"
+        "title": "El Método Socrático",
+        "description1": "Poppa utiliza el probado \"Método Socrático\" para ayudarte a aprender idiomas de manera natural y efectiva. En lugar de memorizar listas de vocabulario o reglas gramaticales, te guiamos a través de preguntas reflexivas que te ayudan a descubrir e internalizar el idioma.",
+        "description2": "Este método se centra en el pensamiento crítico y el descubrimiento activo a través del diálogo, ayudándote a comprender los patrones más profundos del idioma. Es un enfoque probado que desarrolla una verdadera comprensión del idioma en lugar de una mera memorización."
       },
       "tech": {
-        "title": "技术",
-        "description1": "为了帮助您与AI导师进行实时语音对话练习,我们使用OpenAI的模型来理解和回应您的话语,在云端存储完整的对话历史,并在全球部署服务器以提供低延迟的通信服务。",
-        "description2": "🌟 我们信奉开源。Poppa完全开源,如果您不想支付任何费用,您可以自己部署。如果您不想为低延迟语音通信管理服务器,我们也通过本网站提供付费服务。欢迎在github上查看我们的项目。"
+        "title": "La Tecnología",
+        "description1": "Para ayudarte a practicar conversaciones con un tutor AI que responde a tu voz en tiempo real, utilizamos los modelos de OpenAI para entender y responder a lo que dices, almacenamos historiales completos de conversaciones en la nube y tenemos servidores distribuidos globalmente para ofrecer comunicación de baja latencia con nuestro producto.",
+        "description2": "🌟 Creemos en el código abierto. Poppa es completamente de código abierto, por lo que si no quieres pagarnos ni un centavo, no tienes que hacerlo. Si en cambio, no quieres tener la molestia de gestionar servidores para comunicaciones de voz de baja latencia, ofrecemos un servicio de pago a través de este sitio web. Visítanos en github."
       },
       "personalizedLearning": {
-        "title": "最终成果：个性化学习",
-        "description1": "您在Poppa上的每节课都会被记录和存储,创建完整的学习历程记录。这使我们能够：",
+        "title": "El Resultado Final: Aprendizaje Personalizado",
+        "description1": "Cada lección que tomas con Poppa se transcribe y almacena, creando un registro completo de tu viaje de aprendizaje. Esto nos permite:",
         "benefits": [
-          "追踪您的进度并根据需求调整未来的课程",
-          "实施间隔重复来巩固所学内容",
-          "为您提供通往语言掌握的逐步路径"
+          "Rastrear tu progreso y adaptar futuras lecciones a tus necesidades",
+          "Implementar la repetición espaciada para reforzar lo que has aprendido",
+          "Proporcionarte un camino paso a paso hacia el dominio del idioma"
         ],
-        "description2": "您的个性化学习路径会随您发展而演变,确保您始终保持适当的挑战水平,并在最佳时间间隔复习重要概念。"
+        "description2": "Tu camino de aprendizaje personalizado evoluciona contigo, asegurando que siempre estés desafiado al nivel adecuado y revisando conceptos importantes en intervalos óptimos para la retención."
       }
     }
   },
   "LoginPage": {
     "navigation": {
-      "backToHome": "返回首页",
-      "signup": "注册"
+      "backToHome": "Volver a Inicio",
+      "signup": "Registrarse"
     },
     "logo": {
-      "alt": "Poppa标志"
+      "alt": "Logo de Poppa"
     },
-    "title": "欢迎回来",
-    "subtitle": "登录以继续您的语言学习之旅！"
+    "title": "Bienvenido de nuevo",
+    "subtitle": "Inicia sesión para continuar tu viaje de aprendizaje de idiomas"
   },
   "FounderMessagePage": {
     "navigation": {
-      "backToHome": "← 返回首页"
+      "backToHome": "← Volver a Inicio"
     },
     "header": {
-      "subtitle": "创始人寄语"
+      "subtitle": "Mensaje del Fundador"
     },
     "content": {
-      "greeting": "你好 👋",
-      "welcome": "欢迎来到Poppa。我们希望让一对一语言辅导变得人人可及。",
-      "background": "我非常幸运,我的环境（在布达佩斯活,然后在英国的一所优秀学校就读）让我有机会接受中文和俄语的一对一辅导。学习这些语言在很多方面改变了我的人生轨迹。",
-      "philosophy": "语言学习应该是负担得起且灵活的,这就是为什么我们实施了基于学分的系统,让您可以按照自己的节奏和预算学习。无论您有5分钟还是5小时,Poppa都在这里支持您的语言学习之旅。",
-      "approach": "我们不会让您写单词,或记忆无用的语法规则或短语。我们会帮助您用另一种语言思考。请试一试。我相信您会喜欢的,而且第一课我们请客。",
-      "story": "我学习普通话是因为我的祖父,我叫他poppa,他在北京工作多年,他让我答应他要学习这门语言。这对我的生活产生了巨大的影响,我希望poppa也能对您产生影响 :)",
-      "closing": "祝学习愉快！",
+      "greeting": "Hola 👋",
+      "welcome": "Bienvenido a Poppa. Esperamos hacer que la tutoría de idiomas uno a uno sea accesible para todos.",
+      "background": "Tuve mucha suerte de que mi entorno (vivir en Budapest y luego asistir a una excelente escuela en el Reino Unido) me brindara la oportunidad de recibir tutoría uno a uno en chino y ruso. Aprender estos idiomas cambió mi trayectoria de vida en muchos aspectos.",
+      "philosophy": "El aprendizaje de idiomas debe ser asequible y flexible, por eso implementamos un sistema basado en créditos que te permite aprender a tu propio ritmo y presupuesto. Ya sea que tengas 5 minutos o 5 horas, Poppa está aquí para apoyar tu viaje de aprendizaje de idiomas.",
+      "approach": "No te haremos escribir palabras, ni memorizar reglas gramaticales o frases inútiles. Te ayudaremos a pensar en otro idioma. Pruébalo. Estoy seguro de que te gustará, y la primera lección corre por nuestra cuenta.",
+      "story": "Aprendí mandarín por mi abuelo, a quien llamo poppa, que trabajó en Beijing durante muchos años y me hizo prometerle que aprendería el idioma. Esto tuvo un gran impacto en mi vida, y espero que poppa también tenga un impacto en la tuya :)",
+      "closing": "¡Feliz aprendizaje!",
       "signature": "Angelo"
     },
     "footer": {
-      "copyright": "© {year} Poppa. 由Naxos Labs精心打造。"
+      "copyright": "© {year} Poppa. Elaborado con cuidado por Naxos Labs."
     }
   },
   "SignupPage": {
     "navigation": {
-      "backToHome": "返回首页"
+      "backToHome": "Volver a Inicio"
     },
     "logo": {
-      "alt": "Poppa标志"
+      "alt": "Logo de Poppa"
     },
     "hero": {
       "brandName": "poppa",
-      "subtitle": "今天就开始您的语言学习之旅！"
+      "subtitle": "¡Comienza tu viaje de aprendizaje de idiomas hoy!"
     },
     "footer": {
-      "copyright": "© {year} Poppa. 由Naxos Labs精心打造。"
+      "copyright": "© {year} Poppa. Elaborado con cuidado por Naxos Labs."
     },
     "login": {
-      "link": "登录"
+      "link": "Iniciar sesión"
     }
   },
   "LoginForm": {
-    "email": "邮箱",
-    "password": "密码",
-    "loginButton": "登录",
-    "forgotPassword": "忘记密码?",
-    "loading": "登录中...",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "loginButton": "Iniciar sesión",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "loading": "Iniciando sesión...",
     "success": {
-      "title": "登录成功",
-      "description": "欢迎回来！"
+      "title": "Inicio de sesión exitoso",
+      "description": "¡Bienvenido de nuevo!"
     },
     "error": {
-      "title": "登录失败"
+      "title": "Error al iniciar sesión"
     }
   },
   "SignupForm": {
-    "firstName": "名",
-    "lastName": "姓",
-    "email": "邮箱",
-    "password": "密码",
-    "confirmPassword": "确认密码",
-    "nativeLanguage": "母语",
-    "dateOfBirth": "出生日期",
-    "day": "日",
-    "month": "月",
-    "year": "年",
-    "signupButton": "注册",
-    "loading": "注册中...",
-    "languageTooltip": "找不到您的语言? Poppa目前仅支持这些语言。如需帮助请联系我们。",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "nativeLanguage": "Idioma nativo",
+    "dateOfBirth": "Fecha de nacimiento",
+    "day": "Día",
+    "month": "Mes",
+    "year": "Año",
+    "signupButton": "Registrarse",
+    "loading": "Registrando...",
+    "languageTooltip": "¿No encuentras tu idioma? Poppa solo es compatible con estos idiomas por ahora. Contáctanos para obtener ayuda.",
     "errors": {
-      "passwordMatch": "密码不匹配",
-      "generic": "注册过程中出现错误。请重试。"
+      "passwordMatch": "Las contraseñas no coinciden",
+      "generic": "Ocurrió un error durante el registro. Por favor, inténtalo de nuevo."
     },
-    "selectLanguage": "选择您的母语",
+    "selectLanguage": "Selecciona tu idioma nativo",
     "months": {
-      "1": "一月",
-      "2": "二月",
-      "3": "三月",
-      "4": "四月",
-      "5": "五月",
-      "6": "六月",
-      "7": "七月",
-      "8": "八月",
-      "9": "九月",
-      "10": "十月",
-      "11": "十一月",
-      "12": "十二月"
+      "1": "Enero",
+      "2": "Febrero",
+      "3": "Marzo",
+      "4": "Abril",
+      "5": "Mayo",
+      "6": "Junio",
+      "7": "Julio",
+      "8": "Agosto",
+      "9": "Septiembre",
+      "10": "Octubre",
+      "11": "Noviembre",
+      "12": "Diciembre"
     }
   },
   "ProfilePage": {
     "navigation": {
-      "backToDashboard": "返回控制台"
+      "backToDashboard": "Volver al Panel"
     },
     "header": {
-      "title": "个人资料"
+      "title": "Perfil"
     },
     "accountDetails": {
-      "title": "账户详情",
-      "joined": "加入时间",
-      "credits": "学分"
+      "title": "Detalles de la cuenta",
+      "joined": "Unido",
+      "credits": "Créditos"
     }
   },
   "DashboardPage": {
     "credits": {
-      "buyCredits": "购买学分",
-      "oneMinuteReminder": "每个学分等于一分钟的课程时间。",
-      "credits": "学分",
-      "estimatedTime": "这将给您大约{minutes}分钟的课程时间。",
-      "proceed": "继续"
+      "buyCredits": "Comprar créditos",
+      "oneMinuteReminder": "Cada crédito equivale a un minuto de tiempo de lección.",
+      "credits": "créditos",
+      "estimatedTime": "Esto te dará aproximadamente {minutes} minutos de tiempo de lección.",
+      "proceed": "Proceder"
     },
     "navigation": {
-      "profile": "个人资料",
-      "logout": "退出登录",
-      "buyCredits": "购买学分"
+      "profile": "Perfil",
+      "logout": "Cerrar sesión",
+      "buyCredits": "Comprar créditos"
     },
     "languages": {
-      "title": "您的语言",
-      "addLanguage": "添加语言",
+      "title": "Tus Idiomas",
+      "addLanguage": "Agregar Idioma",
       "dialog": {
-        "title": "添加新语言",
-        "description": "选择您想学习的语言",
-        "selectPlaceholder": "选择语言"
+        "title": "Agregar un Nuevo Idioma",
+        "description": "Elige un idioma que te gustaría aprender",
+        "selectPlaceholder": "Selecciona un idioma"
       },
       "startLearning": {
-        "title": "现在开始学习?",
-        "description": "您想现在开始第一节{language}课程吗?",
-        "later": "稍后",
-        "startNow": "现在开始"
+        "title": "¿Comenzar a Aprender Ahora?",
+        "description": "¿Te gustaría comenzar tu primera lección en {language} ahora?",
+        "later": "Más tarde",
+        "startNow": "Comenzar Ahora"
       },
       "card": {
-        "level": "中级水平",
-        "viewHistory": "查看历史",
-        "continueButton": "继续学习",
-        "customButton": "自定义课程"
+        "level": "Nivel Intermedio",
+        "viewHistory": "Ver Historial",
+        "continueButton": "Continuar Aprendiendo",
+        "customButton": "Lección Personalizada"
       },
       "customLesson": {
-        "title": "自定义课程 - {language}",
-        "description": "输入您想学习的{language}内容。\n我们会确保课程符合您的水平。",
-        "placeholder": "例如：在餐厅点餐",
-        "startButton": "开始课程"
+        "title": "Lección Personalizada - {language}",
+        "description": "Ingresa lo que te gustaría aprender en {language}.\nNos aseguraremos de que la lección se ajuste a tu nivel.",
+        "placeholder": "por ejemplo: pedir comida en un restaurante",
+        "startButton": "Comenzar Lección"
       }
     }
   },
   "LessonPage": {
-    "backToDashboard": "返回控制台",
+    "backToDashboard": "Volver al Panel",
     "footer": {
-      "builtWith": "由Naxos Labs精心打造",
-      "viewSource": "在GitHub上查看源代码"
+      "builtWith": "Elaborado con cuidado por Naxos Labs",
+      "viewSource": "Ver código fuente en GitHub"
     }
   }
 }

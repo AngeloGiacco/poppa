@@ -166,9 +166,9 @@
     },
     "sections": {
       "thinkingMethod": {
-        "title": "Düşünme Metodu",
-        "description1": "Poppa, dilleri doğal ve etkili bir şekilde öğrenmenize yardımcı olmak için \"Düşünme Metodu\" adı verilen benzersiz bir yaklaşım kullanır. Kelime listeleri veya dilbilgisi kurallarını ezberlemek yerine, en başından hedef dilde düşünmeyi öğreneceksiniz.",
-        "description2": "Bu metot, dilin yapısını anlamaya, bağlantılar kurmaya ve sezgisel olarak cümle kurma yeteneğinizi geliştirmeye odaklanır. Dilleri doğal olarak edinme şeklimizi taklit eden nazik ama güçlü bir yaklaşımdır."
+        "title": "Sokratik Metot",
+        "description1": "Poppa, dilleri doğal ve etkili bir şekilde öğrenmenize yardımcı olmak için zamanla test edilmiş \"Sokratik Metot\"u kullanır. Kelime listelerini veya dilbilgisi kurallarını ezberlemek yerine, dili keşfetmenize ve içselleştirmenize yardımcı olan düşünceli sorularla size rehberlik ederiz.",
+        "description2": "Bu yöntem, eleştirel düşünme ve diyalog yoluyla aktif keşfe odaklanır, dilin daha derin kalıplarını anlamanıza yardımcı olur. Bu, yalnızca ezberlemenin ötesinde gerçek dil anlayışını geliştiren kanıtlanmış bir yaklaşımdır."
       },
       "tech": {
         "title": "Teknoloji",

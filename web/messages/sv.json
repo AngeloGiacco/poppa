@@ -166,9 +166,9 @@
     },
     "sections": {
       "thinkingMethod": {
-        "title": "Tänkandemetoden",
-        "description1": "Poppa använder en unik metod som kallas \"Tänkandemetoden\" för att hjälpa dig lära dig språk naturligt och effektivt. Istället för att memorera ordlistor eller grammatikregler kommer du att lära dig tänka på målspråket från första början.",
-        "description2": "Denna metod fokuserar på att förstå språkets struktur, skapa kopplingar och bygga upp din förmåga att konstruera meningar intuitivt. Det är ett mjukt men kraftfullt tillvägagångssätt som efterliknar hur vi naturligt lär oss språk."
+        "title": "Sokratisk metod",
+        "description1": "Poppa använder den tidstestade \"Sokratiska metoden\" för att hjälpa dig lära dig språk naturligt och effektivt. Istället för att memorera ordlistor eller grammatikregler, guidar vi dig genom tankeväckande frågor som hjälper dig att upptäcka och internalisera språket.",
+        "description2": "Denna metod fokuserar på kritiskt tänkande och aktiv upptäckt genom dialog, vilket hjälper dig att förstå språkets djupare mönster. Det är en beprövad metod som utvecklar verklig språkförståelse snarare än enbart memorering."
       },
       "tech": {
         "title": "Tekniken",

@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Poppa',
-  description: 'Poppa uses the thinking method to teach you any language, just through voice interactions',
+  description: 'Poppa uses the socratic method to teach you any language, just through voice interactions',
 };
 
 export default async function LocaleLayout({

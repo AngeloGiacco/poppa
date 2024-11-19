@@ -166,9 +166,9 @@
     },
     "sections": {
       "thinkingMethod": {
-        "title": "Mbinu ya Kufikiri",
-        "description1": "Poppa inatumia mbinu ya kipekee inayoitwa \"Mbinu ya Kufikiri\" ili kukusaidia kujifunza lugha kwa njia ya asili na yenye ufanisi. Badala ya kuhifadhi orodha za maneno au kanuni za sarufi, utajifunza kufikiri katika lugha unayotaka kujifunza tangu mwanzo.",
-        "description2": "Mbinu hii inazingatia kuelewa muundo wa lugha, kutengeneza uhusiano, na kujenga uwezo wako wa kuunda sentensi kwa njia ya asili. Ni mbinu laini lakini yenye nguvu inayoiga jinsi tunavyopata lugha kwa njia ya asili."
+        "title": "Mbinu ya Sokratiki",
+        "description1": "Poppa inatumia mbinu ya muda mrefu inayoitwa \"Mbinu ya Sokratiki\" ili kukusaidia kujifunza lugha kwa njia ya asili na yenye ufanisi. Badala ya kuhifadhi orodha za maneno au kanuni za sarufi, tunakuongoza kupitia maswali ya kufikiria ambayo yanakusaidia kugundua na kuingiza lugha ndani yako.",
+        "description2": "Mbinu hii inazingatia kufikiri kwa kina na ugunduzi wa kiutendaji kupitia mazungumzo, ikikusaidia kuelewa mifumo ya kina ya lugha. Ni mbinu iliyothibitishwa ambayo inakuza uelewa wa kweli wa lugha badala ya kuhifadhi tu."
       },
       "tech": {
         "title": "Teknolojia",

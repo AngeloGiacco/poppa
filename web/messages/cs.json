@@ -166,9 +166,9 @@
     },
     "sections": {
       "thinkingMethod": {
-        "title": "Metoda myšlení",
-        "description1": "Poppa používá jedinečný přístup nazvaný \"Metoda myšlení\", který vám pomůže učit se jazyky přirozeně a efektivně. Místo memorování seznamů slovíček nebo gramatických pravidel se naučíte myslet v cílovém jazyce od samého začátku.",
-        "description2": "Tato metoda se zaměřuje na pochopení struktury jazyka, vytváření spojení a budování schopnosti intuitivně tvořit věty. Je to jemný, ale účinný přístup, který napodobuje přirozené osvojování jazyků."
+        "title": "Sokratova metoda",
+        "description1": "Poppa používá osvědčenou \"Sokratovu metodu\", která vám pomůže učit se jazyky přirozeně a efektivně. Místo memorování seznamů slovíček nebo gramatických pravidel vás vedeme prostřednictvím promyšlených otázek, které vám pomohou objevit a internalizovat jazyk.",
+        "description2": "Tato metoda se zaměřuje na kritické myšlení a aktivní objevování prostřednictvím dialogu, což vám pomůže pochopit hlubší vzorce jazyka. Je to osvědčený přístup, který rozvíjí skutečné porozumění jazyku, nikoli jen memorování."
       },
       "tech": {
         "title": "Technologie",

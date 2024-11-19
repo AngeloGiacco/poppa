@@ -1,6 +1,6 @@
 # Poppa
 
-Poppa is a conversational AI platform for tutoring with the thinking method. We use livekit and the openai realtime api.
+Poppa is a conversational AI platform for tutoring with the socratic method. We use livekit and the openai realtime api.
 
 ## Repository Structure
 
