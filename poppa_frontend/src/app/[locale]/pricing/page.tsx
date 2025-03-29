@@ -12,7 +12,6 @@ import { useTranslations } from 'next-intl';
 export default function Pricing() {
   const t = useTranslations('PricingPage');
   const [hoursPerMonth, setHoursPerMonth] = useState(10);
-  const [currentYear, setCurrentYear] = useState(2024);
   const poppaPrice = 15;
   const humanTutorPrice = 50;
 
