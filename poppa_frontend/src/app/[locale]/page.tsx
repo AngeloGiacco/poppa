@@ -151,6 +151,7 @@ export default function Home() {
       </motion.div>
 
       <Footer />
+      <elevenlabs-convai agent-id="JkB4CzDJfbM0M5aLaoLL"></elevenlabs-convai><script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
     </div>
   );
 }

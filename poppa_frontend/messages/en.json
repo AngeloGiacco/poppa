@@ -175,8 +175,8 @@
       },
       "tech": {
         "title": "The Tech",
-        "description1": "To help you practice conversations with an AI tutor that responds to your voice in real-time, we use OpenAI's models to understand and respond to what you say, store complete conversation histories in the cloud, and have servers distributed globally to offer low latency communication with our product.",
-        "description2": "🌟 We believe in open source. Poppa is fully open source so if you don't want to pay us a cent you don't have to. If instead, you don't want to have the hassle of managing servers for low-latency voice communications, we do offer a paid service through this website. Check us out on github."
+        "description1": "Poppa is built on top of ElevenLabs (elevenlabs.io). We use ElevenLabs Conversational AI platform to power our AI tutor to speak 32 languages and improve over time.",
+        "description2": "🌟 We believe in open source. Poppa is fully open source so if you don't want to pay us a cent you don't have to. Check us out on github: github.com/angelogiacco/poppa"
       },
       "personalizedLearning": {
         "title": "The End Result: Personalized Learning",

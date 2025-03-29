@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl';
 import { useEffect } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from '@/i18n/routing';
-import { LoadingSpinner } from "@/components/loading";
+import { LoadingSpinner } from "@/components/Loading";
 
 const LoginForm = dynamic(() => import('@/components/LoginForm'), { ssr: false });
 
