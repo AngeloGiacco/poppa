@@ -1,0 +1,136 @@
+{
+  "loading": "Loading...",
+  "login": {
+    "title": "Login to Your Account",
+    "emailLabel": "Email Address",
+    "passwordLabel": "Password",
+    "button": "Login",
+    "noAccount": "Don't have an account?",
+    "signUpLink": "Sign Up"
+  },
+  "register": {
+    "title": "Create an Account",
+    "emailLabel": "Email Address",
+    "passwordLabel": "Password",
+    "confirmPasswordLabel": "Confirm Password",
+    "button": "Sign Up",
+    "hasAccount": "Already have an account?",
+    "signInLink": "Sign In"
+  },
+  "navbar": {
+    "home": "Home",
+    "pricing": "Pricing",
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "chat": "AI Chat",
+    "login": "Login",
+    "logout": "Logout",
+    "appName": "Poppa"
+  },
+  "footer": {
+    "copyright": "© {{year}} Poppa. All rights reserved."
+  },
+  "protectedRoute": {
+    "alert": {
+      "inactiveSubscription": "Your subscription is not active. Please renew or choose a plan.",
+      "usageExceeded": "You have exceeded your usage limit. Please upgrade your plan or wait for the next billing cycle.",
+      "roleForbidden": "You do not have permission to access this page."
+    },
+    "error": {
+      "fetchSubscription": "Could not verify your subscription status. Please try again later."
+    }
+  },
+  "pricing": {
+    "title": "Choose Your Plan",
+    "subscribeButton": "Subscribe",
+    "hobbyPlan": {
+      "name": "Hobby",
+      "price": "$10/month",
+      "features": [
+        "Access to AI Chat",
+        "1,000 Voice Interaction Units",
+        "Basic Support"
+      ]
+    },
+    "proPlan": {
+      "name": "Pro",
+      "price": "$50/month",
+      "features": [
+        "Access to AI Chat",
+        "10,000 Voice Interaction Units",
+        "Priority Support",
+        "Advanced Features"
+      ]
+    },
+    "error": {
+      "missingPriceId": "This plan is currently not available. Please contact support.",
+      "checkoutFailed": "Failed to create checkout session. Please try again.",
+      "checkoutUrlMissing": "Could not retrieve checkout URL. Please try again."
+    },
+    "misconfiguredPlan": "This plan is not configured correctly. Please contact support."
+  },
+  "dashboard": {
+    "title": "User Dashboard",
+    "loading": "Loading dashboard data...",
+    "noSubscription": "You do not have an active subscription.",
+    "viewPlansButton": "View Plans",
+    "unknownPlan": "Unknown Plan",
+    "notApplicable": "N/A",
+    "manageSubscriptionButton": "Manage Subscription",
+    "subscriptionDetails": {
+      "title": "Subscription Details",
+      "plan": "Plan",
+      "status": "Status",
+      "renews": "Renews/Expires On",
+      "subscriptionId": "Subscription ID"
+    },
+    "usageDetails": {
+      "title": "Voice Interaction Usage",
+      "count": "Current Usage",
+      "limit": "Usage Limit",
+      "remaining": "{{remaining}} units remaining",
+      "loadingOrNotAvailable": "Usage data is currently loading or not available."
+    },
+    "statusValues": {
+        "active": "Active",
+        "past_due": "Past Due",
+        "canceled": "Canceled",
+        "trialing": "Trialing",
+        "incomplete": "Incomplete",
+        "incomplete_expired": "Incomplete (Expired)",
+        "unpaid": "Unpaid"
+    },
+    "error": {
+      "fetchSubscription": "Failed to load subscription details.",
+      "fetchUsage": "Failed to load usage details.",
+      "manageSubscriptionFailed": "Could not open subscription management portal. Please try again.",
+      "portalUrlMissing": "Could not retrieve portal URL. Please try again."
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "account": {
+      "title": "Account",
+      "email": "Email",
+      "changePassword": "Change Password",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "confirmNewPassword": "Confirm New Password",
+      "updatePasswordButton": "Update Password",
+      "passwordUpdateSuccess": "Password updated successfully.",
+      "passwordUpdateError": "Failed to update password."
+    },
+    "billing": {
+        "title": "Billing & Subscription",
+        "manageSubscription": "Manage Subscription",
+        "noActiveSubscription": "You have no active subscription.",
+        "viewPricing": "View Pricing Plans"
+    }
+  },
+  "chat": {
+    "title": "AI Voice Chat",
+    "error": {
+      "agentIdMissing": "The AI chat agent is not configured. Please contact support."
+    }
+  }
+}
