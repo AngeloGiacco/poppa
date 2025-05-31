@@ -3,6 +3,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../context/AuthContext'; // Adjust path as needed
 import { supabase } from '../../../lib/supabase'; // Adjust path as needed
+import { languages, Language } from '../../../lib/languageData';
 import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 
@@ -26,6 +27,7 @@ const DashboardPage = () => {
   const router = useRouter();
   const { t } = useTranslation();
 
+  const [selectedLanguage, setSelectedLanguage] = useState<Language>(languages[0]);
   const [subscription, setSubscription] = useState<Subscription | null>(null);
   const [usage, setUsage] = useState<Usage | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -194,6 +196,55 @@ const DashboardPage = () => {
             <p>{t('dashboard.usageDetails.loadingOrNotAvailable')}</p>
          </div>
        )}
+
+      {/* New Language Learning Section - Add this after existing content, inside the main container div */}
+      { user && subscription && (
+        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+          <h2 className="text-2xl font-bold mb-6 text-center md:text-left text-gray-800 dark:text-gray-200">{t('dashboard.learnNewLanguageTitle', 'Learn a New Language')}</h2>
+          <div className="flex flex-col md:flex-row gap-8">
+            {/* Sidebar */}
+            <div className="w-full md:w-1/4 bg-slate-50 dark:bg-slate-800 p-4 rounded-lg shadow-md">
+              <h3 className="text-lg font-semibold mb-4 text-slate-700 dark:text-slate-300">{t('dashboard.languagesTitle', 'Languages')}</h3>
+              <ul className="space-y-2">
+                {languages.map((lang) => (
+                  <li key={lang.name}>
+                    <button
+                      onClick={() => setSelectedLanguage(lang)}
+                      className={`w-full text-left px-4 py-2.5 rounded-md text-sm font-medium transition-colors duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500
+                        ${
+                          selectedLanguage.name === lang.name
+                            ? 'bg-blue-600 text-white shadow-lg'
+                            : 'bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-600'
+                        }`}
+                    >
+                      {lang.name}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Lesson Display */}
+            <div className="w-full md:w-3/4">
+              <h3 className="text-xl font-semibold mb-5 text-slate-800 dark:text-slate-200">
+                {selectedLanguage.name} {t('dashboard.lessonsTitleSuffix', 'Lessons')}
+              </h3>
+              {selectedLanguage && selectedLanguage.lessons && selectedLanguage.lessons.length > 0 ? (
+                <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
+                  {selectedLanguage.lessons.map((lesson, index) => (
+                    <div key={index} className="bg-white dark:bg-slate-700 p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-150 ease-in-out">
+                      <h4 className="text-md font-semibold text-blue-600 dark:text-blue-400">{lesson.title}</h4>
+                      <p className="text-sm text-slate-600 dark:text-slate-300 mt-1.5">{lesson.description}</p>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-slate-500 dark:text-slate-400 py-4">{t('dashboard.noLessonsAvailable', 'No lessons available for this language yet, or language data is loading.')}</p>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
