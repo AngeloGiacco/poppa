@@ -9,6 +9,41 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      conversation_transcripts: {
+        Row: {
+          id: number
+          user_id: string
+          conversation_id: string
+          target_language: string | null
+          transcript: Json | null // Assuming Json is already defined or Supabase handles it
+          created_at: string
+        }
+        Insert: {
+          id?: number
+          user_id: string
+          conversation_id: string
+          target_language?: string | null
+          transcript?: Json | null
+          created_at?: string
+        }
+        Update: {
+          id?: number
+          user_id?: string
+          conversation_id?: string
+          target_language?: string | null
+          transcript?: Json | null
+          created_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "conversation_transcripts_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       languages: {
         Row: {
           code: string
