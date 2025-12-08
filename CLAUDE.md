@@ -6,7 +6,7 @@
 
 ## Project Overview
 
-**Poppa** is a conversational AI language tutoring platform that uses the Socratic method to teach languages through voice interactions. Built on ElevenLabs Conversational AI and LiveKit, it enables students to learn any of 50+ languages through natural spoken dialogue rather than traditional text-based methods. Live at [trypoppa.com](https://trypoppa.com).
+**Poppa** is a conversational AI language tutoring platform that uses the Socratic method to teach languages through voice interactions. Built on ElevenLabs Conversational AI, it enables students to learn any of 50+ languages through natural spoken dialogue rather than traditional text-based methods. Live at [trypoppa.com](https://trypoppa.com).
 
 ### Philosophy
 
@@ -21,8 +21,8 @@
 |-------|------------|
 | Frontend | Next.js 15 (App Router), React 18, TypeScript |
 | Styling | Tailwind CSS, shadcn/ui (Radix primitives) |
-| Voice/Video | LiveKit Client & Server SDK |
-| AI | Anthropic Claude (lesson generation), ElevenLabs (conversational AI) |
+| Voice | ElevenLabs Conversational AI (@elevenlabs/react) |
+| AI | Anthropic Claude (lesson generation), ElevenLabs (voice conversations) |
 | Database | Supabase (PostgreSQL + Auth) |
 | Payments | Stripe |
 | i18n | next-intl (40+ locales) |
@@ -225,12 +225,11 @@ poppa/
 │   │   │       ├── auth/signup/
 │   │   │       ├── generate-lesson/
 │   │   │       ├── elevenlabs-webhook/
-│   │   │       ├── language/add/
-│   │   │       └── token/
+│   │   │       └── language/add/
 │   │   │
 │   │   ├── components/       # React components
 │   │   │   ├── ui/           # shadcn/ui primitives
-│   │   │   ├── Chat.tsx      # Main lesson UI
+│   │   │   ├── Chat.tsx      # Main lesson UI (ElevenLabs conversation)
 │   │   │   ├── LoginForm.tsx
 │   │   │   ├── SignupForm.tsx
 │   │   │   ├── LanguageSelector.tsx
@@ -242,9 +241,7 @@ poppa/
 │   │   │   └── AuthContext.tsx
 │   │   │
 │   │   ├── hooks/            # Custom React hooks
-│   │   │   ├── use-agent.tsx           # LiveKit agent state
-│   │   │   ├── use-connection.tsx      # WebSocket connection
-│   │   │   ├── use-playground-state.tsx
+│   │   │   ├── useLesson.tsx
 │   │   │   └── use-toast.ts
 │   │   │
 │   │   ├── lib/              # Utilities
@@ -318,26 +315,48 @@ npm test
 
 ## Code Patterns
 
-### Component with LiveKit Voice
+### Component with ElevenLabs Voice
 
 ```typescript
 "use client";
 
-import { useVoiceAssistant, BarVisualizer } from "@livekit/components-react";
-import { useAgent } from "@/hooks/use-agent";
-import { useConnection } from "@/hooks/use-connection";
+import { useConversation } from "@elevenlabs/react";
+import { useAuth } from "@/context/AuthContext";
 
-export function LessonComponent() {
-  const { audioTrack, state } = useVoiceAssistant();
-  const { agent, displayTranscriptions } = useAgent();
-  const { disconnect } = useConnection();
+export function Chat() {
+  const { user } = useAuth();
+
+  const conversation = useConversation({
+    onConnect: () => {
+      console.log("Connected to ElevenLabs");
+    },
+    onDisconnect: () => {
+      console.log("Disconnected from ElevenLabs");
+    },
+    onMessage: (message) => {
+      console.log("Message:", message);
+    },
+    onError: (error) => {
+      console.error("Error:", error);
+    },
+  });
+
+  const handleConnect = async () => {
+    const agentId = process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID;
+    await navigator.mediaDevices.getUserMedia({ audio: true });
+    await conversation.startSession({ agentId });
+  };
+
+  const handleDisconnect = async () => {
+    await conversation.endSession();
+  };
 
   return (
     <div>
-      <BarVisualizer state={state} trackRef={audioTrack} barCount={5} />
-      {displayTranscriptions.map((t) => (
-        <p key={t.segment.id}>{t.segment.text}</p>
-      ))}
+      <p>Status: {conversation.status}</p>
+      <p>Speaking: {conversation.isSpeaking ? "Yes" : "No"}</p>
+      <button onClick={handleConnect}>Connect</button>
+      <button onClick={handleDisconnect}>Disconnect</button>
     </div>
   );
 }
@@ -399,42 +418,6 @@ export async function POST(req: Request) {
     console.error("Error:", error);
     return Response.json({ error: "Failed" }, { status: 500 });
   }
-}
-```
-
-### Custom Hook with Context
-
-```typescript
-import { createContext, useContext, useState, useEffect } from "react";
-
-interface AgentContextType {
-  displayTranscriptions: Transcription[];
-  agent?: RemoteParticipant;
-}
-
-const AgentContext = createContext<AgentContextType | undefined>(undefined);
-
-export function AgentProvider({ children }: { children: React.ReactNode }) {
-  const [displayTranscriptions, setDisplayTranscriptions] = useState<Transcription[]>([]);
-
-  // LiveKit room event handling
-  useEffect(() => {
-    // Subscribe to transcription events
-  }, []);
-
-  return (
-    <AgentContext.Provider value={{ displayTranscriptions, agent }}>
-      {children}
-    </AgentContext.Provider>
-  );
-}
-
-export function useAgent() {
-  const context = useContext(AgentContext);
-  if (context === undefined) {
-    throw new Error("useAgent must be used within an AgentProvider");
-  }
-  return context;
 }
 ```
 

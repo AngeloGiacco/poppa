@@ -360,6 +360,9 @@
       "connect": "Connect",
       "connecting": "Connecting"
     },
+    "SessionControls": {
+      "disconnect": "Disconnect"
+    },
     "Transcript": {
       "title": "Transcript",
       "emptyState": "Get talking to start the conversation!"
@@ -385,5 +388,43 @@
       "title": "Failed to save session",
       "description": "There was an error saving your lesson data. Please try again later."
     }
+  },
+  "chat": {
+    "title": "Chat with Poppa",
+    "error": {
+      "agentIdMissing": "Agent ID is not configured. Please contact support."
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "loading": "Loading...",
+    "noSubscription": "No active subscription found.",
+    "viewPlansButton": "View Plans",
+    "unknownPlan": "Unknown Plan",
+    "notApplicable": "N/A",
+    "manageSubscriptionButton": "Manage Subscription",
+    "subscriptionDetails": {
+      "title": "Subscription Details",
+      "plan": "Plan",
+      "status": "Status",
+      "renews": "Renews",
+      "subscriptionId": "Subscription ID"
+    },
+    "usageDetails": {
+      "title": "Usage Details",
+      "count": "Usage Count",
+      "limit": "Usage Limit",
+      "remaining": "{remaining} remaining",
+      "loadingOrNotAvailable": "Usage data is loading or not available."
+    },
+    "error": {
+      "fetchSubscription": "Failed to fetch subscription details.",
+      "manageSubscriptionFailed": "Failed to manage subscription.",
+      "portalUrlMissing": "Portal URL is missing."
+    },
+    "learnNewLanguageTitle": "Learn a New Language",
+    "languagesTitle": "Languages",
+    "lessonsTitleSuffix": "Lessons",
+    "noLessonsAvailable": "No lessons available for this language yet."
   }
 }

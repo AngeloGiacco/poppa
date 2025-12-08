@@ -9,7 +9,7 @@ import { learnable_languages } from "@/lib/supportedLanguages";
 import { useTranslations } from 'next-intl';
 import { useState, useEffect, use } from 'react';
 import { useRouter } from '@/i18n/routing';
-import { LoadingSpinner } from "@/components/loading";
+import { LoadingSpinner } from "@/components/Loading";
 import { useSearchParams } from 'next/navigation';
 import { useLesson } from '@/hooks/useLesson';
 import { InsufficientCredits } from "@/components/lesson/InsufficientCredits";
