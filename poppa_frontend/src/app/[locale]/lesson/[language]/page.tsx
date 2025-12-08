@@ -2,14 +2,14 @@
 
 import "./style.css";
 import { Header } from "@/components/header";
-import { RoomComponent } from "@/components/room-component";
+import { Chat } from "@/components/Chat";
 import Image from "next/image";
 import { Link } from '@/i18n/routing';
 import { learnable_languages } from "@/lib/supportedLanguages";
 import { useTranslations } from 'next-intl';
 import { useState, useEffect, use } from 'react';
 import { useRouter } from '@/i18n/routing';
-import { LoadingSpinner } from "@/components/loading";
+import { LoadingSpinner } from "@/components/Loading";
 import { useSearchParams } from 'next/navigation';
 import { useLesson } from '@/hooks/useLesson';
 import { InsufficientCredits } from "@/components/lesson/InsufficientCredits";
@@ -131,7 +131,7 @@ export default function LessonPage({ params }: LessonPageProps) {
       <main className="pt-32 px-6 pb-24 max-w-7xl mx-auto">
         <div className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-md overflow-hidden">
           <Header language={language.name} />
-          <RoomComponent instruction={instruction} />
+          <Chat />
         </div>
       </main>
 

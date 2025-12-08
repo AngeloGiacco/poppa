@@ -1,42 +1,62 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { useConversation } from "@elevenlabs/react";
 import { SessionControls } from "@/components/session-controls";
-import { ConnectButton } from "./connect-button";
-import { ConnectionState } from "livekit-client";
+import { ConnectButton } from "@/components/connect-button";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  useConnectionState,
-  useVoiceAssistant,
-  BarVisualizer,
-} from "@livekit/components-react";
-import { ChatControls } from "@/components/chat-controls";
-import { useAgent } from "@/hooks/use-agent";
-import { useConnection } from "@/hooks/use-connection";
 import { toast } from "@/hooks/use-toast";
 import { useTranslations } from "next-intl";
 import { supabaseBrowserClient } from "@/lib/supabase-browser";
 import { useAuth } from "@/context/AuthContext";
 
+interface Transcription {
+  id: string;
+  text: string;
+  role: "user" | "agent";
+  timestamp: number;
+}
+
 export function Chat() {
-  const connectionState = useConnectionState();
-  const { audioTrack, state } = useVoiceAssistant();
   const [isChatRunning, setIsChatRunning] = useState(false);
-  const { agent, displayTranscriptions } = useAgent();
-  const { disconnect } = useConnection();
-  const [hasSeenAgent, setHasSeenAgent] = useState(false);
-  const [isEditingInstructions, setIsEditingInstructions] = useState(false);
+  const [displayTranscriptions, setDisplayTranscriptions] = useState<Transcription[]>([]);
   const t = useTranslations("Chat");
   const { user } = useAuth();
   const [sessionStartTime, setSessionStartTime] = useState<Date | null>(null);
   const [isHandlingSessionEnd, setIsHandlingSessionEnd] = useState(false);
 
+  const conversation = useConversation({
+    onConnect: () => {
+      setIsChatRunning(true);
+      setSessionStartTime(new Date());
+    },
+    onDisconnect: () => {
+      setIsChatRunning(false);
+    },
+    onMessage: (message) => {
+      const newTranscription: Transcription = {
+        id: `${Date.now()}-${Math.random()}`,
+        text: message.message,
+        role: message.source === "user" ? "user" : "agent",
+        timestamp: Date.now(),
+      };
+      setDisplayTranscriptions((prev) => [...prev, newTranscription]);
+    },
+    onError: (error) => {
+      console.error("Conversation error:", error);
+      toast({
+        title: t("errors.agentUnavailable.title"),
+        description: t("errors.agentUnavailable.description"),
+        variant: "destructive",
+      });
+    },
+  });
+
   const handleSessionEnd = useCallback(async () => {
     if (!sessionStartTime || !user || isHandlingSessionEnd) return;
-    
+
     setIsHandlingSessionEnd(true);
-    
-    // Prevent multiple calls
+
     const currentSessionStartTime = sessionStartTime;
     setSessionStartTime(null);
 
@@ -45,7 +65,6 @@ export function Chat() {
       (sessionEndTime.getTime() - currentSessionStartTime.getTime()) / (1000 * 60)
     );
 
-    // Don't save sessions shorter than 1 minute
     if (sessionDurationMinutes < 1) {
       setIsHandlingSessionEnd(false);
       return;
@@ -83,72 +102,58 @@ export function Chat() {
   }, [sessionStartTime, user, isHandlingSessionEnd, displayTranscriptions, t]);
 
   useEffect(() => {
-    let disconnectTimer: NodeJS.Timeout | undefined;
-    let appearanceTimer: NodeJS.Timeout | undefined;
-
-    if (connectionState === ConnectionState.Connected && !agent) {
-      appearanceTimer = setTimeout(() => {
-        disconnect();
-        setHasSeenAgent(false);
-
-        toast({
-          title: t("errors.agentUnavailable.title"),
-          description: t("errors.agentUnavailable.description"),
-          variant: "destructive",
-        });
-      }, 5000);
-    }
-
-    if (agent) {
-      setHasSeenAgent(true);
-    }
-
-    if (
-      connectionState === ConnectionState.Connected &&
-      !agent &&
-      hasSeenAgent
-    ) {
-      disconnectTimer = setTimeout(() => {
-        if (!agent) {
-          disconnect();
-          setHasSeenAgent(false);
-        }
-
-        toast({
-          title: t("errors.agentDisconnected.title"),
-          description: t("errors.agentDisconnected.description"),
-          variant: "destructive",
-        });
-      }, 5000);
-    }
-
-    setIsChatRunning(
-      connectionState === ConnectionState.Connected && hasSeenAgent,
-    );
-
-    if (connectionState === ConnectionState.Connected && !sessionStartTime) {
-      setSessionStartTime(new Date());
-    }
-
-    if (connectionState !== ConnectionState.Connected && sessionStartTime) {
+    if (!isChatRunning && sessionStartTime) {
       handleSessionEnd();
     }
+  }, [isChatRunning, sessionStartTime, handleSessionEnd]);
 
-    return () => {
-      if (disconnectTimer) clearTimeout(disconnectTimer);
-      if (appearanceTimer) clearTimeout(appearanceTimer);
-    };
-  }, [connectionState, agent, disconnect, hasSeenAgent, t, handleSessionEnd, sessionStartTime]);
+  const handleConnect = async () => {
+    const agentId = process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID;
+    if (!agentId) {
+      toast({
+        title: t("errors.agentUnavailable.title"),
+        description: "Agent ID not configured",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      await navigator.mediaDevices.getUserMedia({ audio: true });
+      setDisplayTranscriptions([]);
+      await conversation.startSession({ agentId, connectionType: "websocket" as const });
+    } catch (error) {
+      console.error("Failed to start conversation:", error);
+      toast({
+        title: t("errors.agentUnavailable.title"),
+        description: t("errors.agentUnavailable.description"),
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handleDisconnect = async () => {
+    await handleSessionEnd();
+    await conversation.endSession();
+  };
 
   const renderVisualizer = () => (
     <div className="flex w-full items-center">
-      <div className="h-[320px] mt-16 md:mt-0 lg:pb-24 w-full">
-        <BarVisualizer
-          state={state}
-          barCount={5}
-          trackRef={audioTrack}
-          className="w-full h-full"
-        />
+      <div className="h-[320px] mt-16 md:mt-0 lg:pb-24 w-full flex items-center justify-center">
+        <div className="flex items-center gap-1">
+          {[...Array(5)].map((_, i) => (
+            <div
+              key={i}
+              className={`w-3 bg-[#8B4513] rounded-full transition-all duration-150 ${
+                conversation.isSpeaking ? "animate-pulse" : ""
+              }`}
+              style={{
+                height: conversation.isSpeaking ? `${40 + Math.random() * 60}px` : "20px",
+                animationDelay: `${i * 0.1}s`,
+              }}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -163,30 +168,16 @@ export function Chat() {
         transition={{ type: "tween", duration: 0.15, ease: "easeInOut" }}
       >
         {isChatRunning ? (
-          <SessionControls 
-            onDisconnect={async () => {
-              await handleSessionEnd();
-              disconnect();
-            }} 
-          />
+          <SessionControls onDisconnect={handleDisconnect} />
         ) : (
-          <ConnectButton />
+          <ConnectButton onConnect={handleConnect} isConnecting={conversation.status === "connecting"} />
         )}
       </motion.div>
     </AnimatePresence>
   );
 
-  const handleToggleEdit = () => {
-    setIsEditingInstructions(!isEditingInstructions);
-  };
-
   return (
-    <div className="flex flex-col h-full overflow-hidden p-2 lg:p-4">
-      <ChatControls 
-        showEditButton={isChatRunning}
-        isEditingInstructions={isEditingInstructions}
-        onToggleEdit={handleToggleEdit}
-      />
+    <div className="flex flex-col h-full min-h-[400px] overflow-hidden p-2 lg:p-4">
       <div className="flex flex-col flex-grow items-center justify-center">
         <div className="w-full h-full flex flex-col">
           <div className="flex items-center justify-center w-full">

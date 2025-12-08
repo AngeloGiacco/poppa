@@ -9,7 +9,7 @@ import { Database } from '@/types/database.types'
 import { Link } from '@/i18n/routing'
 import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
-import { LoadingSpinner } from '@/components/loading'
+import { LoadingSpinner } from '@/components/Loading'
 import {
   Dialog,
   DialogContent,
