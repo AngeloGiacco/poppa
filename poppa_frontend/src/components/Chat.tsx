@@ -5,7 +5,6 @@ import { useConversation } from "@elevenlabs/react";
 import { SessionControls } from "@/components/session-controls";
 import { ConnectButton } from "@/components/connect-button";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChatControls } from "@/components/chat-controls";
 import { toast } from "@/hooks/use-toast";
 import { useTranslations } from "next-intl";
 import { supabaseBrowserClient } from "@/lib/supabase-browser";
@@ -21,7 +20,6 @@ interface Transcription {
 export function Chat() {
   const [isChatRunning, setIsChatRunning] = useState(false);
   const [displayTranscriptions, setDisplayTranscriptions] = useState<Transcription[]>([]);
-  const [isEditingInstructions, setIsEditingInstructions] = useState(false);
   const t = useTranslations("Chat");
   const { user } = useAuth();
   const [sessionStartTime, setSessionStartTime] = useState<Date | null>(null);
@@ -178,17 +176,8 @@ export function Chat() {
     </AnimatePresence>
   );
 
-  const handleToggleEdit = () => {
-    setIsEditingInstructions(!isEditingInstructions);
-  };
-
   return (
-    <div className="flex flex-col h-full overflow-hidden p-2 lg:p-4">
-      <ChatControls
-        showEditButton={isChatRunning}
-        isEditingInstructions={isEditingInstructions}
-        onToggleEdit={handleToggleEdit}
-      />
+    <div className="flex flex-col h-full min-h-[400px] overflow-hidden p-2 lg:p-4">
       <div className="flex flex-col flex-grow items-center justify-center">
         <div className="w-full h-full flex flex-col">
           <div className="flex items-center justify-center w-full">
