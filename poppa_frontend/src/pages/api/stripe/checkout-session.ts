@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
-import { supabase } from '../../../lib/supabase'; // Assuming this is your initialized Supabase client
+import supabaseClient from '@/lib/supabase';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2024-06-20',
@@ -23,7 +23,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   // Ensure this user_id corresponds to an authenticated user in your system.
 
   // Optionally, retrieve the user's email from your database to prefill in Stripe Checkout
-  // const { data: user, error: userError } = await supabase
+  // const { data: user, error: userError } = await supabaseClient
   //   .from('users') // Or your user table, or auth.users
   //   .select('email')
   //   .eq('id', user_id)
@@ -42,7 +42,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   try {
     // Check if the user is an existing Stripe customer
-    const { data: existingSubscription, error: subFetchError } = await supabase
+    const { data: existingSubscription, error: subFetchError } = await supabaseClient
       .from('subscriptions')
       .select('stripe_customer_id')
       .eq('user_id', user_id)

@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
-import { supabase } from '../../../lib/supabase'; // Your initialized Supabase client
+import supabaseClient from '@/lib/supabase';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2024-06-20',
@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   // Retrieve the user's Stripe Customer ID from your database
   try {
-    const { data: subscription, error: dbError } = await supabase
+    const { data: subscription, error: dbError } = await supabaseClient
       .from('subscriptions')
       .select('stripe_customer_id')
       .eq('user_id', user_id)

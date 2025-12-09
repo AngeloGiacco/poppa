@@ -1,7 +1,7 @@
-import { createMocks, RequestMethod } from 'node-mocks-http';
+import { createMocks } from 'node-mocks-http';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import checkoutSessionHandler from '../checkout-session'; // Adjust path
-import { supabase } from '../../../../lib/supabase'; // Mocked
+import checkoutSessionHandler from '../checkout-session';
+import supabaseClient from '@/lib/supabase';
 import Stripe from 'stripe'; // Mocked
 
 const mockStripe = new Stripe('sk_test_mock', { apiVersion: '2024-06-20' });
@@ -26,7 +26,7 @@ describe('/api/stripe/checkout-session API Endpoint', () => {
     });
 
     // Default mock for Supabase query to fetch existing customer
-    (supabase.from('subscriptions').select().eq().maybeSingle as jest.Mock).mockResolvedValue({
+    (supabaseClient.from('subscriptions').select().eq().maybeSingle as jest.Mock).mockResolvedValue({
       data: null, // Default to no existing customer
       error: null,
     });
@@ -81,7 +81,7 @@ describe('/api/stripe/checkout-session API Endpoint', () => {
   it('should include customer ID if user is an existing Stripe customer', async () => {
     mockReq.body = { price_id: 'price_mock_hobby', user_id: 'user_existing_customer' };
     // Mock Supabase to return an existing Stripe customer ID
-    (supabase.from('subscriptions').select().eq().maybeSingle as jest.Mock).mockResolvedValueOnce({
+    (supabaseClient.from('subscriptions').select().eq().maybeSingle as jest.Mock).mockResolvedValueOnce({
       data: { stripe_customer_id: 'cus_existing_stripe_id' },
       error: null,
     });
@@ -116,7 +116,7 @@ describe('/api/stripe/checkout-session API Endpoint', () => {
   it('should handle errors from Supabase when fetching customer ID', async () => {
     mockReq.body = { price_id: 'price_mock_db_error', user_id: 'user_db_error' };
     const dbError = { message: 'Mock Supabase Read Error', code: '500' }; // Example error structure
-    (supabase.from('subscriptions').select().eq().maybeSingle as jest.Mock).mockResolvedValueOnce({
+    (supabaseClient.from('subscriptions').select().eq().maybeSingle as jest.Mock).mockResolvedValueOnce({
       data: null,
       error: dbError,
     });

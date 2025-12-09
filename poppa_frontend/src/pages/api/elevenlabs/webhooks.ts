@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { supabase } from '../../../lib/supabase'; // Adjust path as needed
+import supabaseClient from '@/lib/supabase';
 import crypto from 'crypto';
 import { buffer } from 'micro'; // For reading the raw body
 
@@ -112,7 +112,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       END;
       $$ LANGUAGE plpgsql;
     */
-    const { data: usageData, error: rpcError } = await supabase.rpc('increment_user_usage', {
+    const { data: usageData, error: rpcError } = await supabaseClient.rpc('increment_user_usage', {
       p_user_id: userId,
       p_increment_by: 1, // Assuming one call is one unit of usage
     });

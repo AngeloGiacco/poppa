@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import Stripe from 'stripe';
 import { buffer } from 'micro';
-import { supabase } from '../../../lib/supabase';
+import supabaseClient from '@/lib/supabase';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2024-06-20',
@@ -59,7 +59,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         //    Here we get it from the session.
 
         // 2. Create a new subscription in the `subscriptions` table
-        const { data: subscription, error: subError } = await supabase
+        const { data: subscription, error: subError } = await supabaseClient
           .from('subscriptions')
           .insert({
             user_id: userId,
@@ -90,7 +90,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             usageLimit = 100; // Default or error
         }
 
-        const { error: usageError } = await supabase
+        const { error: usageError } = await supabaseClient
           .from('usage')
           .upsert({
             user_id: userId,
@@ -123,7 +123,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
       
       try {
-        const { data: updatedSubscription, error: updateSubError } = await supabase
+        const { data: updatedSubscription, error: updateSubError } = await supabaseClient
           .from('subscriptions')
           .update({
             status: 'active', // Or invoicePaid.status if more granular (e.g., 'paid')
@@ -143,7 +143,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const userIdForUsageReset = updatedSubscription.user_id;
 
         // Reset usage_count to 0
-        const { error: usageResetError } = await supabase
+        const { error: usageResetError } = await supabaseClient
           .from('usage')
           .update({
             usage_count: 0,
@@ -175,7 +175,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
 
       try {
-        const { error: updateError } = await supabase
+        const { error: updateError } = await supabaseClient
           .from('subscriptions')
           .update({
             status: 'past_due', // Or 'canceled' depending on Stripe settings and retry logic

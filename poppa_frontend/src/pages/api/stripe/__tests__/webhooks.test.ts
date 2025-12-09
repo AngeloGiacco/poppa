@@ -1,7 +1,7 @@
-import { createMocks, RequestMethod } from 'node-mocks-http';
+import { createMocks } from 'node-mocks-http';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import stripeWebhookHandler from '../webhooks'; // Adjust path as needed
-import { supabase } from '../../../../lib/supabase'; // Mocked in jest.setup.js
+import stripeWebhookHandler from '../webhooks';
+import supabaseClient from '@/lib/supabase';
 import Stripe from 'stripe'; // Mocked in jest.setup.js
 import { buffer } from 'micro';
 
@@ -30,12 +30,12 @@ describe('/api/stripe/webhooks API Endpoint', () => {
     mockRes = res;
 
     // Default mock for supabase calls that might return a single object
-    (supabase.from('subscriptions').insert as jest.Mock).mockResolvedValue({ data: [{ id: 'sub_mock_id' }], error: null });
-    (supabase.from('subscriptions').update as jest.Mock).mockResolvedValue({ data: [{ user_id: 'user_mock_id' }], error: null, count: 1 });
-    (supabase.from('usage').upsert as jest.Mock).mockResolvedValue({ data: [{ id: 'usage_mock_id' }], error: null });
-    (supabase.from('usage').update as jest.Mock).mockResolvedValue({ data: [{ id: 'usage_mock_id' }], error: null });
+    (supabaseClient.from('subscriptions').insert as jest.Mock).mockResolvedValue({ data: [{ id: 'sub_mock_id' }], error: null });
+    (supabaseClient.from('subscriptions').update as jest.Mock).mockResolvedValue({ data: [{ user_id: 'user_mock_id' }], error: null, count: 1 });
+    (supabaseClient.from('usage').upsert as jest.Mock).mockResolvedValue({ data: [{ id: 'usage_mock_id' }], error: null });
+    (supabaseClient.from('usage').update as jest.Mock).mockResolvedValue({ data: [{ id: 'usage_mock_id' }], error: null });
      // Ensure .single() returns a mock data object
-    (supabase.from('subscriptions').select().single as jest.Mock).mockResolvedValue({ data: { user_id: 'user_mock_id' }, error: null });
+    (supabaseClient.from('subscriptions').select().single as jest.Mock).mockResolvedValue({ data: { user_id: 'user_mock_id' }, error: null });
   });
 
   const mockStripeEvent = (eventData: any, signature: string) => {
@@ -95,14 +95,14 @@ describe('/api/stripe/webhooks API Endpoint', () => {
       await stripeWebhookHandler(mockReq, mockRes);
 
       expect(mockRes._getStatusCode()).toBe(200);
-      expect(supabase.from('subscriptions').insert).toHaveBeenCalledWith({
+      expect(supabaseClient.from('subscriptions').insert).toHaveBeenCalledWith({
         user_id: 'user_test_123',
         stripe_customer_id: 'cus_mock_customer_id',
         stripe_subscription_id: 'sub_mock_subscription_id',
         plan_id: process.env.NEXT_PUBLIC_STRIPE_PRICE_ID_HOBBY,
         status: 'active',
       });
-      expect(supabase.from('usage').upsert).toHaveBeenCalledWith(
+      expect(supabaseClient.from('usage').upsert).toHaveBeenCalledWith(
         {
           user_id: 'user_test_123',
           usage_limit: 1000, // Assuming Hobby plan maps to 1000
@@ -160,9 +160,9 @@ describe('/api/stripe/webhooks API Endpoint', () => {
             error: null,
             count: 1,
         };
-        (supabase.from('subscriptions').update as jest.Mock).mockResolvedValue(mockSuccessfulUpdate);
+        (supabaseClient.from('subscriptions').update as jest.Mock).mockResolvedValue(mockSuccessfulUpdate);
         // Also, ensure the .select().single() chain is fully mocked if your code relies on its specific structure
-         (supabase.from('subscriptions').update().eq().select().single as jest.Mock) = jest.fn().mockResolvedValue({
+         (supabaseClient.from('subscriptions').update().eq().select().single as jest.Mock) = jest.fn().mockResolvedValue({
             data: { user_id: 'user_for_invoice_paid' }, // This is critical
             error: null,
         });
@@ -175,7 +175,7 @@ describe('/api/stripe/webhooks API Endpoint', () => {
       // Mock the select().single() to return a user_id for the usage reset step
       // This is a common pattern: an update, then a select for some fields of the updated row.
       // Here, we ensure the update mock itself returns what's needed, or mock the chain.
-      (supabase.from('subscriptions').update as jest.Mock).mockImplementation(() => ({
+      (supabaseClient.from('subscriptions').update as jest.Mock).mockImplementation(() => ({
         eq: jest.fn().mockReturnThis(),
         select: jest.fn().mockReturnThis(),
         single: jest.fn().mockResolvedValue({ data: { user_id: 'user_associated_with_sub_mock_active_id' }, error: null }),
@@ -185,21 +185,21 @@ describe('/api/stripe/webhooks API Endpoint', () => {
       await stripeWebhookHandler(mockReq, mockRes);
 
       expect(mockRes._getStatusCode()).toBe(200);
-      expect(supabase.from('subscriptions').update).toHaveBeenCalledWith(
+      expect(supabaseClient.from('subscriptions').update).toHaveBeenCalledWith(
         expect.objectContaining({
           status: 'active',
           current_period_end: new Date(1678886400 * 1000).toISOString(),
         })
       );
-      expect(supabase.from('subscriptions').update().eq).toHaveBeenCalledWith('stripe_subscription_id', 'sub_mock_active_id');
+      expect(supabaseClient.from('subscriptions').update().eq).toHaveBeenCalledWith('stripe_subscription_id', 'sub_mock_active_id');
       
-      expect(supabase.from('usage').update).toHaveBeenCalledWith(
+      expect(supabaseClient.from('usage').update).toHaveBeenCalledWith(
         expect.objectContaining({
           usage_count: 0,
         })
       );
       // This expect needs to check the user_id from the mocked subscription update
-      expect(supabase.from('usage').update().eq).toHaveBeenCalledWith('user_id', 'user_associated_with_sub_mock_active_id');
+      expect(supabaseClient.from('usage').update().eq).toHaveBeenCalledWith('user_id', 'user_associated_with_sub_mock_active_id');
     });
   });
 
@@ -222,12 +222,12 @@ describe('/api/stripe/webhooks API Endpoint', () => {
       await stripeWebhookHandler(mockReq, mockRes);
 
       expect(mockRes._getStatusCode()).toBe(200);
-      expect(supabase.from('subscriptions').update).toHaveBeenCalledWith(
+      expect(supabaseClient.from('subscriptions').update).toHaveBeenCalledWith(
         expect.objectContaining({
           status: 'past_due',
         })
       );
-      expect(supabase.from('subscriptions').update().eq).toHaveBeenCalledWith('stripe_subscription_id', 'sub_mock_failed_id');
+      expect(supabaseClient.from('subscriptions').update().eq).toHaveBeenCalledWith('stripe_subscription_id', 'sub_mock_failed_id');
     });
   });
   
