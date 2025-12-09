@@ -1,7 +1,7 @@
-import { createMocks, RequestMethod } from 'node-mocks-http';
+import { createMocks } from 'node-mocks-http';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import customerPortalHandler from '../customer-portal'; // Adjust path
-import { supabase } from '../../../../lib/supabase'; // Mocked
+import customerPortalHandler from '../customer-portal';
+import supabaseClient from '@/lib/supabase';
 import Stripe from 'stripe'; // Mocked
 
 const mockStripe = new Stripe('sk_test_mock', { apiVersion: '2024-06-20' });
@@ -26,7 +26,7 @@ describe('/api/stripe/customer-portal API Endpoint', () => {
     });
 
     // Default mock for Supabase query to fetch stripe_customer_id
-    (supabase.from('subscriptions').select().eq().order().limit().single as jest.Mock).mockResolvedValue({
+    (supabaseClient.from('subscriptions').select().eq().order().limit().single as jest.Mock).mockResolvedValue({
       data: { stripe_customer_id: 'cus_default_stripe_id' },
       error: null,
     });
@@ -49,7 +49,7 @@ describe('/api/stripe/customer-portal API Endpoint', () => {
   it('should return 404 if Stripe customer ID is not found for the user', async () => {
     mockReq.body = { user_id: 'user_no_customer_id' };
     // Mock Supabase to return no data (customer ID not found)
-    (supabase.from('subscriptions').select().eq().order().limit().single as jest.Mock).mockResolvedValueOnce({
+    (supabaseClient.from('subscriptions').select().eq().order().limit().single as jest.Mock).mockResolvedValueOnce({
       data: null,
       error: null, // No DB error, just no data
     });
@@ -58,14 +58,14 @@ describe('/api/stripe/customer-portal API Endpoint', () => {
 
     expect(mockRes._getStatusCode()).toBe(404);
     expect(mockRes._getJSONData()).toEqual({ error: 'Stripe customer ID not found for this user.' });
-    expect(supabase.from('subscriptions').select).toHaveBeenCalledWith('stripe_customer_id');
-    expect(supabase.from('subscriptions').select().eq).toHaveBeenCalledWith('user_id', 'user_no_customer_id');
+    expect(supabaseClient.from('subscriptions').select).toHaveBeenCalledWith('stripe_customer_id');
+    expect(supabaseClient.from('subscriptions').select().eq).toHaveBeenCalledWith('user_id', 'user_no_customer_id');
   });
   
   it('should return 404 if Supabase returns an error when fetching customer ID', async () => {
     mockReq.body = { user_id: 'user_db_error_case' };
     const dbError = { message: 'Mock Supabase DB Error on fetch', code: 'DB500' };
-    (supabase.from('subscriptions').select().eq().order().limit().single as jest.Mock).mockResolvedValueOnce({
+    (supabaseClient.from('subscriptions').select().eq().order().limit().single as jest.Mock).mockResolvedValueOnce({
       data: null,
       error: dbError,
     });
@@ -84,7 +84,7 @@ describe('/api/stripe/customer-portal API Endpoint', () => {
   it('should create a Stripe Customer Portal session and return its URL', async () => {
     mockReq.body = { user_id: 'user_valid_customer' };
     const expectedStripeCustomerId = 'cus_fetched_stripe_id';
-    (supabase.from('subscriptions').select().eq().order().limit().single as jest.Mock).mockResolvedValueOnce({
+    (supabaseClient.from('subscriptions').select().eq().order().limit().single as jest.Mock).mockResolvedValueOnce({
       data: { stripe_customer_id: expectedStripeCustomerId },
       error: null,
     });
@@ -95,8 +95,8 @@ describe('/api/stripe/customer-portal API Endpoint', () => {
     expect(mockRes._getJSONData()).toEqual({
       url: 'https://billing.stripe.com/mock_portal_session_url',
     });
-    expect(supabase.from('subscriptions').select).toHaveBeenCalledWith('stripe_customer_id');
-    expect(supabase.from('subscriptions').select().eq).toHaveBeenCalledWith('user_id', 'user_valid_customer');
+    expect(supabaseClient.from('subscriptions').select).toHaveBeenCalledWith('stripe_customer_id');
+    expect(supabaseClient.from('subscriptions').select().eq).toHaveBeenCalledWith('user_id', 'user_valid_customer');
     expect(mockStripe.billingPortal.sessions.create).toHaveBeenCalledWith({
       customer: expectedStripeCustomerId,
       return_url: `${process.env.NEXT_PUBLIC_APP_URL}/dashboard/settings/billing`,
@@ -108,7 +108,7 @@ describe('/api/stripe/customer-portal API Endpoint', () => {
     const stripeApiError = new Error('Mock Stripe Portal API Error');
     (mockStripe.billingPortal.sessions.create as jest.Mock).mockRejectedValueOnce(stripeApiError);
      // Ensure Supabase call is successful for this test case
-    (supabase.from('subscriptions').select().eq().order().limit().single as jest.Mock).mockResolvedValueOnce({
+    (supabaseClient.from('subscriptions').select().eq().order().limit().single as jest.Mock).mockResolvedValueOnce({
       data: { stripe_customer_id: 'cus_for_stripe_error' },
       error: null,
     });

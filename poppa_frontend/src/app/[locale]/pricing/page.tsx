@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useContext } from 'react';
-import { AuthContext } from '@/context/AuthContext';
+import React from 'react';
+import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
@@ -21,7 +21,7 @@ const plans = [
 ];
 
 const PricingPage = () => {
-  const { user } = useContext(AuthContext);
+  const { user } = useAuth();
   const router = useRouter();
   const t = useTranslations('pricing');
 

@@ -1,7 +1,7 @@
-import { createMocks, RequestMethod } from 'node-mocks-http';
+import { createMocks } from 'node-mocks-http';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import elevenlabsWebhookHandler from '../webhooks'; // Adjust path
-import { supabase } from '../../../../lib/supabase'; // Mocked
+import elevenlabsWebhookHandler from '../webhooks';
+import supabaseClient from '@/lib/supabase';
 import crypto from 'crypto';
 import { buffer } from 'micro';
 
@@ -28,7 +28,7 @@ describe('/api/elevenlabs/webhooks API Endpoint', () => {
     mockRes = res;
 
     // Default mock for Supabase RPC call
-    (supabase.rpc as jest.Mock).mockResolvedValue({
+    (supabaseClient.rpc as jest.Mock).mockResolvedValue({
       data: [{ user_id: 'user_test_123', usage_count: 1, usage_limit: 100 }], // Mocked successful RPC response
       error: null,
     });
@@ -114,7 +114,7 @@ describe('/api/elevenlabs/webhooks API Endpoint', () => {
       await elevenlabsWebhookHandler(mockReq, mockRes);
 
       expect(mockRes._getStatusCode()).toBe(200);
-      expect(supabase.rpc).toHaveBeenCalledWith('increment_user_usage', {
+      expect(supabaseClient.rpc).toHaveBeenCalledWith('increment_user_usage', {
         p_user_id: 'user_test_abcdef',
         p_increment_by: 1,
       });
@@ -126,7 +126,7 @@ describe('/api/elevenlabs/webhooks API Endpoint', () => {
 
     it('should log a warning if usage limit is exceeded', async () => {
       const consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
-      (supabase.rpc as jest.Mock).mockResolvedValueOnce({ // Mock RPC to return exceeded usage
+      (supabaseClient.rpc as jest.Mock).mockResolvedValueOnce({ // Mock RPC to return exceeded usage
         data: [{ user_id: 'user_test_abcdef', usage_count: 101, usage_limit: 100 }],
         error: null,
       });
@@ -143,7 +143,7 @@ describe('/api/elevenlabs/webhooks API Endpoint', () => {
     
     it('should log info if usage limit is reached exactly', async () => {
       const consoleInfoSpy = jest.spyOn(console, 'info').mockImplementation(() => {});
-      (supabase.rpc as jest.Mock).mockResolvedValueOnce({ // Mock RPC to return usage at limit
+      (supabaseClient.rpc as jest.Mock).mockResolvedValueOnce({ // Mock RPC to return usage at limit
         data: [{ user_id: 'user_test_abcdef', usage_count: 100, usage_limit: 100 }],
         error: null,
       });
@@ -176,7 +176,7 @@ describe('/api/elevenlabs/webhooks API Endpoint', () => {
     });
     
     it('should return 404 if RPC call indicates user usage record not found/updated', async () => {
-      (supabase.rpc as jest.Mock).mockResolvedValueOnce({ data: null, error: null }); // Simulate RPC not returning data
+      (supabaseClient.rpc as jest.Mock).mockResolvedValueOnce({ data: null, error: null }); // Simulate RPC not returning data
       mockElevenLabsEvent(callEndedEventPayload, undefined, mockElevenLabsWebhookSecret);
 
       await elevenlabsWebhookHandler(mockReq, mockRes);
@@ -199,7 +199,7 @@ describe('/api/elevenlabs/webhooks API Endpoint', () => {
 
       expect(mockRes._getStatusCode()).toBe(200);
       expect(mockRes._getJSONData()).toEqual({ message: 'Event type skipped', type: 'call_started' });
-      expect(supabase.rpc).not.toHaveBeenCalled();
+      expect(supabaseClient.rpc).not.toHaveBeenCalled();
       expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining('ℹ️ Skipping ElevenLabs event type: call_started'));
       consoleLogSpy.mockRestore();
     });
@@ -208,7 +208,7 @@ describe('/api/elevenlabs/webhooks API Endpoint', () => {
   describe('Error Handling', () => {
     it('should return 500 if Supabase RPC call fails', async () => {
         const rpcError = { message: 'Mock Supabase RPC Error', code: 'DB500' };
-        (supabase.rpc as jest.Mock).mockResolvedValueOnce({ data: null, error: rpcError });
+        (supabaseClient.rpc as jest.Mock).mockResolvedValueOnce({ data: null, error: rpcError });
         const eventPayload = { ...callEndedEventPayload }; // Use a valid payload structure
          mockElevenLabsEvent(eventPayload, undefined, mockElevenLabsWebhookSecret);
 
