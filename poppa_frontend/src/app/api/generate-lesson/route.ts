@@ -2,11 +2,34 @@ import supabaseClient from '@/lib/supabase';
 import { Tables } from '@/types/database.types';
 import { generateThinkingMethodInstruction } from '@/lib/lesson-utils';
 import { Anthropic } from "@anthropic-ai/sdk";
+import {
+  getCurriculumLesson,
+  createEmptyProgress,
+  progressFromLessonHistory,
+} from '@/lib/curriculum/lesson-generator';
+import '@/lib/curriculum';
 
+interface GenerateLessonRequest {
+  languageCode: string;
+  nativeLanguage: string;
+  customTopic?: string;
+  useCurriculum?: boolean;
+  lessonId?: number;
+  userId?: string;
+  completedLessonIds?: number[];
+}
 
 export async function POST(req: Request) {
   try {
-    const { languageCode, nativeLanguage, customTopic } = await req.json();
+    const {
+      languageCode,
+      nativeLanguage,
+      customTopic,
+      useCurriculum,
+      lessonId,
+      userId,
+      completedLessonIds,
+    }: GenerateLessonRequest = await req.json();
 
     // First, get the language ID from the languages table
     const { data: languageData, error: languageError } = await supabaseClient
@@ -17,6 +40,30 @@ export async function POST(req: Request) {
 
     if (languageError) throw languageError;
     if (!languageData) throw new Error('Language not found');
+
+    // If curriculum mode is enabled, try to use structured curriculum
+    if (useCurriculum) {
+      const progress = completedLessonIds && completedLessonIds.length > 0
+        ? progressFromLessonHistory(userId || 'anonymous', languageCode, completedLessonIds)
+        : createEmptyProgress(userId || 'anonymous', languageCode);
+
+      const curriculumResult = getCurriculumLesson(
+        languageCode,
+        progress,
+        nativeLanguage,
+        lessonId
+      );
+
+      if (curriculumResult.hasCurriculum) {
+        return Response.json({
+          instruction: curriculumResult.instruction,
+          lessonId: curriculumResult.lessonId,
+          lessonTitle: curriculumResult.lessonTitle,
+          level: curriculumResult.level,
+          usedCurriculum: true,
+        });
+      }
+    }
 
     // Now use the language ID to fetch lesson history
     const { data: lessonHistory, error } = await supabaseClient
