@@ -1,173 +1,60 @@
-/**
- * Context Injection Utilities
- *
- * Formats curriculum data and user progress for injection into
- * AI conversation context (ElevenLabs agent prompts).
- */
+import { Lesson, UserProgress, GrammarPoint, VocabularyItem } from "@/types/curriculum.types";
+import { getCurriculum, getLesson, getMasteredContent } from "@/lib/curriculum/curriculum-framework";
 
-import {
-  Lesson,
-  UserCurriculumProgress,
-  GrammarPoint,
-  VocabularyItem,
-  LessonContext,
-} from "@/types/curriculum.types";
-import {
-  getCurriculum,
-  getLesson,
-  getMasteredContent,
-  calculateProgress,
-} from "@/lib/curriculum/curriculum-framework";
-
-export interface InjectionContext {
-  lessonPrompt: string;
-  systemContext: string;
-  fullContext: string;
-}
-
-function formatGrammarPoints(points: GrammarPoint[]): string {
-  if (points.length === 0) return "None yet";
-
-  return points
-    .map((gp) => `- ${gp.name}: ${gp.description}`)
-    .join("\n");
-}
-
-function formatVocabulary(vocab: VocabularyItem[], limit = 20): string {
-  if (vocab.length === 0) return "None yet";
-
-  const items = vocab.slice(-limit);
-  return items.map((v) => `- ${v.term} = ${v.translation}`).join("\n");
-}
-
-function formatObjectives(objectives: string[]): string {
-  return objectives.map((o, i) => `${i + 1}. ${o}`).join("\n");
-}
-
-export function buildLessonContext(
+export function buildConversationContext(
   languageCode: string,
   lessonId: number,
-  progress: UserCurriculumProgress,
-  userNativeLanguage: string
-): LessonContext | null {
+  progress: UserProgress,
+  nativeLanguage: string
+): string | null {
   const curriculum = getCurriculum(languageCode);
   const lesson = getLesson(languageCode, lessonId);
-
   if (!curriculum || !lesson) return null;
-
-  const completedIds = new Set(progress.completedLessons.map((l) => l.lessonId));
-  const previousLessons = curriculum.lessons.filter((l) =>
-    completedIds.has(l.id)
-  );
 
   const { grammar, vocabulary } = getMasteredContent(languageCode, progress);
 
-  return {
-    currentLesson: lesson,
-    previousLessons,
-    masteredGrammar: grammar,
-    masteredVocabulary: vocabulary,
-    userNativeLanguage,
-    targetLanguage: curriculum.languageName,
-  };
+  return formatContext(lesson, grammar, vocabulary, curriculum.languageName, nativeLanguage);
 }
 
-export function generateLessonPrompt(lesson: Lesson): string {
-  return `
-## Current Lesson: ${lesson.title}
-
-${lesson.description}
-
-### Learning Objectives
-${formatObjectives(lesson.objectives)}
-
-### Grammar Focus
-${lesson.grammarPoints.map((gp) => `**${gp.name}**: ${gp.description}\nExamples: ${gp.examples.join(", ")}`).join("\n\n")}
-
-### Key Vocabulary
-${lesson.vocabulary.map((v) => `- **${v.term}** = ${v.translation}${v.example ? ` (e.g., "${v.example}")` : ""}`).join("\n")}
-
-### Conversation Guidance
-${lesson.conversationPrompt}
-`.trim();
-}
-
-export function generateSystemContext(
-  context: LessonContext,
-  progress: UserCurriculumProgress
-): string {
-  const progressStats = calculateProgress(context.targetLanguage, progress);
-
-  return `
-## Student Profile
-
-- Native Language: ${context.userNativeLanguage}
-- Target Language: ${context.targetLanguage}
-- Current Level: ${progressStats.currentLevel}
-- Lessons Completed: ${progressStats.completedLessons}/${progressStats.totalLessons}
-- Levels Completed: ${progressStats.levelsCompleted.join(", ") || "None yet"}
-
-## Previously Mastered Grammar
-${formatGrammarPoints(context.masteredGrammar)}
-
-## Recently Learned Vocabulary (last 20 items)
-${formatVocabulary(context.masteredVocabulary, 20)}
-
-## Recent Lesson Topics
-${context.previousLessons.slice(-5).map((l) => `- Lesson ${l.id}: ${l.title}`).join("\n") || "No previous lessons"}
-`.trim();
-}
-
-export function generateFullContext(
-  languageCode: string,
-  lessonId: number,
-  progress: UserCurriculumProgress,
-  userNativeLanguage: string
-): InjectionContext | null {
-  const context = buildLessonContext(
-    languageCode,
-    lessonId,
-    progress,
-    userNativeLanguage
-  );
-
-  if (!context) return null;
-
-  const lessonPrompt = generateLessonPrompt(context.currentLesson);
-  const systemContext = generateSystemContext(context, progress);
-
-  const fullContext = `
-${systemContext}
-
----
-
-${lessonPrompt}
-`.trim();
-
-  return {
-    lessonPrompt,
-    systemContext,
-    fullContext,
-  };
-}
-
-export function generateQuickContext(
+function formatContext(
   lesson: Lesson,
-  masteredGrammarNames: string[],
-  masteredVocabCount: number,
-  currentLevel: string
+  masteredGrammar: GrammarPoint[],
+  masteredVocabulary: VocabularyItem[],
+  targetLanguage: string,
+  nativeLanguage: string
 ): string {
-  return `
-LESSON: ${lesson.title} (${lesson.level})
-STUDENT LEVEL: ${currentLevel}
-PRIOR GRAMMAR: ${masteredGrammarNames.slice(-10).join(", ") || "None"}
-VOCAB LEARNED: ${masteredVocabCount} words
+  const lines: string[] = [];
 
-OBJECTIVES:
-${lesson.objectives.map((o) => `- ${o}`).join("\n")}
+  lines.push(`TARGET LANGUAGE: ${targetLanguage}`);
+  lines.push(`STUDENT'S NATIVE LANGUAGE: ${nativeLanguage}`);
+  lines.push(`LESSON ${lesson.id}: ${lesson.title}`);
+  lines.push(`LEVEL: ${lesson.level}`);
+  lines.push(`FOCUS: ${lesson.focus}`);
+  lines.push("");
 
-FOCUS: ${lesson.grammarPoints.map((g) => g.name).join(", ")}
+  if (masteredGrammar.length > 0) {
+    lines.push("STUDENT ALREADY KNOWS:");
+    for (const g of masteredGrammar.slice(-10)) {
+      lines.push(`- ${g.name}`);
+    }
+    lines.push(`- ${masteredVocabulary.length} vocabulary words`);
+    lines.push("");
+  }
 
-${lesson.conversationPrompt}
-`.trim();
+  lines.push("THIS LESSON'S GRAMMAR:");
+  for (const g of lesson.grammar) {
+    lines.push(`- ${g.name}: ${g.explanation}`);
+  }
+  lines.push("");
+
+  lines.push("THIS LESSON'S VOCABULARY:");
+  for (const v of lesson.vocabulary) {
+    lines.push(`- ${v.term} = ${v.translation}`);
+  }
+  lines.push("");
+
+  lines.push("TEACHING INSTRUCTIONS:");
+  lines.push(lesson.conversationPrompt);
+
+  return lines.join("\n");
 }
