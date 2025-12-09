@@ -1,16 +1,18 @@
 "use client"
 
-import { useState  } from 'react';
+import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
+import { Icons } from "@/components/ui/icons";
 import { interface_locales } from '@/lib/supportedLanguages';
 import { useRouter } from '@/i18n/routing';
-import { useTranslations } from 'next-intl';
-import { useLocale } from 'next-intl';
+import { signInWithGoogle } from '@/lib/auth';
+import { useTranslations, useLocale } from 'next-intl';
+import { AuthError } from '@supabase/supabase-js';
 
 export default function SignUp() {
   const locale = useLocale();
@@ -30,6 +32,8 @@ export default function SignUp() {
   const [passwordError, setPasswordError] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
+  const [showEmailForm, setShowEmailForm] = useState(false);
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -85,7 +89,55 @@ export default function SignUp() {
     }
   };
 
+  const handleGoogleSignUp = async () => {
+    setIsGoogleLoading(true);
+    setError('');
+    try {
+      await signInWithGoogle(locale);
+    } catch (err) {
+      setError((err as AuthError).message || t('errors.generic'));
+      setIsGoogleLoading(false);
+    }
+  };
+
   return (
+    <div className="space-y-6">
+      <Button
+        type="button"
+        variant="outline"
+        className="w-full border-gray-300 hover:bg-gray-50"
+        onClick={handleGoogleSignUp}
+        disabled={isGoogleLoading || isLoading}
+      >
+        {isGoogleLoading ? (
+          <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+        ) : (
+          <Icons.google className="mr-2 h-4 w-4" />
+        )}
+        {t('continueWithGoogle')}
+      </Button>
+
+      {error && <p className="text-red-500 text-sm text-center">{error}</p>}
+
+      <div className="relative">
+        <div className="absolute inset-0 flex items-center">
+          <span className="w-full border-t border-gray-300" />
+        </div>
+        <div className="relative flex justify-center text-xs uppercase">
+          <span className="bg-white px-2 text-gray-500">{t('orContinueWith')}</span>
+        </div>
+      </div>
+
+      {!showEmailForm ? (
+        <Button
+          type="button"
+          variant="ghost"
+          className="w-full text-[#8B4513] hover:text-[#6D3611] hover:bg-[#8B4513]/5"
+          onClick={() => setShowEmailForm(true)}
+        >
+          {t('signUpWithEmail')}
+        </Button>
+      ) : (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-2 gap-4">
         <div className="space-y-2">
@@ -229,13 +281,13 @@ export default function SignUp() {
       <Button
         type="submit"
         className="w-full bg-[#8B4513] hover:bg-[#A0522D] text-white"
-        disabled={isLoading}
+        disabled={isLoading || isGoogleLoading}
       >
         {isLoading ? t('loading') : t('signupButton')}
       </Button>
-
-      {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
     </form>
+      )}
+    </div>
   );
 }
 

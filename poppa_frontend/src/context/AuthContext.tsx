@@ -16,11 +16,45 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
+async function getOrCreateProfile(user: User): Promise<UserProfile | null> {
+  const { data: existingProfile } = await supabaseBrowserClient
+    .from('users')
+    .select('*')
+    .eq('id', user.id)
+    .single();
+
+  if (existingProfile) {
+    return existingProfile;
+  }
+
+  const metadata = user.user_metadata;
+  const newProfile = {
+    id: user.id,
+    first_name: metadata?.full_name?.split(' ')[0] || metadata?.name?.split(' ')[0] || null,
+    last_name: metadata?.full_name?.split(' ').slice(1).join(' ') || metadata?.name?.split(' ').slice(1).join(' ') || null,
+    native_language: metadata?.native_language || 'English',
+    date_of_birth: metadata?.date_of_birth || null,
+    credits: 20,
+  };
+
+  const { data: createdProfile, error } = await supabaseBrowserClient
+    .from('users')
+    .insert(newProfile)
+    .select()
+    .single();
+
+  if (error) {
+    console.error('Failed to create user profile:', error);
+    return null;
+  }
+
+  return createdProfile;
+}
+
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [userPreferences, setUserPreferences] = useState<{ nativeLanguage: string } | null>(null);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -29,16 +63,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setUser(session?.user ?? null);
 
         if (session?.user) {
-          // Fetch user profile
-          const { data: profile } = await supabaseBrowserClient
-            .from('users')
-            .select('*')
-            .eq('id', session.user.id)
-            .single();
-          
+          const profile = await getOrCreateProfile(session.user);
           setUserProfile(profile);
         } else {
-          setUserProfile(null);  // Reset profile when no session
+          setUserProfile(null);
         }
       } finally {
         setIsLoading(false);
@@ -49,13 +77,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const { data: authListener } = supabaseBrowserClient.auth.onAuthStateChange(async (_event, session) => {
       setUser(session?.user ?? null);
       if (session?.user) {
-        // Fetch profile when auth state changes
-        const { data: profile } = await supabaseBrowserClient
-          .from('users')
-          .select('*')
-          .eq('id', session.user.id)
-          .single();
-        
+        const profile = await getOrCreateProfile(session.user);
         setUserProfile(profile);
       } else {
         setUserProfile(null);

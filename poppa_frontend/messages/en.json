@@ -243,6 +243,8 @@
     "loginButton": "Log In",
     "forgotPassword": "Forgot password?",
     "loading": "Logging in...",
+    "continueWithGoogle": "Continue with Google",
+    "orContinueWith": "or continue with email",
     "success": {
       "title": "Login Successful",
       "description": "Welcome back!"
@@ -264,6 +266,9 @@
     "year": "Year",
     "signupButton": "Sign Up",
     "loading": "Signing Up...",
+    "continueWithGoogle": "Sign up with Google",
+    "orContinueWith": "or sign up with email",
+    "signUpWithEmail": "Sign up with email instead",
     "languageTooltip": "Can't find your language? Poppa is only supported in these languages for now. Contact us for assistance.",
     "errors": {
       "passwordMatch": "Passwords don't match",
