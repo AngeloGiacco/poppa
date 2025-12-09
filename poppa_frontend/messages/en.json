@@ -389,6 +389,35 @@
       "description": "There was an error saving your lesson data. Please try again later."
     }
   },
+  "ProtectedRoute": {
+    "loading": "Loading...",
+    "error": {
+      "fetchSubscription": "Failed to fetch subscription data. Please try again."
+    },
+    "alert": {
+      "inactiveSubscription": "Your subscription is not active. Please visit the pricing page to subscribe.",
+      "usageExceeded": "You have exceeded your usage limit. Please upgrade your plan.",
+      "roleForbidden": "You do not have permission to access this page."
+    }
+  },
+  "pricing": {
+    "title": "Choose Your Plan",
+    "hobbyPlan": {
+      "name": "Hobby",
+      "price": "$9/month"
+    },
+    "proPlan": {
+      "name": "Pro",
+      "price": "$29/month"
+    },
+    "subscribeButton": "Subscribe",
+    "misconfiguredPlan": "Plan not available",
+    "error": {
+      "missingPriceId": "This plan is not configured correctly. Please contact support.",
+      "checkoutFailed": "Failed to create checkout session. Please try again.",
+      "checkoutUrlMissing": "Unable to redirect to checkout. Please try again."
+    }
+  },
   "chat": {
     "title": "Chat with Poppa",
     "error": {

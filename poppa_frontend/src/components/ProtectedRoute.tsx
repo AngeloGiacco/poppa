@@ -1,10 +1,9 @@
 'use client';
 import React, { useContext, useEffect, useState, ReactNode } from 'react';
-import { AuthContext } from '../context/AuthContext';
-import { useRouter, usePathname } // Corrected import for App Router
-from 'next/navigation';
-import { supabase } from '../lib/supabase'; // Assuming your Supabase client is here
-import { useTranslation } from 'react-i18next';
+import { AuthContext } from '@/context/AuthContext';
+import { useRouter, usePathname } from 'next/navigation';
+import { supabaseBrowserClient } from '@/lib/supabase-browser';
+import { useTranslations } from 'next-intl';
 
 interface ProtectedRouteProps {
   children: ReactNode;
@@ -25,7 +24,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, allowedRoles 
   const { user, loading, userRole } = useContext(AuthContext);
   const router = useRouter();
   const pathname = usePathname();
-  const { t } = useTranslation();
+  const t = useTranslations('ProtectedRoute');
 
   const [subscription, setSubscription] = useState<Subscription | null>(null);
   const [usage, setUsage] = useState<Usage | null>(null);
@@ -51,7 +50,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, allowedRoles 
       setIsSubscriptionLoading(true);
       setSubscriptionError(null);
       try {
-        const { data: subData, error: subError } = await supabase
+        const { data: subData, error: subError } = await supabaseBrowserClient
           .from('subscriptions')
           .select('status')
           .eq('user_id', user.id)
@@ -62,7 +61,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, allowedRoles 
         if (subError) throw subError;
         setSubscription(subData);
 
-        const { data: usageData, error: usageError } = await supabase
+        const { data: usageData, error: usageError } = await supabaseBrowserClient
           .from('usage')
           .select('usage_count, usage_limit')
           .eq('user_id', user.id)
@@ -79,7 +78,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, allowedRoles 
 
       } catch (error: any) {
         console.error('Error fetching subscription/usage data:', error);
-        setSubscriptionError(t('protectedRoute.error.fetchSubscription'));
+        setSubscriptionError(t('error.fetchSubscription'));
       } finally {
         setIsSubscriptionLoading(false);
       }
@@ -115,13 +114,13 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, allowedRoles 
     const usageExceeded = usage ? usage.usage_count >= usage.usage_limit : false;
 
     if (!isActive) {
-      alert(t('protectedRoute.alert.inactiveSubscription'));
+      alert(t('alert.inactiveSubscription'));
       router.push('/pricing');
       return null;
     }
 
     if (usageExceeded) {
-      alert(t('protectedRoute.alert.usageExceeded'));
+      alert(t('alert.usageExceeded'));
       router.push('/pricing'); // Or a specific "upgrade plan" page
       return null;
     }
@@ -137,7 +136,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, allowedRoles 
   // Role-based access control
   if (allowedRoles && userRole && !allowedRoles.includes(userRole)) {
     // Optionally, show a "Forbidden" page or redirect to a more appropriate page
-    alert(t('protectedRoute.alert.roleForbidden'));
+    alert(t('alert.roleForbidden'));
     router.push('/'); // Redirect to home or a default page
     return null;
   }
