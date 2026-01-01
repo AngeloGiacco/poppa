@@ -131,7 +131,11 @@ export default function LessonPage({ params }: LessonPageProps) {
       <main className="pt-32 px-6 pb-24 max-w-7xl mx-auto">
         <div className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-md overflow-hidden">
           <Header language={language.name} />
-          <Chat />
+          <Chat
+            lessonInstruction={instruction}
+            targetLanguage={language.name}
+            nativeLanguage="English"
+          />
         </div>
       </main>
 
