@@ -29,7 +29,7 @@ export default function HistoryPage() {
   const [selectedTranscript, setSelectedTranscript] = useState<string | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const searchParams = useSearchParams();
-  const languageCode = searchParams.get("language");
+  const languageCode = searchParams?.get("language") ?? null;
   const selectedLanguage = learnable_languages.find((lang) => lang.code === languageCode);
   const { user } = useAuth();
 

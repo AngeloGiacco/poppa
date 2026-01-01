@@ -5,8 +5,13 @@ import supabaseClient from "@/lib/supabase";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 
+// Extended Invoice type to include subscription property from webhook payload
+interface InvoiceWithSubscription extends Stripe.Invoice {
+  subscription?: string | Stripe.Subscription | null;
+}
+
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2024-06-20",
+  apiVersion: "2025-08-27.basil",
 });
 
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
@@ -117,10 +122,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     case "invoice.paid": {
-      const invoicePaid = event.data.object as Stripe.Invoice;
+      const invoicePaid = event.data.object as InvoiceWithSubscription;
       console.log("Invoice paid:", invoicePaid.id);
-      const subscriptionIdPaid = invoicePaid.subscription as string;
-      const customerIdPaid = invoicePaid.customer as string;
+      const subscriptionIdPaid =
+        typeof invoicePaid.subscription === "string"
+          ? invoicePaid.subscription
+          : invoicePaid.subscription?.id;
+      const customerIdPaid =
+        typeof invoicePaid.customer === "string" ? invoicePaid.customer : invoicePaid.customer?.id;
 
       if (!subscriptionIdPaid || !customerIdPaid) {
         console.error("❌ Missing subscription_id or customer_id in invoice.paid event");
@@ -169,10 +178,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     case "invoice.payment_failed": {
-      const invoiceFailed = event.data.object as Stripe.Invoice;
+      const invoiceFailed = event.data.object as InvoiceWithSubscription;
       console.log("Invoice payment failed:", invoiceFailed.id);
-      const subscriptionIdFailed = invoiceFailed.subscription as string;
-      const customerIdFailed = invoiceFailed.customer as string; // For fetching user_id if needed
+      const subscriptionIdFailed =
+        typeof invoiceFailed.subscription === "string"
+          ? invoiceFailed.subscription
+          : invoiceFailed.subscription?.id;
+      // customerIdFailed kept for potential future use (e.g., fetching user_id)
+      const _customerIdFailed =
+        typeof invoiceFailed.customer === "string"
+          ? invoiceFailed.customer
+          : invoiceFailed.customer?.id;
 
       if (!subscriptionIdFailed) {
         console.error("❌ Missing subscription_id in invoice.payment_failed event");

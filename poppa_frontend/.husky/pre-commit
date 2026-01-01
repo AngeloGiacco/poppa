@@ -1,2 +1,28 @@
 #!/bin/sh
-cd poppa_frontend && npx lint-staged
+
+cd poppa_frontend
+
+echo "Running pre-commit checks..."
+
+echo "1/7 Running lint-staged (format & lint staged files)..."
+npx lint-staged || exit 1
+
+echo "2/7 Running ESLint..."
+pnpm lint || exit 1
+
+echo "3/7 Running format check..."
+pnpm format:check || exit 1
+
+echo "4/7 Running TypeScript type check..."
+pnpm typecheck || exit 1
+
+echo "5/7 Running Knip (unused code detection)..."
+pnpm knip || exit 1
+
+echo "6/7 Running tests..."
+pnpm test || exit 1
+
+echo "7/7 Running build..."
+pnpm build || exit 1
+
+echo "All pre-commit checks passed!"

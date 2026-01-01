@@ -132,6 +132,7 @@ export function Chat({ lessonInstruction, targetLanguage, nativeLanguage }: Chat
 
       const sessionConfig: {
         agentId: string;
+        connectionType: "websocket";
         overrides?: {
           agent?: {
             prompt?: { prompt: string };
@@ -142,6 +143,7 @@ export function Chat({ lessonInstruction, targetLanguage, nativeLanguage }: Chat
         dynamicVariables?: Record<string, string>;
       } = {
         agentId,
+        connectionType: "websocket",
       };
 
       if (lessonInstruction || targetLanguage) {
