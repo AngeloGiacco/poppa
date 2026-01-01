@@ -1,17 +1,18 @@
 import { createMocks } from "node-mocks-http";
-import Stripe from "stripe"; // Mocked
+import Stripe from "stripe";
 
 import supabaseClient from "@/lib/supabase";
 
 import checkoutSessionHandler from "../checkout-session";
 
 import type { NextApiRequest, NextApiResponse } from "next";
+import type { MockRequest, MockResponse } from "node-mocks-http";
 
-const mockStripe = new Stripe("sk_test_mock", { apiVersion: "2024-06-20" });
+const mockStripe = new Stripe("sk_test_mock", { apiVersion: "2025-08-27.basil" });
 
 describe("/api/stripe/checkout-session API Endpoint", () => {
-  let mockReq: Pick<NextApiRequest, any>;
-  let mockRes: Pick<NextApiResponse<any>>;
+  let mockReq: MockRequest<NextApiRequest>;
+  let mockRes: MockResponse<NextApiResponse>;
 
   beforeEach(() => {
     jest.clearAllMocks();
@@ -29,12 +30,13 @@ describe("/api/stripe/checkout-session API Endpoint", () => {
     });
 
     // Default mock for Supabase query to fetch existing customer
-    (supabaseClient.from("subscriptions").select().eq().maybeSingle as jest.Mock).mockResolvedValue(
-      {
-        data: null, // Default to no existing customer
-        error: null,
-      }
-    );
+    const mockMaybeSingle = jest.fn().mockResolvedValue({
+      data: null,
+      error: null,
+    });
+    const mockEq = jest.fn().mockReturnValue({ maybeSingle: mockMaybeSingle });
+    const mockSelect = jest.fn().mockReturnValue({ eq: mockEq });
+    (supabaseClient.from as jest.Mock).mockReturnValue({ select: mockSelect });
   });
 
   it("should return 405 if method is not POST", async () => {
@@ -90,12 +92,13 @@ describe("/api/stripe/checkout-session API Endpoint", () => {
   it("should include customer ID if user is an existing Stripe customer", async () => {
     mockReq.body = { price_id: "price_mock_hobby", user_id: "user_existing_customer" };
     // Mock Supabase to return an existing Stripe customer ID
-    (
-      supabaseClient.from("subscriptions").select().eq().maybeSingle as jest.Mock
-    ).mockResolvedValueOnce({
+    const mockMaybeSingle = jest.fn().mockResolvedValue({
       data: { stripe_customer_id: "cus_existing_stripe_id" },
       error: null,
     });
+    const mockEq = jest.fn().mockReturnValue({ maybeSingle: mockMaybeSingle });
+    const mockSelect = jest.fn().mockReturnValue({ eq: mockEq });
+    (supabaseClient.from as jest.Mock).mockReturnValue({ select: mockSelect });
 
     await checkoutSessionHandler(mockReq, mockRes);
 
@@ -126,13 +129,14 @@ describe("/api/stripe/checkout-session API Endpoint", () => {
 
   it("should handle errors from Supabase when fetching customer ID", async () => {
     mockReq.body = { price_id: "price_mock_db_error", user_id: "user_db_error" };
-    const dbError = { message: "Mock Supabase Read Error", code: "500" }; // Example error structure
-    (
-      supabaseClient.from("subscriptions").select().eq().maybeSingle as jest.Mock
-    ).mockResolvedValueOnce({
+    const dbError = { message: "Mock Supabase Read Error", code: "500" };
+    const mockMaybeSingle = jest.fn().mockResolvedValue({
       data: null,
       error: dbError,
     });
+    const mockEq = jest.fn().mockReturnValue({ maybeSingle: mockMaybeSingle });
+    const mockSelect = jest.fn().mockReturnValue({ eq: mockEq });
+    (supabaseClient.from as jest.Mock).mockReturnValue({ select: mockSelect });
     // Spy on console.error to check if the error is logged
     const consoleErrorSpy = jest.spyOn(console, "error").mockImplementation(() => {});
 

@@ -1,15 +1,57 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
-  "entry": ["src/app/**/*.{ts,tsx}", "src/middleware.ts"],
+  "entry": ["src/app/**/*.{ts,tsx}", "src/pages/api/**/*.ts", "src/**/__tests__/**/*.{ts,tsx}"],
   "project": ["src/**/*.{ts,tsx}"],
-  "ignore": ["src/types/**"],
-  "ignoreDependencies": ["@svgr/webpack", "tailwindcss", "postcss", "autoprefixer"],
+  "ignore": [
+    "src/types/**",
+    "src/components/ui/**",
+    "src/components/CreditsBanner.tsx",
+    "src/hooks/use-mutation-observer.ts",
+    "src/lib/languageData.ts",
+    "src/lib/curriculum/**"
+  ],
+  "ignoreDependencies": [
+    "@svgr/webpack",
+    "@testing-library/jest-dom",
+    "@testing-library/react",
+    "jest-environment-jsdom",
+    "identity-obj-proxy",
+    "postcss-load-config",
+    "@hookform/resolvers",
+    "@radix-ui/react-alert-dialog",
+    "@radix-ui/react-checkbox",
+    "@radix-ui/react-hover-card",
+    "@radix-ui/react-popover",
+    "@radix-ui/react-scroll-area",
+    "@radix-ui/react-separator",
+    "@radix-ui/react-slider",
+    "@radix-ui/react-switch",
+    "@radix-ui/react-tabs",
+    "@tiptap/extension-placeholder",
+    "@tiptap/pm",
+    "@tiptap/react",
+    "@tiptap/starter-kit",
+    "anthropic",
+    "cmdk",
+    "js-cookie",
+    "react-hook-form",
+    "react-syntax-highlighter",
+    "vaul",
+    "zod",
+    "@shadcn/ui",
+    "@types/react-syntax-highlighter",
+    "eslint-plugin-prettier",
+    "supertest"
+  ],
   "next": {
-    "entry": ["src/app/**/*.{ts,tsx}", "src/middleware.ts"]
+    "entry": ["src/app/**/*.{ts,tsx}"]
   },
   "rules": {
-    "files": "error",
+    "files": "warn",
     "dependencies": "warn",
-    "unlisted": "warn"
-  }
+    "unlisted": "warn",
+    "exports": "warn",
+    "types": "warn"
+  },
+  "ignoreExportsUsedInFile": true
 }

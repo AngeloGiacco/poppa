@@ -26,7 +26,7 @@ export default function LessonPage({ params }: LessonPageProps) {
   const t = useTranslations();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
-  const [_instruction, setInstruction] = useState<string>("");
+  const [lessonInstructionData, setLessonInstructionData] = useState<string>("");
   const [isGeneratingLesson, setIsGeneratingLesson] = useState(true);
   const searchParams = useSearchParams();
 
@@ -45,7 +45,7 @@ export default function LessonPage({ params }: LessonPageProps) {
       }
 
       try {
-        const customTopic = searchParams.get("topic");
+        const customTopic = searchParams?.get("topic") ?? null;
         const response = await fetch("/api/generate-lesson", {
           method: "POST",
           headers: {
@@ -59,7 +59,7 @@ export default function LessonPage({ params }: LessonPageProps) {
         });
 
         const data = await response.json();
-        setInstruction(data.instruction);
+        setLessonInstructionData(data.instruction);
       } catch (error) {
         console.error("Error generating lesson:", error);
       } finally {
@@ -130,7 +130,7 @@ export default function LessonPage({ params }: LessonPageProps) {
         <div className="overflow-hidden rounded-2xl bg-white/70 shadow-md backdrop-blur-sm">
           <Header language={language.name} />
           <Chat
-            lessonInstruction={instruction}
+            lessonInstruction={lessonInstructionData}
             targetLanguage={language.name}
             nativeLanguage="English"
           />
