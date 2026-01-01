@@ -21,6 +21,8 @@
     "test:coverage": "jest --coverage",
     "validate": "pnpm lint && pnpm typecheck && pnpm test",
     "validate:all": "pnpm lint:strict && pnpm biome:check && pnpm typecheck && pnpm test",
+    "knip": "knip",
+    "knip:fix": "knip --fix",
     "prepare": "cd .. && husky poppa_frontend/.husky"
   },
   "dependencies": {
@@ -96,6 +98,7 @@
     "husky": "^9.1.7",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "knip": "^5.78.0",
     "lint-staged": "^15.2.10",
     "node-mocks-http": "^1.16.2",
     "postcss": "^8",

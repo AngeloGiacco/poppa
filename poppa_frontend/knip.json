@@ -1,0 +1,15 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "entry": ["src/app/**/*.{ts,tsx}", "src/middleware.ts"],
+  "project": ["src/**/*.{ts,tsx}"],
+  "ignore": ["src/types/**"],
+  "ignoreDependencies": ["@svgr/webpack", "tailwindcss", "postcss", "autoprefixer"],
+  "next": {
+    "entry": ["src/app/**/*.{ts,tsx}", "src/middleware.ts"]
+  },
+  "rules": {
+    "files": "error",
+    "dependencies": "warn",
+    "unlisted": "warn"
+  }
+}
