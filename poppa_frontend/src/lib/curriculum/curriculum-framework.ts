@@ -1,4 +1,4 @@
-import {
+import type {
   LanguageCurriculum,
   Lesson,
   UserProgress,
@@ -22,7 +22,9 @@ export function getLesson(languageCode: string, lessonId: number): Lesson | unde
 
 export function getNextLesson(languageCode: string, progress: UserProgress): Lesson | undefined {
   const curriculum = registry[languageCode];
-  if (!curriculum) return undefined;
+  if (!curriculum) {
+    return undefined;
+  }
 
   const completed = new Set(progress.completedLessonIds);
   return curriculum.lessons.find((l) => !completed.has(l.id));
@@ -33,7 +35,9 @@ export function getMasteredContent(
   progress: UserProgress
 ): { grammar: GrammarPoint[]; vocabulary: VocabularyItem[] } {
   const curriculum = registry[languageCode];
-  if (!curriculum) return { grammar: [], vocabulary: [] };
+  if (!curriculum) {
+    return { grammar: [], vocabulary: [] };
+  }
 
   const completed = new Set(progress.completedLessonIds);
   const grammar: GrammarPoint[] = [];
@@ -42,7 +46,9 @@ export function getMasteredContent(
   const seenVocab = new Set<string>();
 
   for (const lesson of curriculum.lessons) {
-    if (!completed.has(lesson.id)) continue;
+    if (!completed.has(lesson.id)) {
+      continue;
+    }
 
     for (const g of lesson.grammar) {
       if (!seenGrammar.has(g.name)) {

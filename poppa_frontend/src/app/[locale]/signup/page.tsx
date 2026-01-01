@@ -1,48 +1,56 @@
-"use client"
+"use client";
+
+import Image from "next/image";
 
 import { motion } from "framer-motion";
-import Image from 'next/image';
-import { Link } from '@/i18n/routing';
-import SignupForm from '@/components/SignupForm';
-import { useTranslations } from 'next-intl';
-import { Footer } from '@/components/Footer';
+import { useTranslations } from "next-intl";
+
+import { Footer } from "@/components/Footer";
+import SignupForm from "@/components/SignupForm";
+import { Link } from "@/i18n/routing";
 
 export default function SignUp() {
-  const t = useTranslations('SignupPage');
+  const t = useTranslations("SignupPage");
 
   return (
-    <div className={`min-h-screen bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0] relative`}>
+    <div className="relative min-h-screen bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]">
       {/* Refined navigation */}
-      <div className="absolute top-0 left-0 right-0 px-6 py-4 backdrop-blur-sm bg-[#FFF8E1]/50">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link href="/" className="text-[#8B4513] hover:text-[#6D3611] transition-colors duration-300 flex items-center gap-2">
-            <span>←</span> {t('navigation.backToHome')}
+      <div className="absolute left-0 right-0 top-0 bg-[#FFF8E1]/50 px-6 py-4 backdrop-blur-sm">
+        <div className="mx-auto flex max-w-7xl items-center justify-between">
+          <Link
+            href="/"
+            className="flex items-center gap-2 text-[#8B4513] transition-colors duration-300 hover:text-[#6D3611]"
+          >
+            <span>←</span> {t("navigation.backToHome")}
           </Link>
-          <Link href="/login" className="text-[#8B4513] hover:text-[#6D3611] transition-colors duration-300 font-medium">
-            {t('login.link')}
+          <Link
+            href="/login"
+            className="font-medium text-[#8B4513] transition-colors duration-300 hover:text-[#6D3611]"
+          >
+            {t("login.link")}
           </Link>
         </div>
       </div>
 
-      <div className="max-w-md mx-auto px-4 pt-32 pb-16">
+      <div className="mx-auto max-w-md px-4 pb-16 pt-32">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-8"
+          className="mb-8 text-center"
         >
-          <div className="flex items-center justify-center gap-3 mb-6">
+          <div className="mb-6 flex items-center justify-center gap-3">
             <Image
-              className="w-16 h-16 rounded-2xl shadow-lg"
+              className="h-16 w-16 rounded-2xl shadow-lg"
               src="/logo.svg"
-              alt={t('logo.alt')}
+              alt={t("logo.alt")}
               width={64}
               height={64}
               priority
             />
-            <span className="text-3xl font-bold text-[#8B4513]">{t('hero.brandName')}</span>
+            <span className="text-3xl font-bold text-[#8B4513]">{t("hero.brandName")}</span>
           </div>
-          <p className="text-lg text-[#5D4037]/80">{t('hero.subtitle')}</p>
+          <p className="text-lg text-[#5D4037]/80">{t("hero.subtitle")}</p>
         </motion.div>
 
         <motion.div
@@ -50,7 +58,7 @@ export default function SignUp() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl p-8">
+          <div className="rounded-2xl bg-white/80 p-8 shadow-lg backdrop-blur-sm">
             <SignupForm />
           </div>
         </motion.div>

@@ -1,4 +1,10 @@
-export type ProficiencyLevel = "beginner" | "elementary" | "intermediate" | "upper_intermediate" | "advanced" | "mastery";
+export type ProficiencyLevel =
+  | "beginner"
+  | "elementary"
+  | "intermediate"
+  | "upper_intermediate"
+  | "advanced"
+  | "mastery";
 
 export interface VocabularyItem {
   term: string;
