@@ -10,7 +10,14 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "format:check": "prettier --check \"**/*.{ts,tsx,md,json}\"",
-    "format:write": "prettier --write \"**/*.{ts,tsx,md,json}\""
+    "format:write": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:ci": "jest --ci --coverage --coverageReporters=text --coverageReporters=lcov",
+    "test:coverage": "jest --coverage",
+    "prepare": "cd .. && husky poppa_frontend/.husky",
+    "pre-commit": "pnpm lint && pnpm format:check && pnpm typecheck"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.1",
@@ -63,6 +70,8 @@
   },
   "devDependencies": {
     "@shadcn/ui": "^0.0.4",
+    "husky": "^9.0.0",
+    "lint-staged": "^15.2.0",
     "@testing-library/react": "^16.3.0",
     "@types/jest": "^29.5.14",
     "@types/node": "^20",
@@ -85,5 +94,14 @@
     "ts-jest": "^29.3.4",
     "typescript": "^5"
   },
-  "packageManager": "pnpm@9.6.0"
+  "packageManager": "pnpm@9.6.0",
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  }
 }

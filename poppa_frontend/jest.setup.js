@@ -26,38 +26,43 @@ jest.mock('next/navigation', () => ({
 
 
 // Mock Supabase client
+const mockSupabaseClient = {
+  from: jest.fn().mockReturnThis(),
+  select: jest.fn().mockReturnThis(),
+  insert: jest.fn().mockReturnThis(),
+  update: jest.fn().mockReturnThis(),
+  upsert: jest.fn().mockReturnThis(),
+  delete: jest.fn().mockReturnThis(),
+  eq: jest.fn().mockReturnThis(),
+  neq: jest.fn().mockReturnThis(),
+  gt: jest.fn().mockReturnThis(),
+  lt: jest.fn().mockReturnThis(),
+  gte: jest.fn().mockReturnThis(),
+  lte: jest.fn().mockReturnThis(),
+  in: jest.fn().mockReturnThis(),
+  is: jest.fn().mockReturnThis(),
+  order: jest.fn().mockReturnThis(),
+  limit: jest.fn().mockReturnThis(),
+  single: jest.fn(),
+  maybeSingle: jest.fn(),
+  rpc: jest.fn(),
+  auth: {
+    signInWithPassword: jest.fn(),
+    signUp: jest.fn(),
+    signOut: jest.fn(),
+    onAuthStateChange: jest.fn(() => ({
+      data: { subscription: { unsubscribe: jest.fn() } },
+    })),
+    getUser: jest.fn().mockResolvedValue({ data: { user: null }, error: null }),
+  },
+};
+
 jest.mock('./src/lib/supabase', () => {
-  const mockSupabaseClient = {
-    from: jest.fn().mockReturnThis(),
-    select: jest.fn().mockReturnThis(),
-    insert: jest.fn().mockReturnThis(),
-    update: jest.fn().mockReturnThis(),
-    delete: jest.fn().mockReturnThis(),
-    eq: jest.fn().mockReturnThis(),
-    neq: jest.fn().mockReturnThis(),
-    gt: jest.fn().mockReturnThis(),
-    lt: jest.fn().mockReturnThis(),
-    gte: jest.fn().mockReturnThis(),
-    lte: jest.fn().mockReturnThis(),
-    in: jest.fn().mockReturnThis(),
-    is: jest.fn().mockReturnThis(),
-    order: jest.fn().mockReturnThis(),
-    limit: jest.fn().mockReturnThis(),
-    single: jest.fn(),
-    maybeSingle: jest.fn(),
-    rpc: jest.fn(),
-    // Mock auth functionalities if needed by your components/routes
-    auth: {
-      signInWithPassword: jest.fn(),
-      signUp: jest.fn(),
-      signOut: jest.fn(),
-      onAuthStateChange: jest.fn(() => ({
-        data: { subscription: { unsubscribe: jest.fn() } },
-      })),
-      getUser: jest.fn().mockResolvedValue({ data: { user: null }, error: null }), // Default to no user
-    },
+  return {
+    __esModule: true,
+    default: mockSupabaseClient,
+    supabase: mockSupabaseClient,
   };
-  return { supabase: mockSupabaseClient };
 });
 
 // Mock Stripe SDK
@@ -81,16 +86,12 @@ jest.mock('stripe', () => {
   return jest.fn(() => mockStripe); // The default export is a function that returns the Stripe object
 });
 
-// Mock i18next (react-i18next)
-jest.mock('react-i18next', () => ({
-  useTranslation: () => ({
-    t: (key) => key, // Simple mock for t function
-    i18n: {
-      changeLanguage: jest.fn(),
-      language: 'en',
-    },
-  }),
-  // If you use Trans component or other exports, mock them here
+// Mock next-intl (the actual i18n library used in this project)
+jest.mock('next-intl', () => ({
+  useTranslations: () => (key) => key,
+  useLocale: () => 'en',
+  useMessages: () => ({}),
+  NextIntlClientProvider: ({ children }) => children,
 }));
 
 

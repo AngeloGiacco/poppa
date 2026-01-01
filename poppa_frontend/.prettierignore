@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build output
+.next/
+out/
+build/
+dist/
+
+# Package manager
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Generated files
+src/types/database.types.ts
+coverage/
+.nyc_output/
+
+# IDE
+.idea/
+.vscode/
+
+# Environment
+.env*
+!.env.example
+
+# Misc
+*.log
+.DS_Store
