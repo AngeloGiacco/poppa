@@ -1,9 +1,9 @@
-import {
-  type LanguageCurriculum,
-  type Lesson,
-  type UserProgress,
-  type GrammarPoint,
-  type VocabularyItem,
+import type {
+  LanguageCurriculum,
+  Lesson,
+  UserProgress,
+  GrammarPoint,
+  VocabularyItem,
 } from "@/types/curriculum.types";
 
 const registry: Record<string, LanguageCurriculum> = {};

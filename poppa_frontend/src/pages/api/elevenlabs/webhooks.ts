@@ -1,9 +1,10 @@
-import crypto from "crypto";
+import crypto from "node:crypto";
 
 import { buffer } from "micro"; // For reading the raw body
-import { type NextApiRequest, type NextApiResponse } from "next";
 
 import supabaseClient from "@/lib/supabase";
+
+import type { NextApiRequest, NextApiResponse } from "next";
 
 // Disable Next.js body parsing for this route to access the raw body for signature verification
 export const config = {
@@ -156,7 +157,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     res.status(200).json({
       message: "Webhook processed successfully",
-      userId: userId,
+      userId,
       newUsageCount: updatedUsage.usage_count,
     });
   } catch (error: any) {

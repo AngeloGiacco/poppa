@@ -82,7 +82,7 @@ export default function HowItWorks() {
           </Card>
 
           <div className="relative">
-            <div className="absolute inset-0 rotate-2 transform rounded-3xl bg-gradient-to-r from-[#8B4513]/5 to-[#8B4513]/10"></div>
+            <div className="absolute inset-0 rotate-2 transform rounded-3xl bg-gradient-to-r from-[#8B4513]/5 to-[#8B4513]/10" />
             <Card className="relative rounded-2xl border-0 bg-white/80 shadow-lg backdrop-blur-sm transition-shadow duration-300 hover:shadow-xl">
               <CardContent className="p-8">
                 <div className="mb-6 flex items-start space-x-4">

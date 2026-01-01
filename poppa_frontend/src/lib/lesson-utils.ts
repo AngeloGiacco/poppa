@@ -51,8 +51,7 @@ export function generateThinkingMethodInstruction(
   language: string,
   native_language: string
 ): string {
-  return (
-    default_instruction +
-    `\n\nThe student is learning ${language} and speaks ${native_language}. You should talk to them in ${native_language} and introduce vocab and phrases in ${language}.`
-  );
+  return `${
+    default_instruction
+  }\n\nThe student is learning ${language} and speaks ${native_language}. You should talk to them in ${native_language} and introduce vocab and phrases in ${language}.`;
 }

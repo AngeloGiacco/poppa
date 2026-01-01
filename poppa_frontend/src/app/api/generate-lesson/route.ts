@@ -7,7 +7,7 @@ import {
 } from "@/lib/curriculum/lesson-generator";
 import { generateThinkingMethodInstruction } from "@/lib/lesson-utils";
 import supabaseClient from "@/lib/supabase";
-import { type Tables } from "@/types/database.types";
+import type { Tables } from "@/types/database.types";
 
 import "@/lib/curriculum";
 
@@ -157,7 +157,7 @@ Student: Kulala</output>`;
 
     const instruction = lessonInstruction + transcript;
 
-    return Response.json({ instruction: instruction });
+    return Response.json({ instruction });
   } catch (error) {
     console.error("Error generating lesson:", error);
     return Response.json({ error: "Failed to generate lesson" }, { status: 500 });

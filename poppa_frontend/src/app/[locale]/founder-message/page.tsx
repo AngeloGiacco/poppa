@@ -60,7 +60,7 @@ export default function FounderMessage() {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          <div className="absolute inset-0 rotate-1 transform rounded-3xl bg-gradient-to-r from-[#8B4513]/5 to-[#8B4513]/10"></div>
+          <div className="absolute inset-0 rotate-1 transform rounded-3xl bg-gradient-to-r from-[#8B4513]/5 to-[#8B4513]/10" />
           <Card className="relative rounded-2xl border-0 bg-white/80 shadow-lg backdrop-blur-sm">
             <CardContent className="space-y-6 p-8 text-lg text-[#5D4037]">
               <h2 className="text-2xl font-semibold text-[#8B4513]">{t("content.greeting")}</h2>

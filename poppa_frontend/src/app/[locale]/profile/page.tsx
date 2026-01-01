@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 import { useAuth } from "@/context/AuthContext";
 import { useRouter, Link } from "@/i18n/routing";
 import { supabaseBrowserClient } from "@/lib/supabase-browser";
-import { type Tables } from "@/types/database.types";
+import type { Tables } from "@/types/database.types";
 
 export default function Profile() {
   const { user } = useAuth();
@@ -50,7 +50,7 @@ export default function Profile() {
         <motion.div className="overflow-hidden rounded-3xl border-0 bg-white/80 shadow-lg backdrop-blur-sm">
           {/* Header section */}
           <div className="relative flex h-32 items-end justify-between overflow-hidden bg-[#8B4513]">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#8B4513] to-[#6D3611]"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#8B4513] to-[#6D3611]" />
             <Link
               href="/dashboard"
               className="relative z-10 flex items-center gap-2 px-8 pt-4 text-white transition-colors duration-300 hover:text-[#FFE4B5]"
@@ -109,7 +109,7 @@ export default function Profile() {
 
 interface ProfileInfoCardProps {
   title: string;
-  items: { label: string; value: string; icon?: string }[];
+  items: Array<{ label: string; value: string; icon?: string }>;
 }
 
 function ProfileInfoCard({ title, items }: ProfileInfoCardProps) {

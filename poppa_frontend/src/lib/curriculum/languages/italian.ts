@@ -1,4 +1,4 @@
-import { type LanguageCurriculum } from "@/types/curriculum.types";
+import type { LanguageCurriculum } from "@/types/curriculum.types";
 
 export const italianCurriculum: LanguageCurriculum = {
   languageCode: "ita",

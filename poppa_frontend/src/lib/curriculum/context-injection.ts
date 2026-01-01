@@ -3,12 +3,7 @@ import {
   getLesson,
   getMasteredContent,
 } from "@/lib/curriculum/curriculum-framework";
-import {
-  type Lesson,
-  type UserProgress,
-  type GrammarPoint,
-  type VocabularyItem,
-} from "@/types/curriculum.types";
+import type { Lesson, UserProgress, GrammarPoint, VocabularyItem } from "@/types/curriculum.types";
 
 export function buildConversationContext(
   languageCode: string,

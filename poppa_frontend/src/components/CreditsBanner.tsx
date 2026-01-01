@@ -3,7 +3,7 @@
 import { Coins } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { type Tables } from "@/types/database.types";
+import type { Tables } from "@/types/database.types";
 
 interface CreditsBannerProps {
   userData: Tables<"users"> | null;

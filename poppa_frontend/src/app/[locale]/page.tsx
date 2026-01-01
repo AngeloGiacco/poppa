@@ -127,7 +127,7 @@ export default function Home() {
 
           <motion.div className="lg:mt-12">
             <div className="relative">
-              <div className="absolute inset-0 rotate-3 transform rounded-3xl bg-gradient-to-r from-[#8B4513]/5 to-[#8B4513]/10"></div>
+              <div className="absolute inset-0 rotate-3 transform rounded-3xl bg-gradient-to-r from-[#8B4513]/5 to-[#8B4513]/10" />
               <Card className="relative rounded-2xl border-0 bg-white/80 shadow-lg backdrop-blur-sm">
                 <CardContent className="p-8">
                   <h2 className="mb-6 text-2xl font-semibold text-[#8B4513]">
@@ -194,12 +194,8 @@ export default function Home() {
       </motion.div>
 
       <Footer />
-      <elevenlabs-convai agent-id="JkB4CzDJfbM0M5aLaoLL"></elevenlabs-convai>
-      <script
-        src="https://elevenlabs.io/convai-widget/index.js"
-        async
-        type="text/javascript"
-      ></script>
+      <elevenlabs-convai agent-id="JkB4CzDJfbM0M5aLaoLL" />
+      <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript" />
     </div>
   );
 }

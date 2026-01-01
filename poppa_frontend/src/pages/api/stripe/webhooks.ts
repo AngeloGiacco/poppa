@@ -1,8 +1,9 @@
 import { buffer } from "micro";
-import { type NextApiRequest, type NextApiResponse } from "next";
 import Stripe from "stripe";
 
 import supabaseClient from "@/lib/supabase";
+
+import type { NextApiRequest, NextApiResponse } from "next";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: "2024-06-20",
@@ -40,7 +41,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   // Handle the event
   switch (event.type) {
-    case "checkout.session.completed":
+    case "checkout.session.completed": {
       const session = event.data.object as Stripe.Checkout.Session;
       console.log("Checkout session completed:", session.id);
       // Metadata should contain user_id and price_id
@@ -113,8 +114,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(500).send("Internal server error.");
       }
       break;
+    }
 
-    case "invoice.paid":
+    case "invoice.paid": {
       const invoicePaid = event.data.object as Stripe.Invoice;
       console.log("Invoice paid:", invoicePaid.id);
       const subscriptionIdPaid = invoicePaid.subscription as string;
@@ -164,8 +166,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(500).send("Internal server error.");
       }
       break;
+    }
 
-    case "invoice.payment_failed":
+    case "invoice.payment_failed": {
       const invoiceFailed = event.data.object as Stripe.Invoice;
       console.log("Invoice payment failed:", invoiceFailed.id);
       const subscriptionIdFailed = invoiceFailed.subscription as string;
@@ -199,6 +202,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(500).send("Internal server error.");
       }
       break;
+    }
 
     // ... handle other event types
     default:

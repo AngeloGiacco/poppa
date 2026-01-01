@@ -2,10 +2,10 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 
-import { type User } from "@supabase/supabase-js";
-
 import { supabaseBrowserClient } from "@/lib/supabase-browser";
-import { type Database } from "@/types/database.types";
+import type { Database } from "@/types/database.types";
+
+import type { User } from "@supabase/supabase-js";
 
 type UserProfile = Database["public"]["Tables"]["users"]["Row"];
 

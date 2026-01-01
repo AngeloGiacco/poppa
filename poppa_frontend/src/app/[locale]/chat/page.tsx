@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import Script from "next/script";
 
@@ -17,7 +17,7 @@ const ElevenLabsChatPage = () => {
 
   useEffect(() => {
     const attemptSetDynamicVariables = () => {
-      if (user && user.id && agentId) {
+      if (user?.id && agentId) {
         const widget = document.querySelector("elevenlabs-convai") as HTMLElement | null;
         if (widget) {
           widget.setAttribute("dynamic-variables", JSON.stringify({ user_id: user.id }));
@@ -25,7 +25,7 @@ const ElevenLabsChatPage = () => {
       }
     };
 
-    if (user && user.id) {
+    if (user?.id) {
       attemptSetDynamicVariables();
     }
 
@@ -55,19 +55,17 @@ const ElevenLabsChatPage = () => {
     <div className="container mx-auto px-4 py-8">
       <h1 className="mb-8 text-center text-3xl font-bold">{t("title")}</h1>
       <div className="flex justify-center">
-        <elevenlabs-convai ref={widgetRef} agent-id={agentId}></elevenlabs-convai>
+        <elevenlabs-convai ref={widgetRef} agent-id={agentId} />
       </div>
       <Script src="https://elevenlabs.io/convai-widget/index.js" strategy="lazyOnload" async />
     </div>
   );
 };
 
-const ProtectedElevenLabsChatPage = () => {
-  return (
-    <ProtectedRoute>
-      <ElevenLabsChatPage />
-    </ProtectedRoute>
-  );
-};
+const ProtectedElevenLabsChatPage = () => (
+  <ProtectedRoute>
+    <ElevenLabsChatPage />
+  </ProtectedRoute>
+);
 
 export default ProtectedElevenLabsChatPage;

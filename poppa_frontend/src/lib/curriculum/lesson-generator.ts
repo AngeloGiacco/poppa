@@ -1,6 +1,6 @@
 import { buildConversationContext } from "@/lib/curriculum/context-injection";
 import { getCurriculum, getLesson, getNextLesson } from "@/lib/curriculum/curriculum-framework";
-import { type UserProgress } from "@/types/curriculum.types";
+import type { UserProgress } from "@/types/curriculum.types";
 
 export interface CurriculumLessonResult {
   hasCurriculum: boolean;

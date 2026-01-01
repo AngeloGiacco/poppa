@@ -1,7 +1,8 @@
-import { type NextApiRequest, type NextApiResponse } from "next";
 import Stripe from "stripe";
 
 import supabaseClient from "@/lib/supabase";
+
+import type { NextApiRequest, NextApiResponse } from "next";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: "2024-06-20",
@@ -67,8 +68,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       success_url: successUrl,
       cancel_url: cancelUrl,
       metadata: {
-        user_id: user_id,
-        price_id: price_id, // Storing price_id as well for easier access in webhook
+        user_id,
+        price_id, // Storing price_id as well for easier access in webhook
       },
     };
 

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 
-import { type AuthError } from "@supabase/supabase-js";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
@@ -12,6 +11,8 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "@/i18n/routing";
 import { supabaseBrowserClient } from "@/lib/supabase-browser";
+
+import type { AuthError } from "@supabase/supabase-js";
 
 export default function LoginForm() {
   const [isLoading, setIsLoading] = useState(false);
@@ -77,6 +78,7 @@ export default function LoginForm() {
           className="w-full bg-[#8B4513] text-white hover:bg-[#6D3611]"
           disabled={isLoading}
         >
+          {/* eslint-disable-next-line react/jsx-pascal-case */}
           {isLoading && <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />}
           {isLoading ? t("loading") : t("loginButton")}
         </Button>

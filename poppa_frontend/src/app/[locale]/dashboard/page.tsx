@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useRouter } from "next/navigation";
 
@@ -200,7 +200,7 @@ const DashboardPage = () => {
             <div
               className="h-4 rounded-full bg-blue-500"
               style={{ width: `${Math.min((usage.usage_count / usage.usage_limit) * 100, 100)}%` }}
-            ></div>
+            />
           </div>
           <p className="mt-1 text-sm text-gray-600">
             {t("usageDetails.remaining", {
@@ -247,9 +247,7 @@ const DashboardPage = () => {
               <h3 className="mb-5 text-xl font-semibold text-slate-800 dark:text-slate-200">
                 {selectedLanguage.name} {t("lessonsTitleSuffix")}
               </h3>
-              {selectedLanguage &&
-              selectedLanguage.lessons &&
-              selectedLanguage.lessons.length > 0 ? (
+              {selectedLanguage?.lessons && selectedLanguage.lessons.length > 0 ? (
                 <div className="custom-scrollbar max-h-[600px] space-y-4 overflow-y-auto pr-2">
                   {selectedLanguage.lessons.map((lesson, index) => (
                     <div

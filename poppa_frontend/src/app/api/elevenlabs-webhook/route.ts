@@ -108,8 +108,8 @@ export async function POST(req: NextRequest) {
       .insert({
         user_id: userId,
         target_language: targetLanguage, // This could be null if not provided
-        transcript: transcript, // Storing the full transcript array as JSONB
-        conversation_id: conversation_id, // Store the conversation_id
+        transcript, // Storing the full transcript array as JSONB
+        conversation_id, // Store the conversation_id
         // created_at is handled by default value in the table schema
       });
 

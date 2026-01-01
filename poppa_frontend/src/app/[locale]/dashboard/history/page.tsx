@@ -16,7 +16,7 @@ import { useAuth } from "@/context/AuthContext";
 import { Link } from "@/i18n/routing";
 import { supabaseBrowserClient } from "@/lib/supabase-browser";
 import { learnable_languages } from "@/lib/supportedLanguages";
-import { type Database } from "@/types/database.types";
+import type { Database } from "@/types/database.types";
 
 type Lesson = Database["public"]["Tables"]["lesson"]["Row"] & {
   languages: Pick<Database["public"]["Tables"]["languages"]["Row"], "name" | "code"> | null;
