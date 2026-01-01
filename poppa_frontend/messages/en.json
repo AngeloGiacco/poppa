@@ -424,12 +424,6 @@
       "checkoutUrlMissing": "Unable to redirect to checkout. Please try again."
     }
   },
-  "chat": {
-    "title": "Chat with Poppa",
-    "error": {
-      "agentIdMissing": "Agent ID is not configured. Please contact support."
-    }
-  },
   "dashboard": {
     "title": "Dashboard",
     "loading": "Loading...",
