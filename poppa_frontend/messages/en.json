@@ -154,6 +154,11 @@
     },
     "footer": {
       "copyright": "© {year} Poppa. Crafted with care by Naxos Labs."
+    },
+    "error": {
+      "missingPriceId": "This plan is not configured correctly. Please contact support.",
+      "checkoutFailed": "Failed to create checkout session. Please try again.",
+      "checkoutUrlMissing": "Unable to redirect to checkout. Please try again."
     }
   },
   "HowItWorksPage": {
@@ -299,6 +304,7 @@
     }
   },
   "DashboardPage": {
+    "loading": "Loading...",
     "credits": {
       "buyCredits": "Buy Credits",
       "oneMinuteReminder": "Each credit equals one minute of lesson time.",
