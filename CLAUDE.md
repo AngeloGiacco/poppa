@@ -6,16 +6,222 @@
 
 ## Project Overview
 
-**Poppa** is a conversational AI language tutoring platform that uses the Socratic method to teach languages through voice interactions. Built on ElevenLabs Conversational AI, it enables students to learn any of 50+ languages through natural spoken dialogue rather than traditional text-based methods. Live at [trypoppa.com](https://trypoppa.com).
+**Poppa** is a conversational AI language tutoring platform inspired by the [Language Transfer](https://www.languagetransfer.org/) project and its "Thinking Method." Built on ElevenLabs Conversational AI, Poppa teaches 50+ languages through real-time voice conversations using the Socratic method—guiding students to discover language patterns through thinking rather than memorization. Live at [trypoppa.com](https://trypoppa.com).
 
-### Philosophy
+---
 
-- **Socratic Method**: Learning through guided questioning and discovery, not rote memorization
-- **Voice-First**: Natural language immersion via real-time voice conversations
-- **Global Accessibility**: Full UI in 40+ languages, teaching 50+ languages
-- **AI-Powered Personalization**: Claude generates lessons based on student history
+## Core Philosophy: The Thinking Method
 
-### Tech Stack
+Poppa is built on the pedagogical approach pioneered by Mihalis Eleftheriou's Language Transfer project. This is not traditional language learning—it's a fundamentally different way to acquire language through guided discovery.
+
+### What is The Thinking Method?
+
+The Thinking Method (also called Language Transfer) teaches languages by leading students through carefully sequenced questions that help them discover patterns on their own. Key principles:
+
+- **No Memorization**: Students don't memorize vocabulary lists or grammar tables. Instead, they discover patterns that make the language logical and predictable.
+- **No Writing**: All learning happens through listening and speaking. Writing comes later, naturally.
+- **Thinking Over Repetition**: Instead of drilling phrases, students learn to construct language by understanding the thoughts behind it.
+- **Building on What You Know**: Lessons leverage the student's native language to reveal hidden connections and cognates.
+- **One Thought at a Time**: Complex concepts are broken into small, digestible pieces that build on each other.
+
+### The Socratic Teaching Pattern
+
+```
+1. Present a small piece of language
+2. Ask questions that lead students to notice patterns
+3. Help students deduce how and why patterns work
+4. Build gradually on what students discover
+5. Use errors as discovery opportunities
+```
+
+### What This Means for Development
+
+When building features for Poppa, always remember:
+
+- **Voice is primary**: Every feature should work through spoken interaction
+- **Guide, don't tell**: The AI should ask questions, not give answers
+- **Respect the method**: Never add features that encourage memorization or drilling
+- **Keep it simple**: The interface should fade away—the conversation is everything
+
+---
+
+## Voice-Only Architecture
+
+**Core Principle**: Poppa is a voice-only application. Learning happens through spoken dialogue, not text-based exercises.
+
+### Why Voice-Only?
+
+1. **Natural Language Immersion**: Speaking activates deeper language processing than reading/writing
+2. **No Crutches**: Students can't rely on text to "figure out" what to say
+3. **Real Conversation Skills**: Students develop actual speaking ability from day one
+4. **Accessibility**: Works for learners who may struggle with text-based learning
+5. **True to Method**: Language Transfer's original audio courses are purely voice-based
+
+### Design Implications
+
+| DO | DON'T |
+|----|-------|
+| Audio visualizers showing conversation state | Text input fields for responses |
+| Voice-activated controls | Written exercises or quizzes |
+| Spoken feedback and corrections | On-screen vocabulary lists |
+| Audio-only lesson content | Reading comprehension features |
+| Minimal UI that stays out of the way | Complex text-heavy interfaces |
+
+### The Conversation Flow
+
+```
+User clicks "Connect"
+    ↓
+Microphone permission requested
+    ↓
+WebSocket connection to ElevenLabs
+    ↓
+Real-time voice conversation begins
+    ↓
+Tutor guides through Socratic questioning
+    ↓
+Student responds verbally
+    ↓
+Session ends → transcript saved
+```
+
+---
+
+## ElevenLabs Conversational AI Infrastructure
+
+Poppa uses [ElevenLabs Conversational AI](https://elevenlabs.io/docs/conversational-ai/overview) as the voice conversation backbone. This enables real-time, natural voice interactions with an AI tutor.
+
+### Architecture Overview
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                         Frontend                                 │
+│  ┌─────────────────┐    ┌─────────────────┐                     │
+│  │  Chat.tsx       │    │  @elevenlabs/   │                     │
+│  │  (Voice UI)     │◄──►│  react SDK      │                     │
+│  └────────┬────────┘    └────────┬────────┘                     │
+│           │                      │                               │
+└───────────┼──────────────────────┼──────────────────────────────┘
+            │                      │
+            │ Transcriptions       │ WebSocket
+            ▼                      ▼
+┌─────────────────────┐    ┌─────────────────────┐
+│    Supabase         │    │   ElevenLabs        │
+│  - lesson history   │    │   Agent             │
+│  - transcripts      │◄───│  - Voice synthesis  │
+│  - user credits     │    │  - Speech-to-text   │
+└─────────────────────┘    │  - Conversation AI  │
+                           └──────────┬──────────┘
+                                      │
+                                      │ Dynamic Variables
+                                      │ & System Prompt
+                                      ▼
+                           ┌─────────────────────┐
+                           │   Claude API        │
+                           │  (Lesson Generation)│
+                           └─────────────────────┘
+```
+
+### React SDK Integration
+
+The `@elevenlabs/react` package provides the `useConversation` hook for voice interactions:
+
+```typescript
+"use client";
+
+import { useConversation } from "@elevenlabs/react";
+
+export function Chat() {
+  const conversation = useConversation({
+    onConnect: () => {
+      // Session started - show visualizer
+    },
+    onDisconnect: () => {
+      // Session ended - save transcript
+    },
+    onMessage: (message) => {
+      // Real-time transcription: message.source ("user" | "agent")
+    },
+    onError: (error) => {
+      // Handle connection/session errors
+    },
+  });
+
+  const handleConnect = async () => {
+    await navigator.mediaDevices.getUserMedia({ audio: true });
+    await conversation.startSession({
+      agentId: process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID,
+      connectionType: "websocket",
+    });
+  };
+
+  return (
+    <div>
+      <p>Status: {conversation.status}</p>
+      <p>Agent Speaking: {conversation.isSpeaking}</p>
+    </div>
+  );
+}
+```
+
+### Client Tools (Future Enhancement)
+
+ElevenLabs supports [client tools](https://elevenlabs.io/docs/conversational-ai/customization/tools/client-tools) that allow the agent to trigger actions in the browser during conversation. Potential use cases for Poppa:
+
+```typescript
+// Example: Client tool for vocabulary tracking
+const conversation = useConversation({
+  clientTools: {
+    markVocabularyLearned: async ({ word, translation }) => {
+      // Save vocabulary to user's progress
+      await saveVocabulary(userId, word, translation);
+      return "Vocabulary saved";
+    },
+    adjustDifficulty: async ({ level }) => {
+      // Agent detects student struggling/excelling
+      setLessonDifficulty(level);
+      return `Difficulty set to ${level}`;
+    },
+    requestHint: async ({ topic }) => {
+      // Student asks for help
+      const hint = await generateHint(topic);
+      return hint;
+    },
+  },
+});
+```
+
+Client tools enable the voice agent to:
+- Track vocabulary mastery in real-time
+- Adjust lesson difficulty dynamically
+- Log student progress without breaking conversation flow
+- Trigger visual feedback (though minimal, per voice-only philosophy)
+
+### Webhook Integration
+
+ElevenLabs sends webhooks after calls for server-side processing:
+
+```typescript
+// POST /api/elevenlabs-webhook
+// Receives: post_call_transcription events
+// Actions:
+//   1. Verify webhook signature (HMAC-SHA256)
+//   2. Extract user_id from dynamic_variables
+//   3. Save full transcript to conversation_transcripts table
+//   4. Update user usage credits
+```
+
+### Lesson Generation Pipeline
+
+1. **User starts lesson** → Frontend calls `/api/generate-lesson`
+2. **Claude generates transcript** → Based on Socratic method + lesson history
+3. **ElevenLabs receives instructions** → System prompt with generated transcript
+4. **Voice conversation begins** → Agent guides student through the lesson
+5. **Session ends** → Transcript saved, credits deducted
+
+---
+
+## Tech Stack
 
 | Layer | Technology |
 |-------|------------|
@@ -204,6 +410,25 @@ Only add comments when:
 - Documenting complex business logic (like transcription merging)
 - Adding TODO/FIXME for known issues
 
+### 9. VOICE-ONLY DESIGN
+
+Never add features that bypass voice interaction:
+
+```typescript
+// ❌ Wrong - text input for language learning
+<Input
+  placeholder="Type your response..."
+  onChange={handleTextInput}
+/>
+
+// ❌ Wrong - written vocabulary quiz
+<Quiz questions={vocabularyQuestions} />
+
+// ✅ Correct - voice-only interface
+<ConnectButton onConnect={handleVoiceConnect} />
+<AudioVisualizer isActive={conversation.isSpeaking} />
+```
+
 ---
 
 ## Project Structure
@@ -223,18 +448,15 @@ poppa/
 │   │   │   │   └── pricing/
 │   │   │   └── api/          # API routes
 │   │   │       ├── auth/signup/
-│   │   │       ├── generate-lesson/
-│   │   │       ├── elevenlabs-webhook/
+│   │   │       ├── generate-lesson/      # Claude lesson generation
+│   │   │       ├── elevenlabs-webhook/   # Post-call processing
 │   │   │       └── language/add/
 │   │   │
 │   │   ├── components/       # React components
 │   │   │   ├── ui/           # shadcn/ui primitives
-│   │   │   ├── Chat.tsx      # Main lesson UI (ElevenLabs conversation)
-│   │   │   ├── LoginForm.tsx
-│   │   │   ├── SignupForm.tsx
-│   │   │   ├── LanguageSelector.tsx
-│   │   │   ├── session-controls.tsx
-│   │   │   ├── connect-button.tsx
+│   │   │   ├── Chat.tsx      # Main voice UI (ElevenLabs conversation)
+│   │   │   ├── session-controls.tsx      # Disconnect button
+│   │   │   ├── connect-button.tsx        # Start lesson button
 │   │   │   └── ProtectedRoute.tsx
 │   │   │
 │   │   ├── context/          # React Context providers
@@ -247,12 +469,17 @@ poppa/
 │   │   ├── lib/              # Utilities
 │   │   │   ├── supabase.ts             # Server-side client
 │   │   │   ├── supabase-browser.ts     # Browser client
+│   │   │   ├── lesson-utils.ts         # Socratic method prompts
 │   │   │   ├── supportedLanguages.ts   # Language definitions
-│   │   │   ├── lesson-utils.ts
+│   │   │   ├── curriculum/             # Structured lesson curricula
+│   │   │   │   ├── curriculum-framework.ts
+│   │   │   │   ├── context-injection.ts
+│   │   │   │   └── languages/          # Spanish, French, German, Italian
 │   │   │   └── utils.ts                # cn() helper
 │   │   │
 │   │   ├── types/            # TypeScript definitions
-│   │   │   └── database.types.ts       # Supabase generated
+│   │   │   ├── database.types.ts       # Supabase generated
+│   │   │   └── curriculum.types.ts     # Lesson structures
 │   │   │
 │   │   ├── i18n/             # Internationalization
 │   │   │   └── routing.ts
@@ -260,23 +487,75 @@ poppa/
 │   │   └── middleware.ts     # i18n routing middleware
 │   │
 │   ├── messages/             # Translation JSON files (40+ locales)
-│   │   ├── en.json
-│   │   ├── es.json
-│   │   ├── fr.json
-│   │   └── ...
 │   │
 │   ├── package.json
 │   ├── tsconfig.json
-│   ├── tailwind.config.ts
-│   ├── next.config.mjs
-│   └── jest.config.js
+│   └── tailwind.config.ts
 │
 └── supabase/
     └── migrations/           # Database migrations
-        ├── 20240729000000_create_subscriptions_table.sql
-        ├── 20240729000001_create_usage_table.sql
-        ├── 20240729000002_create_increment_user_usage_rpc.sql
-        └── 20240729000003_create_conversation_transcripts_table.sql
+```
+
+---
+
+## Lesson System
+
+### The Thinking Method Prompt
+
+The core Socratic teaching instructions are defined in `src/lib/lesson-utils.ts`:
+
+```typescript
+// Core principles injected into every lesson
+const principles = `
+• Never directly explain grammar rules
+• Never ask students to memorize anything
+• Always break concepts into discoverable pieces
+• Guide through questions rather than statements
+• Use students' native language to build understanding
+• Treat errors as discovery opportunities
+• Keep explanations minimal—focus on understanding over practice
+`;
+```
+
+### Curriculum System
+
+Structured curricula exist for Spanish, French, German, and Italian in `src/lib/curriculum/`. Each lesson includes:
+
+```typescript
+interface Lesson {
+  id: number;
+  title: string;
+  level: "beginner" | "intermediate" | "advanced";
+  focus: string;
+  grammar: GrammarPoint[];      // What patterns to discover
+  vocabulary: VocabularyItem[]; // Words introduced in context
+  conversationPrompt: string;   // Teaching instructions
+}
+```
+
+### Lesson Generation Flow
+
+```
+User selects language
+        ↓
+Check for structured curriculum
+        ↓
+    ┌───┴───┐
+    ▼       ▼
+Curriculum   No curriculum
+exists       → Claude generates
+    ↓          lesson based on
+Use pre-      history
+defined       ↓
+lesson    Generate transcript
+    ↓         ↓
+    └────┬────┘
+         ↓
+Inject Socratic method instructions
+         ↓
+Send to ElevenLabs agent
+         ↓
+Voice conversation begins
 ```
 
 ---
@@ -313,173 +592,6 @@ npm test
 
 ---
 
-## Code Patterns
-
-### Component with ElevenLabs Voice
-
-```typescript
-"use client";
-
-import { useConversation } from "@elevenlabs/react";
-import { useAuth } from "@/context/AuthContext";
-
-export function Chat() {
-  const { user } = useAuth();
-
-  const conversation = useConversation({
-    onConnect: () => {
-      console.log("Connected to ElevenLabs");
-    },
-    onDisconnect: () => {
-      console.log("Disconnected from ElevenLabs");
-    },
-    onMessage: (message) => {
-      console.log("Message:", message);
-    },
-    onError: (error) => {
-      console.error("Error:", error);
-    },
-  });
-
-  const handleConnect = async () => {
-    const agentId = process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID;
-    await navigator.mediaDevices.getUserMedia({ audio: true });
-    await conversation.startSession({ agentId });
-  };
-
-  const handleDisconnect = async () => {
-    await conversation.endSession();
-  };
-
-  return (
-    <div>
-      <p>Status: {conversation.status}</p>
-      <p>Speaking: {conversation.isSpeaking ? "Yes" : "No"}</p>
-      <button onClick={handleConnect}>Connect</button>
-      <button onClick={handleDisconnect}>Disconnect</button>
-    </div>
-  );
-}
-```
-
-### Protected Route Pattern
-
-```typescript
-"use client";
-
-import { useAuth } from "@/context/AuthContext";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-
-export function ProtectedRoute({ children }: { children: React.ReactNode }) {
-  const { user, isLoading } = useAuth();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!isLoading && !user) {
-      router.push("/login");
-    }
-  }, [user, isLoading, router]);
-
-  if (isLoading) return <Loading />;
-  if (!user) return null;
-
-  return <>{children}</>;
-}
-```
-
-### API Route with Claude
-
-```typescript
-import { Anthropic } from "@anthropic-ai/sdk";
-import supabaseClient from "@/lib/supabase";
-
-export async function POST(req: Request) {
-  try {
-    const { languageCode, nativeLanguage } = await req.json();
-
-    const anthropic = new Anthropic({
-      apiKey: process.env.ANTHROPIC_API_KEY,
-    });
-
-    const response = await anthropic.messages.create({
-      model: "claude-3-sonnet-20240229",
-      max_tokens: 4000,
-      messages: [{ role: "user", content: instruction }],
-    });
-
-    const contentBlock = response.content[0];
-    if (contentBlock.type !== "text") {
-      throw new Error("Unexpected response type");
-    }
-
-    return Response.json({ instruction: contentBlock.text });
-  } catch (error) {
-    console.error("Error:", error);
-    return Response.json({ error: "Failed" }, { status: 500 });
-  }
-}
-```
-
-### Supabase Query with RLS
-
-```typescript
-// Client-side - user can only read their own data (RLS enforced)
-const { data: profile } = await supabaseBrowserClient
-  .from("users")
-  .select("*")
-  .eq("id", session.user.id)
-  .single();
-
-// Server-side with service role - bypass RLS for webhooks
-const { data, error } = await supabaseClient
-  .from("subscriptions")
-  .upsert({
-    user_id: userId,
-    stripe_subscription_id: subscriptionId,
-    status: "active",
-  });
-```
-
----
-
-## Testing Patterns
-
-### Test Setup
-
-```typescript
-// jest.setup.js mocks:
-// - next/navigation (useRouter, usePathname, etc.)
-// - @supabase/supabase-js
-// - stripe
-// - next-intl
-```
-
-### API Route Test
-
-```typescript
-import { POST } from "@/app/api/stripe/webhooks/route";
-
-describe("Stripe Webhooks", () => {
-  it("handles subscription created event", async () => {
-    const mockEvent = {
-      type: "customer.subscription.created",
-      data: { object: { customer: "cus_xxx" } },
-    };
-
-    const req = new Request("http://test", {
-      method: "POST",
-      body: JSON.stringify(mockEvent),
-    });
-
-    const response = await POST(req);
-    expect(response.status).toBe(200);
-  });
-});
-```
-
----
-
 ## Database Schema
 
 ### Tables
@@ -499,13 +611,6 @@ All tables have RLS enabled:
 - Users can only SELECT their own data
 - Server operations use service role key
 - Webhooks bypass RLS via service role
-
-```sql
--- Example: users can only read their own subscriptions
-CREATE POLICY "Allow users to select their own subscription"
-ON subscriptions FOR SELECT
-USING (auth.uid() = user_id);
-```
 
 ---
 
@@ -581,7 +686,19 @@ import supabaseClient from "@/lib/supabase"; // Throws error!
 import { supabaseBrowserClient } from "@/lib/supabase-browser";
 ```
 
-### 3. Not Using Translations
+### 3. Breaking Voice-Only Philosophy
+
+```typescript
+// ❌ Wrong - adding text-based learning features
+<FlashcardDeck vocabulary={lessonVocabulary} />
+<WritingExercise prompt="Write a sentence using..." />
+<MultipleChoiceQuiz questions={grammarQuestions} />
+
+// ✅ Correct - keep it voice-only
+<VoiceConversation onConnect={startLesson} />
+```
+
+### 4. Not Using Translations
 
 ```typescript
 // ❌ Wrong - hardcoded text
@@ -590,16 +707,6 @@ import { supabaseBrowserClient } from "@/lib/supabase-browser";
 // ✅ Correct
 const t = useTranslations("Dashboard");
 <Button>{t("startLesson")}</Button>
-```
-
-### 4. Relative Imports
-
-```typescript
-// ❌ Wrong
-import { Chat } from "../../components/Chat";
-
-// ✅ Correct
-import { Chat } from "@/components/Chat";
 ```
 
 ### 5. Not Handling Auth State
@@ -614,29 +721,6 @@ const { user, isLoading } = useAuth();
 if (isLoading) return <Loading />;
 if (!user) return <Redirect to="/login" />;
 return <Dashboard user={user} />;
-```
-
-### 6. Forgetting Error Boundaries in API Routes
-
-```typescript
-// ❌ Wrong - unhandled errors
-export async function POST(req: Request) {
-  const data = await req.json();
-  const result = await riskyOperation(data);
-  return Response.json(result);
-}
-
-// ✅ Correct
-export async function POST(req: Request) {
-  try {
-    const data = await req.json();
-    const result = await riskyOperation(data);
-    return Response.json(result);
-  } catch (error) {
-    console.error("API Error:", error);
-    return Response.json({ error: "Operation failed" }, { status: 500 });
-  }
-}
 ```
 
 ---
@@ -654,5 +738,15 @@ Before committing, ensure:
 - [ ] No hardcoded strings in UI
 - [ ] No redundant comments (AI slop)
 - [ ] Types imported from `@/types/database.types`
+- [ ] **Voice-only principle respected** (no text-based learning features)
 - [ ] Linting passes: `pnpm lint`
 - [ ] Formatting passes: `pnpm format:check`
+
+---
+
+## Resources
+
+- [Language Transfer](https://www.languagetransfer.org/) - The original Thinking Method courses
+- [ElevenLabs Conversational AI Docs](https://elevenlabs.io/docs/conversational-ai/overview)
+- [ElevenLabs React SDK](https://elevenlabs.io/docs/conversational-ai/libraries/react)
+- [ElevenLabs Client Tools](https://elevenlabs.io/docs/conversational-ai/customization/tools/client-tools)

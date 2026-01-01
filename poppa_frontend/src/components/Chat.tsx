@@ -19,9 +19,15 @@ interface Transcription {
   timestamp: number;
 }
 
-export function Chat() {
+interface ChatProps {
+  lessonInstruction?: string;
+  targetLanguage?: string;
+  nativeLanguage?: string;
+}
+
+export function Chat({ lessonInstruction, targetLanguage, nativeLanguage }: ChatProps) {
   const [isChatRunning, setIsChatRunning] = useState(false);
-  const [displayTranscriptions, setDisplayTranscriptions] = useState<Transcription[]>([]);
+  const [transcriptions, setTranscriptions] = useState<Transcription[]>([]);
   const t = useTranslations("Chat");
   const { user } = useAuth();
   const [sessionStartTime, setSessionStartTime] = useState<Date | null>(null);
@@ -42,7 +48,7 @@ export function Chat() {
         role: message.source === "user" ? "user" : "agent",
         timestamp: Date.now(),
       };
-      setDisplayTranscriptions((prev) => [...prev, newTranscription]);
+      setTranscriptions((prev) => [...prev, newTranscription]);
     },
     onError: (error) => {
       console.error("Conversation error:", error);
@@ -80,7 +86,7 @@ export function Chat() {
           .from("lesson")
           .insert({
             user: user.id,
-            transcript: JSON.stringify(displayTranscriptions),
+            transcript: JSON.stringify(transcriptions),
             created_at: new Date().toISOString(),
           })
           .throwOnError(),
@@ -101,7 +107,7 @@ export function Chat() {
     } finally {
       setIsHandlingSessionEnd(false);
     }
-  }, [sessionStartTime, user, isHandlingSessionEnd, displayTranscriptions, t]);
+  }, [sessionStartTime, user, isHandlingSessionEnd, transcriptions, t]);
 
   useEffect(() => {
     if (!isChatRunning && sessionStartTime) {
@@ -122,8 +128,54 @@ export function Chat() {
 
     try {
       await navigator.mediaDevices.getUserMedia({ audio: true });
-      setDisplayTranscriptions([]);
-      await conversation.startSession({ agentId, connectionType: "websocket" as const });
+      setTranscriptions([]);
+
+      const sessionConfig: {
+        agentId: string;
+        overrides?: {
+          agent?: {
+            prompt?: { prompt: string };
+            language?: string;
+            firstMessage?: string;
+          };
+        };
+        dynamicVariables?: Record<string, string>;
+      } = {
+        agentId,
+      };
+
+      if (lessonInstruction || targetLanguage) {
+        sessionConfig.overrides = {
+          agent: {},
+        };
+
+        if (lessonInstruction) {
+          sessionConfig.overrides.agent!.prompt = {
+            prompt: lessonInstruction,
+          };
+        }
+
+        if (targetLanguage) {
+          sessionConfig.overrides.agent!.language = targetLanguage;
+          const greeting =
+            nativeLanguage === "English"
+              ? `Hello! Let's start your ${targetLanguage} lesson. Are you ready?`
+              : `Let's begin your ${targetLanguage} lesson!`;
+          sessionConfig.overrides.agent!.firstMessage = greeting;
+        }
+      }
+
+      if (user?.id || targetLanguage) {
+        sessionConfig.dynamicVariables = {};
+        if (user?.id) {
+          sessionConfig.dynamicVariables.user_id = user.id;
+        }
+        if (targetLanguage) {
+          sessionConfig.dynamicVariables.target_language = targetLanguage;
+        }
+      }
+
+      await conversation.startSession(sessionConfig);
     } catch (error) {
       console.error("Failed to start conversation:", error);
       toast({
