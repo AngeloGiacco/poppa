@@ -1,9 +1,12 @@
-import type { Metadata } from "next";
-import "./style.css";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { Toaster } from "@/components/ui/toaster";
 import { Public_Sans } from "next/font/google";
-import ProtectedRoute from '@/components/ProtectedRoute';
+
+import "./style.css";
+
+import ProtectedRoute from "@/components/ProtectedRoute";
+import { Toaster } from "@/components/ui/toaster";
+import { TooltipProvider } from "@/components/ui/tooltip";
+
+import type { Metadata } from "next";
 
 const publicSans = Public_Sans({
   subsets: ["latin"],
@@ -13,8 +16,8 @@ const publicSans = Public_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Poppa',
-  description: 'AI voice-only language tutoring with Poppa',
+  title: "Poppa",
+  description: "AI voice-only language tutoring with Poppa",
 };
 
 export default function LessonLayout({

@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
-import { useAuth } from '@/context/AuthContext';
-import { useRouter } from '@/i18n/routing';
+import { useEffect } from "react";
+
+import { useAuth } from "@/context/AuthContext";
+import { useRouter } from "@/i18n/routing";
 
 export function useLesson() {
   const { user, userProfile } = useAuth();
@@ -11,7 +12,7 @@ export function useLesson() {
 
   useEffect(() => {
     if (user === null) {
-      router.push('/login');
+      router.push("/login");
     }
   }, [user, router]);
 
@@ -19,6 +20,6 @@ export function useLesson() {
     isLoading,
     hasInsufficientCredits,
     user,
-    userProfile
+    userProfile,
   };
-} 
+}

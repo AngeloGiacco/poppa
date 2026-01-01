@@ -1,7 +1,10 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import supabaseClient from '@/lib/supabase';
-import crypto from 'crypto';
-import { buffer } from 'micro'; // For reading the raw body
+import crypto from "node:crypto";
+
+import { buffer } from "micro"; // For reading the raw body
+
+import supabaseClient from "@/lib/supabase";
+
+import type { NextApiRequest, NextApiResponse } from "next";
 
 // Disable Next.js body parsing for this route to access the raw body for signature verification
 export const config = {
@@ -27,56 +30,57 @@ interface ElevenLabsWebhookPayload {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST');
-    return res.status(405).end('Method Not Allowed');
+  if (req.method !== "POST") {
+    res.setHeader("Allow", "POST");
+    return res.status(405).end("Method Not Allowed");
   }
 
   if (!elevenLabsWebhookSecret) {
-    console.error('❌ ElevenLabs webhook secret is not configured.');
-    return res.status(500).send('Webhook secret not configured.');
+    console.error("❌ ElevenLabs webhook secret is not configured.");
+    return res.status(500).send("Webhook secret not configured.");
   }
 
-  const signature = req.headers['elevenlabs-signature'] as string;
+  const signature = req.headers["elevenlabs-signature"] as string;
   if (!signature) {
-    console.warn('⚠️ Missing ElevenLabs-Signature header.');
-    return res.status(400).send('Missing signature.');
+    console.warn("⚠️ Missing ElevenLabs-Signature header.");
+    return res.status(400).send("Missing signature.");
   }
 
   const rawBody = await buffer(req);
-  const requestBody = rawBody.toString('utf8');
+  const requestBody = rawBody.toString("utf8");
 
   // Verify signature
   const expectedSignature = crypto
-    .createHmac('sha256', elevenLabsWebhookSecret)
+    .createHmac("sha256", elevenLabsWebhookSecret)
     .update(requestBody)
-    .digest('hex');
+    .digest("hex");
 
   if (!crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(expectedSignature))) {
-    console.error('❌ Invalid ElevenLabs webhook signature.');
-    return res.status(400).send('Invalid signature.');
+    console.error("❌ Invalid ElevenLabs webhook signature.");
+    return res.status(400).send("Invalid signature.");
   }
 
-  console.log('✅ ElevenLabs Webhook Signature Verified');
+  console.log("✅ ElevenLabs Webhook Signature Verified");
 
   try {
     const payload = JSON.parse(requestBody) as ElevenLabsWebhookPayload;
-    console.log('Received ElevenLabs webhook payload:', JSON.stringify(payload, null, 2));
+    console.log("Received ElevenLabs webhook payload:", JSON.stringify(payload, null, 2));
 
     // We are interested in events that signify usage, e.g., 'call_ended' or similar.
     // Adjust this based on the actual webhook events from ElevenLabs that indicate usage.
     // For this example, let's assume 'call_ended' is the event type.
-    if (payload.type !== 'call_ended' && payload.type !== 'call_processed') { // Or whatever event type indicates usage
+    if (payload.type !== "call_ended" && payload.type !== "call_processed") {
+      // Or whatever event type indicates usage
       console.log(`ℹ️ Skipping ElevenLabs event type: ${payload.type}`);
-      return res.status(200).json({ message: 'Event type skipped', type: payload.type });
+      return res.status(200).json({ message: "Event type skipped", type: payload.type });
     }
 
     const userId = payload.data?.conversation_initiation_client_data?.dynamic_variables?.user_id;
 
     if (!userId) {
-      console.error('❌ Missing user_id in ElevenLabs webhook payload dynamic_variables.');
+      console.error("❌ Missing user_id in ElevenLabs webhook payload dynamic_variables.");
       // Depending on strictness, you might want to return 400 or just log and return 200 to acknowledge receipt.
-      return res.status(400).send('Missing user_id in payload.');
+      return res.status(400).send("Missing user_id in payload.");
     }
 
     console.log(`Processing usage for user_id: ${userId}`);
@@ -112,13 +116,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       END;
       $$ LANGUAGE plpgsql;
     */
-    const { data: usageData, error: rpcError } = await supabaseClient.rpc('increment_user_usage', {
+    const { data: usageData, error: rpcError } = await supabaseClient.rpc("increment_user_usage", {
       p_user_id: userId,
       p_increment_by: 1, // Assuming one call is one unit of usage
     });
-    
+
     if (rpcError) {
-      console.error('❌ Error incrementing usage via RPC:', rpcError);
+      console.error("❌ Error incrementing usage via RPC:", rpcError);
       return res.status(500).send(`Error incrementing usage: ${rpcError.message}`);
     }
 
@@ -126,29 +130,38 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // If it returns an array, we might need to pick the first element.
     const updatedUsage = Array.isArray(usageData) ? usageData[0] : usageData;
 
-
     if (!updatedUsage) {
-        console.error(`❌ Usage record not found or not updated for user_id: ${userId} after RPC call.`);
-        // This could happen if the user_id doesn't exist in the usage table
-        // and the RPC function doesn't create it.
-        return res.status(404).send('Usage record not found for user.');
+      console.error(
+        `❌ Usage record not found or not updated for user_id: ${userId} after RPC call.`
+      );
+      // This could happen if the user_id doesn't exist in the usage table
+      // and the RPC function doesn't create it.
+      return res.status(404).send("Usage record not found for user.");
     }
 
-    console.log(`✅ Usage incremented for user_id: ${userId}. New count: ${updatedUsage.usage_count}`);
+    console.log(
+      `✅ Usage incremented for user_id: ${userId}. New count: ${updatedUsage.usage_count}`
+    );
 
     // Check if usage_count now exceeds usage_limit
     if (updatedUsage.usage_count > updatedUsage.usage_limit) {
-      console.warn(`⚠️ Usage limit exceeded for user_id: ${userId}. Count: ${updatedUsage.usage_count}, Limit: ${updatedUsage.usage_limit}`);
+      console.warn(
+        `⚠️ Usage limit exceeded for user_id: ${userId}. Count: ${updatedUsage.usage_count}, Limit: ${updatedUsage.usage_limit}`
+      );
       // TODO: Implement notification logic if required (e.g., email user, admin notification)
     } else if (updatedUsage.usage_count === updatedUsage.usage_limit) {
-      console.info(`ℹ️ Usage limit reached for user_id: ${userId}. Count: ${updatedUsage.usage_count}, Limit: ${updatedUsage.usage_limit}`);
+      console.info(
+        `ℹ️ Usage limit reached for user_id: ${userId}. Count: ${updatedUsage.usage_count}, Limit: ${updatedUsage.usage_limit}`
+      );
     }
 
-
-    res.status(200).json({ message: 'Webhook processed successfully', userId: userId, newUsageCount: updatedUsage.usage_count });
-
+    res.status(200).json({
+      message: "Webhook processed successfully",
+      userId,
+      newUsageCount: updatedUsage.usage_count,
+    });
   } catch (error: any) {
-    console.error('❌ Error processing ElevenLabs webhook:', error);
+    console.error("❌ Error processing ElevenLabs webhook:", error);
     if (error instanceof SyntaxError) {
       return res.status(400).send(`Webhook Error: Invalid JSON payload. ${error.message}`);
     }

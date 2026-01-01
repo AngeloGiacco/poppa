@@ -1,14 +1,16 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+
 import { useConversation } from "@elevenlabs/react";
-import { SessionControls } from "@/components/session-controls";
-import { ConnectButton } from "@/components/connect-button";
 import { motion, AnimatePresence } from "framer-motion";
-import { toast } from "@/hooks/use-toast";
 import { useTranslations } from "next-intl";
-import { supabaseBrowserClient } from "@/lib/supabase-browser";
+
+import { ConnectButton } from "@/components/connect-button";
+import { SessionControls } from "@/components/session-controls";
 import { useAuth } from "@/context/AuthContext";
+import { toast } from "@/hooks/use-toast";
+import { supabaseBrowserClient } from "@/lib/supabase-browser";
 
 interface Transcription {
   id: string;
@@ -59,7 +61,9 @@ export function Chat({ lessonInstruction, targetLanguage, nativeLanguage }: Chat
   });
 
   const handleSessionEnd = useCallback(async () => {
-    if (!sessionStartTime || !user || isHandlingSessionEnd) return;
+    if (!sessionStartTime || !user || isHandlingSessionEnd) {
+      return;
+    }
 
     setIsHandlingSessionEnd(true);
 
@@ -79,7 +83,7 @@ export function Chat({ lessonInstruction, targetLanguage, nativeLanguage }: Chat
     try {
       await Promise.all([
         supabaseBrowserClient
-          .from('lesson')
+          .from("lesson")
           .insert({
             user: user.id,
             transcript: JSON.stringify(transcriptions),
@@ -87,15 +91,13 @@ export function Chat({ lessonInstruction, targetLanguage, nativeLanguage }: Chat
           })
           .throwOnError(),
 
-        supabaseBrowserClient.rpc(
-          'increment_credits',
-          { increment_amount: -sessionDurationMinutes }
-        ).throwOnError()
+        supabaseBrowserClient
+          .rpc("increment_credits", { increment_amount: -sessionDurationMinutes })
+          .throwOnError(),
       ]);
-
     } catch (error) {
-      console.error('Error saving session:', error);
-      if (document.visibilityState === 'visible') {
+      console.error("Error saving session:", error);
+      if (document.visibilityState === "visible") {
         toast({
           title: t("errors.sessionSave.title"),
           description: t("errors.sessionSave.description"),
@@ -155,9 +157,10 @@ export function Chat({ lessonInstruction, targetLanguage, nativeLanguage }: Chat
 
         if (targetLanguage) {
           sessionConfig.overrides.agent!.language = targetLanguage;
-          const greeting = nativeLanguage === "English"
-            ? `Hello! Let's start your ${targetLanguage} lesson. Are you ready?`
-            : `Let's begin your ${targetLanguage} lesson!`;
+          const greeting =
+            nativeLanguage === "English"
+              ? `Hello! Let's start your ${targetLanguage} lesson. Are you ready?`
+              : `Let's begin your ${targetLanguage} lesson!`;
           sessionConfig.overrides.agent!.firstMessage = greeting;
         }
       }
@@ -190,12 +193,12 @@ export function Chat({ lessonInstruction, targetLanguage, nativeLanguage }: Chat
 
   const renderVisualizer = () => (
     <div className="flex w-full items-center">
-      <div className="h-[320px] mt-16 md:mt-0 lg:pb-24 w-full flex items-center justify-center">
+      <div className="mt-16 flex h-[320px] w-full items-center justify-center md:mt-0 lg:pb-24">
         <div className="flex items-center gap-1">
           {[...Array(5)].map((_, i) => (
             <div
               key={i}
-              className={`w-3 bg-[#8B4513] rounded-full transition-all duration-150 ${
+              className={`w-3 rounded-full bg-[#8B4513] transition-all duration-150 ${
                 conversation.isSpeaking ? "animate-pulse" : ""
               }`}
               style={{
@@ -221,31 +224,28 @@ export function Chat({ lessonInstruction, targetLanguage, nativeLanguage }: Chat
         {isChatRunning ? (
           <SessionControls onDisconnect={handleDisconnect} />
         ) : (
-          <ConnectButton onConnect={handleConnect} isConnecting={conversation.status === "connecting"} />
+          <ConnectButton
+            onConnect={handleConnect}
+            isConnecting={conversation.status === "connecting"}
+          />
         )}
       </motion.div>
     </AnimatePresence>
   );
 
   return (
-    <div className="flex flex-col h-full min-h-[400px] overflow-hidden p-2 lg:p-4">
-      <div className="flex flex-col flex-grow items-center justify-center">
-        <div className="w-full h-full flex flex-col">
-          <div className="flex items-center justify-center w-full">
-            <div className="lg:hidden w-full">
-              {isChatRunning && renderVisualizer()}
-            </div>
+    <div className="flex h-full min-h-[400px] flex-col overflow-hidden p-2 lg:p-4">
+      <div className="flex flex-grow flex-col items-center justify-center">
+        <div className="flex h-full w-full flex-col">
+          <div className="flex w-full items-center justify-center">
+            <div className="w-full lg:hidden">{isChatRunning && renderVisualizer()}</div>
           </div>
-          <div className="grow h-full flex items-center justify-center">
-            <div className="w-full hidden lg:block">
-              {isChatRunning && renderVisualizer()}
-            </div>
+          <div className="flex h-full grow items-center justify-center">
+            <div className="hidden w-full lg:block">{isChatRunning && renderVisualizer()}</div>
           </div>
         </div>
 
-        <div className="absolute-center">
-          {renderConnectionControl()}
-        </div>
+        <div className="absolute-center">{renderConnectionControl()}</div>
       </div>
     </div>
   );

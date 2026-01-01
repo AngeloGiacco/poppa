@@ -1,4 +1,4 @@
-import { LanguageCurriculum } from "@/types/curriculum.types";
+import type { LanguageCurriculum } from "@/types/curriculum.types";
 
 export const germanCurriculum: LanguageCurriculum = {
   languageCode: "deu",
@@ -26,16 +26,15 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "wie heißt du?", translation: "what's your name?" },
         { term: "freut mich", translation: "nice to meet you" },
       ],
-      conversationPrompt: "Practice greetings at different times. Introduce yourself. Explore du vs Sie through examples.",
+      conversationPrompt:
+        "Practice greetings at different times. Introduce yourself. Explore du vs Sie through examples.",
     },
     {
       id: 2,
       title: "Numbers 1-20",
       level: "beginner",
       focus: "Counting and using numbers",
-      grammar: [
-        { name: "Sein + Jahre alt", explanation: "Using 'to be' for age" },
-      ],
+      grammar: [{ name: "Sein + Jahre alt", explanation: "Using 'to be' for age" }],
       vocabulary: [
         { term: "eins", translation: "1" },
         { term: "zwei", translation: "2" },
@@ -81,7 +80,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "nein", translation: "no" },
         { term: "woher kommst du?", translation: "where are you from?" },
       ],
-      conversationPrompt: "Practice forming questions. Note verb moves to first position for yes/no questions.",
+      conversationPrompt:
+        "Practice forming questions. Note verb moves to first position for yes/no questions.",
     },
     {
       id: 4,
@@ -89,7 +89,10 @@ export const germanCurriculum: LanguageCurriculum = {
       level: "beginner",
       focus: "Nominative case articles",
       grammar: [
-        { name: "Definite articles (nom)", explanation: "Der (masc), die (fem), das (neut), die (plural)" },
+        {
+          name: "Definite articles (nom)",
+          explanation: "Der (masc), die (fem), das (neut), die (plural)",
+        },
         { name: "Indefinite articles (nom)", explanation: "Ein (masc/neut), eine (fem)" },
         { name: "Three genders", explanation: "Masculine, feminine, neuter" },
       ],
@@ -101,7 +104,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "ein Buch", translation: "a book" },
         { term: "eine Tasche", translation: "a bag" },
       ],
-      conversationPrompt: "Practice identifying gender through articles. German has three genders - help develop intuition through patterns.",
+      conversationPrompt:
+        "Practice identifying gender through articles. German has three genders - help develop intuition through patterns.",
     },
     {
       id: 5,
@@ -109,7 +113,10 @@ export const germanCurriculum: LanguageCurriculum = {
       level: "beginner",
       focus: "Talking about family",
       grammar: [
-        { name: "Possessive articles (nom)", explanation: "Mein, dein, sein/ihr (my, your, his/her)" },
+        {
+          name: "Possessive articles (nom)",
+          explanation: "Mein, dein, sein/ihr (my, your, his/her)",
+        },
       ],
       vocabulary: [
         { term: "die Mutter", translation: "mother" },
@@ -122,7 +129,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "die Tochter", translation: "daughter" },
         { term: "die Familie", translation: "family" },
       ],
-      conversationPrompt: "Ask about their family. Practice possessives: mein Bruder, meine Schwester.",
+      conversationPrompt:
+        "Ask about their family. Practice possessives: mein Bruder, meine Schwester.",
     },
     {
       id: 6,
@@ -144,16 +152,15 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "klein", translation: "small" },
         { term: "schön", translation: "beautiful" },
       ],
-      conversationPrompt: "Describe objects using colors. After sein, no endings needed: 'Das Haus ist groß.'",
+      conversationPrompt:
+        "Describe objects using colors. After sein, no endings needed: 'Das Haus ist groß.'",
     },
     {
       id: 7,
       title: "Days & Time Basics",
       level: "beginner",
       focus: "Days of the week",
-      grammar: [
-        { name: "Days with am", explanation: "Am Montag = on Monday" },
-      ],
+      grammar: [{ name: "Days with am", explanation: "Am Montag = on Monday" }],
       vocabulary: [
         { term: "Montag", translation: "Monday" },
         { term: "Dienstag", translation: "Tuesday" },
@@ -166,7 +173,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "morgen", translation: "tomorrow" },
         { term: "gestern", translation: "yesterday" },
       ],
-      conversationPrompt: "Practice asking what day it is, discussing schedules. Days are capitalized in German.",
+      conversationPrompt:
+        "Practice asking what day it is, discussing schedules. Days are capitalized in German.",
     },
     {
       id: 8,
@@ -187,7 +195,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "kaufen", translation: "to buy" },
         { term: "fragen", translation: "to ask" },
       ],
-      conversationPrompt: "Practice conjugating through daily activities. 'Ich spiele Tennis. Spielst du auch Tennis?'",
+      conversationPrompt:
+        "Practice conjugating through daily activities. 'Ich spiele Tennis. Spielst du auch Tennis?'",
     },
     {
       id: 9,
@@ -206,7 +215,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "ich habe Durst", translation: "I am thirsty" },
         { term: "ich bin müde", translation: "I am tired" },
       ],
-      conversationPrompt: "These are essential verbs. Practice: 'Hast du Geschwister?' 'Bist du müde?'",
+      conversationPrompt:
+        "These are essential verbs. Practice: 'Hast du Geschwister?' 'Bist du müde?'",
     },
     {
       id: 10,
@@ -230,7 +240,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "das Mittagessen", translation: "lunch" },
         { term: "das Abendessen", translation: "dinner" },
       ],
-      conversationPrompt: "Practice ordering food. 'Ich möchte einen Kaffee, bitte.' Note accusative: einen (masc).",
+      conversationPrompt:
+        "Practice ordering food. 'Ich möchte einen Kaffee, bitte.' Note accusative: einen (masc).",
     },
     {
       id: 11,
@@ -238,7 +249,10 @@ export const germanCurriculum: LanguageCurriculum = {
       level: "beginner",
       focus: "Larger numbers",
       grammar: [
-        { name: "German number order", explanation: "Units before tens: einundzwanzig (one-and-twenty)" },
+        {
+          name: "German number order",
+          explanation: "Units before tens: einundzwanzig (one-and-twenty)",
+        },
       ],
       vocabulary: [
         { term: "einundzwanzig", translation: "21" },
@@ -252,7 +266,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "hundert", translation: "100" },
         { term: "was kostet das?", translation: "how much does this cost?" },
       ],
-      conversationPrompt: "German reverses units and tens! 25 = fünfundzwanzig (five-and-twenty). Practice with prices.",
+      conversationPrompt:
+        "German reverses units and tens! 25 = fünfundzwanzig (five-and-twenty). Practice with prices.",
     },
     {
       id: 12,
@@ -263,7 +278,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { name: "All beginner grammar", explanation: "Articles, sein/haben, regular verbs" },
       ],
       vocabulary: [],
-      conversationPrompt: "Free conversation covering introductions, family, numbers, food. Identify areas needing practice.",
+      conversationPrompt:
+        "Free conversation covering introductions, family, numbers, food. Identify areas needing practice.",
     },
 
     // ELEMENTARY (13-24)
@@ -286,7 +302,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "Mittag", translation: "noon" },
         { term: "Mitternacht", translation: "midnight" },
       ],
-      conversationPrompt: "German 'halb drei' means 2:30 (half TO three), not half past! Practice carefully.",
+      conversationPrompt:
+        "German 'halb drei' means 2:30 (half TO three), not half past! Practice carefully.",
     },
     {
       id: 14,
@@ -305,7 +322,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "ohne", translation: "without (+ acc)" },
         { term: "gegen", translation: "against (+ acc)" },
       ],
-      conversationPrompt: "Only masculine changes in accusative! 'Ich sehe den Mann.' 'Ich kaufe einen Apfel.'",
+      conversationPrompt:
+        "Only masculine changes in accusative! 'Ich sehe den Mann.' 'Ich kaufe einen Apfel.'",
     },
     {
       id: 15,
@@ -325,7 +343,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "von", translation: "from (+ dat)" },
         { term: "zu", translation: "to (+ dat)" },
       ],
-      conversationPrompt: "Dative for 'to whom'. 'Ich gebe dem Mann das Buch.' Practice with mit, nach, bei, von, zu.",
+      conversationPrompt:
+        "Dative for 'to whom'. 'Ich gebe dem Mann das Buch.' Practice with mit, nach, bei, von, zu.",
     },
     {
       id: 16,
@@ -344,7 +363,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "mitkommen", translation: "to come along" },
         { term: "zumachen", translation: "to close" },
       ],
-      conversationPrompt: "Prefix separates in main clause: 'Ich stehe um 7 Uhr auf.' Stays together in subordinate clauses.",
+      conversationPrompt:
+        "Prefix separates in main clause: 'Ich stehe um 7 Uhr auf.' Stays together in subordinate clauses.",
     },
     {
       id: 17,
@@ -363,16 +383,15 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "dürfen", translation: "may/to be allowed" },
         { term: "mögen", translation: "to like" },
       ],
-      conversationPrompt: "Modal verb conjugates, infinitive at end: 'Ich kann Deutsch sprechen.' Practice each modal.",
+      conversationPrompt:
+        "Modal verb conjugates, infinitive at end: 'Ich kann Deutsch sprechen.' Practice each modal.",
     },
     {
       id: 18,
       title: "Places & Directions",
       level: "elementary",
       focus: "Location vocabulary",
-      grammar: [
-        { name: "Two-way prepositions", explanation: "Acc for motion, dat for location" },
-      ],
+      grammar: [{ name: "Two-way prepositions", explanation: "Acc for motion, dat for location" }],
       vocabulary: [
         { term: "die Bank", translation: "bank" },
         { term: "die Apotheke", translation: "pharmacy" },
@@ -383,7 +402,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "auf", translation: "on/onto" },
         { term: "neben", translation: "next to" },
       ],
-      conversationPrompt: "Two-way prepositions: 'Ich gehe in die Bank' (motion/acc) vs 'Ich bin in der Bank' (location/dat).",
+      conversationPrompt:
+        "Two-way prepositions: 'Ich gehe in die Bank' (motion/acc) vs 'Ich bin in der Bank' (location/dat).",
     },
     {
       id: 19,
@@ -404,7 +424,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "teuer", translation: "expensive" },
         { term: "billig", translation: "cheap" },
       ],
-      conversationPrompt: "Role-play shopping. 'Ich möchte dieses Hemd.' Handle sizes, prices, payment.",
+      conversationPrompt:
+        "Role-play shopping. 'Ich möchte dieses Hemd.' Handle sizes, prices, payment.",
     },
     {
       id: 20,
@@ -423,16 +444,15 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "ich habe gemacht", translation: "I did/made" },
         { term: "ich habe gekauft", translation: "I bought" },
       ],
-      conversationPrompt: "Most verbs use haben. 'Ich habe Fußball gespielt.' Past participle goes to end.",
+      conversationPrompt:
+        "Most verbs use haben. 'Ich habe Fußball gespielt.' Past participle goes to end.",
     },
     {
       id: 21,
       title: "Perfekt with Sein",
       level: "elementary",
       focus: "Movement and state change verbs",
-      grammar: [
-        { name: "Sein verbs", explanation: "Verbs of movement/state change use sein" },
-      ],
+      grammar: [{ name: "Sein verbs", explanation: "Verbs of movement/state change use sein" }],
       vocabulary: [
         { term: "ich bin gegangen", translation: "I went" },
         { term: "ich bin gekommen", translation: "I came" },
@@ -441,16 +461,15 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "ich bin gewesen", translation: "I was" },
         { term: "ich bin geworden", translation: "I became" },
       ],
-      conversationPrompt: "Movement verbs (gehen, kommen, fahren) and sein/bleiben/werden use sein. 'Ich bin nach Berlin gefahren.'",
+      conversationPrompt:
+        "Movement verbs (gehen, kommen, fahren) and sein/bleiben/werden use sein. 'Ich bin nach Berlin gefahren.'",
     },
     {
       id: 22,
       title: "Irregular Past Participles",
       level: "elementary",
       focus: "Common irregular forms",
-      grammar: [
-        { name: "Strong verbs", explanation: "Vowel change + -en ending" },
-      ],
+      grammar: [{ name: "Strong verbs", explanation: "Vowel change + -en ending" }],
       vocabulary: [
         { term: "geschrieben", translation: "written" },
         { term: "gelesen", translation: "read" },
@@ -460,16 +479,15 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "gesprochen", translation: "spoken" },
         { term: "genommen", translation: "taken" },
       ],
-      conversationPrompt: "Practice irregular participles through conversation. 'Was hast du gestern gegessen?'",
+      conversationPrompt:
+        "Practice irregular participles through conversation. 'Was hast du gestern gegessen?'",
     },
     {
       id: 23,
       title: "Travel Vocabulary",
       level: "elementary",
       focus: "Airports, hotels, transportation",
-      grammar: [
-        { name: "Future with werden", explanation: "Werden + infinitive" },
-      ],
+      grammar: [{ name: "Future with werden", explanation: "Werden + infinitive" }],
       vocabulary: [
         { term: "der Flughafen", translation: "airport" },
         { term: "der Flug", translation: "flight" },
@@ -480,18 +498,18 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "die Fahrkarte", translation: "ticket" },
         { term: "die Reservierung", translation: "reservation" },
       ],
-      conversationPrompt: "Role-play travel situations. Practice werden + infinitive for future: 'Ich werde morgen fliegen.'",
+      conversationPrompt:
+        "Role-play travel situations. Practice werden + infinitive for future: 'Ich werde morgen fliegen.'",
     },
     {
       id: 24,
       title: "Elementary Review",
       level: "elementary",
       focus: "Consolidating elementary material",
-      grammar: [
-        { name: "Cases, Perfekt, modals", explanation: "All elementary grammar" },
-      ],
+      grammar: [{ name: "Cases, Perfekt, modals", explanation: "All elementary grammar" }],
       vocabulary: [],
-      conversationPrompt: "Have the student tell a story about a trip using Perfekt. Test comfort with cases.",
+      conversationPrompt:
+        "Have the student tell a story about a trip using Perfekt. Test comfort with cases.",
     },
 
     // INTERMEDIATE (25-40)
@@ -510,7 +528,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "es gab", translation: "there was" },
         { term: "als", translation: "when (past)" },
       ],
-      conversationPrompt: "Präteritum is preferred for sein/haben even in speech. 'Ich war gestern krank.'",
+      conversationPrompt:
+        "Präteritum is preferred for sein/haben even in speech. 'Ich war gestern krank.'",
     },
     {
       id: 26,
@@ -518,7 +537,10 @@ export const germanCurriculum: LanguageCurriculum = {
       level: "intermediate",
       focus: "Simple past of modals",
       grammar: [
-        { name: "Modal Präteritum", explanation: "No umlaut: konnte, musste, wollte, sollte, durfte" },
+        {
+          name: "Modal Präteritum",
+          explanation: "No umlaut: konnte, musste, wollte, sollte, durfte",
+        },
       ],
       vocabulary: [
         { term: "ich konnte", translation: "I could" },
@@ -527,7 +549,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "ich sollte", translation: "I should have" },
         { term: "ich durfte", translation: "I was allowed" },
       ],
-      conversationPrompt: "Modal Präteritum is common in speech. 'Ich konnte nicht kommen.' 'Ich musste arbeiten.'",
+      conversationPrompt:
+        "Modal Präteritum is common in speech. 'Ich konnte nicht kommen.' 'Ich musste arbeiten.'",
     },
     {
       id: 27,
@@ -535,7 +558,10 @@ export const germanCurriculum: LanguageCurriculum = {
       level: "intermediate",
       focus: "Word order with conjunctions",
       grammar: [
-        { name: "Subordinating conjunctions", explanation: "Verb goes to end: weil, dass, wenn, ob, als" },
+        {
+          name: "Subordinating conjunctions",
+          explanation: "Verb goes to end: weil, dass, wenn, ob, als",
+        },
         { name: "Coordinating conjunctions", explanation: "No change: und, aber, oder, denn" },
       ],
       vocabulary: [
@@ -546,7 +572,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "als", translation: "when (past)" },
         { term: "obwohl", translation: "although" },
       ],
-      conversationPrompt: "Verb to end after subordinating conjunctions: 'Ich weiß, dass er kommt.' vs 'Er kommt, und ich freue mich.'",
+      conversationPrompt:
+        "Verb to end after subordinating conjunctions: 'Ich weiß, dass er kommt.' vs 'Er kommt, und ich freue mich.'",
     },
     {
       id: 28,
@@ -554,7 +581,10 @@ export const germanCurriculum: LanguageCurriculum = {
       level: "intermediate",
       focus: "Der, die, das as relative pronouns",
       grammar: [
-        { name: "Relative pronouns", explanation: "Same as definite articles (with some dative changes)" },
+        {
+          name: "Relative pronouns",
+          explanation: "Same as definite articles (with some dative changes)",
+        },
         { name: "Relative clause word order", explanation: "Verb at end" },
       ],
       vocabulary: [
@@ -564,7 +594,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "mit dem", translation: "with whom (masc)" },
         { term: "mit der", translation: "with whom (fem)" },
       ],
-      conversationPrompt: "Practice connecting sentences: 'Der Mann, der dort steht, ist mein Bruder.'",
+      conversationPrompt:
+        "Practice connecting sentences: 'Der Mann, der dort steht, ist mein Bruder.'",
     },
     {
       id: 29,
@@ -583,7 +614,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "während", translation: "during (+ gen)" },
         { term: "statt", translation: "instead of (+ gen)" },
       ],
-      conversationPrompt: "Genitive shows possession: 'Das Auto des Mannes.' Masc/neut nouns add -s or -es.",
+      conversationPrompt:
+        "Genitive shows possession: 'Das Auto des Mannes.' Masc/neut nouns add -s or -es.",
     },
     {
       id: 30,
@@ -602,7 +634,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "die kleine Frau", translation: "the small woman" },
         { term: "kaltes Wasser", translation: "cold water" },
       ],
-      conversationPrompt: "Adjective endings depend on: 1) article type 2) gender 3) case. Practice with common combinations.",
+      conversationPrompt:
+        "Adjective endings depend on: 1) article type 2) gender 3) case. Practice with common combinations.",
     },
     {
       id: 31,
@@ -622,7 +655,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "am größten", translation: "the biggest" },
         { term: "am besten", translation: "the best" },
       ],
-      conversationPrompt: "Many adjectives add umlaut: groß→größer, alt→älter. 'Er ist größer als ich.'",
+      conversationPrompt:
+        "Many adjectives add umlaut: groß→größer, alt→älter. 'Er ist größer als ich.'",
     },
     {
       id: 32,
@@ -640,7 +674,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "ich könnte", translation: "I could" },
         { term: "wenn ich ... hätte", translation: "if I had..." },
       ],
-      conversationPrompt: "Practice hypotheticals: 'Wenn ich reich wäre, würde ich reisen.' Use würde for most verbs.",
+      conversationPrompt:
+        "Practice hypotheticals: 'Wenn ich reich wäre, würde ich reisen.' Use würde for most verbs.",
     },
     {
       id: 33,
@@ -657,7 +692,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "ist geschrieben worden", translation: "has been written" },
         { term: "von", translation: "by (+ dat)" },
       ],
-      conversationPrompt: "Passive uses werden: 'Das Haus wird gebaut.' 'Das Buch wurde von Goethe geschrieben.'",
+      conversationPrompt:
+        "Passive uses werden: 'Das Haus wird gebaut.' 'Das Buch wurde von Goethe geschrieben.'",
     },
     {
       id: 34,
@@ -675,7 +711,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "sich anziehen", translation: "to get dressed" },
         { term: "sich vorstellen", translation: "to introduce oneself" },
       ],
-      conversationPrompt: "Practice reflexive verbs: 'Ich freue mich.' 'Ich wasche mir die Hände' (dat because body part is acc).",
+      conversationPrompt:
+        "Practice reflexive verbs: 'Ich freue mich.' 'Ich wasche mir die Hände' (dat because body part is acc).",
     },
     {
       id: 35,
@@ -694,7 +731,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "versuchen zu", translation: "to try to" },
         { term: "anfangen zu", translation: "to begin to" },
       ],
-      conversationPrompt: "Practice: 'Ich lerne Deutsch, um in Deutschland zu arbeiten.' With separable verbs: 'anzufangen'.",
+      conversationPrompt:
+        "Practice: 'Ich lerne Deutsch, um in Deutschland zu arbeiten.' With separable verbs: 'anzufangen'.",
     },
     {
       id: 36,
@@ -713,7 +751,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "wofür", translation: "for what" },
         { term: "darauf", translation: "on it" },
       ],
-      conversationPrompt: "For things use da-/wo-compounds: 'Worauf wartest du?' 'Ich warte darauf.' For people: 'Auf wen wartest du?'",
+      conversationPrompt:
+        "For things use da-/wo-compounds: 'Worauf wartest du?' 'Ich warte darauf.' For people: 'Auf wen wartest du?'",
     },
     {
       id: 37,
@@ -730,7 +769,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "er könne", translation: "he can (reported)" },
         { term: "er werde kommen", translation: "he will come (reported)" },
       ],
-      conversationPrompt: "Konjunktiv I is for indirect speech: 'Er sagte, er sei krank.' If identical to indicative, use Konj. II.",
+      conversationPrompt:
+        "Konjunktiv I is for indirect speech: 'Er sagte, er sei krank.' If identical to indicative, use Konj. II.",
     },
     {
       id: 38,
@@ -748,7 +788,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "der Name/den Namen", translation: "the name" },
         { term: "der Kollege/den Kollegen", translation: "the colleague" },
       ],
-      conversationPrompt: "Certain masculine nouns add -n/-en in accusative, dative, genitive. 'Ich kenne den Studenten.'",
+      conversationPrompt:
+        "Certain masculine nouns add -n/-en in accusative, dative, genitive. 'Ich kenne den Studenten.'",
     },
     {
       id: 39,
@@ -756,14 +797,18 @@ export const germanCurriculum: LanguageCurriculum = {
       level: "intermediate",
       focus: "Long adjective phrases before nouns",
       grammar: [
-        { name: "Extended attributes", explanation: "Participial and prepositional modifiers before noun" },
+        {
+          name: "Extended attributes",
+          explanation: "Participial and prepositional modifiers before noun",
+        },
       ],
       vocabulary: [
         { term: "der in Berlin wohnende Mann", translation: "the man living in Berlin" },
         { term: "das gestern gekaufte Buch", translation: "the book bought yesterday" },
         { term: "die von ihm geschriebene Geschichte", translation: "the story written by him" },
       ],
-      conversationPrompt: "German can stack modifiers before noun: 'der seit Jahren in Deutschland lebende amerikanische Student'.",
+      conversationPrompt:
+        "German can stack modifiers before noun: 'der seit Jahren in Deutschland lebende amerikanische Student'.",
     },
     {
       id: 40,
@@ -771,10 +816,14 @@ export const germanCurriculum: LanguageCurriculum = {
       level: "intermediate",
       focus: "Consolidating intermediate material",
       grammar: [
-        { name: "All cases, Konjunktiv, subordination", explanation: "Complete intermediate grammar" },
+        {
+          name: "All cases, Konjunktiv, subordination",
+          explanation: "Complete intermediate grammar",
+        },
       ],
       vocabulary: [],
-      conversationPrompt: "Extended conversation using all intermediate grammar. Tell stories, express hypotheticals, report speech.",
+      conversationPrompt:
+        "Extended conversation using all intermediate grammar. Tell stories, express hypotheticals, report speech.",
     },
 
     // UPPER INTERMEDIATE (41-52)
@@ -783,9 +832,7 @@ export const germanCurriculum: LanguageCurriculum = {
       title: "Plusquamperfekt",
       level: "upper_intermediate",
       focus: "Had done something",
-      grammar: [
-        { name: "Formation", explanation: "Hatte/war + past participle" },
-      ],
+      grammar: [{ name: "Formation", explanation: "Hatte/war + past participle" }],
       vocabulary: [
         { term: "ich hatte gemacht", translation: "I had done" },
         { term: "ich war gegangen", translation: "I had gone" },
@@ -808,7 +855,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "er wird gegangen sein", translation: "he will have gone" },
         { term: "bis dann", translation: "by then" },
       ],
-      conversationPrompt: "Futur II can express assumption: 'Er wird wohl krank gewesen sein.' (He was probably sick).",
+      conversationPrompt:
+        "Futur II can express assumption: 'Er wird wohl krank gewesen sein.' (He was probably sick).",
     },
     {
       id: 43,
@@ -824,7 +872,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "ich wäre gegangen", translation: "I would have gone" },
         { term: "wenn ich gewusst hätte", translation: "if I had known" },
       ],
-      conversationPrompt: "Practice past hypotheticals: 'Wenn ich das gewusst hätte, wäre ich gekommen.'",
+      conversationPrompt:
+        "Practice past hypotheticals: 'Wenn ich das gewusst hätte, wäre ich gekommen.'",
     },
     {
       id: 44,
@@ -841,7 +890,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "wenn ich Zeit habe", translation: "when(ever) I have time" },
         { term: "wann kommst du?", translation: "when are you coming?" },
       ],
-      conversationPrompt: "Als for single past, wenn for repeated/conditional/future: 'Als ich ankam...' vs 'Wenn ich ankomme...'",
+      conversationPrompt:
+        "Als for single past, wenn for repeated/conditional/future: 'Als ich ankam...' vs 'Wenn ich ankomme...'",
     },
     {
       id: 45,
@@ -858,7 +908,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "er lässt mich gehen", translation: "he lets me go" },
         { term: "das lässt sich machen", translation: "that can be done" },
       ],
-      conversationPrompt: "Practice lassen: 'Ich lasse mir die Haare schneiden.' 'Das lässt sich leicht erklären.'",
+      conversationPrompt:
+        "Practice lassen: 'Ich lasse mir die Haare schneiden.' 'Das lässt sich leicht erklären.'",
     },
     {
       id: 46,
@@ -875,7 +926,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "der gelesene Brief", translation: "the read letter" },
         { term: "aufregend", translation: "exciting" },
       ],
-      conversationPrompt: "Present participle = -ing (active): 'das lachende Kind'. Past participle = -ed (passive): 'das geschriebene Buch'.",
+      conversationPrompt:
+        "Present participle = -ing (active): 'das lachende Kind'. Past participle = -ed (passive): 'das geschriebene Buch'.",
     },
     {
       id: 47,
@@ -893,7 +945,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "er soll reich sein", translation: "he's said to be rich" },
         { term: "er will es getan haben", translation: "he claims to have done it" },
       ],
-      conversationPrompt: "Modals can express degrees of certainty: 'Er muss es gewusst haben.' (He must have known it).",
+      conversationPrompt:
+        "Modals can express degrees of certainty: 'Er muss es gewusst haben.' (He must have known it).",
     },
     {
       id: 48,
@@ -902,7 +955,10 @@ export const germanCurriculum: LanguageCurriculum = {
       focus: "Compound nouns and derivation",
       grammar: [
         { name: "Compound nouns", explanation: "Last element determines gender" },
-        { name: "Suffixes", explanation: "-ung (fem), -heit/-keit (fem), -er (masc), -chen/-lein (neut)" },
+        {
+          name: "Suffixes",
+          explanation: "-ung (fem), -heit/-keit (fem), -er (masc), -chen/-lein (neut)",
+        },
       ],
       vocabulary: [
         { term: "der Kühlschrank", translation: "refrigerator (cool+closet)" },
@@ -911,7 +967,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "die Übung", translation: "exercise" },
         { term: "das Häuschen", translation: "little house" },
       ],
-      conversationPrompt: "German loves compounds! Practice breaking them down and building new ones.",
+      conversationPrompt:
+        "German loves compounds! Practice breaking them down and building new ones.",
     },
     {
       id: 49,
@@ -929,7 +986,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "es handelt sich um", translation: "it concerns" },
         { term: "es kommt darauf an", translation: "it depends" },
       ],
-      conversationPrompt: "Es has many uses beyond 'it'. Practice various constructions: 'Es wird getanzt.' (There's dancing).",
+      conversationPrompt:
+        "Es has many uses beyond 'it'. Practice various constructions: 'Es wird getanzt.' (There's dancing).",
     },
     {
       id: 50,
@@ -967,18 +1025,18 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "na ja", translation: "well (colloquial)" },
         { term: "halt/eben", translation: "just/simply (particles)" },
       ],
-      conversationPrompt: "Compare formal letters with casual speech. Practice appropriate register for different situations.",
+      conversationPrompt:
+        "Compare formal letters with casual speech. Practice appropriate register for different situations.",
     },
     {
       id: 52,
       title: "Upper Intermediate Review",
       level: "upper_intermediate",
       focus: "Consolidating upper intermediate",
-      grammar: [
-        { name: "All advanced structures", explanation: "Complete grammatical range" },
-      ],
+      grammar: [{ name: "All advanced structures", explanation: "Complete grammatical range" }],
       vocabulary: [],
-      conversationPrompt: "Engage in complex discussion. Express nuanced opinions, report speech, handle any grammatical structure.",
+      conversationPrompt:
+        "Engage in complex discussion. Express nuanced opinions, report speech, handle any grammatical structure.",
     },
 
     // ADVANCED (53-60)
@@ -998,7 +1056,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "im Folgenden", translation: "in the following" },
         { term: "zusammenfassend", translation: "in summary" },
       ],
-      conversationPrompt: "Practice academic style: nominal constructions, passive voice, formal vocabulary.",
+      conversationPrompt:
+        "Practice academic style: nominal constructions, passive voice, formal vocabulary.",
     },
     {
       id: 54,
@@ -1016,7 +1075,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "auf dem Holzweg sein", translation: "to be on the wrong track" },
         { term: "jmdm. einen Bären aufbinden", translation: "to tell someone a tall tale" },
       ],
-      conversationPrompt: "Explore idioms through context. Practice using them naturally in conversation.",
+      conversationPrompt:
+        "Explore idioms through context. Practice using them naturally in conversation.",
     },
     {
       id: 55,
@@ -1034,16 +1094,15 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "grüezi (Swiss)", translation: "hello" },
         { term: "Velo (Swiss)", translation: "bicycle (vs Fahrrad)" },
       ],
-      conversationPrompt: "Explore German-speaking diversity. Compare Germany, Austria, Switzerland.",
+      conversationPrompt:
+        "Explore German-speaking diversity. Compare Germany, Austria, Switzerland.",
     },
     {
       id: 56,
       title: "Modal Particles",
       level: "advanced",
       focus: "Doch, ja, mal, halt, eben, eigentlich",
-      grammar: [
-        { name: "Particle functions", explanation: "Add nuance, emotion, softening" },
-      ],
+      grammar: [{ name: "Particle functions", explanation: "Add nuance, emotion, softening" }],
       vocabulary: [
         { term: "doch", translation: "indeed/but/after all" },
         { term: "ja", translation: "you know/indeed" },
@@ -1052,16 +1111,15 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "eigentlich", translation: "actually" },
         { term: "schon", translation: "already/indeed" },
       ],
-      conversationPrompt: "Particles add emotional color. 'Komm mal her!' vs 'Komm her!' - much softer with mal.",
+      conversationPrompt:
+        "Particles add emotional color. 'Komm mal her!' vs 'Komm her!' - much softer with mal.",
     },
     {
       id: 57,
       title: "Business German",
       level: "advanced",
       focus: "Professional communication",
-      grammar: [
-        { name: "Formal correspondence", explanation: "Letter and email conventions" },
-      ],
+      grammar: [{ name: "Formal correspondence", explanation: "Letter and email conventions" }],
       vocabulary: [
         { term: "bezüglich", translation: "regarding" },
         { term: "wir bitten um", translation: "we request" },
@@ -1070,7 +1128,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "mit Bezug auf", translation: "with reference to" },
         { term: "hochachtungsvoll", translation: "respectfully" },
       ],
-      conversationPrompt: "Practice formal correspondence. Role-play business situations, negotiations, presentations.",
+      conversationPrompt:
+        "Practice formal correspondence. Role-play business situations, negotiations, presentations.",
     },
     {
       id: 58,
@@ -1087,7 +1146,8 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "denn", translation: "for (literary 'because')" },
         { term: "gleichsam", translation: "as it were" },
       ],
-      conversationPrompt: "Read and discuss excerpts from German literature. Notice Präteritum and literary style.",
+      conversationPrompt:
+        "Read and discuss excerpts from German literature. Notice Präteritum and literary style.",
     },
     {
       id: 59,
@@ -1105,18 +1165,18 @@ export const germanCurriculum: LanguageCurriculum = {
         { term: "krass", translation: "extreme/crazy" },
         { term: "mega", translation: "super/very" },
       ],
-      conversationPrompt: "Practice understanding casual speech. Note: 'weil' sometimes takes V2 order colloquially.",
+      conversationPrompt:
+        "Practice understanding casual speech. Note: 'weil' sometimes takes V2 order colloquially.",
     },
     {
       id: 60,
       title: "Advanced Review & Mastery",
       level: "advanced",
       focus: "Full language proficiency",
-      grammar: [
-        { name: "Complete German grammar", explanation: "All structures and registers" },
-      ],
+      grammar: [{ name: "Complete German grammar", explanation: "All structures and registers" }],
       vocabulary: [],
-      conversationPrompt: "Engage in sophisticated conversation on any topic. Use particles, idioms, appropriate register. Celebrate their achievement!",
+      conversationPrompt:
+        "Engage in sophisticated conversation on any topic. Use particles, idioms, appropriate register. Celebrate their achievement!",
     },
   ],
 };
