@@ -1,4 +1,4 @@
-import { LanguageCurriculum } from "@/types/curriculum.types";
+import { type LanguageCurriculum } from "@/types/curriculum.types";
 
 export const italianCurriculum: LanguageCurriculum = {
   languageCode: "ita",
@@ -25,16 +25,15 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "come ti chiami?", translation: "what's your name?" },
         { term: "piacere", translation: "nice to meet you" },
       ],
-      conversationPrompt: "Practice greetings at different times. Introduce yourself. Explore tu vs Lei (formal you).",
+      conversationPrompt:
+        "Practice greetings at different times. Introduce yourself. Explore tu vs Lei (formal you).",
     },
     {
       id: 2,
       title: "Numbers 1-20",
       level: "beginner",
       focus: "Counting and using numbers",
-      grammar: [
-        { name: "Avere + anni", explanation: "Using 'to have' for age" },
-      ],
+      grammar: [{ name: "Avere + anni", explanation: "Using 'to have' for age" }],
       vocabulary: [
         { term: "uno", translation: "1" },
         { term: "due", translation: "2" },
@@ -101,7 +100,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "gli studenti", translation: "the students" },
         { term: "le case", translation: "the houses" },
       ],
-      conversationPrompt: "Practice identifying gender through articles. Lo/gli before s+consonant, z, gn, ps, x.",
+      conversationPrompt:
+        "Practice identifying gender through articles. Lo/gli before s+consonant, z, gn, ps, x.",
     },
     {
       id: 5,
@@ -123,7 +123,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "la figlia", translation: "daughter" },
         { term: "la famiglia", translation: "family" },
       ],
-      conversationPrompt: "With family, no article: 'mio padre' not 'il mio padre'. Except plural or modified: 'i miei genitori'.",
+      conversationPrompt:
+        "With family, no article: 'mio padre' not 'il mio padre'. Except plural or modified: 'i miei genitori'.",
     },
     {
       id: 6,
@@ -145,7 +146,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "piccolo", translation: "small" },
         { term: "bello", translation: "beautiful" },
       ],
-      conversationPrompt: "Adjectives agree: 'la macchina rossa', 'il cielo blu'. Some colors don't change (blu, rosa).",
+      conversationPrompt:
+        "Adjectives agree: 'la macchina rossa', 'il cielo blu'. Some colors don't change (blu, rosa).",
     },
     {
       id: 7,
@@ -168,7 +170,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "domani", translation: "tomorrow" },
         { term: "ieri", translation: "yesterday" },
       ],
-      conversationPrompt: "Days aren't capitalized except domenica (usually). With article = every: 'il sabato = on Saturdays'.",
+      conversationPrompt:
+        "Days aren't capitalized except domenica (usually). With article = every: 'il sabato = on Saturdays'.",
     },
     {
       id: 8,
@@ -189,7 +192,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "comprare", translation: "to buy" },
         { term: "abitare", translation: "to live" },
       ],
-      conversationPrompt: "Practice conjugating: 'Io parlo italiano. Tu parli inglese?' Subject pronouns often dropped.",
+      conversationPrompt:
+        "Practice conjugating: 'Io parlo italiano. Tu parli inglese?' Subject pronouns often dropped.",
     },
     {
       id: 9,
@@ -209,7 +213,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "capire", translation: "to understand (-isc-)" },
         { term: "finire", translation: "to finish (-isc-)" },
       ],
-      conversationPrompt: "Some -IRE verbs add -isc-: 'capisco, capisci, capisce' but 'capiamo'. Practice both types.",
+      conversationPrompt:
+        "Some -IRE verbs add -isc-: 'capisco, capisci, capisce' but 'capiamo'. Practice both types.",
     },
     {
       id: 10,
@@ -217,7 +222,10 @@ export const italianCurriculum: LanguageCurriculum = {
       level: "beginner",
       focus: "Basic food vocabulary",
       grammar: [
-        { name: "Partitive articles", explanation: "Del, dello, della, dell', dei, degli, delle (some)" },
+        {
+          name: "Partitive articles",
+          explanation: "Del, dello, della, dell', dei, degli, delle (some)",
+        },
         { name: "Vorrei for requests", explanation: "Vorrei = I would like" },
       ],
       vocabulary: [
@@ -255,7 +263,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "cento", translation: "100" },
         { term: "quanto costa?", translation: "how much does it cost?" },
       ],
-      conversationPrompt: "Drop final vowel before uno/otto: ventuno, ventotto. Practice with prices.",
+      conversationPrompt:
+        "Drop final vowel before uno/otto: ventuno, ventotto. Practice with prices.",
     },
     {
       id: 12,
@@ -263,10 +272,14 @@ export const italianCurriculum: LanguageCurriculum = {
       level: "beginner",
       focus: "Consolidating beginner material",
       grammar: [
-        { name: "All beginner grammar", explanation: "Articles, essere/avere, -ARE/-ERE/-IRE verbs" },
+        {
+          name: "All beginner grammar",
+          explanation: "Articles, essere/avere, -ARE/-ERE/-IRE verbs",
+        },
       ],
       vocabulary: [],
-      conversationPrompt: "Free conversation covering introductions, family, numbers, food. Identify areas needing practice.",
+      conversationPrompt:
+        "Free conversation covering introductions, family, numbers, food. Identify areas needing practice.",
     },
 
     // ELEMENTARY (13-24)
@@ -332,7 +345,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "l'autunno", translation: "autumn" },
         { term: "l'inverno", translation: "winter" },
       ],
-      conversationPrompt: "Discuss weather and seasons. 'Che tempo fa?' Practice 'fa + adjective' pattern.",
+      conversationPrompt:
+        "Discuss weather and seasons. 'Che tempo fa?' Practice 'fa + adjective' pattern.",
     },
     {
       id: 16,
@@ -354,7 +368,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "i capelli", translation: "hair" },
         { term: "gli occhi", translation: "eyes" },
       ],
-      conversationPrompt: "Describe people. 'Ha gli occhi verdi' (has green eyes), not 'i suoi occhi sono verdi'.",
+      conversationPrompt:
+        "Describe people. 'Ha gli occhi verdi' (has green eyes), not 'i suoi occhi sono verdi'.",
     },
     {
       id: 17,
@@ -396,7 +411,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "accanto a", translation: "next to" },
         { term: "di fronte a", translation: "in front of" },
       ],
-      conversationPrompt: "Practice asking where places are. 'Dov'è la banca?' 'C'è una farmacia qui vicino?'",
+      conversationPrompt:
+        "Practice asking where places are. 'Dov'è la banca?' 'C'è una farmacia qui vicino?'",
     },
     {
       id: 19,
@@ -418,7 +434,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "economico", translation: "cheap" },
         { term: "la carta", translation: "card" },
       ],
-      conversationPrompt: "Role-play shopping. 'Vorrei questa camicia.' 'Ce l'ha in una taglia più grande?'",
+      conversationPrompt:
+        "Role-play shopping. 'Vorrei questa camicia.' 'Ce l'ha in una taglia più grande?'",
     },
     {
       id: 20,
@@ -437,7 +454,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "ho mangiato", translation: "I ate" },
         { term: "ho parlato", translation: "I spoke" },
       ],
-      conversationPrompt: "Most verbs use avere. 'Ho mangiato la pizza.' Participle doesn't change with avere.",
+      conversationPrompt:
+        "Most verbs use avere. 'Ho mangiato la pizza.' Participle doesn't change with avere.",
     },
     {
       id: 21,
@@ -456,7 +474,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "sono nato/a", translation: "I was born" },
         { term: "sono stato/a", translation: "I was/have been" },
       ],
-      conversationPrompt: "Movement verbs use essere with agreement: 'Sono andata a Roma.' (female speaker).",
+      conversationPrompt:
+        "Movement verbs use essere with agreement: 'Sono andata a Roma.' (female speaker).",
     },
     {
       id: 22,
@@ -464,7 +483,10 @@ export const italianCurriculum: LanguageCurriculum = {
       level: "elementary",
       focus: "Common irregular forms",
       grammar: [
-        { name: "Irregular participles", explanation: "Fatto, visto, scritto, letto, detto, stato" },
+        {
+          name: "Irregular participles",
+          explanation: "Fatto, visto, scritto, letto, detto, stato",
+        },
       ],
       vocabulary: [
         { term: "fatto", translation: "done/made" },
@@ -475,7 +497,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "preso", translation: "taken" },
         { term: "aperto", translation: "opened" },
       ],
-      conversationPrompt: "Practice irregular participles through conversation. 'Cosa hai fatto ieri?'",
+      conversationPrompt:
+        "Practice irregular participles through conversation. 'Cosa hai fatto ieri?'",
     },
     {
       id: 23,
@@ -496,7 +519,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "il biglietto", translation: "ticket" },
         { term: "la prenotazione", translation: "reservation" },
       ],
-      conversationPrompt: "Role-play travel situations. Italian often uses present for future: 'Domani parto per Roma.'",
+      conversationPrompt:
+        "Role-play travel situations. Italian often uses present for future: 'Domani parto per Roma.'",
     },
     {
       id: 24,
@@ -504,10 +528,14 @@ export const italianCurriculum: LanguageCurriculum = {
       level: "elementary",
       focus: "Consolidating elementary material",
       grammar: [
-        { name: "All elementary grammar", explanation: "Passato prossimo, reflexives, prepositions" },
+        {
+          name: "All elementary grammar",
+          explanation: "Passato prossimo, reflexives, prepositions",
+        },
       ],
       vocabulary: [],
-      conversationPrompt: "Have the student tell a story about a trip using passato prossimo. Test comfort with essere/avere.",
+      conversationPrompt:
+        "Have the student tell a story about a trip using passato prossimo. Test comfort with essere/avere.",
     },
 
     // INTERMEDIATE (25-40)
@@ -517,7 +545,10 @@ export const italianCurriculum: LanguageCurriculum = {
       level: "intermediate",
       focus: "Past habits and descriptions",
       grammar: [
-        { name: "Imperfetto formation", explanation: "-avo, -avi, -ava, -avamo, -avate, -avano (-ARE)" },
+        {
+          name: "Imperfetto formation",
+          explanation: "-avo, -avi, -ava, -avamo, -avate, -avano (-ARE)",
+        },
         { name: "Imperfetto uses", explanation: "Habitual past, descriptions, ongoing states" },
       ],
       vocabulary: [
@@ -527,7 +558,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "ogni giorno", translation: "every day" },
         { term: "una volta", translation: "once/in the past" },
       ],
-      conversationPrompt: "Introduce through childhood memories. 'Quando ero piccolo, abitavo...' Focus on repeated actions.",
+      conversationPrompt:
+        "Introduce through childhood memories. 'Quando ero piccolo, abitavo...' Focus on repeated actions.",
     },
     {
       id: 26,
@@ -544,7 +576,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "allora", translation: "then" },
         { term: "in quel momento", translation: "at that moment" },
       ],
-      conversationPrompt: "Practice combining tenses: 'Mentre dormivo, ha suonato il telefono.' Imperfetto = background.",
+      conversationPrompt:
+        "Practice combining tenses: 'Mentre dormivo, ha suonato il telefono.' Imperfetto = background.",
     },
     {
       id: 27,
@@ -561,7 +594,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "gli/le", translation: "to him/to her (indirect)" },
         { term: "glielo", translation: "it to him/her" },
       ],
-      conversationPrompt: "Practice replacing nouns: 'Vedi Marco?' 'Sì, lo vedo.' 'Parli a Maria?' 'Sì, le parlo.'",
+      conversationPrompt:
+        "Practice replacing nouns: 'Vedi Marco?' 'Sì, lo vedo.' 'Parli a Maria?' 'Sì, le parlo.'",
     },
     {
       id: 28,
@@ -579,7 +613,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "ci vado", translation: "I go there" },
         { term: "ce ne sono", translation: "there are some" },
       ],
-      conversationPrompt: "'Vuoi del caffè?' 'Sì, ne voglio.' 'Vai a Roma?' 'Sì, ci vado.' Practice these essential pronouns.",
+      conversationPrompt:
+        "'Vuoi del caffè?' 'Sì, ne voglio.' 'Vai a Roma?' 'Sì, ci vado.' Practice these essential pronouns.",
     },
     {
       id: 29,
@@ -598,7 +633,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "peggiore", translation: "worse" },
         { term: "bellissimo", translation: "very beautiful" },
       ],
-      conversationPrompt: "Di before nouns/pronouns, che before adjectives/verbs: 'Più alto di me' but 'Più bello che intelligente'.",
+      conversationPrompt:
+        "Di before nouns/pronouns, che before adjectives/verbs: 'Più alto di me' but 'Più bello che intelligente'.",
     },
     {
       id: 30,
@@ -616,7 +652,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "un giorno", translation: "one day" },
         { term: "presto", translation: "soon" },
       ],
-      conversationPrompt: "Discuss future plans. Endings attach to infinitive (minus -e). 'Cosa farai domani?'",
+      conversationPrompt:
+        "Discuss future plans. Endings attach to infinitive (minus -e). 'Cosa farai domani?'",
     },
     {
       id: 31,
@@ -634,7 +671,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "sarebbe", translation: "it would be" },
         { term: "avrei", translation: "I would have" },
       ],
-      conversationPrompt: "Practice polite requests: 'Vorrei un caffè.' Hypotheticals: 'Cosa faresti?'",
+      conversationPrompt:
+        "Practice polite requests: 'Vorrei un caffè.' Hypotheticals: 'Cosa faresti?'",
     },
     {
       id: 32,
@@ -652,7 +690,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "il cui", translation: "whose" },
         { term: "ciò che", translation: "that which/what" },
       ],
-      conversationPrompt: "Connect sentences: 'Il libro che ho letto...' 'La persona con cui parlo...' 'La ragazza il cui padre...'",
+      conversationPrompt:
+        "Connect sentences: 'Il libro che ho letto...' 'La persona con cui parlo...' 'La ragazza il cui padre...'",
     },
     {
       id: 33,
@@ -670,7 +709,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "spero che", translation: "I hope that" },
         { term: "è necessario che", translation: "it's necessary that" },
       ],
-      conversationPrompt: "Introduce through opinions and wishes: 'Penso che sia importante.' Focus on triggers.",
+      conversationPrompt:
+        "Introduce through opinions and wishes: 'Penso che sia importante.' Focus on triggers.",
     },
     {
       id: 34,
@@ -689,7 +729,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "benché/sebbene", translation: "although" },
         { term: "affinché/perché", translation: "so that" },
       ],
-      conversationPrompt: "Practice expressing doubt and emotion with subjunctive. 'Sono contento che tu sia qui.'",
+      conversationPrompt:
+        "Practice expressing doubt and emotion with subjunctive. 'Sono contento che tu sia qui.'",
     },
     {
       id: 35,
@@ -708,7 +749,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "va'/vai!", translation: "go! (tu)" },
         { term: "faccia!", translation: "do! (Lei)" },
       ],
-      conversationPrompt: "Practice commands. Negative tu uses infinitive: 'Non parlare!' Formal uses subjunctive.",
+      conversationPrompt:
+        "Practice commands. Negative tu uses infinitive: 'Non parlare!' Formal uses subjunctive.",
     },
     {
       id: 36,
@@ -725,7 +767,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "sta piovendo", translation: "it's raining" },
         { term: "in questo momento", translation: "at this moment" },
       ],
-      conversationPrompt: "For actions in progress: 'Cosa stai facendo?' 'Sto leggendo.' Less common than in English.",
+      conversationPrompt:
+        "For actions in progress: 'Cosa stai facendo?' 'Sto leggendo.' Less common than in English.",
     },
     {
       id: 37,
@@ -733,7 +776,10 @@ export const italianCurriculum: LanguageCurriculum = {
       level: "intermediate",
       focus: "Historical/literary past",
       grammar: [
-        { name: "Passato remoto", explanation: "Distant/historical past (common in south, writing)" },
+        {
+          name: "Passato remoto",
+          explanation: "Distant/historical past (common in south, writing)",
+        },
         { name: "Regular forms", explanation: "-ai, -asti, -ò, -ammo, -aste, -arono (-ARE)" },
       ],
       vocabulary: [
@@ -743,7 +789,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "fu", translation: "he/she was (remoto)" },
         { term: "ebbe", translation: "he/she had (remoto)" },
       ],
-      conversationPrompt: "Passato remoto is for distant past, common in literature. Recognize it; southern Italians use it in speech.",
+      conversationPrompt:
+        "Passato remoto is for distant past, common in literature. Recognize it; southern Italians use it in speech.",
     },
     {
       id: 38,
@@ -752,7 +799,10 @@ export const italianCurriculum: LanguageCurriculum = {
       focus: "Double pronouns",
       grammar: [
         { name: "Combined pronouns", explanation: "Indirect + direct: me lo, te la, glielo" },
-        { name: "Position", explanation: "Before verb or attached to infinitive/gerund/imperative" },
+        {
+          name: "Position",
+          explanation: "Before verb or attached to infinitive/gerund/imperative",
+        },
       ],
       vocabulary: [
         { term: "me lo dai", translation: "you give it to me" },
@@ -778,7 +828,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "si deve", translation: "one must" },
         { term: "qui si mangia bene", translation: "one eats well here" },
       ],
-      conversationPrompt: "Si + verb for passive/impersonal: 'Qui si parla italiano.' 'Come si dice?' Very common in Italian.",
+      conversationPrompt:
+        "Si + verb for passive/impersonal: 'Qui si parla italiano.' 'Come si dice?' Very common in Italian.",
     },
     {
       id: 40,
@@ -786,10 +837,14 @@ export const italianCurriculum: LanguageCurriculum = {
       level: "intermediate",
       focus: "Consolidating intermediate material",
       grammar: [
-        { name: "All intermediate grammar", explanation: "Both pasts, pronouns, congiuntivo, conditionals" },
+        {
+          name: "All intermediate grammar",
+          explanation: "Both pasts, pronouns, congiuntivo, conditionals",
+        },
       ],
       vocabulary: [],
-      conversationPrompt: "Extended conversation using all intermediate grammar. Tell stories, express opinions, discuss hypotheticals.",
+      conversationPrompt:
+        "Extended conversation using all intermediate grammar. Tell stories, express opinions, discuss hypotheticals.",
     },
 
     // UPPER INTERMEDIATE (41-52)
@@ -798,9 +853,7 @@ export const italianCurriculum: LanguageCurriculum = {
       title: "Trapassato Prossimo",
       level: "upper_intermediate",
       focus: "Had done something",
-      grammar: [
-        { name: "Formation", explanation: "Imperfetto of avere/essere + past participle" },
-      ],
+      grammar: [{ name: "Formation", explanation: "Imperfetto of avere/essere + past participle" }],
       vocabulary: [
         { term: "avevo mangiato", translation: "I had eaten" },
         { term: "ero andato/a", translation: "I had gone" },
@@ -824,7 +877,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "sarà stato", translation: "he must have been (probability)" },
         { term: "avrà avuto", translation: "he must have had (probability)" },
       ],
-      conversationPrompt: "Two uses: future completion and probability. 'Sarà stato malato.' (He was probably sick).",
+      conversationPrompt:
+        "Two uses: future completion and probability. 'Sarà stato malato.' (He was probably sick).",
     },
     {
       id: 43,
@@ -840,7 +894,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "sarei venuto/a", translation: "I would have come" },
         { term: "se avessi saputo", translation: "if I had known" },
       ],
-      conversationPrompt: "Discuss past hypotheticals: 'Se avessi saputo, sarei venuto.' Also for reported future in past.",
+      conversationPrompt:
+        "Discuss past hypotheticals: 'Se avessi saputo, sarei venuto.' Also for reported future in past.",
     },
     {
       id: 44,
@@ -857,7 +912,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "magari", translation: "if only/I wish" },
         { term: "come se", translation: "as if" },
       ],
-      conversationPrompt: "Practice hypotheticals: 'Se fossi ricco, viaggerei.' 'Magari avessi più tempo!'",
+      conversationPrompt:
+        "Practice hypotheticals: 'Se fossi ricco, viaggerei.' 'Magari avessi più tempo!'",
     },
     {
       id: 45,
@@ -865,7 +921,10 @@ export const italianCurriculum: LanguageCurriculum = {
       level: "upper_intermediate",
       focus: "Past perfect subjunctive",
       grammar: [
-        { name: "Formation", explanation: "Congiuntivo imperfetto of avere/essere + past participle" },
+        {
+          name: "Formation",
+          explanation: "Congiuntivo imperfetto of avere/essere + past participle",
+        },
         { name: "Unreal past", explanation: "If I had... I would have..." },
       ],
       vocabulary: [
@@ -873,7 +932,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "se fossi andato/a", translation: "if I had gone" },
         { term: "avrei voluto che", translation: "I would have wanted that" },
       ],
-      conversationPrompt: "Past unreal conditionals: 'Se avessi studiato di più, avrei passato l'esame.'",
+      conversationPrompt:
+        "Past unreal conditionals: 'Se avessi studiato di più, avrei passato l'esame.'",
     },
     {
       id: 46,
@@ -882,15 +942,22 @@ export const italianCurriculum: LanguageCurriculum = {
       focus: "All conditional sentence types",
       grammar: [
         { name: "Realtà (1st type)", explanation: "Se + present, present/future" },
-        { name: "Possibilità (2nd type)", explanation: "Se + congiuntivo imperfetto, condizionale" },
-        { name: "Impossibilità (3rd type)", explanation: "Se + congiuntivo trapassato, condizionale passato" },
+        {
+          name: "Possibilità (2nd type)",
+          explanation: "Se + congiuntivo imperfetto, condizionale",
+        },
+        {
+          name: "Impossibilità (3rd type)",
+          explanation: "Se + congiuntivo trapassato, condizionale passato",
+        },
       ],
       vocabulary: [
         { term: "se posso", translation: "if I can (real)" },
         { term: "se potessi", translation: "if I could (possible)" },
         { term: "se avessi potuto", translation: "if I had been able (unreal)" },
       ],
-      conversationPrompt: "Practice all three types: real, hypothetical, unreal past. 'Se avessi tempo...', 'Se avessi avuto tempo...'",
+      conversationPrompt:
+        "Practice all three types: real, hypothetical, unreal past. 'Se avessi tempo...', 'Se avessi avuto tempo...'",
     },
     {
       id: 47,
@@ -908,7 +975,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "va fatto", translation: "must be done" },
         { term: "da", translation: "by" },
       ],
-      conversationPrompt: "Essere for states, venire for actions: 'Il libro è scritto' vs 'Il libro viene scritto ogni anno.'",
+      conversationPrompt:
+        "Essere for states, venire for actions: 'Il libro è scritto' vs 'Il libro viene scritto ogni anno.'",
     },
     {
       id: 48,
@@ -934,7 +1002,10 @@ export const italianCurriculum: LanguageCurriculum = {
       focus: "Infinitive and participle uses",
       grammar: [
         { name: "Infinito passato", explanation: "Avere/essere + participle (after doing)" },
-        { name: "Participio passato", explanation: "Used as adjective or in absolute construction" },
+        {
+          name: "Participio passato",
+          explanation: "Used as adjective or in absolute construction",
+        },
       ],
       vocabulary: [
         { term: "dopo aver mangiato", translation: "after eating/having eaten" },
@@ -942,7 +1013,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "finito il lavoro", translation: "the work finished" },
         { term: "arrivati a casa", translation: "having arrived home" },
       ],
-      conversationPrompt: "Practice: 'Dopo aver finito, sono uscito.' 'Arrivato a casa, ho cenato.' (participle = having arrived)",
+      conversationPrompt:
+        "Practice: 'Dopo aver finito, sono uscito.' 'Arrivato a casa, ho cenato.' (participle = having arrived)",
     },
     {
       id: 50,
@@ -962,7 +1034,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "anzi", translation: "on the contrary" },
         { term: "comunque", translation: "anyway/however" },
       ],
-      conversationPrompt: "Build sophisticated arguments. 'Nonostante sia stanco...' Note nonostante needs congiuntivo.",
+      conversationPrompt:
+        "Build sophisticated arguments. 'Nonostante sia stanco...' Note nonostante needs congiuntivo.",
     },
     {
       id: 51,
@@ -991,7 +1064,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { name: "All compound tenses and moods", explanation: "Complete grammatical range" },
       ],
       vocabulary: [],
-      conversationPrompt: "Engage in complex discussion. Express hypotheticals, report speech, use all subjunctive tenses.",
+      conversationPrompt:
+        "Engage in complex discussion. Express hypotheticals, report speech, use all subjunctive tenses.",
     },
 
     // ADVANCED (53-60)
@@ -1012,7 +1086,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "venni", translation: "I came" },
         { term: "vidi", translation: "I saw" },
       ],
-      conversationPrompt: "Practice recognizing and using passato remoto. Important for reading literature.",
+      conversationPrompt:
+        "Practice recognizing and using passato remoto. Important for reading literature.",
     },
     {
       id: 54,
@@ -1026,11 +1101,15 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "in bocca al lupo", translation: "good luck (in the wolf's mouth)" },
         { term: "non vedo l'ora", translation: "I can't wait" },
         { term: "avere le mani in pasta", translation: "to have a finger in every pie" },
-        { term: "prendere due piccioni con una fava", translation: "to kill two birds with one stone" },
+        {
+          term: "prendere due piccioni con una fava",
+          translation: "to kill two birds with one stone",
+        },
         { term: "fare il furbo", translation: "to try to be clever" },
         { term: "acqua in bocca", translation: "keep it secret" },
       ],
-      conversationPrompt: "Explore idioms through context. Practice using them naturally in conversation.",
+      conversationPrompt:
+        "Explore idioms through context. Practice using them naturally in conversation.",
     },
     {
       id: 55,
@@ -1047,16 +1126,15 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "parcheggiare/posteggiare", translation: "to park (regional variants)" },
         { term: "ciao/salve", translation: "hi (informal/neutral)" },
       ],
-      conversationPrompt: "Explore Italian regional diversity. Compare North, Center, South vocabulary and usage.",
+      conversationPrompt:
+        "Explore Italian regional diversity. Compare North, Center, South vocabulary and usage.",
     },
     {
       id: 56,
       title: "Business Italian",
       level: "advanced",
       focus: "Professional communication",
-      grammar: [
-        { name: "Formal register", explanation: "Business correspondence conventions" },
-      ],
+      grammar: [{ name: "Formal register", explanation: "Business correspondence conventions" }],
       vocabulary: [
         { term: "in allegato", translation: "attached" },
         { term: "con riferimento a", translation: "with reference to" },
@@ -1064,7 +1142,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "vi preghiamo di", translation: "we ask you to" },
         { term: "in attesa di un vostro riscontro", translation: "awaiting your reply" },
       ],
-      conversationPrompt: "Practice formal correspondence. Role-play business situations, negotiations.",
+      conversationPrompt:
+        "Practice formal correspondence. Role-play business situations, negotiations.",
     },
     {
       id: 57,
@@ -1081,7 +1160,8 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "testé", translation: "just now (literary)" },
         { term: "laonde", translation: "wherefore (archaic)" },
       ],
-      conversationPrompt: "Read and discuss excerpts from Italian literature. Notice literary past tenses.",
+      conversationPrompt:
+        "Read and discuss excerpts from Italian literature. Notice literary past tenses.",
     },
     {
       id: 58,
@@ -1100,34 +1180,33 @@ export const italianCurriculum: LanguageCurriculum = {
         { term: "boh", translation: "I don't know" },
         { term: "ma dai!", translation: "come on!/really?" },
       ],
-      conversationPrompt: "Practice casual speech patterns. Understand colloquial markers and shortcuts.",
+      conversationPrompt:
+        "Practice casual speech patterns. Understand colloquial markers and shortcuts.",
     },
     {
       id: 59,
       title: "Cultural References",
       level: "advanced",
       focus: "Italian cultural knowledge",
-      grammar: [
-        { name: "Cultural expressions", explanation: "References to history, art, food" },
-      ],
+      grammar: [{ name: "Cultural expressions", explanation: "References to history, art, food" }],
       vocabulary: [
         { term: "fare bella figura", translation: "to make a good impression" },
         { term: "il dolce far niente", translation: "the sweetness of doing nothing" },
         { term: "l'arte di arrangiarsi", translation: "the art of getting by" },
         { term: "campanilismo", translation: "local pride/rivalry" },
       ],
-      conversationPrompt: "Explore Italian cultural concepts. Discuss la bella figura, regionalism, food culture.",
+      conversationPrompt:
+        "Explore Italian cultural concepts. Discuss la bella figura, regionalism, food culture.",
     },
     {
       id: 60,
       title: "Advanced Review & Mastery",
       level: "advanced",
       focus: "Full language proficiency",
-      grammar: [
-        { name: "Complete Italian grammar", explanation: "All structures and registers" },
-      ],
+      grammar: [{ name: "Complete Italian grammar", explanation: "All structures and registers" }],
       vocabulary: [],
-      conversationPrompt: "Engage in sophisticated conversation on any topic. Use idioms, cultural references, appropriate register. Celebrate their achievement!",
+      conversationPrompt:
+        "Engage in sophisticated conversation on any topic. Use idioms, cultural references, appropriate register. Celebrate their achievement!",
     },
   ],
 };

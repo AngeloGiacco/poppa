@@ -1,4 +1,4 @@
-import { LanguageCurriculum } from "@/types/curriculum.types";
+import { type LanguageCurriculum } from "@/types/curriculum.types";
 
 export const frenchCurriculum: LanguageCurriculum = {
   languageCode: "fra",
@@ -24,16 +24,15 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "enchanté(e)", translation: "nice to meet you" },
         { term: "comment tu t'appelles?", translation: "what's your name?" },
       ],
-      conversationPrompt: "Practice greetings at different times of day. Have the student introduce themselves. Explore tu vs vous through examples.",
+      conversationPrompt:
+        "Practice greetings at different times of day. Have the student introduce themselves. Explore tu vs vous through examples.",
     },
     {
       id: 2,
       title: "Numbers 1-20",
       level: "beginner",
       focus: "Counting and using numbers",
-      grammar: [
-        { name: "Avoir + ans", explanation: "Using 'to have' for age" },
-      ],
+      grammar: [{ name: "Avoir + ans", explanation: "Using 'to have' for age" }],
       vocabulary: [
         { term: "un", translation: "1" },
         { term: "deux", translation: "2" },
@@ -57,7 +56,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "vingt", translation: "20" },
         { term: "quel âge as-tu?", translation: "how old are you?" },
       ],
-      conversationPrompt: "Practice counting, asking ages. Help them notice 17-19 are compound (dix-sept). Use numbers in real contexts.",
+      conversationPrompt:
+        "Practice counting, asking ages. Help them notice 17-19 are compound (dix-sept). Use numbers in real contexts.",
     },
     {
       id: 3,
@@ -79,7 +79,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "non", translation: "no" },
         { term: "d'où viens-tu?", translation: "where are you from?" },
       ],
-      conversationPrompt: "Practice forming questions with est-ce que and inversion. Have the student ask questions about yourself.",
+      conversationPrompt:
+        "Practice forming questions with est-ce que and inversion. Have the student ask questions about yourself.",
     },
     {
       id: 4,
@@ -99,7 +100,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "une femme", translation: "a woman" },
         { term: "des livres", translation: "some books" },
       ],
-      conversationPrompt: "Practice identifying gender through articles. All nouns have gender - help them develop intuition through common patterns.",
+      conversationPrompt:
+        "Practice identifying gender through articles. All nouns have gender - help them develop intuition through common patterns.",
     },
     {
       id: 5,
@@ -121,7 +123,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "la fille", translation: "daughter" },
         { term: "la famille", translation: "family" },
       ],
-      conversationPrompt: "Ask about their family. Practice possessives: mon frère, ma sœur. Note possessives agree with the noun, not the speaker.",
+      conversationPrompt:
+        "Ask about their family. Practice possessives: mon frère, ma sœur. Note possessives agree with the noun, not the speaker.",
     },
     {
       id: 6,
@@ -143,7 +146,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "petit(e)", translation: "small" },
         { term: "joli(e)", translation: "pretty" },
       ],
-      conversationPrompt: "Describe objects using colors. Help them discover agreement: 'la voiture bleue' vs 'le ciel bleu'.",
+      conversationPrompt:
+        "Describe objects using colors. Help them discover agreement: 'la voiture bleue' vs 'le ciel bleu'.",
     },
     {
       id: 7,
@@ -166,7 +170,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "demain", translation: "tomorrow" },
         { term: "hier", translation: "yesterday" },
       ],
-      conversationPrompt: "Practice asking what day it is, discussing schedules. Days aren't capitalized in French.",
+      conversationPrompt:
+        "Practice asking what day it is, discussing schedules. Days aren't capitalized in French.",
     },
     {
       id: 8,
@@ -187,7 +192,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "aimer", translation: "to like/love" },
         { term: "habiter", translation: "to live" },
       ],
-      conversationPrompt: "Practice conjugating through daily activities. 'Je parle français, tu parles anglais?' Help them discover the pattern.",
+      conversationPrompt:
+        "Practice conjugating through daily activities. 'Je parle français, tu parles anglais?' Help them discover the pattern.",
     },
     {
       id: 9,
@@ -208,7 +214,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "j'ai faim", translation: "I am hungry" },
         { term: "je vais bien", translation: "I am doing well" },
       ],
-      conversationPrompt: "These four verbs are essential. Practice in context: 'Comment vas-tu?' 'Qu'est-ce que tu fais?'",
+      conversationPrompt:
+        "These four verbs are essential. Practice in context: 'Comment vas-tu?' 'Qu'est-ce que tu fais?'",
     },
     {
       id: 10,
@@ -232,7 +239,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "le déjeuner", translation: "lunch" },
         { term: "le dîner", translation: "dinner" },
       ],
-      conversationPrompt: "Practice ordering food. 'Je voudrais du pain, s'il vous plaît.' Explain partitive: 'some bread' = du pain.",
+      conversationPrompt:
+        "Practice ordering food. 'Je voudrais du pain, s'il vous plaît.' Explain partitive: 'some bread' = du pain.",
     },
     {
       id: 11,
@@ -240,7 +248,10 @@ export const frenchCurriculum: LanguageCurriculum = {
       level: "beginner",
       focus: "Larger numbers",
       grammar: [
-        { name: "French number patterns", explanation: "70=soixante-dix, 80=quatre-vingts, 90=quatre-vingt-dix" },
+        {
+          name: "French number patterns",
+          explanation: "70=soixante-dix, 80=quatre-vingts, 90=quatre-vingt-dix",
+        },
       ],
       vocabulary: [
         { term: "vingt et un", translation: "21" },
@@ -254,7 +265,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "cent", translation: "100" },
         { term: "combien ça coûte?", translation: "how much does it cost?" },
       ],
-      conversationPrompt: "French numbers 70-99 are unique! 70 is 'sixty-ten', 80 is 'four-twenties'. Practice with prices.",
+      conversationPrompt:
+        "French numbers 70-99 are unique! 70 is 'sixty-ten', 80 is 'four-twenties'. Practice with prices.",
     },
     {
       id: 12,
@@ -265,7 +277,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { name: "All beginner grammar", explanation: "Articles, être/avoir, -ER verbs, negation" },
       ],
       vocabulary: [],
-      conversationPrompt: "Free conversation covering introductions, family, numbers, food. Identify areas needing more practice.",
+      conversationPrompt:
+        "Free conversation covering introductions, family, numbers, food. Identify areas needing more practice.",
     },
 
     // ELEMENTARY (13-24)
@@ -288,7 +301,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "midi", translation: "noon" },
         { term: "minuit", translation: "midnight" },
       ],
-      conversationPrompt: "Practice telling time. 'Il est une heure' (singular) but 'Il est deux heures' (plural). Discuss daily schedule.",
+      conversationPrompt:
+        "Practice telling time. 'Il est une heure' (singular) but 'Il est deux heures' (plural). Discuss daily schedule.",
     },
     {
       id: 14,
@@ -308,7 +322,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "entendre", translation: "to hear" },
         { term: "répondre", translation: "to answer" },
       ],
-      conversationPrompt: "Build on -ER verbs with -IR and -RE patterns. Practice through daily activities.",
+      conversationPrompt:
+        "Build on -ER verbs with -IR and -RE patterns. Practice through daily activities.",
     },
     {
       id: 15,
@@ -330,7 +345,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "l'automne", translation: "autumn" },
         { term: "l'hiver", translation: "winter" },
       ],
-      conversationPrompt: "Discuss weather and seasons. 'Quel temps fait-il?' Practice 'il fait + adjective' pattern.",
+      conversationPrompt:
+        "Discuss weather and seasons. 'Quel temps fait-il?' Practice 'il fait + adjective' pattern.",
     },
     {
       id: 16,
@@ -339,7 +355,10 @@ export const frenchCurriculum: LanguageCurriculum = {
       focus: "Physical and personality traits",
       grammar: [
         { name: "Être for traits", explanation: "Il est grand, elle est intelligente" },
-        { name: "Avoir for features", explanation: "Il a les yeux bleus, elle a les cheveux longs" },
+        {
+          name: "Avoir for features",
+          explanation: "Il a les yeux bleus, elle a les cheveux longs",
+        },
       ],
       vocabulary: [
         { term: "grand(e)", translation: "tall" },
@@ -352,7 +371,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "les cheveux", translation: "hair" },
         { term: "les yeux", translation: "eyes" },
       ],
-      conversationPrompt: "Describe people. Note 'avoir' for physical features: 'Il a les yeux bleus' not 'ses yeux sont bleus'.",
+      conversationPrompt:
+        "Describe people. Note 'avoir' for physical features: 'Il a les yeux bleus' not 'ses yeux sont bleus'.",
     },
     {
       id: 17,
@@ -373,7 +393,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "d'abord", translation: "first" },
         { term: "ensuite/puis", translation: "then/next" },
       ],
-      conversationPrompt: "Walk through a typical day. Explain reflexive as action done to oneself. Practice sequencing.",
+      conversationPrompt:
+        "Walk through a typical day. Explain reflexive as action done to oneself. Practice sequencing.",
     },
     {
       id: 18,
@@ -395,7 +416,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "à côté de", translation: "next to" },
         { term: "en face de", translation: "across from" },
       ],
-      conversationPrompt: "Practice asking where places are. 'Où est la banque?' 'C'est près de la gare.'",
+      conversationPrompt:
+        "Practice asking where places are. 'Où est la banque?' 'C'est près de la gare.'",
     },
     {
       id: 19,
@@ -417,7 +439,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "bon marché", translation: "cheap" },
         { term: "la carte", translation: "card" },
       ],
-      conversationPrompt: "Role-play shopping. Practice demonstratives: 'Je voudrais cette chemise.' Handle sizes, prices, payment.",
+      conversationPrompt:
+        "Role-play shopping. Practice demonstratives: 'Je voudrais cette chemise.' Handle sizes, prices, payment.",
     },
     {
       id: 20,
@@ -437,7 +460,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "j'ai fini", translation: "I finished" },
         { term: "j'ai vendu", translation: "I sold" },
       ],
-      conversationPrompt: "Introduce past through 'What did you do yesterday?' Most verbs use avoir. Help them discover the pattern.",
+      conversationPrompt:
+        "Introduce past through 'What did you do yesterday?' Most verbs use avoir. Help them discover the pattern.",
     },
     {
       id: 21,
@@ -456,7 +480,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "je suis né(e)", translation: "I was born" },
         { term: "je suis resté(e)", translation: "I stayed" },
       ],
-      conversationPrompt: "About 17 verbs use être. Practice: 'Je suis allé au cinéma.' Note agreement with subject gender.",
+      conversationPrompt:
+        "About 17 verbs use être. Practice: 'Je suis allé au cinéma.' Note agreement with subject gender.",
     },
     {
       id: 22,
@@ -464,7 +489,10 @@ export const frenchCurriculum: LanguageCurriculum = {
       level: "elementary",
       focus: "Common irregular forms",
       grammar: [
-        { name: "Irregular participles", explanation: "Avoir→eu, être→été, faire→fait, prendre→pris" },
+        {
+          name: "Irregular participles",
+          explanation: "Avoir→eu, être→été, faire→fait, prendre→pris",
+        },
       ],
       vocabulary: [
         { term: "j'ai eu", translation: "I had" },
@@ -475,7 +503,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "j'ai dit", translation: "I said" },
         { term: "j'ai écrit", translation: "I wrote" },
       ],
-      conversationPrompt: "Focus on common irregulars through storytelling. 'Qu'est-ce que tu as fait hier?'",
+      conversationPrompt:
+        "Focus on common irregulars through storytelling. 'Qu'est-ce que tu as fait hier?'",
     },
     {
       id: 23,
@@ -496,7 +525,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "le billet", translation: "ticket" },
         { term: "la réservation", translation: "reservation" },
       ],
-      conversationPrompt: "Role-play travel situations. Practice 'aller + infinitive' for future: 'Je vais prendre l'avion demain.'",
+      conversationPrompt:
+        "Role-play travel situations. Practice 'aller + infinitive' for future: 'Je vais prendre l'avion demain.'",
     },
     {
       id: 24,
@@ -507,7 +537,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { name: "All elementary grammar", explanation: "Passé composé, reflexives, pronouns" },
       ],
       vocabulary: [],
-      conversationPrompt: "Have the student tell a story about a trip using passé composé. Test comfort with all elementary material.",
+      conversationPrompt:
+        "Have the student tell a story about a trip using passé composé. Test comfort with all elementary material.",
     },
 
     // INTERMEDIATE (25-40)
@@ -517,7 +548,10 @@ export const frenchCurriculum: LanguageCurriculum = {
       level: "intermediate",
       focus: "Past habits and descriptions",
       grammar: [
-        { name: "Imparfait formation", explanation: "Nous stem + -ais, -ais, -ait, -ions, -iez, -aient" },
+        {
+          name: "Imparfait formation",
+          explanation: "Nous stem + -ais, -ais, -ait, -ions, -iez, -aient",
+        },
         { name: "Imparfait uses", explanation: "Habitual past, descriptions, ongoing states" },
       ],
       vocabulary: [
@@ -527,7 +561,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "toujours", translation: "always" },
         { term: "avant", translation: "before/in the past" },
       ],
-      conversationPrompt: "Introduce through childhood memories. 'Quand j'étais enfant, j'habitais...' Focus on repeated/ongoing actions.",
+      conversationPrompt:
+        "Introduce through childhood memories. 'Quand j'étais enfant, j'habitais...' Focus on repeated/ongoing actions.",
     },
     {
       id: 26,
@@ -544,7 +579,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "alors", translation: "then" },
         { term: "à ce moment-là", translation: "at that moment" },
       ],
-      conversationPrompt: "Practice combining tenses. 'Il pleuvait quand je suis sorti.' Imparfait = background, passé composé = action.",
+      conversationPrompt:
+        "Practice combining tenses. 'Il pleuvait quand je suis sorti.' Imparfait = background, passé composé = action.",
     },
     {
       id: 27,
@@ -554,14 +590,18 @@ export const frenchCurriculum: LanguageCurriculum = {
       grammar: [
         { name: "Direct object pronouns", explanation: "Me, te, le/la, nous, vous, les" },
         { name: "Indirect object pronouns", explanation: "Me, te, lui, nous, vous, leur" },
-        { name: "Pronoun placement", explanation: "Before the verb (or auxiliary in passé composé)" },
+        {
+          name: "Pronoun placement",
+          explanation: "Before the verb (or auxiliary in passé composé)",
+        },
       ],
       vocabulary: [
         { term: "le/la", translation: "it/him/her (direct)" },
         { term: "lui", translation: "to him/her (indirect)" },
         { term: "leur", translation: "to them (indirect)" },
       ],
-      conversationPrompt: "Practice replacing nouns. 'Tu vois Marie?' 'Oui, je la vois.' 'Tu parles à Pierre?' 'Oui, je lui parle.'",
+      conversationPrompt:
+        "Practice replacing nouns. 'Tu vois Marie?' 'Oui, je la vois.' 'Tu parles à Pierre?' 'Oui, je lui parle.'",
     },
     {
       id: 28,
@@ -579,7 +619,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "j'en veux", translation: "I want some" },
         { term: "il y en a", translation: "there are some" },
       ],
-      conversationPrompt: "Y and en are uniquely French. Practice: 'Tu vas à Paris?' 'Oui, j'y vais.' 'Tu veux du café?' 'Oui, j'en veux.'",
+      conversationPrompt:
+        "Y and en are uniquely French. Practice: 'Tu vas à Paris?' 'Oui, j'y vais.' 'Tu veux du café?' 'Oui, j'en veux.'",
     },
     {
       id: 29,
@@ -617,7 +658,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "un jour", translation: "one day/someday" },
         { term: "bientôt", translation: "soon" },
       ],
-      conversationPrompt: "Discuss future plans. Add endings to infinitive (or irregular stem). 'Qu'est-ce que tu feras demain?'",
+      conversationPrompt:
+        "Discuss future plans. Add endings to infinitive (or irregular stem). 'Qu'est-ce que tu feras demain?'",
     },
     {
       id: 31,
@@ -625,7 +667,10 @@ export const frenchCurriculum: LanguageCurriculum = {
       level: "intermediate",
       focus: "Would/could expressions",
       grammar: [
-        { name: "Conditional formation", explanation: "Future stem + imparfait endings (-ais, -ais, -ait...)" },
+        {
+          name: "Conditional formation",
+          explanation: "Future stem + imparfait endings (-ais, -ais, -ait...)",
+        },
         { name: "Conditional uses", explanation: "Politeness, wishes, hypotheticals" },
       ],
       vocabulary: [
@@ -635,7 +680,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "ce serait", translation: "it would be" },
         { term: "j'aurais", translation: "I would have" },
       ],
-      conversationPrompt: "Practice polite requests and hypotheticals. 'Je voudrais un café.' 'Qu'est-ce que tu ferais?'",
+      conversationPrompt:
+        "Practice polite requests and hypotheticals. 'Je voudrais un café.' 'Qu'est-ce que tu ferais?'",
     },
     {
       id: 32,
@@ -654,7 +700,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "dont", translation: "of which/whose" },
         { term: "où", translation: "where/when" },
       ],
-      conversationPrompt: "Connect ideas: 'Le livre que j'ai lu...' 'La personne dont je parle...' Practice each pronoun.",
+      conversationPrompt:
+        "Connect ideas: 'Le livre que j'ai lu...' 'La personne dont je parle...' Practice each pronoun.",
     },
     {
       id: 33,
@@ -671,7 +718,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "je suis content(e) que", translation: "I'm happy that" },
         { term: "je doute que", translation: "I doubt that" },
       ],
-      conversationPrompt: "Introduce through wishes and necessity. 'Il faut que tu viennes.' 'Je veux que tu saches.' Focus on triggers.",
+      conversationPrompt:
+        "Introduce through wishes and necessity. 'Il faut que tu viennes.' 'Je veux que tu saches.' Focus on triggers.",
     },
     {
       id: 34,
@@ -689,7 +737,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "bien que", translation: "although" },
         { term: "pour que", translation: "so that" },
       ],
-      conversationPrompt: "Practice more triggers. Note 'je crois que' uses indicative but 'je ne crois pas que' uses subjunctive.",
+      conversationPrompt:
+        "Practice more triggers. Note 'je crois que' uses indicative but 'je ne crois pas que' uses subjunctive.",
     },
     {
       id: 35,
@@ -708,7 +757,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "va!", translation: "go! (tu)" },
         { term: "allons-y!", translation: "let's go!" },
       ],
-      conversationPrompt: "Practice giving commands. Note -ER verbs drop -s in tu form. 'Regarde!' not 'Regardes!'",
+      conversationPrompt:
+        "Practice giving commands. Note -ER verbs drop -s in tu form. 'Regarde!' not 'Regardes!'",
     },
     {
       id: 36,
@@ -728,7 +778,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "ne...personne", translation: "nobody" },
         { term: "ne...que", translation: "only" },
       ],
-      conversationPrompt: "Practice various negations. 'Je ne fume plus.' 'Je ne vois personne.' 'Je n'ai rien fait.'",
+      conversationPrompt:
+        "Practice various negations. 'Je ne fume plus.' 'Je ne vois personne.' 'Je n'ai rien fait.'",
     },
     {
       id: 37,
@@ -746,7 +797,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "il y a", translation: "ago" },
         { term: "depuis combien de temps?", translation: "for how long?" },
       ],
-      conversationPrompt: "Key distinction: 'J'habite ici depuis 5 ans' (still living) vs 'J'ai habité là pendant 5 ans' (completed).",
+      conversationPrompt:
+        "Key distinction: 'J'habite ici depuis 5 ans' (still living) vs 'J'ai habité là pendant 5 ans' (completed).",
     },
     {
       id: 38,
@@ -762,7 +814,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "faire construire", translation: "to have (something) built" },
         { term: "se faire couper les cheveux", translation: "to get a haircut" },
       ],
-      conversationPrompt: "Practice causative: 'Je fais réparer ma voiture.' 'Je me suis fait couper les cheveux.'",
+      conversationPrompt:
+        "Practice causative: 'Je fais réparer ma voiture.' 'Je me suis fait couper les cheveux.'",
     },
     {
       id: 39,
@@ -777,7 +830,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "il m'en parle", translation: "he talks to me about it" },
         { term: "je t'y emmène", translation: "I take you there" },
       ],
-      conversationPrompt: "Practice combining pronouns. 'Tu donnes le livre à Marie?' 'Oui, je le lui donne.'",
+      conversationPrompt:
+        "Practice combining pronouns. 'Tu donnes le livre à Marie?' 'Oui, je le lui donne.'",
     },
     {
       id: 40,
@@ -785,10 +839,14 @@ export const frenchCurriculum: LanguageCurriculum = {
       level: "intermediate",
       focus: "Consolidating intermediate material",
       grammar: [
-        { name: "All intermediate grammar", explanation: "Both pasts, pronouns, subjunctive, conditionals" },
+        {
+          name: "All intermediate grammar",
+          explanation: "Both pasts, pronouns, subjunctive, conditionals",
+        },
       ],
       vocabulary: [],
-      conversationPrompt: "Extended conversation using all intermediate grammar. Tell stories, express opinions, discuss hypotheticals.",
+      conversationPrompt:
+        "Extended conversation using all intermediate grammar. Tell stories, express opinions, discuss hypotheticals.",
     },
 
     // UPPER INTERMEDIATE (41-52)
@@ -807,7 +865,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "avant que", translation: "before" },
         { term: "après que", translation: "after" },
       ],
-      conversationPrompt: "Practice sequencing: 'Quand je suis arrivé, il était déjà parti.' Narrate complex stories.",
+      conversationPrompt:
+        "Practice sequencing: 'Quand je suis arrivé, il était déjà parti.' Narrate complex stories.",
     },
     {
       id: 42,
@@ -824,7 +883,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "quand tu arriveras", translation: "when you arrive" },
         { term: "dès que", translation: "as soon as" },
       ],
-      conversationPrompt: "Practice future perfect: 'Quand tu arriveras, j'aurai déjà mangé.' Note future in time clauses.",
+      conversationPrompt:
+        "Practice future perfect: 'Quand tu arriveras, j'aurai déjà mangé.' Note future in time clauses.",
     },
     {
       id: 43,
@@ -840,7 +900,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "je serais venu(e)", translation: "I would have come" },
         { term: "si j'avais su", translation: "if I had known" },
       ],
-      conversationPrompt: "Discuss past hypotheticals: 'Si j'avais su, je serais venu.' Express regrets and missed opportunities.",
+      conversationPrompt:
+        "Discuss past hypotheticals: 'Si j'avais su, je serais venu.' Express regrets and missed opportunities.",
     },
     {
       id: 44,
@@ -857,7 +918,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "si je pouvais", translation: "if I could (hypothetical)" },
         { term: "si j'avais pu", translation: "if I had been able (unreal)" },
       ],
-      conversationPrompt: "Practice all three types. 'Si j'ai le temps, je viendrai.' 'Si j'avais le temps, je viendrais.' 'Si j'avais eu le temps, je serais venu.'",
+      conversationPrompt:
+        "Practice all three types. 'Si j'ai le temps, je viendrai.' 'Si j'avais le temps, je viendrais.' 'Si j'avais eu le temps, je serais venu.'",
     },
     {
       id: 45,
@@ -874,7 +936,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "par", translation: "by" },
         { term: "on dit que", translation: "it is said that" },
       ],
-      conversationPrompt: "Practice passive: 'Ce livre a été écrit par Camus.' Note French often prefers 'on' to passive.",
+      conversationPrompt:
+        "Practice passive: 'Ce livre a été écrit par Camus.' Note French often prefers 'on' to passive.",
     },
     {
       id: 46,
@@ -890,7 +953,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "je doute qu'il ait compris", translation: "I doubt he understood" },
         { term: "bien qu'il ait essayé", translation: "although he tried" },
       ],
-      conversationPrompt: "Practice expressing feelings about past events: 'Je suis désolé que tu aies été malade.'",
+      conversationPrompt:
+        "Practice expressing feelings about past events: 'Je suis désolé que tu aies été malade.'",
     },
     {
       id: 47,
@@ -907,7 +971,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "il a répondu que", translation: "he answered that" },
         { term: "selon", translation: "according to" },
       ],
-      conversationPrompt: "Practice reporting: 'Il a dit: Je viendrai' → 'Il a dit qu'il viendrait.'",
+      conversationPrompt:
+        "Practice reporting: 'Il a dit: Je viendrai' → 'Il a dit qu'il viendrait.'",
     },
     {
       id: 48,
@@ -925,7 +990,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "ayant", translation: "having" },
         { term: "étant", translation: "being" },
       ],
-      conversationPrompt: "Practice gérondif: 'En travaillant dur, il a réussi.' 'J'écoute de la musique en cuisinant.'",
+      conversationPrompt:
+        "Practice gérondif: 'En travaillant dur, il a réussi.' 'J'écoute de la musique en cuisinant.'",
     },
     {
       id: 49,
@@ -943,7 +1009,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "ce dont", translation: "what (with de)" },
         { term: "ce à quoi", translation: "what (with à)" },
       ],
-      conversationPrompt: "Practice: 'Ce qui m'intéresse, c'est...' 'Ce que je veux, c'est...' 'Ce dont j'ai besoin, c'est...'",
+      conversationPrompt:
+        "Practice: 'Ce qui m'intéresse, c'est...' 'Ce que je veux, c'est...' 'Ce dont j'ai besoin, c'est...'",
     },
     {
       id: 50,
@@ -960,7 +1027,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "je ne saurais dire", translation: "I couldn't say (formal)" },
         { term: "avant qu'il ne parte", translation: "before he leaves (formal)" },
       ],
-      conversationPrompt: "Recognize passé simple in literature. Practice formal expressions for writing.",
+      conversationPrompt:
+        "Recognize passé simple in literature. Practice formal expressions for writing.",
     },
     {
       id: 51,
@@ -979,7 +1047,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "néanmoins", translation: "nevertheless" },
         { term: "d'ailleurs", translation: "moreover/besides" },
       ],
-      conversationPrompt: "Build sophisticated arguments using advanced connectors. Note 'bien que' requires subjunctive.",
+      conversationPrompt:
+        "Build sophisticated arguments using advanced connectors. Note 'bien que' requires subjunctive.",
     },
     {
       id: 52,
@@ -987,10 +1056,14 @@ export const frenchCurriculum: LanguageCurriculum = {
       level: "upper_intermediate",
       focus: "Consolidating upper intermediate",
       grammar: [
-        { name: "All compound tenses", explanation: "Plus-que-parfait, futur antérieur, conditionnel passé" },
+        {
+          name: "All compound tenses",
+          explanation: "Plus-que-parfait, futur antérieur, conditionnel passé",
+        },
       ],
       vocabulary: [],
-      conversationPrompt: "Engage in complex discussion using all tenses. Express hypotheticals, report speech, build arguments.",
+      conversationPrompt:
+        "Engage in complex discussion using all tenses. Express hypotheticals, report speech, build arguments.",
     },
 
     // ADVANCED (53-60)
@@ -1008,7 +1081,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "qu'il eût", translation: "that he had (literary)" },
         { term: "avant qu'il ne parlât", translation: "before he spoke (literary)" },
       ],
-      conversationPrompt: "Recognize in literature. 'Il fallait qu'il partît' = formal 'Il fallait qu'il parte'.",
+      conversationPrompt:
+        "Recognize in literature. 'Il fallait qu'il partît' = formal 'Il fallait qu'il parte'.",
     },
     {
       id: 54,
@@ -1023,7 +1097,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "qu'il eût fait", translation: "that he had done (literary)" },
         { term: "si j'eusse su", translation: "if I had known (literary)" },
       ],
-      conversationPrompt: "Recognize in classical literature. Modern equivalent uses conditionnel passé.",
+      conversationPrompt:
+        "Recognize in classical literature. Modern equivalent uses conditionnel passé.",
     },
     {
       id: 55,
@@ -1031,7 +1106,10 @@ export const frenchCurriculum: LanguageCurriculum = {
       level: "advanced",
       focus: "Common French idioms",
       grammar: [
-        { name: "Idiomatic structures", explanation: "Fixed phrases that don't translate literally" },
+        {
+          name: "Idiomatic structures",
+          explanation: "Fixed phrases that don't translate literally",
+        },
       ],
       vocabulary: [
         { term: "avoir le cafard", translation: "to feel down/blue" },
@@ -1042,7 +1120,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "mettre son grain de sel", translation: "to put in one's two cents" },
         { term: "c'est pas tes oignons", translation: "mind your own business" },
       ],
-      conversationPrompt: "Explore idioms through context. Practice using them naturally in conversation.",
+      conversationPrompt:
+        "Explore idioms through context. Practice using them naturally in conversation.",
     },
     {
       id: 56,
@@ -1050,7 +1129,10 @@ export const frenchCurriculum: LanguageCurriculum = {
       level: "advanced",
       focus: "French across different regions",
       grammar: [
-        { name: "Belgian/Swiss numbers", explanation: "Septante (70), huitante/octante (80), nonante (90)" },
+        {
+          name: "Belgian/Swiss numbers",
+          explanation: "Septante (70), huitante/octante (80), nonante (90)",
+        },
         { name: "Québécois features", explanation: "Tu-tu questions, vocabulary differences" },
       ],
       vocabulary: [
@@ -1060,7 +1142,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "blonde", translation: "girlfriend (Québécois)" },
         { term: "magasiner", translation: "to shop (Québécois)" },
       ],
-      conversationPrompt: "Explore francophone diversity. Compare France, Belgium, Switzerland, Québec, Africa.",
+      conversationPrompt:
+        "Explore francophone diversity. Compare France, Belgium, Switzerland, Québec, Africa.",
     },
     {
       id: 57,
@@ -1068,7 +1151,10 @@ export const frenchCurriculum: LanguageCurriculum = {
       level: "advanced",
       focus: "Business and academic register",
       grammar: [
-        { name: "Formal register", explanation: "Vous, conditional for politeness, formal vocabulary" },
+        {
+          name: "Formal register",
+          explanation: "Vous, conditional for politeness, formal vocabulary",
+        },
       ],
       vocabulary: [
         { term: "veuillez", translation: "please (formal)" },
@@ -1077,7 +1163,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "cordialement", translation: "sincerely" },
         { term: "en vous remerciant", translation: "thanking you" },
       ],
-      conversationPrompt: "Practice formal correspondence. Role-play professional situations, interviews, formal complaints.",
+      conversationPrompt:
+        "Practice formal correspondence. Role-play professional situations, interviews, formal complaints.",
     },
     {
       id: 58,
@@ -1095,7 +1182,8 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "bouquin (familier)", translation: "book (informal)" },
         { term: "ouvrage (soutenu)", translation: "book (formal)" },
       ],
-      conversationPrompt: "Practice register awareness. Same meaning, different levels: bagnole/voiture/automobile.",
+      conversationPrompt:
+        "Practice register awareness. Same meaning, different levels: bagnole/voiture/automobile.",
     },
     {
       id: 59,
@@ -1111,18 +1199,18 @@ export const frenchCurriculum: LanguageCurriculum = {
         { term: "noblesse oblige", translation: "privilege entails responsibility" },
         { term: "la Francophonie", translation: "French-speaking world" },
       ],
-      conversationPrompt: "Explore cultural references. Discuss French history, literature, current events.",
+      conversationPrompt:
+        "Explore cultural references. Discuss French history, literature, current events.",
     },
     {
       id: 60,
       title: "Advanced Review & Mastery",
       level: "advanced",
       focus: "Full language proficiency",
-      grammar: [
-        { name: "All French grammar", explanation: "Complete grammatical mastery" },
-      ],
+      grammar: [{ name: "All French grammar", explanation: "Complete grammatical mastery" }],
       vocabulary: [],
-      conversationPrompt: "Engage in sophisticated conversation on any topic. Demonstrate nuance, idioms, register awareness. Celebrate their achievement!",
+      conversationPrompt:
+        "Engage in sophisticated conversation on any topic. Demonstrate nuance, idioms, register awareness. Celebrate their achievement!",
     },
   ],
 };

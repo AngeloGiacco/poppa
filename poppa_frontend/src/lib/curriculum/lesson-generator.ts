@@ -1,6 +1,6 @@
-import { UserProgress } from "@/types/curriculum.types";
-import { getCurriculum, getLesson, getNextLesson } from "@/lib/curriculum/curriculum-framework";
 import { buildConversationContext } from "@/lib/curriculum/context-injection";
+import { getCurriculum, getLesson, getNextLesson } from "@/lib/curriculum/curriculum-framework";
+import { type UserProgress } from "@/types/curriculum.types";
 
 export interface CurriculumLessonResult {
   hasCurriculum: boolean;
@@ -10,15 +10,15 @@ export interface CurriculumLessonResult {
   level?: string;
 }
 
-export function createEmptyProgress(userId: string, languageCode: string): UserProgress {
+export function createEmptyProgress(_userId: string, _languageCode: string): UserProgress {
   return {
     completedLessonIds: [],
   };
 }
 
 export function progressFromLessonHistory(
-  userId: string,
-  languageCode: string,
+  _userId: string,
+  _languageCode: string,
   completedLessonIds: number[]
 ): UserProgress {
   return {

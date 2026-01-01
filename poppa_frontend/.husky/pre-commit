@@ -1,0 +1,2 @@
+#!/bin/sh
+cd poppa_frontend && npx lint-staged

@@ -1,8 +1,9 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Loader2, Mic } from "lucide-react";
 import { useTranslations } from "next-intl";
+
+import { Button } from "@/components/ui/button";
 
 interface ConnectButtonProps {
   onConnect: () => Promise<void>;
@@ -16,7 +17,7 @@ export function ConnectButton({ onConnect, isConnecting }: ConnectButtonProps) {
     <Button
       onClick={onConnect}
       disabled={isConnecting}
-      className="text-sm font-semibold bg-[#8B4513] hover:bg-[#6D3611] text-white rounded-full transition-colors duration-300 px-6 py-2"
+      className="rounded-full bg-[#8B4513] px-6 py-2 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#6D3611]"
     >
       {isConnecting ? (
         <>

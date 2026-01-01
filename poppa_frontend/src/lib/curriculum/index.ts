@@ -18,10 +18,10 @@ export type {
 } from "@/types/curriculum.types";
 
 import { registerCurriculum } from "@/lib/curriculum/curriculum-framework";
-import { spanishCurriculum } from "@/lib/curriculum/languages/spanish";
 import { frenchCurriculum } from "@/lib/curriculum/languages/french";
 import { germanCurriculum } from "@/lib/curriculum/languages/german";
 import { italianCurriculum } from "@/lib/curriculum/languages/italian";
+import { spanishCurriculum } from "@/lib/curriculum/languages/spanish";
 
 registerCurriculum(spanishCurriculum);
 registerCurriculum(frenchCurriculum);

@@ -1,16 +1,21 @@
 {
-  "name": "playground",
+  "name": "poppa-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "dev:dec": "next dev",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "format:check": "prettier --check \"**/*.{ts,tsx,md,json}\"",
-    "format:write": "prettier --write \"**/*.{ts,tsx,md,json}\""
+    "format:check": "prettier --check \"src/**/*.{ts,tsx}\" \"*.{js,mjs,ts,json,md}\"",
+    "format:write": "prettier --write \"src/**/*.{ts,tsx}\" \"*.{js,mjs,ts,json,md}\"",
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "validate": "pnpm lint && pnpm typecheck && pnpm test",
+    "prepare": "cd .. && husky poppa_frontend/.husky"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.1",
@@ -63,6 +68,7 @@
   },
   "devDependencies": {
     "@shadcn/ui": "^0.0.4",
+    "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@types/jest": "^29.5.14",
     "@types/node": "^20",
@@ -74,16 +80,32 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.7",
     "eslint-config-prettier": "^8.10.0",
+    "eslint-import-resolver-typescript": "^3.7.0",
+    "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-unused-imports": "^3.0.0",
+    "husky": "^9.1.7",
     "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "lint-staged": "^15.2.10",
     "node-mocks-http": "^1.16.2",
     "postcss": "^8",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
     "react-syntax-highlighter": "^15.5.0",
     "supertest": "^7.1.1",
     "tailwindcss": "^3.4.1",
     "ts-jest": "^29.3.4",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{js,mjs,json,md}": [
+      "prettier --write"
+    ]
   },
   "packageManager": "pnpm@9.6.0"
 }
