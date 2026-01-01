@@ -1,5 +1,9 @@
-import { Lesson, UserProgress, GrammarPoint, VocabularyItem } from "@/types/curriculum.types";
-import { getCurriculum, getLesson, getMasteredContent } from "@/lib/curriculum/curriculum-framework";
+import {
+  getCurriculum,
+  getLesson,
+  getMasteredContent,
+} from "@/lib/curriculum/curriculum-framework";
+import type { Lesson, UserProgress, GrammarPoint, VocabularyItem } from "@/types/curriculum.types";
 
 export function buildConversationContext(
   languageCode: string,
@@ -9,7 +13,9 @@ export function buildConversationContext(
 ): string | null {
   const curriculum = getCurriculum(languageCode);
   const lesson = getLesson(languageCode, lessonId);
-  if (!curriculum || !lesson) return null;
+  if (!curriculum || !lesson) {
+    return null;
+  }
 
   const { grammar, vocabulary } = getMasteredContent(languageCode, progress);
 

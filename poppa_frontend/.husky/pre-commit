@@ -1,10 +1,2 @@
 #!/bin/sh
-
-cd poppa_frontend
-
-# Run lint-staged for staged files
-npx lint-staged
-
-# Note: Typecheck is run in CI but not pre-commit to avoid blocking
-# commits due to pre-existing type issues. Run `pnpm typecheck` manually
-# to check types before pushing.
+cd poppa_frontend && npx lint-staged

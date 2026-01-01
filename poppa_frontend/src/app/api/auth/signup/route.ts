@@ -1,5 +1,6 @@
-import { NextResponse } from 'next/server';
-import supabase from '@/lib/supabase';
+import { NextResponse } from "next/server";
+
+import supabase from "@/lib/supabase";
 
 export async function POST(request: Request) {
   try {
@@ -13,19 +14,13 @@ export async function POST(request: Request) {
     });
 
     if (error) {
-      console.error('Signup error:', error);
-      return NextResponse.json(
-        { error: error.message },
-        { status: error.status || 500 }
-      );
+      console.error("Signup error:", error);
+      return NextResponse.json({ error: error.message }, { status: error.status || 500 });
     }
 
     return NextResponse.json({ data });
   } catch (error) {
-    console.error('Server error:', error);
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    );
+    console.error("Server error:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
-} 
+}

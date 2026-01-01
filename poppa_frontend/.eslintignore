@@ -8,22 +8,17 @@ dist/
 build/
 coverage/
 
-# Package manager
-pnpm-lock.yaml
-package-lock.json
-yarn.lock
-
 # Generated files
 src/types/database.types.ts
 
-# IDE
-.idea/
-.vscode/
+# Config files
+*.config.js
+*.config.mjs
+*.config.ts
+jest.setup.js
 
-# OS
-.DS_Store
-Thumbs.db
+# Public assets
+public/
 
 # Misc
 *.min.js
-*.min.css

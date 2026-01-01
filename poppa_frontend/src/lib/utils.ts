@@ -5,11 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function ellipsisMiddle(
-  text: string,
-  startLength: number,
-  endLength: number,
-): string {
+export function ellipsisMiddle(text: string, startLength: number, endLength: number): string {
   if (text.length <= startLength + endLength) {
     return text;
   }

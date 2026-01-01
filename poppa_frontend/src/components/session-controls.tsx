@@ -1,7 +1,8 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
+
+import { Button } from "@/components/ui/button";
 
 interface SessionControlsProps {
   onDisconnect: () => Promise<void>;
