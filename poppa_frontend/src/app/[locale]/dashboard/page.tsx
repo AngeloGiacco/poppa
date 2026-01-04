@@ -9,6 +9,8 @@ import { useRouter } from "next/navigation";
 import { BookOpen, ChevronRight, Coins, LogOut, Mic, Plus, Settings, User } from "lucide-react";
 import { useTranslations } from "next-intl";
 
+import { StreakDisplay } from "@/components/dashboard/StreakDisplay";
+import { ReferralCard } from "@/components/referral/ReferralCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -391,30 +393,41 @@ const DashboardPage = () => {
               </div>
             )}
 
-            {/* Credits Info */}
-            <Card className="border-0 bg-white/80 shadow-md backdrop-blur-sm">
-              <CardHeader className="pb-2">
-                <CardTitle className="flex items-center gap-2 text-lg text-[#8B4513]">
-                  <Coins className="h-5 w-5" />
-                  Your Credits
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-3xl font-bold text-[#8B4513]">{userProfile?.credits || 0}</p>
-                    <p className="text-sm text-[#5D4037]/70">minutes remaining</p>
+            {/* Stats Grid */}
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              {/* Streak Display */}
+              <StreakDisplay />
+
+              {/* Credits Info */}
+              <Card className="border-0 bg-white/80 shadow-md backdrop-blur-sm">
+                <CardHeader className="pb-2">
+                  <CardTitle className="flex items-center gap-2 text-lg text-[#8B4513]">
+                    <Coins className="h-5 w-5" />
+                    Your Credits
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-3xl font-bold text-[#8B4513]">
+                        {userProfile?.credits || 0}
+                      </p>
+                      <p className="text-sm text-[#5D4037]/70">minutes remaining</p>
+                    </div>
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="border-[#8B4513]/30 text-[#8B4513] hover:bg-[#8B4513]/10"
+                    >
+                      <Link href="/pricing">{t("navigation.buyCredits")}</Link>
+                    </Button>
                   </div>
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="border-[#8B4513]/30 text-[#8B4513] hover:bg-[#8B4513]/10"
-                  >
-                    <Link href="/pricing">{t("navigation.buyCredits")}</Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Referral Card */}
+            <ReferralCard />
           </div>
         </main>
       </div>

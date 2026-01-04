@@ -98,6 +98,11 @@ export function Chat({ lessonInstruction, targetLanguage, nativeLanguage }: Chat
         supabaseBrowserClient
           .rpc("increment_credits", { increment_amount: -sessionDurationMinutes })
           .throwOnError(),
+
+        supabaseBrowserClient.rpc("update_user_streak", {
+          p_user_id: user.id,
+          p_minutes: sessionDurationMinutes,
+        }),
       ]);
 
       if (targetLanguage) {

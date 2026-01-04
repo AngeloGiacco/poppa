@@ -11,6 +11,7 @@ import { useTranslations } from "next-intl";
 import { Chat } from "@/components/Chat";
 import { Header } from "@/components/header";
 import { InsufficientCredits } from "@/components/lesson/InsufficientCredits";
+import { PreLessonBriefing } from "@/components/lesson/PreLessonBriefing";
 import { LoadingSpinner } from "@/components/Loading";
 import { useLesson } from "@/hooks/useLesson";
 import { Link, useRouter } from "@/i18n/routing";
@@ -28,6 +29,7 @@ export default function LessonPage({ params }: LessonPageProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [lessonInstructionData, setLessonInstructionData] = useState<string>("");
   const [isGeneratingLesson, setIsGeneratingLesson] = useState(true);
+  const [showBriefing, setShowBriefing] = useState(true);
   const searchParams = useSearchParams();
 
   const unwrappedParams = use(params);
@@ -99,6 +101,15 @@ export default function LessonPage({ params }: LessonPageProps) {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]">
+      {/* Pre-Lesson Briefing for First-Time Users */}
+      {showBriefing && (
+        <PreLessonBriefing
+          language={language.name}
+          onContinue={() => setShowBriefing(false)}
+          onSkip={() => setShowBriefing(false)}
+        />
+      )}
+
       {/* Fixed Navigation Bar */}
       <nav className="fixed left-1/2 top-6 z-50 w-[90%] max-w-5xl -translate-x-1/2 transform">
         <div className="rounded-full bg-white/70 shadow-md">
