@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { sendWelcomeEmail } from "@/lib/email";
 import supabase from "@/lib/supabase";
 
 export async function POST(request: Request) {
@@ -27,6 +28,13 @@ export async function POST(request: Request) {
       if (referralError) {
         console.error("Referral processing error:", referralError);
       }
+    }
+
+    if (data.user && email) {
+      const firstName = options?.data?.first_name;
+      sendWelcomeEmail(email, firstName).catch((err) => {
+        console.error("Failed to send welcome email:", err);
+      });
     }
 
     return NextResponse.json({ data });

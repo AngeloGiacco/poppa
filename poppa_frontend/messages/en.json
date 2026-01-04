@@ -429,6 +429,88 @@
       "roleForbidden": "You do not have permission to access this page."
     }
   },
+  "Share": {
+    "title": "Share Your Progress",
+    "description": "Celebrate your learning journey with friends!",
+    "progressText": "I just completed {lessons} {language} lessons on Poppa! That's {minutes} minutes of voice practice.",
+    "progressPreview": "I've completed {lessons} {language} lessons ({minutes} min). {streak, plural, =0 {} other {Current streak: {streak} days!}}",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "facebook": "Facebook",
+    "copyLink": "Copy",
+    "copied": "Copied!",
+    "shareNative": "Share",
+    "shareTitle": "Learn languages with Poppa",
+    "linkCopied": "Link Copied!",
+    "linkCopiedDescription": "Share link copied to clipboard",
+    "copyFailed": "Copy Failed",
+    "copyFailedDescription": "Could not copy to clipboard. Please try again."
+  },
+  "Achievements": {
+    "title": "Achievements",
+    "progress": "{unlocked}/{total} unlocked",
+    "unlocked": "Achievement Unlocked!",
+    "awesome": "Awesome!",
+    "unlockedOn": "Unlocked on {date}",
+    "tiers": {
+      "bronze": "Bronze",
+      "silver": "Silver",
+      "gold": "Gold",
+      "platinum": "Platinum"
+    },
+    "firstLesson": {
+      "title": "First Steps",
+      "description": "Complete your first lesson"
+    },
+    "tenLessons": {
+      "title": "Getting Started",
+      "description": "Complete 10 lessons"
+    },
+    "fiftyLessons": {
+      "title": "Dedicated Learner",
+      "description": "Complete 50 lessons"
+    },
+    "hundredLessons": {
+      "title": "Language Master",
+      "description": "Complete 100 lessons"
+    },
+    "oneHour": {
+      "title": "Hour of Power",
+      "description": "Practice for 60 minutes total"
+    },
+    "tenHours": {
+      "title": "Time Investor",
+      "description": "Practice for 10 hours total"
+    },
+    "threeDayStreak": {
+      "title": "Building Momentum",
+      "description": "Practice 3 days in a row"
+    },
+    "sevenDayStreak": {
+      "title": "Week Warrior",
+      "description": "Practice 7 days in a row"
+    },
+    "thirtyDayStreak": {
+      "title": "Monthly Master",
+      "description": "Practice 30 days in a row"
+    },
+    "polyglotStarter": {
+      "title": "Polyglot Starter",
+      "description": "Start learning 3 languages"
+    },
+    "polyglotMaster": {
+      "title": "Polyglot Master",
+      "description": "Complete 10+ lessons in 5 languages"
+    },
+    "firstReferral": {
+      "title": "Ambassador",
+      "description": "Refer your first friend"
+    },
+    "fiveReferrals": {
+      "title": "Super Ambassador",
+      "description": "Refer 5 friends"
+    }
+  },
   "pricing": {
     "title": "Choose Your Plan",
     "hobbyPlan": {
