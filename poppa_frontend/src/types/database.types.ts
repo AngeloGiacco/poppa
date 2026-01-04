@@ -338,6 +338,38 @@ export type Database = {
           }
         ]
       }
+      user_achievements: {
+        Row: {
+          id: string
+          user_id: string
+          achievement_id: string
+          unlocked_at: string
+          notified: boolean
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          achievement_id: string
+          unlocked_at?: string
+          notified?: boolean
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          achievement_id?: string
+          unlocked_at?: string
+          notified?: boolean
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_achievements_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
     }
     Views: {
       [_ in never]: never
@@ -380,6 +412,25 @@ export type Database = {
           p_referred_user_id: string
         }
         Returns: Json
+      }
+      check_and_unlock_achievements: {
+        Args: {
+          p_user_id: string
+        }
+        Returns: Json
+      }
+      mark_achievement_notified: {
+        Args: {
+          p_user_id: string
+          p_achievement_id: string
+        }
+        Returns: boolean
+      }
+      get_unnotified_achievements: {
+        Args: {
+          p_user_id: string
+        }
+        Returns: { achievement_id: string; unlocked_at: string }[]
       }
     }
     Enums: {
