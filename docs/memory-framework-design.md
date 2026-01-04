@@ -1701,6 +1701,211 @@ Track framework effectiveness:
 
 ---
 
+## Natural Language Query Layer
+
+The structured client tools work well for common queries, but the tutor often needs to ask contextual questions like:
+
+- "What food-related vocabulary has this student struggled with?"
+- "Did we cover reflexive verbs last session?"
+- "How well does she handle past tense conjugations?"
+
+### Architecture: LLM-Powered Query Router
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    Natural Language Query                        │
+│       "What vocabulary has she struggled with lately?"           │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                     Query Router (Claude)                        │
+│   Interprets intent → generates structured query plan            │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+            ┌─────────────────┼─────────────────┐
+            ▼                 ▼                 ▼
+     ┌───────────┐     ┌───────────┐     ┌───────────┐
+     │ vocabulary │     │  grammar  │     │  sessions │
+     │  _memory   │     │  _memory  │     │           │
+     └───────────┘     └───────────┘     └───────────┘
+            │                 │                 │
+            └─────────────────┼─────────────────┘
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                   Response Synthesizer                           │
+│   Combines results into natural language response                │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+         "She's had trouble with 'comer' conjugations and
+          food vocabulary like 'cuchara' and 'tenedor'"
+```
+
+### Implementation
+
+```typescript
+// src/lib/memory/natural-language-query.ts
+
+interface NLQueryResult {
+  answer: string;
+  sources: {
+    table: string;
+    records: any[];
+  }[];
+  confidence: number;
+}
+
+async function queryMemoryNaturalLanguage(
+  userId: string,
+  languageCode: string,
+  query: string
+): Promise<NLQueryResult> {
+  // 1. Use Claude to interpret the query and generate a query plan
+  const queryPlan = await generateQueryPlan(query, languageCode);
+
+  // 2. Execute the structured queries
+  const results = await executeQueryPlan(userId, languageCode, queryPlan);
+
+  // 3. Synthesize results into natural language
+  const answer = await synthesizeResponse(query, results);
+
+  return {
+    answer,
+    sources: results,
+    confidence: queryPlan.confidence
+  };
+}
+
+async function generateQueryPlan(
+  query: string,
+  languageCode: string
+): Promise<QueryPlan> {
+  const response = await anthropic.messages.create({
+    model: 'claude-3-5-haiku-20241022', // Fast model for query routing
+    max_tokens: 1024,
+    system: `You are a query planner for a language learning memory system.
+Given a natural language question, output a JSON query plan.
+
+Available tables:
+- vocabulary_memory: term, translation, mastery_level, category, common_errors, times_incorrect
+- grammar_memory: concept_name, concept_display, mastery_level, error_patterns, times_struggled
+- lesson_sessions: started_at, vocabulary_introduced, grammar_introduced, highlights, transcript_summary
+- concept_events: event_type (correct/incorrect/struggled), concept_identifier, occurred_at
+
+Output format:
+{
+  "queries": [
+    {
+      "table": "vocabulary_memory",
+      "filters": { "mastery_level": { "lt": 0.5 }, "category": "food" },
+      "orderBy": "times_incorrect",
+      "limit": 10
+    }
+  ],
+  "intent": "find_struggling_vocabulary",
+  "confidence": 0.9
+}`,
+    messages: [{ role: 'user', content: query }]
+  });
+
+  return JSON.parse(response.content[0].text);
+}
+```
+
+### ElevenLabs Client Tool for Natural Language Queries
+
+```typescript
+// Add to client tools
+clientTools: {
+  // ... existing structured tools ...
+
+  // Natural language memory query
+  askAboutStudent: async ({ question }: { question: string }) => {
+    const result = await queryMemoryNaturalLanguage(
+      userId,
+      targetLanguage,
+      question
+    );
+
+    return result.answer;
+  }
+}
+```
+
+### Example Queries & Responses
+
+| Natural Language Query | Response |
+|------------------------|----------|
+| "What did we work on last time?" | "In your last session 2 days ago, we practiced the preterite tense and introduced 5 new travel vocabulary words. You had a breakthrough moment with irregular verb conjugations." |
+| "Does she know how to use subjunctive?" | "She's been introduced to subjunctive triggers (mastery: 45%) but struggles with the conjugation patterns. Common error: using indicative after 'quiero que'." |
+| "What food words should I review with her?" | "These food vocabulary items are due for review: cuchara (spoon), tenedor (fork), carne (meat). She often confuses 'cuchara' with 'cucharada'." |
+| "How's her overall progress in Spanish?" | "She's at intermediate level (62/100), with 23 sessions over 2 months. Strengths: present tense, basic vocabulary. Areas to work on: subjunctive mood, reflexive verbs." |
+
+### Hybrid Approach: Structured + Natural Language
+
+For optimal performance, use both:
+
+```typescript
+// Structured queries for common, performance-critical lookups
+const dueForReview = await getVocabularyDueForReview(userId, lang); // Fast, indexed
+
+// Natural language for complex, contextual questions
+const insight = await queryMemoryNaturalLanguage(
+  userId,
+  lang,
+  "What patterns do I see in her errors with verb conjugations?"
+); // Flexible, AI-powered
+```
+
+### Vector Embeddings for Semantic Search (Optional Enhancement)
+
+For even richer semantic queries, add embeddings:
+
+```sql
+-- Enable pgvector extension
+CREATE EXTENSION IF NOT EXISTS vector;
+
+-- Add embedding column to vocabulary_memory
+ALTER TABLE vocabulary_memory
+ADD COLUMN context_embedding vector(1536);
+
+-- Add embedding to lesson sessions for semantic search
+ALTER TABLE lesson_sessions
+ADD COLUMN transcript_embedding vector(1536);
+
+-- Semantic similarity index
+CREATE INDEX idx_vocab_embedding ON vocabulary_memory
+USING ivfflat (context_embedding vector_cosine_ops);
+```
+
+```typescript
+// Semantic search example
+async function findSimilarConcepts(
+  userId: string,
+  languageCode: string,
+  conceptDescription: string
+): Promise<VocabularyMemory[]> {
+  // Generate embedding for the query
+  const embedding = await generateEmbedding(conceptDescription);
+
+  // Vector similarity search
+  const { data } = await supabase.rpc('match_vocabulary', {
+    query_embedding: embedding,
+    match_user_id: userId,
+    match_language: languageCode,
+    match_threshold: 0.7,
+    match_count: 10
+  });
+
+  return data;
+}
+```
+
+This allows queries like "words related to cooking" to find contextually similar vocabulary even if they don't share the exact category tag.
+
+---
+
 ## Future Enhancements
 
 ### Phase 2: Advanced Features
