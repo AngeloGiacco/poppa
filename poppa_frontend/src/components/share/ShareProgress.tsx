@@ -6,13 +6,7 @@ import { Twitter, Linkedin, Facebook, Link, Check, Share2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
 import { Analytics } from "@/lib/analytics/posthog";
 
@@ -109,9 +103,7 @@ export function ShareProgress({
           <Share2 className="h-5 w-5" />
           {t("title")}
         </CardTitle>
-        <CardDescription className="text-[#5D4037]/70">
-          {t("description")}
-        </CardDescription>
+        <CardDescription className="text-[#5D4037]/70">{t("description")}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="rounded-lg bg-white/60 p-4">
@@ -130,7 +122,7 @@ export function ShareProgress({
             variant="outline"
             size="sm"
             onClick={() => handleShareClick("twitter")}
-            className="flex-1 min-w-[80px] bg-white hover:bg-blue-50"
+            className="min-w-[80px] flex-1 bg-white hover:bg-blue-50"
           >
             <Twitter className="mr-2 h-4 w-4 text-[#1DA1F2]" />
             {t("twitter")}
@@ -139,7 +131,7 @@ export function ShareProgress({
             variant="outline"
             size="sm"
             onClick={() => handleShareClick("linkedin")}
-            className="flex-1 min-w-[80px] bg-white hover:bg-blue-50"
+            className="min-w-[80px] flex-1 bg-white hover:bg-blue-50"
           >
             <Linkedin className="mr-2 h-4 w-4 text-[#0A66C2]" />
             {t("linkedin")}
@@ -148,7 +140,7 @@ export function ShareProgress({
             variant="outline"
             size="sm"
             onClick={() => handleShareClick("facebook")}
-            className="flex-1 min-w-[80px] bg-white hover:bg-blue-50"
+            className="min-w-[80px] flex-1 bg-white hover:bg-blue-50"
           >
             <Facebook className="mr-2 h-4 w-4 text-[#1877F2]" />
             {t("facebook")}
@@ -157,7 +149,7 @@ export function ShareProgress({
             variant="outline"
             size="sm"
             onClick={copyLink}
-            className="flex-1 min-w-[80px] bg-white hover:bg-gray-50"
+            className="min-w-[80px] flex-1 bg-white hover:bg-gray-50"
           >
             {copied ? (
               <Check className="mr-2 h-4 w-4 text-green-500" />
@@ -168,7 +160,7 @@ export function ShareProgress({
           </Button>
         </div>
 
-        {typeof navigator !== "undefined" && navigator.share && (
+        {typeof navigator !== "undefined" && "share" in navigator && (
           <Button
             variant="default"
             className="w-full bg-[#8B4513] text-white hover:bg-[#6D3611]"

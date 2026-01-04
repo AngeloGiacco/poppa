@@ -10,6 +10,7 @@ import { useTranslations } from "next-intl";
 
 import { Footer } from "@/components/Footer";
 import { LanguageSelector } from "@/components/LanguageSelector";
+import { Testimonials } from "@/components/marketing/Testimonials";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "@/i18n/routing";
@@ -247,6 +248,15 @@ export default function Home() {
               </div>
             </CardContent>
           </Card>
+        </motion.div>
+
+        {/* Testimonials Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.75, duration: 0.6 }}
+        >
+          <Testimonials />
         </motion.div>
 
         {/* Final CTA */}
