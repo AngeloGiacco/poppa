@@ -4,6 +4,8 @@ import { NextResponse } from "next/server";
 import crypto from "node:crypto";
 
 import supabaseClient from "@/lib/supabase";
+import { processSessionTranscript } from "@/lib/memory/session-processor";
+import type { TranscriptMessage } from "@/types/memory.types";
 
 const elevenLabsWebhookSecret = process.env.ELEVENLABS_WEBHOOK_SECRET;
 
@@ -30,6 +32,7 @@ interface ElevenLabsWebhookPayload {
       dynamic_variables?: {
         user_id?: string;
         target_language?: string;
+        session_id?: string;
       };
     };
   };
@@ -76,6 +79,7 @@ export async function POST(req: NextRequest) {
 
     const userId = conversation_initiation_client_data?.dynamic_variables?.user_id;
     const targetLanguage = conversation_initiation_client_data?.dynamic_variables?.target_language;
+    const sessionId = conversation_initiation_client_data?.dynamic_variables?.session_id;
 
     if (!userId) {
       console.error("Missing user_id in dynamic_variables");
@@ -123,11 +127,25 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Failed to store transcript" }, { status: 500 });
     }
 
+    // Process session for memory updates (async - don't block webhook response)
+    if (sessionId && targetLanguage && transcript) {
+      processSessionTranscript(
+        userId,
+        targetLanguage,
+        conversation_id,
+        transcript as TranscriptMessage[],
+        sessionId
+      ).catch((error) => {
+        console.error("Session processing failed:", error);
+      });
+    }
+
     return NextResponse.json(
       {
         message: "Transcript saved successfully",
         conversation_id,
         user_id: userId,
+        memory_processing: sessionId ? "queued" : "skipped",
       },
       { status: 200 }
     );
