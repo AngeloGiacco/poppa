@@ -248,6 +248,8 @@
     "loginButton": "Log In",
     "forgotPassword": "Forgot password?",
     "loading": "Logging in...",
+    "continueWithGoogle": "Continue with Google",
+    "orContinueWith": "or continue with email",
     "success": {
       "title": "Login Successful",
       "description": "Welcome back!"
@@ -257,36 +259,16 @@
     }
   },
   "SignupForm": {
-    "firstName": "First Name",
-    "lastName": "Last Name",
     "email": "Email",
     "password": "Password",
-    "confirmPassword": "Confirm Password",
     "nativeLanguage": "Native Language",
-    "dateOfBirth": "Date of Birth",
-    "day": "Day",
-    "month": "Month",
-    "year": "Year",
     "signupButton": "Sign Up",
     "loading": "Signing Up...",
+    "continueWithGoogle": "Continue with Google",
+    "orContinueWith": "or continue with email",
     "languageTooltip": "Can't find your language? Poppa is only supported in these languages for now. Contact us for assistance.",
     "errors": {
-      "passwordMatch": "Passwords don't match",
       "generic": "An error occurred during sign up. Please try again."
-    },
-    "months": {
-      "1": "January",
-      "2": "February",
-      "3": "March",
-      "4": "April",
-      "5": "May",
-      "6": "June",
-      "7": "July",
-      "8": "August",
-      "9": "September",
-      "10": "October",
-      "11": "November",
-      "12": "December"
     },
     "selectLanguage": "Select your native language"
   },
