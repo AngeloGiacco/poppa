@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+import { useSearchParams } from "next/navigation";
 
 import { InfoCircledIcon } from "@radix-ui/react-icons";
 import { useTranslations, useLocale } from "next-intl";
@@ -25,6 +27,7 @@ import { interface_locales } from "@/lib/supportedLanguages";
 export default function SignUp() {
   const locale = useLocale();
   const t = useTranslations("SignupForm");
+  const searchParams = useSearchParams();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [nativeLanguage, setNativeLanguage] = useState(() => {
@@ -34,7 +37,15 @@ export default function SignUp() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
+  const [referralCode, setReferralCode] = useState<string | null>(null);
   const router = useRouter();
+
+  useEffect(() => {
+    const ref = searchParams?.get("ref");
+    if (ref) {
+      setReferralCode(ref);
+    }
+  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,7 +53,12 @@ export default function SignUp() {
     setIsLoading(true);
 
     try {
-      const signUpData = {
+      const signUpData: {
+        email: string;
+        password: string;
+        options: { data: { native_language: string } };
+        referralCode?: string;
+      } = {
         email,
         password,
         options: {
@@ -51,6 +67,10 @@ export default function SignUp() {
           },
         },
       };
+
+      if (referralCode) {
+        signUpData.referralCode = referralCode;
+      }
 
       const response = await fetch("/api/auth/signup", {
         method: "POST",

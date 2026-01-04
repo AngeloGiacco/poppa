@@ -146,6 +146,8 @@ export type Database = {
           id: string
           last_name: string | null
           native_language: string
+          referral_code: string | null
+          referred_by: string | null
         }
         Insert: {
           created_at?: string
@@ -155,6 +157,8 @@ export type Database = {
           id: string
           last_name?: string | null
           native_language?: string
+          referral_code?: string | null
+          referred_by?: string | null
         }
         Update: {
           created_at?: string
@@ -164,6 +168,8 @@ export type Database = {
           id?: string
           last_name?: string | null
           native_language?: string
+          referral_code?: string | null
+          referred_by?: string | null
         }
         Relationships: []
       }
@@ -243,6 +249,95 @@ export type Database = {
           }
         ]
       }
+      user_stats: {
+        Row: {
+          user_id: string
+          total_lessons: number
+          total_minutes: number
+          current_streak: number
+          longest_streak: number
+          last_lesson_date: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          user_id: string
+          total_lessons?: number
+          total_minutes?: number
+          current_streak?: number
+          longest_streak?: number
+          last_lesson_date?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          user_id?: string
+          total_lessons?: number
+          total_minutes?: number
+          current_streak?: number
+          longest_streak?: number
+          last_lesson_date?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_stats_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      referrals: {
+        Row: {
+          id: string
+          referrer_id: string
+          referred_id: string
+          referral_code: string
+          status: string
+          credits_awarded: number
+          created_at: string
+          completed_at: string | null
+        }
+        Insert: {
+          id?: string
+          referrer_id: string
+          referred_id: string
+          referral_code: string
+          status?: string
+          credits_awarded?: number
+          created_at?: string
+          completed_at?: string | null
+        }
+        Update: {
+          id?: string
+          referrer_id?: string
+          referred_id?: string
+          referral_code?: string
+          status?: string
+          credits_awarded?: number
+          created_at?: string
+          completed_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "referrals_referrer_id_fkey"
+            columns: ["referrer_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "referrals_referred_id_fkey"
+            columns: ["referred_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
     }
     Views: {
       [_ in never]: never
@@ -260,6 +355,31 @@ export type Database = {
           p_increment_by: number
         }
         Returns: { user_id: string; usage_count: number; usage_limit: number }[]
+      }
+      update_user_streak: {
+        Args: {
+          p_user_id: string
+          p_minutes?: number
+        }
+        Returns: {
+          current_streak: number
+          longest_streak: number
+          total_lessons: number
+          total_minutes: number
+        }[]
+      }
+      generate_referral_code: {
+        Args: {
+          p_user_id: string
+        }
+        Returns: string
+      }
+      process_referral: {
+        Args: {
+          p_referral_code: string
+          p_referred_user_id: string
+        }
+        Returns: Json
       }
     }
     Enums: {
