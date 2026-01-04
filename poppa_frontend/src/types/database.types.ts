@@ -72,7 +72,7 @@ export type Database = {
           user_id: string
           conversation_id: string
           target_language: string | null
-          transcript: Json | null // Assuming Json is already defined or Supabase handles it
+          transcript: Json | null
           created_at: string
         }
         Insert: {
@@ -472,68 +472,53 @@ export type Database = {
           },
         ]
       }
-      user_learns: {
+      referrals: {
         Row: {
           id: string
-          language_id: number | null
-          user_id: string | null
+          referrer_id: string
+          referred_id: string
+          referral_code: string
+          status: string
+          credits_awarded: number
+          created_at: string
+          completed_at: string | null
         }
         Insert: {
-          id: string
-          language_id?: number | null
-          user_id?: string | null
+          id?: string
+          referrer_id: string
+          referred_id: string
+          referral_code: string
+          status?: string
+          credits_awarded?: number
+          created_at?: string
+          completed_at?: string | null
         }
         Update: {
           id?: string
-          language_id?: number | null
-          user_id?: string | null
+          referrer_id?: string
+          referred_id?: string
+          referral_code?: string
+          status?: string
+          credits_awarded?: number
+          created_at?: string
+          completed_at?: string | null
         }
         Relationships: [
           {
-            foreignKeyName: "user_learns_language_id_fkey"
-            columns: ["language_id"]
-            isOneToOne: false
-            referencedRelation: "languages"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "user_learns_user_id_fkey"
-            columns: ["user_id"]
+            foreignKeyName: "referrals_referrer_id_fkey"
+            columns: ["referrer_id"]
             isOneToOne: false
             referencedRelation: "users"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "referrals_referred_id_fkey"
+            columns: ["referred_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
         ]
-      }
-      users: {
-        Row: {
-          created_at: string
-          credits: number
-          date_of_birth: string | null
-          first_name: string | null
-          id: string
-          last_name: string | null
-          native_language: string
-        }
-        Insert: {
-          created_at?: string
-          credits?: number
-          date_of_birth?: string | null
-          first_name?: string | null
-          id: string
-          last_name?: string | null
-          native_language?: string
-        }
-        Update: {
-          created_at?: string
-          credits?: number
-          date_of_birth?: string | null
-          first_name?: string | null
-          id?: string
-          last_name?: string | null
-          native_language?: string
-        }
-        Relationships: []
       }
       subscriptions: {
         Row: {
@@ -610,6 +595,116 @@ export type Database = {
             referencedColumns: ["id"]
           }
         ]
+      }
+      user_learns: {
+        Row: {
+          id: string
+          language_id: number | null
+          user_id: string | null
+        }
+        Insert: {
+          id: string
+          language_id?: number | null
+          user_id?: string | null
+        }
+        Update: {
+          id?: string
+          language_id?: number | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_learns_language_id_fkey"
+            columns: ["language_id"]
+            isOneToOne: false
+            referencedRelation: "languages"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "user_learns_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_stats: {
+        Row: {
+          user_id: string
+          total_lessons: number
+          total_minutes: number
+          current_streak: number
+          longest_streak: number
+          last_lesson_date: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          user_id: string
+          total_lessons?: number
+          total_minutes?: number
+          current_streak?: number
+          longest_streak?: number
+          last_lesson_date?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          user_id?: string
+          total_lessons?: number
+          total_minutes?: number
+          current_streak?: number
+          longest_streak?: number
+          last_lesson_date?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_stats_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
+      users: {
+        Row: {
+          created_at: string
+          credits: number
+          date_of_birth: string | null
+          first_name: string | null
+          id: string
+          last_name: string | null
+          native_language: string
+          referral_code: string | null
+          referred_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          credits?: number
+          date_of_birth?: string | null
+          first_name?: string | null
+          id: string
+          last_name?: string | null
+          native_language?: string
+          referral_code?: string | null
+          referred_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          credits?: number
+          date_of_birth?: string | null
+          first_name?: string | null
+          id?: string
+          last_name?: string | null
+          native_language?: string
+          referral_code?: string | null
+          referred_by?: string | null
+        }
+        Relationships: []
       }
       vocabulary_memory: {
         Row: {
@@ -734,6 +829,12 @@ export type Database = {
           p_next_session_recommendations?: Json
         }
         Returns: Database["public"]["Tables"]["lesson_sessions"]["Row"]
+      }
+      generate_referral_code: {
+        Args: {
+          p_user_id: string
+        }
+        Returns: string
       }
       get_concept_events: {
         Args: {
@@ -865,6 +966,13 @@ export type Database = {
           similarity: number
         }[]
       }
+      process_referral: {
+        Args: {
+          p_referral_code: string
+          p_referred_user_id: string
+        }
+        Returns: Json
+      }
       record_concept_event: {
         Args: {
           p_user_id: string
@@ -897,6 +1005,18 @@ export type Database = {
           p_grammar_introduced?: number
         }
         Returns: Database["public"]["Tables"]["language_progress"]["Row"]
+      }
+      update_user_streak: {
+        Args: {
+          p_user_id: string
+          p_minutes?: number
+        }
+        Returns: {
+          current_streak: number
+          longest_streak: number
+          total_lessons: number
+          total_minutes: number
+        }[]
       }
       update_vocabulary_after_review: {
         Args: {

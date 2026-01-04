@@ -248,6 +248,8 @@
     "loginButton": "Log In",
     "forgotPassword": "Forgot password?",
     "loading": "Logging in...",
+    "continueWithGoogle": "Continue with Google",
+    "orContinueWith": "or continue with email",
     "success": {
       "title": "Login Successful",
       "description": "Welcome back!"
@@ -257,36 +259,16 @@
     }
   },
   "SignupForm": {
-    "firstName": "First Name",
-    "lastName": "Last Name",
     "email": "Email",
     "password": "Password",
-    "confirmPassword": "Confirm Password",
     "nativeLanguage": "Native Language",
-    "dateOfBirth": "Date of Birth",
-    "day": "Day",
-    "month": "Month",
-    "year": "Year",
     "signupButton": "Sign Up",
     "loading": "Signing Up...",
+    "continueWithGoogle": "Continue with Google",
+    "orContinueWith": "or continue with email",
     "languageTooltip": "Can't find your language? Poppa is only supported in these languages for now. Contact us for assistance.",
     "errors": {
-      "passwordMatch": "Passwords don't match",
       "generic": "An error occurred during sign up. Please try again."
-    },
-    "months": {
-      "1": "January",
-      "2": "February",
-      "3": "March",
-      "4": "April",
-      "5": "May",
-      "6": "June",
-      "7": "July",
-      "8": "August",
-      "9": "September",
-      "10": "October",
-      "11": "November",
-      "12": "December"
     },
     "selectLanguage": "Select your native language"
   },
@@ -301,6 +283,29 @@
       "title": "Account Details",
       "joined": "Joined",
       "credits": "Credits"
+    }
+  },
+  "Dashboard": {
+    "streak": {
+      "title": "Your Streak",
+      "dayStreak": "day streak",
+      "best": "Best",
+      "totalLessons": "total lessons",
+      "totalMinutes": "minutes learned"
+    },
+    "referral": {
+      "title": "Invite Friends",
+      "description": "Share Poppa with friends! You both get 10 free minutes when they sign up.",
+      "yourCode": "Your referral code",
+      "copyLink": "Copy Invite Link",
+      "copied": "Copied!",
+      "copiedDescription": "Referral code copied to clipboard",
+      "linkCopied": "Link Copied!",
+      "linkCopiedDescription": "Invite link copied to clipboard",
+      "copyFailed": "Copy Failed",
+      "copyFailedDescription": "Could not copy to clipboard. Please try again.",
+      "referredCount": "{count} friends invited",
+      "credits": "credits"
     }
   },
   "DashboardPage": {
@@ -360,6 +365,24 @@
       "builtWith": "Built with care by Naxos Labs",
       "viewSource": "View source on GitHub"
     }
+  },
+  "PreLessonBriefing": {
+    "title": "Welcome to Your First {language} Lesson!",
+    "subtitle": "Here's how Poppa works",
+    "tip1": {
+      "title": "Speak Naturally",
+      "description": "Just talk like you would with a real tutor. Click the button below to start speaking."
+    },
+    "tip2": {
+      "title": "The Thinking Method",
+      "description": "We'll guide you to discover patterns yourself—no memorization needed. Just think through each question."
+    },
+    "tip3": {
+      "title": "It's Okay to Make Mistakes",
+      "description": "Mistakes are part of learning! Your tutor will gently guide you when needed."
+    },
+    "startButton": "I'm Ready to Start",
+    "skipButton": "Skip this intro"
   },
   "Chat": {
     "ConnectButton": {
