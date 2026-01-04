@@ -10,6 +10,7 @@ import { ConnectButton } from "@/components/connect-button";
 import { SessionControls } from "@/components/session-controls";
 import { useAuth } from "@/context/AuthContext";
 import { toast } from "@/hooks/use-toast";
+import { Analytics } from "@/lib/analytics/posthog";
 import { supabaseBrowserClient } from "@/lib/supabase-browser";
 
 interface Transcription {
@@ -37,6 +38,9 @@ export function Chat({ lessonInstruction, targetLanguage, nativeLanguage }: Chat
     onConnect: () => {
       setIsChatRunning(true);
       setSessionStartTime(new Date());
+      if (targetLanguage) {
+        Analytics.lessonStarted({ language: targetLanguage });
+      }
     },
     onDisconnect: () => {
       setIsChatRunning(false);
@@ -95,6 +99,13 @@ export function Chat({ lessonInstruction, targetLanguage, nativeLanguage }: Chat
           .rpc("increment_credits", { increment_amount: -sessionDurationMinutes })
           .throwOnError(),
       ]);
+
+      if (targetLanguage) {
+        Analytics.lessonCompleted({
+          language: targetLanguage,
+          durationMinutes: sessionDurationMinutes,
+        });
+      }
     } catch (error) {
       console.error("Error saving session:", error);
       if (document.visibilityState === "visible") {

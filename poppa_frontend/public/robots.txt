@@ -1,0 +1,12 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow API routes
+Disallow: /api/
+
+# Disallow auth routes
+Disallow: /auth/
+
+# Sitemap
+Sitemap: https://trypoppa.com/sitemap.xml
