@@ -3,6 +3,10 @@
  * Memory functions available during voice conversations
  */
 
+import supabaseClient from "@/lib/supabase";
+import type { ConceptEventType } from "@/types/memory.types";
+
+import { queryMemoryNaturalLanguage } from "./natural-language-query";
 import {
   checkVocabularyHistory,
   getVocabularyDueForReview,
@@ -13,37 +17,39 @@ import {
   getRelatedVocabulary,
   checkGrammarHistory,
 } from "./realtime-queries";
-import { queryMemoryNaturalLanguage } from "./natural-language-query";
-import { createLessonSession } from "./session-processor";
-import supabaseClient from "@/lib/supabase";
-import type { ConceptEventType } from "@/types/memory.types";
 
 /**
  * Format relative time for display
  */
 function formatRelativeTime(dateStr: string | null): string {
-  if (!dateStr) return "never";
+  if (!dateStr) {
+    return "never";
+  }
 
   const date = new Date(dateStr);
   const now = new Date();
   const diffMs = now.getTime() - date.getTime();
   const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
 
-  if (diffDays === 0) return "today";
-  if (diffDays === 1) return "yesterday";
-  if (diffDays < 7) return `${diffDays} days ago`;
-  if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
+  if (diffDays === 0) {
+    return "today";
+  }
+  if (diffDays === 1) {
+    return "yesterday";
+  }
+  if (diffDays < 7) {
+    return `${diffDays} days ago`;
+  }
+  if (diffDays < 30) {
+    return `${Math.floor(diffDays / 7)} weeks ago`;
+  }
   return `${Math.floor(diffDays / 30)} months ago`;
 }
 
 /**
  * Create memory client tools for ElevenLabs conversation
  */
-export function createMemoryClientTools(
-  userId: string,
-  languageCode: string,
-  sessionId: string
-) {
+export function createMemoryClientTools(userId: string, languageCode: string, sessionId: string) {
   return {
     /**
      * Check if student has seen a vocabulary word before
@@ -165,12 +171,7 @@ export function createMemoryClientTools(
      * Get related vocabulary by category
      */
     getRelatedWords: async ({ category }: { category: string }) => {
-      const vocab = await getRelatedVocabulary(
-        userId,
-        languageCode,
-        category,
-        5
-      );
+      const vocab = await getRelatedVocabulary(userId, languageCode, category, 5);
 
       if (vocab.length === 0) {
         return `No vocabulary found in the "${category}" category.`;
@@ -275,11 +276,7 @@ export function createMemoryClientTools(
      * Natural language query about the student
      */
     askAboutStudent: async ({ question }: { question: string }) => {
-      const result = await queryMemoryNaturalLanguage(
-        userId,
-        languageCode,
-        question
-      );
+      const result = await queryMemoryNaturalLanguage(userId, languageCode, question);
 
       return result.answer;
     },
@@ -305,9 +302,7 @@ export function createMemoryClientTools(
           category,
           introduced_in_session: sessionId,
           times_seen: 1,
-          next_review_at: new Date(
-            Date.now() + 24 * 60 * 60 * 1000
-          ).toISOString(),
+          next_review_at: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
         },
         { onConflict: "user_id,language_code,term" }
       );
@@ -346,9 +341,7 @@ export function createMemoryClientTools(
           category,
           introduced_in_session: sessionId,
           times_practiced: 1,
-          next_review_at: new Date(
-            Date.now() + 24 * 60 * 60 * 1000
-          ).toISOString(),
+          next_review_at: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
         },
         { onConflict: "user_id,language_code,concept_name" }
       );
@@ -375,8 +368,7 @@ export function getMemoryToolDefinitions() {
   return [
     {
       name: "checkVocabulary",
-      description:
-        "Check if the student has seen a vocabulary word before and their mastery level",
+      description: "Check if the student has seen a vocabulary word before and their mastery level",
       parameters: {
         type: "object",
         properties: {
@@ -390,8 +382,7 @@ export function getMemoryToolDefinitions() {
     },
     {
       name: "checkGrammar",
-      description:
-        "Check if a grammar concept has been introduced and the student's mastery level",
+      description: "Check if a grammar concept has been introduced and the student's mastery level",
       parameters: {
         type: "object",
         properties: {
@@ -405,8 +396,7 @@ export function getMemoryToolDefinitions() {
     },
     {
       name: "getReviewItems",
-      description:
-        "Get vocabulary and grammar items that are due for spaced repetition review",
+      description: "Get vocabulary and grammar items that are due for spaced repetition review",
       parameters: {
         type: "object",
         properties: {},
@@ -414,8 +404,7 @@ export function getMemoryToolDefinitions() {
     },
     {
       name: "getLastSession",
-      description:
-        "Get a summary of what was covered in the student's last session",
+      description: "Get a summary of what was covered in the student's last session",
       parameters: {
         type: "object",
         properties: {},
@@ -423,8 +412,7 @@ export function getMemoryToolDefinitions() {
     },
     {
       name: "getStrugglingAreas",
-      description:
-        "Get vocabulary and grammar concepts the student struggles with",
+      description: "Get vocabulary and grammar concepts the student struggles with",
       parameters: {
         type: "object",
         properties: {},
@@ -446,8 +434,7 @@ export function getMemoryToolDefinitions() {
     },
     {
       name: "recordVocabularyUsage",
-      description:
-        "Record when the student uses a vocabulary word correctly or incorrectly",
+      description: "Record when the student uses a vocabulary word correctly or incorrectly",
       parameters: {
         type: "object",
         properties: {
@@ -492,8 +479,7 @@ export function getMemoryToolDefinitions() {
     },
     {
       name: "askAboutStudent",
-      description:
-        "Ask a natural language question about the student's learning history",
+      description: "Ask a natural language question about the student's learning history",
       parameters: {
         type: "object",
         properties: {

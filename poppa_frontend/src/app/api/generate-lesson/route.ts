@@ -7,7 +7,7 @@ import {
 } from "@/lib/curriculum/lesson-generator";
 import { generateThinkingMethodInstruction } from "@/lib/lesson-utils";
 import { generateLessonContext } from "@/lib/memory/context-generator";
-import { buildTutorPrompt, buildCompactPrompt } from "@/lib/memory/prompt-builder";
+import { buildTutorPrompt } from "@/lib/memory/prompt-builder";
 import { createLessonSession } from "@/lib/memory/session-processor";
 import supabaseClient from "@/lib/supabase";
 import type { Tables } from "@/types/database.types";

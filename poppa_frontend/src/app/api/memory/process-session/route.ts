@@ -3,8 +3,8 @@
  * Post-session transcript analysis and memory updates
  */
 
-import { processSessionTranscript } from "@/lib/memory/session-processor";
 import { embedSession } from "@/lib/memory/embeddings";
+import { processSessionTranscript } from "@/lib/memory/session-processor";
 import type { ProcessSessionRequest, TranscriptMessage } from "@/types/memory.types";
 
 export async function POST(req: Request) {
@@ -48,9 +48,6 @@ export async function POST(req: Request) {
     });
   } catch (error) {
     console.error("Process session error:", error);
-    return Response.json(
-      { error: "Failed to process session transcript" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Failed to process session transcript" }, { status: 500 });
   }
 }

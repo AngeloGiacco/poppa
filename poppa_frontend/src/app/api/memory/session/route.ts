@@ -3,10 +3,7 @@
  * Create and manage lesson sessions
  */
 
-import {
-  createLessonSession,
-  endLessonSession,
-} from "@/lib/memory/session-processor";
+import { createLessonSession, endLessonSession } from "@/lib/memory/session-processor";
 import supabaseClient from "@/lib/supabase";
 
 export async function POST(req: Request) {
@@ -50,10 +47,7 @@ export async function POST(req: Request) {
         const { sessionId, durationSeconds } = body;
 
         if (!sessionId) {
-          return Response.json(
-            { error: "Missing required field: sessionId" },
-            { status: 400 }
-          );
+          return Response.json({ error: "Missing required field: sessionId" }, { status: 400 });
         }
 
         await endLessonSession(sessionId, durationSeconds || 0);
@@ -83,17 +77,11 @@ export async function POST(req: Request) {
       }
 
       default:
-        return Response.json(
-          { error: `Unknown action: ${action}` },
-          { status: 400 }
-        );
+        return Response.json({ error: `Unknown action: ${action}` }, { status: 400 });
     }
   } catch (error) {
     console.error("Session API error:", error);
-    return Response.json(
-      { error: "Failed to process session request" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Failed to process session request" }, { status: 500 });
   }
 }
 
@@ -102,13 +90,10 @@ export async function GET(req: Request) {
     const { searchParams } = new URL(req.url);
     const userId = searchParams.get("userId");
     const languageCode = searchParams.get("languageCode");
-    const limit = parseInt(searchParams.get("limit") || "10");
+    const limit = Number.parseInt(searchParams.get("limit") || "10", 10);
 
     if (!userId) {
-      return Response.json(
-        { error: "Missing required param: userId" },
-        { status: 400 }
-      );
+      return Response.json({ error: "Missing required param: userId" }, { status: 400 });
     }
 
     let query = supabaseClient
@@ -124,14 +109,13 @@ export async function GET(req: Request) {
 
     const { data, error } = await query;
 
-    if (error) throw error;
+    if (error) {
+      throw error;
+    }
 
     return Response.json({ sessions: data });
   } catch (error) {
     console.error("Get sessions error:", error);
-    return Response.json(
-      { error: "Failed to get sessions" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Failed to get sessions" }, { status: 500 });
   }
 }

@@ -47,10 +47,7 @@ export function calculateNextReview(
   }
 
   // Calculate mastery level (0-1)
-  const masteryLevel = Math.min(
-    1,
-    repetitions * 0.15 + ((easinessFactor - 1.3) / 1.2) * 0.25
-  );
+  const masteryLevel = Math.min(1, repetitions * 0.15 + ((easinessFactor - 1.3) / 1.2) * 0.25);
 
   // Calculate next review date
   const nextReviewAt = new Date();
@@ -74,15 +71,21 @@ export function assessQualityFromEvent(
 ): number {
   switch (eventType) {
     case "correct":
-      if (context?.self_corrected) return 4;
-      if (context?.response_time_ms && context.response_time_ms > 5000) return 4;
+      if (context?.self_corrected) {
+        return 4;
+      }
+      if (context?.response_time_ms && context.response_time_ms > 5000) {
+        return 4;
+      }
       return 5;
 
     case "self_corrected":
       return 3;
 
     case "incorrect":
-      if (context?.close_attempt) return 2;
+      if (context?.close_attempt) {
+        return 2;
+      }
       return 1;
 
     case "struggled":
@@ -137,10 +140,7 @@ export function isMastered(masteryLevel: number): boolean {
 /**
  * Determine if a concept is "struggling"
  */
-export function isStruggling(
-  masteryLevel: number,
-  timesSeen: number
-): boolean {
+export function isStruggling(masteryLevel: number, timesSeen: number): boolean {
   return masteryLevel < 0.5 && timesSeen > 1;
 }
 
@@ -154,13 +154,15 @@ export function prioritizeReviewItems<
     mastery_level: number;
     times_seen?: number;
     times_incorrect?: number;
-  }
->(items: T[], maxItems: number = 10): T[] {
+  },
+>(items: T[], maxItems = 10): T[] {
   const now = new Date();
 
   return items
     .filter((item) => {
-      if (!item.next_review_at) return true;
+      if (!item.next_review_at) {
+        return true;
+      }
       return new Date(item.next_review_at) <= now;
     })
     .sort((a, b) => {
@@ -168,16 +170,20 @@ export function prioritizeReviewItems<
       const aStruggling = isStruggling(a.mastery_level, a.times_seen || 0);
       const bStruggling = isStruggling(b.mastery_level, b.times_seen || 0);
 
-      if (aStruggling && !bStruggling) return -1;
-      if (!aStruggling && bStruggling) return 1;
+      if (aStruggling && !bStruggling) {
+        return -1;
+      }
+      if (!aStruggling && bStruggling) {
+        return 1;
+      }
 
       // Then by overdue time
       const aOverdue = a.next_review_at
         ? now.getTime() - new Date(a.next_review_at).getTime()
-        : Infinity;
+        : Number.POSITIVE_INFINITY;
       const bOverdue = b.next_review_at
         ? now.getTime() - new Date(b.next_review_at).getTime()
-        : Infinity;
+        : Number.POSITIVE_INFINITY;
 
       return bOverdue - aOverdue;
     })

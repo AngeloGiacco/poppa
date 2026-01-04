@@ -5,7 +5,6 @@
 
 import { generateLessonContext } from "@/lib/memory/context-generator";
 import { buildTutorPrompt } from "@/lib/memory/prompt-builder";
-import supabaseClient from "@/lib/supabase";
 import type { GenerateContextRequest } from "@/types/memory.types";
 
 export async function POST(req: Request) {
@@ -37,9 +36,6 @@ export async function POST(req: Request) {
     });
   } catch (error) {
     console.error("Memory context error:", error);
-    return Response.json(
-      { error: "Failed to generate memory context" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Failed to generate memory context" }, { status: 500 });
   }
 }

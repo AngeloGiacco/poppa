@@ -4,16 +4,9 @@
  */
 
 import Anthropic from "@anthropic-ai/sdk";
+
 import supabaseClient from "@/lib/supabase";
-import type {
-  NLQueryResult,
-  QueryPlan,
-  QueryDefinition,
-  VocabularyMemory,
-  GrammarMemory,
-  LessonSession,
-  ConceptEvent,
-} from "@/types/memory.types";
+import type { NLQueryResult, QueryPlan, QueryDefinition } from "@/types/memory.types";
 
 const anthropic = new Anthropic();
 
@@ -44,10 +37,7 @@ export async function queryMemoryNaturalLanguage(
 /**
  * Generate a query plan from natural language
  */
-async function generateQueryPlan(
-  query: string,
-  languageCode: string
-): Promise<QueryPlan> {
+async function generateQueryPlan(query: string, languageCode: string): Promise<QueryPlan> {
   const response = await anthropic.messages.create({
     model: "claude-3-5-haiku-20241022",
     max_tokens: 1024,
@@ -102,8 +92,8 @@ async function executeQueryPlan(
   userId: string,
   languageCode: string,
   plan: QueryPlan
-): Promise<{ table: string; records: unknown[] }[]> {
-  const results: { table: string; records: unknown[] }[] = [];
+): Promise<Array<{ table: string; records: unknown[] }>> {
+  const results: Array<{ table: string; records: unknown[] }> = [];
 
   for (const queryDef of plan.queries) {
     const records = await executeQuery(userId, languageCode, queryDef);
@@ -127,22 +117,41 @@ async function executeQuery(
     .eq("user_id", userId)
     .eq("language_code", languageCode);
 
-  // Apply filters
+  // Apply filters - using type assertions for dynamic filter application
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let typedQuery = query as any;
   for (const [field, condition] of Object.entries(queryDef.filters || {})) {
     if (typeof condition === "object" && condition !== null) {
       const ops = condition as Record<string, unknown>;
-      if ("eq" in ops) query = query.eq(field, ops.eq);
-      if ("neq" in ops) query = query.neq(field, ops.neq);
-      if ("lt" in ops) query = query.lt(field, ops.lt);
-      if ("lte" in ops) query = query.lte(field, ops.lte);
-      if ("gt" in ops) query = query.gt(field, ops.gt);
-      if ("gte" in ops) query = query.gte(field, ops.gte);
-      if ("in" in ops) query = query.in(field, ops.in as unknown[]);
-      if ("contains" in ops) query = query.contains(field, ops.contains as unknown[]);
+      if ("eq" in ops) {
+        typedQuery = typedQuery.eq(field, ops.eq);
+      }
+      if ("neq" in ops) {
+        typedQuery = typedQuery.neq(field, ops.neq);
+      }
+      if ("lt" in ops) {
+        typedQuery = typedQuery.lt(field, ops.lt);
+      }
+      if ("lte" in ops) {
+        typedQuery = typedQuery.lte(field, ops.lte);
+      }
+      if ("gt" in ops) {
+        typedQuery = typedQuery.gt(field, ops.gt);
+      }
+      if ("gte" in ops) {
+        typedQuery = typedQuery.gte(field, ops.gte);
+      }
+      if ("in" in ops) {
+        typedQuery = typedQuery.in(field, ops.in as unknown[]);
+      }
+      if ("contains" in ops) {
+        typedQuery = typedQuery.contains(field, ops.contains as unknown[]);
+      }
     } else {
-      query = query.eq(field, condition);
+      typedQuery = typedQuery.eq(field, condition);
     }
   }
+  query = typedQuery;
 
   // Apply ordering
   if (queryDef.orderBy) {
@@ -169,7 +178,7 @@ async function executeQuery(
  */
 async function synthesizeResponse(
   originalQuery: string,
-  results: { table: string; records: unknown[] }[],
+  results: Array<{ table: string; records: unknown[] }>,
   plan: QueryPlan
 ): Promise<string> {
   // For simple queries, generate response directly
@@ -212,8 +221,7 @@ function generateEmptyResultResponse(intent: string): string {
   const responses: Record<string, string> = {
     find_struggling_vocabulary:
       "No vocabulary items are currently flagged as struggling. The student is doing well!",
-    find_struggling_grammar:
-      "No grammar concepts are currently causing difficulty.",
+    find_struggling_grammar: "No grammar concepts are currently causing difficulty.",
     find_due_for_review: "No items are currently due for review.",
     find_recent_sessions: "No recent sessions found for this language.",
     find_mastered_items: "No items have reached mastery level yet.",

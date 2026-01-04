@@ -20,6 +20,8 @@ import type {
   SessionType,
   ErrorPattern,
 } from "@/types/memory.types";
+
+import { getTransferableKnowledge } from "./cross-language";
 import {
   getMasteredVocabulary,
   getMasteredGrammar,
@@ -29,7 +31,6 @@ import {
   getGrammarStrugglePoints,
   getRecentSessions,
 } from "./realtime-queries";
-import { getTransferableKnowledge } from "./cross-language";
 
 export interface GenerateContextOptions {
   useCurriculum?: boolean;
@@ -38,8 +39,8 @@ export interface GenerateContextOptions {
   lessonId?: number;
   lessonTitle?: string;
   lessonLevel?: string;
-  lessonGrammar?: { name: string; explanation: string }[];
-  lessonVocabulary?: { term: string; translation: string }[];
+  lessonGrammar?: Array<{ name: string; explanation: string }>;
+  lessonVocabulary?: Array<{ term: string; translation: string }>;
 }
 
 /**
@@ -82,7 +83,7 @@ export async function generateLessonContext(
     user: {
       firstName: userProfile?.first_name || null,
       nativeLanguage: userProfile?.native_language || "English",
-      learnerProfile: learnerProfile,
+      learnerProfile,
     },
     languageProgress: buildLanguageProgressSection(languageProgress),
     recentSessions: buildRecentSessionsSection(recentSessions),
@@ -116,10 +117,7 @@ export async function generateLessonContext(
   }
 
   // Add cross-language advantage if applicable
-  if (
-    transferableKnowledge &&
-    transferableKnowledge.accelerationOpportunities.length > 0
-  ) {
+  if (transferableKnowledge && transferableKnowledge.accelerationOpportunities.length > 0) {
     context.crossLanguageAdvantage = {
       relatedLanguages: transferableKnowledge.relatedLanguages,
       transferableConcepts: transferableKnowledge.transferableConcepts.map(
@@ -194,9 +192,7 @@ function buildLanguageProgressSection(
   };
 }
 
-function buildRecentSessionsSection(
-  sessions: LessonSession[]
-): LessonContext["recentSessions"] {
+function buildRecentSessionsSection(sessions: LessonSession[]): LessonContext["recentSessions"] {
   const lastSession = sessions[0];
   const allHighlights: SessionHighlight[] = [];
   const conceptsCovered: string[] = [];
@@ -205,10 +201,7 @@ function buildRecentSessionsSection(
     if (session.highlights) {
       allHighlights.push(...(session.highlights as SessionHighlight[]));
     }
-    conceptsCovered.push(
-      ...session.vocabulary_introduced,
-      ...session.grammar_introduced
-    );
+    conceptsCovered.push(...session.vocabulary_introduced, ...session.grammar_introduced);
   }
 
   return {

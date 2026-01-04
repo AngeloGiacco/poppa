@@ -342,8 +342,8 @@ export interface LessonContext {
     lessonId: number;
     lessonTitle: string;
     lessonLevel: string;
-    lessonGrammar: { name: string; explanation: string }[];
-    lessonVocabulary: { term: string; translation: string }[];
+    lessonGrammar: Array<{ name: string; explanation: string }>;
+    lessonVocabulary: Array<{ term: string; translation: string }>;
   };
   crossLanguageAdvantage?: {
     relatedLanguages: string[];
@@ -386,10 +386,10 @@ export interface QueryDefinition {
 
 export interface NLQueryResult {
   answer: string;
-  sources: {
+  sources: Array<{
     table: string;
     records: unknown[];
-  }[];
+  }>;
   confidence: number;
 }
 

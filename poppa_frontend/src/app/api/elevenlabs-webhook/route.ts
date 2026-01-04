@@ -3,8 +3,8 @@ import { NextResponse } from "next/server";
 
 import crypto from "node:crypto";
 
-import supabaseClient from "@/lib/supabase";
 import { processSessionTranscript } from "@/lib/memory/session-processor";
+import supabaseClient from "@/lib/supabase";
 import type { TranscriptMessage } from "@/types/memory.types";
 
 const elevenLabsWebhookSecret = process.env.ELEVENLABS_WEBHOOK_SECRET;

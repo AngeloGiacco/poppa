@@ -4,11 +4,7 @@
  */
 
 import supabaseClient from "@/lib/supabase";
-import type {
-  LanguageFamily,
-  TransferableKnowledge,
-  GrammarMemory,
-} from "@/types/memory.types";
+import type { LanguageFamily, TransferableKnowledge, GrammarMemory } from "@/types/memory.types";
 
 /**
  * Language family definitions with shared concepts
@@ -57,12 +53,7 @@ export const languageFamilies: LanguageFamily[] = [
   {
     name: "East_Asian",
     languages: ["zho", "jpn", "kor"],
-    sharedConcepts: [
-      "topic_prominent",
-      "measure_words",
-      "honorifics",
-      "sentence_final_particles",
-    ],
+    sharedConcepts: ["topic_prominent", "measure_words", "honorifics", "sentence_final_particles"],
   },
   {
     name: "Semitic",
@@ -84,9 +75,7 @@ export async function getTransferableKnowledge(
   targetLanguage: string
 ): Promise<TransferableKnowledge | null> {
   // Find the language family for the target language
-  const targetFamily = languageFamilies.find((f) =>
-    f.languages.includes(targetLanguage)
-  );
+  const targetFamily = languageFamilies.find((f) => f.languages.includes(targetLanguage));
 
   if (!targetFamily) {
     return null;
@@ -116,7 +105,7 @@ export async function getTransferableKnowledge(
     .gt("mastery_level", 0.7)
     .in("concept_name", targetFamily.sharedConcepts);
 
-  const transferableConcepts = (masteredGrammar as GrammarMemory[]) || [];
+  const transferableConcepts = (masteredGrammar as unknown as GrammarMemory[]) || [];
 
   // Find acceleration opportunities
   const accelerationOpportunities = targetFamily.sharedConcepts.filter((c) =>
@@ -134,9 +123,7 @@ export async function getTransferableKnowledge(
  * Get the language family for a given language code
  */
 export function getLanguageFamily(languageCode: string): LanguageFamily | null {
-  return (
-    languageFamilies.find((f) => f.languages.includes(languageCode)) || null
-  );
+  return languageFamilies.find((f) => f.languages.includes(languageCode)) || null;
 }
 
 /**
@@ -170,9 +157,7 @@ export function getSharedConcepts(lang1: string, lang2: string): string[] {
 /**
  * Generate cross-language context for tutor prompt
  */
-export function generateCrossLanguagePrompt(
-  knowledge: TransferableKnowledge
-): string {
+export function generateCrossLanguagePrompt(knowledge: TransferableKnowledge): string {
   if (knowledge.accelerationOpportunities.length === 0) {
     return "";
   }
@@ -190,11 +175,9 @@ export function generateCrossLanguagePrompt(
   }
 
   lines.push("");
+  lines.push("Leverage their existing knowledge when introducing similar concepts.");
   lines.push(
-    "Leverage their existing knowledge when introducing similar concepts."
-  );
-  lines.push(
-    'For example: "Remember how in Spanish you use subjunctive after \'quiero que\'? This language works similarly..."'
+    "For example: \"Remember how in Spanish you use subjunctive after 'quiero que'? This language works similarly...\""
   );
 
   return lines.join("\n");
@@ -233,14 +216,10 @@ export async function getCrossLanguageRecommendations(
     .eq("user_id", userId)
     .eq("language_code", targetLanguage);
 
-  const learnedInTarget = new Set(
-    (targetGrammar || []).map((g) => g.concept_name)
-  );
+  const learnedInTarget = new Set((targetGrammar || []).map((g) => g.concept_name));
 
   // Find concepts that can be accelerated
-  const canAccelerate = knowledge.accelerationOpportunities.filter(
-    (c) => !learnedInTarget.has(c)
-  );
+  const canAccelerate = knowledge.accelerationOpportunities.filter((c) => !learnedInTarget.has(c));
 
   // These are ready to learn because student has foundation
   const readyToLearn = canAccelerate.slice(0, 3);

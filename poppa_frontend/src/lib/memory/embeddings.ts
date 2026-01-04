@@ -4,14 +4,36 @@
  */
 
 import supabaseClient from "@/lib/supabase";
-import type {
-  VocabularyMemory,
-  GrammarMemory,
-  LessonSession,
-} from "@/types/memory.types";
+import type { VocabularyMemory, GrammarMemory, LessonSession } from "@/types/memory.types";
 
-// OpenAI embedding model dimensions
-const EMBEDDING_DIMENSIONS = 1536;
+// Semantic search result types (partial matches from RPC functions)
+interface VocabSearchResult {
+  id: string;
+  term: string;
+  translation: string;
+  category: string | null;
+  mastery_level: number;
+  similarity: number;
+}
+
+interface GrammarSearchResult {
+  id: string;
+  concept_name: string;
+  concept_display: string;
+  category: string | null;
+  mastery_level: number;
+  similarity: number;
+}
+
+interface SessionSearchResult {
+  id: string;
+  started_at: string;
+  lesson_title: string | null;
+  transcript_summary: string | null;
+  vocabulary_introduced: string[];
+  grammar_introduced: string[];
+  similarity: number;
+}
 
 /**
  * Generate embeddings using OpenAI API
@@ -55,10 +77,12 @@ export async function embedVocabulary(
     .eq("term", term)
     .single();
 
-  if (!vocab) return;
+  if (!vocab) {
+    return;
+  }
 
   // Generate embedding from term + translation + category + examples
-  const textToEmbed = buildVocabEmbeddingText(vocab as VocabularyMemory);
+  const textToEmbed = buildVocabEmbeddingText(vocab as unknown as VocabularyMemory);
   const embedding = await generateEmbedding(textToEmbed);
 
   // Store embedding
@@ -84,9 +108,11 @@ export async function embedGrammar(
     .eq("concept_name", conceptName)
     .single();
 
-  if (!grammar) return;
+  if (!grammar) {
+    return;
+  }
 
-  const textToEmbed = buildGrammarEmbeddingText(grammar as GrammarMemory);
+  const textToEmbed = buildGrammarEmbeddingText(grammar as unknown as GrammarMemory);
   const embedding = await generateEmbedding(textToEmbed);
 
   await supabaseClient
@@ -105,9 +131,11 @@ export async function embedSession(sessionId: string): Promise<void> {
     .eq("id", sessionId)
     .single();
 
-  if (!session || !session.transcript_summary) return;
+  if (!session || !session.transcript_summary) {
+    return;
+  }
 
-  const textToEmbed = buildSessionEmbeddingText(session as LessonSession);
+  const textToEmbed = buildSessionEmbeddingText(session as unknown as LessonSession);
   const embedding = await generateEmbedding(textToEmbed);
 
   await supabaseClient
@@ -123,9 +151,9 @@ export async function searchVocabularySemantic(
   userId: string,
   languageCode: string,
   query: string,
-  limit: number = 10,
-  threshold: number = 0.7
-): Promise<(VocabularyMemory & { similarity: number })[]> {
+  limit = 10,
+  threshold = 0.7
+): Promise<VocabSearchResult[]> {
   const queryEmbedding = await generateEmbedding(query);
 
   const { data, error } = await supabaseClient.rpc("match_vocabulary", {
@@ -151,9 +179,9 @@ export async function searchGrammarSemantic(
   userId: string,
   languageCode: string,
   query: string,
-  limit: number = 10,
-  threshold: number = 0.7
-): Promise<(GrammarMemory & { similarity: number })[]> {
+  limit = 10,
+  threshold = 0.7
+): Promise<GrammarSearchResult[]> {
   const queryEmbedding = await generateEmbedding(query);
 
   const { data, error } = await supabaseClient.rpc("match_grammar", {
@@ -179,9 +207,9 @@ export async function searchSessionsSemantic(
   userId: string,
   languageCode: string,
   query: string,
-  limit: number = 5,
-  threshold: number = 0.7
-): Promise<(LessonSession & { similarity: number })[]> {
+  limit = 5,
+  threshold = 0.7
+): Promise<SessionSearchResult[]> {
   const queryEmbedding = await generateEmbedding(query);
 
   const { data, error } = await supabaseClient.rpc("match_sessions", {
@@ -207,8 +235,8 @@ export async function findSimilarVocabulary(
   userId: string,
   languageCode: string,
   term: string,
-  limit: number = 5
-): Promise<VocabularyMemory[]> {
+  limit = 5
+): Promise<VocabSearchResult[]> {
   // Get the embedding for the source term
   const { data: source } = await supabaseClient
     .from("vocabulary_memory")
@@ -236,7 +264,7 @@ export async function findSimilarVocabulary(
   }
 
   // Filter out the source term
-  return (data || []).filter((v: VocabularyMemory) => v.term !== term);
+  return (data || []).filter((v: VocabSearchResult) => v.term !== term);
 }
 
 /**
@@ -245,7 +273,7 @@ export async function findSimilarVocabulary(
 export async function batchEmbedVocabulary(
   userId: string,
   languageCode: string,
-  batchSize: number = 50
+  batchSize = 50
 ): Promise<{ processed: number; errors: number }> {
   let processed = 0;
   let errors = 0;
@@ -261,11 +289,13 @@ export async function batchEmbedVocabulary(
       .is("context_embedding", null)
       .range(offset, offset + batchSize - 1);
 
-    if (!batch || batch.length === 0) break;
+    if (!batch || batch.length === 0) {
+      break;
+    }
 
     for (const vocab of batch) {
       try {
-        const textToEmbed = buildVocabEmbeddingText(vocab as VocabularyMemory);
+        const textToEmbed = buildVocabEmbeddingText(vocab as unknown as VocabularyMemory);
         const embedding = await generateEmbedding(textToEmbed);
 
         await supabaseClient
@@ -300,10 +330,7 @@ function buildVocabEmbeddingText(vocab: VocabularyMemory): string {
   ];
 
   if (vocab.example_sentences && vocab.example_sentences.length > 0) {
-    parts.push(
-      "Examples: " +
-        vocab.example_sentences.map((e) => e.sentence).join("; ")
-    );
+    parts.push(`Examples: ${vocab.example_sentences.map((e) => e.sentence).join("; ")}`);
   }
 
   return parts.filter(Boolean).join(". ");
@@ -318,8 +345,7 @@ function buildGrammarEmbeddingText(grammar: GrammarMemory): string {
 
   if (grammar.example_sentences && grammar.example_sentences.length > 0) {
     parts.push(
-      "Examples: " +
-        grammar.example_sentences.map((e) => `${e.target} (${e.native})`).join("; ")
+      `Examples: ${grammar.example_sentences.map((e) => `${e.target} (${e.native})`).join("; ")}`
     );
   }
 

@@ -4,18 +4,18 @@
  */
 
 import Anthropic from "@anthropic-ai/sdk";
+
 import supabaseClient from "@/lib/supabase";
+import type { Json } from "@/types/database.types";
 import type {
   TranscriptMessage,
   TranscriptAnalysis,
   VocabularyEvent,
   GrammarEvent,
-  PerformanceMetrics,
-  SessionHighlight,
-  NextSessionRecommendations,
   LearningStyle,
   ConceptEventType,
 } from "@/types/memory.types";
+
 import { assessQualityFromEvent } from "./spaced-repetition";
 
 const anthropic = new Anthropic();
@@ -165,16 +165,16 @@ async function recordConceptEvents(
   sessionId: string,
   analysis: TranscriptAnalysis
 ): Promise<void> {
-  const events: {
+  const events: Array<{
     user_id: string;
     session_id: string;
     language_code: string;
     event_type: ConceptEventType;
     concept_type: "vocabulary" | "grammar";
     concept_identifier: string;
-    context: Record<string, unknown>;
+    context: Json;
     session_timestamp_seconds?: number;
-  }[] = [];
+  }> = [];
 
   for (const ve of analysis.vocabularyEvents) {
     events.push({
@@ -184,7 +184,7 @@ async function recordConceptEvents(
       event_type: ve.event_type,
       concept_type: "vocabulary",
       concept_identifier: ve.term,
-      context: ve.context || {},
+      context: (ve.context || {}) as Json,
       session_timestamp_seconds: ve.timestamp_seconds,
     });
   }
@@ -197,7 +197,7 @@ async function recordConceptEvents(
       event_type: ge.event_type,
       concept_type: "grammar",
       concept_identifier: ge.concept_name,
-      context: ge.context || {},
+      context: (ge.context || {}) as Json,
       session_timestamp_seconds: ge.timestamp_seconds,
     });
   }
@@ -323,10 +323,10 @@ async function updateSessionRecord(
       grammar_reviewed: analysis.grammarEvents
         .filter((e) => e.event_type === "reviewed" || e.event_type === "correct")
         .map((e) => e.concept_name),
-      performance_metrics: analysis.performanceMetrics,
-      highlights: analysis.highlights,
+      performance_metrics: analysis.performanceMetrics as unknown as Json,
+      highlights: analysis.highlights as unknown as Json,
       transcript_summary: analysis.summary,
-      next_session_recommendations: analysis.recommendations,
+      next_session_recommendations: analysis.recommendations as unknown as Json,
       updated_at: new Date().toISOString(),
     })
     .eq("id", sessionId);
@@ -412,17 +412,16 @@ export async function createLessonSession(params: {
     .select("id")
     .single();
 
-  if (error) throw error;
+  if (error) {
+    throw error;
+  }
   return { id: data.id };
 }
 
 /**
  * End a lesson session
  */
-export async function endLessonSession(
-  sessionId: string,
-  durationSeconds: number
-): Promise<void> {
+export async function endLessonSession(sessionId: string, durationSeconds: number): Promise<void> {
   await supabaseClient
     .from("lesson_sessions")
     .update({

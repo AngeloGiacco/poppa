@@ -7,12 +7,8 @@ import type {
   LessonContext,
   VocabSummary,
   GrammarSummary,
-  VocabWithErrors,
-  GrammarWithErrors,
   VocabularyMemory,
   GrammarMemory,
-  SessionHighlight,
-  ConceptReference,
   LearnerProfile,
 } from "@/types/memory.types";
 
@@ -29,26 +25,17 @@ export function buildTutorPrompt(context: LessonContext): string {
   sections.push(buildProgressSection(context));
 
   // Mastered Content Section
-  if (
-    context.masteredContent.vocabulary.length > 0 ||
-    context.masteredContent.grammar.length > 0
-  ) {
+  if (context.masteredContent.vocabulary.length > 0 || context.masteredContent.grammar.length > 0) {
     sections.push(buildMasteredContentSection(context));
   }
 
   // Items Due for Review
-  if (
-    context.dueForReview.vocabulary.length > 0 ||
-    context.dueForReview.grammar.length > 0
-  ) {
+  if (context.dueForReview.vocabulary.length > 0 || context.dueForReview.grammar.length > 0) {
     sections.push(buildReviewSection(context));
   }
 
   // Struggling Areas
-  if (
-    context.strugglingAreas.vocabulary.length > 0 ||
-    context.strugglingAreas.grammar.length > 0
-  ) {
+  if (context.strugglingAreas.vocabulary.length > 0 || context.strugglingAreas.grammar.length > 0) {
     sections.push(buildStrugglingSection(context));
   }
 
@@ -88,15 +75,11 @@ function buildStudentProfileSection(context: LessonContext): string {
     }
 
     if (user.learnerProfile.session_preferences.preferred_pace) {
-      lines.push(
-        `- Preferred Pace: ${user.learnerProfile.session_preferences.preferred_pace}`
-      );
+      lines.push(`- Preferred Pace: ${user.learnerProfile.session_preferences.preferred_pace}`);
     }
 
     if (user.learnerProfile.session_preferences.correction_style) {
-      lines.push(
-        `- Correction Style: ${user.learnerProfile.session_preferences.correction_style}`
-      );
+      lines.push(`- Correction Style: ${user.learnerProfile.session_preferences.correction_style}`);
     }
   }
 
@@ -118,9 +101,7 @@ function buildProgressSection(context: LessonContext): string {
   }
 
   if (languageProgress.lastPracticeAt) {
-    lines.push(
-      `- Last Practice: ${formatRelativeTime(languageProgress.lastPracticeAt)}`
-    );
+    lines.push(`- Last Practice: ${formatRelativeTime(languageProgress.lastPracticeAt)}`);
   }
 
   return lines.join("\n");
@@ -131,9 +112,7 @@ function buildMasteredContentSection(context: LessonContext): string {
   const lines = ["## What the Student Already Knows"];
 
   if (masteredContent.vocabulary.length > 0) {
-    lines.push(
-      `\n### Mastered Vocabulary (${masteredContent.vocabulary.length} items)`
-    );
+    lines.push(`\n### Mastered Vocabulary (${masteredContent.vocabulary.length} items)`);
     lines.push(formatVocabList(masteredContent.vocabulary.slice(0, 20)));
 
     if (masteredContent.vocabulary.length > 20) {
@@ -142,9 +121,7 @@ function buildMasteredContentSection(context: LessonContext): string {
   }
 
   if (masteredContent.grammar.length > 0) {
-    lines.push(
-      `\n### Mastered Grammar (${masteredContent.grammar.length} concepts)`
-    );
+    lines.push(`\n### Mastered Grammar (${masteredContent.grammar.length} concepts)`);
     lines.push(formatGrammarList(masteredContent.grammar));
   }
 
@@ -154,9 +131,7 @@ function buildMasteredContentSection(context: LessonContext): string {
 function buildReviewSection(context: LessonContext): string {
   const { dueForReview } = context;
   const lines = ["## Items Due for Review (Spaced Repetition)"];
-  lines.push(
-    "Try to naturally incorporate these into the conversation to reinforce learning."
-  );
+  lines.push("Try to naturally incorporate these into the conversation to reinforce learning.");
 
   if (dueForReview.vocabulary.length > 0) {
     lines.push("\n### Vocabulary to Review");
@@ -202,9 +177,7 @@ function buildStrugglingSection(context: LessonContext): string {
 
   if (strugglingAreas.patterns.length > 0) {
     lines.push("\n### Detected Error Patterns");
-    lines.push(
-      `The student consistently struggles with: ${strugglingAreas.patterns.join(", ")}`
-    );
+    lines.push(`The student consistently struggles with: ${strugglingAreas.patterns.join(", ")}`);
   }
 
   return lines.join("\n");
@@ -236,12 +209,12 @@ function buildRecentSessionSection(context: LessonContext): string {
 
 function buildCrossLanguageSection(context: LessonContext): string {
   const { crossLanguageAdvantage } = context;
-  if (!crossLanguageAdvantage) return "";
+  if (!crossLanguageAdvantage) {
+    return "";
+  }
 
   const lines = ["## Cross-Language Advantage"];
-  lines.push(
-    `Student has experience with: ${crossLanguageAdvantage.relatedLanguages.join(", ")}`
-  );
+  lines.push(`Student has experience with: ${crossLanguageAdvantage.relatedLanguages.join(", ")}`);
 
   if (crossLanguageAdvantage.accelerationOpportunities.length > 0) {
     lines.push("\nYou can leverage their existing knowledge of:");
@@ -249,7 +222,7 @@ function buildCrossLanguageSection(context: LessonContext): string {
       lines.push(`- ${concept}`);
     }
     lines.push(
-      '\nRefer to their previous language knowledge when introducing similar concepts. For example: "Remember how in Spanish you use subjunctive after \'quiero que\'? French works the same way..."'
+      "\nRefer to their previous language knowledge when introducing similar concepts. For example: \"Remember how in Spanish you use subjunctive after 'quiero que'? French works the same way...\""
     );
   }
 
@@ -283,7 +256,9 @@ function buildRecommendedFocusSection(context: LessonContext): string {
 
 function buildCurriculumSection(context: LessonContext): string {
   const { curriculum } = context;
-  if (!curriculum) return "";
+  if (!curriculum) {
+    return "";
+  }
 
   const lines = [
     `## Today's Lesson: ${curriculum.lessonTitle}`,
@@ -343,10 +318,18 @@ function formatRelativeTime(dateStr: string): string {
   const diffMs = now.getTime() - date.getTime();
   const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
 
-  if (diffDays === 0) return "today";
-  if (diffDays === 1) return "yesterday";
-  if (diffDays < 7) return `${diffDays} days ago`;
-  if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
+  if (diffDays === 0) {
+    return "today";
+  }
+  if (diffDays === 1) {
+    return "yesterday";
+  }
+  if (diffDays < 7) {
+    return `${diffDays} days ago`;
+  }
+  if (diffDays < 30) {
+    return `${Math.floor(diffDays / 7)} weeks ago`;
+  }
   return `${Math.floor(diffDays / 30)} months ago`;
 }
 
@@ -396,16 +379,12 @@ export function buildCompactPrompt(context: LessonContext): string {
 
   // Struggling areas (most important)
   if (context.strugglingAreas.vocabulary.length > 0) {
-    const terms = context.strugglingAreas.vocabulary
-      .slice(0, 5)
-      .map((v) => v.term);
+    const terms = context.strugglingAreas.vocabulary.slice(0, 5).map((v) => v.term);
     lines.push(`Struggling vocab: ${terms.join(", ")}`);
   }
 
   if (context.strugglingAreas.grammar.length > 0) {
-    const concepts = context.strugglingAreas.grammar
-      .slice(0, 3)
-      .map((g) => g.concept_display);
+    const concepts = context.strugglingAreas.grammar.slice(0, 3).map((g) => g.concept_display);
     lines.push(`Struggling grammar: ${concepts.join(", ")}`);
   }
 

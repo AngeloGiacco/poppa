@@ -53,7 +53,7 @@ export async function checkVocabularyHistory(
 export async function getVocabularyDueForReview(
   userId: string,
   languageCode: string,
-  limit: number = 10
+  limit = 10
 ): Promise<VocabularyMemory[]> {
   const { data } = await supabaseClient
     .from("vocabulary_memory")
@@ -64,7 +64,7 @@ export async function getVocabularyDueForReview(
     .order("next_review_at", { ascending: true })
     .limit(limit);
 
-  return (data as VocabularyMemory[]) || [];
+  return (data as unknown as VocabularyMemory[]) || [];
 }
 
 /**
@@ -73,7 +73,7 @@ export async function getVocabularyDueForReview(
 export async function getGrammarDueForReview(
   userId: string,
   languageCode: string,
-  limit: number = 5
+  limit = 5
 ): Promise<GrammarMemory[]> {
   const { data } = await supabaseClient
     .from("grammar_memory")
@@ -84,7 +84,7 @@ export async function getGrammarDueForReview(
     .order("next_review_at", { ascending: true })
     .limit(limit);
 
-  return (data as GrammarMemory[]) || [];
+  return (data as unknown as GrammarMemory[]) || [];
 }
 
 /**
@@ -108,7 +108,7 @@ export async function getReviewItems(
 export async function getGrammarStrugglePoints(
   userId: string,
   languageCode: string,
-  limit: number = 5
+  limit = 5
 ): Promise<GrammarMemory[]> {
   const { data } = await supabaseClient
     .from("grammar_memory")
@@ -120,7 +120,7 @@ export async function getGrammarStrugglePoints(
     .order("times_struggled", { ascending: false })
     .limit(limit);
 
-  return (data as GrammarMemory[]) || [];
+  return (data as unknown as GrammarMemory[]) || [];
 }
 
 /**
@@ -129,7 +129,7 @@ export async function getGrammarStrugglePoints(
 export async function getVocabularyStrugglePoints(
   userId: string,
   languageCode: string,
-  limit: number = 10
+  limit = 10
 ): Promise<VocabularyMemory[]> {
   const { data } = await supabaseClient
     .from("vocabulary_memory")
@@ -141,7 +141,7 @@ export async function getVocabularyStrugglePoints(
     .order("times_incorrect", { ascending: false })
     .limit(limit);
 
-  return (data as VocabularyMemory[]) || [];
+  return (data as unknown as VocabularyMemory[]) || [];
 }
 
 /**
@@ -160,21 +160,17 @@ export async function getLastSessionSummary(
     .limit(1)
     .single();
 
-  if (!data) return null;
+  if (!data) {
+    return null;
+  }
 
-  const session = data as LessonSession;
+  const session = data as unknown as LessonSession;
 
   return {
     date: session.started_at,
     summary: session.transcript_summary || "",
-    vocabularyCovered: [
-      ...session.vocabulary_introduced,
-      ...session.vocabulary_reviewed,
-    ],
-    grammarCovered: [
-      ...session.grammar_introduced,
-      ...session.grammar_reviewed,
-    ],
+    vocabularyCovered: [...session.vocabulary_introduced, ...session.vocabulary_reviewed],
+    grammarCovered: [...session.grammar_introduced, ...session.grammar_reviewed],
     highlights: session.highlights as SessionHighlight[],
   };
 }
@@ -185,7 +181,7 @@ export async function getLastSessionSummary(
 export async function getRecentSessions(
   userId: string,
   languageCode: string,
-  limit: number = 5
+  limit = 5
 ): Promise<LessonSession[]> {
   const { data } = await supabaseClient
     .from("lesson_sessions")
@@ -195,7 +191,7 @@ export async function getRecentSessions(
     .order("started_at", { ascending: false })
     .limit(limit);
 
-  return (data as LessonSession[]) || [];
+  return (data as unknown as LessonSession[]) || [];
 }
 
 /**
@@ -205,7 +201,7 @@ export async function getRelatedVocabulary(
   userId: string,
   languageCode: string,
   category: string,
-  limit: number = 5
+  limit = 5
 ): Promise<VocabularyMemory[]> {
   const { data } = await supabaseClient
     .from("vocabulary_memory")
@@ -216,7 +212,7 @@ export async function getRelatedVocabulary(
     .order("mastery_level", { ascending: false })
     .limit(limit);
 
-  return (data as VocabularyMemory[]) || [];
+  return (data as unknown as VocabularyMemory[]) || [];
 }
 
 /**
@@ -225,7 +221,7 @@ export async function getRelatedVocabulary(
 export async function getMasteredVocabulary(
   userId: string,
   languageCode: string,
-  limit: number = 50
+  limit = 50
 ): Promise<VocabularyMemory[]> {
   const { data } = await supabaseClient
     .from("vocabulary_memory")
@@ -236,7 +232,7 @@ export async function getMasteredVocabulary(
     .order("mastery_level", { ascending: false })
     .limit(limit);
 
-  return (data as VocabularyMemory[]) || [];
+  return (data as unknown as VocabularyMemory[]) || [];
 }
 
 /**
@@ -245,7 +241,7 @@ export async function getMasteredVocabulary(
 export async function getMasteredGrammar(
   userId: string,
   languageCode: string,
-  limit: number = 20
+  limit = 20
 ): Promise<GrammarMemory[]> {
   const { data } = await supabaseClient
     .from("grammar_memory")
@@ -256,7 +252,7 @@ export async function getMasteredGrammar(
     .order("mastery_level", { ascending: false })
     .limit(limit);
 
-  return (data as GrammarMemory[]) || [];
+  return (data as unknown as GrammarMemory[]) || [];
 }
 
 /**
@@ -270,7 +266,7 @@ export async function checkGrammarHistory(
   introduced: boolean;
   mastery: number;
   lastPracticed: string | null;
-  errorPatterns: { error: string; frequency: number }[];
+  errorPatterns: Array<{ error: string; frequency: number }>;
 }> {
   const { data: grammar } = await supabaseClient
     .from("grammar_memory")
@@ -293,7 +289,7 @@ export async function checkGrammarHistory(
     introduced: true,
     mastery: grammar.mastery_level,
     lastPracticed: grammar.last_reviewed_at,
-    errorPatterns: (grammar.error_patterns as { error: string; frequency: number }[]) || [],
+    errorPatterns: (grammar.error_patterns as Array<{ error: string; frequency: number }>) || [],
   };
 }
 
@@ -305,7 +301,7 @@ export async function getVocabularyByMastery(
   languageCode: string,
   minMastery: number,
   maxMastery: number,
-  limit: number = 20
+  limit = 20
 ): Promise<VocabularyMemory[]> {
   const { data } = await supabaseClient
     .from("vocabulary_memory")
@@ -317,5 +313,5 @@ export async function getVocabularyByMastery(
     .order("mastery_level", { ascending: true })
     .limit(limit);
 
-  return (data as VocabularyMemory[]) || [];
+  return (data as unknown as VocabularyMemory[]) || [];
 }

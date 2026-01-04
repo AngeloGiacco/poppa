@@ -3,8 +3,9 @@
  * Record concept events during lessons
  */
 
-import supabaseClient from "@/lib/supabase";
 import { assessQualityFromEvent } from "@/lib/memory/spaced-repetition";
+import supabaseClient from "@/lib/supabase";
+import type { Json } from "@/types/database.types";
 import type { RecordEventRequest } from "@/types/memory.types";
 
 export async function POST(req: Request) {
@@ -43,13 +44,15 @@ export async function POST(req: Request) {
         concept_type: conceptType,
         concept_id: conceptId,
         concept_identifier: conceptIdentifier,
-        context: context || {},
+        context: (context || {}) as Json,
         session_timestamp_seconds: sessionTimestampSeconds,
       })
       .select()
       .single();
 
-    if (eventError) throw eventError;
+    if (eventError) {
+      throw eventError;
+    }
 
     // Update the concept memory with spaced repetition
     const quality = assessQualityFromEvent(eventType, context);
@@ -83,10 +86,7 @@ export async function POST(req: Request) {
     return Response.json({ event, qualityScore: quality });
   } catch (error) {
     console.error("Record event error:", error);
-    return Response.json(
-      { error: "Failed to record concept event" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Failed to record concept event" }, { status: 500 });
   }
 }
 
@@ -97,13 +97,10 @@ export async function GET(req: Request) {
     const languageCode = searchParams.get("languageCode");
     const conceptType = searchParams.get("conceptType");
     const conceptIdentifier = searchParams.get("conceptIdentifier");
-    const limit = parseInt(searchParams.get("limit") || "20");
+    const limit = Number.parseInt(searchParams.get("limit") || "20", 10);
 
     if (!userId) {
-      return Response.json(
-        { error: "Missing required param: userId" },
-        { status: 400 }
-      );
+      return Response.json({ error: "Missing required param: userId" }, { status: 400 });
     }
 
     let query = supabaseClient
@@ -125,14 +122,13 @@ export async function GET(req: Request) {
 
     const { data, error } = await query;
 
-    if (error) throw error;
+    if (error) {
+      throw error;
+    }
 
     return Response.json({ events: data });
   } catch (error) {
     console.error("Get events error:", error);
-    return Response.json(
-      { error: "Failed to get concept events" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Failed to get concept events" }, { status: 500 });
   }
 }

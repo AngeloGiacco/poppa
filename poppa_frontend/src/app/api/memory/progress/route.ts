@@ -4,7 +4,6 @@
  */
 
 import supabaseClient from "@/lib/supabase";
-import type { LanguageProgress } from "@/types/memory.types";
 
 export async function GET(req: Request) {
   try {
@@ -13,10 +12,7 @@ export async function GET(req: Request) {
     const languageCode = searchParams.get("languageCode");
 
     if (!userId) {
-      return Response.json(
-        { error: "Missing required param: userId" },
-        { status: 400 }
-      );
+      return Response.json({ error: "Missing required param: userId" }, { status: 400 });
     }
 
     if (languageCode) {
@@ -28,7 +24,9 @@ export async function GET(req: Request) {
         .eq("language_code", languageCode)
         .single();
 
-      if (error && error.code !== "PGRST116") throw error;
+      if (error && error.code !== "PGRST116") {
+        throw error;
+      }
 
       return Response.json({ progress: data || null });
     } else {
@@ -39,16 +37,15 @@ export async function GET(req: Request) {
         .eq("user_id", userId)
         .order("last_practice_at", { ascending: false, nullsFirst: false });
 
-      if (error) throw error;
+      if (error) {
+        throw error;
+      }
 
       return Response.json({ progress: data || [] });
     }
   } catch (error) {
     console.error("Get progress error:", error);
-    return Response.json(
-      { error: "Failed to get language progress" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Failed to get language progress" }, { status: 500 });
   }
 }
 
@@ -85,7 +82,9 @@ export async function POST(req: Request) {
         .select()
         .single();
 
-      if (error) throw error;
+      if (error) {
+        throw error;
+      }
 
       return Response.json({ progress: data });
     } else {
@@ -100,15 +99,14 @@ export async function POST(req: Request) {
         .select()
         .single();
 
-      if (error) throw error;
+      if (error) {
+        throw error;
+      }
 
       return Response.json({ progress: data });
     }
   } catch (error) {
     console.error("Update progress error:", error);
-    return Response.json(
-      { error: "Failed to update language progress" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Failed to update language progress" }, { status: 500 });
   }
 }
