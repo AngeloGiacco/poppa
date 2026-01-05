@@ -4,7 +4,7 @@ import Stripe from "stripe";
 
 import supabaseClient from "@/lib/supabase";
 
-import stripeWebhookHandler from "../webhooks";
+import stripeWebhookHandler from "@/pages/api/stripe/webhooks";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 import type { MockRequest, MockResponse } from "node-mocks-http";
