@@ -6,11 +6,7 @@ import { X, PartyPopper } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
-import {
-  type Achievement,
-  getTierColor,
-  getTierGradient,
-} from "@/lib/achievements";
+import { type Achievement, getTierColor, getTierGradient } from "@/lib/achievements";
 import { Analytics } from "@/lib/analytics/posthog";
 import { cn } from "@/lib/utils";
 
@@ -68,11 +64,11 @@ export function AchievementUnlock({
   }, [achievement, autoHide, autoHideDelay]);
 
   return (
-    <div
-      role="dialog"
+    <dialog
+      open
       aria-modal="true"
       className={cn(
-        "fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm transition-all duration-300",
+        "fixed inset-0 z-50 flex items-center justify-center border-none bg-transparent p-0 transition-all duration-300 backdrop:bg-black/30 backdrop:backdrop-blur-sm",
         isVisible && !isLeaving ? "opacity-100" : "opacity-0"
       )}
       onClick={handleDismiss}
@@ -83,7 +79,6 @@ export function AchievementUnlock({
       }}
     >
       <div
-        role="document"
         className={cn(
           "relative mx-4 max-w-sm transform rounded-2xl bg-white p-6 shadow-2xl transition-all duration-300",
           isVisible && !isLeaving ? "scale-100" : "scale-95"
@@ -103,9 +98,7 @@ export function AchievementUnlock({
         <div className="flex flex-col items-center gap-4 text-center">
           <div className="flex items-center gap-2 text-[#8B4513]">
             <PartyPopper className="h-5 w-5" />
-            <span className="text-sm font-semibold uppercase tracking-wide">
-              {t("unlocked")}
-            </span>
+            <span className="text-sm font-semibold uppercase tracking-wide">{t("unlocked")}</span>
             <PartyPopper className="h-5 w-5" />
           </div>
 
@@ -125,12 +118,8 @@ export function AchievementUnlock({
           </div>
 
           <div>
-            <h3 className="text-xl font-bold text-[#8B4513]">
-              {t(achievement.titleKey)}
-            </h3>
-            <p className="mt-1 text-sm text-[#5D4037]/70">
-              {t(achievement.descriptionKey)}
-            </p>
+            <h3 className="text-xl font-bold text-[#8B4513]">{t(achievement.titleKey)}</h3>
+            <p className="mt-1 text-sm text-[#5D4037]/70">{t(achievement.descriptionKey)}</p>
           </div>
 
           <div
@@ -150,6 +139,6 @@ export function AchievementUnlock({
           </Button>
         </div>
       </div>
-    </div>
+    </dialog>
   );
 }

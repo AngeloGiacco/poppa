@@ -53,9 +53,7 @@ export function AchievementBadge({
         className={cn(
           "relative flex items-center justify-center rounded-full border-2",
           sizeClasses[size],
-          unlocked
-            ? getTierColor(achievement.tier)
-            : "bg-gray-100 border-gray-300 text-gray-400"
+          unlocked ? getTierColor(achievement.tier) : "border-gray-300 bg-gray-100 text-gray-400"
         )}
       >
         {unlocked && (
@@ -70,18 +68,11 @@ export function AchievementBadge({
       </div>
 
       <div className="text-center">
-        <p
-          className={cn(
-            "text-sm font-medium",
-            unlocked ? "text-[#8B4513]" : "text-gray-500"
-          )}
-        >
+        <p className={cn("text-sm font-medium", unlocked ? "text-[#8B4513]" : "text-gray-500")}>
           {t(achievement.titleKey)}
         </p>
         {size !== "sm" && (
-          <p className="text-xs text-[#5D4037]/60">
-            {t(achievement.descriptionKey)}
-          </p>
+          <p className="text-xs text-[#5D4037]/60">{t(achievement.descriptionKey)}</p>
         )}
       </div>
 
@@ -96,9 +87,7 @@ export function AchievementBadge({
               style={{ width: `${Math.min(progress, 100)}%` }}
             />
           </div>
-          <p className="mt-1 text-center text-xs text-gray-500">
-            {Math.round(progress)}%
-          </p>
+          <p className="mt-1 text-center text-xs text-gray-500">{Math.round(progress)}%</p>
         </div>
       )}
 
@@ -110,9 +99,7 @@ export function AchievementBadge({
         </p>
       )}
 
-      {unlocked && (
-        <TierBadge tier={achievement.tier} />
-      )}
+      {unlocked && <TierBadge tier={achievement.tier} />}
     </div>
   );
 }
@@ -130,7 +117,7 @@ function TierBadge({ tier }: { tier: AchievementTier }) {
   return (
     <span
       className={cn(
-        "absolute -top-1 -right-1 rounded-full px-1.5 py-0.5 text-[10px] font-bold uppercase",
+        "absolute -right-1 -top-1 rounded-full px-1.5 py-0.5 text-[10px] font-bold uppercase",
         getTierColor(tier)
       )}
     >

@@ -43,6 +43,10 @@ export const trackEvent = (eventName: string, properties?: Record<string, unknow
 };
 
 export const Analytics = {
+  track: (eventName: string, properties?: Record<string, unknown>) => {
+    trackEvent(eventName, properties);
+  },
+
   userSignedUp: (properties?: { email?: string; nativeLanguage?: string }) => {
     trackEvent("user_signed_up", properties);
   },

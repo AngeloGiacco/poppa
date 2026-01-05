@@ -75,7 +75,22 @@
       "ukr": "Ukrainian",
       "fas": "Persian",
       "fil": "Tagalog",
-      "urd": "Urdu"
+      "urd": "Urdu",
+      "spanish": "Spanish",
+      "french": "French",
+      "german": "German",
+      "italian": "Italian",
+      "japanese": "Japanese",
+      "chinese": "Chinese",
+      "korean": "Korean",
+      "portuguese": "Portuguese",
+      "arabic": "Arabic",
+      "russian": "Russian",
+      "hindi": "Hindi",
+      "dutch": "Dutch",
+      "swedish": "Swedish",
+      "greek": "Greek",
+      "turkish": "Turkish"
     },
     "header": {
       "lessonTitle": "{language} lesson"
@@ -560,5 +575,160 @@
     "languagesTitle": "Languages",
     "lessonsTitleSuffix": "Lessons",
     "noLessonsAvailable": "No lessons available for this language yet."
+  },
+  "Testimonials": {
+    "title": "Loved by Language Learners",
+    "subtitle": "See what our users are saying about their learning journey",
+    "learning": "Learning",
+    "lessons": "lessons",
+    "quotes": {
+      "sarah": "After years of failed apps and courses, Poppa's Thinking Method finally made Spanish click. I'm having real conversations after just 3 weeks!",
+      "michael": "The AI tutor adapts perfectly to my pace. It's like having a patient, brilliant teacher available 24/7. My Japanese has improved dramatically.",
+      "elena": "I've tried Duolingo, Babbel, and Rosetta Stone. Nothing comes close to actually speaking with Poppa. The Socratic method really works.",
+      "david": "As a busy professional, I love that I can practice German anytime. The voice-first approach means I'm actually learning to speak, not just read.",
+      "aisha": "Learning Arabic was always intimidating until I found Poppa. The way it guides you to discover patterns yourself is genuinely revolutionary."
+    }
+  },
+  "LanguageLanding": {
+    "nav": {
+      "login": "Log in",
+      "getStarted": "Get started"
+    },
+    "hero": {
+      "title": "Learn {language} with AI Voice Lessons",
+      "subtitle": "Master {language} through real voice conversations with an AI tutor. The Thinking Method helps you discover {language} naturally—no memorization needed.",
+      "cta": "Start Learning {language}",
+      "freeMinutes": "Start with 15 free minutes. No credit card required."
+    },
+    "benefits": {
+      "title": "Why Learn {language} with Poppa?",
+      "voiceFirst": {
+        "title": "Voice-First Learning",
+        "description": "Speak from day one. No typing, no flashcards—just natural conversation with your AI tutor."
+      },
+      "thinkingMethod": {
+        "title": "The Thinking Method",
+        "description": "Discover language patterns through guided questions. Our Socratic approach builds true understanding."
+      },
+      "personalized": {
+        "title": "Personalized Lessons",
+        "description": "Every lesson adapts to your level and interests. Your AI tutor remembers your progress."
+      },
+      "immediate": {
+        "title": "Immediate Feedback",
+        "description": "Get real-time pronunciation help and gentle corrections as you speak."
+      },
+      "noMemorization": {
+        "title": "No Memorization",
+        "description": "Stop drilling vocabulary lists. Learn words naturally through meaningful conversation."
+      },
+      "nativeContext": {
+        "title": "Native-Speaker Context",
+        "description": "Learn phrases and expressions that native speakers actually use."
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": {
+        "connect": {
+          "title": "Connect",
+          "description": "Click to start a voice conversation with your AI tutor"
+        },
+        "converse": {
+          "title": "Converse",
+          "description": "Speak naturally and your tutor responds in real-time"
+        },
+        "discover": {
+          "title": "Discover",
+          "description": "Learn patterns through guided Socratic questioning"
+        },
+        "progress": {
+          "title": "Progress",
+          "description": "Track your improvement and unlock achievements"
+        }
+      }
+    },
+    "whyPoppa": {
+      "title": "Why the Thinking Method Works",
+      "description": "Traditional apps have you memorize phrases and drill grammar. Poppa teaches you to think in {language} through guided discovery—the same way children naturally acquire language.",
+      "points": {
+        "noApps": "No gamification or points—just real learning",
+        "noFlashcards": "No flashcards or vocabulary drilling",
+        "noGrammar": "No memorizing grammar tables"
+      }
+    },
+    "cta": {
+      "title": "Start Your {language} Journey Today",
+      "subtitle": "Join thousands learning languages the natural way. Your first lesson is free.",
+      "button": "Get started for free"
+    }
+  },
+  "Compare": {
+    "nav": {
+      "login": "Log in",
+      "getStarted": "Get started"
+    },
+    "hero": {
+      "title": "Why Poppa is Different",
+      "subtitle": "See how the Thinking Method compares to traditional language learning apps"
+    },
+    "differentiators": {
+      "voiceFirst": {
+        "title": "Voice-First",
+        "description": "Real conversations, not multiple choice questions"
+      },
+      "thinkingMethod": {
+        "title": "Thinking Method",
+        "description": "Discover patterns instead of memorizing rules"
+      },
+      "noGameification": {
+        "title": "No Gamification",
+        "description": "Focus on learning, not collecting points"
+      },
+      "realConversation": {
+        "title": "Real Conversation",
+        "description": "AI tutor that adapts to your level in real-time"
+      }
+    },
+    "table": {
+      "feature": "Feature"
+    },
+    "features": {
+      "voiceConversation": "Real-time voice conversation",
+      "aiTutor": "AI tutor that adapts to you",
+      "socraticMethod": "Socratic teaching method",
+      "noMemorization": "No memorization required",
+      "adaptiveLessons": "Adaptive lesson difficulty",
+      "speakFromDayOne": "Speak from day one",
+      "naturalConversation": "Natural conversation practice",
+      "availableLanguages": "Available languages",
+      "freeMinutes": "Free trial minutes"
+    },
+    "whySwitch": {
+      "title": "Why Switch to Poppa?",
+      "reasons": {
+        "gamification": {
+          "title": "Tired of Gamification",
+          "description": "Points and streaks don't equal learning. Poppa focuses on real language acquisition through meaningful conversation."
+        },
+        "drilling": {
+          "title": "Done with Drilling",
+          "description": "Memorizing vocabulary lists doesn't help you speak. Our Thinking Method teaches you to construct sentences naturally."
+        },
+        "patterns": {
+          "title": "Discover Patterns",
+          "description": "Instead of memorizing rules, you'll discover how the language works through guided Socratic questioning."
+        },
+        "speaking": {
+          "title": "Actually Speak",
+          "description": "Most apps focus on reading and writing. Poppa is voice-first—you'll be speaking from your very first lesson."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to try a different approach?",
+      "subtitle": "Experience the Thinking Method with 15 free minutes. No credit card required.",
+      "button": "Start learning free"
+    }
   }
 }

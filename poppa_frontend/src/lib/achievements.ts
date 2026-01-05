@@ -154,9 +154,10 @@ export function getTierGradient(tier: AchievementTier): string {
   }
 }
 
-export function checkAchievementProgress(
-  stats: UserStats
-): { achieved: string[]; progress: Map<string, number> } {
+export function checkAchievementProgress(stats: UserStats): {
+  achieved: string[];
+  progress: Map<string, number>;
+} {
   const achieved: string[] = [];
   const progress = new Map<string, number>();
 

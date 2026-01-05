@@ -25,9 +25,7 @@ interface UnlockedAchievement {
 export function AchievementsDisplay() {
   const { user } = useAuth();
   const t = useTranslations("Achievements");
-  const [unlockedAchievements, setUnlockedAchievements] = useState<
-    UnlockedAchievement[]
-  >([]);
+  const [unlockedAchievements, setUnlockedAchievements] = useState<UnlockedAchievement[]>([]);
   const [progress, setProgress] = useState<Map<string, number>>(new Map());
   const [isLoading, setIsLoading] = useState(true);
   const [newAchievement, setNewAchievement] = useState<Achievement | null>(null);
@@ -37,10 +35,9 @@ export function AchievementsDisplay() {
       return;
     }
 
-    const { data: unnotified } = await supabaseBrowserClient.rpc(
-      "get_unnotified_achievements",
-      { p_user_id: user.id }
-    );
+    const { data: unnotified } = await supabaseBrowserClient.rpc("get_unnotified_achievements", {
+      p_user_id: user.id,
+    });
 
     if (unnotified && unnotified.length > 0) {
       const firstUnnotified = unnotified[0];
@@ -100,9 +97,7 @@ export function AchievementsDisplay() {
           .select("target_language")
           .eq("user_id", user.id);
 
-        const uniqueLanguages = new Set(
-          transcripts?.map((t) => t.target_language).filter(Boolean)
-        );
+        const uniqueLanguages = new Set(transcripts?.map((t) => t.target_language).filter(Boolean));
 
         if (stats) {
           const { progress: progressMap } = checkAchievementProgress({
@@ -151,10 +146,7 @@ export function AchievementsDisplay() {
   return (
     <>
       {newAchievement && (
-        <AchievementUnlock
-          achievement={newAchievement}
-          onDismiss={handleDismissNewAchievement}
-        />
+        <AchievementUnlock achievement={newAchievement} onDismiss={handleDismissNewAchievement} />
       )}
 
       <Card className="border-0 bg-white/80 shadow-md backdrop-blur-sm">
