@@ -2,8 +2,7 @@ import { createMocks } from "node-mocks-http";
 import Stripe from "stripe";
 
 import supabaseClient from "@/lib/supabase";
-
-import customerPortalHandler from "../customer-portal";
+import customerPortalHandler from "@/pages/api/stripe/customer-portal";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 import type { MockRequest, MockResponse } from "node-mocks-http";

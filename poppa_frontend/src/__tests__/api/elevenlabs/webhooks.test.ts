@@ -4,8 +4,7 @@ import { buffer } from "micro";
 import { createMocks } from "node-mocks-http";
 
 import supabaseClient from "@/lib/supabase";
-
-import elevenlabsWebhookHandler from "../webhooks";
+import elevenlabsWebhookHandler from "@/pages/api/elevenlabs/webhooks";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 import type { MockRequest, MockResponse } from "node-mocks-http";

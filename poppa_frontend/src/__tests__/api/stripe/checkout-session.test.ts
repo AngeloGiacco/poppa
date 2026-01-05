@@ -2,8 +2,7 @@ import { createMocks } from "node-mocks-http";
 import Stripe from "stripe";
 
 import supabaseClient from "@/lib/supabase";
-
-import checkoutSessionHandler from "../checkout-session";
+import checkoutSessionHandler from "@/pages/api/stripe/checkout-session";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 import type { MockRequest, MockResponse } from "node-mocks-http";
