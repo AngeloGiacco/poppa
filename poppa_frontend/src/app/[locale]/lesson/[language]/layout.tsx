@@ -1,5 +1,3 @@
-import { Public_Sans } from "next/font/google";
-
 import "./style.css";
 
 import ProtectedRoute from "@/components/ProtectedRoute";
@@ -7,13 +5,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 import type { Metadata } from "next";
-
-const publicSans = Public_Sans({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Poppa",
@@ -26,7 +17,7 @@ export default function LessonLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className={publicSans.className}>
+    <div className="font-sans">
       <ProtectedRoute>
         <TooltipProvider>
           {children}
