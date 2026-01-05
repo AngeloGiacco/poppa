@@ -1,5 +1,4 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 
 import { NextIntlClientProvider } from "next-intl";
@@ -11,8 +10,6 @@ import { AuthProvider } from "@/context/AuthContext";
 import { routing } from "@/i18n/routing";
 
 import type { Metadata } from "next";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Poppa - Learn Languages Naturally with AI Voice Tutoring",
@@ -85,7 +82,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={inter.className}>
+      <body className="font-sans antialiased">
         <AuthProvider>
           <AnalyticsProvider>
             <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
