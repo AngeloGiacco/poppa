@@ -6,11 +6,11 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig = {
   webpack(config) {
     config.module.rules.push({
-      test: /\.svg$/, // Look for .svg files
-      use: ["@svgr/webpack"], // Use @svgr/webpack to handle them
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
     });
 
-    return config; // Always return the modified config
+    return config;
   },
 };
 

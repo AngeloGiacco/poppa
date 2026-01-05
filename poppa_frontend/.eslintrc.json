@@ -238,6 +238,29 @@
   "overrides": [
     {
       "files": [
+        "src/pages/**/*.test.ts",
+        "src/pages/**/*.test.tsx",
+        "src/pages/**/*.spec.ts",
+        "src/pages/**/*.spec.tsx",
+        "src/pages/**/__tests__/**/*",
+        "src/app/**/*.test.ts",
+        "src/app/**/*.test.tsx",
+        "src/app/**/*.spec.ts",
+        "src/app/**/*.spec.tsx",
+        "src/app/**/__tests__/**/*"
+      ],
+      "rules": {
+        "no-restricted-syntax": [
+          "error",
+          {
+            "selector": "Program",
+            "message": "Test files must not be placed in src/pages/ or src/app/ directories. Move them to src/__tests__/ to prevent Next.js build errors."
+          }
+        ]
+      }
+    },
+    {
+      "files": [
         "**/__tests__/**/*",
         "**/*.test.ts",
         "**/*.test.tsx",
