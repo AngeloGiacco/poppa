@@ -1,4 +1,17 @@
 {
+	"name": "poppa",
+	"private": true,
+	"packageManager": "pnpm@9.6.0",
+	"scripts": {
+		"dev:web": "pnpm --filter poppa-frontend dev",
+		"dev:mobile": "pnpm --filter poppa-mobile start",
+		"build:web": "pnpm --filter poppa-frontend build",
+		"build:mobile:ios": "pnpm --filter poppa-mobile build:ios",
+		"build:mobile:android": "pnpm --filter poppa-mobile build:android",
+		"lint": "pnpm -r lint",
+		"test": "pnpm -r test",
+		"typecheck": "pnpm -r typecheck"
+	},
 	"dependencies": {
 		"braintrust": "^0.0.167",
 		"framer-motion": "^11.11.11",
