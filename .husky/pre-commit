@@ -1,0 +1,39 @@
+#!/bin/sh
+
+echo "Running pre-commit checks..."
+
+# Run lint-staged first for staged files
+echo "1/7 Running lint-staged (format & lint staged files)..."
+cd poppa_frontend && npx lint-staged && cd .. || exit 1
+
+# Run ESLint
+echo "2/7 Running ESLint..."
+pnpm --filter poppa-frontend lint || exit 1
+
+# Run format check
+echo "3/7 Running format check..."
+pnpm --filter poppa-frontend format:check || exit 1
+
+# Run TypeScript type check
+echo "4/7 Running TypeScript type check..."
+pnpm --filter poppa-frontend typecheck || exit 1
+
+# Run Knip (unused code detection)
+echo "5/7 Running Knip (unused code detection)..."
+pnpm --filter poppa-frontend knip || exit 1
+
+# Run tests
+echo "6/7 Running tests..."
+pnpm --filter poppa-frontend test || exit 1
+
+# Run build with fallback env vars (matching CI)
+echo "7/7 Running build..."
+NEXT_PUBLIC_SUPABASE_URL="${NEXT_PUBLIC_SUPABASE_URL:-https://placeholder.supabase.co}" \
+NEXT_PUBLIC_SUPABASE_ANON_KEY="${NEXT_PUBLIC_SUPABASE_ANON_KEY:-placeholder-key}" \
+NEXT_PUBLIC_ELEVENLABS_AGENT_ID="${NEXT_PUBLIC_ELEVENLABS_AGENT_ID:-placeholder-id}" \
+NEXT_PUBLIC_APP_URL="${NEXT_PUBLIC_APP_URL:-https://trypoppa.com}" \
+NEXT_PUBLIC_STRIPE_PRICE_ID_HOBBY="${NEXT_PUBLIC_STRIPE_PRICE_ID_HOBBY:-price_placeholder}" \
+NEXT_PUBLIC_STRIPE_PRICE_ID_PRO="${NEXT_PUBLIC_STRIPE_PRICE_ID_PRO:-price_placeholder}" \
+pnpm --filter poppa-frontend build || exit 1
+
+echo "All pre-commit checks passed!"
