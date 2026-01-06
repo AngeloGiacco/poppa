@@ -11,6 +11,7 @@
     "src/lib/curriculum/**"
   ],
   "ignoreDependencies": [
+    "lint-staged",
     "@svgr/webpack",
     "@testing-library/jest-dom",
     "@testing-library/react",

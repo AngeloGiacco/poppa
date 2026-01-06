@@ -10,12 +10,16 @@
 		"build:mobile:android": "pnpm --filter poppa-mobile build:android",
 		"lint": "pnpm -r lint",
 		"test": "pnpm -r test",
-		"typecheck": "pnpm -r typecheck"
+		"typecheck": "pnpm -r typecheck",
+		"prepare": "husky"
 	},
 	"dependencies": {
 		"braintrust": "^0.0.167",
 		"framer-motion": "^11.11.11",
 		"lucide-react": "^0.454.0",
 		"next-intl": "^3.24.0"
+	},
+	"devDependencies": {
+		"husky": "^9.1.7"
 	}
 }
