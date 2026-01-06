@@ -1,0 +1,93 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "save": "Save",
+    "continue": "Continue",
+    "back": "Back",
+    "next": "Next",
+    "done": "Done",
+    "close": "Close"
+  },
+  "auth": {
+    "login": "Log In",
+    "signup": "Sign Up",
+    "logout": "Log Out",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "forgotPassword": "Forgot Password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "signInWithGoogle": "Sign in with Google",
+    "orContinueWith": "Or continue with",
+    "errors": {
+      "invalidEmail": "Please enter a valid email address",
+      "passwordRequired": "Password is required",
+      "passwordMismatch": "Passwords do not match",
+      "loginFailed": "Login failed. Please check your credentials.",
+      "signupFailed": "Signup failed. Please try again."
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back",
+    "startLesson": "Start Lesson",
+    "continueLesson": "Continue Learning",
+    "selectLanguage": "Select a Language",
+    "learningLanguages": "Your Languages",
+    "addLanguage": "Add Language",
+    "credits": "Credits",
+    "stats": {
+      "streak": "Day Streak",
+      "totalLessons": "Total Lessons",
+      "totalMinutes": "Minutes Learned"
+    }
+  },
+  "lesson": {
+    "title": "Lesson",
+    "connecting": "Connecting...",
+    "connected": "Connected",
+    "disconnected": "Disconnected",
+    "startLesson": "Start Lesson",
+    "endLesson": "End Lesson",
+    "speaking": "Speaking...",
+    "listening": "Listening...",
+    "preparing": "Preparing your lesson..."
+  },
+  "chat": {
+    "errors": {
+      "agentUnavailable": {
+        "title": "Connection Error",
+        "description": "Unable to connect to the voice agent. Please try again."
+      },
+      "sessionSave": {
+        "title": "Save Error",
+        "description": "Failed to save your lesson progress."
+      },
+      "microphonePermission": {
+        "title": "Microphone Access Required",
+        "description": "Please allow microphone access to start your lesson."
+      }
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "nativeLanguage": "Native Language",
+    "subscription": "Subscription",
+    "settings": "Settings",
+    "notifications": "Notifications",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "version": "Version"
+  },
+  "onboarding": {
+    "selectNativeLanguage": "What's your native language?",
+    "selectTargetLanguage": "What language do you want to learn?",
+    "getStarted": "Get Started"
+  }
+}

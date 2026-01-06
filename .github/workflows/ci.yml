@@ -14,9 +14,6 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: poppa_frontend
 
     steps:
       - name: Checkout code
@@ -32,20 +29,16 @@ jobs:
         with:
           node-version: "20"
           cache: "pnpm"
-          cache-dependency-path: poppa_frontend/pnpm-lock.yaml
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --filter poppa-frontend...
 
       - name: Run ESLint
-        run: pnpm lint
+        run: pnpm --filter poppa-frontend lint
 
   format:
     name: Format
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: poppa_frontend
 
     steps:
       - name: Checkout code
@@ -61,20 +54,16 @@ jobs:
         with:
           node-version: "20"
           cache: "pnpm"
-          cache-dependency-path: poppa_frontend/pnpm-lock.yaml
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --filter poppa-frontend...
 
       - name: Check formatting
-        run: pnpm format:check
+        run: pnpm --filter poppa-frontend format:check
 
   typecheck:
     name: Type Check
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: poppa_frontend
 
     steps:
       - name: Checkout code
@@ -90,20 +79,16 @@ jobs:
         with:
           node-version: "20"
           cache: "pnpm"
-          cache-dependency-path: poppa_frontend/pnpm-lock.yaml
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --filter poppa-frontend...
 
       - name: Run TypeScript type check
-        run: pnpm typecheck
+        run: pnpm --filter poppa-frontend typecheck
 
   test:
     name: Test
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: poppa_frontend
 
     steps:
       - name: Checkout code
@@ -119,20 +104,16 @@ jobs:
         with:
           node-version: "20"
           cache: "pnpm"
-          cache-dependency-path: poppa_frontend/pnpm-lock.yaml
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --filter poppa-frontend...
 
       - name: Run tests
-        run: pnpm test
+        run: pnpm --filter poppa-frontend test
 
   knip:
     name: Knip
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: poppa_frontend
 
     steps:
       - name: Checkout code
@@ -148,21 +129,17 @@ jobs:
         with:
           node-version: "20"
           cache: "pnpm"
-          cache-dependency-path: poppa_frontend/pnpm-lock.yaml
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --filter poppa-frontend...
 
       - name: Run Knip
-        run: pnpm knip
+        run: pnpm --filter poppa-frontend knip
 
   build:
     name: Build
     runs-on: ubuntu-latest
     needs: [lint, format, typecheck, test, knip]
-    defaults:
-      run:
-        working-directory: poppa_frontend
 
     steps:
       - name: Checkout code
@@ -178,13 +155,12 @@ jobs:
         with:
           node-version: "20"
           cache: "pnpm"
-          cache-dependency-path: poppa_frontend/pnpm-lock.yaml
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --filter poppa-frontend...
 
       - name: Build
-        run: pnpm build
+        run: pnpm --filter poppa-frontend build
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co' }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key' }}
