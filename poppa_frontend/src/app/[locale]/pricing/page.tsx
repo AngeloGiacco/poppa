@@ -139,19 +139,14 @@ const PricingPage = () => {
           </p>
         </div>
 
-        {/* Features Grid */}
-        <div className="mx-auto mb-16 grid max-w-3xl grid-cols-2 gap-4 md:grid-cols-3">
+        {/* Features List */}
+        <div className="mx-auto mb-16 flex max-w-3xl flex-wrap items-center justify-center gap-x-6 gap-y-3">
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
             return (
-              <div
-                key={index}
-                className="flex items-center gap-3 rounded-xl bg-white/50 p-3 backdrop-blur-sm"
-              >
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#8B4513]/10">
-                  <IconComponent className="h-5 w-5 text-[#8B4513]" />
-                </div>
-                <span className="text-sm font-medium text-[#5D4037]">{feature.label}</span>
+              <div key={index} className="flex items-center gap-2 text-[#5D4037]/80">
+                <IconComponent className="h-4 w-4 text-[#8B4513]" />
+                <span className="text-sm">{feature.label}</span>
               </div>
             );
           })}
@@ -203,7 +198,6 @@ const PricingPage = () => {
 
                 <Button
                   onClick={() => handleSubscribe(plan.stripePriceId)}
-                  disabled={!plan.stripePriceId}
                   className={`w-full rounded-full py-6 text-lg font-semibold transition-all duration-300 ${
                     plan.popular
                       ? "bg-[#8B4513] text-white shadow-lg hover:bg-[#6D3611] hover:shadow-xl"
@@ -212,10 +206,6 @@ const PricingPage = () => {
                 >
                   Get Started
                 </Button>
-
-                {!plan.stripePriceId && (
-                  <p className="text-center text-xs text-red-500">Plan not available</p>
-                )}
               </CardContent>
             </Card>
           ))}

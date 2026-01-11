@@ -178,7 +178,10 @@
   },
   "HowItWorksPage": {
     "navigation": {
-      "backToHome": "← Back to Home"
+      "backToHome": "← Back to Home",
+      "pricing": "Pricing",
+      "login": "Log in",
+      "getStarted": "Get started"
     },
     "header": {
       "openSource": {
