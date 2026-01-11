@@ -3,9 +3,11 @@
 import Image from "next/image";
 
 import { motion } from "framer-motion";
+import { Brain, Target, Zap } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Footer } from "@/components/Footer";
+import { LanguageSelector } from "@/components/LanguageSelector";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "@/i18n/routing";
@@ -16,15 +18,47 @@ export default function HowItWorks() {
   return (
     <div className="flex min-h-screen flex-col bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]">
       {/* Navigation */}
-      <div className="absolute left-0 right-0 top-0 z-50 bg-[#FFF8E1]/50 px-6 py-4 backdrop-blur-sm">
-        <div className="mx-auto max-w-7xl">
-          <Button
-            variant="ghost"
-            asChild
-            className="text-[#8B4513] transition-colors duration-300 hover:bg-transparent hover:text-[#6D3611]"
-          >
-            <Link href="/">{t("navigation.backToHome")}</Link>
-          </Button>
+      <div className="fixed left-0 right-0 top-0 z-50 border-b border-[#8B4513]/5 bg-[#FFF8E1]/80 px-4 py-4 backdrop-blur-md sm:px-6">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row sm:gap-0">
+          <div className="flex items-center gap-8">
+            <Link href="/" className="flex items-center gap-2">
+              <Image
+                className="h-8 w-8 rounded-xl sm:h-10 sm:w-10"
+                src="/logo.svg"
+                alt="Poppa logo"
+                width={40}
+                height={40}
+                priority
+              />
+              <span className="text-xl font-bold text-[#8B4513]">Poppa</span>
+            </Link>
+            <nav className="hidden space-x-1 sm:flex">
+              <Button
+                asChild
+                variant="ghost"
+                className="text-sm text-[#5D4037] transition-colors duration-300 hover:bg-[#8B4513]/10 hover:text-[#8B4513]"
+              >
+                <Link href="/pricing">{t("navigation.pricing")}</Link>
+              </Button>
+            </nav>
+          </div>
+
+          <nav className="flex items-center space-x-2 sm:space-x-3">
+            <LanguageSelector />
+            <Button
+              asChild
+              variant="ghost"
+              className="text-sm text-[#5D4037] hover:bg-[#8B4513]/10 hover:text-[#8B4513]"
+            >
+              <Link href="/login">{t("navigation.login")}</Link>
+            </Button>
+            <Button
+              asChild
+              className="rounded-full bg-[#8B4513] px-5 text-sm text-white shadow-md transition-all duration-300 hover:bg-[#6D3611] hover:shadow-lg"
+            >
+              <Link href="/signup">{t("navigation.getStarted")}</Link>
+            </Button>
+          </nav>
         </div>
       </div>
 
@@ -35,7 +69,7 @@ export default function HowItWorks() {
         className="mx-auto max-w-7xl flex-grow px-6 pb-16 pt-32"
       >
         {/* Header */}
-        <motion.header className="mx-auto mb-20 max-w-3xl text-center">
+        <motion.header className="mx-auto mb-16 max-w-3xl text-center">
           <motion.div className="mb-8">
             <Link
               href="https://github.com/AngeloGiacco/poppa"
@@ -46,78 +80,55 @@ export default function HowItWorks() {
             </Link>
           </motion.div>
 
-          <div className="mb-6 flex items-center justify-center gap-4">
-            <div className="flex items-center gap-3">
-              <Image
-                className="h-16 w-16 rounded-2xl shadow-lg"
-                src="/logo.svg"
-                alt="Poppa logo"
-                width={64}
-                height={64}
-                priority
-              />
-              <span className="text-3xl font-bold text-[#8B4513]">poppa</span>
-            </div>
-          </div>
-          <h1 className="mb-6 text-3xl font-bold tracking-tight text-[#8B4513] sm:text-6xl">
+          <h1 className="mb-4 text-3xl font-bold tracking-tight text-[#8B4513] sm:text-5xl">
             {t("header.title")}
           </h1>
+          <p className="text-lg text-[#5D4037]/70">
+            Learn how Poppa uses the Thinking Method to help you learn languages naturally.
+          </p>
         </motion.header>
 
         {/* Cards */}
-        <div className="space-y-12">
-          <Card className="rounded-2xl border-0 bg-white/80 shadow-lg backdrop-blur-sm transition-shadow duration-300 hover:shadow-xl">
-            <CardContent className="p-8">
-              <div className="mb-6 flex items-start space-x-4">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#8B4513]/10">
-                  <span className="text-2xl">🧠</span>
-                </div>
-                <h2 className="text-2xl font-semibold text-[#8B4513]">
-                  {t("sections.socraticMethod.title")}
-                </h2>
+        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
+          <Card className="overflow-hidden rounded-2xl border-0 bg-white/60 shadow-sm backdrop-blur-sm transition-shadow duration-300 hover:shadow-md">
+            <CardContent className="p-6">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#8B4513]/10">
+                <Brain className="h-6 w-6 text-[#8B4513]" />
               </div>
-              <p className="mb-4 text-[#5D4037]">{t("sections.socraticMethod.description1")}</p>
-              <p className="text-[#5D4037]">{t("sections.socraticMethod.description2")}</p>
+              <h2 className="mb-2 text-lg font-semibold text-[#8B4513]">
+                {t("sections.socraticMethod.title")}
+              </h2>
+              <p className="text-sm leading-relaxed text-[#5D4037]/70">
+                {t("sections.socraticMethod.description1")}
+              </p>
             </CardContent>
           </Card>
 
-          <div className="relative">
-            <div className="absolute inset-0 rotate-2 transform rounded-3xl bg-gradient-to-r from-[#8B4513]/5 to-[#8B4513]/10" />
-            <Card className="relative rounded-2xl border-0 bg-white/80 shadow-lg backdrop-blur-sm transition-shadow duration-300 hover:shadow-xl">
-              <CardContent className="p-8">
-                <div className="mb-6 flex items-start space-x-4">
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#8B4513]/10">
-                    <span className="text-2xl">⚡</span>
-                  </div>
-                  <h2 className="text-2xl font-semibold text-[#8B4513]">
-                    {t("sections.tech.title")}
-                  </h2>
-                </div>
-                <p className="mb-4 text-[#5D4037]">{t("sections.tech.description1")}</p>
-                <p className="text-[#5D4037]">{t("sections.tech.description2")}</p>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Card className="rounded-2xl border-0 bg-white/80 shadow-lg backdrop-blur-sm transition-shadow duration-300 hover:shadow-xl">
-            <CardContent className="p-8">
-              <div className="mb-6 flex items-start space-x-4">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#8B4513]/10">
-                  <span className="text-2xl">🎯</span>
-                </div>
-                <h2 className="text-2xl font-semibold text-[#8B4513]">
-                  {t("sections.personalizedLearning.title")}
-                </h2>
+          <Card className="overflow-hidden rounded-2xl border-0 bg-white/60 shadow-sm backdrop-blur-sm transition-shadow duration-300 hover:shadow-md">
+            <CardContent className="p-6">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#8B4513]/10">
+                <Zap className="h-6 w-6 text-[#8B4513]" />
               </div>
-              <p className="mb-4 text-[#5D4037]">
+              <h2 className="mb-2 text-lg font-semibold text-[#8B4513]">
+                {t("sections.tech.title")}
+              </h2>
+              <p className="text-sm leading-relaxed text-[#5D4037]/70">
+                {t("sections.tech.description1")}
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="overflow-hidden rounded-2xl border-0 bg-white/60 shadow-sm backdrop-blur-sm transition-shadow duration-300 hover:shadow-md">
+            <CardContent className="p-6">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#8B4513]/10">
+                <Target className="h-6 w-6 text-[#8B4513]" />
+              </div>
+              <h2 className="mb-2 text-lg font-semibold text-[#8B4513]">
+                {t("sections.personalizedLearning.title")}
+              </h2>
+              <p className="text-sm leading-relaxed text-[#5D4037]/70">
                 {t("sections.personalizedLearning.description1")}
               </p>
-              <ul className="mb-4 list-inside list-disc text-[#5D4037]">
-                <li>{t("sections.personalizedLearning.benefits.0")}</li>
-                <li>{t("sections.personalizedLearning.benefits.1")}</li>
-                <li>{t("sections.personalizedLearning.benefits.2")}</li>
-              </ul>
-              <p className="text-[#5D4037]">{t("sections.personalizedLearning.description2")}</p>
             </CardContent>
           </Card>
         </div>
