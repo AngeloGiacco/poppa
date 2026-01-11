@@ -1,5 +1,7 @@
-import { routing } from "../routing";
 import { config } from "../../middleware";
+import { routing } from "../routing";
+
+type Locale = (typeof routing.locales)[number];
 
 describe("middleware i18n configuration", () => {
   it("should have a matcher pattern that includes all routing locales", () => {
@@ -17,14 +19,12 @@ describe("middleware i18n configuration", () => {
     const matcherLocales = new Set(match![1].split("|"));
 
     // Check that all routing locales are in the matcher
-    const missingFromMatcher = [...routingLocales].filter(
-      (locale) => !matcherLocales.has(locale)
-    );
+    const missingFromMatcher = [...routingLocales].filter((locale) => !matcherLocales.has(locale));
     expect(missingFromMatcher).toEqual([]);
 
     // Check that all matcher locales are in routing (no stale locales)
     const extraInMatcher = [...matcherLocales].filter(
-      (locale) => !routingLocales.has(locale)
+      (locale) => !routingLocales.has(locale as Locale)
     );
     expect(extraInMatcher).toEqual([]);
   });
