@@ -107,16 +107,17 @@ export default function HowItWorks() {
           transition={{ duration: 0.6 }}
         >
           <div className="mx-auto max-w-4xl text-center">
-            <Link
+            <a
               href="https://github.com/AngeloGiacco/poppa"
               target="_blank"
+              rel="noopener noreferrer"
               className="mb-8 inline-flex items-center gap-2 rounded-full bg-warm-100 px-4 py-2 text-sm text-warm-700 transition-colors hover:bg-warm-200"
             >
               <span>👐</span>
               <span>{t("header.openSource.badge")}</span>
               <span className="font-medium">{t("header.openSource.link")}</span>
               <ArrowRight className="h-3 w-3" />
-            </Link>
+            </a>
 
             <h1 className="mb-6 text-4xl font-normal tracking-tight text-warm-700 sm:text-5xl lg:text-6xl">
               {t("header.title")}

@@ -205,9 +205,12 @@
         "badge": "🌟 We're open source!",
         "link": "Check us out on GitHub →"
       },
-      "title": "How poppa works"
+      "title": "How poppa works",
+      "subtitle": "Discover how Poppa uses the Thinking Method and cutting-edge AI to help you learn languages naturally through voice conversations."
     },
     "sections": {
+      "title": "What makes Poppa different",
+      "subtitle": "Three pillars of effective language learning",
       "socraticMethod": {
         "title": "The Socratic Method",
         "description1": "Poppa uses the time-tested \"Socratic Method\" to help you learn languages naturally and effectively. Instead of memorizing vocabulary lists or grammar rules, we guide you through thoughtful questions that help you discover and internalize the language.",
@@ -215,12 +218,12 @@
       },
       "tech": {
         "title": "The Tech",
-        "description1": "Poppa is built on top of ElevenLabs (elevenlabs.io). We use ElevenLabs Conversational AI platform to power our AI tutor to speak 32 languages and improve over time.",
+        "description1": "Poppa is built on top of ElevenLabs Agents (elevenlabs.io). We use ElevenLabs Agents to power our AI tutor to speak 32 languages and improve over time.",
         "description2": "🌟 We believe in open source. Poppa is fully open source so if you don't want to pay us a cent you don't have to. Check us out on github: github.com/angelogiacco/poppa"
       },
       "personalizedLearning": {
         "title": "The End Result: Personalized Learning",
-        "description1": "Every lesson you take with Poppa is transcribed and stored, creating a comprehensive record of your learning journey. This allows us to:",
+        "description1": "Every lesson you take with Poppa is transcribed and stored, creating a comprehensive record of your learning journey. This allows us to tailor each lesson to your unique progress.",
         "benefits": [
           "Track your progress and tailor future lessons to your needs",
           "Implement spaced repetition to reinforce what you've learned",
@@ -228,6 +231,32 @@
         ],
         "description2": "Your personalized learning path evolves with you, ensuring that you're always challenged at the right level and revisiting important concepts at optimal intervals for retention."
       }
+    },
+    "process": {
+      "title": "The learning process"
+    },
+    "steps": {
+      "listen": {
+        "title": "Listen",
+        "description": "Your AI tutor guides you with clear explanations and examples in your target language."
+      },
+      "think": {
+        "title": "Think",
+        "description": "Discover patterns through guided questions—no memorization needed, just understanding."
+      },
+      "speak": {
+        "title": "Speak",
+        "description": "Practice speaking naturally with real-time feedback and gentle corrections."
+      },
+      "grow": {
+        "title": "Grow",
+        "description": "Track your progress as lessons adapt to your level and build on what you've learned."
+      }
+    },
+    "cta": {
+      "title": "Ready to start learning?",
+      "description": "Begin your language learning journey with Poppa today. Your first lesson is free.",
+      "button": "Get started for free"
     }
   },
   "LoginPage": {
