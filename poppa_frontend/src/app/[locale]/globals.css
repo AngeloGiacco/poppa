@@ -4,35 +4,35 @@
 
 @layer base {
   :root {
-    /* Phosphor-inspired design tokens */
-    --background: 36 33% 96%;
-    --foreground: 90 18% 24%;
-    --card: 36 33% 98%;
-    --card-foreground: 90 18% 24%;
-    --popover: 36 33% 98%;
-    --popover-foreground: 90 18% 24%;
-    --primary: 90 12% 37%;
-    --primary-foreground: 36 33% 96%;
-    --secondary: 36 23% 88%;
-    --secondary-foreground: 90 18% 24%;
-    --muted: 36 23% 92%;
-    --muted-foreground: 90 10% 45%;
-    --accent: 36 23% 88%;
-    --accent-foreground: 90 18% 24%;
+    /* Warm, welcoming design tokens */
+    --background: 38 60% 97%;
+    --foreground: 30 8% 30%;
+    --card: 38 55% 98%;
+    --card-foreground: 30 8% 30%;
+    --popover: 38 55% 98%;
+    --popover-foreground: 30 8% 30%;
+    --primary: 28 45% 45%;
+    --primary-foreground: 38 60% 97%;
+    --secondary: 38 35% 90%;
+    --secondary-foreground: 30 8% 30%;
+    --muted: 38 30% 93%;
+    --muted-foreground: 30 6% 50%;
+    --accent: 38 35% 90%;
+    --accent-foreground: 30 8% 30%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 36 20% 85%;
-    --input: 36 20% 85%;
-    --ring: 90 12% 37%;
-    --chart-1: 90 30% 45%;
-    --chart-2: 36 40% 55%;
-    --chart-3: 90 15% 35%;
-    --chart-4: 36 30% 65%;
-    --chart-5: 90 20% 55%;
+    --border: 38 25% 88%;
+    --input: 38 25% 88%;
+    --ring: 28 45% 45%;
+    --chart-1: 28 40% 50%;
+    --chart-2: 38 45% 60%;
+    --chart-3: 28 30% 40%;
+    --chart-4: 38 35% 70%;
+    --chart-5: 28 25% 55%;
     --radius: 0.75rem;
-    --dialog-background: 36 33% 98%;
-    --dialog-foreground: 90 18% 24%;
-    --dialog-border: 36 20% 85%;
+    --dialog-background: 38 55% 98%;
+    --dialog-foreground: 30 8% 30%;
+    --dialog-border: 38 25% 88%;
     --dialog-overlay: 0 0% 0%;
   }
 
@@ -86,11 +86,11 @@
 
 @layer components {
   .phosphor-btn {
-    @apply inline-flex items-center gap-2 rounded-full border border-olive-300 bg-transparent px-5 py-2.5 text-sm font-medium text-olive-700 transition-all duration-200 hover:border-olive-400 hover:bg-olive-50;
+    @apply inline-flex items-center gap-2 rounded-full border border-olive-300 bg-transparent px-5 py-2.5 text-sm font-medium text-olive-700 transition-all duration-200 hover:border-warm-400 hover:bg-warm-50;
   }
 
   .phosphor-btn-primary {
-    @apply inline-flex items-center gap-2 rounded-full border border-olive-600 bg-olive-600 px-5 py-2.5 text-sm font-medium text-cream-50 transition-all duration-200 hover:border-olive-700 hover:bg-olive-700;
+    @apply inline-flex items-center gap-2 rounded-full border border-warm-600 bg-warm-600 px-5 py-2.5 text-sm font-medium text-cream-50 transition-all duration-200 hover:border-warm-700 hover:bg-warm-700;
   }
 
   .phosphor-link {
