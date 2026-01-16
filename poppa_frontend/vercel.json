@@ -2,6 +2,5 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "installCommand": "pnpm install",
-  "buildCommand": "pnpm build",
-  "ignoreCommand": "git diff HEAD^ HEAD --quiet ."
+  "buildCommand": "pnpm build"
 }
