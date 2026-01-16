@@ -31,25 +31,25 @@ export default function Login() {
   }
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-[#FFF8E1] to-[#FFF3E0]">
-      <div className="absolute left-0 right-0 top-0 bg-[#FFF8E1]/50 px-6 py-4 backdrop-blur-sm">
+    <div className="relative flex min-h-screen flex-col bg-cream-100">
+      <div className="absolute left-0 right-0 top-0 bg-cream-100/80 px-6 py-4 backdrop-blur-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between">
           <Link
             href="/"
-            className="flex items-center gap-2 text-[#8B4513] transition-colors duration-300 hover:text-[#6D3611]"
+            className="flex items-center gap-2 text-olive-600 transition-colors duration-300 hover:text-olive-800"
           >
             <span>←</span> {t("navigation.backToHome")}
           </Link>
           <Link
             href="/signup"
-            className="font-medium text-[#8B4513] transition-colors duration-300 hover:text-[#6D3611]"
+            className="font-medium text-olive-600 transition-colors duration-300 hover:text-olive-800"
           >
             {t("navigation.signup")}
           </Link>
         </div>
       </div>
 
-      <div className="mx-auto max-w-md px-4 pb-16 pt-32">
+      <div className="mx-auto flex flex-1 flex-col justify-center px-4 pb-16 pt-24">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -65,24 +65,25 @@ export default function Login() {
               height={64}
               priority
             />
-            <span className="text-3xl font-bold text-[#8B4513]">poppa</span>
+            <span className="text-3xl font-bold text-warm-700">poppa</span>
           </div>
-          <h1 className="mb-2 text-4xl font-bold text-[#8B4513]">{t("title")}</h1>
-          <p className="text-lg text-[#5D4037]/80">{t("subtitle")}</p>
+          <h1 className="mb-2 text-4xl font-bold text-olive-800">{t("title")}</h1>
+          <p className="text-lg text-olive-600/80">{t("subtitle")}</p>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
+          className="mx-auto w-full max-w-md"
         >
-          <div className="rounded-2xl bg-white/80 p-8 shadow-lg backdrop-blur-sm">
+          <div className="rounded-2xl border border-cream-200/60 bg-cream-50/80 p-8 shadow-lg backdrop-blur-sm">
             <LoginForm />
           </div>
         </motion.div>
       </div>
 
-      <Footer className="absolute bottom-0 w-full" />
+      <Footer />
     </div>
   );
 }

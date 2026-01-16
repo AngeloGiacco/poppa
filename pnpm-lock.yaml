@@ -163,7 +163,7 @@ importers:
         specifier: ^6.6.0
         version: 6.6.0
       stripe:
-        specifier: ^18.1.1
+        specifier: 18.5.0
         version: 18.5.0(@types/node@20.19.27)
       tailwind-merge:
         specifier: ^2.5.2
