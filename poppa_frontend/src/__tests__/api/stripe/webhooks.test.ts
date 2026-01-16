@@ -13,7 +13,7 @@ jest.mock("micro", () => ({
   buffer: jest.fn(),
 }));
 
-const mockStripe = new Stripe("sk_test_mock", { apiVersion: "2025-04-30.basil" });
+const mockStripe = new Stripe("sk_test_mock", { apiVersion: "2025-08-27.basil" });
 
 describe("/api/stripe/webhooks API Endpoint", () => {
   let mockReq: MockRequest<NextApiRequest>;
