@@ -1,9 +1,12 @@
 {
   "common": {
     "footer": {
-      "copyright": "© {year} Poppa. Crafted with care by Naxos Labs."
+      "copyright": "© {year} Poppa. Crafted with care by Naxos Labs.",
+      "pricing": "Pricing",
+      "howItWorks": "How it works"
     },
     "languages": {
+      "languagesAvailable": "languages available",
       "GB": "English",
       "CN": "Chinese",
       "JP": "Japanese",
@@ -113,7 +116,21 @@
       "subtitle": "poppa guides you step by step through learning a new language with voice-only tutoring"
     },
     "languagesSection": {
-      "title": "Languages we speak"
+      "title": "Languages we speak",
+      "viewAll": "View all 50+ languages"
+    },
+    "quickLinks": {
+      "startLearning": "Start learning now",
+      "allLanguages": "Browse all 50+ languages",
+      "howItWorks": "See how it works",
+      "github": "View on GitHub",
+      "faq": "Frequently asked questions",
+      "contact": "Get in touch"
+    },
+    "finalCta": {
+      "title": "Ready to start your language journey?",
+      "description": "Join thousands of learners discovering the joy of conversational language learning with the Thinking Method.",
+      "button": "Get started for free"
     },
     "whyPoppa": {
       "title": "Why Poppa?",
