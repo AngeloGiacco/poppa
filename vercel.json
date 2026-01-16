@@ -1,8 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
-  "installCommand": "cd poppa_frontend && pnpm install",
-  "buildCommand": "cd poppa_frontend && pnpm build",
-  "outputDirectory": "poppa_frontend/.next",
-  "ignoreCommand": "git diff HEAD^ HEAD --quiet -- poppa_frontend/"
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm build",
+  "ignoreCommand": "git diff HEAD^ HEAD --quiet ."
 }
