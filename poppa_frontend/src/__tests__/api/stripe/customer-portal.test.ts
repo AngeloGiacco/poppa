@@ -7,7 +7,7 @@ import customerPortalHandler from "@/pages/api/stripe/customer-portal";
 import type { NextApiRequest, NextApiResponse } from "next";
 import type { MockRequest, MockResponse } from "node-mocks-http";
 
-const mockStripe = new Stripe("sk_test_mock", { apiVersion: "2025-08-27.basil" });
+const mockStripe = new Stripe("sk_test_mock", { apiVersion: "2025-04-30.basil" });
 
 describe("/api/stripe/customer-portal API Endpoint", () => {
   let mockReq: MockRequest<NextApiRequest>;

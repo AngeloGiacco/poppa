@@ -7,7 +7,7 @@ import checkoutSessionHandler from "@/pages/api/stripe/checkout-session";
 import type { NextApiRequest, NextApiResponse } from "next";
 import type { MockRequest, MockResponse } from "node-mocks-http";
 
-const mockStripe = new Stripe("sk_test_mock", { apiVersion: "2025-08-27.basil" });
+const mockStripe = new Stripe("sk_test_mock", { apiVersion: "2025-04-30.basil" });
 
 describe("/api/stripe/checkout-session API Endpoint", () => {
   let mockReq: MockRequest<NextApiRequest>;
