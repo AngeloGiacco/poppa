@@ -6,6 +6,9 @@ import {
   progressFromLessonHistory,
 } from "@/lib/curriculum/lesson-generator";
 import { generateThinkingMethodInstruction } from "@/lib/lesson-utils";
+import { generateLessonContext } from "@/lib/memory/context-generator";
+import { buildTutorPrompt } from "@/lib/memory/prompt-builder";
+import { createLessonSession } from "@/lib/memory/session-processor";
 import supabaseClient from "@/lib/supabase";
 import type { Tables } from "@/types/database.types";
 
@@ -19,6 +22,7 @@ interface GenerateLessonRequest {
   lessonId?: number;
   userId?: string;
   completedLessonIds?: number[];
+  useMemory?: boolean;
 }
 
 export async function POST(req: Request) {
@@ -31,6 +35,7 @@ export async function POST(req: Request) {
       lessonId,
       userId,
       completedLessonIds,
+      useMemory,
     }: GenerateLessonRequest = await req.json();
 
     // First, get the language ID from the languages table
@@ -45,6 +50,34 @@ export async function POST(req: Request) {
     }
     if (!languageData) {
       throw new Error("Language not found");
+    }
+
+    // Generate memory context if userId is provided and memory is enabled
+    let memoryContext = "";
+    let sessionId: string | undefined;
+
+    if (useMemory && userId) {
+      try {
+        const context = await generateLessonContext(userId, languageCode, {
+          useCurriculum,
+          customTopic,
+          lessonId,
+        });
+        memoryContext = buildTutorPrompt(context);
+
+        // Create a new lesson session
+        const session = await createLessonSession({
+          userId,
+          languageCode,
+          sessionType: "lesson",
+          curriculumLessonId: lessonId,
+          customTopic,
+        });
+        sessionId = session.id;
+      } catch (error) {
+        console.error("Error generating memory context:", error);
+        // Continue without memory context
+      }
     }
 
     // If curriculum mode is enabled, try to use structured curriculum
@@ -62,12 +95,18 @@ export async function POST(req: Request) {
       );
 
       if (curriculumResult.hasCurriculum) {
+        // Append memory context if available
+        const fullInstruction = memoryContext
+          ? `${curriculumResult.instruction}\n\n--- STUDENT MEMORY ---\n${memoryContext}`
+          : curriculumResult.instruction;
+
         return Response.json({
-          instruction: curriculumResult.instruction,
+          instruction: fullInstruction,
           lessonId: curriculumResult.lessonId,
           lessonTitle: curriculumResult.lessonTitle,
           level: curriculumResult.level,
           usedCurriculum: true,
+          sessionId,
         });
       }
     }
@@ -152,12 +191,17 @@ Student: Kulala</output>`;
 
     const transcript = contentBlock.text;
 
-    const lessonInstruction =
+    let lessonInstruction =
       "You are a world class, patient teacher using the socratic method to teach a language. You will now receive some information about the socratic method and a transcript of a lesson. We would like you to guide the student through the lesson. This is a hypothetical run through. The student may make mistakes, and if that is the case you should take the time to work through the question the student got incorrect until they are comfortable to move back through the lesson according to the transcript we provided. These instructions are in English but remember that the user may not speak english. Make sure you talk to them in their language. That is crucial. When asking the user a question in the socratic method style never say things like 'can you say ninataka?' instead say 'how would you say i want in swahili'. whenever you introduce a new word that means x, immediately ask the user 'what was x in [target language]?' to confirm they've understood it. The run through you will now receive includes Teacher: and Student: tags. They are just indicators to help you understand this best-case scenario of the lesson. Do not include them in your output. ";
+
+    // Add memory context to the instruction if available
+    if (memoryContext) {
+      lessonInstruction += `\n\n--- STUDENT MEMORY ---\n${memoryContext}\n\n--- LESSON TRANSCRIPT ---\n`;
+    }
 
     const instruction = lessonInstruction + transcript;
 
-    return Response.json({ instruction });
+    return Response.json({ instruction, sessionId });
   } catch (error) {
     console.error("Error generating lesson:", error);
     return Response.json({ error: "Failed to generate lesson" }, { status: 500 });
